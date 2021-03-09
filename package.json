@@ -1,5 +1,6 @@
 {
   "name": "react-material-dashboard",
+  "main": "src/index.tsx",
   "author": "DeviasIO",
   "licence": "MIT",
   "version": "1.0.0",
@@ -47,18 +48,11 @@
     "react-router": "^6.0.0-beta.0",
     "react-router-dom": "^6.0.0-beta.0",
     "react-scripts": "^4.0.0",
+    "typescript": "^4.2.3",
     "uuid": "^8.3.0",
     "yup": "^0.29.3"
   },
   "devDependencies": {
-    "eslint": "^7.11.0",
-    "eslint-config-airbnb": "^18.2.0",
-    "eslint-config-prettier": "^6.11.0",
-    "eslint-plugin-import": "^2.22.0",
-    "eslint-plugin-jsx-a11y": "^6.3.1",
-    "eslint-plugin-prettier": "^3.1.4",
-    "eslint-plugin-react": "^7.20.3",
-    "eslint-plugin-react-hooks": "^4.0.8",
     "prettier": "^1.19.1"
   }
 }
