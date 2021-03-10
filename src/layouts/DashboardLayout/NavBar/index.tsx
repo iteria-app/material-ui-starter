@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
+import { useIntl } from 'react-intl';
 import PropTypes from 'prop-types';
 import {
   Avatar,
@@ -30,48 +31,6 @@ const user = {
   name: 'Katarina Smith'
 };
 
-const items = [
-  {
-    href: '/app/dashboard',
-    icon: BarChartIcon,
-    title: 'Dashboard'
-  },
-  {
-    href: '/app/customers',
-    icon: UsersIcon,
-    title: 'Customers'
-  },
-  {
-    href: '/app/products',
-    icon: ShoppingBagIcon,
-    title: 'Products'
-  },
-  {
-    href: '/app/account',
-    icon: UserIcon,
-    title: 'Account'
-  },
-  {
-    href: '/app/settings',
-    icon: SettingsIcon,
-    title: 'Settings'
-  },
-  {
-    href: '/login',
-    icon: LockIcon,
-    title: 'Login'
-  },
-  {
-    href: '/register',
-    icon: UserPlusIcon,
-    title: 'Register'
-  },
-  {
-    href: '/404',
-    icon: AlertCircleIcon,
-    title: 'Error'
-  }
-];
 
 const useStyles = makeStyles(() => ({
   mobileDrawer: {
@@ -90,6 +49,50 @@ const useStyles = makeStyles(() => ({
 }));
 
 const NavBar = ({ onMobileClose, openMobile }) => {
+  const intl = useIntl()
+
+  const items = [
+    {
+      href: '/app/dashboard',
+      icon: BarChartIcon,
+      title: 'Dashboard'
+    },
+    {
+      href: '/app/customers',
+      icon: UsersIcon,
+      title: intl.formatMessage({id: "customers"})
+    },
+    {
+      href: '/app/products',
+      icon: ShoppingBagIcon,
+      title: 'Products'
+    },
+    {
+      href: '/app/account',
+      icon: UserIcon,
+      title: 'Account'
+    },
+    {
+      href: '/app/settings',
+      icon: SettingsIcon,
+      title: 'Settings'
+    },
+    {
+      href: '/login',
+      icon: LockIcon,
+      title: 'Login'
+    },
+    {
+      href: '/register',
+      icon: UserPlusIcon,
+      title: 'Register'
+    },
+    {
+      href: '/404',
+      icon: AlertCircleIcon,
+      title: 'Error'
+    }
+  ];
   const classes: any = useStyles();
   const location = useLocation();
 
