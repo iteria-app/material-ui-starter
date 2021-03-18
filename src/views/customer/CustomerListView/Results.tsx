@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import PerfectScrollbar from 'react-perfect-scrollbar';
-import {
+import { 
   Avatar,
   Box,
   Card,
@@ -18,6 +18,7 @@ import {
   makeStyles
 } from '@material-ui/core';
 import getInitials from 'src/utils/getInitials';
+import { useQuery, gql } from 'urql';
 
 const useStyles = makeStyles(theme => ({
   root: {},
@@ -26,11 +27,46 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const Results: React.FC<any> = ({ className, customers, ...rest }) => {
+interface ITodo {
+  id: string;
+  text: string;
+  complete: boolean;
+}
+interface QueryResponse {
+  todos: ITodo[];
+}
+
+const SEARCH = gql`
+  query Search($search: String!) {
+    customers(where: {name: {_ilike: $search}}, order_by: {name: asc}) {
+      id
+      email
+      name
+      phone
+      address
+      avatarUrl
+      createdAt
+      updatedAt
+    }
+  }
+`;
+
+const Results: React.FC<any> = ({ className ,inputSearch, ...rest }) => {
+  
+  const search = "%"+inputSearch+"%";
+  const [result, reexecuteQuery] = useQuery({
+    query: SEARCH,
+    variables: {search},
+  });
+  const { data, error, fetching} = result;
   const classes = useStyles();
   const [selectedCustomerIds, setSelectedCustomerIds] = useState([]);
   const [limit, setLimit] = useState(10);
   const [page, setPage] = useState(0);
+
+  if (fetching) return <p>Loading...</p>;
+  if (error) return <p>Oh no... {error.message}</p>;
+  const customers = data.customers;
 
   const handleSelectAll = event => {
     let newSelectedCustomerIds;
@@ -78,9 +114,8 @@ const Results: React.FC<any> = ({ className, customers, ...rest }) => {
   const handlePageChange = (event, newPage) => {
     setPage(newPage);
   };
-
   return (
-    <Card className={clsx(classes.root, className)} {...rest}>
+    <Card className={clsx(classes.root, className)} {...rest}>  
       <PerfectScrollbar>
         <Box minWidth={1050}>
           <Table>
@@ -88,7 +123,7 @@ const Results: React.FC<any> = ({ className, customers, ...rest }) => {
               <TableRow>
                 <TableCell padding="checkbox">
                   <Checkbox
-                    checked={selectedCustomerIds.length === customers.length}
+                    checked={selectedCustomerIds.length === customers.length }
                     color="primary"
                     indeterminate={
                       selectedCustomerIds.length > 0 &&
@@ -105,7 +140,7 @@ const Results: React.FC<any> = ({ className, customers, ...rest }) => {
               </TableRow>
             </TableHead>
             <TableBody>
-              {customers.slice(0, limit).map(customer => (
+              { customers.slice(0, limit).map(customer => (
                 <TableRow
                   hover
                   key={customer.id}
@@ -147,7 +182,7 @@ const Results: React.FC<any> = ({ className, customers, ...rest }) => {
       </PerfectScrollbar>
       <TablePagination
         component="div"
-        count={customers.length}
+        count={ customers.length}
         onChangePage={handlePageChange}
         onChangeRowsPerPage={handleLimitChange}
         page={page}
