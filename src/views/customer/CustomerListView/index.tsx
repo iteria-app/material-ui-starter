@@ -3,7 +3,7 @@ import { Box, Container, makeStyles } from '@material-ui/core';
 import Page from 'src/components/Page';
 import Results from './Results';
 import Toolbar from './Toolbar';
-import data from './data';
+import { createClient, Provider } from 'urql';
 
 const useStyles = makeStyles((theme: any) => ({
   root: {
@@ -14,16 +14,35 @@ const useStyles = makeStyles((theme: any) => ({
   }
 }));
 
+const client =  createClient({
+  url: 'https://iteria-app-example01.herokuapp.com/v1/graphql',
+  fetchOptions: () => {
+    return {
+      headers: {
+        'x-hasura-admin-secret' : 'iteria-app-example01-421769',
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      },
+    };
+  },
+});
+
 const CustomerListView = () => {
   const classes = useStyles();
-  const [customers] = useState(data);
-
+  const [inputSearch , setInputSearch] = useState("");
   return (
     <Page className={classes.root} title="Customers">
       <Container maxWidth={false}>
-        <Toolbar />
+        <Toolbar 
+          inputSearch={inputSearch}
+          onChange={(event) => setInputSearch(event.target.value)}
+        />
         <Box mt={3}>
-          <Results customers={customers} />
+          <Provider value={client}>
+            <Results 
+              inputSearch={inputSearch} 
+            />
+          </Provider>
         </Box>
       </Container>
     </Page>
