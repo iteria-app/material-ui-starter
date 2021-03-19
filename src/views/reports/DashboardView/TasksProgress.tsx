@@ -13,6 +13,7 @@ import {
   colors
 } from '@material-ui/core';
 import InsertChartIcon from '@material-ui/icons/InsertChartOutlined';
+import { FormattedMessage } from 'react-intl';
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -34,7 +35,7 @@ const TasksProgress: React.FC<any> = ({ className, ...rest }) => {
         <Grid container justify="space-between" spacing={3}>
           <Grid item>
             <Typography color="textSecondary" gutterBottom variant="h6">
-              TASKS PROGRESS
+              <FormattedMessage id="tasks.progress" tagName="span" />
             </Typography>
             <Typography color="textPrimary" variant="h3">
               75.5%
