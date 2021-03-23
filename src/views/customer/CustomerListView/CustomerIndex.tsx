@@ -26,8 +26,9 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const Results: React.FC<any> = ({ className, customers, ...rest }) => {
+const CustomerIndex: React.FC<any> = ({ className, customers, ...rest }) => {
   const classes = useStyles();
+  
   const [selectedCustomerIds, setSelectedCustomerIds] = useState([]);
   const [limit, setLimit] = useState(10);
   const [page, setPage] = useState(0);
@@ -158,9 +159,9 @@ const Results: React.FC<any> = ({ className, customers, ...rest }) => {
   );
 };
 
-Results.propTypes = {
+CustomerIndex.propTypes = {
   className: PropTypes.string,
   customers: PropTypes.array.isRequired
 };
 
-export default Results;
+export default CustomerIndex;
