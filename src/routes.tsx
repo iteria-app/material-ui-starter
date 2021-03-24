@@ -10,7 +10,7 @@ import NotFoundView from 'src/views/errors/NotFoundView';
 import ProductListView from 'src/views/product/ProductListView';
 import RegisterView from 'src/views/auth/RegisterView';
 import SettingsView from 'src/views/settings/SettingsView';
-import HelloWorld from './views/test/HelloWorld';
+import GeneratedCustomers from './views/test/GeneratedCustomers';
 
 const routes = [
   {
@@ -21,7 +21,7 @@ const routes = [
       { path: 'customers', element: <CustomerListView /> },
       { path: 'dashboard', element: <DashboardView /> },
       { path: 'products', element: <ProductListView /> },
-      { path: 'hello', element: <HelloWorld />},
+      { path: 'generated-customers', element: <GeneratedCustomers /> },
       { path: 'settings', element: <SettingsView /> },
       { path: '*', element: <Navigate to="/404" /> }
     ]
