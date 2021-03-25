@@ -23,7 +23,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const Toolbar: React.FC<any> = ({ className, inputSearch, onChange, ...rest }) => {
+const Toolbar: React.FC<any> = ({ className, searchCustomer, onChange, ...rest }) => {
   const classes = useStyles();
 
   return (
@@ -41,7 +41,7 @@ const Toolbar: React.FC<any> = ({ className, inputSearch, onChange, ...rest }) =
             <Box maxWidth={500}>
               <TextField
                 fullWidth
-                value={ inputSearch }
+                value={ searchCustomer }
                 onChange={ onChange }
                 InputProps={{
                   startAdornment: (
