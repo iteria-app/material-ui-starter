@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Box, Container, makeStyles } from '@material-ui/core';
 import Page from 'src/components/Page';
 import Results from './Results';
@@ -20,20 +20,20 @@ const useStyles = makeStyles((theme: any) => ({
   }
 }));
 
-const client =  createClient({
+const client = createClient({
   url: 'https://iteria-app-example01.herokuapp.com/v1/graphql',
-  exchanges: [ debugExchange, cacheExchange, fetchExchange]
+  exchanges: [debugExchange, cacheExchange, fetchExchange]
 });
 
 const CustomerListView = () => {
   const classes = useStyles();
-  const [searchCustomer , setSearchCustomer] = useState("");
+  const [searchCustomer, setSearchCustomer] = useState("");
   return (
     <Page className={classes.root} title="Customers">
       <Container maxWidth={false}>
-        <Toolbar 
+        <Toolbar
           searchCustomer={searchCustomer}
-          onChange={(event) => setSearchCustomer(event.target.value)}
+          searchCustomerChange={(event) => setSearchCustomer(event.target.value)}
         />
         <Box mt={3}>
           <Provider value={client}>

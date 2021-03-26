@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import EditIcon from '@material-ui/icons/Edit';
 import moment from 'moment';
 import {
   Avatar,
@@ -18,12 +18,15 @@ const useStyles = makeStyles(theme => ({
   root: {},
   avatar: {
     marginRight: theme.spacing(2)
+  },
+  editButton: {
+    float: "right"
   }
 }));
 
-const CustomerTableRow: React.FC<any> = ({ limit, customers ,selectedCustomerIds , handleSelectOne }) => {
+const CustomerTableRow: React.FC<TableRowProps> = ({ limit, customers, selectedCustomerIds, handleSelectOne }) => {
   const classes = useStyles();
-  const [anchorEl, setAnchorEl] = React.useState<HTMLTableRowElement | null>(null);
+  const [anchorEl, setAnchorEl] = React.useState<SVGSVGElement | null>(null);
   const [customerToUpdate, setCustomerToUpdate] = React.useState(null);
   const open = Boolean(anchorEl);
   const id = open ? 'simple-popover' : undefined;
@@ -33,16 +36,15 @@ const CustomerTableRow: React.FC<any> = ({ limit, customers ,selectedCustomerIds
     setCustomerToUpdate(null)
   };
 
-  const handleClick = (event: React.MouseEvent<HTMLTableRowElement>, customer) => {
+  const handleClick = (event: React.MouseEvent<SVGSVGElement>, customer) => {
     setAnchorEl(event.currentTarget);
     setCustomerToUpdate(customer);
   };
   return (
     <>
-      {customers.slice(0, limit).map(customer => (  
+      {customers.slice(0, limit).map(customer => (
         <TableRow
           hover
-          onClick={e => handleClick(e, customer)}
           key={customer.id}
           aria-describedby={customer.id}
           selected={selectedCustomerIds.indexOf(customer.id) !== -1}
@@ -59,7 +61,7 @@ const CustomerTableRow: React.FC<any> = ({ limit, customers ,selectedCustomerIds
               <Avatar
                 className={classes.avatar}
                 src={customer.avatarUrl}
-                >
+              >
                 {getInitials(customer.name)}
               </Avatar>
               <Typography color="textPrimary" variant="body1">
@@ -74,8 +76,11 @@ const CustomerTableRow: React.FC<any> = ({ limit, customers ,selectedCustomerIds
           <TableCell>{customer.phone}</TableCell>
           <TableCell>
             {moment(customer.createdAt).format('DD/MM/YYYY')}
+            <EditIcon
+              onClick={e => handleClick(e, customer)}
+              className={classes.editButton} />
           </TableCell>
-      </TableRow>
+        </TableRow>
       ))}
       <Popover
         id={id}
@@ -83,15 +88,15 @@ const CustomerTableRow: React.FC<any> = ({ limit, customers ,selectedCustomerIds
         anchorEl={anchorEl}
         onClose={handleClose}
         anchorOrigin={{
-          vertical: 'bottom',
-          horizontal: 'center',
+          vertical: 'center',
+          horizontal: 'right',
         }}
         transformOrigin={{
-          vertical: 'top',
-          horizontal: 'center',
+          vertical: 'center',
+          horizontal: 'right',
         }}
       >
-        <UpdateCustomer 
+        <UpdateCustomer
           customer={customerToUpdate}
           handleClose={handleClose}
         />
@@ -99,10 +104,21 @@ const CustomerTableRow: React.FC<any> = ({ limit, customers ,selectedCustomerIds
     </>
   );
 };
-
-CustomerTableRow.propTypes = {
-  className: PropTypes.string,
-  customers: PropTypes.array,
+interface TableRowProps {
+  limit: number;
+  customers: customer[]
+  selectedCustomerIds: any[];
+  handleSelectOne: (event: any, id: any) => void;
+}
+type customer = {
+  id: string;
+  name: string;
+  email: string;
+  phone: string;
+  avatarUrl: string;
+  address: { city: string, state: string, country: string };
+  createdAt: string;
+  updatedAt: string;
 };
 
 export default CustomerTableRow;

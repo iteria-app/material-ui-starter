@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import {
   Card,
   makeStyles
@@ -33,29 +32,27 @@ const SEARCH = gql`
   }
 `;
 
-const Results: React.FC<any> = ({ searchCustomer, ...rest }) => {
+const Results: React.FC<ResultProps> = ({ searchCustomer, ...rest }) => {
   const classes = useStyles();
-  const search = "%"+searchCustomer+"%";
+  const search = "%" + searchCustomer + "%";
   const [result, _reexecuteQuery] = useQuery({
     query: SEARCH,
-    variables: {search},
+    variables: { search },
   });
 
-  const { data, error, fetching} = result;
+  const { data, error, fetching } = result;
 
-  if (fetching) return ( <Loading/> );
+  if (fetching) return (<Loading />);
   if (error) return <p>Oh no... {error.message}</p>;
 
   return (
-    <Card className={classes.root} {...rest}>  
+    <Card className={classes.root} {...rest}>
       <Table customers={data.customers} />
     </Card>
   );
 };
-
-Results.propTypes = {
-  className: PropTypes.string,
-  inputSearch: PropTypes.string
-};
+interface ResultProps {
+  searchCustomer: string;
+}
 
 export default Results;

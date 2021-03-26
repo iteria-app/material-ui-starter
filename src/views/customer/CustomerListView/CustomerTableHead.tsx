@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import {
   Checkbox,
   TableCell,
@@ -7,17 +6,18 @@ import {
   TableRow,
 } from '@material-ui/core';
 
-const CustomerTableRow: React.FC<any> = ({ customers ,selectedCustomerIds , handleSelectAll }) => {
+const CustomerTableRow: React.FC<HeaderProps> = ({ customers, selectedCustomerIds, handleSelectAll }) => {
   return (
     <TableHead>
       <TableRow>
         <TableCell padding="checkbox">
           <Checkbox
-            checked={selectedCustomerIds.length === customers.length}
+            checked={customers ? selectedCustomerIds.length === customers.length : null}
             color="primary"
             indeterminate={
-              selectedCustomerIds.length > 0 &&
-              selectedCustomerIds.length < customers.length
+              customers ?
+                selectedCustomerIds.length > 0 &&
+                selectedCustomerIds.length < customers.length : null
             }
             onChange={handleSelectAll}
           />
@@ -28,13 +28,24 @@ const CustomerTableRow: React.FC<any> = ({ customers ,selectedCustomerIds , hand
         <TableCell>Phone</TableCell>
         <TableCell>Registration date</TableCell>
       </TableRow>
-    </TableHead>  
+    </TableHead>
   );
 };
 
-CustomerTableRow.propTypes = {
-  className: PropTypes.string,
-  customers: PropTypes.array,
-};
-
 export default CustomerTableRow;
+
+type customer = {
+  id: string;
+  name: string;
+  email: string;
+  phone: string;
+  avatarUrl: string;
+  address: { city: string, state: string, country: string };
+  createdAt: string;
+  updatedAt: string;
+};
+interface HeaderProps {
+  customers?: customer[];
+  selectedCustomerIds?: any[];
+  handleSelectAll?: (event: any) => void;
+}

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import {
   Box,
@@ -10,11 +9,7 @@ import {
 import CustomerTableRow from './CustomerTableRow';
 import CustomerTableHead from './CustomerTableHead';
 
-interface Props {
-  customers: Array<any>;
-}
-
-const Results: React.FC<Props> = ({ customers }) => {
+const Results: React.FC<CustomersProps> = ({ customers }) => {
   const [selectedCustomerIds, setSelectedCustomerIds] = useState([]);
   const [limit, setLimit] = useState(10);
   const [page, setPage] = useState(0);
@@ -70,16 +65,16 @@ const Results: React.FC<Props> = ({ customers }) => {
         <Box minWidth={1050}>
           <Table>
             <CustomerTableHead
-              customers = {customers}
-              selectedCustomerIds = {selectedCustomerIds}
-              handleSelectAll = {handleSelectAll}
+              customers={customers}
+              selectedCustomerIds={selectedCustomerIds}
+              handleSelectAll={handleSelectAll}
             />
             <TableBody>
               <CustomerTableRow
-                limit = {limit}
-                customers = {customers}
-                selectedCustomerIds = {selectedCustomerIds}
-                handleSelectOne = {handleSelectOne}
+                limit={limit}
+                customers={customers}
+                selectedCustomerIds={selectedCustomerIds}
+                handleSelectOne={handleSelectOne}
               />
             </TableBody>
           </Table>
@@ -87,7 +82,7 @@ const Results: React.FC<Props> = ({ customers }) => {
       </PerfectScrollbar>
       <TablePagination
         component="div"
-        count={ customers.length}
+        count={customers.length}
         onChangePage={handlePageChange}
         onChangeRowsPerPage={handleLimitChange}
         page={page}
@@ -98,8 +93,18 @@ const Results: React.FC<Props> = ({ customers }) => {
   );
 };
 
-Results.propTypes = {
-  customers: PropTypes.array.isRequired
+type customer = {
+  id: string;
+  name: string;
+  email: string;
+  phone: string;
+  avatarUrl: string;
+  address: { city: string, state: string, country: string };
+  createdAt: string;
+  updatedAt: string;
 };
+interface CustomersProps {
+  customers: customer[];
+}
 
 export default Results;

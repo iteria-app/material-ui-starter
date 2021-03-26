@@ -17,30 +17,31 @@ const useStyles = makeStyles((theme: Theme) =>
     box: {
       margin: theme.spacing(2),
     },
-    textfield:{
+    textfield: {
       marginTop: theme.spacing(2),
     },
-    button:{
+    button: {
       margin: theme.spacing(1),
     }
   }),
 );
 
-const UpdateCustomer: React.FC<any> = ({customer, handleClose}) => {
+const UpdateCustomer: React.FC<UpdateProps> = ({ customer, handleClose }) => {
   const classes = useStyles();
-  const [newName,setNewName] = React.useState<String>(null);
-  const [newEmail,setNewEmail] = React.useState<String>(null);
-  const [newPhoneNumber,setNewPhoneNumber] = React.useState<String>(null);
+  const [newName, setNewName] = React.useState<String>(null);
+  const [newEmail, setNewEmail] = React.useState<String>(null);
+  const [newPhoneNumber, setNewPhoneNumber] = React.useState<String>(null);
   const [state, executeMutation] = useMutation(POST_MUTATION);
+
   const submit = React.useCallback(() => {
-    executeMutation({ 
-    "id": customer?.id,
-    "name": newName ? newName : customer?.name,
-    "email": newEmail ? newEmail : customer?.email,
-    "phone": newPhoneNumber ? newPhoneNumber : customer?.phone,
-  })
+    executeMutation({
+      "id": customer?.id,
+      "name": newName ? newName : customer?.name,
+      "email": newEmail ? newEmail : customer?.email,
+      "phone": newPhoneNumber ? newPhoneNumber : customer?.phone,
+    })
     handleClose();
-  },[
+  }, [
     executeMutation,
     customer?.id,
     newName ? newName : customer?.name,
@@ -57,21 +58,21 @@ const UpdateCustomer: React.FC<any> = ({customer, handleClose}) => {
         label="Change username"
         onChange={(event) => setNewName(event.target.value)}
         placeholder={customer?.name}
-        variant="outlined"/>
+        variant="outlined" />
       <TextField
         fullWidth
         className={classes.textfield}
         label="Change email"
         onChange={(event) => setNewEmail(event.target.value)}
         placeholder={customer?.email}
-        variant="outlined"/>
+        variant="outlined" />
       <TextField
         fullWidth
         className={classes.textfield}
         label="Change phone number"
         placeholder={customer?.phone}
         onChange={(event) => setNewPhoneNumber(event.target.value)}
-        variant="outlined"/>
+        variant="outlined" />
       <Button color="primary" variant="contained" className={classes.button} onClick={submit}>
         Change details
       </Button>
@@ -88,3 +89,17 @@ const POST_MUTATION = gql`
     }
   }
 `;
+type customer = {
+  id: string;
+  name: string;
+  email: string;
+  phone: string;
+  avatarUrl: string;
+  address: { city: string, state: string, country: string };
+  createdAt: string;
+  updatedAt: string;
+};
+interface UpdateProps {
+  customer: customer;
+  handleClose: () => void
+}

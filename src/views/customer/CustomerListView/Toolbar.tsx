@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import {
   Box,
@@ -23,7 +22,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const Toolbar: React.FC<any> = ({ className, searchCustomer, searchCustomerChange, ...rest }) => {
+const Toolbar: React.FC<ToolbarProps> = ({ className, searchCustomer, searchCustomerChange, ...rest }) => {
   const classes = useStyles();
 
   return (
@@ -62,9 +61,10 @@ const Toolbar: React.FC<any> = ({ className, searchCustomer, searchCustomerChang
     </div>
   );
 };
-
-Toolbar.propTypes = {
-  className: PropTypes.string
-};
+interface ToolbarProps {
+  className?: string
+  searchCustomer: string;
+  searchCustomerChange: (event: any) => void;
+}
 
 export default Toolbar;
