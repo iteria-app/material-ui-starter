@@ -11,6 +11,7 @@ import {
   makeStyles
 } from '@material-ui/core';
 import { Search as SearchIcon } from 'react-feather';
+import { ToolbarProps } from './Types'
 
 const useStyles = makeStyles(theme => ({
   root: {},
@@ -61,10 +62,5 @@ const Toolbar: React.FC<ToolbarProps> = ({ className, searchCustomer, searchCust
     </div>
   );
 };
-interface ToolbarProps {
-  className?: string
-  searchCustomer: string;
-  searchCustomerChange: (event: any) => void;
-}
 
 export default Toolbar;

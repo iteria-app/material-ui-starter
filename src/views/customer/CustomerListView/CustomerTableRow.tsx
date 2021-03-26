@@ -13,6 +13,7 @@ import {
 import getInitials from 'src/utils/getInitials';
 import UpdateCustomer from './UpdateCustomer';
 import Popover from '@material-ui/core/Popover';
+import { TableRowProps } from './Types'
 
 const useStyles = makeStyles(theme => ({
   root: {},
@@ -103,22 +104,6 @@ const CustomerTableRow: React.FC<TableRowProps> = ({ limit, customers, selectedC
       </Popover>
     </>
   );
-};
-interface TableRowProps {
-  limit: number;
-  customers: customer[]
-  selectedCustomerIds: any[];
-  handleSelectOne: (event: any, id: any) => void;
-}
-type customer = {
-  id: string;
-  name: string;
-  email: string;
-  phone: string;
-  avatarUrl: string;
-  address: { city: string, state: string, country: string };
-  createdAt: string;
-  updatedAt: string;
 };
 
 export default CustomerTableRow;

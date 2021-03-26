@@ -6,6 +6,7 @@ import {
 import { useQuery, gql } from 'urql';
 import Loading from './Loading';
 import Table from './CustomerTable';
+import { ResultProps } from './Types'
 
 const useStyles = makeStyles(theme => ({
   root: {},
@@ -51,8 +52,5 @@ const Results: React.FC<ResultProps> = ({ searchCustomer, ...rest }) => {
     </Card>
   );
 };
-interface ResultProps {
-  searchCustomer: string;
-}
 
 export default Results;

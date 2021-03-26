@@ -5,6 +5,7 @@ import {
   TableHead,
   TableRow,
 } from '@material-ui/core';
+import { HeaderProps } from './Types'
 
 const CustomerTableRow: React.FC<HeaderProps> = ({ customers, selectedCustomerIds, handleSelectAll }) => {
   return (
@@ -33,19 +34,3 @@ const CustomerTableRow: React.FC<HeaderProps> = ({ customers, selectedCustomerId
 };
 
 export default CustomerTableRow;
-
-type customer = {
-  id: string;
-  name: string;
-  email: string;
-  phone: string;
-  avatarUrl: string;
-  address: { city: string, state: string, country: string };
-  createdAt: string;
-  updatedAt: string;
-};
-interface HeaderProps {
-  customers?: customer[];
-  selectedCustomerIds?: any[];
-  handleSelectAll?: (event: any) => void;
-}

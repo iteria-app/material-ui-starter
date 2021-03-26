@@ -7,6 +7,7 @@ import {
   Box,
   TextField,
 } from '@material-ui/core';
+import { UpdateProps } from './Types'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -89,17 +90,3 @@ const POST_MUTATION = gql`
     }
   }
 `;
-type customer = {
-  id: string;
-  name: string;
-  email: string;
-  phone: string;
-  avatarUrl: string;
-  address: { city: string, state: string, country: string };
-  createdAt: string;
-  updatedAt: string;
-};
-interface UpdateProps {
-  customer: customer;
-  handleClose: () => void
-}

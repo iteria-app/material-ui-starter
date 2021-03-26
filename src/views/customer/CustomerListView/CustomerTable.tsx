@@ -8,6 +8,7 @@ import {
 } from '@material-ui/core';
 import CustomerTableRow from './CustomerTableRow';
 import CustomerTableHead from './CustomerTableHead';
+import { CustomersProps } from './Types'
 
 const Results: React.FC<CustomersProps> = ({ customers }) => {
   const [selectedCustomerIds, setSelectedCustomerIds] = useState([]);
@@ -92,19 +93,5 @@ const Results: React.FC<CustomersProps> = ({ customers }) => {
     </div>
   );
 };
-
-type customer = {
-  id: string;
-  name: string;
-  email: string;
-  phone: string;
-  avatarUrl: string;
-  address: { city: string, state: string, country: string };
-  createdAt: string;
-  updatedAt: string;
-};
-interface CustomersProps {
-  customers: customer[];
-}
 
 export default Results;
