@@ -63,6 +63,11 @@ const NavBar = ({ onMobileClose, openMobile }) => {
       title: intl.formatMessage({id: "customers"})
     },
     {
+      href: '/app/generated-customers',
+      icon: UsersIcon,
+      title: 'Generated customers'
+    },
+    {
       href: '/app/products',
       icon: ShoppingBagIcon,
       title: 'Products'
