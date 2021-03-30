@@ -12,5 +12,5 @@ import { useIntl,FormattedMessage } from "react-intl";
             { field: "phone", width: 180, type: "string", valueFormatter: ({ value }) => value, renderHeader: (params: GridColParams) => (<FormattedMessage id="Customer.phone" defaultMessage="phone"/>) },
             { field: "updatedAt", width: 180, type: "date", valueFormatter: ({ value }) => intl.formatDate(value), renderHeader: (params: GridColParams) => (<FormattedMessage id="Customer.updatedAt" defaultMessage="updatedAt"/>) }
         ];
-        return (<div style={{ height: "400px", width: "100%" }}>            <DataGrid columns={columns} rows={customers}/>          </div>);
+        return (<div style={{ height: "400px", width: "100%" }}>here should be generated customer table</div>);
     }
