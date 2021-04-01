@@ -2,13 +2,13 @@ import React from 'react';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import { useMutation, gql } from 'urql';
+import { useMutation } from 'urql';
 import {
   Box,
   TextField,
 } from '@material-ui/core';
 import { UpdateProps } from './Types'
-
+import { UPDATE_CUSTOMER_MUTATION } from './Graphql'
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     typography: {
@@ -32,7 +32,7 @@ const UpdateCustomer: React.FC<UpdateProps> = ({ customer, handleClose }) => {
   const [newName, setNewName] = React.useState<String>(null);
   const [newEmail, setNewEmail] = React.useState<String>(null);
   const [newPhoneNumber, setNewPhoneNumber] = React.useState<String>(null);
-  const [state, executeMutation] = useMutation(POST_MUTATION);
+  const [state, executeMutation] = useMutation(UPDATE_CUSTOMER_MUTATION);
 
   const submit = React.useCallback(() => {
     executeMutation({
@@ -82,11 +82,3 @@ const UpdateCustomer: React.FC<UpdateProps> = ({ customer, handleClose }) => {
 }
 export default UpdateCustomer;
 
-const POST_MUTATION = gql`
-  mutation MyMutation( $id: uuid! = "", $name: String! = "", $email: String! = "", $phone: String = "") {
-    updateCustomer(pk_columns: {id: $id}, _set: {name: $name, email: $email, phone: $phone}) {
-      name
-      id
-    }
-  }
-`;

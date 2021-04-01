@@ -3,10 +3,11 @@ import {
   Card,
   makeStyles
 } from '@material-ui/core';
-import { useQuery, gql } from 'urql';
+import { useQuery } from 'urql';
 import Loading from './Loading';
 import Table from './CustomerTable';
-import { ResultProps } from './Types'
+import { CustomersProps, ResultProps } from './Types'
+import { SEARCH_CUSTOMER_QUERY } from './Graphql'
 
 const useStyles = makeStyles(theme => ({
   root: {},
@@ -18,26 +19,11 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const SEARCH = gql`
-  query Search($search: String!) {
-    customers(where: {name: {_ilike: $search}}, order_by: {name: asc}) {
-      id
-      email
-      name
-      phone
-      address
-      avatarUrl
-      createdAt
-      updatedAt
-    }
-  }
-`;
-
 const Results: React.FC<ResultProps> = ({ searchCustomer, ...rest }) => {
   const classes = useStyles();
   const search = "%" + searchCustomer + "%";
-  const [result, _reexecuteQuery] = useQuery({
-    query: SEARCH,
+  const [result, _reexecuteQuery] = useQuery<CustomersProps>({
+    query: SEARCH_CUSTOMER_QUERY,
     variables: { search },
   });
 
