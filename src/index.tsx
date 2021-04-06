@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
-import * as serviceWorker from './serviceWorker';
+import * as serviceWorker from './serviceWorker';
 import App from './App';
+import sk from './compiled-lang/sk';
+import en from './compiled-lang/en';
 import {
   createClient,
   Provider,
@@ -11,13 +13,13 @@ import {
   fetchExchange
 } from 'urql';
 
-const loadLocaleData = (locale) => {
+const loadLocaleData = locale => {
   switch (locale) {
     case 'sk':
     case 'sk-SK':
-      return import('./compiled-lang/sk.json');
+      return sk;
     default:
-      return import('./compiled-lang/en.json');
+      return en;
   }
 };
 
@@ -29,15 +31,15 @@ const client = createClient({
 // @ts-ignore
 if (!window.__skip_render) {
   const locale = navigator.language;
-  loadLocaleData(locale).then((messages) => {
-    ReactDOM.render(
-      <BrowserRouter>
-        <Provider value={client}>
-          <App locale={locale} messages={messages} />
-        </Provider>
-      </BrowserRouter>,
-      document.getElementById('root')
-    );
-  });
+  const messages = loadLocaleData(locale);
+
+  ReactDOM.render(
+    <BrowserRouter>
+      <Provider value={client}>
+        <App locale={locale} messages={messages} />
+      </Provider>     
+    </BrowserRouter>,
+    document.getElementById('root')
+  );
 }
 serviceWorker.unregister();

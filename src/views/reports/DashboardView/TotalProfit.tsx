@@ -11,6 +11,7 @@ import {
   colors
 } from '@material-ui/core';
 import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
+import { FormattedMessage } from 'react-intl';
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -32,7 +33,7 @@ const TotalProfit: React.FC<any> = ({ className, ...rest }) => {
         <Grid container justify="space-between" spacing={3}>
           <Grid item>
             <Typography color="textSecondary" gutterBottom variant="h6">
-              TOTAL PROFIT
+              <FormattedMessage id="total.profit" tagName="span" />
             </Typography>
             <Typography color="textPrimary" variant="h3">
               $23,200
