@@ -9,8 +9,10 @@ import {
 import CustomerTableRow from './CustomerTableRow';
 import CustomerTableHead from './CustomerTableHead';
 import { CustomersProps } from './Types'
+import Loading from './Loading';
 
-const Results: React.FC<CustomersProps> = ({ customers }) => {
+const CustomerTable: React.FC<CustomersProps> = ({ customers }) => {
+
   const [selectedCustomerIds, setSelectedCustomerIds] = useState([]);
   const [limit, setLimit] = useState(10);
   const [page, setPage] = useState(0);
@@ -60,6 +62,9 @@ const Results: React.FC<CustomersProps> = ({ customers }) => {
   const handlePageChange = (event, newPage) => {
     setPage(newPage);
   };
+
+  if (customers === null) return (<Loading />);
+
   return (
     <div>
       <PerfectScrollbar>
@@ -94,4 +99,4 @@ const Results: React.FC<CustomersProps> = ({ customers }) => {
   );
 };
 
-export default Results;
+export default CustomerTable;
