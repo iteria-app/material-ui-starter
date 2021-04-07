@@ -5,6 +5,13 @@ import * as serviceWorker from './serviceWorker';
 import App from './App';
 import sk from './compiled-lang/sk';
 import en from './compiled-lang/en';
+import {
+  createClient,
+  Provider,
+  debugExchange,
+  cacheExchange,
+  fetchExchange
+} from 'urql';
 
 const loadLocaleData = locale => {
   switch (locale) {
@@ -16,6 +23,11 @@ const loadLocaleData = locale => {
   }
 };
 
+const client = createClient({
+  url: 'https://iteria-app-example01.herokuapp.com/v1/graphql',
+  exchanges: [debugExchange, cacheExchange, fetchExchange]
+});
+
 // @ts-ignore
 if (!window.__skip_render) {
   const locale = navigator.language;
@@ -23,9 +35,9 @@ if (!window.__skip_render) {
 
   ReactDOM.render(
     <BrowserRouter>
-              
-      <App locale={locale} messages={messages} />
-            
+      <Provider value={client}>
+        <App locale={locale} messages={messages} />
+      </Provider>     
     </BrowserRouter>,
     document.getElementById('root')
   );

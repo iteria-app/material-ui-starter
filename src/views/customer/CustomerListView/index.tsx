@@ -1,10 +1,16 @@
-import React, { useState } from 'react';
-import { Box, Container, makeStyles } from '@material-ui/core';
+import { useState } from 'react';
+import {
+  Box,
+  Container,
+  makeStyles,
+  Card
+} from '@material-ui/core';
 import Page from 'src/components/Page';
-import Results from './Results';
+import CustomerTable from './CustomerTable';
 import Toolbar from './Toolbar';
-import data from './data';
-
+import { useQuery } from 'urql';
+import { CustomersProps } from './Types';
+import { SEARCH_CUSTOMER_QUERY } from './Graphql';
 const useStyles = makeStyles((theme: any) => ({
   root: {
     backgroundColor: theme.palette.background.dark,
@@ -16,14 +22,30 @@ const useStyles = makeStyles((theme: any) => ({
 
 const CustomerListView = () => {
   const classes = useStyles();
-  const [customers] = useState(data);
+  const [searchCustomer, setSearchCustomer] = useState("");
+  const search = "%" + searchCustomer + "%";
+  const [result, _reexecuteQuery] = useQuery<CustomersProps>({
+    query: SEARCH_CUSTOMER_QUERY,
+    variables: { search },
+  });
+
+  const { data, error, fetching } = result;
+
+  if (error) return <p>Oh no... {error.message}</p>;
 
   return (
     <Page className={classes.root} title="Customers">
       <Container maxWidth={false}>
-        <Toolbar />
+        <Toolbar
+          searchCustomer={searchCustomer}
+          searchCustomerChange={(event) => setSearchCustomer(event.target.value)}
+        />
         <Box mt={3}>
-          <Results customers={customers} />
+          <Card>
+            <CustomerTable
+              customers={fetching ? null : data?.customers}
+            />
+          </Card>
         </Box>
       </Container>
     </Page>
