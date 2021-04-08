@@ -13,6 +13,7 @@ import {
 } from '@material-ui/core';
 import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
 import MoneyIcon from '@material-ui/icons/Money';
+import { FormattedMessage } from 'react-intl';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -41,7 +42,7 @@ const Budget: React.FC<any> = ({ className, ...rest }) => {
         <Grid container justify="space-between" spacing={3}>
           <Grid item>
             <Typography color="textSecondary" gutterBottom variant="h6">
-              BUDGET
+              <FormattedMessage id="budget" tagName="span" />
             </Typography>
             <Typography color="textPrimary" variant="h3">
               $24,000

@@ -13,6 +13,7 @@ import {
 } from '@material-ui/core';
 import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 import PeopleIcon from '@material-ui/icons/PeopleOutlined';
+import { FormattedMessage } from 'react-intl';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -41,7 +42,7 @@ const TotalCustomers: React.FC<any> = ({ className, ...rest }) => {
         <Grid container justify="space-between" spacing={3}>
           <Grid item>
             <Typography color="textSecondary" gutterBottom variant="h6">
-              TOTAL CUSTOMERS
+              <FormattedMessage id="total.customers" tagName="span" />
             </Typography>
             <Typography color="textPrimary" variant="h3">
               1,600
