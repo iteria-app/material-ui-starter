@@ -2,13 +2,12 @@ import React from 'react';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import { useMutation } from 'urql';
+import { useUpdateCustomerMutation } from 'src/generated/graphql'
 import {
   Box,
   TextField,
 } from '@material-ui/core';
 import { UpdateProps } from './Types'
-import { UPDATE_CUSTOMER_MUTATION } from './Graphql'
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     typography: {
@@ -29,10 +28,10 @@ const useStyles = makeStyles((theme: Theme) =>
 
 const UpdateCustomer: React.FC<UpdateProps> = ({ customer, handleClose }) => {
   const classes = useStyles();
-  const [newName, setNewName] = React.useState<String>(null);
-  const [newEmail, setNewEmail] = React.useState<String>(null);
-  const [newPhoneNumber, setNewPhoneNumber] = React.useState<String>(null);
-  const [state, executeMutation] = useMutation(UPDATE_CUSTOMER_MUTATION);
+  const [newName, setNewName] = React.useState<string>(null);
+  const [newEmail, setNewEmail] = React.useState<string>(null);
+  const [newPhoneNumber, setNewPhoneNumber] = React.useState<string>(null);
+  const [state, executeMutation] = useUpdateCustomerMutation();
 
   const submit = React.useCallback(() => {
     executeMutation({
