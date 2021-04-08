@@ -8,9 +8,11 @@ import {
 import Page from 'src/components/Page';
 import CustomerTable from './CustomerTable';
 import Toolbar from './Toolbar';
-import { useQuery } from 'urql';
-import { CustomersProps } from './Types';
-import { SEARCH_CUSTOMER_QUERY } from './Graphql';
+// import { useQuery } from 'urql';
+// import { CustomersProps } from './Types';
+// import { SEARCH_CUSTOMER_QUERY } from './Graphql';
+import { useSearchCustomersQuery } from 'src/generated/graphql'
+
 const useStyles = makeStyles((theme: any) => ({
   root: {
     backgroundColor: theme.palette.background.dark,
@@ -24,10 +26,13 @@ const CustomerListView = () => {
   const classes = useStyles();
   const [searchCustomer, setSearchCustomer] = useState("");
   const search = "%" + searchCustomer + "%";
-  const [result, _reexecuteQuery] = useQuery<CustomersProps>({
-    query: SEARCH_CUSTOMER_QUERY,
-    variables: { search },
-  });
+  const [result, _reexecuteQuery1] = useSearchCustomersQuery({
+    variables: { search }
+  })
+  // const [result, _reexecuteQuery] = useQuery<CustomersProps>({
+  //   query: SearchDocument,
+  //   variables: { search },
+  // });
 
   const { data, error, fetching } = result;
 
@@ -43,7 +48,7 @@ const CustomerListView = () => {
         <Box mt={3}>
           <Card>
             <CustomerTable
-              customers={fetching ? null : data?.customers}
+              customers={fetching ? null : data.customers}
             />
           </Card>
         </Box>

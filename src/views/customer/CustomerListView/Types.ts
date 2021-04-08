@@ -1,9 +1,11 @@
+import { Customer } from 'src/generated/graphql';
+
 export interface CustomersProps {
-  customers: customer[];
+  customers: Customer[];
 }
 
 export interface HeaderProps {
-  customers?: customer[];
+  customers?: Customer[];
   selectedCustomerIds?: any[];
   handleSelectAll?: (event: any) => void;
 }
@@ -14,7 +16,7 @@ export interface ResultProps {
 
 export interface TableRowProps {
   limit: number;
-  customers: customer[]
+  customers: Customer[]
   selectedCustomerIds: any[];
   handleSelectOne: (event: any, id: any) => void;
 }
