@@ -8,9 +8,6 @@ import {
 import Page from 'src/components/Page';
 import CustomerTable from './CustomerTable';
 import Toolbar from './Toolbar';
-// import { useQuery } from 'urql';
-// import { CustomersProps } from './Types';
-// import { SEARCH_CUSTOMER_QUERY } from './Graphql';
 import { useSearchCustomersQuery } from 'src/generated/graphql'
 
 const useStyles = makeStyles((theme: any) => ({
@@ -29,11 +26,6 @@ const CustomerListView = () => {
   const [result, _reexecuteQuery1] = useSearchCustomersQuery({
     variables: { search }
   })
-  // const [result, _reexecuteQuery] = useQuery<CustomersProps>({
-  //   query: SearchDocument,
-  //   variables: { search },
-  // });
-
   const { data, error, fetching } = result;
 
   if (error) return <p>Oh no... {error.message}</p>;

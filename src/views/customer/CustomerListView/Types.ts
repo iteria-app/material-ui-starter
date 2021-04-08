@@ -16,33 +16,18 @@ export interface ResultProps {
 
 export interface TableRowProps {
   limit: number;
-  customers: Customer[]
+  customers: Customer[];
   selectedCustomerIds: any[];
   handleSelectOne: (event: any, id: any) => void;
 }
 
 export interface ToolbarProps {
-  className?: string
+  className?: string;
   searchCustomer: string;
   searchCustomerChange: (event: any) => void;
 }
 
 export interface UpdateProps {
-  customer: customer;
-  handleClose: () => void
+  customer: Customer;
+  handleClose: () => void;
 }
-
-type customer = {
-  id: string;
-  name: string;
-  email: string;
-  phone: string;
-  avatarUrl: string;
-  address: { 
-    city: string, 
-    state: string, 
-    country: string
-  };
-  createdAt: string;
-  updatedAt: string;
-};
