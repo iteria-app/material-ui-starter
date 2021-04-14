@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import {
   Box,
@@ -12,6 +11,7 @@ import {
   makeStyles
 } from '@material-ui/core';
 import { Search as SearchIcon } from 'react-feather';
+import { ToolbarProps } from './Types'
 
 const useStyles = makeStyles(theme => ({
   root: {},
@@ -23,7 +23,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const Toolbar: React.FC<any> = ({ className, ...rest }) => {
+const Toolbar: React.FC<ToolbarProps> = ({ className, searchCustomer, searchCustomerChange, ...rest }) => {
   const classes = useStyles();
 
   return (
@@ -41,6 +41,8 @@ const Toolbar: React.FC<any> = ({ className, ...rest }) => {
             <Box maxWidth={500}>
               <TextField
                 fullWidth
+                value={searchCustomer}
+                onChange={searchCustomerChange}
                 InputProps={{
                   startAdornment: (
                     <InputAdornment position="start">
@@ -59,10 +61,6 @@ const Toolbar: React.FC<any> = ({ className, ...rest }) => {
       </Box>
     </div>
   );
-};
-
-Toolbar.propTypes = {
-  className: PropTypes.string
 };
 
 export default Toolbar;
