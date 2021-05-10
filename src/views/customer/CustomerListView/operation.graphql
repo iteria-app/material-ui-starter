@@ -25,3 +25,16 @@ query searchCustomers($search: String!) {
     updatedAt
   }
 }
+
+query AllCustomers {
+  customers(order_by: { name: asc }) {
+    updatedAt
+    phone
+    name
+    id
+    email
+    createdAt
+    avatarUrl
+    address
+  }
+}

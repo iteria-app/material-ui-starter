@@ -1,12 +1,12 @@
-import data from '../customer/CustomerListView/data'
-import React, { useState } from 'react';
 import GeneratedTable from './GeneratedCustomersTable'
+import { useAllCustomersQuery } from 'src/generated/graphql';
 
 const CustomerListView = () => {
-    const [customers] = useState(data);
-  
-    return (
-     <GeneratedTable customers={customers} />
-    );
-  };
+  const [result] = useAllCustomersQuery({})
+  const { data, error, fetching } = result;
+
+  return (
+    <GeneratedTable customers={fetching ? {} : data.customers} />
+  );
+};
 export default CustomerListView
