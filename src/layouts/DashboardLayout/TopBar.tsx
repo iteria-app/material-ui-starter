@@ -11,13 +11,25 @@ import {
   Toolbar,
   makeStyles
 } from '@material-ui/core';
-import MenuIcon from '@material-ui/icons/Menu';
-import NotificationsIcon from '@material-ui/icons/NotificationsOutlined';
+import FormControl from "@material-ui/core/FormControl";
 import InputIcon from '@material-ui/icons/Input';
+import InputLabel from "@material-ui/core/InputLabel";
+import MenuIcon from '@material-ui/icons/Menu';
+import MenuItem from "@material-ui/core/MenuItem";
+import NotificationsIcon from '@material-ui/icons/NotificationsOutlined';
+import Select from "@material-ui/core/Select";
 import Logo from 'src/components/Logo';
 
 const useStyles = makeStyles(() => ({
   root: {},
+  formControl: {
+    "& .MuiInputBase-root, & .MuiSvgIcon-root": {
+      color: '#fff'
+    },
+    "& .MuiOutlinedInput-notchedOutline": {
+      border: 'none'
+    }
+  },
   avatar: {
     width: 60,
     height: 60
@@ -30,6 +42,14 @@ const TopBar = ({
   ...rest
 }) => {
   const classes = useStyles();
+  // TODO get value of locale. Now fixed locale.
+  const [locale, setLocale] = React.useState<string>('en');
+  // TODO get array of all languages data. Now fixed datas
+  const localeDatas: string[] = ['en', 'sk'];
+  // TODO send changed locale to  main index.tsx or App.tsx.
+  const handleChangeLocale = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setLocale(event.target.value);
+  };
 
   return (
     <AppBar
@@ -42,6 +62,19 @@ const TopBar = ({
           <Logo />
         </RouterLink>
         <Box flexGrow={1} />
+        <FormControl variant="outlined" className={classes.formControl}>
+          <InputLabel id="select-label">
+          </InputLabel>
+          <Select
+            labelId="select-label"
+            value={locale}
+            onChange={handleChangeLocale}
+          >
+            {localeDatas.map((item, index) => (
+              <MenuItem key={index} value={item}>{item}</MenuItem>
+            ))}
+          </Select>
+        </FormControl>
         <Hidden mdDown>
           <IconButton color="inherit">
             <Badge
