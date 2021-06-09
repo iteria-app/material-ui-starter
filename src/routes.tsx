@@ -11,6 +11,7 @@ import ProductListView from 'src/views/product/ProductListView';
 import RegisterView from 'src/views/auth/RegisterView';
 import SettingsView from 'src/views/settings/SettingsView';
 import GeneratedCustomers from './views/test/GeneratedCustomers';
+import CustomerDetailView from './views/test/DetailPage';
 
 const routes = [
   {
@@ -22,6 +23,7 @@ const routes = [
       { path: 'dashboard', element: <DashboardView /> },
       { path: 'products', element: <ProductListView /> },
       { path: 'generated-customers', element: <GeneratedCustomers /> },
+      { path: 'generated-customer-detail', element: <CustomerDetailView /> },
       { path: 'settings', element: <SettingsView /> },
       { path: '*', element: <Navigate to="/404" /> }
     ]
