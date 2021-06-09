@@ -1,9 +1,10 @@
+import React from 'react'
 import data from '../customer/CustomerListView/data';
-import { FormikComponent } from './DetailPageCodegen';
-import { Customer } from './Customer';
+import { GeneratedCustomerDetail } from './GeneratedCustomerDetail';
+import { ICustomer } from './types';
 
 const CustomerDetailView = () => {
-  const customer: Customer = {
+  const customer: ICustomer = {
     avatarUrl: data[0].avatarUrl,
     name: data[0].name,
     createdAt: data[0].createdAt, //new Date(data[0].createdAt).toISOString().split('T')[0],
@@ -13,6 +14,6 @@ const CustomerDetailView = () => {
     test2: 258
   };
   console.log(customer);
-  return <FormikComponent {...customer} />;
+  return <GeneratedCustomerDetail {...customer} />;
 };
 export default CustomerDetailView;
