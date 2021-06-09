@@ -71,7 +71,7 @@ const TopBar = ({
             onChange={handleChangeLocale}
           >
             {localeDatas.map(locale => (
-              <MenuItem key={locale} value={locale}>{locale.toLocaleUpperCase()}</MenuItem>
+              <MenuItem key={locale} value={locale}>{locale.toUpperCase()}</MenuItem>
             ))}
           </Select>
         </FormControl>
