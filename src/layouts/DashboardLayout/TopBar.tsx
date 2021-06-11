@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
+import { IntlContext } from 'src/components/IntlContext';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import {
@@ -42,26 +43,15 @@ const TopBar = ({
   ...rest
 }) => {
   const classes = useStyles();
-  // TODO get value of locale. Now fixed locale.
-  const [locale, setLocale] = React.useState<string>('en');
-  // TODO get array of all languages data. Now fixed datas
-  const localeDatas: string[] = ['en', 'sk'];
-  // TODO send changed locale to  main index.tsx or App.tsx.
+  const { locale, localeDatas, switchToLanguage } = useContext(IntlContext);
+
   const handleChangeLocale = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setLocale(event.target.value);
+    switchToLanguage(event.target.value);
   };
 
-  return (
-    <AppBar
-      className={clsx(classes.root, className)}
-      elevation={0}
-      {...rest}
-    >
-      <Toolbar>
-        <RouterLink to="/">
-          <Logo />
-        </RouterLink>
-        <Box flexGrow={1} />
+  const LanguageSwitch = () => {
+    return (
+      <>
         <FormControl variant="outlined" className={classes.formControl}>
           <InputLabel id="select-label">
           </InputLabel>
@@ -75,6 +65,21 @@ const TopBar = ({
             ))}
           </Select>
         </FormControl>
+      </>
+    );
+  };
+
+  return (
+    <AppBar
+      className={clsx(classes.root, className)}
+      elevation={0}
+      {...rest}
+    >
+      <Toolbar>
+        <RouterLink to="/">
+          <Logo />
+        </RouterLink>
+        <Box flexGrow={1} />
         <Hidden mdDown>
           <IconButton color="inherit">
             <Badge
@@ -97,6 +102,7 @@ const TopBar = ({
             <MenuIcon />
           </IconButton>
         </Hidden>
+        <LanguageSwitch />
       </Toolbar>
     </AppBar>
   );
