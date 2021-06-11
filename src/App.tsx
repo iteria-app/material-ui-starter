@@ -8,7 +8,6 @@ import theme from 'src/theme';
 import routes from 'src/routes';
 
 const App = () => {
-  //test
   const routing = useRoutes(routes);
   return (
     <IntlConsumer>
