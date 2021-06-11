@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
-import { IntlContext } from 'src/components/IntlContext';
+import { IntlContext } from 'src/translations/IntlContext';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import {
