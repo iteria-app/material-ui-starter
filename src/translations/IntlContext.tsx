@@ -17,32 +17,33 @@ const IntlConsumer = (props) => {
   };
 
   const switchToLanguage = (lang) => {
-    setLocaleMessage({ ...localeMessage, locale: lang, messages: loadLocaleData(lang) })
+    setLanguageData({ ...languageData, locale: lang, messages: loadLocaleData(lang) })
   }
 
-  interface localeMessageInterface {
+  interface languageDataInterface {
     locale: string,
     messages,
-    localeDatas: string[],
+    localeKeys: string[],
     switchToLanguage,
   }
 
-  const localeNavigatorLang = navigator.language.slice(0,2);
+  const localeNavigatorLang = navigator.language.slice(0,2)
+  const localeKeys = ['en', 'sk']
 
-  const [localeMessage, setLocaleMessage] = useState<localeMessageInterface>({
+  const [languageData, setLanguageData] = useState<languageDataInterface>({
     locale: localeNavigatorLang,
     messages: loadLocaleData(localeNavigatorLang),
-    localeDatas: ['en', 'sk'],
+    localeKeys: localeKeys,
     switchToLanguage: switchToLanguage
   });
 
-  const { children } = props;
+  const { children } = props
   return (
-    <Context.Provider value={localeMessage}>
+    <Context.Provider value={languageData}>
       <IntlProvider
-        key={localeMessage.locale}
-        locale={localeMessage.locale}
-        messages={localeMessage.messages}
+        key={languageData.locale}
+        locale={languageData.locale}
+        messages={languageData.messages}
         defaultLocale="en"
       >
         {children}
@@ -51,4 +52,4 @@ const IntlConsumer = (props) => {
   )
 }
 
-export { IntlConsumer, Context as IntlContext }
+export { IntlConsumer as IntlProvider, Context as IntlContext }

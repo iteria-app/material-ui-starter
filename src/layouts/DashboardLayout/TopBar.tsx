@@ -43,7 +43,7 @@ const TopBar = ({
   ...rest
 }) => {
   const classes = useStyles();
-  const { locale, localeDatas, switchToLanguage } = useContext(IntlContext);
+  const { locale, localeKeys, switchToLanguage } = useContext(IntlContext);
 
   const handleChangeLocale = (event: React.ChangeEvent<HTMLSelectElement>) => {
     switchToLanguage(event.target.value);
@@ -60,7 +60,7 @@ const TopBar = ({
             value={locale}
             onChange={handleChangeLocale}
           >
-            {localeDatas.map(locale => (
+            {localeKeys.map(locale => (
               <MenuItem key={locale} value={locale}>{locale.toUpperCase()}</MenuItem>
             ))}
           </Select>
