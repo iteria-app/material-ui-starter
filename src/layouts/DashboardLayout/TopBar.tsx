@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import clsx from 'clsx';
+import { ThemeContext } from 'src/theme/themeContext';
 import PropTypes from 'prop-types';
 import {
   AppBar,
@@ -12,12 +13,27 @@ import {
   makeStyles
 } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
+import NightsStayIcon from '@material-ui/icons/NightsStay'
+import ToggleButton from '@material-ui/lab/ToggleButton';
 import NotificationsIcon from '@material-ui/icons/NotificationsOutlined';
 import InputIcon from '@material-ui/icons/Input';
 import Logo from 'src/components/Logo';
 
 const useStyles = makeStyles(() => ({
   root: {},
+  buttonToggle: {
+    "&.MuiToggleButton-root": {
+      border: 'none',
+      color: '#fff',
+      "&:hover": {
+        background: 'none'
+      }
+    },
+    "&.Mui-selected": {
+      background: 'none',
+      color: '#3949ab'
+    }
+  },
   avatar: {
     width: 60,
     height: 60
@@ -30,7 +46,12 @@ const TopBar = ({
   ...rest
 }) => {
   const classes = useStyles();
-
+  const {darken, switchTheme } = useContext(ThemeContext)
+  const [selected, setSelected] = React.useState(darken ? true : false)
+  const handleChangeTheme = () => {
+    setSelected(!selected)
+    !selected ? switchTheme(true) : switchTheme(false)
+  }
   return (
     <AppBar
       className={clsx(classes.root, className)}
@@ -42,6 +63,15 @@ const TopBar = ({
           <Logo />
         </RouterLink>
         <Box flexGrow={1} />
+        <ToggleButton
+          className={classes.buttonToggle}
+          value="check"
+          selected={selected}
+          onChange={handleChangeTheme}
+          disableRipple
+        >
+          <NightsStayIcon />
+        </ToggleButton>
         <Hidden mdDown>
           <IconButton color="inherit">
             <Badge
