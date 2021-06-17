@@ -24,14 +24,14 @@ const useStyles = makeStyles(() => ({
   buttonToggle: {
     "&.MuiToggleButton-root": {
       border: 'none',
-      color: '#fff',
+      color: '#FFF',
       "&:hover": {
         background: 'none'
       }
     },
     "&.Mui-selected": {
       background: 'none',
-      color: '#3949ab'
+      color: '#3949AB'
     }
   },
   avatar: {
