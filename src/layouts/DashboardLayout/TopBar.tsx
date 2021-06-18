@@ -1,6 +1,5 @@
-import React, { useContext } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
-import { IntlContext } from 'src/translations/IntlContext';
+import { useIntlContext } from 'src/translations/IntlContext';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import {
@@ -42,11 +41,11 @@ const TopBar = ({
   onMobileNavOpen,
   ...rest
 }) => {
-  const classes = useStyles();
-  const { locale, localeKeys, switchToLanguage } = useContext(IntlContext);
+  const classes = useStyles()
+  const { locale, localeKeys, switchToLanguage } = useIntlContext()
 
   const handleChangeLocale = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    switchToLanguage(event.target.value);
+    switchToLanguage(event.target.value)
   };
 
   const LanguageSwitch = () => {

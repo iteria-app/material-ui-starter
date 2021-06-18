@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { IntlProvider } from "react-intl";
 import sk from '../compiled-lang/sk';
 import en from '../compiled-lang/en';
@@ -20,7 +20,7 @@ const IntlConsumer = (props) => {
     setLanguageData({ ...languageData, locale: lang, messages: loadLocaleData(lang) })
   }
 
-  interface languageDataInterface {
+  interface LanguageData {
     locale: string,
     messages,
     localeKeys: string[],
@@ -30,7 +30,7 @@ const IntlConsumer = (props) => {
   const localeNavigatorLang = navigator.language.slice(0,2)
   const localeKeys = ['en', 'sk']
 
-  const [languageData, setLanguageData] = useState<languageDataInterface>({
+  const [languageData, setLanguageData] = useState<LanguageData>({
     locale: localeNavigatorLang,
     messages: loadLocaleData(localeNavigatorLang),
     localeKeys: localeKeys,
@@ -52,4 +52,6 @@ const IntlConsumer = (props) => {
   )
 }
 
-export { IntlConsumer as IntlProvider, Context as IntlContext }
+const useIntlContext = () => useContext(Context)
+
+export { IntlConsumer as IntlProvider, useIntlContext }
