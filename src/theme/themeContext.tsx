@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useContext} from 'react';
 import { ThemeProvider } from '@material-ui/core';
 import themeLight from 'src/theme/theme-light';
 import themeDark from 'src/theme/theme-dark';
@@ -12,13 +13,13 @@ const ThemeConsumer = (props) => {
     setThemeData({ ...themeData, theme: theme, darken: isDarken })
   }
 
-  interface themeDataInterface {
+  interface ThemeData {
     theme,
     darken: boolean,
     switchTheme,
   }
 
-  const [themeData, setThemeData] = useState<themeDataInterface>({
+  const [themeData, setThemeData] = useState<ThemeData>({
     theme: themeLight,
     darken: false,
     switchTheme: switchTheme
@@ -34,4 +35,6 @@ const ThemeConsumer = (props) => {
   )
 }
 
-export { ThemeConsumer as ThemeProvider, Context as ThemeContext }
+const useThemeContext = () => useContext(Context)
+
+export { ThemeConsumer as ThemeProvider, useThemeContext }

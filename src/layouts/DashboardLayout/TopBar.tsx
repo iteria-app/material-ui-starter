@@ -1,7 +1,7 @@
-import React, { useContext } from 'react';
+import { useState } from 'react';
+import { useThemeContext } from 'src/theme/themeContext';
 import { Link as RouterLink } from 'react-router-dom';
 import clsx from 'clsx';
-import { ThemeContext } from 'src/theme/themeContext';
 import PropTypes from 'prop-types';
 import {
   AppBar,
@@ -45,9 +45,9 @@ const TopBar = ({
   onMobileNavOpen,
   ...rest
 }) => {
-  const classes = useStyles();
-  const {darken, switchTheme } = useContext(ThemeContext)
-  const [selected, setSelected] = React.useState(darken ? true : false)
+  const classes = useStyles()
+  const {darken, switchTheme } = useThemeContext()
+  const [selected, setSelected] = useState(darken ? true : false)
   const handleChangeTheme = () => {
     setSelected(!selected)
     !selected ? switchTheme(true) : switchTheme(false)
