@@ -1,9 +1,11 @@
 import React from 'react'
 import { useIntl, FormattedMessage } from "react-intl";
 import { GridColParams, DataGrid } from "@material-ui/data-grid";
-
+import { useNavigate } from 'react-router-dom'
 
 export default function CustomerTable({ customers }) {
+    let navigate = useNavigate();
+
     const intl = useIntl();
     const columns = [
         { field: "avatarUrl", flex: 1, type: "string", valueFormatter: ({ value }) => value, renderHeader: (params: GridColParams) => (<FormattedMessage id="Customer" defaultMessage="avatarUrl" />) },
@@ -12,5 +14,5 @@ export default function CustomerTable({ customers }) {
         { field: "id", flex: 1, type: "string", valueFormatter: ({ value }) => value, renderHeader: (params: GridColParams) => (<FormattedMessage id="Customer" defaultMessage="id" />) },
         { field: "name", flex: 1, type: "string", valueFormatter: ({ value }) => value, renderHeader: (params: GridColParams) => (<FormattedMessage id="Customer" defaultMessage="name" />) },
     ];
-    return (<div style={{ height: "400px", width: "100%" }}><DataGrid onRowClick={() => window.location.href = 'generated-customer-detail'} columns={columns} rows={customers} /></div>);
+    return (<div style={{ height: "400px", width: "100%" }}><DataGrid onRowClick={() => navigate('/app/generated-customer-detail', { replace: true })} columns={columns} rows={customers} /></div>);
 }
