@@ -1,10 +1,10 @@
 import React from 'react'
 import data from '../customer/CustomerListView/data';
 import { GeneratedCustomerDetail } from './GeneratedCustomerDetail';
-import { ICustomer } from './types';
+import { CustomerProps } from './types';
 
 const CustomerDetailView = () => {
-  const customer: ICustomer = {
+  const customer: CustomerProps = {
     avatarUrl: data[0].avatarUrl,
     name: data[0].name,
     createdAt: data[0].createdAt, //new Date(data[0].createdAt).toISOString().split('T')[0],
