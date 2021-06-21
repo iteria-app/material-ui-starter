@@ -31,7 +31,13 @@ const UpdateCustomer: React.FC<UpdateProps> = ({ customer, handleClose }) => {
   const [newEmail, setNewEmail] = React.useState<string>(null);
   const [newPhoneNumber, setNewPhoneNumber] = React.useState<string>(null);
   const [state, executeMutation] = useUpdateCustomerMutation();
-
+  const updateCustomerItems = [
+    executeMutation,
+    customer?.id,
+    newName ? newName : customer?.name,
+    newEmail ? newEmail : customer?.email,
+    newPhoneNumber ? newPhoneNumber : customer?.phone,
+  ]
   const submit = React.useCallback(() => {
     executeMutation({
       "id": customer?.id,
@@ -40,13 +46,7 @@ const UpdateCustomer: React.FC<UpdateProps> = ({ customer, handleClose }) => {
       "phone": newPhoneNumber ? newPhoneNumber : customer?.phone,
     })
     handleClose();
-  }, [
-    executeMutation,
-    customer?.id,
-    newName ? newName : customer?.name,
-    newEmail ? newEmail : customer?.email,
-    newPhoneNumber ? newPhoneNumber : customer?.phone,
-  ])
+  }, [updateCustomerItems])
 
   return (
     <Box maxWidth={500} maxHeight={400} className={classes.box}>

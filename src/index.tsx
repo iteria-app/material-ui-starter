@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
 import App from './App';
-import sk from './compiled-lang/sk';
-import en from './compiled-lang/en';
+import sk from './compiled-lang/sk.json';
+import en from './compiled-lang/en.json';
 import {
   createClient,
   Provider,

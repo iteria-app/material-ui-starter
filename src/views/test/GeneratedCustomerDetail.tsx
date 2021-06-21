@@ -4,14 +4,14 @@ import {
   TextField,
   Avatar,
   Card,
-  CardHeader,
   CardContent,
   Grid
 } from '@material-ui/core';
 import { useFormik } from 'formik';
-import { ICustomer } from './types';
-export var GeneratedCustomerDetail: React.FC<ICustomer> = customer => {
+import { CustomerProps } from './types';
+export var GeneratedCustomerDetail: React.FC<CustomerProps> = customer => {
   const intl = useIntl();
+
   const formik = useFormik({
     initialValues: {
       avatarUrl: customer.avatarUrl,
