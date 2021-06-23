@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import { useUpdateCustomerMutation } from 'src/generated/graphql'
@@ -8,23 +8,22 @@ import {
   TextField,
 } from '@material-ui/core';
 import { UpdateProps } from './Types'
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    typography: {
-      padding: theme.spacing(2),
-      textAlign: 'center',
-    },
-    box: {
-      margin: theme.spacing(2),
-    },
-    textfield: {
-      marginTop: theme.spacing(2),
-    },
-    button: {
-      margin: theme.spacing(1),
-    }
-  }),
-);
+
+const useStyles = makeStyles((theme: any) => ({
+  typography: {
+    padding: theme.spacing(2),
+    textAlign: 'center',
+  },
+  box: {
+    margin: theme.spacing(2),
+  },
+  textfield: {
+    marginTop: theme.spacing(2),
+  },
+  button: {
+    margin: theme.spacing(1),
+  }
+}));
 
 const UpdateCustomer: React.FC<UpdateProps> = ({ customer, handleClose }) => {
   const classes = useStyles();
@@ -80,4 +79,3 @@ const UpdateCustomer: React.FC<UpdateProps> = ({ customer, handleClose }) => {
   );
 }
 export default UpdateCustomer;
-

@@ -1,4 +1,4 @@
-export interface Customer {
+export interface CustomerProps {
     avatarUrl: string;
     createdAt: number;
     email: string;
