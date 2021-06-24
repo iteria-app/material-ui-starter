@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import {
   Box,
   Container,
@@ -23,7 +23,7 @@ const CustomerListView = () => {
   const classes = useStyles();
   const [searchCustomer, setSearchCustomer] = useState("");
   const search = "%" + searchCustomer + "%";
-  const [result, _reexecuteQuery1] = useSearchCustomersQuery({
+  const [result] = useSearchCustomersQuery({
     variables: { search }
   })
   const { data, error, fetching } = result;

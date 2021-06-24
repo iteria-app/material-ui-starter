@@ -4,13 +4,12 @@ import {
   TextField,
   Avatar,
   Card,
-  CardHeader,
   CardContent,
   Grid
 } from '@material-ui/core';
 import { useFormik } from 'formik';
-import { Customer } from './Customer';
-export var FormikComponent: React.FC<Customer> = customer => {
+import { CustomerProps } from './types';
+export var GeneratedCustomerDetail: React.FC<CustomerProps> = customer => {
   const intl = useIntl();
   const formik = useFormik({
     initialValues: {
@@ -22,7 +21,7 @@ export var FormikComponent: React.FC<Customer> = customer => {
       updatedAt: customer.updatedAt,
       test2: customer.test2
     },
-    onSubmit: values => {}
+    onSubmit: values => { }
   });
   {
     const intl = useIntl();

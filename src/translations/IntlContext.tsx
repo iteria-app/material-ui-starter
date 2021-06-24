@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { IntlProvider } from "react-intl";
-import sk from '../compiled-lang/sk';
-import en from '../compiled-lang/en';
+import sk from '../compiled-lang/sk.json';
+import en from '../compiled-lang/en.json';
 
 const Context = React.createContext(null);
 
