@@ -1,40 +1,31 @@
 import React, { useState } from "react";
-import { useContext} from 'react';
+import { useContext } from 'react';
 import { ThemeProvider } from '@material-ui/core';
 import themeLight from 'src/theme/theme-light';
 import themeDark from 'src/theme/theme-dark';
 
-const Context = React.createContext(null);
+const ThemeContext = React.createContext({
+  theme: themeLight,
+  switchTheme: () => {},
+});
+ThemeContext.displayName = 'ThemeContext'
 
-const ThemeConsumer = (props) => {
-
-  const switchTheme = (isDarken: boolean) => {
-    let theme = isDarken ? themeDark : themeLight
-    setThemeData({ ...themeData, theme: theme, darken: isDarken })
-  }
-
-  interface ThemeData {
-    theme,
-    darken: boolean,
-    switchTheme,
-  }
-
-  const [themeData, setThemeData] = useState<ThemeData>({
-    theme: themeLight,
-    darken: false,
-    switchTheme: switchTheme
-  });
+const ThemeProviderWrapper = (props) => {
+  const [theme, setTheme] = useState(themeLight);
+  const switchTheme = () => {
+    setTheme(theme === themeLight ? themeDark : themeLight);
+  };
 
   const { children } = props
   return (
-    <Context.Provider value={themeData}>
-      <ThemeProvider theme={themeData.theme}>
+    <ThemeContext.Provider value={{ theme, switchTheme }}>
+      <ThemeProvider theme={theme}>
         {children}
       </ThemeProvider>
-    </Context.Provider>
-  )
-}
+    </ThemeContext.Provider>
+  );
+};
 
-const useThemeContext = () => useContext(Context)
+const useThemeContext = () => useContext(ThemeContext)
 
-export { ThemeConsumer as ThemeProvider, useThemeContext }
+export { ThemeProviderWrapper as ThemeProvider, useThemeContext }
