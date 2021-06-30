@@ -6,18 +6,18 @@ import FormControl from "@material-ui/core/FormControl";
 import { useIntlContext } from 'src/translations/IntlContext';
 
 const LanguageSwitch = () => {
-  const { locale, localeKeys, switchToLanguage } = useIntlContext()
+  const { locale, localeKeys, switchToLocale } = useIntlContext()
 
   const handleChangeLocale = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    switchToLanguage(event.target.value)
+    switchToLocale(event.target.value)
   };
   return (
     <>
       <FormControl variant="outlined">
-        <InputLabel id="select-language">
+        <InputLabel id="select-locale">
         </InputLabel>
         <Select
-          labelId="select-language"
+          labelId="select-locale"
           value={locale}
           onChange={handleChangeLocale}
         >

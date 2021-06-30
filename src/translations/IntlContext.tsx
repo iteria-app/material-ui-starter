@@ -3,9 +3,6 @@ import { IntlProvider } from "react-intl";
 import sk from '../compiled-lang/sk.json';
 import en from '../compiled-lang/en.json';
 
-const Context = React.createContext(null);
-
-//TODO waiting for what the array will look like
 const languageMessageData = [
   {
     "locale": "en",
@@ -17,72 +14,66 @@ const languageMessageData = [
   }
 ]
 
-//TODO I'm waiting for what the array will look like. Then refactoring the code
 const loadLocaleData = (locale) => {
-  for (let i = 0; i < languageMessageData.length; i++){
-    if(languageMessageData[i].locale === locale){
-      return languageMessageData[i].message
-    }
-  } 
-  return en
+  const messageBySelectLocale = languageMessageData.filter((key) => key.locale === locale)
+  if (messageBySelectLocale?.length > 0) {
+    return messageBySelectLocale[0]?.message
+  }
+  return languageMessageData[0]?.message ?? en
 };
 
-const localeNavigatorLang = navigator.language.slice(0, 2)
+const localeNavigator = navigator?.language?.slice(0, 2) ?? languageMessageData[0]?.locale ?? 'en'
 
-//TODO if we dont have local language from localeNavigatorLang
-//I'm waiting for what the array will look like. Then refactoring the code
-const langFromNavigator = () => {
-  for (let i = 0; i < languageMessageData.length; i++){
-    if(languageMessageData[i].locale === localeNavigatorLang){
-      return languageMessageData[i].locale
-    }
+const localeFromNavigator = () => {
+  const localeByLocaleNavigator = languageMessageData.filter((locale) => locale.locale === localeNavigator)
+  if (localeByLocaleNavigator?.length > 0) {
+    return localeByLocaleNavigator[0]?.locale
   }
-  return 'en' 
+  return languageMessageData[0]?.locale ?? 'en'
 }
 
-//TODO I'm waiting for what the array will look like. Then refactoring the code
-const localeKeysFromLanguageData = () => {
-  let localeKeys = []
-  for (let i = 0; i < languageMessageData.length; i++){
-    localeKeys = [...localeKeys, languageMessageData[i].locale]
-  }
-  return localeKeys
-}
+const localeKeys = languageMessageData.map((key) => key.locale)
+
+const LocaleContext = React.createContext({
+  locale: localeFromNavigator(),
+  localeKeys:  localeKeys,
+  switchToLocale: (locale) => {},
+})
+LocaleContext.displayName = 'LocaleContext'
 
 const IntlProviderWrapper = (props) => {
 
-  const switchToLanguage = (lang) => {
-    setLanguageData({ ...languageData, locale: lang, messages: loadLocaleData(lang) })
+  const switchToLocale = (locale) => {
+    setLanguageData({ ...languageData, locale: locale, messages: loadLocaleData(locale) })
   }
 
   interface LanguageData {
     locale: string,
     messages,
     localeKeys: string[],
-    switchToLanguage,
+    switchToLocale,
   }
 
   const [languageData, setLanguageData] = useState<LanguageData>({
-    locale: langFromNavigator(),
-    messages: loadLocaleData(localeNavigatorLang),
-    localeKeys: localeKeysFromLanguageData(),
-    switchToLanguage: switchToLanguage
+    locale: localeFromNavigator(),
+    messages: loadLocaleData(localeNavigator),
+    localeKeys: localeKeys,
+    switchToLocale: switchToLocale
   });
 
   const { children } = props
   return (
-    <Context.Provider value={languageData}>
+    <LocaleContext.Provider value={languageData}>
       <IntlProvider
-        key={languageData.locale}
         locale={languageData.locale}
         messages={languageData.messages}
       >
         {children}
       </IntlProvider>
-    </Context.Provider>
+    </LocaleContext.Provider>
   )
 }
 
-const useIntlContext = () => useContext(Context)
+const useIntlContext = () => useContext(LocaleContext)
 
 export { IntlProviderWrapper as IntlProvider, useIntlContext }
