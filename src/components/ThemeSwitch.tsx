@@ -28,8 +28,7 @@ const ThemeSwitch = () => {
     switchTheme()
   }
 
-  const isThemeLight: boolean = (theme === themeLight) ? true : false
-  const tooltipTheme: string = isThemeLight ? 'dark' : 'light'
+  const tooltipTheme: string = (theme === themeLight) ? 'dark' : 'light'
 
   return (
     <>
@@ -37,10 +36,10 @@ const ThemeSwitch = () => {
         <ToggleButton
           className={classes.buttonToggleTheme}
           value="check"
-          selected={isThemeLight ? false : true}
+          selected={theme === themeLight ? false : true}
           onChange={handleSwitchTheme}
         >
-          {isThemeLight ? <NightIcon /> : <DayIcon />}
+          {theme === themeLight ? <NightIcon /> : <DayIcon />}
         </ToggleButton>
       </Tooltip>
     </>
