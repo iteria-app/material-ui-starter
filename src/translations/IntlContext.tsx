@@ -6,20 +6,20 @@ import en from '../compiled-lang/en.json';
 const languageMessageData = [
   {
     "locale": "en",
-    "message": en
+    "messages": en
   },
   {
     "locale": "sk",
-    "message": sk
+    "messages": sk
   }
 ]
 
 const loadLocaleData = (locale) => {
   const messageBySelectLocale = languageMessageData.filter((key) => key.locale === locale)
   if (messageBySelectLocale?.length > 0) {
-    return messageBySelectLocale[0]?.message
+    return messageBySelectLocale[0]?.messages
   }
-  return languageMessageData[0]?.message ?? en
+  return languageMessageData[0]?.messages ?? en
 };
 
 const localeNavigator = navigator?.language?.slice(0, 2) ?? languageMessageData[0]?.locale ?? 'en'
