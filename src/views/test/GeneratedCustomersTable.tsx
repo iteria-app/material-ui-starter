@@ -4,7 +4,7 @@ import { GridColParams, DataGrid } from "@material-ui/data-grid";
 import { useNavigate } from 'react-router-dom'
 import { sortCustomers, unsortCustomers} from './OperationsCustomers'
 
-export default function CustomerTable({ customers, onOrderCustomer, onPageChangeCustomer, limit, limitCustomer, onFilterCustomer, totalCustomer }) {
+export default function CustomerTable({ customers, onOrderCustomer, onPageChangeCustomer, page, limit, limitCustomer, onFilterCustomer, totalCustomer }) {
     let navigate = useNavigate();
     
     const handleSortCustomers = (sort) => {
@@ -20,7 +20,7 @@ export default function CustomerTable({ customers, onOrderCustomer, onPageChange
 
     const handlePage = (page) => {
         console.log(page.page, 'page.page')
-        onPageChangeCustomer(page.page + 1)
+        onPageChangeCustomer(page?.page + 1)
     };
 
     const handlePageSize = (pageSize) => {
@@ -30,51 +30,57 @@ export default function CustomerTable({ customers, onOrderCustomer, onPageChange
 
     const handleFilter = React.useCallback((filter) => {
         // const filterValue = filter?.filterModel?.items[0]?.value
-        filterValue(filter)
-
         console.log(filter,'filter'); 
         
-        const filterArr1 = filter?.filterModel?.items
+        // const filterArr1 = filter?.filterModel?.items
         interface filterArr {
             filterCategory?: {}
         } 
-        const arrTest: filterArr  = {}
+        const filteredArrForGraphQl: filterArr  = {}
 
-        for (let i = 0; i < filterArr1.length; i++)   {
-            const filterCategory = filterArr1[i].columnField
-            const filterOperator = filterArr1[i].operatorValue
-            const filterValue = filterArr1[i].value
+        for (let i = 0; i < filteredArrayFromUi(filter).length; i++)   {
+            const filterCategory = filteredArrayFromUi(filter)[i].columnField
+            const filterOperator = filteredArrayFromUi(filter)[i].operatorValue
+            const filterValue = filteredArrayFromUi(filter)[i].value
 
             if(filterOperator === 'contains'){
-                arrTest[filterCategory] = {_ilike: "%" + filterValue + "%"}
+                filteredArrForGraphQl[filterCategory] = {_ilike: "%" + filterValue + "%"}
             }else if(filterOperator === 'endsWith'){
-                arrTest[filterCategory] = {_ilike: "%" + filterValue}
+                filteredArrForGraphQl[filterCategory] = {_ilike: "%" + filterValue}
             }
             else if(filterOperator === 'startsWith'){
-                arrTest[filterCategory] = {_ilike: filterValue + "%"}
+                filteredArrForGraphQl[filterCategory] = {_ilike: filterValue + "%"}
             }
             else if(filterOperator === 'equals'){
-                arrTest[filterCategory] = {_eq: filterValue}
+                filteredArrForGraphQl[filterCategory] = {_eq: filterValue}
             }
     
-            console.log(arrTest,'arrTest'); 
+            console.log(filteredArrForGraphQl,'filteredArrForGraphQl'); 
         }
 
-        if (filterValue(filter)) {
-            onFilterCustomer(arrTest);
-            console.log(filterValue(filter), 'filterValue');
+        if (filteredValueFromUi(filter)) {
+            onFilterCustomer(filteredArrForGraphQl);
+            onPageChangeCustomer(1)
+            console.log(filteredValueFromUi(filter), 'filterValue');
         } else {
             onFilterCustomer({
                 name: {
                     _ilike: "%%"
                 }
               })
+            onPageChangeCustomer(1)
         }
     }, [onFilterCustomer]);
 
-    const filterValue = (filter) => {
+    const filteredValueFromUi = (filter) => {
         return filter?.filterModel?.items[0]?.value
     }
+
+    const filteredArrayFromUi = (filter) => {
+        return filter?.filterModel?.items
+    }
+
+    console.log(page,'page'); 
 
     const intl = useIntl();
     const columns = [
@@ -92,6 +98,8 @@ export default function CustomerTable({ customers, onOrderCustomer, onPageChange
         onPageSizeChange={handlePageSize}
         pageSize={limit}
         rowsPerPageOptions={[2,4,6]}
+        page={page - 1}
+        // autoPageSize={true}
         rowCount={totalCustomer}
         filterMode="server"
         onFilterModelChange={handleFilter}

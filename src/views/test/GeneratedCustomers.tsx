@@ -60,7 +60,7 @@ const GeneratedCustomers = () => {
   return (
     <GeneratedTable customers={fetching ? [] : data.customers}
       totalCustomer={totalCustomer}
-      onPageChangeCustomer={onPageChangeCustomer} limitCustomer={limitCustomer} onOrderCustomer={onOrderCustomer} onFilterCustomer={onFilterCustomer} limit={limit} />
+      onPageChangeCustomer={onPageChangeCustomer} page={page} limitCustomer={limitCustomer} onOrderCustomer={onOrderCustomer} onFilterCustomer={onFilterCustomer} limit={limit} />
   );
 };
 export default GeneratedCustomers
