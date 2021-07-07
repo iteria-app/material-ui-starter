@@ -1,18 +1,18 @@
 export const sortCustomers = (sort, onSortCustomers) => {
-    if (sort?.sortModel?.length > 0) {
+    if (sortModelFromDataGrid(sort) > 0) {
         setSortQuery(sort, onSortCustomers)
     } else {
         unsortCustomers(onSortCustomers)
     }
 }
 
-const setSortQuery = (params, onSortCustomers) => {
-    onSortCustomers(sortQueryFromGridData(params))
+const setSortQuery = (sort, onSortCustomers) => {
+    onSortCustomers(sortQueryFromGridData(sort))
 }
 
-const sortQueryFromGridData = (params) =>{
+const sortQueryFromGridData = (sort) =>{
     const sortQuery = {} 
-    const sortModel = params?.sortModel
+    const sortModel = sortModelFromDataGrid(sort)
     for (let i = 0; i < sortModel.length; i++) {
         const sortColumnFiled = sortModel[i]?.field
         const sortValue = sortModel[i]?.sort
@@ -25,6 +25,10 @@ const unsortCustomers = (onSortCustomers) => {
     onSortCustomers({
         "name": "asc"
     })
+}
+
+const sortModelFromDataGrid = (sort) =>{
+    return sort?.sortModel
 }
 
 //TODO date
