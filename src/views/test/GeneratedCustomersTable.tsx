@@ -36,8 +36,25 @@ export default function CustomerTable({ customers, onOrderCustomer, onPageChange
         interface filteredQuery {
             filterCategory?: {}
         }
-        const filteredQueryForGraphQl: filteredQuery = {}
 
+        const filteredQueryForGraphQl: filteredQuery = {}
+        getQueryFromDataGrid(filter, filteredQueryForGraphQl)
+        sendFilterQueryToGraphQl(filter, filteredQueryForGraphQl)
+        setCurrentPageToOne()
+
+    }, [onFilterCustomer]);
+
+    console.log(customers, 'customers1');
+
+    //TODO date
+    const customerListDate = customers.filter((date) => date.createdAt.includes("2021-03-17"))
+    // if (customerListDate?.length > 0) {
+    //   return customerListDate[0]?.createdAt
+    // }
+    console.log(customerListDate, 'customerListDate');
+
+
+    const getQueryFromDataGrid = (filter, filteredQueryForGraphQl) => {
         for (let i = 0; i < queryFromDataGrid(filter).length; i++) {
             const filterCategory = queryFromDataGrid(filter)[i].columnField
             const filterOperator = queryFromDataGrid(filter)[i].operatorValue
@@ -60,49 +77,35 @@ export default function CustomerTable({ customers, onOrderCustomer, onPageChange
 
             console.log(filteredQueryForGraphQl, 'filteredQueryForGraphQl');
         }
-
-        setCurrentPageToOne()
-        sendQueryFilterToGraphQl(filter, filteredQueryForGraphQl)
-        // if (filteredValueFromDataGrid(filter)) {
-        //     // onFilterCustomer(filteredQueryForGraphQl);
-        //     // setCurrentPageToOne()
-        //     setFilteredQueryToGraphQl(filteredQueryForGraphQl)
-        //     console.log(filteredValueFromDataGrid(filter), 'filterValue');
-        // } else {
-        //     setDefaultFilteredQueryToGraphQl()
-        // }
-    }, [onFilterCustomer]);
-
-    console.log(customers,'customers1'); 
-    
-    //TODO date
-    const customerListDate = customers.filter((date) => date.createdAt.includes("2021-03-17"))
-    // if (customerListDate?.length > 0) {
-    //   return customerListDate[0]?.createdAt
-    // }
-    console.log(customerListDate,'customerListDate'); 
-
-
-    const filteredValueFromDataGrid = (filter) => {
-        return filter?.filterModel?.items[0]?.value
-        // return queryFromDataGrid(filter)[0]?.value
-        //dat do premmennych
     }
 
     const queryFromDataGrid = (filter) => {
-        return filter?.filterModel?.items
+        return filterModelFromDataGrid(filter)
     }
 
-    const sendQueryFilterToGraphQl = (filter, filteredQueryForGraphQl) => {
+    const sendFilterQueryToGraphQl = (filter, filteredQueryForGraphQl) => {
         if (filteredValueFromDataGrid(filter)) {
-            // onFilterCustomer(filteredQueryForGraphQl);
-            // setCurrentPageToOne()
             setFilteredQueryToGraphQl(filteredQueryForGraphQl)
             console.log(filteredValueFromDataGrid(filter), 'filterValue');
         } else {
             setDefaultFilteredQueryToGraphQl()
         }
     }
+
+    const filteredValueFromDataGrid = (filter) => {
+        // return filter?.filterModel?.items[0]?.value
+        for (let i = 0; i < filterModelFromDataGrid(filter).length; i++) {
+            const filteredValue = filterModelFromDataGrid(filter)[i]?.value
+            if (filteredValue)
+                return filteredValue
+        }
+    }
+
+
+    const filterModelFromDataGrid = (filter) => {
+        return filter?.filterModel?.items
+    }
+
 
     const setFilteredQueryToGraphQl = (filteredQueryForGraphQl) => {
         onFilterCustomer(filteredQueryForGraphQl);
