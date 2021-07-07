@@ -30,41 +30,62 @@ const unsortCustomers = (onSortCustomers) => {
 //   return customerListDate[0]?.createdAt
 // }
 // console.log(customerListDate, 'customerListDate');
-interface filteredQuery {
-    filterCategory?: {}
-}
+// interface filteredQuery {
+//     filterColumnField?: {}
+// }
 
 export const filterDataGrid = (filter, onFilterCustomers, onPageChangeCustomers) => {
-    const filteredQueryForGraphQl: filteredQuery = {}
-    getQueryFromDataGrid(filter, filteredQueryForGraphQl)
-    sendFilterQueryToGraphQl(filter, filteredQueryForGraphQl, onFilterCustomers)
+    sendFilterQueryToGraphQl(filter, getQueryFromDataGrid(filter), onFilterCustomers)
     setCurrentPageToOne(onPageChangeCustomers)
 }
 
-const getQueryFromDataGrid = (filter, filteredQueryForGraphQl) => {
+const getQueryFromDataGrid = (filter) => {    
+    const filteredQueryForGraphQl = {}
     for (let i = 0; i < queryFromDataGrid(filter).length; i++) {
-        const filterCategory = queryFromDataGrid(filter)[i].columnField
+        const filterColumnField = queryFromDataGrid(filter)[i].columnField
         const filterOperator = queryFromDataGrid(filter)[i].operatorValue
         const filterValue = queryFromDataGrid(filter)[i].value
         if (filterOperator === 'contains') {
-            filteredQueryForGraphQl[filterCategory] = { _ilike: "%" + filterValue + "%" }
+            filteredQueryForGraphQl[filterColumnField] = { _ilike: "%" + filterValue + "%" }
+            console.log(filteredQueryForGraphQl,'filteredQueryForGraphQl'); 
+            // filterContains(filteredQueryForGraphQl, filterColumnField, filterValue)
         } else if (filterOperator === 'endsWith') {
-            filteredQueryForGraphQl[filterCategory] = { _ilike: "%" + filterValue }
+            filteredQueryForGraphQl[filterColumnField] = { _ilike: "%" + filterValue }
+            // filterEndsWith(filteredQueryForGraphQl, filterColumnField, filterValue)
         }
         else if (filterOperator === 'startsWith') {
-            filteredQueryForGraphQl[filterCategory] = { _ilike: filterValue + "%" }
+            filteredQueryForGraphQl[filterColumnField] = { _ilike: filterValue + "%" }
+            // filterStartsWith(filteredQueryForGraphQl, filterColumnField, filterValue)
+
         }
         else if (filterOperator === 'equals') {
-            filteredQueryForGraphQl[filterCategory] = { _eq: filterValue }
+            filteredQueryForGraphQl[filterColumnField] = { _eq: filterValue }
+            // filterEquals(filteredQueryForGraphQl, filterColumnField, filterValue)
         }
         //TODO date
         // else if (filterOperator === 'is') {
         //     filteredQueryForGraphQl[filterCategory] = { _eq: customerListDate[0]?.createdAt }
         // }
+        // filteredQueryForGraphQl(filterOperator, filterColumnField, filterValue)
 
         console.log(filteredQueryForGraphQl, 'filteredQueryForGraphQl');
     }
+    return filteredQueryForGraphQl
 }
+
+//spravit navratovu funkciu
+// const filterContains = (filteredQueryForGraphQl, filterColumnField, filterValue) => {
+//     filteredQueryForGraphQl[filterColumnField] = { _ilike: "%" + filterValue + "%" }
+// }
+// const filterEndsWith = (filteredQueryForGraphQl, filterColumnField, filterValue) => {
+//     filteredQueryForGraphQl[filterColumnField] = { _ilike: "%" + filterValue }
+// }
+// const filterStartsWith = (filteredQueryForGraphQl, filterColumnField, filterValue) => {
+//     filteredQueryForGraphQl[filterColumnField] = { _ilike: filterValue + "%" }
+// }
+// const filterEquals = (filteredQueryForGraphQl, filterColumnField, filterValue) => {
+//     filteredQueryForGraphQl[filterColumnField] = { _eq: filterValue }
+// }
 
 const queryFromDataGrid = (filter) => {
     return filterModelFromDataGrid(filter)
@@ -87,11 +108,9 @@ const filteredValueFromDataGrid = (filter) => {
     }
 }
 
-
 const filterModelFromDataGrid = (filter) => {
     return filter?.filterModel?.items
 }
-
 
 const setFilteredQueryToGraphQl = (filteredQueryForGraphQl, onFilterCustomers) => {
     onFilterCustomers(filteredQueryForGraphQl);
