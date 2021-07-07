@@ -7,13 +7,18 @@ export const sortCustomers = (sort, onSortCustomers) => {
 }
 
 const setSortQuery = (params, onSortCustomers) => {
-    //TODO any
-    const result: any = Object.values(params?.sortModel[0])
-    const ob = {}
-    while (result.length) {
-        ob[result.shift()] = result.shift();
+    onSortCustomers(sortQueryFromGridData(params))
+}
+
+const sortQueryFromGridData = (params) =>{
+    const sortQuery = {} 
+    const sortModel = params?.sortModel
+    for (let i = 0; i < sortModel.length; i++) {
+        const sortColumnFiled = sortModel[i]?.field
+        const sortValue = sortModel[i]?.sort
+        sortQuery[sortColumnFiled] = sortValue
     }
-    onSortCustomers(ob)
+    return sortQuery
 }
 
 const unsortCustomers = (onSortCustomers) => {
