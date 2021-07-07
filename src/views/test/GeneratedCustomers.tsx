@@ -12,7 +12,7 @@ const GeneratedCustomers = () => {
   );
   const [limit, setLimit] = useState(2);
   const [page, setPage] = useState(1);
-  // const [totalCustomer, setTotalCustomer] = useState<number>();
+  // const [totalCustomers, settotalCustomers] = useState<number>();
   const [where, setFilter] = useState({
     name: {
       _ilike: "%%"
@@ -22,10 +22,10 @@ const GeneratedCustomers = () => {
 
   // React.useEffect(() => {
   //   // if(data?.customerAggregate?.aggregate?.count){
-  //     setTotalCustomer(data?.customerAggregate?.aggregate?.count)
-  //     // totalCustomerOnLoad()
+  //     settotalCustomers(data?.customerAggregate?.aggregate?.count)
+  //     // totalCustomersOnLoad()
   //   // }
-  //   console.log(totalCustomer,'totalCustomer'); 
+  //   console.log(totalCustomers,'totalCustomers'); 
   // });
 
   const offset = (page - 1) * limit
@@ -39,28 +39,28 @@ const GeneratedCustomers = () => {
   console.log(result, 'result');
   const { data, error, fetching } = result;
 
-  const totalCustomer = data?.customerAggregate?.aggregate?.count
+  const totalCustomers = data?.customerAggregate?.aggregate?.count
   
   if (error) return <p>Oh no... {error.message}</p>;
-  const onOrderCustomer = (sort) => {
+  const onSortCustomers = (sort) => {
     setSortCustomers(sort)
   }
-  const onPageChangeCustomer = (page) => {
+  const onPageChangeCustomers = (page) => {
     // console.log(page,'page'); 
     setPage(page)
     console.log(page,'page'); 
   }
-  const limitCustomer = (limit) => {
+  const limitCustomers = (limit) => {
     setLimit(limit)
   }
-  const onFilterCustomer = (query) => {
+  const onFilterCustomers = (query) => {
     setFilter(query)
   }
   
   return (
     <GeneratedTable customers={fetching ? [] : data.customers}
-      totalCustomer={totalCustomer}
-      onPageChangeCustomer={onPageChangeCustomer} page={page} limitCustomer={limitCustomer} onOrderCustomer={onOrderCustomer} onFilterCustomer={onFilterCustomer} limit={limit} />
+      totalCustomers={totalCustomers}
+      onPageChangeCustomers={onPageChangeCustomers} page={page} limitCustomers={limitCustomers} onSortCustomers={onSortCustomers} onFilterCustomers={onFilterCustomers} limit={limit} />
   );
 };
 export default GeneratedCustomers

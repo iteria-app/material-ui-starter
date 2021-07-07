@@ -2,128 +2,39 @@ import React from 'react'
 import { useIntl, FormattedMessage } from "react-intl";
 import { GridColParams, DataGrid } from "@material-ui/data-grid";
 import { useNavigate } from 'react-router-dom'
-import { sortCustomers, unsortCustomers } from './OperationsCustomers'
+import { sortCustomers, filterDataGrid } from './OperationsCustomers'
 
-export default function CustomerTable({ customers, onOrderCustomer, onPageChangeCustomer, page, limit, limitCustomer, onFilterCustomer, totalCustomer }) {
+export default function CustomerTable({ customers, onSortCustomers, onPageChangeCustomers, page, limit, limitCustomers, onFilterCustomers, totalCustomers }) {
     let navigate = useNavigate();
 
     const handleSortCustomers = (sort) => {
         console.log(sort?.sortModel, 'sort?.sortModel');
-        if (sort?.sortModel?.length > 0) {
-            sortCustomers(sort, onOrderCustomer)
-        } else {
-            unsortCustomers(onOrderCustomer)
-        }
+        sortCustomers(sort, onSortCustomers)
+        // if (sort?.sortModel?.length > 0) {
+        //     setSortQuery(sort, onSortCustomers)
+        // } else {
+        //     unsortCustomers(onSortCustomers)
+        // }
     };
 
-    console.log(totalCustomer, 'totalCustomer');
+    console.log(totalCustomers, 'totalCustomers');
 
     const handlePage = (page) => {
         console.log(page.page, 'page.page')
-        onPageChangeCustomer(page?.page + 1)
+        onPageChangeCustomers(page?.page + 1)
     };
 
     const handlePageSize = (pageSize) => {
-        limitCustomer(pageSize?.pageSize)
+        limitCustomers(pageSize?.pageSize)
         console.log(pageSize, 'params');
     }
 
     const handleFilter = React.useCallback((filter) => {
-        // const filterValue = filter?.filterModel?.items[0]?.value
         console.log(filter, 'filter');
-
-        // const filterArr1 = filter?.filterModel?.items
-        interface filteredQuery {
-            filterCategory?: {}
-        }
-
-        const filteredQueryForGraphQl: filteredQuery = {}
-        getQueryFromDataGrid(filter, filteredQueryForGraphQl)
-        sendFilterQueryToGraphQl(filter, filteredQueryForGraphQl)
-        setCurrentPageToOne()
-
-    }, [onFilterCustomer]);
+        filterDataGrid(filter, onFilterCustomers, onPageChangeCustomers)
+    }, [onFilterCustomers, onPageChangeCustomers]);
 
     console.log(customers, 'customers1');
-
-    //TODO date
-    const customerListDate = customers.filter((date) => date.createdAt.includes("2021-03-17"))
-    // if (customerListDate?.length > 0) {
-    //   return customerListDate[0]?.createdAt
-    // }
-    console.log(customerListDate, 'customerListDate');
-
-
-    const getQueryFromDataGrid = (filter, filteredQueryForGraphQl) => {
-        for (let i = 0; i < queryFromDataGrid(filter).length; i++) {
-            const filterCategory = queryFromDataGrid(filter)[i].columnField
-            const filterOperator = queryFromDataGrid(filter)[i].operatorValue
-            const filterValue = queryFromDataGrid(filter)[i].value
-            if (filterOperator === 'contains') {
-                filteredQueryForGraphQl[filterCategory] = { _ilike: "%" + filterValue + "%" }
-            } else if (filterOperator === 'endsWith') {
-                filteredQueryForGraphQl[filterCategory] = { _ilike: "%" + filterValue }
-            }
-            else if (filterOperator === 'startsWith') {
-                filteredQueryForGraphQl[filterCategory] = { _ilike: filterValue + "%" }
-            }
-            else if (filterOperator === 'equals') {
-                filteredQueryForGraphQl[filterCategory] = { _eq: filterValue }
-            }
-            //TODO date
-            else if (filterOperator === 'is') {
-                filteredQueryForGraphQl[filterCategory] = { _eq: customerListDate[0]?.createdAt }
-            }
-
-            console.log(filteredQueryForGraphQl, 'filteredQueryForGraphQl');
-        }
-    }
-
-    const queryFromDataGrid = (filter) => {
-        return filterModelFromDataGrid(filter)
-    }
-
-    const sendFilterQueryToGraphQl = (filter, filteredQueryForGraphQl) => {
-        if (filteredValueFromDataGrid(filter)) {
-            setFilteredQueryToGraphQl(filteredQueryForGraphQl)
-            console.log(filteredValueFromDataGrid(filter), 'filterValue');
-        } else {
-            setDefaultFilteredQueryToGraphQl()
-        }
-    }
-
-    const filteredValueFromDataGrid = (filter) => {
-        // return filter?.filterModel?.items[0]?.value
-        for (let i = 0; i < filterModelFromDataGrid(filter).length; i++) {
-            const filteredValue = filterModelFromDataGrid(filter)[i]?.value
-            if (filteredValue)
-                return filteredValue
-        }
-    }
-
-
-    const filterModelFromDataGrid = (filter) => {
-        return filter?.filterModel?.items
-    }
-
-
-    const setFilteredQueryToGraphQl = (filteredQueryForGraphQl) => {
-        onFilterCustomer(filteredQueryForGraphQl);
-    }
-
-    const setDefaultFilteredQueryToGraphQl = () => {
-        onFilterCustomer({
-            name: {
-                _ilike: "%%"
-            }
-        })
-    }
-
-    const setCurrentPageToOne = () => {
-        onPageChangeCustomer(1)
-    }
-
-    // const
 
     console.log(page, 'page');
 
@@ -145,7 +56,7 @@ export default function CustomerTable({ customers, onOrderCustomer, onPageChange
         rowsPerPageOptions={[2, 4, 6]}
         page={page - 1}
         // autoPageSize={true}
-        rowCount={totalCustomer}
+        rowCount={totalCustomers}
         filterMode="server"
         onFilterModelChange={handleFilter}
     /></div>);
