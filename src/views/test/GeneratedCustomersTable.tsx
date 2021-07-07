@@ -42,7 +42,6 @@ export default function CustomerTable({ customers, onOrderCustomer, onPageChange
             const filterCategory = queryFromDataGrid(filter)[i].columnField
             const filterOperator = queryFromDataGrid(filter)[i].operatorValue
             const filterValue = queryFromDataGrid(filter)[i].value
-
             if (filterOperator === 'contains') {
                 filteredQueryForGraphQl[filterCategory] = { _ilike: "%" + filterValue + "%" }
             } else if (filterOperator === 'endsWith') {
@@ -53,6 +52,10 @@ export default function CustomerTable({ customers, onOrderCustomer, onPageChange
             }
             else if (filterOperator === 'equals') {
                 filteredQueryForGraphQl[filterCategory] = { _eq: filterValue }
+            }
+            //TODO date
+            else if (filterOperator === 'is') {
+                filteredQueryForGraphQl[filterCategory] = { _eq: customerListDate[0]?.createdAt }
             }
 
             console.log(filteredQueryForGraphQl, 'filteredQueryForGraphQl');
@@ -70,12 +73,35 @@ export default function CustomerTable({ customers, onOrderCustomer, onPageChange
         // }
     }, [onFilterCustomer]);
 
+    console.log(customers,'customers1'); 
+    
+    //TODO date
+    const customerListDate = customers.filter((date) => date.createdAt.includes("2021-03-17"))
+    // if (customerListDate?.length > 0) {
+    //   return customerListDate[0]?.createdAt
+    // }
+    console.log(customerListDate,'customerListDate'); 
+
+
     const filteredValueFromDataGrid = (filter) => {
         return filter?.filterModel?.items[0]?.value
+        // return queryFromDataGrid(filter)[0]?.value
+        //dat do premmennych
     }
 
     const queryFromDataGrid = (filter) => {
         return filter?.filterModel?.items
+    }
+
+    const sendQueryFilterToGraphQl = (filter, filteredQueryForGraphQl) => {
+        if (filteredValueFromDataGrid(filter)) {
+            // onFilterCustomer(filteredQueryForGraphQl);
+            // setCurrentPageToOne()
+            setFilteredQueryToGraphQl(filteredQueryForGraphQl)
+            console.log(filteredValueFromDataGrid(filter), 'filterValue');
+        } else {
+            setDefaultFilteredQueryToGraphQl()
+        }
     }
 
     const setFilteredQueryToGraphQl = (filteredQueryForGraphQl) => {
@@ -88,17 +114,6 @@ export default function CustomerTable({ customers, onOrderCustomer, onPageChange
                 _ilike: "%%"
             }
         })
-    }
-
-    const sendQueryFilterToGraphQl = (filter, filteredQueryForGraphQl) => {
-        if (filteredValueFromDataGrid(filter)) {
-            // onFilterCustomer(filteredQueryForGraphQl);
-            // setCurrentPageToOne()
-            setFilteredQueryToGraphQl(filteredQueryForGraphQl)
-            console.log(filteredValueFromDataGrid(filter), 'filterValue');
-        } else {
-            setDefaultFilteredQueryToGraphQl()
-        }
     }
 
     const setCurrentPageToOne = () => {
