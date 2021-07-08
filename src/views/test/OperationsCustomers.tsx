@@ -1,5 +1,6 @@
 export const sortCustomers = (sort, onSortCustomers) => {
-    if (sortModelFromDataGrid(sort) > 0) {
+    const sortModel = sortModelFromDataGrid(sort)
+    if (sortModel.length > 0) {
         setSortQuery(sort, onSortCustomers)
     } else {
         unsortCustomers(onSortCustomers)
@@ -12,12 +13,12 @@ const setSortQuery = (sort, onSortCustomers) => {
 
 const sortQueryFromGridData = (sort) =>{
     const sortQuery = {} 
-    const sortModel = sortModelFromDataGrid(sort)
-    for (let i = 0; i < sortModel.length; i++) {
-        const sortColumnFiled = sortModel[i]?.field
-        const sortValue = sortModel[i]?.sort
+    const sortModels = sortModelFromDataGrid(sort)
+    sortModels.forEach(sortModel => {
+        const sortColumnFiled = sortModel?.field
+        const sortValue = sortModel?.sort
         sortQuery[sortColumnFiled] = sortValue
-    }
+      })
     return sortQuery
 }
 
@@ -110,8 +111,9 @@ const sendFilterQueryToGraphQl = (filter, filteredQueryForGraphQl, onFilterCusto
 }
 
 const filteredValueFromDataGrid = (filter) => {
-    for (let i = 0; i < filterModelFromDataGrid(filter).length; i++) {
-        const filteredValue = filterModelFromDataGrid(filter)[i]?.value
+    const filterModel = filterModelFromDataGrid(filter)
+    for (let i = 0; i < filterModel.length; i++) {
+        const filteredValue = filterModel[i]?.value
         if (filteredValue)
             return filteredValue
     }
