@@ -2,30 +2,33 @@ import React from 'react'
 import { useIntl, FormattedMessage } from "react-intl";
 import { GridColParams, DataGrid } from "@material-ui/data-grid";
 import { useNavigate } from 'react-router-dom'
-import { sortCustomers, filterDataGrid } from './OperationsCustomers'
+import { sortCustomers, filterDataGrid, pageByTotalAndPageSize } from './OperationsCustomers'
 
-export default function CustomerTable({ customers, onSortCustomers, onPageChangeCustomers, page, limit, limitCustomers, onFilterCustomers, totalCustomers }) {
+export default function CustomerTable({ customers, onSortCustomers, onPageChangeCustomers, page, offset, limit, onPageSize, onFilterCustomers, totalCustomers }) {
     let navigate = useNavigate();
 
     const handleSortCustomers = (sort) => {
         console.log(sort?.sortModel, 'sort?.sortModel');
         sortCustomers(sort, onSortCustomers)
-        // if (sort?.sortModel?.length > 0) {
-        //     setSortQuery(sort, onSortCustomers)
-        // } else {
-        //     unsortCustomers(onSortCustomers)
-        // }
     };
 
     console.log(totalCustomers, 'totalCustomers');
 
     const handlePage = (page) => {
         console.log(page.page, 'page.page')
-        onPageChangeCustomers(page?.page + 1)
+        const pageNumber = page?.page
+        onPageChangeCustomers(pageNumber + 1)
     };
 
     const handlePageSize = (pageSize) => {
-        limitCustomers(pageSize?.pageSize)
+        const pageSizeNumber = pageSize?.pageSize
+        const pageSizeWithOffset = (pageSizeNumber + offset) + 1
+        if(pageSizeWithOffset > totalCustomers){
+            onPageChangeCustomers(pageByTotalAndPageSize(pageSizeNumber,totalCustomers))
+        }
+
+        onPageSize(pageSizeNumber)
+        
         console.log(pageSize, 'params');
     }
 
@@ -53,9 +56,9 @@ export default function CustomerTable({ customers, onSortCustomers, onPageChange
         onPageChange={handlePage}
         onPageSizeChange={handlePageSize}
         pageSize={limit}
-        rowsPerPageOptions={[2, 4, 6]}
         page={page - 1}
         // autoPageSize={true}
+        rowsPerPageOptions={[2, 4, 6]}
         rowCount={totalCustomers}
         filterMode="server"
         onFilterModelChange={handleFilter}

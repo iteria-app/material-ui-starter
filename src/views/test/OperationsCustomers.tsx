@@ -44,6 +44,14 @@ const sortModelFromDataGrid = (sort) =>{
 //     filterColumnField?: {}
 // }
 
+export const pageByTotalAndPageSize = (pageSizeNumber, totalCustomers) => {
+    const pageNumber = Math.floor(totalCustomers / pageSizeNumber)
+    if((pageNumber) > 0){
+        return pageNumber
+    }
+    return 1
+}
+
 export const filterDataGrid = (filter, onFilterCustomers, onPageChangeCustomers) => {
     const filteredQueryForGraphQl = getQueryFromDataGrid(filter)
     sendFilterQueryToGraphQl(filter, filteredQueryForGraphQl, onFilterCustomers)
@@ -83,7 +91,7 @@ const getQueryFromDataGrid = (filter) => {
 
         console.log(filteredQueryForGraphQl, 'filteredQueryForGraphQl');
       })
-      
+
     return filteredQueryForGraphQl
 }
 
@@ -135,6 +143,6 @@ const setDefaultFilteredQueryToGraphQl = (onFilterCustomers) => {
     })
 }
 
-const setCurrentPageToOne = (onPageChangeCustomers) => {
+export const setCurrentPageToOne = (onPageChangeCustomers) => {
     onPageChangeCustomers(1)
 }

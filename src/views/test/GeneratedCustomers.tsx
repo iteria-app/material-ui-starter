@@ -50,7 +50,7 @@ const GeneratedCustomers = () => {
     setPage(page)
     console.log(page,'page'); 
   }
-  const limitCustomers = (limit) => {
+  const onPageSize = (limit) => {
     setLimit(limit)
   }
   const onFilterCustomers = (query) => {
@@ -60,7 +60,7 @@ const GeneratedCustomers = () => {
   return (
     <GeneratedTable customers={fetching ? [] : data.customers}
       totalCustomers={totalCustomers}
-      onPageChangeCustomers={onPageChangeCustomers} page={page} limitCustomers={limitCustomers} onSortCustomers={onSortCustomers} onFilterCustomers={onFilterCustomers} limit={limit} />
+      onPageChangeCustomers={onPageChangeCustomers} offset={offset} page={page} onPageSize={onPageSize} onSortCustomers={onSortCustomers} onFilterCustomers={onFilterCustomers} limit={limit} />
   );
 };
 export default GeneratedCustomers
