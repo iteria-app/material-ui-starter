@@ -45,16 +45,19 @@ const sortModelFromDataGrid = (sort) =>{
 // }
 
 export const filterDataGrid = (filter, onFilterCustomers, onPageChangeCustomers) => {
-    sendFilterQueryToGraphQl(filter, getQueryFromDataGrid(filter), onFilterCustomers)
+    const filteredQueryForGraphQl = getQueryFromDataGrid(filter)
+    sendFilterQueryToGraphQl(filter, filteredQueryForGraphQl, onFilterCustomers)
     setCurrentPageToOne(onPageChangeCustomers)
 }
 
 const getQueryFromDataGrid = (filter) => {    
     const filteredQueryForGraphQl = {}
-    for (let i = 0; i < queryFromDataGrid(filter).length; i++) {
-        const filterColumnField = queryFromDataGrid(filter)[i].columnField
-        const filterOperator = queryFromDataGrid(filter)[i].operatorValue
-        const filterValue = queryFromDataGrid(filter)[i].value
+    const filterModels = filterModelFromDataGrid(filter)
+
+    filterModels.forEach(filterModel => {
+        const filterColumnField = filterModel.columnField
+        const filterOperator = filterModel.operatorValue
+        const filterValue = filterModel.value
         if (filterOperator === 'contains') {
             filteredQueryForGraphQl[filterColumnField] = { _ilike: "%" + filterValue + "%" }
             console.log(filteredQueryForGraphQl,'filteredQueryForGraphQl'); 
@@ -79,7 +82,8 @@ const getQueryFromDataGrid = (filter) => {
         // filteredQueryForGraphQl(filterOperator, filterColumnField, filterValue)
 
         console.log(filteredQueryForGraphQl, 'filteredQueryForGraphQl');
-    }
+      })
+      
     return filteredQueryForGraphQl
 }
 
@@ -96,10 +100,6 @@ const getQueryFromDataGrid = (filter) => {
 // const filterEquals = (filteredQueryForGraphQl, filterColumnField, filterValue) => {
 //     filteredQueryForGraphQl[filterColumnField] = { _eq: filterValue }
 // }
-
-const queryFromDataGrid = (filter) => {
-    return filterModelFromDataGrid(filter)
-}
 
 const sendFilterQueryToGraphQl = (filter, filteredQueryForGraphQl, onFilterCustomers) => {
     if (filteredValueFromDataGrid(filter)) {
