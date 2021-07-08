@@ -12,23 +12,13 @@ const GeneratedCustomers = () => {
   );
   const [limit, setLimit] = useState(2);
   const [page, setPage] = useState(1);
-  // const [totalCustomers, settotalCustomers] = useState<number>();
+  const [offset, setOffset] = useState((page - 1) * limit);
   const [where, setFilter] = useState({
     name: {
       _ilike: "%%"
     }
   }
   );
-
-  // React.useEffect(() => {
-  //   // if(data?.customerAggregate?.aggregate?.count){
-  //     settotalCustomers(data?.customerAggregate?.aggregate?.count)
-  //     // totalCustomersOnLoad()
-  //   // }
-  //   console.log(totalCustomers,'totalCustomers'); 
-  // });
-
-  const offset = (page - 1) * limit
 
   const [result] = useSearchCustomers2Query({
     // @ts-ignore
@@ -45,9 +35,10 @@ const GeneratedCustomers = () => {
   const onSortCustomers = (sort) => {
     setSortCustomers(sort)
   }
-  const onPageChangeCustomers = (page) => {
+  const onChangePageCustomers = (page) => {
     // console.log(page,'page'); 
     setPage(page)
+    setOffset((page - 1) * limit)
     console.log(page,'page'); 
   }
   const onPageSize = (limit) => {
@@ -60,7 +51,7 @@ const GeneratedCustomers = () => {
   return (
     <GeneratedTable customers={fetching ? [] : data.customers}
       totalCustomers={totalCustomers}
-      onPageChangeCustomers={onPageChangeCustomers} offset={offset} page={page} onPageSize={onPageSize} onSortCustomers={onSortCustomers} onFilterCustomers={onFilterCustomers} limit={limit} />
+      onChangePageCustomers={onChangePageCustomers}  offset={offset} page={page} onPageSize={onPageSize} onSortCustomers={onSortCustomers} onFilterCustomers={onFilterCustomers} limit={limit} />
   );
 };
 export default GeneratedCustomers

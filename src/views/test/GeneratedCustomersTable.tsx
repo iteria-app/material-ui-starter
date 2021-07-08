@@ -4,7 +4,7 @@ import { GridColParams, DataGrid } from "@material-ui/data-grid";
 import { useNavigate } from 'react-router-dom'
 import { sortCustomers, filterDataGrid, pageByTotalAndPageSize } from './OperationsCustomers'
 
-export default function CustomerTable({ customers, onSortCustomers, onPageChangeCustomers, page, offset, limit, onPageSize, onFilterCustomers, totalCustomers }) {
+export default function CustomerTable({ customers, onSortCustomers, onChangePageCustomers, page, offset, limit, onPageSize, onFilterCustomers, totalCustomers }) {
     let navigate = useNavigate();
 
     const handleSortCustomers = (sort) => {
@@ -17,25 +17,27 @@ export default function CustomerTable({ customers, onSortCustomers, onPageChange
     const handlePage = (page) => {
         console.log(page.page, 'page.page')
         const pageNumber = page?.page
-        onPageChangeCustomers(pageNumber + 1)
+        onChangePageCustomers(pageNumber + 1)
     };
 
     const handlePageSize = (pageSize) => {
         const pageSizeNumber = pageSize?.pageSize
         const pageSizeWithOffset = (pageSizeNumber + offset) + 1
-        if(pageSizeWithOffset > totalCustomers){
-            onPageChangeCustomers(pageByTotalAndPageSize(pageSizeNumber,totalCustomers))
+        if (pageSizeWithOffset > totalCustomers) {
+            onChangePageCustomers(pageByTotalAndPageSize(pageSizeNumber, totalCustomers))
         }
+        console.log(pageSize, 'pageSize');
+        onChangePageCustomers(1)
 
         onPageSize(pageSizeNumber)
-        
+
         console.log(pageSize, 'params');
     }
 
     const handleFilter = React.useCallback((filter) => {
         console.log(filter, 'filter');
-        filterDataGrid(filter, onFilterCustomers, onPageChangeCustomers)
-    }, [onFilterCustomers, onPageChangeCustomers]);
+        filterDataGrid(filter, onFilterCustomers, onChangePageCustomers)
+    }, [onFilterCustomers, onChangePageCustomers]);
 
     console.log(customers, 'customers1');
 

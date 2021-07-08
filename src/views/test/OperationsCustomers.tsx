@@ -52,10 +52,10 @@ export const pageByTotalAndPageSize = (pageSizeNumber, totalCustomers) => {
     return 1
 }
 
-export const filterDataGrid = (filter, onFilterCustomers, onPageChangeCustomers) => {
+export const filterDataGrid = (filter, onFilterCustomers, onChangePageCustomers) => {
     const filteredQueryForGraphQl = getQueryFromDataGrid(filter)
     sendFilterQueryToGraphQl(filter, filteredQueryForGraphQl, onFilterCustomers)
-    setCurrentPageToOne(onPageChangeCustomers)
+    setCurrentPageToOne(onChangePageCustomers)
 }
 
 const getQueryFromDataGrid = (filter) => {    
@@ -143,6 +143,6 @@ const setDefaultFilteredQueryToGraphQl = (onFilterCustomers) => {
     })
 }
 
-export const setCurrentPageToOne = (onPageChangeCustomers) => {
-    onPageChangeCustomers(1)
+export const setCurrentPageToOne = (onChangePageCustomers) => {
+    onChangePageCustomers(1)
 }
