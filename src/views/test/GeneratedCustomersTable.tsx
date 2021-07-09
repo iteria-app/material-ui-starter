@@ -17,12 +17,13 @@ export default function CustomerTable({ customers, onSortCustomers, onChangePage
     const handlePage = (page) => {
         console.log(page.page, 'page.page')
         const pageNumber = page?.page
-        onChangePageCustomers(pageNumber + 1)
+        onChangePageCustomers(pageNumber)
     };
 
     const handlePageSize = (pageSize) => {
         const pageSizeNumber = pageSize?.pageSize
-        const pageSizeWithOffset = (pageSizeNumber + offset) + 1
+        const pageSizeWithOffset = (pageSizeNumber + offset)
+        console.log(pageSizeNumber, offset,'pageSizeNumber, offset'); 
         if (pageSizeWithOffset > totalCustomers) {
             onChangePageCustomers(pageByTotalAndPageSize(pageSizeNumber, totalCustomers))
         }
@@ -32,6 +33,7 @@ export default function CustomerTable({ customers, onSortCustomers, onChangePage
 
     const handleFilter = React.useCallback((filter) => {
         console.log(filter, 'filter');
+        // customerListDate(customers)
         filterDataGrid(filter, onFilterCustomers, onChangePageCustomers)
     }, [onFilterCustomers, onChangePageCustomers]);
 
@@ -54,9 +56,9 @@ export default function CustomerTable({ customers, onSortCustomers, onChangePage
         onPageChange={handlePage}
         onPageSizeChange={handlePageSize}
         pageSize={limit}
-        page={page - 1}
+        page={page}
         // autoPageSize={true}
-        rowsPerPageOptions={[2, 4, 6]}
+        rowsPerPageOptions={[2,3, 4,5,6,20]}
         rowCount={totalCustomers}
         filterMode="server"
         onFilterModelChange={handleFilter}

@@ -36,23 +36,22 @@ const sortModelFromDataGrid = (sort) => {
 }
 
 //TODO date
-// const customerListDate = (customers) => {
-//     customers.filter((date) => date.createdAt.includes("2021-03-17"))
+// export const customerListDate = (customers) => {
+//     const customerListDate = customers.filter((date) => date.createdAt.includes("2021-03-17"))
+//     console.log(customerListDate,'customers'); 
+//     if (customerListDate?.length > 0) {
+//       return customerListDate[0]?.createdAt
+//     }
 // } 
-// if (customerListDate?.length > 0) {
-//   return customerListDate[0]?.createdAt
-// }
 // console.log(customerListDate, 'customerListDate');
-// interface filteredQuery {
-//     filterColumnField?: {}
-// }
 
 export const pageByTotalAndPageSize = (pageSizeNumber: number, totalCustomers: number): number => {
-    const pageNumber: number = Math.floor(totalCustomers / pageSizeNumber)
-    if ((pageNumber) > 0) {
-        return pageNumber
+    const pageNumber: number = Math.floor((totalCustomers / pageSizeNumber) - 1)
+    console.log(pageNumber,'pageNumber'); 
+    if ((pageNumber) <= 0) {
+        return 0
     }
-    return 1
+    return pageNumber
 }
 
 export const filterDataGrid = (filter, onFilterCustomers, onChangePageCustomers) => {
@@ -88,7 +87,14 @@ const getQueryFromDataGrid = (filter) => {
         }
         //TODO date
         // else if (filterOperator === 'is') {
-        //     filteredQueryForGraphQl[filterCategory] = { _eq: customerListDate[0]?.createdAt }
+        //     console.log('isssss'); 
+        //     filteredQueryForGraphQl[filterColumnField] = { _eq: customerListDate[0]?.createdAt }
+        //     console.log(customerListDate[0],'customerListDate[0]?.createdAt'); 
+        // }
+        // else if (filterOperator === 'is') {
+        //     console.log('isssss'); 
+        //     filteredQueryForGraphQl[filterColumnField] = { _eq: "2021-03-17T12:18:08.617102+00:00" }
+        //     console.log(customerListDate[0]?.createdAt,'customerListDate[0]?.createdAt'); 
         // }
         // filteredQueryForGraphQl(filterOperator, filterColumnField, filterValue)
 
@@ -152,5 +158,5 @@ const setDefaultFilteredQueryToGraphQl = (onFilterCustomers) => {
 }
 
 export const setCurrentPageToOne = (onChangePageCustomers) => {
-    onChangePageCustomers(1)
+    onChangePageCustomers(0)
 }

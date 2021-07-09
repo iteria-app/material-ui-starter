@@ -10,8 +10,8 @@ const GeneratedCustomers = () => {
     }
   );
   const [limit, setLimit] = useState<number>(2);
-  const [page, setPage] = useState<number>(1);
-  const [offset, setOffset] = useState<number>((page - 1) * limit);
+  const [page, setPage] = useState<number>(0);
+  const [offset, setOffset] = useState<number>((page) * limit);
   const [filter, setFilter] = useState<object>({
     name: {
       _ilike: "%%"
@@ -24,7 +24,6 @@ const GeneratedCustomers = () => {
     variables: { where: filter, limit, offset, order_by: sort }
   })
 
-
   console.log(result, 'result');
   const { data, error, fetching } = result;
 
@@ -33,13 +32,12 @@ const GeneratedCustomers = () => {
   if (error) return <p>Oh no... {error.message}</p>;
 
   const onSortCustomers = (sort) => {
-    console.log(sort, 'sort/////////');
     setSortCustomers(sort)
   }
 
   const onChangePageCustomers = (page: number) => {
     setPage(page)
-    setOffset((page - 1) * limit)
+    setOffset((page) * limit)
     console.log(page, 'page');
   }
 
