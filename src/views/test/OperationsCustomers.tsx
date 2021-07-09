@@ -29,7 +29,10 @@ const unsortCustomers = (onSortCustomers) => {
 }
 
 const sortModelFromDataGrid = (sort) => {
-    return sort?.sortModel
+    const sortModel = sort?.sortModel
+    if (sortModel)
+        return sortModel
+    return {}
 }
 
 //TODO date
@@ -133,6 +136,7 @@ const filterModelFromDataGrid = (filter) => {
     const filteredModel: object = filter?.filterModel?.items
     if (filteredModel)
         return filter?.filterModel?.items
+    return {}
 }
 
 const setFilteredQueryToGraphQl = (filteredQueryForGraphQl, onFilterCustomers) => {
