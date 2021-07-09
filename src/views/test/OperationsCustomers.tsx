@@ -71,19 +71,16 @@ const getQueryFromDataGrid = (filter) => {
         if (filterOperator === 'contains') {
             filteredQueryForGraphQl[filterColumnField] = { _ilike: "%" + filterValue + "%" }
             console.log(filteredQueryForGraphQl, 'filteredQueryForGraphQl');
-            // filterContains(filteredQueryForGraphQl, filterColumnField, filterValue)
         } else if (filterOperator === 'endsWith') {
             filteredQueryForGraphQl[filterColumnField] = { _ilike: "%" + filterValue }
             // filterEndsWith(filteredQueryForGraphQl, filterColumnField, filterValue)
         }
         else if (filterOperator === 'startsWith') {
             filteredQueryForGraphQl[filterColumnField] = { _ilike: filterValue + "%" }
-            // filterStartsWith(filteredQueryForGraphQl, filterColumnField, filterValue)
 
         }
         else if (filterOperator === 'equals') {
             filteredQueryForGraphQl[filterColumnField] = { _eq: filterValue }
-            // filterEquals(filteredQueryForGraphQl, filterColumnField, filterValue)
         }
         //TODO date
         // else if (filterOperator === 'is') {
@@ -127,7 +124,6 @@ const sendFilterQueryToGraphQl = (filter, filteredQueryForGraphQl, onFilterCusto
 }
 
 const filteredValueFromDataGrid = (filter) => {
-    // let userTestStatus: { id: number, name: string }[] = [
     const filterModel = filterModelFromDataGrid(filter)
     for (let i = 0; i < filterModel.length; i++) {
         const filteredValue: string = filterModel[i]?.value
