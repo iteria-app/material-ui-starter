@@ -26,11 +26,7 @@ export default function CustomerTable({ customers, onSortCustomers, onChangePage
         if (pageSizeWithOffset > totalCustomers) {
             onChangePageCustomers(pageByTotalAndPageSize(pageSizeNumber, totalCustomers))
         }
-        console.log(pageSize, 'pageSize');
-        onChangePageCustomers(1)
-
         onPageSize(pageSizeNumber)
-
         console.log(pageSize, 'params');
     }
 

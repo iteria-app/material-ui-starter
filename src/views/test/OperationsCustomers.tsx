@@ -1,5 +1,5 @@
 export const sortCustomers = (sort, onSortCustomers) => {
-    const sortModel = sortModelFromDataGrid(sort)
+    const sortModel: object[] = sortModelFromDataGrid(sort)
     if (sortModel.length > 0) {
         setSortQuery(sort, onSortCustomers)
     } else {
@@ -11,14 +11,14 @@ const setSortQuery = (sort, onSortCustomers) => {
     onSortCustomers(sortQueryFromGridData(sort))
 }
 
-const sortQueryFromGridData = (sort) =>{
-    const sortQuery = {} 
+const sortQueryFromGridData = (sort): object => {
+    const sortQuery: object = {}
     const sortModels = sortModelFromDataGrid(sort)
     sortModels.forEach(sortModel => {
-        const sortColumnFiled = sortModel?.field
-        const sortValue = sortModel?.sort
+        const sortColumnFiled: string = sortModel?.field
+        const sortValue: string = sortModel?.sort
         sortQuery[sortColumnFiled] = sortValue
-      })
+    })
     return sortQuery
 }
 
@@ -28,7 +28,7 @@ const unsortCustomers = (onSortCustomers) => {
     })
 }
 
-const sortModelFromDataGrid = (sort) =>{
+const sortModelFromDataGrid = (sort) => {
     return sort?.sortModel
 }
 
@@ -44,9 +44,9 @@ const sortModelFromDataGrid = (sort) =>{
 //     filterColumnField?: {}
 // }
 
-export const pageByTotalAndPageSize = (pageSizeNumber, totalCustomers) => {
-    const pageNumber = Math.floor(totalCustomers / pageSizeNumber)
-    if((pageNumber) > 0){
+export const pageByTotalAndPageSize = (pageSizeNumber: number, totalCustomers: number): number => {
+    const pageNumber: number = Math.floor(totalCustomers / pageSizeNumber)
+    if ((pageNumber) > 0) {
         return pageNumber
     }
     return 1
@@ -58,17 +58,17 @@ export const filterDataGrid = (filter, onFilterCustomers, onChangePageCustomers)
     setCurrentPageToOne(onChangePageCustomers)
 }
 
-const getQueryFromDataGrid = (filter) => {    
-    const filteredQueryForGraphQl = {}
+const getQueryFromDataGrid = (filter) => {
+    const filteredQueryForGraphQl: object = {}
     const filterModels = filterModelFromDataGrid(filter)
 
     filterModels.forEach(filterModel => {
-        const filterColumnField = filterModel.columnField
-        const filterOperator = filterModel.operatorValue
-        const filterValue = filterModel.value
+        const filterColumnField: string = filterModel.columnField
+        const filterOperator: string = filterModel.operatorValue
+        const filterValue: string = filterModel.value
         if (filterOperator === 'contains') {
             filteredQueryForGraphQl[filterColumnField] = { _ilike: "%" + filterValue + "%" }
-            console.log(filteredQueryForGraphQl,'filteredQueryForGraphQl'); 
+            console.log(filteredQueryForGraphQl, 'filteredQueryForGraphQl');
             // filterContains(filteredQueryForGraphQl, filterColumnField, filterValue)
         } else if (filterOperator === 'endsWith') {
             filteredQueryForGraphQl[filterColumnField] = { _ilike: "%" + filterValue }
@@ -90,7 +90,7 @@ const getQueryFromDataGrid = (filter) => {
         // filteredQueryForGraphQl(filterOperator, filterColumnField, filterValue)
 
         console.log(filteredQueryForGraphQl, 'filteredQueryForGraphQl');
-      })
+    })
 
     return filteredQueryForGraphQl
 }
@@ -110,25 +110,29 @@ const getQueryFromDataGrid = (filter) => {
 // }
 
 const sendFilterQueryToGraphQl = (filter, filteredQueryForGraphQl, onFilterCustomers) => {
-    if (filteredValueFromDataGrid(filter)) {
+    const filteredValue: string = filteredValueFromDataGrid(filter)
+    if (filteredValue) {
         setFilteredQueryToGraphQl(filteredQueryForGraphQl, onFilterCustomers)
-        console.log(filteredValueFromDataGrid(filter), 'filterValue');
     } else {
         setDefaultFilteredQueryToGraphQl(onFilterCustomers)
     }
 }
 
 const filteredValueFromDataGrid = (filter) => {
+    // let userTestStatus: { id: number, name: string }[] = [
     const filterModel = filterModelFromDataGrid(filter)
     for (let i = 0; i < filterModel.length; i++) {
-        const filteredValue = filterModel[i]?.value
+        const filteredValue: string = filterModel[i]?.value
         if (filteredValue)
             return filteredValue
     }
+    return ""
 }
 
 const filterModelFromDataGrid = (filter) => {
-    return filter?.filterModel?.items
+    const filteredModel: object = filter?.filterModel?.items
+    if (filteredModel)
+        return filter?.filterModel?.items
 }
 
 const setFilteredQueryToGraphQl = (filteredQueryForGraphQl, onFilterCustomers) => {
