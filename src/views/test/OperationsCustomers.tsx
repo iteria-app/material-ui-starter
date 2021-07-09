@@ -101,19 +101,6 @@ const getQueryFromDataGrid = (filter) => {
     return filteredQueryForGraphQl
 }
 
-// const filterContains = (filteredQueryForGraphQl, filterColumnField, filterValue) => {
-//     filteredQueryForGraphQl[filterColumnField] = { _ilike: "%" + filterValue + "%" }
-// }
-// const filterEndsWith = (filteredQueryForGraphQl, filterColumnField, filterValue) => {
-//     filteredQueryForGraphQl[filterColumnField] = { _ilike: "%" + filterValue }
-// }
-// const filterStartsWith = (filteredQueryForGraphQl, filterColumnField, filterValue) => {
-//     filteredQueryForGraphQl[filterColumnField] = { _ilike: filterValue + "%" }
-// }
-// const filterEquals = (filteredQueryForGraphQl, filterColumnField, filterValue) => {
-//     filteredQueryForGraphQl[filterColumnField] = { _eq: filterValue }
-// }
-
 const sendFilterQueryToGraphQl = (filter, filteredQueryForGraphQl, onFilterCustomers) => {
     const filteredValue: string = filteredValueFromDataGrid(filter)
     if (filteredValue) {
