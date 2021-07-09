@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import GeneratedTable from './GeneratedCustomersTable'
-import { useSearchCustomers2Query } from 'src/generated/graphql'
+import { useFilterCustomerGridDataQuery } from 'src/generated/graphql'
 // import { Customer_Order_By } from 'src/generated/graphql'
 
 const GeneratedCustomers = () => {
@@ -19,8 +19,9 @@ const GeneratedCustomers = () => {
   }
   )
 
-  const [result] = useSearchCustomers2Query({
+  const [result] = useFilterCustomerGridDataQuery({
     // @ts-ignore
+    //TODO order_by type
     variables: { where: filter, limit, offset, order_by: sort }
   })
 

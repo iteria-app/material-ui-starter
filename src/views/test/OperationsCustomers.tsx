@@ -104,7 +104,6 @@ const getQueryFromDataGrid = (filter) => {
     return filteredQueryForGraphQl
 }
 
-//spravit navratovu funkciu
 // const filterContains = (filteredQueryForGraphQl, filterColumnField, filterValue) => {
 //     filteredQueryForGraphQl[filterColumnField] = { _ilike: "%" + filterValue + "%" }
 // }

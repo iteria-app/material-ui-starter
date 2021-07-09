@@ -26,8 +26,7 @@ query searchCustomers($search: String!) {
   }
 }
 
-# pouzivam
-query searchCustomers2($where: customer_bool_exp!,$limit:Int!, $offset:Int!, $order_by: customer_order_by!) {
+query filterCustomerGridData($where: customer_bool_exp!,$limit:Int!, $offset:Int!, $order_by: customer_order_by!) {
   customers(where: $where,limit: $limit,
    offset: $offset, order_by: [$order_by]) {
     avatarUrl
@@ -40,15 +39,5 @@ query searchCustomers2($where: customer_bool_exp!,$limit:Int!, $offset:Int!, $or
     aggregate{
      count
     }
-  }
-}
-
-query totalCustomers($search: String!) {
-  customers(where: { name: { _ilike: $search } }) {
-    avatarUrl
-    createdAt
-    email
-    id
-    name
   }
 }
