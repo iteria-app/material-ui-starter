@@ -23,6 +23,7 @@ query searchCustomers($search: String!) {
     avatarUrl
     createdAt
     updatedAt
+    seq
   }
 }
 
@@ -34,6 +35,8 @@ query filterCustomerGridData($where: customer_bool_exp!,$limit:Int!, $offset:Int
     email
     id
     name
+    seq
+    updatedAt
   }
   customerAggregate(where: $where) {
     aggregate{
