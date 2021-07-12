@@ -9,7 +9,8 @@ const GeneratedCustomers = () => {
       name: 'asc'
     }
   );
-  const [limit, setLimit] = useState<number>(2);
+  // const [limit, setLimit] = useState<number>(2);
+  const [limit, setLimit] = useState<number>(10);
   const [page, setPage] = useState<number>(0);
   const [offset, setOffset] = useState<number>((page) * limit);
   const [filter, setFilter] = useState<object>({
