@@ -69,16 +69,11 @@ const getQueryFromDataGrid = (filter) => {
         const filterOperator: string = filterModel.operatorValue
         const filterValue: string = filterModel.value
 
-        
         console.log(filterColumnField,'filterColumnField'); 
         
-        // for (const column of filter.columns[0].type) {
-        //     console.log(column);
-        // }
-        const columnFilterField = filter.columns.filter((kv) => kv.field === filterColumnField)
-        const columnDateType = columnFilterField[0].type
-        // console.log(columnFilterField,'columnFilterType'); 
-        console.log(columnDateType,'columnDateType'); 
+        const filterDateColumn = getFilterDateColumn(filter, filterColumnField)
+        const filterDateType = filterDateColumn[0].type
+        console.log(filterDateType,'filterDateType'); 
 
         console.log(filterModel,'filterModel1'); 
         console.log(filterValue,'filterValue2'); 
@@ -98,34 +93,34 @@ const getQueryFromDataGrid = (filter) => {
             filteredQueryForGraphQl[filterColumnField] = { _eq: filterValue }
         }
         else if (filterOperator === 'before') {
-            if(columnDateType === 'dateTime'){
-                console.log(columnDateType, 'columnDateType'); 
+            if(filterDateType === 'dateTime'){
+                console.log(filterDateType, 'filterDateType'); 
                 filteredQueryForGraphQl[filterColumnField] = { _lt: filterValue}
-            }else if(columnDateType === 'date'){
+            }else if(filterDateType === 'date'){
                 filteredQueryForGraphQl[filterColumnField] = { _lt: filterValue + "T00:00:00"}
             }
         }
         else if (filterOperator === 'after') {
-            if(columnDateType === 'dateTime'){
-                console.log(columnDateType,'columnDateType'); 
+            if(filterDateType === 'dateTime'){
+                console.log(filterDateType,'filterDateType'); 
                 filteredQueryForGraphQl[filterColumnField] = { _gt: filterValue}
-            }else if(columnDateType === 'date'){
+            }else if(filterDateType === 'date'){
                 filteredQueryForGraphQl[filterColumnField] = { _gt: filterValue  + "T23:59:59"}
             }
         }
         else if (filterOperator === 'onOrBefore') {
-            if(columnDateType === 'dateTime'){
-                console.log(columnDateType,'columnDateType'); 
+            if(filterDateType === 'dateTime'){
+                console.log(filterDateType,'filterDateType'); 
                 filteredQueryForGraphQl[filterColumnField] = { _lte: filterValue}
-            }else if(columnDateType === 'date'){
+            }else if(filterDateType === 'date'){
                 filteredQueryForGraphQl[filterColumnField] = { _lte: filterValue + "T23:59:59" }
             }
         }
         else if (filterOperator === 'onOrAfter') {
-            if(columnDateType === 'dateTime'){
-                console.log(columnDateType,'columnDateType'); 
+            if(filterDateType === 'dateTime'){
+                console.log(filterDateType,'filterDateType'); 
                 filteredQueryForGraphQl[filterColumnField] = { _gte: filterValue}
-            }else if(columnDateType === 'date'){
+            }else if(filterDateType === 'date'){
                 filteredQueryForGraphQl[filterColumnField] = { _gte: filterValue + "T00:00:00"}
             }
         }
@@ -134,12 +129,12 @@ const getQueryFromDataGrid = (filter) => {
     return filteredQueryForGraphQl
 }
 
-const getDateType = () => {
-
-}
-
 const getFilterColumnField = (filterModel) => {
     return filterModel.columnField
+}
+
+const getFilterDateColumn = (filter, filterColumnField) => {
+    return filter.columns.filter((column) => column.field === filterColumnField)
 }
 
 const sendFilterQueryToGraphQl = (filter, filteredQueryForGraphQl, onFilterCustomers) => {
