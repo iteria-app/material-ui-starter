@@ -35,16 +35,6 @@ const sortModelFromDataGrid = (sort) => {
     return {}
 }
 
-//TODO date
-// export const customerListDate = (customers) => {
-//     const customerListDate = customers.filter((date) => date.createdAt.includes("2021-03-17"))
-//     console.log(customerListDate,'customers'); 
-//     if (customerListDate?.length > 0) {
-//       return customerListDate[0]?.createdAt
-//     }
-// } 
-// console.log(customerListDate, 'customerListDate');
-
 export const pageByTotalAndPageSize = (pageSizeNumber: number, totalCustomers: number): number => {
     const pageNumber: number = Math.floor((totalCustomers / pageSizeNumber) - 1)
     console.log(pageNumber, 'pageNumber');
@@ -81,25 +71,33 @@ const getQueryFromDataGrid = (filter) => {
         console.log(filterColumnField, 'filterColumnField');
 
         const filterDateColumn = getFilterDateColumn(filter, filterColumnField)
-        const filterDateType = filterDateColumn[0].type
-        console.log(filterDateType, 'filterDateType');
+        const filterDataType = filterDateColumn[0].type
+        console.log(filterDataType, 'filterDataType');
 
         console.log(filterModel, 'filterModel1');
         console.log(filterValue, 'filterValue2');
         console.log(filteredQueryForGraphQl, 'filteredQueryForGraphQl');
 
-        filterText(filterOperator, filteredQueryForGraphQl, filterColumnField, filterValue)
-        filterDate(filterOperator, filterDateType, filteredQueryForGraphQl, filterColumnField, filterValue)
+        //TODO refaktoring
+        if(filterDataType === 'string'){
+            filterText(filterOperator, filteredQueryForGraphQl, filterColumnField, filterValue)
+        }
+        // if(filterDataType === 'number'){
+        //     filterText(filterOperator, filteredQueryForGraphQl, filterColumnField, filterValue)
+        // }
+        filterDate(filterOperator, filterDataType, filteredQueryForGraphQl, filterColumnField, filterValue)
     })
 
     return filteredQueryForGraphQl
 }
 
+//TODO refaktoring
 const filterText = (filterOperator, filteredQueryForGraphQl, filterColumnField, filterValue) => {
     if (filterOperator === 'contains') {
         filteredQueryForGraphQl[filterColumnField] = { _ilike: "%" + filterValue + "%" }
         console.log(filteredQueryForGraphQl, 'filteredQueryForGraphQl');
-    } else if (filterOperator === 'endsWith') {
+    } 
+    else if (filterOperator === 'endsWith') {
         filteredQueryForGraphQl[filterColumnField] = { _ilike: "%" + filterValue }
     }
     else if (filterOperator === 'startsWith') {
@@ -110,36 +108,37 @@ const filterText = (filterOperator, filteredQueryForGraphQl, filterColumnField, 
     }
 }
 
-const filterDate = (filterOperator, filterDateType, filteredQueryForGraphQl, filterColumnField, filterValue) => {
+//TODO refaktoring
+const filterDate = (filterOperator, filterDataType, filteredQueryForGraphQl, filterColumnField, filterValue) => {
     if (filterOperator === 'before') {
-        if (filterDateType === 'dateTime') {
-            console.log(filterDateType, 'filterDateType');
+        if (filterDataType === 'dateTime') {
+            console.log(filterDataType, 'filterDataType');
             filteredQueryForGraphQl[filterColumnField] = { _lt: filterValue }
-        } else if (filterDateType === 'date') {
+        } else if (filterDataType === 'date') {
             filteredQueryForGraphQl[filterColumnField] = { _lt: filterValue + "T00:00:00" }
         }
     }
     else if (filterOperator === 'after') {
-        if (filterDateType === 'dateTime') {
-            console.log(filterDateType, 'filterDateType');
+        if (filterDataType === 'dateTime') {
+            console.log(filterDataType, 'filterDataType');
             filteredQueryForGraphQl[filterColumnField] = { _gt: filterValue }
-        } else if (filterDateType === 'date') {
+        } else if (filterDataType === 'date') {
             filteredQueryForGraphQl[filterColumnField] = { _gt: filterValue + "T23:59:59" }
         }
     }
     else if (filterOperator === 'onOrBefore') {
-        if (filterDateType === 'dateTime') {
-            console.log(filterDateType, 'filterDateType');
+        if (filterDataType === 'dateTime') {
+            console.log(filterDataType, 'filterDataType');
             filteredQueryForGraphQl[filterColumnField] = { _lte: filterValue }
-        } else if (filterDateType === 'date') {
+        } else if (filterDataType === 'date') {
             filteredQueryForGraphQl[filterColumnField] = { _lte: filterValue + "T23:59:59" }
         }
     }
     else if (filterOperator === 'onOrAfter') {
-        if (filterDateType === 'dateTime') {
-            console.log(filterDateType, 'filterDateType');
+        if (filterDataType === 'dateTime') {
+            console.log(filterDataType, 'filterDataType');
             filteredQueryForGraphQl[filterColumnField] = { _gte: filterValue }
-        } else if (filterDateType === 'date') {
+        } else if (filterDataType === 'date') {
             filteredQueryForGraphQl[filterColumnField] = { _gte: filterValue + "T00:00:00" }
         }
     }
