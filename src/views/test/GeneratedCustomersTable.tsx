@@ -60,7 +60,7 @@ export default function CustomerTable({ customers, onSortCustomers, onChangePage
         page={page}
         // autoPageSize={true}
         //TODO numbers for testing
-        rowsPerPageOptions={[2,3, 4,5,6,20]}
+        rowsPerPageOptions={[2,3,4,5,6,20]}
         rowCount={totalCustomers}
         filterMode="server"
         onFilterModelChange={handleFilter}
