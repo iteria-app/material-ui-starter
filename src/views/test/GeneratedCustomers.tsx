@@ -19,7 +19,6 @@ const GeneratedCustomers = () => {
     }
   }
   )
-
   const [result] = useFilterCustomerGridDataQuery({
     // @ts-ignore
     //TODO order_by type

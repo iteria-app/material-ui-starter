@@ -70,8 +70,8 @@ const getQueryFromDataGrid = (filter) => {
 
         console.log(filterColumnField, 'filterColumnField');
 
-        const filterDateColumn = getFilterDateColumn(filter, filterColumnField)
-        const filterDataType = filterDateColumn[0].type
+        const columnDataByFilterColumnField = getColumnDataByFilterColumnField(filter, filterColumnField)
+        const filterDataType: string = columnDataByFilterColumnField[0].type
         console.log(filterDataType, 'filterDataType');
 
         console.log(filterModel, 'filterModel1');
@@ -82,10 +82,11 @@ const getQueryFromDataGrid = (filter) => {
         if (filterDataType === 'string') {
             filterText(filterOperator, filteredQueryForGraphQl, filterColumnField, filterValue)
         }
-        //TODO refaktoring
         else if (filterDataType === 'number') {
-            filterNumber(filterOperator, filteredQueryForGraphQl, filterColumnField, filterValue)
+            const numberFitlerValue = getNumberFitlerValue(filterValue, filterModel, filterColumnField)
+            filterNumber(filterOperator, filteredQueryForGraphQl, filterColumnField, numberFitlerValue)
         }
+
         filterDate(filterOperator, filterDataType, filteredQueryForGraphQl, filterColumnField, filterValue)
     })
 
@@ -134,6 +135,27 @@ const filterNumber = (filterOperator, filteredQueryForGraphQl, filterColumnField
     }
 }
 
+const integerFields: string[] = ['seq']
+
+const getNumberFitlerValue = (filterValue, filterModel, filterColumnField) => {
+    if ((filterValue?.match('.')) && (isInIntegerFields(filterColumnField))) {
+        return numberAvoidDecimal(filterValue, filterModel)
+    }
+    return filterValue
+}
+
+const isInIntegerFields = (filterColumnField) => {
+    if (integerFields.includes(filterColumnField)) {
+        return true
+    }
+    return false
+}
+
+const numberAvoidDecimal = (filterValue, filterModel) => {
+    filterModel.value = Math.floor(Number(filterValue))
+    return Math.floor(Number(filterValue))
+}
+
 //TODO refaktoring
 const filterDate = (filterOperator, filterDataType, filteredQueryForGraphQl, filterColumnField, filterValue) => {
     if (filterOperator === 'before') {
@@ -170,7 +192,7 @@ const getFilterColumnField = (filterModel) => {
     return filterModel.columnField
 }
 
-const getFilterDateColumn = (filter, filterColumnField) => {
+const getColumnDataByFilterColumnField = (filter, filterColumnField) => {
     return filter.columns.filter((column) => column.field === filterColumnField)
 }
 
