@@ -4,7 +4,7 @@ import { GridColParams, DataGrid } from "@material-ui/data-grid";
 import { useNavigate } from 'react-router-dom'
 import { sortCustomers, filterDataGrid, pageByTotalAndPageSize } from './OperationsCustomers'
 
-export default function CustomerTable({ customers, onSortCustomers, onChangePageCustomers, page, offset, limit, onPageSize, onFilterCustomers, totalCustomers }) {
+export default function CustomerTable({ customers, onSortCustomers, onChangePageCustomers, page, offset, pageSize, onPageSize, onFilterCustomers, totalCustomers }) {
     let navigate = useNavigate();
 
     const handleSortCustomers = (sort) => {
@@ -57,7 +57,7 @@ export default function CustomerTable({ customers, onSortCustomers, onChangePage
         paginationMode="server"
         onPageChange={handlePage}
         onPageSizeChange={handlePageSize}
-        pageSize={limit}
+        pageSize={pageSize}
         page={page}
         // autoPageSize={true}
         //TODO numbers for testing

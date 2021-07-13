@@ -9,20 +9,20 @@ const GeneratedCustomers = () => {
       name: 'asc'
     }
   );
-  // const [limit, setLimit] = useState<number>(2);
-  const [limit, setLimit] = useState<number>(10);
   const [page, setPage] = useState<number>(0);
-  const [offset, setOffset] = useState<number>((page) * limit);
+  // const [pageSize, setPageSize] = useState<number>(2);
+  const [pageSize, setPageSize] = useState<number>(10);
   const [filter, setFilter] = useState<object>({
     name: {
       _ilike: "%%"
     }
   }
   )
+  const offset = page * pageSize
   const [result] = useFilterCustomerGridDataQuery({
     // @ts-ignore
     //TODO order_by type
-    variables: { where: filter, limit, offset, order_by: sort }
+    variables: { where: filter, limit: pageSize, offset: offset, order_by: sort }
   })
 
   console.log(result, 'result');
@@ -38,12 +38,11 @@ const GeneratedCustomers = () => {
 
   const onChangePageCustomers = (page: number) => {
     setPage(page)
-    setOffset((page) * limit)
     console.log(page, 'page');
   }
 
-  const onPageSize = (limit: number) => {
-    setLimit(limit)
+  const onPageSize = (pageSize: number) => {
+    setPageSize(pageSize)
   }
 
   const onFilterCustomers = (query: object) => {
@@ -53,7 +52,7 @@ const GeneratedCustomers = () => {
   return (
     <GeneratedTable customers={fetching ? [] : data.customers}
       totalCustomers={totalCustomers}
-      onChangePageCustomers={onChangePageCustomers} offset={offset} page={page} onPageSize={onPageSize} onSortCustomers={onSortCustomers} onFilterCustomers={onFilterCustomers} limit={limit} />
+      onChangePageCustomers={onChangePageCustomers} offset={offset} page={page} onPageSize={onPageSize} onSortCustomers={onSortCustomers} onFilterCustomers={onFilterCustomers} pageSize={pageSize} />
   );
 };
 export default GeneratedCustomers
