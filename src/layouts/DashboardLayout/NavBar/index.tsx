@@ -60,7 +60,7 @@ const NavBar = ({ onMobileClose, openMobile }) => {
     {
       href: '/app/customers',
       icon: UsersIcon,
-      title: intl.formatMessage({id: "customers"})
+      title: intl.formatMessage({ id: "customers" })
     },
     {
       href: '/app/generated-customers',
@@ -76,6 +76,11 @@ const NavBar = ({ onMobileClose, openMobile }) => {
       href: '/app/products',
       icon: ShoppingBagIcon,
       title: 'Products'
+    },
+    {
+      href: '/app/generated-products',
+      icon: ShoppingBagIcon,
+      title: 'Generated products'
     },
     {
       href: '/app/account',
@@ -198,7 +203,7 @@ NavBar.propTypes = {
 };
 
 NavBar.defaultProps = {
-  onMobileClose: () => {},
+  onMobileClose: () => { },
   openMobile: false
 };
 
