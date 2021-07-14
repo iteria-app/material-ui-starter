@@ -51,6 +51,19 @@ export default function CustomerTable({ customers, onSortCustomers, onChangePage
         { field: "seq", flex: 1, type: "number", valueFormatter: ({ value }) => value, renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customer" defaultMessage="seq" />) },
         { field: "name", flex: 1, type: "string", valueFormatter: ({ value }) => value, renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customer" defaultMessage="name" />) },
         { field: "manager", flex: 1, type: "boolean", valueFormatter: ({ value }) => value, renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customers" defaultMessage="manager" />) },
+        { 
+        field: "state", flex: 1, type: "singleSelect",
+        valueOptions: [
+            'California',
+            'Netherlands',
+            'France',
+            'Georgia',
+            'Texas',
+            'Utah',
+          ], 
+          valueFormatter: ({ value }) => value, 
+          renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customers" defaultMessage="state" />) 
+        }
     ];
     return (<div style={{ height: "400px", width: "100%" }}><DataGrid onRowClick={() => navigate('/app/generated-customer-detail', { replace: true })} columns={columns} rows={customers}
         sortingMode="server"

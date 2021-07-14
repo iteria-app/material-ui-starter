@@ -1,8 +1,8 @@
 import { getGridNumericColumnOperators, getGridDateOperators, getGridStringOperators } from "@material-ui/data-grid";
 //TODO get
-console.log(getGridNumericColumnOperators(),'getGridNumericColumnOperators()'); 
-console.log(getGridDateOperators(),'getGridDateOperators()'); 
-console.log(getGridStringOperators(),'getGridStringOperators()'); 
+console.log(getGridNumericColumnOperators(), 'getGridNumericColumnOperators()');
+console.log(getGridDateOperators(), 'getGridDateOperators()');
+console.log(getGridStringOperators(), 'getGridStringOperators()');
 
 export const sortCustomers = (sort, onSortCustomers) => {
     const sortModel: object[] = sortModelFromDataGrid(sort)
@@ -95,6 +95,7 @@ const getQueryFromDataGrid = (filter) => {
         //TODO filterColumnField si natiahnut uz pred tym
         filterDate(filterOperator, filterDataType, filteredQueryForGraphQl, filterColumnField, filterValue)
         filterBoolean(filterOperator, filterDataType, filteredQueryForGraphQl, filterColumnField, filterValue)
+        filterSingleSelect(filterOperator, filterDataType, filteredQueryForGraphQl, filterColumnField, filterValue)
     })
 
     return filteredQueryForGraphQl
@@ -197,9 +198,21 @@ const filterDate = (filterOperator, filterDataType, filteredQueryForGraphQl, fil
 
 //TODO refaktoring
 const filterBoolean = (filterOperator, filterDataType, filteredQueryForGraphQl, filterColumnField, filterValue) => {
-    if (filterOperator === 'is') {
-        if (filterDataType === 'boolean') {
+    if (filterDataType === 'boolean') {
+        if (filterOperator === 'is') {
             filteredQueryForGraphQl[filterColumnField] = { _eq: filterValue }
+        }
+    }
+}
+
+//TODO refaktoring
+const filterSingleSelect = (filterOperator, filterDataType, filteredQueryForGraphQl, filterColumnField, filterValue) => {
+    if (filterDataType === 'singleSelect') {
+        if (filterOperator === 'is') {
+            filteredQueryForGraphQl[filterColumnField] = { _eq: filterValue }
+        }
+        else if (filterOperator === 'not') {
+            filteredQueryForGraphQl[filterColumnField] = { _neq: filterValue }
         }
     }
 }
