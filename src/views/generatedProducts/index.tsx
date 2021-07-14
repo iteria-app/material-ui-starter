@@ -8,7 +8,7 @@ const GeneratedProducts = () => {
 
   if (error) return <p>Oh no... {error.message}</p>;
   return (
-    <GeneratedProductsTable products={fetching ? [] : data.Products} />
+    <GeneratedProductsTable products={fetching ? [] : data.products} />
   );
 };
 export default GeneratedProducts

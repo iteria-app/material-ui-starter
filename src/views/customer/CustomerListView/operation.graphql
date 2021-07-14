@@ -23,6 +23,7 @@ query searchCustomers($search: String!) {
     avatarUrl
     createdAt
     updatedAt
+    seq
   }
 }
 
@@ -35,11 +36,12 @@ query AllCustomers {
     email
     createdAt
     avatarUrl
+    seq
   }
 }
 
 query AllProducts {
-  Products(order_by: { title: asc }) {
+  products(order_by: { title: asc }) {
     id
     media
     title
