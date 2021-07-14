@@ -4,11 +4,7 @@ import { useFilterCustomerGridDataQuery } from 'src/generated/graphql'
 // import { Customer_Order_By } from 'src/generated/graphql'
 
 const GeneratedCustomers = () => {
-  const [sort, setSortCustomers] = React.useState(
-    {
-      name: 'asc'
-    }
-  );
+  const [sort, setSortCustomers] = React.useState<object>();
   const [page, setPage] = useState<number>(0);
   // const [pageSize, setPageSize] = useState<number>(2);
   const [pageSize, setPageSize] = useState<number>(10);
@@ -20,8 +16,6 @@ const GeneratedCustomers = () => {
   )
   const offset = page * pageSize
   const [result] = useFilterCustomerGridDataQuery({
-    // @ts-ignore
-    //TODO order_by type
     variables: { where: filter, limit: pageSize, offset: offset, order_by: sort }
   })
 

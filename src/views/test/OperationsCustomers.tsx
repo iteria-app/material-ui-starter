@@ -4,12 +4,13 @@ console.log(getGridNumericColumnOperators(), 'getGridNumericColumnOperators()');
 console.log(getGridDateOperators(), 'getGridDateOperators()');
 console.log(getGridStringOperators(), 'getGridStringOperators()');
 
-export const sortCustomers = (sort, onSortCustomers) => {
+export const sortCustomers = (sort, onSortCustomers, customers) => {
     const sortModel: object[] = sortModelFromDataGrid(sort)
     if (sortModel.length > 0) {
         setSortQuery(sort, onSortCustomers)
     } else {
-        unsortCustomers(onSortCustomers)
+        const firstKey = getFirstKeyOfCustomers(customers)
+        unsortCustomers(onSortCustomers, firstKey)
     }
 }
 
@@ -28,10 +29,19 @@ const sortQueryFromGridData = (sort): object => {
     return sortQuery
 }
 
-const unsortCustomers = (onSortCustomers) => {
+const unsortCustomers = (onSortCustomers, firstColumn) => {
     onSortCustomers({
-        "name": "asc"
+        [firstColumn]: null
     })
+}
+
+const getFirstKeyOfCustomers = (customers) => {
+    if(customers) {
+        const customersList:[] = customers[0]
+        if (customersList) {
+            return Object.keys(customersList)[0]
+        }
+    }
 }
 
 const sortModelFromDataGrid = (sort) => {

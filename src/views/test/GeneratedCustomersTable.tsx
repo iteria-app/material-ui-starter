@@ -9,7 +9,7 @@ export default function CustomerTable({ customers, onSortCustomers, onChangePage
 
     const handleSortCustomers = (sort) => {
         console.log(sort?.sortModel, 'sort?.sortModel');
-        sortCustomers(sort, onSortCustomers)
+        sortCustomers(sort, onSortCustomers, customers)
     };
 
     console.log(totalCustomers, 'totalCustomers');

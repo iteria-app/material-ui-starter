@@ -27,7 +27,7 @@ query searchCustomers($search: String!) {
   }
 }
 
-query filterCustomerGridData($where: customer_bool_exp!,$limit:Int!, $offset:Int!, $order_by: customer_order_by!) {
+query filterCustomerGridData($where: customer_bool_exp!,$limit:Int!, $offset:Int!, $order_by: customer_order_by! = {avatarUrl: null}) {
   customers(where: $where,limit: $limit,
    offset: $offset, order_by: [$order_by]) {
     avatarUrl
