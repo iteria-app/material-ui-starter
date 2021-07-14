@@ -1,3 +1,9 @@
+import { getGridNumericColumnOperators, getGridDateOperators, getGridStringOperators } from "@material-ui/data-grid";
+//TODO get
+console.log(getGridNumericColumnOperators(),'getGridNumericColumnOperators()'); 
+console.log(getGridDateOperators(),'getGridDateOperators()'); 
+console.log(getGridStringOperators(),'getGridStringOperators()'); 
+
 export const sortCustomers = (sort, onSortCustomers) => {
     const sortModel: object[] = sortModelFromDataGrid(sort)
     if (sortModel.length > 0) {
@@ -86,8 +92,9 @@ const getQueryFromDataGrid = (filter) => {
             const numberFitlerValue = getNumberFitlerValue(filterValue, filterModel, filterColumnField)
             filterNumber(filterOperator, filteredQueryForGraphQl, filterColumnField, numberFitlerValue)
         }
-
+        //TODO filterColumnField si natiahnut uz pred tym
         filterDate(filterOperator, filterDataType, filteredQueryForGraphQl, filterColumnField, filterValue)
+        filterBoolean(filterOperator, filterDataType, filteredQueryForGraphQl, filterColumnField, filterValue)
     })
 
     return filteredQueryForGraphQl
@@ -184,6 +191,15 @@ const filterDate = (filterOperator, filterDataType, filteredQueryForGraphQl, fil
             filteredQueryForGraphQl[filterColumnField] = { _gte: filterValue }
         } else if (filterDataType === 'date') {
             filteredQueryForGraphQl[filterColumnField] = { _gte: filterValue + "T00:00:00" }
+        }
+    }
+}
+
+//TODO refaktoring
+const filterBoolean = (filterOperator, filterDataType, filteredQueryForGraphQl, filterColumnField, filterValue) => {
+    if (filterOperator === 'is') {
+        if (filterDataType === 'boolean') {
+            filteredQueryForGraphQl[filterColumnField] = { _eq: filterValue }
         }
     }
 }

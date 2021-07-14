@@ -32,6 +32,7 @@ query filterCustomerGridData($where: customer_bool_exp!,$limit:Int!, $offset:Int
    offset: $offset, order_by: [$order_by]) {
     avatarUrl
     createdAt
+    manager
     email
     id
     name
