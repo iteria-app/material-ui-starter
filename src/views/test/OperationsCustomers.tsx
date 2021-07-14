@@ -4,6 +4,36 @@ console.log(getGridNumericColumnOperators(), 'getGridNumericColumnOperators()');
 console.log(getGridDateOperators(), 'getGridDateOperators()');
 console.log(getGridStringOperators(), 'getGridStringOperators()');
 
+const getNumberFilterOperator = (filterValue) => {
+    const operatorValues = [
+        {
+            dataGrid: '=',
+            graphQl: { _eq: filterValue }
+        },
+        {
+            dataGrid: '!=',
+            graphQl: { _neq: filterValue }
+        },
+        {
+            dataGrid: '>',
+            graphQl: { _gt: filterValue }
+        },
+        {
+            dataGrid: '<',
+            graphQl: { _lt: filterValue }
+        },
+        {
+            dataGrid: '>=',
+            graphQl: { _gte: filterValue }
+        },
+        {
+            dataGrid: '<=',
+            graphQl: { _lte: filterValue }
+        }
+    ]
+    return operatorValues
+}
+
 export const sortCustomers = (sort, onSortCustomers, customers) => {
     const sortModel: object[] = sortModelFromDataGrid(sort)
     if (sortModel.length > 0) {
@@ -133,37 +163,24 @@ const filterText = (filterOperator, filteredQueryForGraphQl, filterColumnField, 
 
 //TODO refaktoring
 const filterNumber = (filterOperator, filteredQueryForGraphQl, filterColumnField, filterValue) => {
-    if (filterOperator === '=') {
-        filteredQueryForGraphQl[filterColumnField] = { _eq: filterValue }
-    }
-    else if (filterOperator === '!=') {
-        filteredQueryForGraphQl[filterColumnField] = { _neq: filterValue }
-    }
-    else if (filterOperator === '>') {
-        filteredQueryForGraphQl[filterColumnField] = { _gt: filterValue }
-    }
-    else if (filterOperator === '<') {
-        filteredQueryForGraphQl[filterColumnField] = { _lt: filterValue }
-    }
-    else if (filterOperator === '>=') {
-        filteredQueryForGraphQl[filterColumnField] = { _gte: filterValue }
-    }
-    else if (filterOperator === '<=') {
-        filteredQueryForGraphQl[filterColumnField] = { _lte: filterValue }
-    }
+    const filterOperatorList = getNumberFilterOperator(filterValue)
+    const currentOperatorType = filterOperatorList.filter((operator) => operator.dataGrid === filterOperator)
+    const graphQlQuery = currentOperatorType[0]?.graphQl
+
+    filteredQueryForGraphQl[filterColumnField] = graphQlQuery
 }
 
 const integerFields: string[] = ['seq']
 
 const getNumberFitlerValue = (filterValue, filterModel, filterColumnField) => {
-    if ((filterValue?.match('.')) && (isInIntegerFields(filterColumnField))) {
+    if (isInIntegerFields(filterColumnField)) {
         return numberAvoidDecimal(filterValue, filterModel)
     }
     return filterValue
 }
 
 const isInIntegerFields = (filterColumnField) => {
-    if (integerFields.includes(filterColumnField)) {
+    if (integerFields?.includes(filterColumnField)) {
         return true
     }
     return false
