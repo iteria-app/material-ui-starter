@@ -163,9 +163,19 @@ const filterText = (filterOperator, filteredQueryForGraphQl, filterColumnField, 
 
 //TODO refaktoring
 const filterNumber = (filterOperator, filteredQueryForGraphQl, filterColumnField, filterValue) => {
-    const filterOperatorList = getNumberFilterOperator(filterValue)
-    const currentOperatorType = filterOperatorList.filter((operator) => operator.dataGrid === filterOperator)
-    const graphQlQuery = currentOperatorType[0]?.graphQl
+    // const filterOperatorList = getNumberFilterOperator(filterValue)
+    // const currentOperatorFromDataGrid = filterOperatorList.filter((operator) => operator.dataGrid === filterOperator)
+    // const graphQlQuery = currentOperatorFromDataGrid[0]?.graphQl
+
+    // filteredQueryForGraphQl[filterColumnField] = graphQlQuery
+
+    getFilterGraphQlQuery(filteredQueryForGraphQl, filterColumnField, filterOperator, getNumberFilterOperator(filterValue))
+}
+
+const getFilterGraphQlQuery = (filteredQueryForGraphQl, filterColumnField, filterOperator, getTypeFilterOperator) =>{
+    const filterOperatorList = getTypeFilterOperator
+    const currentOperatorFromDataGrid = filterOperatorList.filter((operator) => operator.dataGrid === filterOperator)
+    const graphQlQuery = currentOperatorFromDataGrid[0]?.graphQl
 
     filteredQueryForGraphQl[filterColumnField] = graphQlQuery
 }
@@ -189,6 +199,27 @@ const isInIntegerFields = (filterColumnField) => {
 const numberAvoidDecimal = (filterValue, filterModel) => {
     filterModel.value = Math.floor(Number(filterValue))
     return Math.floor(Number(filterValue))
+}
+
+//TODO refaktoring
+const filterBoolean = (filterOperator, filterDataType, filteredQueryForGraphQl, filterColumnField, filterValue) => {
+    if (filterDataType === 'boolean') {
+        if (filterOperator === 'is') {
+            filteredQueryForGraphQl[filterColumnField] = { _eq: filterValue }
+        }
+    }
+}
+
+//TODO refaktoring
+const filterSingleSelect = (filterOperator, filterDataType, filteredQueryForGraphQl, filterColumnField, filterValue) => {
+    if (filterDataType === 'singleSelect') {
+        if (filterOperator === 'is') {
+            filteredQueryForGraphQl[filterColumnField] = { _eq: filterValue }
+        }
+        else if (filterOperator === 'not') {
+            filteredQueryForGraphQl[filterColumnField] = { _neq: filterValue }
+        }
+    }
 }
 
 //TODO refaktoring
@@ -219,27 +250,6 @@ const filterDate = (filterOperator, filterDataType, filteredQueryForGraphQl, fil
             filteredQueryForGraphQl[filterColumnField] = { _gte: filterValue }
         } else if (filterDataType === 'date') {
             filteredQueryForGraphQl[filterColumnField] = { _gte: filterValue + "T00:00:00" }
-        }
-    }
-}
-
-//TODO refaktoring
-const filterBoolean = (filterOperator, filterDataType, filteredQueryForGraphQl, filterColumnField, filterValue) => {
-    if (filterDataType === 'boolean') {
-        if (filterOperator === 'is') {
-            filteredQueryForGraphQl[filterColumnField] = { _eq: filterValue }
-        }
-    }
-}
-
-//TODO refaktoring
-const filterSingleSelect = (filterOperator, filterDataType, filteredQueryForGraphQl, filterColumnField, filterValue) => {
-    if (filterDataType === 'singleSelect') {
-        if (filterOperator === 'is') {
-            filteredQueryForGraphQl[filterColumnField] = { _eq: filterValue }
-        }
-        else if (filterOperator === 'not') {
-            filteredQueryForGraphQl[filterColumnField] = { _neq: filterValue }
         }
     }
 }
