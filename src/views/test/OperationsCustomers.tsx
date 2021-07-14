@@ -36,8 +36,8 @@ const unsortCustomers = (onSortCustomers, firstColumn) => {
 }
 
 const getFirstKeyOfCustomers = (customers) => {
-    if(customers) {
-        const customersList:[] = customers[0]
+    if (customers) {
+        const customersList: [] = customers[0]
         if (customersList) {
             return Object.keys(customersList)[0]
         }
@@ -258,14 +258,28 @@ const setFilteredQueryToGraphQl = (filteredQueryForGraphQl, onFilterCustomers) =
 }
 
 const setEmptyFilteredQueryValueToGraphQl = (onFilterCustomers, filter) => {
-    const columnField = filterModelFromDataGrid(filter)[0].columnField
-    onFilterCustomers({
-        [columnField]: {
-            _ilike: "%%"
-        }
-    })
+    const columnField: string = filterModelFromDataGrid(filter)[0]?.columnField
+    const columnOperator: string = filterModelFromDataGrid(filter)[0]?.operatorValue
+
+    if (getOperatorStringList().includes(columnOperator)) {
+        onFilterCustomers({
+            [columnField]: {
+                _ilike: "%%"
+            }
+        })
+    } else {
+        onFilterCustomers({
+            [columnField]: {
+                _eq: null
+            }
+        })
+    }
 }
 
 export const setCurrentPageToOne = (onChangePageCustomers) => {
     onChangePageCustomers(0)
+}
+
+const getOperatorStringList = () => {
+    return getGridStringOperators().map((operator) => operator.value)
 }
