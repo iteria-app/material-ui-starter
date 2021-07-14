@@ -71,7 +71,7 @@ const sendFilterQueryToGraphQl = (filter, filteredQueryForGraphQl, onFilterCusto
     if (filteredValue) {
         setFilteredQueryToGraphQl(filteredQueryForGraphQl, onFilterCustomers)
     } else {
-        setDefaultFilteredQueryToGraphQl(onFilterCustomers)
+        setEmptyFilteredQueryValueToGraphQl(onFilterCustomers, filter)
     }
 }
 
@@ -257,9 +257,10 @@ const setFilteredQueryToGraphQl = (filteredQueryForGraphQl, onFilterCustomers) =
     onFilterCustomers(filteredQueryForGraphQl);
 }
 
-const setDefaultFilteredQueryToGraphQl = (onFilterCustomers) => {
+const setEmptyFilteredQueryValueToGraphQl = (onFilterCustomers, filter) => {
+    const columnField = filterModelFromDataGrid(filter)[0].columnField
     onFilterCustomers({
-        name: {
+        [columnField]: {
             _ilike: "%%"
         }
     })

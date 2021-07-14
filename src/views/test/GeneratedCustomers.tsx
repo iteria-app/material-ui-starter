@@ -8,12 +8,7 @@ const GeneratedCustomers = () => {
   const [page, setPage] = useState<number>(0);
   // const [pageSize, setPageSize] = useState<number>(2);
   const [pageSize, setPageSize] = useState<number>(10);
-  const [filter, setFilter] = useState<object>({
-    name: {
-      _ilike: "%%"
-    }
-  }
-  )
+  const [filter, setFilter] = useState<object>()
   const offset = page * pageSize
   const [result] = useFilterCustomerGridDataQuery({
     variables: { where: filter, limit: pageSize, offset: offset, order_by: sort }
