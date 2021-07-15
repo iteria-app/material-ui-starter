@@ -1,8 +1,4 @@
-import { getGridNumericColumnOperators, getGridDateOperators, getGridStringOperators } from "@material-ui/data-grid";
-//TODO get
-console.log(getGridNumericColumnOperators(), 'getGridNumericColumnOperators()');
-console.log(getGridDateOperators(), 'getGridDateOperators()');
-console.log(getGridStringOperators(), 'getGridStringOperators()');
+import { getGridStringOperators } from "@material-ui/data-grid";
 
 const getNumberFilterOperator = (filterValue) => {
     const operatorValues = [
@@ -257,32 +253,34 @@ const filterBoolean = (filterOperator, filteredQueryForGraphQl, filterColumnFiel
     getFilterGraphQlQuery(filteredQueryForGraphQl, filterColumnField, filterOperator, getBooleanFilterOperator(filterValue))
 }
 
+const timeZone = "+01:00"
+
 //TODO refaktoring
 const filterDate = (filterOperator, filterDataType, filteredQueryForGraphQl, filterColumnField, filterValue) => {
     if (filterOperator === 'before') {
         if (filterDataType === 'dateTime') {
-            filteredQueryForGraphQl[filterColumnField] = { _lt: filterValue }
+            filteredQueryForGraphQl[filterColumnField] = { _lt: filterValue + ":00.00000" + timeZone}
         } else if (filterDataType === 'date') {
             filteredQueryForGraphQl[filterColumnField] = { _lt: filterValue + "T00:00:00" }
         }
     }
     else if (filterOperator === 'after') {
         if (filterDataType === 'dateTime') {
-            filteredQueryForGraphQl[filterColumnField] = { _gt: filterValue }
+            filteredQueryForGraphQl[filterColumnField] = { _gt: filterValue + ":60.00000" + timeZone }
         } else if (filterDataType === 'date') {
-            filteredQueryForGraphQl[filterColumnField] = { _gt: filterValue + "T23:59:59" }
+            filteredQueryForGraphQl[filterColumnField] = { _gt: filterValue + "T24:00:00" }
         }
     }
     else if (filterOperator === 'onOrBefore') {
         if (filterDataType === 'dateTime') {
-            filteredQueryForGraphQl[filterColumnField] = { _lte: filterValue }
+            filteredQueryForGraphQl[filterColumnField] = { _lte: filterValue + ":60.00000" + timeZone}
         } else if (filterDataType === 'date') {
-            filteredQueryForGraphQl[filterColumnField] = { _lte: filterValue + "T23:59:59" }
+            filteredQueryForGraphQl[filterColumnField] = { _lte: filterValue + "T24:00:00" }
         }
     }
     else if (filterOperator === 'onOrAfter') {
         if (filterDataType === 'dateTime') {
-            filteredQueryForGraphQl[filterColumnField] = { _gte: filterValue }
+            filteredQueryForGraphQl[filterColumnField] = { _gte: filterValue + ":00.00000" + timeZone}
         } else if (filterDataType === 'date') {
             filteredQueryForGraphQl[filterColumnField] = { _gte: filterValue + "T00:00:00" }
         }
