@@ -34,6 +34,75 @@ const getNumberFilterOperator = (filterValue) => {
     return operatorValues
 }
 
+const getStringFilterOperator = (filterValue) => {
+    const operatorValues = [
+        {
+            dataGrid: 'contains',
+            graphQl: { _ilike: "%" + filterValue + "%" }
+        },
+        {
+            dataGrid: 'equals',
+            graphQl: { _eq: filterValue }
+        },
+        {
+            dataGrid: 'startsWith',
+            graphQl: { _ilike: filterValue + "%" }
+        },
+        {
+            dataGrid: 'endsWith',
+            graphQl: { _ilike: "%" + filterValue }
+        }
+    ]
+    return operatorValues
+}
+
+const getDateFilterOperator = (filterValue) => {
+    const operatorValues = [
+        {
+            dataGrid: 'before',
+            graphQl: {
+                dateTime: { _lt: filterValue },
+                date: { _lt: filterValue + "T00:00:00" }
+            }
+        },
+        {
+            dataGrid: 'after',
+            graphQl: {
+                dateTime: { _gt: filterValue },
+                date: { _gt: filterValue + "T23:59:59" }
+            }
+        },
+        {
+            dataGrid: 'onOrBefore',
+            graphQl: {
+                dateTime: { _lte: filterValue },
+                date: { _lte: filterValue + "T23:59:59" }
+            }
+        },
+        {
+            dataGrid: 'onOrAfter',
+            graphQl: {
+                dateTime: { _gte: filterValue },
+                date: { _gte: filterValue + "T00:00:00" }
+            }
+        }
+    ]
+    return operatorValues
+}
+const getBooleanFilterOperator = (filterValue) => {
+    const operatorValues = [
+        {
+            dataGrid: 'is',
+            graphQl: { _eq: filterValue }
+        },
+        {
+            dataGrid: 'not',
+            graphQl: { _neq: filterValue }
+        }
+    ]
+    return operatorValues
+}
+
 export const sortCustomers = (sort, onSortCustomers, customers) => {
     const sortModel: object[] = sortModelFromDataGrid(sort)
     if (sortModel.length > 0) {
@@ -105,6 +174,7 @@ const sendFilterQueryToGraphQl = (filter, filteredQueryForGraphQl, onFilterCusto
     }
 }
 
+//spravim funciu get filterValue a zalovalm ju tu dole tym padom ziskam globalnu premennu cez funkciu
 const getQueryFromDataGrid = (filter) => {
     const filteredQueryForGraphQl: object = {}
     const filterModels = filterModelFromDataGrid(filter)
@@ -128,47 +198,28 @@ const getQueryFromDataGrid = (filter) => {
         if (filterDataType === 'string') {
             filterText(filterOperator, filteredQueryForGraphQl, filterColumnField, filterValue)
         }
-        else if (filterDataType === 'number') {
+        if (filterDataType === 'number') {
             const numberFitlerValue = getNumberFitlerValue(filterValue, filterModel, filterColumnField)
             filterNumber(filterOperator, filteredQueryForGraphQl, filterColumnField, numberFitlerValue)
         }
+        if (filterDataType === 'boolean' || filterDataType === 'singleSelect') {
+            filterBoolean(filterOperator, filteredQueryForGraphQl, filterColumnField, filterValue)
+        }
+
         //TODO filterColumnField si natiahnut uz pred tym
         filterDate(filterOperator, filterDataType, filteredQueryForGraphQl, filterColumnField, filterValue)
-        filterBoolean(filterOperator, filterDataType, filteredQueryForGraphQl, filterColumnField, filterValue)
-        filterSingleSelect(filterOperator, filterDataType, filteredQueryForGraphQl, filterColumnField, filterValue)
     })
 
     return filteredQueryForGraphQl
 }
 
-// const filter1 = (filteredQueryForGraphQl, filterColumnField, filterValue) => {
-//     filteredQueryForGraphQl[filterColumnField] = { _ilike: "%" + filterValue + "%" }
-// }
-
 //TODO refaktoring
 const filterText = (filterOperator, filteredQueryForGraphQl, filterColumnField, filterValue) => {
-    if (filterOperator === 'contains') {
-        filteredQueryForGraphQl[filterColumnField] = { _ilike: "%" + filterValue + "%" }
-    }
-    else if (filterOperator === 'endsWith') {
-        filteredQueryForGraphQl[filterColumnField] = { _ilike: "%" + filterValue }
-    }
-    else if (filterOperator === 'startsWith') {
-        filteredQueryForGraphQl[filterColumnField] = { _ilike: filterValue + "%" }
-    }
-    else if (filterOperator === 'equals') {
-        filteredQueryForGraphQl[filterColumnField] = { _eq: filterValue }
-    }
+    getFilterGraphQlQuery(filteredQueryForGraphQl, filterColumnField, filterOperator, getStringFilterOperator(filterValue))
 }
 
 //TODO refaktoring
 const filterNumber = (filterOperator, filteredQueryForGraphQl, filterColumnField, filterValue) => {
-    // const filterOperatorList = getNumberFilterOperator(filterValue)
-    // const currentOperatorFromDataGrid = filterOperatorList.filter((operator) => operator.dataGrid === filterOperator)
-    // const graphQlQuery = currentOperatorFromDataGrid[0]?.graphQl
-
-    // filteredQueryForGraphQl[filterColumnField] = graphQlQuery
-
     getFilterGraphQlQuery(filteredQueryForGraphQl, filterColumnField, filterOperator, getNumberFilterOperator(filterValue))
 }
 
@@ -202,24 +253,8 @@ const numberAvoidDecimal = (filterValue, filterModel) => {
 }
 
 //TODO refaktoring
-const filterBoolean = (filterOperator, filterDataType, filteredQueryForGraphQl, filterColumnField, filterValue) => {
-    if (filterDataType === 'boolean') {
-        if (filterOperator === 'is') {
-            filteredQueryForGraphQl[filterColumnField] = { _eq: filterValue }
-        }
-    }
-}
-
-//TODO refaktoring
-const filterSingleSelect = (filterOperator, filterDataType, filteredQueryForGraphQl, filterColumnField, filterValue) => {
-    if (filterDataType === 'singleSelect') {
-        if (filterOperator === 'is') {
-            filteredQueryForGraphQl[filterColumnField] = { _eq: filterValue }
-        }
-        else if (filterOperator === 'not') {
-            filteredQueryForGraphQl[filterColumnField] = { _neq: filterValue }
-        }
-    }
+const filterBoolean = (filterOperator, filteredQueryForGraphQl, filterColumnField, filterValue) => {
+    getFilterGraphQlQuery(filteredQueryForGraphQl, filterColumnField, filterOperator, getBooleanFilterOperator(filterValue))
 }
 
 //TODO refaktoring
