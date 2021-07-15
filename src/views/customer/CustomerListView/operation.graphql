@@ -37,7 +37,6 @@ query filterCustomerGridData($where: customer_bool_exp! = {name:{_ilike:"%%"}},$
     name
     seq
     state
-    updatedAt
   }
   customerAggregate(where: $where) {
     aggregate{
