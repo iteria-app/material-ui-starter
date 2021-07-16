@@ -259,14 +259,15 @@ const timeZone = "+01:00"
 const filterDate = (filterOperator, filterDataType, filteredQueryForGraphQl, filterColumnField, filterValue) => {
     if (filterOperator === 'is') {
         if (filterDataType === 'dateTime') {
-            filteredQueryForGraphQl[filterColumnField] = { _lt: filterValue + ":00.00000" + timeZone }
+            filteredQueryForGraphQl[filterColumnField] = { _gte: filterValue + ":00.00000" + timeZone, _lte: filterValue + ":60.00000" + timeZone }
         } else if (filterDataType === 'date') {
-            filteredQueryForGraphQl[filterColumnField] = { _gt: filterValue + "T00:00:00.00000" + timeZone, _lt: filterValue + "T24:00:00.00000" + timeZone }
+            filteredQueryForGraphQl[filterColumnField] = { _gte: filterValue + "T00:00:00.00000" + timeZone, _lte: filterValue + "T24:00:00.00000" + timeZone }
         }
     }
     if (filterOperator === 'not') {
         if (filterDataType === 'dateTime') {
-            filteredQueryForGraphQl[filterColumnField] = { _lt: filterValue + ":00.00000" + timeZone }
+            filteredQueryForGraphQl['_or'] = [{ [filterColumnField]: { _gt: filterValue + ":60.00000" + timeZone } }, { [filterColumnField]: { _lt: filterValue + ":00.00000" + timeZone } }
+            ]
         } else if (filterDataType === 'date') {
             filteredQueryForGraphQl['_or'] = [{ [filterColumnField]: { _gt: filterValue + "T24:00:00" } }, { [filterColumnField]: { _lt: filterValue + "T00:00:00" } }
             ]
@@ -290,7 +291,7 @@ const filterDate = (filterOperator, filterDataType, filteredQueryForGraphQl, fil
         if (filterDataType === 'dateTime') {
             filteredQueryForGraphQl[filterColumnField] = { _lte: filterValue + ":60.00000" + timeZone }
         } else if (filterDataType === 'date') {
-            filteredQueryForGraphQl[filterColumnField] = { _lte: filterValue + "T24:00:00.00000" + timeZone}
+            filteredQueryForGraphQl[filterColumnField] = { _lte: filterValue + "T24:00:00.00000" + timeZone }
         }
     }
     else if (filterOperator === 'onOrAfter') {
