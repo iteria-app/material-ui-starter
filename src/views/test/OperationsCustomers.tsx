@@ -9,7 +9,8 @@ export const getFilterData = (filter) => {
 //TODO timezone
 const timeZone = "+01:00"
 
-const getNumberFilterOperator = (filterValue) => {
+const getNumberFilterOperator = () => {
+    const filterValue = filteredValueFromDataGrid()
     const operatorValues = [
         {
             dataGrid: '=',
@@ -39,7 +40,8 @@ const getNumberFilterOperator = (filterValue) => {
     return operatorValues
 }
 
-const getStringFilterOperator = (filterValue) => {
+const getStringFilterOperator = () => {
+    const filterValue = filteredValueFromDataGrid()
     const operatorValues = [
         {
             dataGrid: 'contains',
@@ -61,7 +63,8 @@ const getStringFilterOperator = (filterValue) => {
     return operatorValues
 }
 
-const getDateFilterOperator = (filterValue) => {
+const getDateFilterOperator = () => {
+    const filterValue = filteredValueFromDataGrid()
     const filterColumnField = getfilterColumnField()
     const operatorValues = [
         {
@@ -115,7 +118,8 @@ const getDateFilterOperator = (filterValue) => {
     ]
     return operatorValues
 }
-const getBooleanFilterOperator = (filterValue) => {
+const getBooleanFilterOperator = () => {
+    const filterValue = filteredValueFromDataGrid()
     const operatorValues = [
         {
             dataGrid: 'is',
@@ -208,7 +212,7 @@ const getQueryFromDataGrid = () => {
     filterModels.forEach(filterModel => {
         const filterColumnField: string = getfilterColumnField()
         const filterOperator: string = filterModel?.operatorValue
-        const filterValue: string = filterModel?.value
+        const filterValue: string = filteredValueFromDataGrid()
 
         console.log(filterData, 'filterDatafilterData');
 
@@ -224,18 +228,18 @@ const getQueryFromDataGrid = () => {
         
         //TODO refaktoring
         if (filterDataType === 'string') {
-            filterText(filterOperator, filteredQueryForGraphQl, filterValue)
+            filterText(filterOperator, filteredQueryForGraphQl)
         }
         if (filterDataType === 'number') {
-            const numberFitlerValue = getNumberFitlerValue(filterValue, filterModel)
-            filterNumber(filterOperator, filteredQueryForGraphQl, numberFitlerValue)
+            const numberFitlerValue = getNumberFitlerValue(filterModel)
+            filterNumber(filterOperator, filteredQueryForGraphQl)
         }
         if (filterDataType === 'boolean' || filterDataType === 'singleSelect') {
-            filterBoolean(filterOperator, filteredQueryForGraphQl, filterValue)
+            filterBoolean(filterOperator, filteredQueryForGraphQl)
         }
 
         if (filterDataType === 'date' || filterDataType === 'dateTime') {
-            filterDate(filterOperator, filteredQueryForGraphQl, filterValue)
+            filterDate(filterOperator, filteredQueryForGraphQl)
         }
     })
 
@@ -243,27 +247,27 @@ const getQueryFromDataGrid = () => {
 }
 
 //TODO refaktoring
-const filterText = (filterOperator, filteredQueryForGraphQl, filterValue) => {
-    getFilterGraphQlQuery(filteredQueryForGraphQl, filterOperator, getStringFilterOperator(filterValue))
+const filterText = (filterOperator, filteredQueryForGraphQl) => {
+    getFilterGraphQlQuery(filteredQueryForGraphQl, filterOperator, getStringFilterOperator())
 }
 
 //TODO refaktoring
-const filterNumber = (filterOperator, filteredQueryForGraphQl, filterValue) => {
-    getFilterGraphQlQuery(filteredQueryForGraphQl, filterOperator, getNumberFilterOperator(filterValue))
+const filterNumber = (filterOperator, filteredQueryForGraphQl) => {
+    getFilterGraphQlQuery(filteredQueryForGraphQl, filterOperator, getNumberFilterOperator())
 }
 
 //TODO refaktoring
-const filterDate = (filterOperator, filteredQueryForGraphQl, filterValue) => {
-    getFilterGraphQlQuery(filteredQueryForGraphQl, filterOperator, getDateFilterOperator(filterValue))
+const filterDate = (filterOperator, filteredQueryForGraphQl) => {
+    getFilterGraphQlQuery(filteredQueryForGraphQl, filterOperator, getDateFilterOperator())
 }
 
 const integerFields: string[] = ['seq']
 
-const getNumberFitlerValue = (filterValue, filterModel) => {
+const getNumberFitlerValue = (filterModel) => {
     if (isInIntegerFields()) {
-        return numberAvoidDecimal(filterValue, filterModel)
+        return numberAvoidDecimal(filterModel)
     }
-    return filterValue
+    return filteredValueFromDataGrid()
 }
 
 const isInIntegerFields = () => {
@@ -273,14 +277,14 @@ const isInIntegerFields = () => {
     return false
 }
 
-const numberAvoidDecimal = (filterValue, filterModel) => {
-    filterModel.value = Math.floor(Number(filterValue))
-    return Math.floor(Number(filterValue))
+const numberAvoidDecimal = (filterModel) => {
+    filterModel.value = Math.floor(Number(filteredValueFromDataGrid()))
+    return Math.floor(Number(filteredValueFromDataGrid()))
 }
 
 //TODO refaktoring
-const filterBoolean = (filterOperator, filteredQueryForGraphQl, filterValue) => {
-    getFilterGraphQlQuery(filteredQueryForGraphQl, filterOperator, getBooleanFilterOperator(filterValue))
+const filterBoolean = (filterOperator, filteredQueryForGraphQl) => {
+    getFilterGraphQlQuery(filteredQueryForGraphQl, filterOperator, getBooleanFilterOperator())
 }
 const getFilterGraphQlQuery = (filteredQueryForGraphQl, filterOperator, getTypeFilterOperator) => {
     const filterOperatorList = getTypeFilterOperator
