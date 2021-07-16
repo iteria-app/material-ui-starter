@@ -2,7 +2,8 @@ import React from 'react'
 import { useIntl, FormattedMessage } from "react-intl";
 import { GridCellParams, DataGrid } from "@material-ui/data-grid";
 import { useNavigate } from 'react-router-dom'
-import { sortCustomers, filterDataGrid, pageByTotalAndPageSize } from './OperationsCustomers'
+import { sortCustomers, filterDataGrid, pageByTotalAndPageSize, getFilter } from './OperationsCustomers'
+
 
 export default function CustomerTable({ customers, onSortCustomers, onChangePageCustomers, page, offset, pageSize, onPageSize, onFilterCustomers, totalCustomers }) {
     let navigate = useNavigate();
@@ -34,6 +35,7 @@ export default function CustomerTable({ customers, onSortCustomers, onChangePage
 
     const handleFilter = React.useCallback((filter) => {
         console.log(filter, 'filter');
+        getFilter(filter)
         filterDataGrid(filter, onFilterCustomers, onChangePageCustomers)
     }, [onFilterCustomers, onChangePageCustomers]);
 
