@@ -210,36 +210,32 @@ const getQueryFromDataGrid = () => {
     const filterModels = filterModelFromDataGrid()
 
     filterModels.forEach(filterModel => {
-        const filterColumnField: string = filterColumnFieldFromDataGrid()
-        const filterOperator: string = filterModel?.operatorValue
-        const filterValue: string = filterValueFromDataGrid()
-
         console.log(filterData, 'filterDatafilterData');
 
-        console.log(filterColumnField, 'filterColumnField');
+        console.log(filterColumnFieldFromDataGrid(), 'filterColumnField');
 
         const columnDataByFilterColumnField = getColumnDataByFilterColumnField()
         const filterDataType: string = columnDataByFilterColumnField[0]?.type
         console.log(filterDataType, 'filterDataType');
 
         console.log(filterModel, 'filterModel1');
-        console.log(filterValue, 'filterValue2');
+        console.log(filterValueFromDataGrid(), 'filterValue2');
         console.log(filteredQueryForGraphQl, 'filteredQueryForGraphQl');
         
         //TODO refaktoring
         if (filterDataType === 'string') {
-            filterText(filterOperator, filteredQueryForGraphQl)
+            filterText(filteredQueryForGraphQl)
         }
         if (filterDataType === 'number') {
             const numberFitlerValue = getNumberFitlerValue(filterModel)
-            filterNumber(filterOperator, filteredQueryForGraphQl)
+            filterNumber(filteredQueryForGraphQl)
         }
         if (filterDataType === 'boolean' || filterDataType === 'singleSelect') {
-            filterBoolean(filterOperator, filteredQueryForGraphQl)
+            filterBoolean(filteredQueryForGraphQl)
         }
 
         if (filterDataType === 'date' || filterDataType === 'dateTime') {
-            filterDate(filterOperator, filteredQueryForGraphQl)
+            filterDate(filteredQueryForGraphQl)
         }
     })
 
@@ -247,18 +243,18 @@ const getQueryFromDataGrid = () => {
 }
 
 //TODO refaktoring
-const filterText = (filterOperator, filteredQueryForGraphQl) => {
-    getFilterGraphQlQuery(filteredQueryForGraphQl, filterOperator, getStringFilterOperator())
+const filterText = (filteredQueryForGraphQl) => {
+    getFilterGraphQlQuery(filteredQueryForGraphQl,getStringFilterOperator())
 }
 
 //TODO refaktoring
-const filterNumber = (filterOperator, filteredQueryForGraphQl) => {
-    getFilterGraphQlQuery(filteredQueryForGraphQl, filterOperator, getNumberFilterOperator())
+const filterNumber = (filteredQueryForGraphQl) => {
+    getFilterGraphQlQuery(filteredQueryForGraphQl,getNumberFilterOperator())
 }
 
 //TODO refaktoring
-const filterDate = (filterOperator, filteredQueryForGraphQl) => {
-    getFilterGraphQlQuery(filteredQueryForGraphQl, filterOperator, getDateFilterOperator())
+const filterDate = (filteredQueryForGraphQl) => {
+    getFilterGraphQlQuery(filteredQueryForGraphQl,getDateFilterOperator())
 }
 
 const integerFields: string[] = ['seq']
@@ -283,26 +279,26 @@ const numberAvoidDecimal = (filterModel) => {
 }
 
 //TODO refaktoring
-const filterBoolean = (filterOperator, filteredQueryForGraphQl) => {
-    getFilterGraphQlQuery(filteredQueryForGraphQl, filterOperator, getBooleanFilterOperator())
+const filterBoolean = (filteredQueryForGraphQl) => {
+    getFilterGraphQlQuery(filteredQueryForGraphQl, getBooleanFilterOperator())
 }
-const getFilterGraphQlQuery = (filteredQueryForGraphQl, filterOperator, getTypeFilterOperator) => {
+const getFilterGraphQlQuery = (filteredQueryForGraphQl, getTypeFilterOperator) => {
     const filterOperatorList = getTypeFilterOperator
-    const currentOperatorFromDataGrid = filterOperatorList.filter((operator) => operator.dataGrid === filterOperator)
+    const currentOperatorFromDataGrid = filterOperatorList.filter((operator) => operator.dataGrid === filterOperatorFromDataGrid())
     const filterDataType: string = getColumnDataByFilterColumnField()[0]?.type
     const graphQlQuery = currentOperatorFromDataGrid[0]?.graphQl
 
     if (filterDataType === 'date') {
-        dateAndDateTime(filterOperator, filteredQueryForGraphQl, graphQlQuery, 'date')
+        dateAndDateTime(filteredQueryForGraphQl, graphQlQuery, 'date')
     } else if (filterDataType === 'dateTime') {
-        dateAndDateTime(filterOperator, filteredQueryForGraphQl, graphQlQuery, 'dateTime')
+        dateAndDateTime(filteredQueryForGraphQl, graphQlQuery, 'dateTime')
     } else {
         filteredQueryForGraphQl[filterColumnFieldFromDataGrid()] = graphQlQuery
     }
 }
 
-const dateAndDateTime = (filterOperator, filteredQueryForGraphQl, graphQlQuery, dateType) => {
-    if (filterOperator === 'not') {
+const dateAndDateTime = (filteredQueryForGraphQl, graphQlQuery, dateType) => {
+    if (filterOperatorFromDataGrid() === 'not') {
         filteredQueryForGraphQl['_or'] = graphQlQuery[dateType]
     } else {
         filteredQueryForGraphQl[filterColumnFieldFromDataGrid()] = graphQlQuery[dateType]
@@ -359,7 +355,7 @@ const setFilteredQueryToGraphQl = (filteredQueryForGraphQl, onFilterCustomers) =
 const setEmptyFilteredQueryValueToGraphQl = (onFilterCustomers) => {
     const columnField: string = filterColumnFieldFromDataGrid()
     console.log(columnField,'columnFieldcolumnFieldcolumnFieldcolumnFieldcolumnField'); 
-    const columnOperator: string = filterModelFromDataGrid()[0]?.operatorValue
+    const columnOperator: string = filterOperatorFromDataGrid()
 
     if (getOperatorStringList().includes(columnOperator)) {
         onFilterCustomers({
