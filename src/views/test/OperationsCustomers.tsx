@@ -257,7 +257,7 @@ const filterDate = (filteredQueryForGraphQl) => {
     getFilterGraphQlQuery(filteredQueryForGraphQl, getDateFilterOperator())
 }
 
-const integerFields: string[] = ['seq']
+const integerFields: string[] = ['seq', 'bigInteger']
 
 const getNumberFitlerValue = (filterModel) => {
     if (isInIntegerFields()) {
