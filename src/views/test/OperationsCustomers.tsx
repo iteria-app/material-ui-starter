@@ -313,6 +313,10 @@ const filterColumnField = (filterModel) => {
     return filterModel?.columnField
 }
 
+const filterColumnOperator = (filterModel) => {
+    return filterModel?.operatorValue
+}
+
 const getColumnDataByFilterColumnField = () => {
     return filterData.columns.filter((column) => column.field === filterColumnFieldFromDataGrid())
 }
@@ -329,6 +333,13 @@ const filterColumnFieldFromDataGrid = () => {
     const filterModels = filterModelFromDataGrid()
     for (let i = 0; i < filterModels.length; i++) {
         return filterColumnField(filterModels[i])
+    }
+}
+
+const filterOperatorFromDataGrid = () => {
+    const filterModels = filterModelFromDataGrid()
+    for (let i = 0; i < filterModels.length; i++) {
+        return filterColumnOperator(filterModels[i])
     }
 }
 
