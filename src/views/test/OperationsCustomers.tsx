@@ -74,10 +74,12 @@ const getDateFilterOperator = (filterValue, filterColumnField) => {
             dataGrid: 'not',
             graphQl: {
                 dateTime: [
-                    { [filterColumnField]: { _gt: filterValue + ":60.00000" + timeZone } }, { [filterColumnField]: { _lt: filterValue + ":00.00000" + timeZone } }
+                    { [filterColumnField]: { _gt: filterValue + ":60.00000" + timeZone } },
+                    { [filterColumnField]: { _lt: filterValue + ":00.00000" + timeZone } }
                 ],
                 date: [
-                    { [filterColumnField]: { _gt: filterValue + "T24:00:00" } }, { [filterColumnField]: { _lt: filterValue + "T00:00:00" } }
+                    { [filterColumnField]: { _gt: filterValue + "T24:00:00" } },
+                    { [filterColumnField]: { _lt: filterValue + "T00:00:00" } }
                 ]
             }
         },
@@ -204,15 +206,15 @@ const getQueryFromDataGrid = () => {
 
     filterModels.forEach(filterModel => {
         const filterColumnField: string = getFilterColumnField(filterModel)
-        const filterOperator: string = filterModel.operatorValue
-        const filterValue: string = filterModel.value
+        const filterOperator: string = filterModel?.operatorValue
+        const filterValue: string = filterModel?.value
 
         console.log(filterData, 'filterDatafilterData');
 
         console.log(filterColumnField, 'filterColumnField');
 
         const columnDataByFilterColumnField = getColumnDataByFilterColumnField(filterColumnField)
-        const filterDataType: string = columnDataByFilterColumnField[0].type
+        const filterDataType: string = columnDataByFilterColumnField[0]?.type
         console.log(filterDataType, 'filterDataType');
 
         console.log(filterModel, 'filterModel1');
@@ -304,7 +306,7 @@ const getFilterGraphQlQuery = (filteredQueryForGraphQl, filterColumnField, filte
 }
 
 const getFilterColumnField = (filterModel) => {
-    return filterModel.columnField
+    return filterModel?.columnField
 }
 
 const getColumnDataByFilterColumnField = (filterColumnField) => {
