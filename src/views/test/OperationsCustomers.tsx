@@ -61,7 +61,8 @@ const getStringFilterOperator = (filterValue) => {
     return operatorValues
 }
 
-const getDateFilterOperator = (filterValue, filterColumnField) => {
+const getDateFilterOperator = (filterValue) => {
+    const filterColumnField = getfilterColumnField()
     const operatorValues = [
         {
             dataGrid: 'is',
@@ -213,7 +214,7 @@ const getQueryFromDataGrid = () => {
 
         console.log(filterColumnField, 'filterColumnField');
 
-        const columnDataByFilterColumnField = getColumnDataByFilterColumnField(filterColumnField)
+        const columnDataByFilterColumnField = getColumnDataByFilterColumnField()
         const filterDataType: string = columnDataByFilterColumnField[0]?.type
         console.log(filterDataType, 'filterDataType');
 
@@ -226,7 +227,7 @@ const getQueryFromDataGrid = () => {
             filterText(filterOperator, filteredQueryForGraphQl, filterValue)
         }
         if (filterDataType === 'number') {
-            const numberFitlerValue = getNumberFitlerValue(filterValue, filterModel, filterColumnField)
+            const numberFitlerValue = getNumberFitlerValue(filterValue, filterModel)
             filterNumber(filterOperator, filteredQueryForGraphQl, numberFitlerValue)
         }
         if (filterDataType === 'boolean' || filterDataType === 'singleSelect') {
@@ -253,20 +254,20 @@ const filterNumber = (filterOperator, filteredQueryForGraphQl, filterValue) => {
 
 //TODO refaktoring
 const filterDate = (filterOperator, filteredQueryForGraphQl, filterValue) => {
-    getFilterGraphQlQuery(filteredQueryForGraphQl, filterOperator, getDateFilterOperator(filterValue, getfilterColumnField()))
+    getFilterGraphQlQuery(filteredQueryForGraphQl, filterOperator, getDateFilterOperator(filterValue))
 }
 
 const integerFields: string[] = ['seq']
 
-const getNumberFitlerValue = (filterValue, filterModel, filterColumnField) => {
-    if (isInIntegerFields(filterColumnField)) {
+const getNumberFitlerValue = (filterValue, filterModel) => {
+    if (isInIntegerFields()) {
         return numberAvoidDecimal(filterValue, filterModel)
     }
     return filterValue
 }
 
-const isInIntegerFields = (filterColumnField) => {
-    if (integerFields?.includes(filterColumnField)) {
+const isInIntegerFields = () => {
+    if (integerFields?.includes(getfilterColumnField())) {
         return true
     }
     return false
@@ -284,7 +285,7 @@ const filterBoolean = (filterOperator, filteredQueryForGraphQl, filterValue) => 
 const getFilterGraphQlQuery = (filteredQueryForGraphQl, filterOperator, getTypeFilterOperator) => {
     const filterOperatorList = getTypeFilterOperator
     const currentOperatorFromDataGrid = filterOperatorList.filter((operator) => operator.dataGrid === filterOperator)
-    const filterDataType: string = getColumnDataByFilterColumnField(getfilterColumnField())[0]?.type
+    const filterDataType: string = getColumnDataByFilterColumnField()[0]?.type
     const graphQlQuery = currentOperatorFromDataGrid[0]?.graphQl
 
     if (filterDataType === 'date') {
@@ -308,8 +309,8 @@ const getFilterColumnField = (filterModel) => {
     return filterModel?.columnField
 }
 
-const getColumnDataByFilterColumnField = (filterColumnField) => {
-    return filterData.columns.filter((column) => column.field === filterColumnField)
+const getColumnDataByFilterColumnField = () => {
+    return filterData.columns.filter((column) => column.field === getfilterColumnField())
 }
 
 const filteredValueFromDataGrid = () => {
