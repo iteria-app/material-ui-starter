@@ -1,7 +1,7 @@
 import { getGridStringOperators } from "@material-ui/data-grid";
 
 let filterData;
-export const getFilter = (filter) => {
+export const getFilterData = (filter) => {
     filterData = filter
 }
 
@@ -160,25 +160,25 @@ export const pageByTotalAndPageSize = (pageSizeNumber: number, totalCustomers: n
     return pageNumber
 }
 
-export const filterDataGrid = (filter, onFilterCustomers, onChangePageCustomers) => {
-    const filteredQueryForGraphQl = getQueryFromDataGrid(filter)
-    sendFilterQueryToGraphQl(filter, filteredQueryForGraphQl, onFilterCustomers)
+export const filterDataGrid = (onFilterCustomers, onChangePageCustomers) => {
+    const filteredQueryForGraphQl = getQueryFromDataGrid()
+    sendFilterQueryToGraphQl(filteredQueryForGraphQl, onFilterCustomers)
     setCurrentPageToOne(onChangePageCustomers)
 }
 
-const sendFilterQueryToGraphQl = (filter, filteredQueryForGraphQl, onFilterCustomers) => {
-    const filteredValue: string = filteredValueFromDataGrid(filter)
+const sendFilterQueryToGraphQl = (filteredQueryForGraphQl, onFilterCustomers) => {
+    const filteredValue: string = filteredValueFromDataGrid()
     if (filteredValue) {
         setFilteredQueryToGraphQl(filteredQueryForGraphQl, onFilterCustomers)
     } else {
-        setEmptyFilteredQueryValueToGraphQl(onFilterCustomers, filter)
+        setEmptyFilteredQueryValueToGraphQl(onFilterCustomers)
     }
 }
 
 //spravim funciu get filterValue a zalovalm ju tu dole tym padom ziskam globalnu premennu cez funkciu
-const getQueryFromDataGrid = (filter) => {
+const getQueryFromDataGrid = () => {
     const filteredQueryForGraphQl: object = {}
-    const filterModels = filterModelFromDataGrid(filter)
+    const filterModels = filterModelFromDataGrid()
 
     filterModels.forEach(filterModel => {
         const filterColumnField: string = getFilterColumnField(filterModel)
@@ -335,8 +335,8 @@ const getColumnDataByFilterColumnField = (filterColumnField) => {
     return filterData.columns.filter((column) => column.field === filterColumnField)
 }
 
-const filteredValueFromDataGrid = (filter) => {
-    const filterModel = filterModelFromDataGrid(filter)
+const filteredValueFromDataGrid = () => {
+    const filterModel = filterModelFromDataGrid()
     for (let i = 0; i < filterModel.length; i++) {
         const filteredValue: string = filterModel[i]?.value
         if (filteredValue)
@@ -345,10 +345,10 @@ const filteredValueFromDataGrid = (filter) => {
     return ""
 }
 
-const filterModelFromDataGrid = (filter) => {
-    const filteredModel: object = filter?.filterModel?.items
+const filterModelFromDataGrid = () => {
+    const filteredModel: object = filterData?.filterModel?.items
     if (filteredModel)
-        return filter?.filterModel?.items
+        return filterData?.filterModel?.items
     return {}
 }
 
@@ -356,9 +356,9 @@ const setFilteredQueryToGraphQl = (filteredQueryForGraphQl, onFilterCustomers) =
     onFilterCustomers(filteredQueryForGraphQl);
 }
 
-const setEmptyFilteredQueryValueToGraphQl = (onFilterCustomers, filter) => {
-    const columnField: string = filterModelFromDataGrid(filter)[0]?.columnField
-    const columnOperator: string = filterModelFromDataGrid(filter)[0]?.operatorValue
+const setEmptyFilteredQueryValueToGraphQl = (onFilterCustomers) => {
+    const columnField: string = filterModelFromDataGrid()[0]?.columnField
+    const columnOperator: string = filterModelFromDataGrid()[0]?.operatorValue
 
     if (getOperatorStringList().includes(columnOperator)) {
         onFilterCustomers({
