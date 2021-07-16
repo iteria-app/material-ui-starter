@@ -221,7 +221,7 @@ const getQueryFromDataGrid = () => {
         console.log(filterModel, 'filterModel1');
         console.log(filterValueFromDataGrid(), 'filterValue2');
         console.log(filteredQueryForGraphQl, 'filteredQueryForGraphQl');
-        
+
         //TODO refaktoring
         if (filterDataType === 'string') {
             filterText(filteredQueryForGraphQl)
@@ -244,17 +244,17 @@ const getQueryFromDataGrid = () => {
 
 //TODO refaktoring
 const filterText = (filteredQueryForGraphQl) => {
-    getFilterGraphQlQuery(filteredQueryForGraphQl,getStringFilterOperator())
+    getFilterGraphQlQuery(filteredQueryForGraphQl, getStringFilterOperator())
 }
 
 //TODO refaktoring
 const filterNumber = (filteredQueryForGraphQl) => {
-    getFilterGraphQlQuery(filteredQueryForGraphQl,getNumberFilterOperator())
+    getFilterGraphQlQuery(filteredQueryForGraphQl, getNumberFilterOperator())
 }
 
 //TODO refaktoring
 const filterDate = (filteredQueryForGraphQl) => {
-    getFilterGraphQlQuery(filteredQueryForGraphQl,getDateFilterOperator())
+    getFilterGraphQlQuery(filteredQueryForGraphQl, getDateFilterOperator())
 }
 
 const integerFields: string[] = ['seq']
@@ -322,9 +322,9 @@ const filterModelFromDataGrid = () => {
     const filteredModel: object = filterData?.filterModel?.items
     if (filteredModel)
         return filterData?.filterModel?.items
-        return {}
-    }
-    
+    return {}
+}
+
 const filterColumnFieldFromDataGrid = () => {
     const filterModels = filterModelFromDataGrid()
     for (let i = 0; i < filterModels.length; i++) {
@@ -354,7 +354,7 @@ const setFilteredQueryToGraphQl = (filteredQueryForGraphQl, onFilterCustomers) =
 
 const setEmptyFilteredQueryValueToGraphQl = (onFilterCustomers) => {
     const columnField: string = filterColumnFieldFromDataGrid()
-    console.log(columnField,'columnFieldcolumnFieldcolumnFieldcolumnFieldcolumnField'); 
+    console.log(columnField, 'columnFieldcolumnFieldcolumnFieldcolumnFieldcolumnField');
     const columnOperator: string = filterOperatorFromDataGrid()
 
     if (getOperatorStringList().includes(columnOperator)) {
