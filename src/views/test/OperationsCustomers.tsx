@@ -1,5 +1,3 @@
-import { getGridStringOperators } from "@material-ui/data-grid";
-
 //TODO let
 let filterData;
 export const getFilterData = (filter) => {
@@ -138,8 +136,7 @@ export const sortCustomers = (sort, onSortCustomers, customers) => {
     if (sortModel.length > 0) {
         setSortQuery(sort, onSortCustomers)
     } else {
-        const firstKey = getFirstKeyOfCustomers(customers)
-        unsortCustomers(onSortCustomers, firstKey)
+        onSortCustomers({})
     }
 }
 
@@ -156,21 +153,6 @@ const sortQueryFromGridData = (sort): object => {
         sortQuery[sortColumnFiled] = sortValue
     })
     return sortQuery
-}
-
-const unsortCustomers = (onSortCustomers, firstColumn) => {
-    onSortCustomers({
-        [firstColumn]: null
-    })
-}
-
-const getFirstKeyOfCustomers = (customers) => {
-    if (customers) {
-        const customersList: [] = customers[0]
-        if (customersList) {
-            return Object.keys(customersList)[0]
-        }
-    }
 }
 
 const sortModelFromDataGrid = (sort) => {
@@ -353,29 +335,9 @@ const setFilteredQueryToGraphQl = (filteredQueryForGraphQl, onFilterCustomers) =
 }
 
 const setEmptyFilteredQueryValueToGraphQl = (onFilterCustomers) => {
-    const columnField: string = filterColumnFieldFromDataGrid()
-    console.log(columnField, 'columnFieldcolumnFieldcolumnFieldcolumnFieldcolumnField');
-    const columnOperator: string = filterOperatorFromDataGrid()
-
-    if (getOperatorStringList().includes(columnOperator)) {
-        onFilterCustomers({
-            [columnField]: {
-                _ilike: "%%"
-            }
-        })
-    } else {
-        onFilterCustomers({
-            [columnField]: {
-                _eq: null
-            }
-        })
-    }
+        onFilterCustomers({})
 }
 
 export const setCurrentPageToOne = (onChangePageCustomers) => {
     onChangePageCustomers(0)
-}
-
-const getOperatorStringList = () => {
-    return getGridStringOperators().map((operator) => operator.value)
 }

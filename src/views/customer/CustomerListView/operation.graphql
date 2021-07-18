@@ -27,7 +27,7 @@ query searchCustomers($search: String!) {
   }
 }
 
-query filterCustomerGridData($where: customer_bool_exp! = {name:{_ilike:"%%"}},$limit:Int!, $offset:Int!, $order_by: customer_order_by! = {email: null}) {
+query filterCustomerGridData($where: customer_bool_exp! = {},$limit:Int!, $offset:Int!, $order_by: customer_order_by! = {}) {
   customers(where: $where,limit: $limit,
    offset: $offset, order_by: [$order_by]) {
     bigInteger 
