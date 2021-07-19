@@ -240,12 +240,15 @@ const filterDate = (filteredQueryForGraphQl) => {
 }
 
 const integerFields: string[] = ['seq', 'bigInteger']
+const bigIntegerFields: string[] = ['bigInteger']
 
 const getNumberFitlerValue = (filterModel) => {
     if (isInIntegerFields()) {
-        return numberAvoidDecimal(filterModel)
+        if (bigIntegerFields?.includes(filterColumnFieldFromDataGrid())) {
+            return formatedNumberValue(filterModel, 19)
+        }
+        return formatedNumberValue(filterModel, 9)
     }
-    return filterValueFromDataGrid()
 }
 
 const isInIntegerFields = () => {
@@ -255,9 +258,10 @@ const isInIntegerFields = () => {
     return false
 }
 
-const numberAvoidDecimal = (filterModel) => {
-    filterModel.value = Math.floor(Number(filterValueFromDataGrid()))
-    return Math.floor(Number(filterValueFromDataGrid()))
+const formatedNumberValue = (filterModel, num) => {
+    const formatedNumberValue = Math.floor(Number(filterValueFromDataGrid().toString().slice(0, num)))
+    filterModel.value = formatedNumberValue
+    return formatedNumberValue
 }
 
 //TODO refaktoring
@@ -335,7 +339,7 @@ const setFilteredQueryToGraphQl = (filteredQueryForGraphQl, onFilterCustomers) =
 }
 
 const setEmptyFilteredQueryValueToGraphQl = (onFilterCustomers) => {
-        onFilterCustomers({})
+    onFilterCustomers({})
 }
 
 export const setCurrentPageToOne = (onChangePageCustomers) => {
