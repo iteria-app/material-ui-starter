@@ -4,9 +4,6 @@ export const getFilterData = (filter) => {
     filterData = filter
 }
 
-//TODO timezone
-const timeZone = "+01:00"
-
 const getNumberFilterOperator = () => {
     const filterValue = filterValueFromDataGrid()
     const operatorValues = [
@@ -60,10 +57,18 @@ const getStringFilterOperator = () => {
     ]
     return operatorValues
 }
+const currentTimeData = () => {
+    return new Date()
+}
+
+const timeZoneValue = () => {
+    return currentTimeData().toString().split('GMT')[1].slice(0,5)  
+}
 
 const getDateFilterOperator = () => {
     const filterValue = filterValueFromDataGrid()
     const filterColumnField = filterColumnFieldFromDataGrid()
+    const timeZone = timeZoneValue()
     const operatorValues = [
         {
             dataGrid: 'is',
@@ -259,11 +264,11 @@ const isInIntegerFields = () => {
 }
 
 const formatedNumberValue = (filterModel, num) => {
-        if(filterValueFromDataGrid().includes('.')){
-            filterModel.value = filterValueFromDataGrid().split('.')[0].slice(0, num)
-        }else{
-            filterModel.value = filterValueFromDataGrid().slice(0, num) 
-        }
+    if (filterValueFromDataGrid().includes('.')) {
+        filterModel.value = filterValueFromDataGrid().split('.')[0].slice(0, num)
+    } else {
+        filterModel.value = filterValueFromDataGrid().slice(0, num)
+    }
     return filterModel.value
 }
 
