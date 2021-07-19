@@ -55,7 +55,7 @@ export default function CustomerTable({ customers, onSortCustomers, onChangePage
         { field: "bigInteger", flex: 1, type: "number", valueFormatter: ({ value }) => value, renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customers" defaultMessage="bigInteger" />) },
         { field: "date", flex: 1, type: "date", valueFormatter: ({ value }) => value, renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customers" defaultMessage="date" />) },
         { field: "float", flex: 1, type: "number", valueFormatter: ({ value }) => value, renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customers" defaultMessage="float" />) },
-        { field: "jsonB", flex: 1, type: "string", filterable: false, valueFormatter: ({ value }) => value, renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customers" defaultMessage="jsonB" />) },
+        { field: "jsonB", flex: 1, type: "string", filterable: false, valueFormatter: ({ value }) => JSON.stringify( value ), renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customers" defaultMessage="jsonB" />) },
         { field: "time", flex: 1, type: "dateTime", valueFormatter: ({ value }) => value, renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customers" defaultMessage="time" />) },
         {
             field: "state", flex: 1, type: "singleSelect",

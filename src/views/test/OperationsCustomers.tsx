@@ -259,9 +259,12 @@ const isInIntegerFields = () => {
 }
 
 const formatedNumberValue = (filterModel, num) => {
-    const formatedNumberValue = Math.floor(Number(filterValueFromDataGrid().toString().slice(0, num)))
-    filterModel.value = formatedNumberValue
-    return formatedNumberValue
+        if(filterValueFromDataGrid().includes('.')){
+            filterModel.value = filterValueFromDataGrid().split('.')[0].slice(0, num)
+        }else{
+            filterModel.value = filterValueFromDataGrid().slice(0, num) 
+        }
+    return filterModel.value
 }
 
 //TODO refaktoring
