@@ -209,8 +209,7 @@ const getQueryFromDataGrid = () => {
             filterText(filteredQueryForGraphQl)
         }
         if (filterDataType === 'number') {
-            const numberFitlerValue = getNumberFitlerValue(filterModel)
-            filterNumber(filteredQueryForGraphQl)
+            filterNumber(filteredQueryForGraphQl, filterModel)
         }
         if (filterDataType === 'boolean' || filterDataType === 'singleSelect') {
             filterBoolean(filteredQueryForGraphQl)
@@ -230,7 +229,8 @@ const filterText = (filteredQueryForGraphQl) => {
 }
 
 //TODO refaktoring
-const filterNumber = (filteredQueryForGraphQl) => {
+const filterNumber = (filteredQueryForGraphQl, filterModel) => {
+    getNumberFitlerValue(filterModel)
     getFilterGraphQlQuery(filteredQueryForGraphQl, getNumberFilterOperator())
 }
 
