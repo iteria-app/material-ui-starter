@@ -45,21 +45,25 @@ export default function CustomerTable({ customers, onSortCustomers, onChangePage
 
     const intl = useIntl();
     const columns = [
-        { field: "createdAt", width:150, type: "date", valueFormatter: ({ value }) => intl.formatDate(value), renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customer" defaultMessage="createdAt" />) },
-        //TODO change date
+        { field: "createdAt", width:150, type: "date", valueFormatter: ({ value }) => intl.formatDate(value), renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customer" defaultMessage="timeStampDate" />) },
+        
+        //TODO fix timezone
+        { field: "dateTime", width:150, type: "dateTime", valueFormatter: ({ value }) => intl.formatDate(value) + ", " + intl.formatTime(value), renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customer" defaultMessage="timeStamp" />) },
         // { field: "dateTime", width:150, type: "dateTime", valueFormatter: ({ value }) => intl.formatDate(value) + ", " + intl.formatTime(value,{timeZone: 'Europe/Athens'}), renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customer" defaultMessage="dateTime" />) },
-        { field: "dateTime", width:150, type: "dateTime", valueFormatter: ({ value }) => intl.formatDate(value) + ", " + intl.formatTime(value,{timeZone: 'Europe/Bratislava'}), renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customer" defaultMessage="dateTime" />) },
-        { field: "id", width:150, type: "string", filterable: false, valueFormatter: ({ value }) => value, renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customer" defaultMessage="id" />) },
+        // { field: "dateTime", width:150, type: "dateTime", valueFormatter: ({ value }) => intl.formatDate(value) + ", " + intl.formatTime(value,{timeZone: 'Europe/Bratislava'}), renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customer" defaultMessage="dateTime" />) },
+        { field: "timeStampZ", width:150, type: "dateTime", valueFormatter: ({ value }) => intl.formatDate(value) + ", " + intl.formatTime(value), renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customer" defaultMessage="timeStampZ" />) },
+        { field: "id", width:150, type: "string", valueFormatter: ({ value }) => value, renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customer" defaultMessage="id" />) },
         { field: "seq", width:80, type: "number", valueFormatter: ({ value }) => value, renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customer" defaultMessage="seq" />) },
         { field: "name", width:150, type: "string", valueFormatter: ({ value }) => value, renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customer" defaultMessage="name" />) },
         { field: "manager", width:80, type: "boolean", valueFormatter: ({ value }) => value, renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customers" defaultMessage="manager" />) },
         { field: "bigInteger", width:150, type: "number", valueFormatter: ({ value }) => value, renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customers" defaultMessage="bigInteger" />) },
         { field: "date", width:150, type: "date", valueFormatter: ({ value }) => value, renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customers" defaultMessage="date" />) },
         { field: "float", width:80, type: "number", valueFormatter: ({ value }) => value, renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customers" defaultMessage="float" />) },
-        { field: "jsonB", width:150, type: "string", filterable: false, valueFormatter: ({ value }) => JSON.stringify( value ), renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customers" defaultMessage="jsonB" />) },
+        { field: "jsonB", width:120, type: "string", filterable: false, valueFormatter: ({ value }) => JSON.stringify( value ), renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customers" defaultMessage="jsonB" />) },
         { field: "time", width:150, type: "dateTime", valueFormatter: ({ value }) => value, renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customers" defaultMessage="time" />) },
+        { field: "timeZ", width:150, type: "dateTime", valueFormatter: ({ value }) => value, renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customers" defaultMessage="timeZ" />) },
         {
-            field: "state", width:150, type: "singleSelect",
+            field: "state", width:100, type: "singleSelect",
             valueOptions: [
                 'California',
                 'Netherlands',

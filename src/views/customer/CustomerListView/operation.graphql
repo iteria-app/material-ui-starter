@@ -43,6 +43,8 @@ query filterCustomerGridData($where: customer_bool_exp! = {},$limit:Int!, $offse
     seq
     state
     time
+    timeZ
+    timeStampZ
   }
   customerAggregate(where: $where) {
     aggregate{
