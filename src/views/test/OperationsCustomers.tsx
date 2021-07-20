@@ -235,41 +235,12 @@ const filterText = (filteredQueryForGraphQl) => {
 
 //TODO refaktoring
 const filterNumber = (filteredQueryForGraphQl, filterModel) => {
-    getNumberFitlerValue(filterModel)
     getFilterGraphQlQuery(filteredQueryForGraphQl, getNumberFilterOperator())
 }
 
 //TODO refaktoring
 const filterDate = (filteredQueryForGraphQl) => {
     getFilterGraphQlQuery(filteredQueryForGraphQl, getDateFilterOperator())
-}
-
-const integerFields: string[] = ['seq', 'bigInteger']
-const bigIntegerFields: string[] = ['bigInteger']
-
-const getNumberFitlerValue = (filterModel) => {
-    if (isInIntegerFields()) {
-        if (bigIntegerFields?.includes(filterColumnFieldFromDataGrid())) {
-            return formatedNumberValue(filterModel, 19)
-        }
-        return formatedNumberValue(filterModel, 9)
-    }
-}
-
-const isInIntegerFields = () => {
-    if (integerFields?.includes(filterColumnFieldFromDataGrid())) {
-        return true
-    }
-    return false
-}
-
-const formatedNumberValue = (filterModel, num) => {
-    if (filterValueFromDataGrid().includes('.')) {
-        filterModel.value = filterValueFromDataGrid().split('.')[0].slice(0, num)
-    } else {
-        filterModel.value = filterValueFromDataGrid().slice(0, num)
-    }
-    return filterModel.value
 }
 
 //TODO refaktoring

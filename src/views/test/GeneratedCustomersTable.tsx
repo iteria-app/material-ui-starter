@@ -1,6 +1,7 @@
 import React from 'react'
 import { useIntl, FormattedMessage } from "react-intl";
-import {GridCellParams, DataGrid, GridColTypeDef, getGridStringOperators} from "@material-ui/data-grid";
+import { GridCellParams, DataGrid, GridColTypeDef, getGridStringOperators, getGridNumericColumnOperators } from "@material-ui/data-grid";
+import TextField from '@material-ui/core/TextField';
 import { useNavigate } from 'react-router-dom'
 import { sortCustomers, filterDataGrid, pageByTotalAndPageSize, getFilterData } from './OperationsCustomers'
 
@@ -33,6 +34,36 @@ export default function CustomerTable({ customers, onSortCustomers, onChangePage
         console.log(pageSize, 'params');
     }
 
+    const InputCustom = (props) => {
+        const { item, applyValue } = props;
+        const handleFilterChange = (event) => {
+            const inputTargetValue = event.target.value.replace(/[^0-9]/g, '')
+            applyValue({ ...item, value: inputTargetValue })
+        }
+        
+        const maxLength = () =>{
+            const columnField = columnFieldValue()
+            if(columnField === 'bigInteger'){
+                return 19
+            }
+            return 9
+        }
+
+        const columnFieldValue = () => {
+            return item?.columnField
+        }
+        
+        return (
+            <TextField
+                label='Number'
+                type='tel'
+                value={item?.value || ''}
+                inputProps={{ maxLength: maxLength() }}
+                onChange={handleFilterChange}
+            />
+        )
+    };
+
     const handleFilter = React.useCallback((filter) => {
         console.log(filter, 'filter');
         getFilterData(filter)
@@ -54,6 +85,13 @@ export default function CustomerTable({ customers, onSortCustomers, onChangePage
             }),
     };
 
+    const numberColumnType = getGridNumericColumnOperators().map(
+        (operator) => ({
+            ...operator,
+            InputComponent: InputCustom,
+        }),
+    );
+
     const intl = useIntl();
     const columns = [
         { field: "createdAt", width: 150, type: "date", valueFormatter: ({ value }) => intl.formatDate(value), renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customer" defaultMessage="timeStampDate" />) },
@@ -63,11 +101,11 @@ export default function CustomerTable({ customers, onSortCustomers, onChangePage
         // { field: "dateTime", width:150, type: "dateTime", valueFormatter: ({ value }) => intl.formatDate(value) + ", " + intl.formatTime(value,{timeZone: 'Europe/Athens'}), renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customer" defaultMessage="dateTime" />) },
         // { field: "dateTime", width:150, type: "dateTime", valueFormatter: ({ value }) => intl.formatDate(value) + ", " + intl.formatTime(value,{timeZone: 'Europe/Bratislava'}), renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customer" defaultMessage="dateTime" />) },
         { field: "timeStampZ", width: 150, type: "dateTime", valueFormatter: ({ value }) => intl.formatDate(value) + ", " + intl.formatTime(value), renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customer" defaultMessage="timeStampZ" />) },
-        { field: "id", width: 150, type: "string",filterOperators: uuidColumnType.filterOperators, valueFormatter: ({ value }) => value, renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customer" defaultMessage="id" />) },
-        { field: "seq", width: 80, type: "number", valueFormatter: ({ value }) => value, renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customer" defaultMessage="seq" />) },
+        { field: "id", width: 150, type: "string", filterOperators: uuidColumnType.filterOperators, valueFormatter: ({ value }) => value, renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customer" defaultMessage="id" />) },
+        { field: "seq", width: 80, filterOperators: numberColumnType, type: "number", valueFormatter: ({ value }) => value, renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customer" defaultMessage="seq" />) },
         { field: "name", width: 150, type: "string", valueFormatter: ({ value }) => value, renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customer" defaultMessage="name" />) },
         { field: "manager", width: 80, type: "boolean", valueFormatter: ({ value }) => value, renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customers" defaultMessage="manager" />) },
-        { field: "bigInteger", width: 150, type: "number", valueFormatter: ({ value }) => value, renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customers" defaultMessage="bigInteger" />) },
+        { field: "bigInteger", width: 150, filterOperators: numberColumnType, type: "number", valueFormatter: ({ value }) => value, renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customers" defaultMessage="bigInteger" />) },
         { field: "date", width: 150, type: "date", valueFormatter: ({ value }) => value, renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customers" defaultMessage="date" />) },
         { field: "float", width: 80, type: "number", valueFormatter: ({ value }) => value, renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customers" defaultMessage="float" />) },
         { field: "jsonB", width: 120, type: "string", filterable: false, valueFormatter: ({ value }) => JSON.stringify(value), renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customers" defaultMessage="jsonB" />) },
