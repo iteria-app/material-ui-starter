@@ -1,3 +1,6 @@
+import  InputFilterInteger  from '../../components/InputFilterInteger'
+import { GridColTypeDef, getGridNumericColumnOperators, getGridStringOperators } from "@material-ui/data-grid";
+
 //TODO let
 let filterData;
 export const getFilterData = (filter) => {
@@ -320,6 +323,28 @@ const setFilteredQueryToGraphQl = (filteredQueryForGraphQl, onFilterCustomers) =
 const setEmptyFilteredQueryValueToGraphQl = (onFilterCustomers) => {
     onFilterCustomers({})
 }
+
+export const numberColumnType = getGridNumericColumnOperators().map(
+    (operator) => ({
+        ...operator,
+        InputComponent: InputFilterInteger,
+    }),
+);
+
+export const createUuidColumnType: GridColTypeDef = {
+    extendType: 'string',
+    filterOperators: getGridStringOperators()
+        .filter((operator) => operator.value === 'equals')
+        .map((operator) => {
+            return {
+                ...operator
+            };
+        }),
+};
+
+export const uuidColumnType = () => {
+    return createUuidColumnType?.filterOperators
+};
 
 export const setCurrentPageToOne = (onChangePageCustomers) => {
     onChangePageCustomers(0)
