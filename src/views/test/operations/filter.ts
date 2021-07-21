@@ -120,22 +120,22 @@ const filterModelFromDataGrid = () => {
 
 export const filterColumnFieldFromDataGrid = (): string => {
     const filterModels = filterModelFromDataGrid()
-    for (let i = 0; i < filterModels.length; i++) {
-        return filterColumnField(filterModels[i])
+    for (const filterModel of filterModels) {
+        return filterColumnField(filterModel)
     }
 }
 
 const filterOperatorFromDataGrid = (): string => {
     const filterModels = filterModelFromDataGrid()
-    for (let i = 0; i < filterModels.length; i++) {
-        return filterColumnOperator(filterModels[i])
+    for (const filterModel of filterModels) {
+        return filterColumnOperator(filterModel)
     }
 }
 
 export const filterValueFromDataGrid = (): string => {
-    const filterModel = filterModelFromDataGrid()
-    for (let i = 0; i < filterModel.length; i++) {
-        const filteredValue: string = filterModel[i]?.value
+    const filterModels = filterModelFromDataGrid()
+    for (const filterModel of filterModels) {
+        const filteredValue: string = filterModel?.value
         if (filteredValue)
             return filteredValue
     }

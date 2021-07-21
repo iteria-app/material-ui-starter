@@ -1,8 +1,13 @@
 import { filterValueFromDataGrid, filterColumnFieldFromDataGrid } from './filter'
 
+interface OperatorTypesValues  {
+    dataGrid: string,
+    graphQl: object
+}
+
 export const getNumberFilterOperator = (): object[] => {
     const filterValue: string = filterValueFromDataGrid()
-    const operatorValues: object[] = [
+    const operatorValues: OperatorTypesValues[] = [
         {
             dataGrid: '=',
             graphQl: { _eq: filterValue }
@@ -33,7 +38,7 @@ export const getNumberFilterOperator = (): object[] => {
 
 export const getStringFilterOperator = (): object[] => {
     const filterValue: string = filterValueFromDataGrid()
-    const operatorValues: object[] = [
+    const operatorValues: OperatorTypesValues[] = [
         {
             dataGrid: 'contains',
             graphQl: { _ilike: "%" + filterValue + "%" }
@@ -65,7 +70,7 @@ export const getDateFilterOperator = (): object[] => {
     const filterValue: string = filterValueFromDataGrid()
     const filterColumnField = filterColumnFieldFromDataGrid()
     const timeZone = timeZoneValue()
-    const operatorValues: object[] = [
+    const operatorValues: OperatorTypesValues[] = [
         {
             dataGrid: 'is',
             graphQl: {
@@ -119,7 +124,7 @@ export const getDateFilterOperator = (): object[] => {
 }
 export const getBooleanFilterOperator = (): object[] => {
     const filterValue: string = filterValueFromDataGrid()
-    const operatorValues: object[] = [
+    const operatorValues: OperatorTypesValues[] = [
         {
             dataGrid: 'is',
             graphQl: { _eq: filterValue }
