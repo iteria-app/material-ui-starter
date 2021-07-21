@@ -1,4 +1,4 @@
-import  InputFilterInteger  from '../../components/InputFilterInteger'
+import InputFilterInteger from '../../components/InputFilterInteger'
 import { GridColTypeDef, getGridNumericColumnOperators, getGridStringOperators } from "@material-ui/data-grid";
 
 //TODO let
@@ -7,9 +7,9 @@ export const getFilterData = (filter) => {
     filterData = filter
 }
 
-const getNumberFilterOperator = () => {
-    const filterValue = filterValueFromDataGrid()
-    const operatorValues = [
+const getNumberFilterOperator = (): object[] => {
+    const filterValue: string = filterValueFromDataGrid()
+    const operatorValues: object[] = [
         {
             dataGrid: '=',
             graphQl: { _eq: filterValue }
@@ -38,9 +38,9 @@ const getNumberFilterOperator = () => {
     return operatorValues
 }
 
-const getStringFilterOperator = () => {
-    const filterValue = filterValueFromDataGrid()
-    const operatorValues = [
+const getStringFilterOperator = (): object[] => {
+    const filterValue: string = filterValueFromDataGrid()
+    const operatorValues: object[] = [
         {
             dataGrid: 'contains',
             graphQl: { _ilike: "%" + filterValue + "%" }
@@ -64,15 +64,15 @@ const currentTimeData = () => {
     return new Date()
 }
 
-const timeZoneValue = () => {
-    return currentTimeData().toString().split('GMT')[1].slice(0,5)  
+const timeZoneValue = (): string => {
+    return currentTimeData().toString().split('GMT')[1].slice(0, 5)
 }
 
-const getDateFilterOperator = () => {
-    const filterValue = filterValueFromDataGrid()
+const getDateFilterOperator = (): object[] => {
+    const filterValue: string = filterValueFromDataGrid()
     const filterColumnField = filterColumnFieldFromDataGrid()
     const timeZone = timeZoneValue()
-    const operatorValues = [
+    const operatorValues: object[] = [
         {
             dataGrid: 'is',
             graphQl: {
@@ -124,9 +124,9 @@ const getDateFilterOperator = () => {
     ]
     return operatorValues
 }
-const getBooleanFilterOperator = () => {
-    const filterValue = filterValueFromDataGrid()
-    const operatorValues = [
+const getBooleanFilterOperator = (): object[] => {
+    const filterValue: string = filterValueFromDataGrid()
+    const operatorValues: object[] = [
         {
             dataGrid: 'is',
             graphQl: { _eq: filterValue }
@@ -246,8 +246,9 @@ const filterBoolean = (filteredQueryForGraphQl) => {
 
 const getFilterGraphQlQuery = (filteredQueryForGraphQl, getTypeFilterOperator) => {
     const filterOperatorList = getTypeFilterOperator
-    const currentOperatorFromDataGrid = filterOperatorList.filter
-    ((operator) =>operator.dataGrid === filterOperatorFromDataGrid())
+    const currentOperatorFromDataGrid = filterOperatorList.filter((operator) =>
+        operator.dataGrid === filterOperatorFromDataGrid())
+
     const filterDataType: string = getColumnDataByFilterColumnField()[0]?.type
     const graphQlQuery = currentOperatorFromDataGrid[0]?.graphQl
 
