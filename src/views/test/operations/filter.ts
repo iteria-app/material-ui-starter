@@ -1,4 +1,4 @@
-import InputFilterInteger from '../../components/InputFilterInteger'
+import InputFilterInteger from '../components/InputFilterInteger'
 import { GridColTypeDef, getGridNumericColumnOperators, getGridStringOperators } from "@material-ui/data-grid";
 
 //TODO let
@@ -139,46 +139,6 @@ const getBooleanFilterOperator = (): object[] => {
     return operatorValues
 }
 
-export const sortCustomers = (sort, onSortCustomers) => {
-    const sortModel: object[] = sortModelFromDataGrid(sort)
-    if (sortModel.length > 0) {
-        setSortQuery(sort, onSortCustomers)
-    } else {
-        onSortCustomers({})
-    }
-}
-
-const setSortQuery = (sort, onSortCustomers) => {
-    onSortCustomers(sortQueryFromGridData(sort))
-}
-
-const sortQueryFromGridData = (sort): object => {
-    const sortQuery: object = {}
-    const sortModels = sortModelFromDataGrid(sort)
-    sortModels.forEach(sortModel => {
-        const sortColumnFiled: string = sortModel?.field
-        const sortValue: string = sortModel?.sort
-        sortQuery[sortColumnFiled] = sortValue
-    })
-    return sortQuery
-}
-
-const sortModelFromDataGrid = (sort) => {
-    const sortModel = sort?.sortModel
-    if (sortModel)
-        return sortModel
-    return {}
-}
-
-export const pageByTotalAndPageSize = (pageSizeNumber: number, totalCustomers: number): number => {
-    const pageNumber: number = Math.floor((totalCustomers / pageSizeNumber) - 1)
-    console.log(pageNumber, 'pageNumber');
-    if ((pageNumber) <= 0) {
-        return 0
-    }
-    return pageNumber
-}
-
 export const filterDataGrid = (onFilterCustomers, onChangePageCustomers) => {
     const filteredQueryForGraphQl = getQueryFromDataGrid()
     sendFilterQueryToGraphQl(filteredQueryForGraphQl, onFilterCustomers)
@@ -269,15 +229,15 @@ const dateAndDateTime = (filteredQueryForGraphQl, graphQlQuery, dateType) => {
     }
 }
 
-const filterColumnField = (filterModel) => {
+const filterColumnField = (filterModel): string => {
     return filterModel?.columnField
 }
 
-const filterColumnOperator = (filterModel) => {
+const filterColumnOperator = (filterModel): string => {
     return filterModel?.operatorValue
 }
 
-const getColumnDataByFilterColumnField = () => {
+const getColumnDataByFilterColumnField = (): object => {
     return filterData.columns.filter((column) => column.field === filterColumnFieldFromDataGrid())
 }
 
@@ -289,21 +249,21 @@ const filterModelFromDataGrid = () => {
     return {}
 }
 
-const filterColumnFieldFromDataGrid = () => {
+const filterColumnFieldFromDataGrid = (): string => {
     const filterModels = filterModelFromDataGrid()
     for (let i = 0; i < filterModels.length; i++) {
         return filterColumnField(filterModels[i])
     }
 }
 
-const filterOperatorFromDataGrid = () => {
+const filterOperatorFromDataGrid = (): string => {
     const filterModels = filterModelFromDataGrid()
     for (let i = 0; i < filterModels.length; i++) {
         return filterColumnOperator(filterModels[i])
     }
 }
 
-const filterValueFromDataGrid = () => {
+const filterValueFromDataGrid = (): string => {
     const filterModel = filterModelFromDataGrid()
     for (let i = 0; i < filterModel.length; i++) {
         const filteredValue: string = filterModel[i]?.value

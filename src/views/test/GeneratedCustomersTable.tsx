@@ -1,8 +1,10 @@
 import React from 'react'
 import { useIntl, FormattedMessage } from "react-intl";
-import { GridCellParams, DataGrid} from "@material-ui/data-grid";
+import { GridCellParams, DataGrid } from "@material-ui/data-grid";
 import { useNavigate } from 'react-router-dom'
-import { sortCustomers, filterDataGrid, pageByTotalAndPageSize, getFilterData, numberColumnType, uuidColumnType } from './OperationsCustomers'
+import { sortCustomers } from './operations/sort'
+import { pageByTotalAndPageSize } from './operations/pagination'
+import { filterDataGrid, getFilterData, numberColumnType, uuidColumnType } from './operations/filter'
 
 export default function CustomerTable({ customers, onSortCustomers, onChangePageCustomers, page, offset, pageSize, onPageSize, onFilterCustomers, totalCustomers }) {
     let navigate = useNavigate();
@@ -47,7 +49,7 @@ export default function CustomerTable({ customers, onSortCustomers, onChangePage
 
         //TODO fix timezone
         // { field: "dateTime", width: 150, type: "dateTime", valueFormatter: ({ value }) => intl.formatDate(value) + ", " + intl.formatTime(value), renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customer" defaultMessage="timeStamp" />) },
-        { field: "dateTime", width:150, type: "dateTime", valueFormatter: ({ value }) => intl.formatDate(value) + ", " + intl.formatTime(value,{timeZone: 'Europe/Athens'}), renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customer" defaultMessage="dateTime" />) },
+        { field: "dateTime", width: 150, type: "dateTime", valueFormatter: ({ value }) => intl.formatDate(value) + ", " + intl.formatTime(value, { timeZone: 'Europe/Athens' }), renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customer" defaultMessage="dateTime" />) },
         // { field: "dateTime", width:150, type: "dateTime", valueFormatter: ({ value }) => intl.formatDate(value) + ", " + intl.formatTime(value,{timeZone: 'Europe/Bratislava'}), renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customer" defaultMessage="dateTime" />) },
         { field: "timeStampZ", width: 150, type: "dateTime", valueFormatter: ({ value }) => intl.formatDate(value) + ", " + intl.formatTime(value), renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customer" defaultMessage="timeStampZ" />) },
         { field: "id", width: 150, type: "string", filterOperators: uuidColumnType(), valueFormatter: ({ value }) => value, renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customer" defaultMessage="id" />) },
