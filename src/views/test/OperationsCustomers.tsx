@@ -211,7 +211,6 @@ const getQueryFromDataGrid = () => {
         console.log(filterValueFromDataGrid(), 'filterValue2');
         console.log(filteredQueryForGraphQl, 'filteredQueryForGraphQl');
 
-        //TODO refaktoring
         if (filterDataType === 'string') {
             filterText(filteredQueryForGraphQl)
         }
@@ -221,7 +220,6 @@ const getQueryFromDataGrid = () => {
         if (filterDataType === 'boolean' || filterDataType === 'singleSelect') {
             filterBoolean(filteredQueryForGraphQl)
         }
-
         if (filterDataType === 'date' || filterDataType === 'dateTime') {
             filterDate(filteredQueryForGraphQl)
         }
@@ -230,25 +228,22 @@ const getQueryFromDataGrid = () => {
     return filteredQueryForGraphQl
 }
 
-//TODO refaktoring
 const filterText = (filteredQueryForGraphQl) => {
     getFilterGraphQlQuery(filteredQueryForGraphQl, getStringFilterOperator())
 }
 
-//TODO refaktoring
 const filterNumber = (filteredQueryForGraphQl) => {
     getFilterGraphQlQuery(filteredQueryForGraphQl, getNumberFilterOperator())
 }
 
-//TODO refaktoring
 const filterDate = (filteredQueryForGraphQl) => {
     getFilterGraphQlQuery(filteredQueryForGraphQl, getDateFilterOperator())
 }
 
-//TODO refaktoring
 const filterBoolean = (filteredQueryForGraphQl) => {
     getFilterGraphQlQuery(filteredQueryForGraphQl, getBooleanFilterOperator())
 }
+
 const getFilterGraphQlQuery = (filteredQueryForGraphQl, getTypeFilterOperator) => {
     const filterOperatorList = getTypeFilterOperator
     const currentOperatorFromDataGrid = filterOperatorList.filter
