@@ -51,7 +51,7 @@ export default function CustomerTable({ customers, onSortCustomers, onChangePage
         // { field: "timeStamp2", width: 150, type: "dateTime", valueFormatter: ({ value }) => intl.formatDate(value) + ", " + intl.formatTime(value), renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customer" defaultMessage="timeStamp2" />) },
         { field: "timeStamp2", width: 150, type: "dateTime", valueFormatter: ({ value }) => intl.formatDate(value) + ", " + intl.formatTime(value, { timeZone: 'Europe/Athens' }), renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customer" defaultMessage="timeStamp2" />) },
         // { field: "timeStamp2", width:150, type: "dateTime", valueFormatter: ({ value }) => intl.formatDate(value) + ", " + intl.formatTime(value,{timeZone: 'Europe/Bratislava'}), renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customer" defaultMessage="timeStamp2" />) },
-        
+
         { field: "timeStampZ", width: 150, type: "dateTime", valueFormatter: ({ value }) => intl.formatDate(value) + ", " + intl.formatTime(value), renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customer" defaultMessage="timeStampZ" />) },
         { field: "id", width: 150, type: "string", filterOperators: uuidColumnType(), valueFormatter: ({ value }) => value, renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customer" defaultMessage="id" />) },
         { field: "seq", headerName: 'int', width: 80, filterOperators: numberColumnType, type: "number", valueFormatter: ({ value }) => value, renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customer" defaultMessage="int" />) },
@@ -61,8 +61,8 @@ export default function CustomerTable({ customers, onSortCustomers, onChangePage
         { field: "date", width: 150, type: "date", valueFormatter: ({ value }) => value, renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customers" defaultMessage="date" />) },
         { field: "float", width: 80, type: "number", valueFormatter: ({ value }) => value, renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customers" defaultMessage="float" />) },
         { field: "jsonB", width: 120, type: "string", filterable: false, valueFormatter: ({ value }) => JSON.stringify(value), renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customers" defaultMessage="jsonB" />) },
-        { field: "time", width: 150, type: "dateTime", valueFormatter: ({ value }) => value, renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customers" defaultMessage="time" />) },
-        { field: "timeZ", width: 150, type: "dateTime", valueFormatter: ({ value }) => value, renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customers" defaultMessage="timeZ" />) },
+        { field: "time", width: 150, type: "dateTime", filterable: false, valueFormatter: ({ value }) => value, renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customers" defaultMessage="time" />) },
+        { field: "timeZ", width: 150, type: "dateTime", filterable: false, valueFormatter: ({ value }) => value, renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customers" defaultMessage="timeZ" />) },
         {
             field: "state", width: 100, type: "singleSelect",
             valueOptions: [

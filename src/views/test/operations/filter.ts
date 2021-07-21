@@ -40,37 +40,23 @@ const getQueryFromDataGrid = () => {
         console.log(filterValueFromDataGrid(), 'filterValue2');
         console.log(filteredQueryForGraphQl, 'filteredQueryForGraphQl');
 
-        if (filterDataType === 'string') {
-            filterText(filteredQueryForGraphQl)
-        }
-        if (filterDataType === 'number') {
-            filterNumber(filteredQueryForGraphQl)
-        }
-        if (filterDataType === 'boolean' || filterDataType === 'singleSelect') {
-            filterBoolean(filteredQueryForGraphQl)
-        }
-        if (filterDataType === 'date' || filterDataType === 'dateTime') {
-            filterDate(filteredQueryForGraphQl)
-        }
+        filterDataByColumnTypeName(filterDataType, filteredQueryForGraphQl)
+
     })
 
     return filteredQueryForGraphQl
 }
 
-const filterText = (filteredQueryForGraphQl) => {
-    getFilterGraphQlQuery(filteredQueryForGraphQl, getStringFilterOperator())
-}
-
-const filterNumber = (filteredQueryForGraphQl) => {
-    getFilterGraphQlQuery(filteredQueryForGraphQl, getNumberFilterOperator())
-}
-
-const filterDate = (filteredQueryForGraphQl) => {
-    getFilterGraphQlQuery(filteredQueryForGraphQl, getDateFilterOperator())
-}
-
-const filterBoolean = (filteredQueryForGraphQl) => {
-    getFilterGraphQlQuery(filteredQueryForGraphQl, getBooleanFilterOperator())
+const filterDataByColumnTypeName = (filterDataType, filteredQueryForGraphQl) => {
+    if (filterDataType === 'string') {
+        getFilterGraphQlQuery(filteredQueryForGraphQl, getStringFilterOperator())
+    } else if (filterDataType === 'number') {
+        getFilterGraphQlQuery(filteredQueryForGraphQl, getNumberFilterOperator())
+    } else if (filterDataType === 'boolean' || filterDataType === 'singleSelect') {
+        getFilterGraphQlQuery(filteredQueryForGraphQl, getBooleanFilterOperator())
+    } else if (filterDataType === 'date' || filterDataType === 'dateTime') {
+        getFilterGraphQlQuery(filteredQueryForGraphQl, getDateFilterOperator())
+    }
 }
 
 const getFilterGraphQlQuery = (filteredQueryForGraphQl, getTypeFilterOperator) => {
