@@ -33,17 +33,17 @@ query filterCustomerGridData($where: customer_bool_exp! = {},$limit:Int!, $offse
     bigInteger 
     createdAt
     date
-    dateTime
     email
     float
     id
+    seq
     jsonB
     manager
     name
-    seq
     state
     time
     timeZ
+    timeStamp2
     timeStampZ
   }
   customerAggregate(where: $where) {

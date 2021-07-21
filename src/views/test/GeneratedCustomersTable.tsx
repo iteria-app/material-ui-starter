@@ -45,15 +45,16 @@ export default function CustomerTable({ customers, onSortCustomers, onChangePage
 
     const intl = useIntl();
     const columns = [
-        { field: "createdAt", width: 150, type: "date", valueFormatter: ({ value }) => intl.formatDate(value), renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customer" defaultMessage="timeStampDate" />) },
+        { field: "createdAt", headerName: 'timeStamp', width: 150, type: "date", valueFormatter: ({ value }) => intl.formatDate(value), renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customer" defaultMessage="timeStamp" />) },
 
-        //TODO fix timezone
-        // { field: "dateTime", width: 150, type: "dateTime", valueFormatter: ({ value }) => intl.formatDate(value) + ", " + intl.formatTime(value), renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customer" defaultMessage="timeStamp" />) },
-        { field: "dateTime", width: 150, type: "dateTime", valueFormatter: ({ value }) => intl.formatDate(value) + ", " + intl.formatTime(value, { timeZone: 'Europe/Athens' }), renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customer" defaultMessage="dateTime" />) },
-        // { field: "dateTime", width:150, type: "dateTime", valueFormatter: ({ value }) => intl.formatDate(value) + ", " + intl.formatTime(value,{timeZone: 'Europe/Bratislava'}), renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customer" defaultMessage="dateTime" />) },
+        //TODO fix daylight saving time
+        // { field: "timeStamp2", width: 150, type: "dateTime", valueFormatter: ({ value }) => intl.formatDate(value) + ", " + intl.formatTime(value), renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customer" defaultMessage="timeStamp2" />) },
+        { field: "timeStamp2", width: 150, type: "dateTime", valueFormatter: ({ value }) => intl.formatDate(value) + ", " + intl.formatTime(value, { timeZone: 'Europe/Athens' }), renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customer" defaultMessage="timeStamp2" />) },
+        // { field: "timeStamp2", width:150, type: "dateTime", valueFormatter: ({ value }) => intl.formatDate(value) + ", " + intl.formatTime(value,{timeZone: 'Europe/Bratislava'}), renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customer" defaultMessage="timeStamp2" />) },
+        
         { field: "timeStampZ", width: 150, type: "dateTime", valueFormatter: ({ value }) => intl.formatDate(value) + ", " + intl.formatTime(value), renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customer" defaultMessage="timeStampZ" />) },
         { field: "id", width: 150, type: "string", filterOperators: uuidColumnType(), valueFormatter: ({ value }) => value, renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customer" defaultMessage="id" />) },
-        { field: "seq", width: 80, filterOperators: numberColumnType, type: "number", valueFormatter: ({ value }) => value, renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customer" defaultMessage="seq" />) },
+        { field: "seq", headerName: 'int', width: 80, filterOperators: numberColumnType, type: "number", valueFormatter: ({ value }) => value, renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customer" defaultMessage="int" />) },
         { field: "name", width: 150, type: "string", valueFormatter: ({ value }) => value, renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customer" defaultMessage="name" />) },
         { field: "manager", width: 80, type: "boolean", valueFormatter: ({ value }) => value, renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customers" defaultMessage="manager" />) },
         { field: "bigInteger", width: 150, filterOperators: numberColumnType, type: "number", valueFormatter: ({ value }) => value, renderHeader: (params: GridCellParams) => (<FormattedMessage id="Customers" defaultMessage="bigInteger" />) },
@@ -85,7 +86,6 @@ export default function CustomerTable({ customers, onSortCustomers, onChangePage
         pageSize={pageSize}
         page={page}
         // autoPageSize={true}
-        //TODO numbers for testing
         rowsPerPageOptions={[2, 3, 4, 5, 6, 20]}
         rowCount={totalCustomers}
         filterMode="server"
