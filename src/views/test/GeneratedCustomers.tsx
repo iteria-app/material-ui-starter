@@ -5,8 +5,7 @@ import { useFilterCustomerGridDataQuery } from 'src/generated/graphql'
 const GeneratedCustomers = () => {
   const [sort, setSortCustomers] = React.useState<object>();
   const [page, setPage] = useState<number>(0);
-  // const [pageSize, setPageSize] = useState<number>(2);
-  const [pageSize, setPageSize] = useState<number>(10);
+  const [pageSize, setPageSize] = useState<number>(2);
   const [filter, setFilter] = useState<object>()
   const offset = page * pageSize
   const [result] = useFilterCustomerGridDataQuery({
