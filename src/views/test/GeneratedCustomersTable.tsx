@@ -9,7 +9,7 @@ export default function CustomerTable({ customers, onSortCustomers, onChangePage
 
     const handleSortCustomers = (sort) => {
         console.log(sort?.sortModel, 'sort?.sortModel');
-        sortCustomers(sort, onSortCustomers, customers)
+        sortCustomers(sort, onSortCustomers)
     };
 
     console.log(totalCustomers, 'totalCustomers');
@@ -24,7 +24,6 @@ export default function CustomerTable({ customers, onSortCustomers, onChangePage
         const pageSizeNumber = pageSize?.pageSize
         const pageSizeWithOffset = (pageSizeNumber + offset)
         console.log(pageSizeNumber, offset, 'pageSizeNumber, offset');
-        //TODO toto osetruje ked mi presiahne paginaciu po onPageSizeChange. Malo by to robit material ui
         if (pageSizeWithOffset > totalCustomers) {
             onChangePageCustomers(pageByTotalAndPageSize(pageSizeNumber, totalCustomers))
         }

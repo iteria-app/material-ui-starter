@@ -139,7 +139,7 @@ const getBooleanFilterOperator = () => {
     return operatorValues
 }
 
-export const sortCustomers = (sort, onSortCustomers, customers) => {
+export const sortCustomers = (sort, onSortCustomers) => {
     const sortModel: object[] = sortModelFromDataGrid(sort)
     if (sortModel.length > 0) {
         setSortQuery(sort, onSortCustomers)
@@ -194,7 +194,6 @@ const sendFilterQueryToGraphQl = (filteredQueryForGraphQl, onFilterCustomers) =>
     }
 }
 
-//spravim funciu get filterValue a zalovalm ju tu dole tym padom ziskam globalnu premennu cez funkciu
 const getQueryFromDataGrid = () => {
     const filteredQueryForGraphQl: object = {}
     const filterModels = filterModelFromDataGrid()
@@ -217,7 +216,7 @@ const getQueryFromDataGrid = () => {
             filterText(filteredQueryForGraphQl)
         }
         if (filterDataType === 'number') {
-            filterNumber(filteredQueryForGraphQl, filterModel)
+            filterNumber(filteredQueryForGraphQl)
         }
         if (filterDataType === 'boolean' || filterDataType === 'singleSelect') {
             filterBoolean(filteredQueryForGraphQl)
@@ -237,7 +236,7 @@ const filterText = (filteredQueryForGraphQl) => {
 }
 
 //TODO refaktoring
-const filterNumber = (filteredQueryForGraphQl, filterModel) => {
+const filterNumber = (filteredQueryForGraphQl) => {
     getFilterGraphQlQuery(filteredQueryForGraphQl, getNumberFilterOperator())
 }
 
@@ -252,7 +251,8 @@ const filterBoolean = (filteredQueryForGraphQl) => {
 }
 const getFilterGraphQlQuery = (filteredQueryForGraphQl, getTypeFilterOperator) => {
     const filterOperatorList = getTypeFilterOperator
-    const currentOperatorFromDataGrid = filterOperatorList.filter((operator) => operator.dataGrid === filterOperatorFromDataGrid())
+    const currentOperatorFromDataGrid = filterOperatorList.filter
+    ((operator) =>operator.dataGrid === filterOperatorFromDataGrid())
     const filterDataType: string = getColumnDataByFilterColumnField()[0]?.type
     const graphQlQuery = currentOperatorFromDataGrid[0]?.graphQl
 
