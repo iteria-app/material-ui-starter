@@ -1,7 +1,7 @@
 import InputFilterInteger from '../components/InputFilterInteger'
 
 import { getNumberFilterOperator, getStringFilterOperator, getDateFilterOperator, getBooleanFilterOperator } from './filterQueries'
-import { GridColTypeDef, getGridNumericColumnOperators, getGridStringOperators } from "@material-ui/data-grid";
+import { GridColTypeDef, getGridNumericColumnOperators, getGridStringOperators, GridFilterOperator } from "@material-ui/data-grid";
 
 let filterData;
 export const getFilterData = (filter) => {
@@ -99,23 +99,31 @@ const dateAndDateTime = (filteredQueryForGraphQl, graphQlQuery, dateType) => {
 }
 
 const filterColumnField = (filterModel): string => {
-    return filterModel?.columnField
+    if (filterModel) {
+        return filterModel?.columnField
+    }
+    return ""
 }
 
 const filterColumnOperator = (filterModel): string => {
-    return filterModel?.operatorValue
+    if (filterModel) {
+        return filterModel?.operatorValue
+    }
+    return ""
 }
 
-const getColumnDataByFilterColumnField = (): object => {
-    return filterData.columns.filter((column) => column.field === filterColumnFieldFromDataGrid())
+const getColumnDataByFilterColumnField = () => {
+    if (filterData?.columns) {
+        return filterData?.columns.filter((column) => column.field === filterColumnFieldFromDataGrid())
+    }
+    return []
 }
-
 
 const filterModelFromDataGrid = () => {
-    const filteredModel: object = filterData?.filterModel?.items
-    if (filteredModel)
+    if (filterData?.filterModel) {
         return filterData?.filterModel?.items
-    return {}
+    }
+    return []
 }
 
 export const filterColumnFieldFromDataGrid = (): string => {
@@ -123,6 +131,7 @@ export const filterColumnFieldFromDataGrid = (): string => {
     for (const filterModel of filterModels) {
         return filterColumnField(filterModel)
     }
+    return ""
 }
 
 const filterOperatorFromDataGrid = (): string => {
@@ -130,6 +139,7 @@ const filterOperatorFromDataGrid = (): string => {
     for (const filterModel of filterModels) {
         return filterColumnOperator(filterModel)
     }
+    return ""
 }
 
 export const filterValueFromDataGrid = (): string => {
@@ -167,8 +177,11 @@ export const createUuidColumnType: GridColTypeDef = {
         }),
 };
 
-export const uuidColumnType = () => {
-    return createUuidColumnType?.filterOperators
+export const uuidColumnType = (): GridFilterOperator[] => {
+    if (createUuidColumnType) {
+        return createUuidColumnType?.filterOperators
+    }
+    return []
 };
 
 export const setCurrentPageToOne = (onChangePageCustomers) => {
