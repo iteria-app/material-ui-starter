@@ -85,7 +85,6 @@ export default function CustomerTable({ customers, onSortCustomers, onChangePage
         onPageSizeChange={handlePageSize}
         pageSize={pageSize}
         page={page}
-        // autoPageSize={true}
         rowsPerPageOptions={[2, 3, 4, 5, 6, 20]}
         rowCount={totalCustomers}
         filterMode="server"

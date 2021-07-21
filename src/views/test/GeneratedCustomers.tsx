@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import GeneratedTable from './GeneratedCustomersTable'
 import { useFilterCustomerGridDataQuery } from 'src/generated/graphql'
-// import { Customer_Order_By } from 'src/generated/graphql'
 
 const GeneratedCustomers = () => {
   const [sort, setSortCustomers] = React.useState<object>();
@@ -40,8 +39,7 @@ const GeneratedCustomers = () => {
 
   return (
     <GeneratedTable customers={fetching ? [] : data.customers}
-      totalCustomers={totalCustomers}
-      onChangePageCustomers={onChangePageCustomers} offset={offset} page={page} onPageSize={onPageSize} onSortCustomers={onSortCustomers} onFilterCustomers={onFilterCustomers} pageSize={pageSize} />
+      totalCustomers={totalCustomers} onChangePageCustomers={onChangePageCustomers} offset={offset} page={page} onPageSize={onPageSize} onSortCustomers={onSortCustomers} onFilterCustomers={onFilterCustomers} pageSize={pageSize} />
   );
 };
 export default GeneratedCustomers
