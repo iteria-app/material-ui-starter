@@ -10,7 +10,6 @@ import {
 import { useFormik } from 'formik';
 import { CustomerProps } from './types';
 export var GeneratedCustomerDetail: React.FC<CustomerProps> = customer => {
-  const intl = useIntl();
   const formik = useFormik({
     initialValues: {
       avatarUrl: customer.avatarUrl,
