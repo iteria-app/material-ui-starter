@@ -23,6 +23,5 @@ query searchCustomers($search: String!) {
     avatarUrl
     createdAt
     updatedAt
-    seq
   }
 }
