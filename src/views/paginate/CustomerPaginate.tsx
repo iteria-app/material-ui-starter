@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import CustomerPaginateCards from './CustomerPaginateCards'
+// import CustomerPaginateCards from './CustomerPaginateCards'
 import { usePaginateCustomersQuery } from '../../generated/graphql'
 
-const CustomerPaginateList = () => {
+const CustomerPaginate = () => {
   const paginationStep = 2
   const [first, setFirst] = useState<number>(4)
   const [result] = usePaginateCustomersQuery({ variables: { first: first } })
@@ -25,4 +25,5 @@ const CustomerPaginateList = () => {
     </div>
   )
 };
-export default CustomerPaginateList
+
+export default CustomerPaginate
