@@ -47,7 +47,7 @@ const DashboardLayout = () => {
       />
       <div className={classes.wrapper}>
         <div className={classes.contentContainer}>
-          <div className={classes.content}>
+          <div id="scrollableContent" className={classes.content}>
             <Outlet />
           </div>
         </div>
