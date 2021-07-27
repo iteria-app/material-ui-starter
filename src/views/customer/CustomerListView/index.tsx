@@ -8,7 +8,8 @@ import {
 import Page from 'src/components/Page';
 import CustomerTable from './CustomerTable';
 import Toolbar from './Toolbar';
-import { useSearchCustomersQuery } from 'src/generated/graphql'
+//TODO return this
+// import { useSearchCustomersQuery } from 'src/generated/graphql'
 
 const useStyles = makeStyles((theme: any) => ({
   root: {
@@ -23,12 +24,13 @@ const CustomerListView = () => {
   const classes = useStyles();
   const [searchCustomer, setSearchCustomer] = useState("");
   const search = "%" + searchCustomer + "%";
-  const [result] = useSearchCustomersQuery({
-    variables: { search }
-  })
-  const { data, error, fetching } = result;
+  //TODO return this
+  // const [result] = useSearchCustomersQuery({
+  //   variables: { search }
+  // })
+  // const { data, error, fetching } = result;
 
-  if (error) return <p>Oh no... {error.message}</p>;
+  // if (error) return <p>Oh no... {error.message}</p>;
 
   return (
     <Page className={classes.root} title="Customers">
@@ -39,9 +41,10 @@ const CustomerListView = () => {
         />
         <Box mt={3}>
           <Card>
-            <CustomerTable
+            {/* //TODO return this */}
+            {/* <CustomerTable
               customers={fetching ? null : data.customers}
-            />
+            /> */}
           </Card>
         </Box>
       </Container>

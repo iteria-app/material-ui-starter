@@ -101,6 +101,10 @@ const NavBar = ({ onMobileClose, openMobile }) => {
       href: '/404',
       icon: AlertCircleIcon,
       title: 'Error'
+    },
+    {
+      href: '/app/paginate',
+      title: 'Paginate'
     }
   ];
   const classes: any = useStyles();

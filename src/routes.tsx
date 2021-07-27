@@ -24,6 +24,7 @@ const routes = [
       { path: 'products', element: <ProductListView /> },
       { path: 'generated-customers', element: <GeneratedCustomers /> },
       { path: 'generated-customer-detail', element: <CustomerDetailView /> },
+      // { path: 'paginate', element: <CustomerListView /> },
       { path: 'settings', element: <SettingsView /> },
       { path: '*', element: <Navigate to="/404" /> }
     ]
