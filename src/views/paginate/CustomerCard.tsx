@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import InfiniteScroll from "react-infinite-scroll-component";
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 
@@ -14,18 +13,17 @@ import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import { red } from '@material-ui/core/colors';
-import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import CommentIcon from '@material-ui/icons/Comment';
-
-import { usePaginateCustomersQuery } from '../../generated/graphql'
+import getInitials from 'src/utils/getInitials';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       maxWidth: 345,
+      margin: 40
     },
     media: {
       height: 0,
@@ -48,24 +46,38 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 const CustomerCard = ({ customers }) => {
-  //cards
+
   const classes = useStyles();
-  const [expanded, setExpanded] = React.useState(false);
+  const [expanded, setExpanded] = useState(false);
+  const [indexValue, setIndexValue] = useState();
+  const [selectedIndex, setSelectedIndex] = React.useState(-1)
 
-  const handleExpandClick = () => {
+
+  const handleExpandClick = (index) => {
+    // if (index.currentTarget.id === 'panel' + index.currentTarget.value) {
+    // if(index.currentTarget.id === "panel0"){
     setExpanded(!expanded);
+    // return
+    // }
+    const value = index.currentTarget.getAttribute("value")
+    setIndexValue(value)
+    console.log(indexValue, 'indexValue');
+    console.log(index.currentTarget.getAttribute("value"), 'index.currentTarget.getAttribute("value")');
+    console.log(index, 'event.target.id');
+    console.log(index.currentTarget.getAttribute("id"), 'getAttributee.target.id');
+
   };
 
-  const getInitials = function (string) {
-    const names = string.split(' ')
-    let initials = names[0].substring(0, 1).toUpperCase();
-
-    if (names.length > 1) {
-      initials += names[names.length - 1].substring(0, 1).toUpperCase();
+  const handleClick = (index) => {
+    console.log(index, 'index');
+    if (selectedIndex === index) {
+      setSelectedIndex(-1)
+      // setExpanded(false);
+    } else {
+      setSelectedIndex(index)
+      // setExpanded(true);
     }
-    return initials;
-  };
-  console.log(getInitials('FirstName LastName'))
+  }
 
   return (
     <>
@@ -101,16 +113,21 @@ const CustomerCard = ({ customers }) => {
               </IconButton>
               <IconButton
                 className={clsx(classes.expand, {
-                  [classes.expandOpen]: expanded,
+                  [classes.expandOpen]: index === selectedIndex,
                 })}
-                onClick={handleExpandClick}
+                onClick={() => { handleClick(index) }}
                 aria-expanded={expanded}
+                // aria-expanded={index === selectedIndex ? false : true}
                 aria-label="show more"
+                aria-controls={"panel" + index}
+                id={"panel" + index}
+                value={index}
               >
                 <ExpandMoreIcon />
               </IconButton>
             </CardActions>
-            <Collapse in={expanded} timeout="auto" unmountOnExit>
+            <Collapse in={index === selectedIndex} timeout="auto" unmountOnExit>
+              {/* <Collapse in={indexValue === index ? false : true} timeout="auto" unmountOnExit> */}
               <CardContent>
                 <Typography paragraph>
                   It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has
@@ -129,7 +146,6 @@ const CustomerCard = ({ customers }) => {
         null
       }
     </>
-
   )
 };
 
