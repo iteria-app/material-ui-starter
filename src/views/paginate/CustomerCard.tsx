@@ -1,33 +1,33 @@
 import React, { useState } from 'react'
-import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
-
-import {
-  Card
-} from '@material-ui/core';
+import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
+import { Card } from '@material-ui/core';
+import Avatar from '@material-ui/core/Avatar';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
 import Collapse from '@material-ui/core/Collapse';
-import Avatar from '@material-ui/core/Avatar';
+import CommentIcon from '@material-ui/icons/Comment';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
+import MoreVertIcon from '@material-ui/icons/MoreVert';
 import { red } from '@material-ui/core/colors';
 import ShareIcon from '@material-ui/icons/Share';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
-import CommentIcon from '@material-ui/icons/Comment';
+import Typography from '@material-ui/core/Typography';
 import getInitials from 'src/utils/getInitials';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      maxWidth: 345,
-      margin: 40
+      maxWidth: 600,
+      marginTop: 20,
+      marginBottom: 20,
+      marginLeft: 'auto',
+      marginRight: 'auto'
     },
     media: {
       height: 0,
-      paddingTop: '56.25%', // 16:9
+      paddingTop: '56.25%',
     },
     expand: {
       transform: 'rotate(0deg)',
@@ -48,34 +48,13 @@ const useStyles = makeStyles((theme: Theme) =>
 const CustomerCard = ({ customers }) => {
 
   const classes = useStyles();
-  const [expanded, setExpanded] = useState(false);
-  const [indexValue, setIndexValue] = useState();
-  const [selectedIndex, setSelectedIndex] = React.useState(-1)
+  const [selectedIndex, setSelectedIndex] = useState<number>()
 
-
-  const handleExpandClick = (index) => {
-    // if (index.currentTarget.id === 'panel' + index.currentTarget.value) {
-    // if(index.currentTarget.id === "panel0"){
-    setExpanded(!expanded);
-    // return
-    // }
-    const value = index.currentTarget.getAttribute("value")
-    setIndexValue(value)
-    console.log(indexValue, 'indexValue');
-    console.log(index.currentTarget.getAttribute("value"), 'index.currentTarget.getAttribute("value")');
-    console.log(index, 'event.target.id');
-    console.log(index.currentTarget.getAttribute("id"), 'getAttributee.target.id');
-
-  };
-
-  const handleClick = (index) => {
-    console.log(index, 'index');
+  const handleCollapse = (index: number) => {
     if (selectedIndex === index) {
       setSelectedIndex(-1)
-      // setExpanded(false);
     } else {
       setSelectedIndex(index)
-      // setExpanded(true);
     }
   }
 
@@ -86,7 +65,7 @@ const CustomerCard = ({ customers }) => {
           <Card key={index} className={classes.root}>
             <CardHeader
               avatar={
-                <Avatar aria-label="recipe" className={classes.avatar}>
+                <Avatar aria-label="avatar" className={classes.avatar}>
                   {getInitials(customer?.node?.name)}
                 </Avatar>
               }
@@ -115,19 +94,13 @@ const CustomerCard = ({ customers }) => {
                 className={clsx(classes.expand, {
                   [classes.expandOpen]: index === selectedIndex,
                 })}
-                onClick={() => { handleClick(index) }}
-                aria-expanded={expanded}
-                // aria-expanded={index === selectedIndex ? false : true}
+                onClick={() => { handleCollapse(index) }}
                 aria-label="show more"
-                aria-controls={"panel" + index}
-                id={"panel" + index}
-                value={index}
               >
                 <ExpandMoreIcon />
               </IconButton>
             </CardActions>
             <Collapse in={index === selectedIndex} timeout="auto" unmountOnExit>
-              {/* <Collapse in={indexValue === index ? false : true} timeout="auto" unmountOnExit> */}
               <CardContent>
                 <Typography paragraph>
                   It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has

@@ -1,20 +1,7 @@
 import React, { useState } from 'react'
-import InfiniteScroll from "react-infinite-scroll-component";
-import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 import CustomerCard from './CustomerCard';
-import clsx from 'clsx';
-
-import {
-  Card
-} from '@material-ui/core';
-import CardHeader from '@material-ui/core/CardHeader';
-import CardContent from '@material-ui/core/CardContent';
-import CardActions from '@material-ui/core/CardActions';
-import Collapse from '@material-ui/core/Collapse';
-import Avatar from '@material-ui/core/Avatar';
-import IconButton from '@material-ui/core/IconButton';
+import InfiniteScroll from "react-infinite-scroll-component";
 import Typography from '@material-ui/core/Typography';
-import { red } from '@material-ui/core/colors';
 import { usePaginateCustomersQuery } from '../../generated/graphql'
 
 const CustomerPaginate = () => {
@@ -32,24 +19,17 @@ const CustomerPaginate = () => {
   const onBottomScroll = () => {
     if (fetching === false) {
       setFirst(first + paginationStep)
-      console.log('iss Bottom');
     }
-    if (data?.customer_connection?.pageInfo?.hasNextPage === false) {
-      setHasMore(false)
-    }
-    console.log(hasMore, 'hasMore');
+    hasMorePages()
   }
 
-  var getInitials = function (string) {
-    var names = string.split(' '),
-        initials = names[0].substring(0, 1).toUpperCase();
-    
-    if (names.length > 1) {
-        initials += names[names.length - 1].substring(0, 1).toUpperCase();
+  const hasMorePages = () => {
+    const customerConnection =  data?.customer_connection
+    const customerHasNextPage =  customerConnection.pageInfo?.hasNextPage
+    if (customerHasNextPage === false) {
+      setHasMore(false)
     }
-    return initials;
-  };
-  console.log(getInitials('FirstName LastName'))
+  }
 
   return (
     <>
@@ -57,13 +37,12 @@ const CustomerPaginate = () => {
         dataLength={customers ? customers.length : 0}
         next={onBottomScroll}
         hasMore={hasMore}
-        loader={<h4>Loading...</h4>}
+        loader={<Typography variant="subtitle1" align={'center'} gutterBottom>Loading...</Typography>}
         scrollableTarget="scrollableContent"
       >
-        <CustomerCard customers={customers}/>
+        <CustomerCard customers={customers} />
       </InfiniteScroll>
     </>
-
   )
 };
 
