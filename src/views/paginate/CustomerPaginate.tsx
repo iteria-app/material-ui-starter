@@ -4,7 +4,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import Typography from '@material-ui/core/Typography';
 import { usePaginateCustomersQuery } from '../../generated/graphql'
 
-const CustomerPaginate = () => {
+const CustomerPaginate: React.FC<any> = () => {
   const paginationStep = 2
   const [first, setFirst] = useState<number>(4)
   const [hasMore, setHasMore] = useState<boolean>(true)
@@ -13,7 +13,7 @@ const CustomerPaginate = () => {
   const { data, error, fetching } = result
 
   if (error) return <p>Oh no... {error.message}</p>
-  const customers = data?.customer_connection?.edges
+  const customers: object[] = data?.customer_connection?.edges
   console.log(data?.customer_connection, 'data?.customer_connection');
 
   const onBottomScroll = () => {

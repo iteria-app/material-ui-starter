@@ -45,8 +45,7 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-const CustomerCard = ({ customers }) => {
-
+const CustomerCard: React.FC<any> = ({ customers }) => {
   const classes = useStyles();
   const [selectedIndex, setSelectedIndex] = useState<number>()
 
