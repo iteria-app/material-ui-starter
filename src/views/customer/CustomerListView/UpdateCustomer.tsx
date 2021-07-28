@@ -2,7 +2,8 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import { useUpdateCustomerMutation } from 'src/generated/graphql'
+//TODO return this
+// import { useUpdateCustomerMutation } from 'src/generated/graphql'
 import {
   Box,
   TextField,
@@ -30,23 +31,24 @@ const UpdateCustomer: React.FC<UpdateProps> = ({ customer, handleClose }) => {
   const [newName, setNewName] = React.useState<string>(null);
   const [newEmail, setNewEmail] = React.useState<string>(null);
   const [newPhoneNumber, setNewPhoneNumber] = React.useState<string>(null);
-  const [state, executeMutation] = useUpdateCustomerMutation();
-  const updateCustomerItems = [
-    executeMutation,
-    customer?.id,
-    newName ? newName : customer?.name,
-    newEmail ? newEmail : customer?.email,
-    newPhoneNumber ? newPhoneNumber : customer?.phone,
-  ]
-  const submit = React.useCallback(() => {
-    executeMutation({
-      "id": customer?.id,
-      "name": newName ? newName : customer?.name,
-      "email": newEmail ? newEmail : customer?.email,
-      "phone": newPhoneNumber ? newPhoneNumber : customer?.phone,
-    })
-    handleClose();
-  }, [updateCustomerItems])
+  //TODO return this
+  // const [state, executeMutation] = useUpdateCustomerMutation();
+  // const updateCustomerItems = [
+  //   executeMutation,
+  //   customer?.id,
+  //   newName ? newName : customer?.name,
+  //   newEmail ? newEmail : customer?.email,
+  //   newPhoneNumber ? newPhoneNumber : customer?.phone,
+  // ]
+  // const submit = React.useCallback(() => {
+  //   executeMutation({
+  //     "id": customer?.id,
+  //     "name": newName ? newName : customer?.name,
+  //     "email": newEmail ? newEmail : customer?.email,
+  //     "phone": newPhoneNumber ? newPhoneNumber : customer?.phone,
+  //   })
+  //   handleClose();
+  // }, [updateCustomerItems])
 
   return (
     <Box maxWidth={500} maxHeight={400} className={classes.box}>
@@ -72,9 +74,10 @@ const UpdateCustomer: React.FC<UpdateProps> = ({ customer, handleClose }) => {
         placeholder={customer?.phone}
         onChange={(event) => setNewPhoneNumber(event.target.value)}
         variant="outlined" />
-      <Button color="primary" variant="contained" className={classes.button} onClick={submit}>
+        {/* //TODO return this */}
+      {/* <Button color="primary" variant="contained" className={classes.button} onClick={submit}>
         Change details
-      </Button>
+      </Button> */}
     </Box>
   );
 }

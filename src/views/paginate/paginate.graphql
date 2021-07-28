@@ -1,0 +1,23 @@
+query PaginateCustomers ($first: Int) {
+  customer_connection(first: $first) {
+    edges {
+      node {
+        updatedAt
+        phone
+        name
+        id
+        email
+        createdAt
+        avatarUrl
+        address
+      }
+       cursor
+    }
+    pageInfo {
+      startCursor
+      hasPreviousPage
+      hasNextPage
+      endCursor
+    }
+  }
+}
