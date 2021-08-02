@@ -2,7 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import { useUpdateCustomerMutation } from 'src/generated/graphql'
+import { useUpdateCustomerDetailMutation } from 'src/generated/graphql'
 import {
   Box,
   TextField,
@@ -30,7 +30,7 @@ const UpdateCustomer: React.FC<UpdateProps> = ({ customer, handleClose }) => {
   const [newName, setNewName] = React.useState<string>(null);
   const [newEmail, setNewEmail] = React.useState<string>(null);
   const [newPhoneNumber, setNewPhoneNumber] = React.useState<string>(null);
-  const [state, executeMutation] = useUpdateCustomerMutation();
+  const [state, executeMutation] = useUpdateCustomerDetailMutation();
   const updateCustomerItems = [
     executeMutation,
     customer?.id,
