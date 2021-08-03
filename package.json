@@ -42,6 +42,7 @@
     "lodash": "^4.17.19",
     "moment": "^2.27.0",
     "nprogress": "^0.2.0",
+    "posthog-js": "^1.12.2",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-chartjs-2": "^2.10.0",
@@ -59,12 +60,12 @@
     "yup": "^0.29.3"
   },
   "devDependencies": {
-    "@graphql-codegen/typescript-urql": "^2.0.5",
     "@graphql-codegen/cli": "1.21.3",
     "@graphql-codegen/typescript": "^1.21.1",
     "@graphql-codegen/typescript-document-nodes": "1.17.10",
     "@graphql-codegen/typescript-graphql-files-modules": "1.18.1",
     "@graphql-codegen/typescript-operations": "1.17.15",
+    "@graphql-codegen/typescript-urql": "^2.0.5",
     "@graphql-codegen/urql-introspection": "1.0.0",
     "prettier": "^1.19.1"
   }
