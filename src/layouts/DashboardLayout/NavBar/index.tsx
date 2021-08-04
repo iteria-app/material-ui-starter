@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
 import { useIntl } from 'react-intl';
 import PropTypes from 'prop-types';
+import AuthenticationAutho0 from "src/components/autho0/AuthenticationAutho0";
 
 import {
   Avatar,
@@ -143,6 +144,9 @@ const NavBar = ({ onMobileClose, openMobile }) => {
             />
           ))}
         </List>
+      </Box>
+      <Box px={2}>
+        <AuthenticationAutho0 />
       </Box>
       <Box flexGrow={1} />
       <Box p={2} m={2} bgcolor="background.dark">

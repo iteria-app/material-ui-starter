@@ -15,7 +15,6 @@ import MenuIcon from '@material-ui/icons/Menu';
 import NotificationsIcon from '@material-ui/icons/NotificationsOutlined';
 import InputIcon from '@material-ui/icons/Input';
 import Logo from 'src/components/Logo';
-import AuthenticationButton from "src/components/AuthenticationButton";
 
 const useStyles = makeStyles(() => ({
   root: {},
@@ -43,7 +42,6 @@ const TopBar = ({
           <Logo />
         </RouterLink>
         <Box flexGrow={1} />
-        <AuthenticationButton />
         <Hidden mdDown>
           <IconButton color="inherit">
             <Badge
