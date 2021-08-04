@@ -12,7 +12,7 @@ import {
   cacheExchange,
   fetchExchange
 } from 'urql';
-import Auth0ProviderWorker from "./components/autho0/Auth0History";
+import Auth0ProviderWorker from "./components/autho0/Auth0ProviderWorker";
 
 const loadLocaleData = locale => {
   switch (locale) {
