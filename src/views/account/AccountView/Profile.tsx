@@ -1,7 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import clsx from 'clsx';
-import moment from 'moment';
+import PropTypes from 'prop-types'
+import moment from 'moment'
 import {
   Avatar,
   Box,
@@ -11,8 +9,7 @@ import {
   CardContent,
   Divider,
   Typography,
-  makeStyles
-} from '@material-ui/core';
+} from '@mui/material'
 
 const user = {
   avatar: '/static/images/avatars/avatar_6.png',
@@ -23,22 +20,12 @@ const user = {
   timezone: 'GTM-7'
 };
 
-const useStyles = makeStyles(() => ({
-  root: {},
-  avatar: {
-    height: 100,
-    width: 100
-  }
-}));
-
 const Profile: React.FC<any> = ({ className, ...rest }) => {
-  const classes: any = useStyles();
-
   return (
-    <Card className={clsx(classes.root, className)} {...rest}>
+    <Card sx={{ height: '100%' }} {...rest}>
       <CardContent>
         <Box alignItems="center" display="flex" flexDirection="column">
-          <Avatar className={classes.avatar} src={user.avatar} />
+          <Avatar src={user.avatar} />
           <Typography color="textPrimary" gutterBottom variant="h3">
             {user.name}
           </Typography>
@@ -46,7 +33,6 @@ const Profile: React.FC<any> = ({ className, ...rest }) => {
             {`${user.city} ${user.country}`}
           </Typography>
           <Typography
-            className={classes.dateText}
             color="textSecondary"
             variant="body1"
           >

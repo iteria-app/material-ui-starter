@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
 import { useIntl } from 'react-intl';
 import PropTypes from 'prop-types';
@@ -11,8 +11,8 @@ import {
   Hidden,
   List,
   Typography,
-  makeStyles
-} from '@material-ui/core';
+} from '@mui/material'
+import { makeStyles } from '@mui/styles'
 import {
   AlertCircle as AlertCircleIcon,
   BarChart as BarChartIcon,
@@ -183,7 +183,7 @@ NavBar.propTypes = {
 };
 
 NavBar.defaultProps = {
-  onMobileClose: () => {},
+  onMobileClose: () => { },
   openMobile: false
 };
 

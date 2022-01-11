@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import { Fragment } from 'react'
 import { Route, Routes } from 'react-router-dom'
 
 const PRESERVED = import.meta.globEager('/pages/(_app|404).tsx')
