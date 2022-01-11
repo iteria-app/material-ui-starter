@@ -15,10 +15,15 @@ import '../src/mixins/chartjs'
 import theme from '../src/theme'
 import routes from '../src/routes'
 import { messages } from './locale'
-
 import * as graphqlgen from './generated/graphql'
 import * as introspection from './generated/introspect.json'
-import { cacheExchange, createClient, debugExchange, fetchExchange, Provider } from 'urql'
+import {
+  cacheExchange,
+  createClient,
+  debugExchange,
+  fetchExchange,
+  Provider as UrqlProvider
+} from 'urql'
 
 /*const graphqlcodegenDataProvider = new GraphqlcodegenDataProvider(
   graphqlgen,
@@ -34,14 +39,14 @@ const App = () => {
   const routing = useRoutes(routes)
   const locale = useLocale()
   return (
-      <Provider value={client}>
-        <I18nProvider locale={locale} messages={messages(locale)}>
-          <ThemeProvider theme={theme}>
-            <GlobalStyles />
-            {routing}
-          </ThemeProvider>
-        </I18nProvider>
-      </Provider>
+    <UrqlProvider value={client}>
+      <I18nProvider locale={locale} messages={messages(locale)}>
+        <ThemeProvider theme={theme}>
+          <GlobalStyles />
+          {routing}
+        </ThemeProvider>
+      </I18nProvider>
+    </UrqlProvider>
   )
 }
 

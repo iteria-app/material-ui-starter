@@ -8,7 +8,7 @@
     "build": "tsc && vite build",
     "server": "vite preview",
     "codegen:watch": "cross-env DOTENV_CONFIG_PATH=./.env.development graphql-codegen --require dotenv/config  --watch --config codegen.yml",
-    "codegen": "graphql-codegen --require dotenv/config --config codegen.yml"
+    "codegen": "cross-env DOTENV_CONFIG_PATH=./.env.development graphql-codegen --require dotenv/config --config codegen.yml"
   },
   "dependencies": {
     "@emotion/react": "^11.5.0",
