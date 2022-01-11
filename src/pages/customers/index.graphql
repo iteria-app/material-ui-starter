@@ -1,0 +1,89 @@
+query customers($distinct_on: [customers_select_column!], $limit: Int, $offset: Int, $order_by: [customers_order_by!] = { updated_at: desc }, $where: customers_bool_exp) {
+  customers(distinct_on: $distinct_on, limit: $limit, offset: $offset, order_by: $order_by, where: $where) {
+    ...customers_customers
+  }
+}
+
+query customers_by_pk($id: uuid!) {
+  customers_by_pk(id: $id) {
+    ...customers_by_pk_customers
+  }
+}
+
+mutation insert_customers($customers: [customers_insert_input!]!, $on_conflict: customers_on_conflict) {
+  insert_customers(objects: $customers, on_conflict: $on_conflict) {
+    ...insert_customers_customers_mutation_response
+  }
+}
+
+mutation insert_customers_one($customers: customers_insert_input!, $on_conflict: customers_on_conflict) {
+  insert_customers_one(object: $customers, on_conflict: $on_conflict) {
+    ...insert_customers_one_customers
+  }
+}
+
+mutation update_customers($customers: customers_set_input, $where: customers_bool_exp!) {
+  update_customers(_set: $customers, where: $where) {
+    ...update_customers_customers_mutation_response
+  }
+}
+
+mutation update_customers_by_pk($customers: customers_set_input, $pk_columns: customers_pk_columns_input!) {
+  update_customers_by_pk(_set: $customers, pk_columns: $pk_columns) {
+    ...update_customers_by_pk_customers
+  }
+}
+
+fragment customers_customers on customers {
+  id
+  first_name
+  last_name
+  date_of_birth
+}
+
+fragment customers_by_pk_customers on customers {
+  id
+  first_name
+  last_name
+  date_of_birth
+}
+
+fragment insert_customers_customers_mutation_response on customers_mutation_response {
+  returning {
+    created_at
+    date_of_birth
+    first_name
+    id
+    is_valid
+    last_name
+    updated_at
+    vip
+  }
+}
+
+fragment insert_customers_one_customers on customers {
+  id
+  first_name
+  last_name
+  date_of_birth
+}
+
+fragment update_customers_customers_mutation_response on customers_mutation_response {
+  returning {
+    created_at
+    date_of_birth
+    first_name
+    id
+    is_valid
+    last_name
+    updated_at
+    vip
+  }
+}
+
+fragment update_customers_by_pk_customers on customers {
+  id
+  first_name
+  last_name
+  date_of_birth
+}

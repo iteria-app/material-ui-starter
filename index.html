@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/src/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Demo</title>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script src="https://react-devtools-inline-initialize.netlify.app/react-devtools-inline-initialize.umd.js"></script>
+  <script>
+    window.process = { env: {} }
+    window.global = {}
+  </script>
+  <script type="module" defer src="/src/main.tsx"></script>
+</body>
+
+</html>
