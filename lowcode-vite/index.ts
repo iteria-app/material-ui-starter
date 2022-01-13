@@ -43,17 +43,10 @@ export default function iteriaLowcode(): Plugin {
     {
       type: "module",
       content: `
-      import { iteriaApp } from 'https://unpkg.com/@iteria-app/ide-devserver@1.0.0/dist/ide-devserver.es.js'
+      import { iteriaApp } from 'https://unpkg.com/@iteria-app/ide-devserver@1.1.0/dist/ide-devserver.es.js'
       iteriaApp({ fsPort: 3000 })
       `
-    },
-    // {
-    //   src: 'https://react-devtools-inline-initialize.netlify.app/react-devtools-inline-initialize.umd.js',
-    // },
-
-    // {
-    //   src: 'https://unpkg.com/@iteria-app/wysiwyg@1.3.10/dist/index.umd.js',
-    // },
+    }
   ]
 
   const getScriptContent = (
