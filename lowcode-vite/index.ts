@@ -43,7 +43,7 @@ export default function iteriaLowcode(): Plugin {
     {
       type: "module",
       content: `
-      import { iteriaApp } from 'https://unpkg.com/@iteria-app/ide-devserver@1.1.0/dist/ide-devserver.es.js'
+      import { iteriaApp } from 'https://unpkg.com/@iteria-app/ide-devserver@1.1.1/dist/ide-devserver.es.js'
       iteriaApp({ fsPort: 3000 })
       `
     }
