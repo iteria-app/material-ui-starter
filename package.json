@@ -3,7 +3,6 @@
   "main": "src/main.tsx",
   "version": "0.0.0",
   "scripts": {
-    "start": "yarn codegen && react-scripts start",
     "dev": "concurrently \"vite\" \"npm run codegen:watch\"",
     "build": "tsc && vite build",
     "server": "vite preview",
@@ -16,6 +15,7 @@
     "@iteria-app/component-templates": "^1.0.0",
     "@iteria-app/generator": "^1.0.0",
     "@mui/icons-material": "^5.2.5",
+    "@mui/lab": "^5.0.0-alpha.64",
     "@mui/material": "^5.2.7",
     "@mui/styles": "^5.2.3",
     "@mui/x-data-grid": "^5.2.2",
@@ -46,6 +46,7 @@
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^2.2.0",
+    "@graphql-codegen/introspection": "^2.1.1",
     "@graphql-codegen/typescript": "^2.2.2",
     "@graphql-codegen/typescript-operations": "^2.1.5",
     "@graphql-codegen/typescript-urql": "^3.2.0",
