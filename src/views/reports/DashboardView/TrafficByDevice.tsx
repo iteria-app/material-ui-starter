@@ -1,7 +1,5 @@
-import React from 'react';
-import clsx from 'clsx';
-import PropTypes from 'prop-types';
-import { Doughnut } from 'react-chartjs-2';
+import PropTypes from 'prop-types'
+import { Doughnut } from 'react-chartjs-2'
 import {
   Box,
   Card,
@@ -10,22 +8,10 @@ import {
   Divider,
   Typography,
   colors,
-  makeStyles,
-  useTheme
-} from '@material-ui/core';
-import LaptopMacIcon from '@material-ui/icons/LaptopMac';
-import PhoneIcon from '@material-ui/icons/Phone';
-import TabletIcon from '@material-ui/icons/Tablet';
-
-const useStyles = makeStyles(() => ({
-  root: {
-    height: '100%'
-  }
-}));
+} from '@mui/material'
+import { LaptopMac, Phone, Tablet } from '@mui/icons-material'
 
 const TrafficByDevice: React.FC<any> = ({ className, ...rest }) => {
-  const classes = useStyles();
-  const theme = useTheme();
 
   const data = {
     datasets: [
@@ -37,8 +23,8 @@ const TrafficByDevice: React.FC<any> = ({ className, ...rest }) => {
           colors.orange[600]
         ],
         borderWidth: 8,
-        borderColor: colors.common.white,
-        hoverBorderColor: colors.common.white
+        borderColor: colors.grey[50],
+        hoverBorderColor: colors.grey[50],
       }
     ],
     labels: ['Desktop', 'Tablet', 'Mobile']
@@ -54,15 +40,15 @@ const TrafficByDevice: React.FC<any> = ({ className, ...rest }) => {
     maintainAspectRatio: false,
     responsive: true,
     tooltips: {
-      backgroundColor: theme.palette.background.default,
-      bodyFontColor: theme.palette.text.secondary,
-      borderColor: theme.palette.divider,
+      backgroundColor: colors.grey[500],
+      bodyFontColor: colors.grey[50],
+      borderColor: colors.grey[300],
       borderWidth: 1,
       enabled: true,
-      footerFontColor: theme.palette.text.secondary,
+      footerFontColor: colors.grey[50],
       intersect: false,
       mode: 'index',
-      titleFontColor: theme.palette.text.primary
+      titleFontColor: colors.indigo[500],
     }
   };
 
@@ -70,25 +56,25 @@ const TrafficByDevice: React.FC<any> = ({ className, ...rest }) => {
     {
       title: 'Desktop',
       value: 63,
-      icon: LaptopMacIcon,
+      icon: LaptopMac,
       color: colors.indigo[500]
     },
     {
       title: 'Tablet',
       value: 15,
-      icon: TabletIcon,
+      icon: Tablet,
       color: colors.red[600]
     },
     {
       title: 'Mobile',
       value: 23,
-      icon: PhoneIcon,
+      icon: Phone,
       color: colors.orange[600]
     }
   ];
 
   return (
-    <Card className={clsx(classes.root, className)} {...rest}>
+    <Card sx={{ height: '100%' }} {...rest}>
       <CardHeader title="Traffic by Device" />
       <Divider />
       <CardContent>

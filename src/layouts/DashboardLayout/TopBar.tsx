@@ -9,12 +9,12 @@ import {
   Hidden,
   IconButton,
   Toolbar,
-  makeStyles
-} from '@material-ui/core';
-import MenuIcon from '@material-ui/icons/Menu';
-import NotificationsIcon from '@material-ui/icons/NotificationsOutlined';
-import InputIcon from '@material-ui/icons/Input';
-import Logo from 'src/components/Logo';
+} from '@mui/material'
+import { makeStyles } from '@mui/styles'
+import MenuIcon from '@mui/icons-material/Menu'
+import NotificationsIcon from '@mui/icons-material/NotificationsOutlined'
+import InputIcon from '@mui/icons-material/Input'
+import Logo from '../../components/Logo';
 
 const useStyles = makeStyles(() => ({
   root: {},

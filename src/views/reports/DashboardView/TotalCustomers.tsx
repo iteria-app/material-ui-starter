@@ -1,6 +1,4 @@
-import React from 'react';
-import clsx from 'clsx';
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 import {
   Avatar,
   Box,
@@ -9,38 +7,16 @@ import {
   Grid,
   Typography,
   colors,
-  makeStyles
-} from '@material-ui/core';
-import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
-import PeopleIcon from '@material-ui/icons/PeopleOutlined';
-import { FormattedMessage } from 'react-intl';
-
-const useStyles = makeStyles(theme => ({
-  root: {
-    height: '100%'
-  },
-  avatar: {
-    backgroundColor: colors.green[600],
-    height: 56,
-    width: 56
-  },
-  differenceIcon: {
-    color: colors.green[900]
-  },
-  differenceValue: {
-    color: colors.green[900],
-    marginRight: theme.spacing(1)
-  }
-}));
+} from '@mui/material'
+import { ArrowUpward, People } from '@mui/icons-material'
+import { FormattedMessage } from 'react-intl'
 
 const TotalCustomers: React.FC<any> = ({ className, ...rest }) => {
-  const classes = useStyles();
-
   return (
-    <Card className={clsx(classes.root, className)} {...rest}>
+    <Card sx={{ height: '100%' }} {...rest}>
       <CardContent>
-        <Grid container justify="space-between" spacing={3}>
-          <Grid item>
+        <Grid container spacing={3}>
+          <Grid item xs={9}>
             <Typography color="textSecondary" gutterBottom variant="h6">
               <FormattedMessage id="total.customers" tagName="span" />
             </Typography>
@@ -48,15 +24,19 @@ const TotalCustomers: React.FC<any> = ({ className, ...rest }) => {
               1,600
             </Typography>
           </Grid>
-          <Grid item>
-            <Avatar className={classes.avatar}>
-              <PeopleIcon />
-            </Avatar>
+          <Grid item xs={3}>
+            <Grid container justifyContent="right">
+              <Avatar
+                sx={{ bgcolor: colors.green[600], height: 56, width: 56 }}
+              >
+                <People />
+              </Avatar>
+            </Grid>
           </Grid>
         </Grid>
         <Box mt={2} display="flex" alignItems="center">
-          <ArrowUpwardIcon className={classes.differenceIcon} />
-          <Typography className={classes.differenceValue} variant="body2">
+          <ArrowUpward sx={{ color: colors.green[900] }} />
+          <Typography sx={{ color: colors.green[900], mr: 2 }} variant="body2">
             16%
           </Typography>
           <Typography color="textSecondary" variant="caption">

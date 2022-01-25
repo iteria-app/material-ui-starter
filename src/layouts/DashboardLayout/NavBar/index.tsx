@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
 import { useIntl } from 'react-intl';
 import PropTypes from 'prop-types';
@@ -11,8 +11,8 @@ import {
   Hidden,
   List,
   Typography,
-  makeStyles
-} from '@material-ui/core';
+} from '@mui/material'
+import { makeStyles } from '@mui/styles'
 import {
   AlertCircle as AlertCircleIcon,
   BarChart as BarChartIcon,
@@ -21,9 +21,13 @@ import {
   ShoppingBag as ShoppingBagIcon,
   User as UserIcon,
   UserPlus as UserPlusIcon,
-  Users as UsersIcon
 } from 'react-feather';
-import NavItem from './NavItem';
+import {
+  MenuItems,
+  calculateMenuItems,
+} from '@iteria-app/component-templates/src/material-ui/menu'
+import * as graphqlGen from '../../../generated/graphql'
+import { Home } from 'react-feather'
 
 const user = {
   avatar: '/static/images/avatars/avatar_6.png',
@@ -56,21 +60,6 @@ const NavBar = ({ onMobileClose, openMobile }) => {
       href: '/app/dashboard',
       icon: BarChartIcon,
       title: 'Dashboard'
-    },
-    {
-      href: '/app/customers',
-      icon: UsersIcon,
-      title: intl.formatMessage({id: "customers"})
-    },
-    {
-      href: '/app/generated-customers',
-      icon: UsersIcon,
-      title: 'Generated customers'
-    },
-    {
-      href: '/app/generated-customer-detail',
-      icon: UsersIcon,
-      title: 'Customer detail'
     },
     {
       href: '/app/products',
@@ -132,15 +121,18 @@ const NavBar = ({ onMobileClose, openMobile }) => {
       <Divider />
       <Box p={2}>
         <List>
-          {items.map(item => (
-            <NavItem
-              className=""
-              href={item.href}
-              key={item.title}
-              title={item.title}
-              icon={item.icon}
-            />
-          ))}
+          <MenuItems
+            items={[
+              {
+                className: '',
+                href: '/app/dashboard',
+                icon: Home,
+                label: 'menu.dashboard',
+                title: 'Dashboard',
+              },
+              ...calculateMenuItems(graphqlGen, UserIcon),
+            ]}
+          />
         </List>
       </Box>
       <Box flexGrow={1} />
@@ -198,7 +190,7 @@ NavBar.propTypes = {
 };
 
 NavBar.defaultProps = {
-  onMobileClose: () => {},
+  onMobileClose: () => { },
   openMobile: false
 };
 

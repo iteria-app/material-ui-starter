@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
-import clsx from 'clsx';
-import PropTypes from 'prop-types';
-import { v4 as uuid } from 'uuid';
-import moment from 'moment';
+import { useState } from 'react'
+import PropTypes from 'prop-types'
+import { v4 as uuid } from 'uuid'
+import moment from 'moment'
 import {
   Box,
   Button,
@@ -15,9 +14,8 @@ import {
   ListItemAvatar,
   ListItemText,
   makeStyles
-} from '@material-ui/core';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
-import ArrowRightIcon from '@material-ui/icons/ArrowRight';
+} from '@mui/material'
+import { MoreVert, ArrowRight } from '@mui/icons-material'
 
 const data = [
   {
@@ -50,24 +48,13 @@ const data = [
     imageUrl: '/static/images/products/product_5.png',
     updatedAt: moment().subtract(9, 'hours')
   }
-];
-
-const useStyles = makeStyles({
-  root: {
-    height: '100%'
-  },
-  image: {
-    height: 48,
-    width: 48
-  }
-});
+]
 
 const LatestProducts: React.FC<any> = ({ className, ...rest }) => {
-  const classes = useStyles();
   const [products] = useState(data);
 
   return (
-    <Card className={clsx(classes.root, className)} {...rest}>
+    <Card sx={{ height: '100%' }} {...rest}>
       <CardHeader
         subtitle={`${products.length} in total`}
         title="Latest Products"
@@ -79,7 +66,8 @@ const LatestProducts: React.FC<any> = ({ className, ...rest }) => {
             <ListItemAvatar>
               <img
                 alt="Product"
-                className={classes.image}
+                height={48}
+                width={48}
                 src={product.imageUrl}
               />
             </ListItemAvatar>
@@ -88,7 +76,7 @@ const LatestProducts: React.FC<any> = ({ className, ...rest }) => {
               secondary={`Updated ${product.updatedAt.fromNow()}`}
             />
             <IconButton edge="end" size="small">
-              <MoreVertIcon />
+              <MoreVert />
             </IconButton>
           </ListItem>
         ))}
@@ -97,7 +85,7 @@ const LatestProducts: React.FC<any> = ({ className, ...rest }) => {
       <Box display="flex" justifyContent="flex-end" p={2}>
         <Button
           color="primary"
-          endIcon={<ArrowRightIcon />}
+          endIcon={<ArrowRight />}
           size="small"
           variant="text"
         >

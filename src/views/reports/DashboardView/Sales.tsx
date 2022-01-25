@@ -1,7 +1,5 @@
-import React from 'react';
-import clsx from 'clsx';
-import PropTypes from 'prop-types';
-import { Bar } from 'react-chartjs-2';
+import PropTypes from 'prop-types'
+import { Bar } from 'react-chartjs-2'
 import {
   Box,
   Button,
@@ -9,21 +7,11 @@ import {
   CardContent,
   CardHeader,
   Divider,
-  useTheme,
-  makeStyles,
   colors
-} from '@material-ui/core';
-import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
-import ArrowRightIcon from '@material-ui/icons/ArrowRight';
-
-const useStyles = makeStyles(() => ({
-  root: {}
-}));
+} from '@mui/material'
+import { ArrowDropDown, ArrowRight } from '@mui/icons-material'
 
 const Sales: React.FC<any> = ({ className, ...rest }) => {
-  const classes = useStyles();
-  const theme = useTheme();
-
   const data = {
     datasets: [
       {
@@ -32,7 +20,7 @@ const Sales: React.FC<any> = ({ className, ...rest }) => {
         label: 'This year'
       },
       {
-        backgroundColor: colors.grey[200],
+        backgroundColor: colors.grey[300],
         data: [11, 20, 12, 29, 30, 25, 13],
         label: 'Last year'
       }
@@ -55,7 +43,7 @@ const Sales: React.FC<any> = ({ className, ...rest }) => {
           barPercentage: 0.5,
           categoryPercentage: 0.5,
           ticks: {
-            fontColor: theme.palette.text.secondary
+            fontColor: colors.grey[1000]
           },
           gridLines: {
             display: false,
@@ -66,40 +54,40 @@ const Sales: React.FC<any> = ({ className, ...rest }) => {
       yAxes: [
         {
           ticks: {
-            fontColor: theme.palette.text.secondary,
+            fontColor: colors.grey[1000],
             beginAtZero: true,
             min: 0
           },
           gridLines: {
             borderDash: [2],
             borderDashOffset: [2],
-            color: theme.palette.divider,
+            color: colors.grey[300],
             drawBorder: false,
             zeroLineBorderDash: [2],
             zeroLineBorderDashOffset: [2],
-            zeroLineColor: theme.palette.divider
+            zeroLineColor: colors.grey[300]
           }
         }
       ]
     },
     tooltips: {
-      backgroundColor: theme.palette.background.default,
-      bodyFontColor: theme.palette.text.secondary,
-      borderColor: theme.palette.divider,
+      backgroundColor: colors.grey[500],
+      bodyFontColor: colors.grey[50],
+      borderColor: colors.grey[300],
       borderWidth: 1,
       enabled: true,
-      footerFontColor: theme.palette.text.secondary,
+      footerFontColor: colors.grey[50],
       intersect: false,
       mode: 'index',
-      titleFontColor: theme.palette.text.primary
+      titleFontColor: colors.grey[500]
     }
   };
 
   return (
-    <Card className={clsx(classes.root, className)} {...rest}>
+    <Card {...rest}>
       <CardHeader
         action={
-          <Button endIcon={<ArrowDropDownIcon />} size="small" variant="text">
+          <Button endIcon={<ArrowDropDown />} size="small" variant="text">
             Last 7 days
           </Button>
         }
@@ -115,7 +103,7 @@ const Sales: React.FC<any> = ({ className, ...rest }) => {
       <Box display="flex" justifyContent="flex-end" p={2}>
         <Button
           color="primary"
-          endIcon={<ArrowRightIcon />}
+          endIcon={<ArrowRight />}
           size="small"
           variant="text"
         >

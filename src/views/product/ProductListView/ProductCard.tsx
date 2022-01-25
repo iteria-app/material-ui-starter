@@ -1,6 +1,4 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import clsx from 'clsx';
+import PropTypes from 'prop-types'
 import {
   Avatar,
   Box,
@@ -9,31 +7,13 @@ import {
   Divider,
   Grid,
   Typography,
-  makeStyles
-} from '@material-ui/core';
-import AccessTimeIcon from '@material-ui/icons/AccessTime';
-import GetAppIcon from '@material-ui/icons/GetApp';
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: 'flex',
-    flexDirection: 'column'
-  },
-  statsItem: {
-    alignItems: 'center',
-    display: 'flex'
-  },
-  statsIcon: {
-    marginRight: theme.spacing(1)
-  }
-}));
+} from '@mui/material'
+import { AccessTime, GetApp } from '@mui/icons-material';
 
 const ProductCard = ({ className, product, ...rest }) => {
-  const classes = useStyles();
-
   return (
     <Card
-      className={clsx(classes.root, className)}
+      sx={{ height: '100%' }}
       {...rest}
     >
       <CardContent>
@@ -69,15 +49,11 @@ const ProductCard = ({ className, product, ...rest }) => {
       <Box p={2}>
         <Grid
           container
-          justify="space-between"
-          spacing={2}
         >
           <Grid
-            className={classes.statsItem}
             item
           >
-            <AccessTimeIcon
-              className={classes.statsIcon}
+            <AccessTime
               color="action"
             />
             <Typography
@@ -89,11 +65,9 @@ const ProductCard = ({ className, product, ...rest }) => {
             </Typography>
           </Grid>
           <Grid
-            className={classes.statsItem}
             item
           >
-            <GetAppIcon
-              className={classes.statsIcon}
+            <GetApp
               color="action"
             />
             <Typography

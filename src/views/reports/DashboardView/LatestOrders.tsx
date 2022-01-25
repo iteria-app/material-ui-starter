@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
-import clsx from 'clsx';
-import moment from 'moment';
-import { v4 as uuid } from 'uuid';
-import PerfectScrollbar from 'react-perfect-scrollbar';
-import PropTypes from 'prop-types';
+import { useState } from 'react'
+import moment from 'moment'
+import { v4 as uuid } from 'uuid'
+import PerfectScrollbar from 'react-perfect-scrollbar'
+import PropTypes from 'prop-types'
 import {
   Box,
   Button,
@@ -19,8 +18,8 @@ import {
   TableSortLabel,
   Tooltip,
   makeStyles
-} from '@material-ui/core';
-import ArrowRightIcon from '@material-ui/icons/ArrowRight';
+} from '@mui/material'
+import { ArrowRight } from '@mui/icons-material'
 
 const data = [
   {
@@ -85,19 +84,11 @@ const data = [
   }
 ];
 
-const useStyles = makeStyles(() => ({
-  root: {},
-  actions: {
-    justifyContent: 'flex-end'
-  }
-}));
-
 const LatestOrders: React.FC<any> = ({ className, ...rest }) => {
-  const classes = useStyles();
   const [orders] = useState(data);
 
   return (
-    <Card className={clsx(classes.root, className)} {...rest}>
+    <Card {...rest}>
       <CardHeader title="Latest Orders" />
       <Divider />
       <PerfectScrollbar>
@@ -137,7 +128,7 @@ const LatestOrders: React.FC<any> = ({ className, ...rest }) => {
       <Box display="flex" justifyContent="flex-end" p={2}>
         <Button
           color="primary"
-          endIcon={<ArrowRightIcon />}
+          endIcon={<ArrowRight />}
           size="small"
           variant="text"
         >
