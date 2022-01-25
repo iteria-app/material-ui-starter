@@ -2,15 +2,14 @@ import 'react-perfect-scrollbar/dist/css/styles.css'
 import React from 'react'
 import { useRoutes } from 'react-router-dom'
 import { ThemeProvider } from '@mui/material'
-//import { GraphqlcodegenDataProvider } from '@iteria-app/generator/src/index'
-import { DataContext } from '@iteria-app/component-templates/src/graphql'
+import { GraphqlcodegenDataProvider } from '@iteria-app/graphql-lowcode'
+import { DataContext } from '@iteria-app/component-templates/src/gql'
 import GlobalStyles from '../src/components/GlobalStyles'
 import PropTypes from 'prop-types'
 import {
   I18nProvider,
   useLocale,
 } from '@iteria-app/component-templates/src/i18n'
-import { IntlProvider } from 'react-intl'
 import '../src/mixins/chartjs'
 import theme from '../src/theme'
 import routes from '../src/routes'
@@ -25,10 +24,10 @@ import {
   Provider as UrqlProvider
 } from 'urql'
 
-/*const graphqlcodegenDataProvider = new GraphqlcodegenDataProvider(
+const graphqlcodegenDataProvider = new GraphqlcodegenDataProvider(
   graphqlgen,
   introspection as any
-)*/
+)
 
 const client = createClient({
   url: import.meta.env.VITE_HASURA_GRAPHQL_ENDPOINT as string,
@@ -39,14 +38,16 @@ const App = () => {
   const routing = useRoutes(routes)
   const locale = useLocale()
   return (
-    <UrqlProvider value={client}>
-      <I18nProvider locale={locale} messages={messages(locale)}>
-        <ThemeProvider theme={theme}>
-          <GlobalStyles />
-          {routing}
-        </ThemeProvider>
-      </I18nProvider>
-    </UrqlProvider>
+    <DataContext.Provider value={graphqlcodegenDataProvider}>
+      <UrqlProvider value={client}>
+        <I18nProvider locale={locale} messages={messages(locale)}>
+          <ThemeProvider theme={theme}>
+            <GlobalStyles />
+            {routing}
+          </ThemeProvider>
+        </I18nProvider>
+      </UrqlProvider>
+    </DataContext.Provider>
   )
 }
 

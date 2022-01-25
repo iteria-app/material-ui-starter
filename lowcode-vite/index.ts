@@ -1,6 +1,6 @@
 import { httpReadFile, httpReadDir, httpWriteFile } from './fsHttp'
 
-import { Plugin, HtmlTagDescriptor, IndexHtmlTransformContext } from 'vite'
+import { Plugin, HtmlTagDescriptor, IndexHtmlTransformContext, loadEnv } from 'vite'
 export interface IHTMLTag {
   [key: string]: string | boolean
 }
@@ -9,11 +9,13 @@ export type ScriptTag = Record<string, string | boolean> | string
 //   // devProductionMode?: enum = DEV_ONLY;
 // }
 export default function iteriaLowcode(): Plugin {
+  const graphqlEndpoint = loadEnv('development', process.cwd())?.VITE_HASURA_GRAPHQL_ENDPOINT
+
   const metas: IHTMLTag[] = []
   const links: IHTMLTag[] = [
     {
       rel: 'stylesheet',
-      href: 'https://unpkg.com/@iteria-app/wysiwyg@1.3.10/dist/style.css',
+      href: 'https://unpkg.com/@iteria-app/wysiwyg@1.5.1/dist/style.css',
     },
     {
       href: 'https://fonts.googleapis.com/icon?family=Material+Icons',
@@ -43,8 +45,8 @@ export default function iteriaLowcode(): Plugin {
     {
       type: "module",
       content: `
-      import { iteriaApp } from 'https://unpkg.com/@iteria-app/ide-devserver@1.1.1/dist/ide-devserver.es.js'
-      iteriaApp({ fsPort: 3000 })
+      import { iteriaApp } from 'https://unpkg.com/@iteria-app/ide-devserver@1.2.1/dist/ide-devserver.es.js'
+      iteriaApp({ fsPort: 3000, graphQLEndpoint: "${graphqlEndpoint}" })
       `
     }
   ]

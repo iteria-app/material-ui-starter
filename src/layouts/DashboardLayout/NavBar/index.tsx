@@ -21,9 +21,13 @@ import {
   ShoppingBag as ShoppingBagIcon,
   User as UserIcon,
   UserPlus as UserPlusIcon,
-  Users as UsersIcon
 } from 'react-feather';
-import NavItem from './NavItem';
+import {
+  MenuItems,
+  calculateMenuItems,
+} from '@iteria-app/component-templates/src/material-ui/menu'
+import * as graphqlGen from '../../../generated/graphql'
+import { Home } from 'react-feather'
 
 const user = {
   avatar: '/static/images/avatars/avatar_6.png',
@@ -117,15 +121,18 @@ const NavBar = ({ onMobileClose, openMobile }) => {
       <Divider />
       <Box p={2}>
         <List>
-          {items.map(item => (
-            <NavItem
-              className=""
-              href={item.href}
-              key={item.title}
-              title={item.title}
-              icon={item.icon}
-            />
-          ))}
+          <MenuItems
+            items={[
+              {
+                className: '',
+                href: '/app/dashboard',
+                icon: Home,
+                label: 'menu.dashboard',
+                title: 'Dashboard',
+              },
+              ...calculateMenuItems(graphqlGen, UserIcon),
+            ]}
+          />
         </List>
       </Box>
       <Box flexGrow={1} />
