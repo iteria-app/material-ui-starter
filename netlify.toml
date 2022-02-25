@@ -18,5 +18,5 @@ package = "/plugins/@iteria-netlify-plugin"
 
 [build]
   command = "npx pnpm i --store=node_modules/.pnpm-store && npx pnpm run build"
-  publish = dist
+  publish = "dist"
 
