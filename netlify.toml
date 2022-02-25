@@ -1,8 +1,10 @@
 [[plugins]]
 package = "/plugins/@iteria-netlify-plugin"
 
-# The following redirect is intended for use with most SPAs that handle
-# routing internally.
+[build.environment]
+  NODE_VERSION = "14"
+  NPM_FLAGS = "--prefix=/dev/null"
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
@@ -13,4 +15,7 @@ package = "/plugins/@iteria-netlify-plugin"
   for = "/*"
     [headers.values]
     Access-Control-Allow-Origin = "*"
+
+[build]
+  command = "npx pnpm i --store=node_modules/.pnpm-store && npx pnpm run build"
 
