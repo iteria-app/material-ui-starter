@@ -13,8 +13,7 @@ import {
 import '../src/mixins/chartjs'
 import theme from '../src/theme'
 import routes from '../src/routes'
-// import { messages } from './locale'
-import { en, sk } from './messages'
+import { messages } from './locale'
 import * as graphqlgen from './generated/graphql'
 import * as introspection from './generated/introspect.json'
 import {
@@ -34,11 +33,6 @@ const client = createClient({
   url: 'https://demo-orders.hasura.app/v1/graphql',
   exchanges: [debugExchange, cacheExchange, fetchExchange],
 })
-
-const messages = (locale) => {
-  if(locale === 'en') return en
-  if(locale === 'sk') return sk
-}
 
 const App = () => {
   const routing = useRoutes(routes)
