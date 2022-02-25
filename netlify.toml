@@ -17,5 +17,6 @@ package = "/plugins/@iteria-netlify-plugin"
     Access-Control-Allow-Origin = "*"
 
 [build]
-  command = "npx pnpm i --store=node_modules/.pnpm-store && npx pnpm run dist"
+  command = "npx pnpm i --store=node_modules/.pnpm-store && npx pnpm run build"
+  publish = dist
 
