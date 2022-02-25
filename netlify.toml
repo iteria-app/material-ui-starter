@@ -1,0 +1,5 @@
+[build.environment]
+  NODE_VERSION = "14"
+[build]
+  publish = "public"
+  command = "npx pnpm i --store=node_modules/.pnpm-store && npx pnpm run build"
