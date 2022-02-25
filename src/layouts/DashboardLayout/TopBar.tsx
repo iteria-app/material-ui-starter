@@ -14,7 +14,10 @@ import { makeStyles } from '@mui/styles'
 import MenuIcon from '@mui/icons-material/Menu'
 import NotificationsIcon from '@mui/icons-material/NotificationsOutlined'
 import InputIcon from '@mui/icons-material/Input'
-import Logo from '../../components/Logo';
+import Logo from '../../components/Logo'
+import { LocaleSwitch } from '@iteria-app/component-templates/src/i18n'
+import { locales } from '../../locale'
+
 
 const useStyles = makeStyles(() => ({
   root: {},
@@ -56,6 +59,7 @@ const TopBar = ({
             <InputIcon />
           </IconButton>
         </Hidden>
+        <LocaleSwitch locales={locales} />
         <Hidden lgUp>
           <IconButton
             color="inherit"

@@ -30,7 +30,7 @@ const graphqlcodegenDataProvider = new GraphqlcodegenDataProvider(
 )
 
 const client = createClient({
-  url: import.meta.env.VITE_HASURA_GRAPHQL_ENDPOINT as string,
+  url: 'https://demo-orders.hasura.app/v1/graphql',
   exchanges: [debugExchange, cacheExchange, fetchExchange],
 })
 

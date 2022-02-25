@@ -1,8 +1,11 @@
 import { Fragment } from 'react'
 import { Route, Routes } from 'react-router-dom'
 
-const PRESERVED = import.meta.globEager('/pages/(_app|404).tsx')
-const ROUTES = import.meta.globEager('/pages/**/[a-z[]*.tsx')
+// const PRESERVED = import.meta.globEager('/pages/(_app|404).tsx')
+// const ROUTES = import.meta.globEager('/pages/**/[a-z[]*.tsx')
+
+const PRESERVED = []
+const ROUTES = []
 
 const preserved = Object.keys(PRESERVED).reduce((preserved, file) => {
   const key = file.replace(/\/pages\/|\.tsx$/g, '')
