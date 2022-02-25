@@ -21,7 +21,7 @@ const generateIndexFile = (dependencies) => {
     indexFile += `import * as ${importName} from "${d}";\n`;
   });
 
-  console.logs("dependencies: " + dependencies)
+  console.log("dependencies: " + dependencies)
 
   indexFile += `
   export default () => {
