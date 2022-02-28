@@ -11,7 +11,7 @@ module.exports = {
 
     generateIndex()
     // addScriptsToIndex()
-    // modifyPlugins()
+    modifyPlugins()
   },
   onBuild: async({utils: {run}}) => {
     await run.command("tar -rf ./temp_archive/Sources.tar ")//./src/generated")
