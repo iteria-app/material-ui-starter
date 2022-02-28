@@ -12,9 +12,10 @@ export default defineConfig({
   plugins: [react(),
   iteriaLowcode({
     graphQLEndpoint: endpointURL,
-    injectDevServer: true,
+    //injectDevServer: true,
     define: {
       "process.env.NODE_ENV": `"development"`,
     },
   })],
 })
+
