@@ -10,13 +10,12 @@ const endpointURL = loadEnv(
 
 export default defineConfig({
   plugins: [react(),
-  iteriaLowcode({
+  iteriaLowcode({ 
+    graphQLEndpoint: endpointURL,
     define: {
       "process.env.NODE_ENV": `"development"`,
     },
-    graphQLEndpoint: endpointURL,
-    //injectDevServer: true,
-    
+    //injectDevServer: true
   })],
 })
 
