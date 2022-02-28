@@ -5,6 +5,8 @@ import App from './App'
 
 import { LocaleContextProvider } from '@iteria-app/component-templates/src/i18n'
 
+alert(process.env.NODE_ENV)
+
 // @ts-ignore
 if (!window.__skip_render) {
   ReactDOM.render(
