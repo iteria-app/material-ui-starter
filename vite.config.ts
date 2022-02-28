@@ -8,6 +8,8 @@ const endpointURL = loadEnv(
   process.env.CWD
 )?.VITE_HASURA_GRAPHQL_ENDPOINT
 
+console.log(process.env.NODE_ENV)
+
 export default defineConfig({
   plugins: [react(),
   iteriaLowcode({ 
