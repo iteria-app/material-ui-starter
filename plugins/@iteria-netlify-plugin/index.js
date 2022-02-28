@@ -10,7 +10,7 @@ module.exports = {
     );
 
     generateIndex()
-    // addScriptsToIndex()
+    addScriptsToIndex()
     modifyPlugins()
   },
   onBuild: async({utils: {run}}) => {
