@@ -20,5 +20,8 @@ export default defineConfig(
   define: {
     "process.env.NODE_ENV": `"development"`,
   },
+  build: {
+    sourcemap: true,
+  },
 })
 
