@@ -47,7 +47,7 @@ const generateIndexFile = (dependencies) => {
       const slashedDependencyDefault = d
         .split('/')
         .map((d, i) => {
-          dependency += `['${d}']`;
+          dependencyDefault += `['${d}']`;
           return `${i !== slashedLength - 1
               ? `window.__deps_default${dependencyDefault} = {}`
               : ''
