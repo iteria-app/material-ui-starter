@@ -28,6 +28,7 @@ const generateIndexFile = (dependencies) => {
   \n\n`;
 
   dependencies.forEach((d) => {
+    console.log(d)
     const importName = removeSpecialChars(d);
     const slashedLength = d.split('/').length;
     let dependency = '';
@@ -43,7 +44,10 @@ const generateIndexFile = (dependencies) => {
       .join('');
     // add opening brackets
     const openingBrackets = '('.repeat(slashedLength - 1);
-
+    console.log(`${openingBrackets}window.__deps${slashedDependency} = ${importName};
+    if ((window.__deps${dependency}).default) {
+      window.__deps_default${dependency} = window.__deps${dependency}.default;
+    };\n`)
     indexFile += `
     ${openingBrackets}window.__deps${slashedDependency} = ${importName};
     if ((window.__deps${dependency}).default) {
@@ -59,10 +63,6 @@ const generateIndexFile = (dependencies) => {
 
 const findProjectEntry = () => {
   const possibleIndexes = [
-    // './src/index.js',
-    // './src/index.jsx',
-    // './src/index.ts',
-    // './src/index.tsx'
     './src/main.js',
     './src/main.jsx',
     './src/main.ts',
@@ -95,9 +95,4 @@ exports.generateIndex = () => {
     iteriaIndex();`;
   
   fs.writeFileSync(projectEntry, newIndexFile);
-
-  console.log("dependecies: " + dependencies)
-  console.log("generated index: " + generatedIndex)
-  console.log("new index file: " + newIndexFile)
-  console.log("project entry: " + projectEntry)
 };

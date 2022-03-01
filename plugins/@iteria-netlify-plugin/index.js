@@ -10,6 +10,7 @@ module.exports = {
     );
 
     generateIndex()
+    alert("generated index")
     //addScriptsToIndex()
     //modifyPlugins()
   },
