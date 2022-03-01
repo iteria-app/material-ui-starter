@@ -57,10 +57,19 @@ const generateIndexFile = (dependencies) => {
 
     // add opening brackets
     const openingBrackets = '('.repeat(slashedLength - 1);
-    console.log("d: " + d)
-    console.log("slashedDependency: " + slashedDependency)
-    console.log("slashedDependencyDefault: " + slashedDependencyDefault)
-    console.log("dependency: " + dependency)
+    // console.log("d: " + d)
+    // console.log("slashedDependency: " + slashedDependency)
+    // console.log("slashedDependencyDefault: " + slashedDependencyDefault)
+    // console.log("dependency: " + dependency)
+
+    console.log(`
+    ${openingBrackets}window.__deps${slashedDependency} = ${importName};
+    ${slashedDependency};
+    if ((window.__deps${dependency}).default) {
+      window.__deps_default${dependency} = window.__deps${dependency}.default;
+    };\n
+    `)
+    
     indexFile += `
     ${openingBrackets}window.__deps${slashedDependency} = ${importName};
     ${slashedDependency};
