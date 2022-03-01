@@ -4,6 +4,7 @@ package = "/plugins/@iteria-netlify-plugin"
 [build.environment]
   NODE_VERSION = "14"
   NPM_FLAGS = "--prefix=/dev/null"
+  NODE_OPTIONS = "--max_old_space_size=4096"
 
 [[redirects]]
   from = "/*"
