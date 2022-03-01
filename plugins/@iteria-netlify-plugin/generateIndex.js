@@ -37,7 +37,7 @@ const generateIndexFile = (dependencies) => {
       .map((d, i) => {
         dependency += `['${d}']`;
         return `['${d}'] ${i !== slashedLength - 1
-            ? ` ?? (window.__deps${dependency} = {} && window.__deps_default${dependency} = {}))`
+            ? ` ?? (window.__deps${dependency} = {}))`
             : ''
           }`;
       })
@@ -52,6 +52,10 @@ const generateIndexFile = (dependencies) => {
       window.__deps_default${dependency} = window.__deps${dependency}.default;
     };\n
     `;
+    console.log(`${openingBrackets}window.__deps${slashedDependency} = ${importName};
+    if ((window.__deps${dependency}).default) {
+      window.__deps_default${dependency} = window.__deps${dependency}.default;
+    };\n`)
   });
 
   indexFile += '}\n';
