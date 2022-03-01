@@ -43,12 +43,13 @@ const generateIndexFile = (dependencies) => {
       })
       .join('');
 
+      let dependencyDefault = '';
       const slashedDependencyDefault = d
         .split('/')
         .map((d, i) => {
           dependency += `['${d}']`;
           return `${i !== slashedLength - 1
-              ? `window.__deps_default${dependency} = {}`
+              ? `window.__deps_default${dependencyDefault} = {}`
               : ''
             }`;
       })
@@ -62,16 +63,11 @@ const generateIndexFile = (dependencies) => {
     console.log("dependency: " + dependency)
     indexFile += `
     ${openingBrackets}window.__deps${slashedDependency} = ${importName};
-
+    ${slashedDependency};
     if ((window.__deps${dependency}).default) {
       window.__deps_default${dependency} = window.__deps${dependency}.default;
     };\n
     `;
-    console.log(`${openingBrackets}window.__deps${slashedDependency} = ${importName};
-    if ((window.__deps${dependency}).default) {
-
-      window.__deps_default${dependency} = window.__deps${dependency}.default;
-    };\n`)
   });
 
   indexFile += '}\n';
