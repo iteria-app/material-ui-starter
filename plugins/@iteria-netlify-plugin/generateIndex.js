@@ -41,14 +41,28 @@ const generateIndexFile = (dependencies) => {
             : ''
           }`;
       })
+      .join('');\
+
+      const slashedDependencyDefault = d
+        .split('/')
+        .map((d, i) => {
+          dependency += `['${d}']`;
+          return `${i !== slashedLength - 1
+              ? `window.__deps_default${dependency} = {}`
+              : ''
+            }`;
+      })
       .join('');
+
     // add opening brackets
     const openingBrackets = '('.repeat(slashedLength - 1);
     console.log("d: " + d)
     console.log("slashedDependency: " + slashedDependency)
+    console.log("slashedDependencyDefault: " + slashedDependencyDefault)
     console.log("dependency: " + dependency)
     indexFile += `
     ${openingBrackets}window.__deps${slashedDependency} = ${importName};
+
     if ((window.__deps${dependency}).default) {
       window.__deps_default${dependency} = window.__deps${dependency}.default;
     };\n
