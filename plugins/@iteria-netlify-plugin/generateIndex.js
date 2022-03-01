@@ -41,7 +41,7 @@ const generateIndexFile = (dependencies) => {
             : ''
           }`;
       })
-      .join('');\
+      .join('');
 
       const slashedDependencyDefault = d
         .split('/')
