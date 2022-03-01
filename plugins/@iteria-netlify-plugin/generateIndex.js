@@ -37,7 +37,7 @@ const generateIndexFile = (dependencies) => {
       .map((d, i) => {
         dependency += `['${d}']`;
         return `['${d}'] ${i !== slashedLength - 1
-            ? ` ?? (window.__deps${dependency} = {}) && window.__deps_default${dependency} = {})`
+            ? ` ?? (window.__deps${dependency} = {}))`
             : ''
           }`;
       })
