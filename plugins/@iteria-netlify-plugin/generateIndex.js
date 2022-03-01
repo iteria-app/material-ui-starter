@@ -28,7 +28,7 @@ const generateIndexFile = (dependencies) => {
   \n\n`;
 
   dependencies.forEach((d) => {
-    console.log(d)
+
     const importName = removeSpecialChars(d);
     const slashedLength = d.split('/').length;
     let dependency = '';
@@ -43,9 +43,10 @@ const generateIndexFile = (dependencies) => {
       })
       .join('');
     // add opening brackets
-    console.log(slashedDependency)
     const openingBrackets = '('.repeat(slashedLength - 1);
-    console.log(dependency)
+    console.log("d: " + d)
+    console.log("slashedDependency: " + slashedDependency)
+    console.log("dependency: " + dependency)
     indexFile += `
     ${openingBrackets}window.__deps${slashedDependency} = ${importName};
     if ((window.__deps${dependency}).default) {
@@ -54,6 +55,7 @@ const generateIndexFile = (dependencies) => {
     `;
     console.log(`${openingBrackets}window.__deps${slashedDependency} = ${importName};
     if ((window.__deps${dependency}).default) {
+
       window.__deps_default${dependency} = window.__deps${dependency}.default;
     };\n`)
   });
