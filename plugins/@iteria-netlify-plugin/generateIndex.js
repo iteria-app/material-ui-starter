@@ -51,6 +51,7 @@ const generateIndexFile = (dependencies) => {
     indexFile += `
     ${openingBrackets}window.__deps${slashedDependency} = ${importName};
     if ((window.__deps${dependency}).default) {
+      alert((window.__deps${dependency}).default)
       window.__deps_default${dependency} = window.__deps${dependency}.default;
     };\n
     `;
