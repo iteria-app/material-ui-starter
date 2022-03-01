@@ -53,6 +53,8 @@ export function register(config: any) {
         registerValidSW(swUrl, config);
       }
     });
+  } else{
+    alert("cpx")
   }
 }
 
