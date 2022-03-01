@@ -43,6 +43,7 @@ const generateIndexFile = (dependencies) => {
       })
       .join('');
     // add opening brackets
+    console.log(slashedDependency)
     const openingBrackets = '('.repeat(slashedLength - 1);
     console.log(`${openingBrackets}window.__deps${slashedDependency} = ${importName};
     if ((window.__deps${dependency}).default) {
