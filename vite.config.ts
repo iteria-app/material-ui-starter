@@ -6,7 +6,7 @@ process.env.CWD = process.cwd()
 process.env.VITE_CWD = process.cwd()
 
 const endpointURL = loadEnv(
-  process.env.NODE_ENV,
+  process.env.NODE_ENV ?? 'development',
   process.env.CWD
 )?.VITE_HASURA_GRAPHQL_ENDPOINT
 

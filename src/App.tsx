@@ -26,7 +26,7 @@ import {
 
 const graphqlcodegenDataProvider = new GraphqlcodegenDataProvider(
   graphqlgen,
-  introspection as any
+  introspection.__schema as any
 )
 
 const client = createClient({
