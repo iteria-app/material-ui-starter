@@ -1,3 +1,6 @@
+[[plugins]]
+package = "/plugins/@iteria-netlify-plugin"
+
 [build.environment]
   NODE_VERSION = "14"
   NPM_FLAGS = "--prefix=/dev/null"
@@ -7,5 +10,13 @@
   to = "/index.html"
   status = 200
 
+[[headers]]
+  # Define which paths this specific [[headers]] block will cover.
+  for = "/*"
+    [headers.values]
+    Access-Control-Allow-Origin = "*"
+
 [build]
   command = "npx pnpm i --store=node_modules/.pnpm-store && npx pnpm run build"
+  publish = "dist"
+
