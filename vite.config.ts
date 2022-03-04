@@ -10,10 +10,16 @@ const endpointURL = loadEnv(
   process.env.CWD
 )?.VITE_HASURA_GRAPHQL_ENDPOINT
 
-export default defineConfig({
+
+export default defineConfig(
+  {
   plugins: [react(),
-  iteriaLowcode({
+  iteriaLowcode({ 
     graphQLEndpoint: endpointURL,
-    injectDevServer: true,
+    //injectDevServer: true
   })],
+  define: {
+    "process.env.NODE_ENV": `"development"`,
+  },
 })
+
