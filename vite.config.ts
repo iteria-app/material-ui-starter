@@ -30,9 +30,9 @@ export default ({ command, mode }) => {
   process.env = { ...process.env, ...loadEnv(mode, process.cwd()) }
 
   return defineConfig({
-    optimizeDeps: {
-      exclude: ['@iteria-app/wysiwyg'], // [ '@iteria-app/component-templates',  '@iteria-app/ide-devserver', '@iteria-app/generator', '@iteria-app/graphql-lowcode']
-    },
+    // optimizeDeps: {
+    //   exclude: ['@iteria-app/wysiwyg'], // [ '@iteria-app/component-templates',  '@iteria-app/ide-devserver', '@iteria-app/generator', '@iteria-app/graphql-lowcode']
+    // },
     resolve: {
       alias: {
         os: 'os-browserify',
