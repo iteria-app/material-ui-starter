@@ -253,7 +253,7 @@ function iteriaLowcode(options) {
       src: "https://kit.fontawesome.com/90ec8eceb4.js",
       crossorigin: "anonymous"
     },
-    {
+    isViteDevServer && {
       type: "module",
       content: `
         import { iteriaApp } from ${ideDevserverPath}
