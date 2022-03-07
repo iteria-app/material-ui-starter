@@ -5,13 +5,10 @@ import iteriaLowcode from './src/index'
 export default ({ command, mode }) => {
   process.env = { ...process.env, ...loadEnv(mode, process.cwd()) }
 
-  if(process.env.NODE_ENV) mode = process.env.NODE_ENV
-
   return defineConfig({
     plugins: [react(),
     iteriaLowcode({
       command,
-      version: '1.2.5',
       mode,
       graphQLEndpoint: process.env.VITE_HASURA_GRAPHQL_ENDPOINT,
       cwd: process.cwd(),
