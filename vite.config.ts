@@ -9,7 +9,7 @@ export default ({ command, mode }) => {
     plugins: [react(),
     iteriaLowcode({
       command,
-      mode,
+      mode: process.env.NODE_ENV ?? mode,
       graphQLEndpoint: process.env.VITE_HASURA_GRAPHQL_ENDPOINT,
       cwd: process.cwd(),
       injectMode: 'devServer'
