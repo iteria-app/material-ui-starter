@@ -199,7 +199,7 @@ var httpReadDir = (req, res) => {
 // src/index.ts
 function iteriaLowcode(options) {
   var _a;
-  const isViteDevServer = options.injectMode === "devServer" && (options.command === "serve" || (options.mode === "development" && options.command === "build"));
+  const isViteDevServer = options.injectMode === "devServer" && options.command === "serve" || (options.mode === "development" && options.command === "build");
   const ideDevServerIteriaAppInitConf = __spreadValues(__spreadValues({
     fsPort: 3e3,
     isDev: isViteDevServer
