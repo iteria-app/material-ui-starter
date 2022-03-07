@@ -5,6 +5,8 @@ import iteriaLowcode from './src/index'
 export default ({ command, mode }) => {
   process.env = { ...process.env, ...loadEnv(mode, process.cwd()) }
 
+  if(process.env.NODE_ENV) mode = process.env.NODE_ENV
+
   return defineConfig({
     plugins: [react(),
     iteriaLowcode({
