@@ -198,7 +198,7 @@ var httpReadDir = (req, res) => {
 
 // src/index.ts
 function iteriaLowcode(options) {
-  
+  var _a;
   const isViteDevServer = options.injectMode === "devServer" && (options.command === "serve" || options.mode === "development" && options.command === "build");
   const ideDevServerIteriaAppInitConf = __spreadValues(__spreadValues({
     fsPort: 3e3,
@@ -251,6 +251,15 @@ function iteriaLowcode(options) {
     {
       src: "https://kit.fontawesome.com/90ec8eceb4.js",
       crossorigin: "anonymous"
+    },
+    {
+      type: "module",
+      defer: "",
+      content: `
+        import { iteriaApp } from 'https://unpkg.com/@iteria-app/ide-devserver@${(_a = options.version) != null ? _a : "1.2.6"}/dist/ide-devserver.es.js'
+        iteriaApp(
+          ${JSON.stringify(ideDevServerIteriaAppInitConf)}
+        )`
     }
   ].filter(Boolean);
   const devtoolsScript = {
@@ -259,15 +268,13 @@ function iteriaLowcode(options) {
   const getScriptContent = (script, injectTo) => {
     let result = {};
     if (typeof script === "object" && script.src) {
-      console.log('typeof ' + script + ", " + script.src)
       result = {
         tag: "script",
         injectTo,
         attrs: __spreadValues({}, script)
       };
     } else if (typeof script === "object" && script.content) {
-      console.log('typeof ' + script + ", " + script.src, ", " + script.content)
-      const _a = script, { content } = _a, attr = __objRest(_a, ["content"]);
+      const _a2 = script, { content } = _a2, attr = __objRest(_a2, ["content"]);
       result = {
         tag: "script",
         injectTo,
@@ -275,7 +282,6 @@ function iteriaLowcode(options) {
         children: `${content}`
       };
     } else {
-      console.log(script);
       result = {
         tag: "script",
         injectTo,
@@ -287,8 +293,8 @@ function iteriaLowcode(options) {
   return {
     name: "@iteria-app/vite-plugin-lowcode",
     config: (config) => {
-      var _a, _b;
-      const hmr = ((_a = process == null ? void 0 : process.env) == null ? void 0 : _a.GITPOD_WORKSPACE_ID) ? {
+      var _a2, _b;
+      const hmr = ((_a2 = process == null ? void 0 : process.env) == null ? void 0 : _a2.GITPOD_WORKSPACE_ID) ? {
         clientPort: 443,
         path: "/__vite_hmr"
       } : void 0;
