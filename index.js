@@ -198,7 +198,7 @@ var httpReadDir = (req, res) => {
 
 // src/index.ts
 function iteriaLowcode(options) {
-  console.log("Zdes")
+  
   const isViteDevServer = options.injectMode === "devServer" && (options.command === "serve" || options.mode === "development" && options.command === "build");
   const ideDevServerIteriaAppInitConf = __spreadValues(__spreadValues({
     fsPort: 3e3,
@@ -259,12 +259,14 @@ function iteriaLowcode(options) {
   const getScriptContent = (script, injectTo) => {
     let result = {};
     if (typeof script === "object" && script.src) {
+      console.log('typeof ' + script + ", " + script.src)
       result = {
         tag: "script",
         injectTo,
         attrs: __spreadValues({}, script)
       };
     } else if (typeof script === "object" && script.content) {
+      console.log('typeof ' + script + ", " + script.src, ", " + script.content)
       const _a = script, { content } = _a, attr = __objRest(_a, ["content"]);
       result = {
         tag: "script",
@@ -273,6 +275,7 @@ function iteriaLowcode(options) {
         children: `${content}`
       };
     } else {
+      console.log(script);
       result = {
         tag: "script",
         injectTo,
