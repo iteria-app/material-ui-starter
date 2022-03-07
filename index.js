@@ -198,6 +198,7 @@ var httpReadDir = (req, res) => {
 
 // src/index.ts
 function iteriaLowcode(options) {
+  console.log("Zdes")
   const isViteDevServer = options.injectMode === "devServer" && (options.command === "serve" || options.mode === "development" && options.command === "build");
   const ideDevServerIteriaAppInitConf = __spreadValues(__spreadValues({
     fsPort: 3e3,
