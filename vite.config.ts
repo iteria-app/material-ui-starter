@@ -8,7 +8,7 @@ export default ({ command, mode }) => {
   return defineConfig({
     plugins: [react(),
     iteriaLowcode({
-      command: 'build',
+      command,
       version: '1.2.5',
       mode: 'development',
       graphQLEndpoint: process.env.VITE_HASURA_GRAPHQL_ENDPOINT,
