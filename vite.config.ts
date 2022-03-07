@@ -10,7 +10,7 @@ export default ({ command, mode }) => {
     iteriaLowcode({
       command,
       version: '1.2.5',
-      mode: 'development',
+      mode,
       graphQLEndpoint: process.env.VITE_HASURA_GRAPHQL_ENDPOINT,
       cwd: process.cwd(),
       injectMode: 'devServer'
