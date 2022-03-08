@@ -16,7 +16,7 @@ module.exports = {
   onBuild: async({utils: {run}}) => {
     await run.command("tar -rf ./temp_archive/Sources.tar ")//./src/generated")
     await run.command("gzip -9 ./temp_archive/Sources.tar")
-    await run.command('mv ./temp_archive/Sources.tar.gz ./build');
+    await run.command('mv ./temp_archive/Sources.tar.gz ./dist');
     await run.command('rm -rf ./temp_archive');
   }
 };
