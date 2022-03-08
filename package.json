@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "concurrently \"vite\" \"npm run codegen:watch\"",
-    "build": "vite build",
+    "build": "vite build -m development",
     "server": "vite preview",
     "codegen:watch": "cross-env DOTENV_CONFIG_PATH=./.env.development graphql-codegen --require dotenv/config  --watch --config codegen.yml",
     "codegen": "cross-env DOTENV_CONFIG_PATH=./.env.development graphql-codegen --require dotenv/config --config codegen.yml"
