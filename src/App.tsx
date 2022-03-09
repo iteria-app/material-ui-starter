@@ -15,7 +15,7 @@ import theme from '../src/theme'
 import routes from '../src/routes'
 import { messages } from './locale'
 import * as graphqlgen from './generated/graphql'
-import * as introspection from './generated/introspect.json'
+import introspection from './generated/introspect.json'
 import {
   cacheExchange,
   createClient,
@@ -35,10 +35,6 @@ const client = createClient({
 })
 
 const App = () => {
-
-  console.log("NODE_ENV=" + process.env.NODE_ENV)
-  console.log("CWD=" + process.env.CWD)
-
   const routing = useRoutes(routes)
   const locale = useLocale()
   return (
