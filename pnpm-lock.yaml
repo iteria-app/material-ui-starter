@@ -10,12 +10,13 @@ specifiers:
   '@graphql-codegen/typescript-urql': ^3.2.0
   '@iteria-app/component-templates': ^1.0.8
   '@iteria-app/graphql-lowcode': ^0.2.2
-  '@iteria-app/vite-plugin-lowcode': ^0.1.5
+  '@iteria-app/vite-plugin-lowcode': ^0.1.6
   '@mui/icons-material': ^5.5.0
   '@mui/lab': ^5.0.0-alpha.72
   '@mui/material': ^5.5.0
   '@mui/styles': ^5.5.0
   '@mui/x-data-grid': ^5.6.0
+  '@types/netlify-identity-widget': ^1.9.3
   '@types/react': ^17.0.0
   '@types/react-dom': ^17.0.0
   '@vitejs/plugin-react': ^1.1.0
@@ -24,7 +25,7 @@ specifiers:
   concurrently: ^6.4.0
   cross-env: ^7.0.3
   formik: ^2.2.9
-  graphql: ^15.5.0
+  graphql: ^15.7.2
   graphql-tag: ^2.12.4
   history: ^5.2.0
   lodash: ^4.17.21
@@ -52,12 +53,13 @@ dependencies:
   '@emotion/styled': 11.8.1_d24c5a2cd50724e2cbcff1306f0cc72d
   '@iteria-app/component-templates': 1.0.8_f2108a8b23158d66dc3bf18fae2d0a7a
   '@iteria-app/graphql-lowcode': 0.2.2
-  '@iteria-app/vite-plugin-lowcode': 0.1.5_vite@2.7.12
+  '@iteria-app/vite-plugin-lowcode': 0.1.6_vite@2.7.12
   '@mui/icons-material': 5.5.0_0d6831e705e18b34563b7cf6aa378955
   '@mui/lab': 5.0.0-alpha.72_6b4af9e223a24e2f60ee256a8288efb7
   '@mui/material': 5.5.0_e985ff6357b7eee4c6753ba847c07bca
   '@mui/styles': 5.5.0_a0c521d4794c7ad97f5f4c1c4a7d5818
   '@mui/x-data-grid': 5.6.0_@mui+material@5.5.0+react@17.0.2
+  '@types/netlify-identity-widget': 1.9.3
   chart.js: 2.9.4
   clsx: 1.1.1
   formik: 2.2.9_react@17.0.2
@@ -2460,8 +2462,8 @@ packages:
       typescript: 4.5.4
     dev: false
 
-  /@iteria-app/vite-plugin-lowcode/0.1.5_vite@2.7.12:
-    resolution: {integrity: sha512-OtFVHCGN2nbAOCyDEY6lK5UmhvZUmDpksdwBb8WrJiaCoBxgjacBhm3CzrE3SSPYQ13XcoAdif7cuKYUkiWzSw==}
+  /@iteria-app/vite-plugin-lowcode/0.1.6_vite@2.7.12:
+    resolution: {integrity: sha512-R2r5ur6zjOhkPva0aUxZ0EUMUukcVP9YzfVbPO7jnXn4Inc2BqSj4f9pKwTpsJkS5I9VoQYunpyLjMBycv+UTg==}
     peerDependencies:
       vite: 2.7.10
     dependencies:
@@ -3442,6 +3444,10 @@ packages:
 
   /@types/minimatch/3.0.5:
     resolution: {integrity: sha512-Klz949h02Gz2uZCMGwDUSDS1YBlTdDDgbWHi+81l29tQALUtvz4rAYi5uoVhE5Lagoq6DeqAUlbrHvW/mXDgdQ==}
+    dev: false
+
+  /@types/netlify-identity-widget/1.9.3:
+    resolution: {integrity: sha512-xAzPO2TM8Z+gVZ/3wXUM5WIKWEE0TG+uD6u/4Dq0tgA+bwrb+qyIqhlaIyJZcXN6MienvYxUH3DKUSYb8evfYA==}
     dev: false
 
   /@types/node/17.0.21:
