@@ -40,6 +40,7 @@ specifiers:
   react-helmet: ^6.1.0
   react-intl: ^5.24.6
   react-perfect-scrollbar: ^1.5.8
+  react-refresh: ^0.12.0
   react-router: ^6.2.2
   react-router-dom: ^6.2.2
   react-scripts: ^4.0.3
@@ -79,6 +80,7 @@ dependencies:
   react-helmet: 6.1.0_react@17.0.2
   react-intl: 5.24.6_react@17.0.2+typescript@4.5.4
   react-perfect-scrollbar: 1.5.8_react-dom@16.14.0+react@17.0.2
+  react-refresh: 0.12.0
   react-router: 6.2.2_react@17.0.2
   react-router-dom: 6.2.2_react-dom@16.14.0+react@17.0.2
   react-scripts: 4.0.3_react@17.0.2+typescript@4.5.4
@@ -12297,6 +12299,11 @@ packages:
     resolution: {integrity: sha512-F27qZr8uUqwhWZboondsPx8tnC3Ct3SxZA3V5WyEvujRyyNv0VYPhoBg1gZ8/MV5tubQp76Trw8lTv9hzRBa+A==}
     engines: {node: '>=0.10.0'}
     dev: true
+
+  /react-refresh/0.12.0:
+    resolution: {integrity: sha512-suLIhrU2IHKL5JEKR/fAwJv7bbeq4kJ+pJopf77jHwuR+HmJS/HbrPIGsTBUVfw7tXPOmYv7UJ7PCaN49e8x4A==}
+    engines: {node: '>=0.10.0'}
+    dev: false
 
   /react-refresh/0.8.3:
     resolution: {integrity: sha512-X8jZHc7nCMjaCqoU+V2I0cOhNW+QMBwSUkeXnTi8IPe6zaRWfn60ZzvFDZqWPfmSJfjub7dDW1SP0jaHWLu/hg==}
