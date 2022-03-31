@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme: any) => ({
 const DashboardLayout = () => {
   const classes = useStyles();
   const [isMobileNavOpen, setMobileNavOpen] = useState(false);
-  netlifyIdentity.init()
+  netlifyIdentity.init();
 
   return (
     <div className={classes.root}>

@@ -34,6 +34,7 @@ const TopBar = ({
   ...rest
 }) => {
   const classes = useStyles();
+  
   netlifyIdentity.on("login", user => {setUser(user)})
   const [user, setUser] = useState(netlifyIdentity.currentUser())
 
