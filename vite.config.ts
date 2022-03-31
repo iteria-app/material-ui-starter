@@ -26,8 +26,10 @@ import react from '@vitejs/plugin-react'
 import iteriaLowcode from '@iteria-app/vite-plugin-lowcode'
 import * as path from 'path'
 
+
 export default ({ command, mode }) => {
   process.env = { ...process.env, ...loadEnv(mode, process.cwd()) }
+
 
   return defineConfig({
     optimizeDeps: {
