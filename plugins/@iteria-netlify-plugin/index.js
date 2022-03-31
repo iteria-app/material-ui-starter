@@ -9,7 +9,7 @@ module.exports = {
       'tar --exclude temp_archive --exclude node_modules --exclude .git --exclude public --exclude plugins -cf ./temp_archive/Sources.tar ./'
     );
 
-    //generateIndex()
+    generateIndex()
     //addScriptsToIndex()
     //modifyPlugins()
   },
