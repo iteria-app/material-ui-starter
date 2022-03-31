@@ -13,7 +13,7 @@
     "@emotion/react": "^11.5.0",
     "@emotion/styled": "^11.3.0",
     "@iteria-app/component-templates": "^1.0.8",
-    "@iteria-app/graphql-lowcode": "^0.2.3",
+    "@iteria-app/graphql-lowcode": "^0.2.4",
     "@iteria-app/vite-plugin-lowcode": "^0.1.6",
     "@mui/icons-material": "^5.5.0",
     "@mui/lab": "^5.0.0-alpha.72",
