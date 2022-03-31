@@ -30,14 +30,13 @@ const useStyles = makeStyles(() => ({
 const TopBar = ({
   className,
   onMobileNavOpen,
-  // netlifyIdentity,
+  netlifyIdentity,
   ...rest
 }) => {
   const classes = useStyles();
   
-  // netlifyIdentity.on("login", user => {setUser(user)})
-  // const [user, setUser] = useState(netlifyIdentity.currentUser())
-  const [user, setUser] = useState(null)
+  netlifyIdentity.on("login", user => {setUser(user)})
+  const [user, setUser] = useState(netlifyIdentity.currentUser())
 
   return (
     <AppBar
@@ -61,14 +60,13 @@ const TopBar = ({
             </Badge>
           </IconButton>
           {!user && 
-          (<IconButton color="inherit" onClick={() => console.log("nic")/**netlifyIdentity.open("login")*/}>
+          (<IconButton color="inherit" onClick={() => netlifyIdentity.open("login")}>
             <LoginIcon />
           </IconButton>)}
           {user && 
           (<IconButton color="inherit" onClick={() => {
-            console.log("nic")
-            // netlifyIdentity.logout()
-            //   ?.then(() => setUser(null))
+            netlifyIdentity.logout()
+              ?.then(() => setUser(null))
           }}>
             <LogoutIcon />
           </IconButton>)}

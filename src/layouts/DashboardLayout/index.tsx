@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom'
 import { makeStyles } from '@mui/styles'
 import NavBar from './NavBar'
 import TopBar from './TopBar'
-// import * as  netlifyIdentity from "netlify-identity-widget"
+import * as  netlifyIdentity from "netlify-identity-widget"
 
 const useStyles = makeStyles((theme: any) => ({
   root: {
@@ -37,13 +37,12 @@ const useStyles = makeStyles((theme: any) => ({
 const DashboardLayout = () => {
   const classes = useStyles();
   const [isMobileNavOpen, setMobileNavOpen] = useState(false);
-  // netlifyIdentity.init();
+  netlifyIdentity.init();
 
   return (
     <div className={classes.root}>
       {/* // @ts/ignore */}
-      {/* <TopBar className="" onMobileNavOpen={() => setMobileNavOpen(true)} netlifyIdentity={netlifyIdentity} /> */}
-      <TopBar className="" onMobileNavOpen={() => setMobileNavOpen(true)} />
+      <TopBar className="" onMobileNavOpen={() => setMobileNavOpen(true)} netlifyIdentity={netlifyIdentity} />
       <NavBar
         onMobileClose={() => setMobileNavOpen(false)}
         openMobile={isMobileNavOpen}

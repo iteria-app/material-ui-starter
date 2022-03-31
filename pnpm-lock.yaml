@@ -30,6 +30,7 @@ specifiers:
   history: ^5.2.0
   lodash: ^4.17.21
   moment: ^2.29.1
+  netlify-identity-widget: ^1.9.2
   nprogress: ^0.2.0
   prop-types: ^15.8.1
   react: ^17.0.2
@@ -68,6 +69,7 @@ dependencies:
   history: 5.2.0
   lodash: 4.17.21
   moment: 2.29.1
+  netlify-identity-widget: 1.9.2
   nprogress: 0.2.0
   prop-types: 15.8.1
   react: 17.0.2
@@ -10513,6 +10515,10 @@ packages:
 
   /neo-async/2.6.2:
     resolution: {integrity: sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==}
+    dev: false
+
+  /netlify-identity-widget/1.9.2:
+    resolution: {integrity: sha512-IbS1JHhs7BflCCvp3C9f6tmNSZqbyBhZ4Gs5+Qxt4IlPybTOVv0PqJ4TAsA7uxh1R+oXOAmk0OOMAkEaPYeCtA==}
     dev: false
 
   /next-tick/1.0.0:
