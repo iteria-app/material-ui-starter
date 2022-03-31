@@ -1,4 +1,5 @@
-
+[[plugins]]
+package = "/plugins/@iteria-netlify-plugin"
 
 [build.environment]
   NODE_VERSION = "14"
