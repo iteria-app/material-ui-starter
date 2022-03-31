@@ -95,7 +95,7 @@ exports.generateIndex = () => {
   const currIndexFile = fs.readFileSync(projectEntry, 'utf-8');
 
   const newIndexFile =
-    `import * as runtime from 'react-refresh/runtime';\n
+    `import * as runtime from '/react-refresh/runtime';\n
     //@ts-ignore
     import iteriaIndex from './iteriaIndex';\n` +
     currIndexFile +
