@@ -8,7 +8,7 @@ specifiers:
   '@graphql-codegen/typescript': ^2.2.2
   '@graphql-codegen/typescript-operations': ^2.1.5
   '@graphql-codegen/typescript-urql': ^3.2.0
-  '@iteria-app/component-templates': ^1.0.9
+  '@iteria-app/component-templates': ^1.0.8
   '@iteria-app/graphql-lowcode': 0.2.3
   '@iteria-app/vite-plugin-lowcode': ^0.1.6
   '@mui/icons-material': ^5.2.5
