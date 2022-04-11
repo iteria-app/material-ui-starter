@@ -85,13 +85,14 @@ const findProjectEntry = () => {
 };
 
 exports.generateIndex = () => {
+
+  console.log("GENERATIN DA INDEX")
+
   const dependencies = getDependencies();
   const generatedIndex = generateIndexFile(dependencies);
 
   fs.writeFileSync('./src/iteriaIndex.js', generatedIndex);
-  console.log("________---________")
   fs.writeFileSync('./src/runtime.d.ts', `declare module 'react-refresh/runtime';`)
-  fs.writeFileSync('./src/iteriaIndex.d.ts', `declare module 'src/iteriaIndex';`)
   const projectEntry =  findProjectEntry();
   const currIndexFile = fs.readFileSync(projectEntry, 'utf-8');
 
