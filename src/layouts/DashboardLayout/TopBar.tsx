@@ -13,7 +13,9 @@ import {
 import { makeStyles } from '@mui/styles'
 import MenuIcon from '@mui/icons-material/Menu'
 import NotificationsIcon from '@mui/icons-material/NotificationsOutlined'
-import InputIcon from '@mui/icons-material/Input'
+// import InputIcon from '@mui/icons-material/Input'
+import LoginIcon from '@mui/icons-material/Login';
+import LogoutIcon from '@mui/icons-material/Logout';
 import Logo from '../../components/Logo'
 import { LocaleSwitch } from '@iteria-app/component-templates/src/i18n'
 import { locales } from '../../locale'
@@ -29,6 +31,7 @@ const useStyles = makeStyles(() => ({
 
 const TopBar = ({
   className,
+  netlifyIdentity,
   onMobileNavOpen,
   ...rest
 }) => {
@@ -56,7 +59,10 @@ const TopBar = ({
             </Badge>
           </IconButton>
           <IconButton color="inherit">
-            <InputIcon />
+            <LoginIcon onClick={()=> {netlifyIdentity.open("login")}}/>
+          </IconButton>
+          <IconButton color="inherit">
+            <LogoutIcon onClick={()=> {netlifyIdentity.logout()}}/>
           </IconButton>
         </Hidden>
         <LocaleSwitch locales={locales} />

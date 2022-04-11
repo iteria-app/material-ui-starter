@@ -9,13 +9,14 @@ specifiers:
   '@graphql-codegen/typescript-operations': ^2.1.5
   '@graphql-codegen/typescript-urql': ^3.2.0
   '@iteria-app/component-templates': ^1.0.8
-  '@iteria-app/graphql-lowcode': ^0.2.2
-  '@iteria-app/vite-plugin-lowcode': ^0.1.5
+  '@iteria-app/graphql-lowcode': 0.2.3
+  '@iteria-app/vite-plugin-lowcode': ^0.1.6
   '@mui/icons-material': ^5.2.5
   '@mui/lab': ^5.0.0-alpha.64
   '@mui/material': ^5.2.7
   '@mui/styles': ^5.2.3
   '@mui/x-data-grid': ^5.2.2
+  '@types/netlify-identity-widget': ^1.9.3
   '@types/react': ^17.0.0
   '@types/react-dom': ^17.0.0
   '@vitejs/plugin-react': ^1.1.0
@@ -29,6 +30,7 @@ specifiers:
   history: ^5.2.0
   lodash: ^4.17.21
   moment: ^2.29.1
+  netlify-identity-widget: ^1.9.2
   nprogress: ^0.2.0
   prop-types: ^15.8.1
   react: ^17.0.1
@@ -51,13 +53,14 @@ dependencies:
   '@emotion/react': 11.7.1_b08e3c15324cbe90a6ff8fcd416c932c
   '@emotion/styled': 11.6.0_0044a6ec6dcf5de7705bffaaff7afd26
   '@iteria-app/component-templates': 1.0.8_aa43b2d362ebcb2b73bb232a42e4e672
-  '@iteria-app/graphql-lowcode': 0.2.2
-  '@iteria-app/vite-plugin-lowcode': 0.1.5_vite@2.7.12
+  '@iteria-app/graphql-lowcode': 0.2.3
+  '@iteria-app/vite-plugin-lowcode': 0.1.6_vite@2.7.12
   '@mui/icons-material': 5.2.5_f463eef15d59df5aa770d062739aa27b
   '@mui/lab': 5.0.0-alpha.64_fce999263f7c98fefcb1b8fdff848936
   '@mui/material': 5.2.8_1b58045e2df093289efca6badd755276
   '@mui/styles': 5.2.3_b08e3c15324cbe90a6ff8fcd416c932c
   '@mui/x-data-grid': 5.2.2_@mui+material@5.2.8+react@17.0.2
+  '@types/netlify-identity-widget': 1.9.3
   chart.js: 2.9.4
   clsx: 1.1.1
   formik: 2.2.9_react@17.0.2
@@ -66,6 +69,7 @@ dependencies:
   history: 5.2.0
   lodash: 4.17.21
   moment: 2.29.1
+  netlify-identity-widget: 1.9.2
   nprogress: 0.2.0
   prop-types: 15.8.1
   react: 17.0.2
@@ -2718,9 +2722,6 @@ packages:
       '@graphql-tools/url-loader': 7.7.0_graphql@15.8.0
       '@graphql-tools/utils': 8.6.1_graphql@15.8.0
       ansi-escapes: 4.3.2
-      chalk: 4.1.2
-      change-case-all: 1.0.14
-      chokidar: 3.5.2
       common-tags: 1.8.2
       cosmiconfig: 7.0.1
       debounce: 1.2.1
@@ -2730,6 +2731,9 @@ packages:
       globby: 11.1.0
       graphql: 15.8.0
       graphql-config: 4.1.0_graphql@15.8.0+typescript@4.5.4
+      chalk: 4.1.2
+      change-case-all: 1.0.14
+      chokidar: 3.5.2
       inquirer: 8.2.0
       is-glob: 4.0.3
       json-to-pretty-yaml: 1.2.2
@@ -2783,9 +2787,9 @@ packages:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
     dependencies:
       '@graphql-tools/utils': 8.6.1_graphql@15.8.0
-      change-case-all: 1.0.14
       common-tags: 1.8.2
       graphql: 15.8.0
+      change-case-all: 1.0.14
       import-from: 4.0.0
       lodash: 4.17.21
       tslib: 2.3.1
@@ -2826,9 +2830,9 @@ packages:
       '@graphql-codegen/plugin-helpers': 2.3.2_graphql@15.8.0
       '@graphql-codegen/visitor-plugin-common': 2.5.2_graphql@15.8.0
       auto-bind: 4.0.0
-      change-case-all: 1.0.14
       graphql: 15.8.0
       graphql-tag: 2.12.6_graphql@15.8.0
+      change-case-all: 1.0.14
       tslib: 2.3.1
     transitivePeerDependencies:
       - supports-color
@@ -2859,10 +2863,10 @@ packages:
       '@graphql-tools/relay-operation-optimizer': 6.4.1_graphql@15.8.0
       '@graphql-tools/utils': 8.6.1_graphql@15.8.0
       auto-bind: 4.0.0
-      change-case-all: 1.0.14
       dependency-graph: 0.11.0
       graphql: 15.8.0
       graphql-tag: 2.12.6_graphql@15.8.0
+      change-case-all: 1.0.14
       parse-filepath: 1.0.2
       tslib: 2.3.1
     transitivePeerDependencies:
@@ -3045,13 +3049,13 @@ packages:
       '@types/js-yaml': 4.0.5
       '@types/json-stable-stringify': 1.0.33
       '@types/jsonwebtoken': 8.5.6
-      chalk: 4.1.2
       debug: 4.3.3
       dotenv: 10.0.0
       graphql: 15.8.0
       graphql-request: 3.7.0_graphql@15.8.0
       http-proxy-agent: 5.0.0
       https-proxy-agent: 5.0.0
+      chalk: 4.1.2
       isomorphic-fetch: 3.0.0
       js-yaml: 4.1.0
       json-stable-stringify: 1.0.1
@@ -3266,16 +3270,16 @@ packages:
       - typescript
     dev: false
 
-  /@iteria-app/graphql-lowcode/0.2.2:
-    resolution: {integrity: sha512-BBhl1VQGy7j6xHGAhWdIP1YtZIVATakoTlYGY3LHM/eUVfzf8sCpCLE6Bsm/cZf9LCTwESDgyihrinTzilMvWg==}
+  /@iteria-app/graphql-lowcode/0.2.3:
+    resolution: {integrity: sha512-SUC+9LPhV2meT/QVyYVfhUx2R+Mh73PL1ciw53rIuU+zL8v58YVWquaqz/FaY5vWxq86frPF7EHPKa2djTd+xQ==}
     dependencies:
       '@iteria-app/component-templates-api': 1.0.0
       graphql: 15.8.0
       typescript: 4.5.4
     dev: false
 
-  /@iteria-app/vite-plugin-lowcode/0.1.5_vite@2.7.12:
-    resolution: {integrity: sha512-OtFVHCGN2nbAOCyDEY6lK5UmhvZUmDpksdwBb8WrJiaCoBxgjacBhm3CzrE3SSPYQ13XcoAdif7cuKYUkiWzSw==}
+  /@iteria-app/vite-plugin-lowcode/0.1.6_vite@2.7.12:
+    resolution: {integrity: sha512-R2r5ur6zjOhkPva0aUxZ0EUMUukcVP9YzfVbPO7jnXn4Inc2BqSj4f9pKwTpsJkS5I9VoQYunpyLjMBycv+UTg==}
     peerDependencies:
       vite: 2.7.10
     dependencies:
@@ -3305,12 +3309,12 @@ packages:
       '@jest/types': 26.6.2
       '@types/node': 17.0.8
       ansi-escapes: 4.3.2
-      chalk: 4.1.2
       exit: 0.1.2
       graceful-fs: 4.2.9
-      jest-changed-files: 26.6.2
+      chalk: 4.1.2
       jest-config: 26.6.3
       jest-haste-map: 26.6.2
+      jest-changed-files: 26.6.2
       jest-message-util: 26.6.2
       jest-regex-util: 26.0.0
       jest-resolve: 26.6.2
@@ -3374,11 +3378,11 @@ packages:
       '@jest/test-result': 26.6.2
       '@jest/transform': 26.6.2
       '@jest/types': 26.6.2
-      chalk: 4.1.2
       collect-v8-coverage: 1.0.1
       exit: 0.1.2
       glob: 7.2.0
       graceful-fs: 4.2.9
+      chalk: 4.1.2
       istanbul-lib-coverage: 3.2.0
       istanbul-lib-instrument: 4.0.3
       istanbul-lib-report: 3.0.0
@@ -3442,10 +3446,10 @@ packages:
       '@babel/core': 7.16.7
       '@jest/types': 26.6.2
       babel-plugin-istanbul: 6.1.1
-      chalk: 4.1.2
       convert-source-map: 1.8.0
       fast-json-stable-stringify: 2.1.0
       graceful-fs: 4.2.9
+      chalk: 4.1.2
       jest-haste-map: 26.6.2
       jest-regex-util: 26.0.0
       jest-util: 26.6.2
@@ -4243,6 +4247,10 @@ packages:
 
   /@types/minimatch/3.0.5:
     resolution: {integrity: sha512-Klz949h02Gz2uZCMGwDUSDS1YBlTdDDgbWHi+81l29tQALUtvz4rAYi5uoVhE5Lagoq6DeqAUlbrHvW/mXDgdQ==}
+    dev: false
+
+  /@types/netlify-identity-widget/1.9.3:
+    resolution: {integrity: sha512-xAzPO2TM8Z+gVZ/3wXUM5WIKWEE0TG+uD6u/4Dq0tgA+bwrb+qyIqhlaIyJZcXN6MienvYxUH3DKUSYb8evfYA==}
     dev: false
 
   /@types/node/17.0.8:
@@ -5286,8 +5294,8 @@ packages:
       '@types/babel__core': 7.1.18
       babel-plugin-istanbul: 6.1.1
       babel-preset-jest: 26.6.2_@babel+core@7.12.3
-      chalk: 4.1.2
       graceful-fs: 4.2.9
+      chalk: 4.1.2
       slash: 3.0.0
     transitivePeerDependencies:
       - supports-color
@@ -5305,8 +5313,8 @@ packages:
       '@types/babel__core': 7.1.18
       babel-plugin-istanbul: 6.1.1
       babel-preset-jest: 26.6.2_@babel+core@7.16.7
-      chalk: 4.1.2
       graceful-fs: 4.2.9
+      chalk: 4.1.2
       slash: 3.0.0
     transitivePeerDependencies:
       - supports-color
@@ -5638,8 +5646,8 @@ packages:
     engines: {node: '>= 8.0.0'}
     dependencies:
       bluebird: 3.7.2
-      check-types: 11.1.2
       hoopy: 0.1.4
+      check-types: 11.1.2
       tryer: 1.0.1
     dev: false
 
@@ -5886,10 +5894,10 @@ packages:
     resolution: {integrity: sha512-a0tMB40oefvuInr4Cwb3GerbL9xTj1D5yg0T5xrjGCGyfvbxseIXX7BAO/u/hIXdafzOI5JC3wDwHyf24buOAQ==}
     dependencies:
       bluebird: 3.7.2
-      chownr: 1.1.4
       figgy-pudding: 3.5.2
       glob: 7.2.0
       graceful-fs: 4.2.9
+      chownr: 1.1.4
       infer-owner: 1.0.4
       lru-cache: 5.1.1
       mississippi: 3.0.0
@@ -5908,9 +5916,9 @@ packages:
     dependencies:
       '@npmcli/fs': 1.1.0
       '@npmcli/move-file': 1.1.2
-      chownr: 2.0.0
       fs-minipass: 2.1.0
       glob: 7.2.0
+      chownr: 2.0.0
       infer-owner: 1.0.4
       lru-cache: 6.0.0
       minipass: 3.1.6
@@ -6113,8 +6121,8 @@ packages:
   /chartjs-color/2.4.1:
     resolution: {integrity: sha512-haqOg1+Yebys/Ts/9bLo/BqUcONQOdr/hoEr2LLTRl6C5LXctUdHxsCYfvQVg5JIxITrfCNUDr4ntqmQk9+/0w==}
     dependencies:
-      chartjs-color-string: 0.6.0
       color-convert: 1.9.3
+      chartjs-color-string: 0.6.0
     dev: false
 
   /check-types/11.1.2:
@@ -6413,8 +6421,8 @@ packages:
     engines: {node: '>=10.0.0'}
     hasBin: true
     dependencies:
-      chalk: 4.1.2
       date-fns: 2.28.0
+      chalk: 4.1.2
       lodash: 4.17.21
       rxjs: 6.6.7
       spawn-command: 0.0.2-1
@@ -6715,8 +6723,8 @@ packages:
       postcss-modules-scope: 2.2.0
       postcss-modules-values: 3.0.0
       postcss-value-parser: 4.2.0
-      schema-utils: 2.7.1
       semver: 7.3.2
+      schema-utils: 2.7.1
       webpack: 4.44.2
     dev: false
 
@@ -6829,8 +6837,8 @@ packages:
       postcss-minify-gradients: 4.0.2
       postcss-minify-params: 4.0.2
       postcss-minify-selectors: 4.0.2
-      postcss-normalize-charset: 4.0.1
       postcss-normalize-display-values: 4.0.2
+      postcss-normalize-charset: 4.0.1
       postcss-normalize-positions: 4.0.2
       postcss-normalize-repeat-style: 4.0.2
       postcss-normalize-string: 4.0.2
@@ -7913,7 +7921,6 @@ packages:
       '@eslint/eslintrc': 0.4.3
       '@humanwhocodes/config-array': 0.5.0
       ajv: 6.12.6
-      chalk: 4.1.2
       cross-spawn: 7.0.3
       debug: 4.3.3
       doctrine: 3.0.0
@@ -7930,6 +7937,7 @@ packages:
       functional-red-black-tree: 1.0.1
       glob-parent: 5.1.2
       globals: 13.12.0
+      chalk: 4.1.2
       ignore: 4.0.6
       import-fresh: 3.3.0
       imurmurhash: 0.1.4
@@ -9273,11 +9281,11 @@ packages:
     engines: {node: '>=8.0.0'}
     dependencies:
       ansi-escapes: 4.3.2
-      chalk: 4.1.2
       cli-cursor: 3.1.0
       cli-width: 3.0.0
       external-editor: 3.1.0
       figures: 3.2.0
+      chalk: 4.1.2
       lodash: 4.17.21
       mute-stream: 0.0.8
       ora: 5.4.1
@@ -9856,10 +9864,10 @@ packages:
       '@jest/types': 26.6.2
       '@types/babel__traverse': 7.14.2
       '@types/node': 17.0.8
-      chalk: 4.1.2
       co: 4.6.0
       dedent: 0.7.0
       expect: 26.6.2
+      chalk: 4.1.2
       is-generator-fn: 2.1.0
       jest-each: 26.6.2
       jest-matcher-utils: 26.6.2
@@ -9887,9 +9895,9 @@ packages:
       '@jest/core': 26.6.3
       '@jest/test-result': 26.6.2
       '@jest/types': 26.6.2
-      chalk: 4.1.2
       exit: 0.1.2
       graceful-fs: 4.2.9
+      chalk: 4.1.2
       import-local: 3.1.0
       is-ci: 2.0.0
       jest-config: 26.6.3
@@ -9918,10 +9926,10 @@ packages:
       '@jest/test-sequencer': 26.6.3
       '@jest/types': 26.6.2
       babel-jest: 26.6.3_@babel+core@7.16.7
-      chalk: 4.1.2
       deepmerge: 4.2.2
       glob: 7.2.0
       graceful-fs: 4.2.9
+      chalk: 4.1.2
       jest-environment-jsdom: 26.6.2
       jest-environment-node: 26.6.2
       jest-get-type: 26.3.0
@@ -9943,8 +9951,8 @@ packages:
     resolution: {integrity: sha512-6m+9Z3Gv9wN0WFVasqjCL/06+EFCMTqDEUl/b87HYK2rAPTyfz4ZIuSlPhY51PIQRWx5TaxeF1qmXKe9gfN3sA==}
     engines: {node: '>= 10.14.2'}
     dependencies:
-      chalk: 4.1.2
       diff-sequences: 26.6.2
+      chalk: 4.1.2
       jest-get-type: 26.3.0
       pretty-format: 26.6.2
     dev: false
@@ -10033,9 +10041,9 @@ packages:
       '@jest/test-result': 26.6.2
       '@jest/types': 26.6.2
       '@types/node': 17.0.8
-      chalk: 4.1.2
       co: 4.6.0
       expect: 26.6.2
+      chalk: 4.1.2
       is-generator-fn: 2.1.0
       jest-each: 26.6.2
       jest-matcher-utils: 26.6.2
@@ -10078,8 +10086,8 @@ packages:
       '@babel/code-frame': 7.16.7
       '@jest/types': 26.6.2
       '@types/stack-utils': 2.0.1
-      chalk: 4.1.2
       graceful-fs: 4.2.9
+      chalk: 4.1.2
       micromatch: 4.0.4
       pretty-format: 26.6.2
       slash: 3.0.0
@@ -10137,8 +10145,8 @@ packages:
     engines: {node: '>= 10.14.2'}
     dependencies:
       '@jest/types': 26.6.2
-      chalk: 4.1.2
       graceful-fs: 4.2.9
+      chalk: 4.1.2
       jest-pnp-resolver: 1.2.2_jest-resolve@26.6.0
       jest-util: 26.6.2
       read-pkg-up: 7.0.1
@@ -10151,8 +10159,8 @@ packages:
     engines: {node: '>= 10.14.2'}
     dependencies:
       '@jest/types': 26.6.2
-      chalk: 4.1.2
       graceful-fs: 4.2.9
+      chalk: 4.1.2
       jest-pnp-resolver: 1.2.2_jest-resolve@26.6.2
       jest-util: 26.6.2
       read-pkg-up: 7.0.1
@@ -10169,10 +10177,10 @@ packages:
       '@jest/test-result': 26.6.2
       '@jest/types': 26.6.2
       '@types/node': 17.0.8
-      chalk: 4.1.2
       emittery: 0.7.2
       exit: 0.1.2
       graceful-fs: 4.2.9
+      chalk: 4.1.2
       jest-config: 26.6.3
       jest-docblock: 26.0.0
       jest-haste-map: 26.6.2
@@ -10206,12 +10214,12 @@ packages:
       '@jest/transform': 26.6.2
       '@jest/types': 26.6.2
       '@types/yargs': 15.0.14
-      chalk: 4.1.2
       cjs-module-lexer: 0.6.0
       collect-v8-coverage: 1.0.1
       exit: 0.1.2
       glob: 7.2.0
       graceful-fs: 4.2.9
+      chalk: 4.1.2
       jest-config: 26.6.3
       jest-haste-map: 26.6.2
       jest-message-util: 26.6.2
@@ -10248,9 +10256,9 @@ packages:
       '@jest/types': 26.6.2
       '@types/babel__traverse': 7.14.2
       '@types/prettier': 2.4.2
-      chalk: 4.1.2
       expect: 26.6.2
       graceful-fs: 4.2.9
+      chalk: 4.1.2
       jest-diff: 26.6.2
       jest-get-type: 26.3.0
       jest-haste-map: 26.6.2
@@ -10268,8 +10276,8 @@ packages:
     dependencies:
       '@jest/types': 26.6.2
       '@types/node': 17.0.8
-      chalk: 4.1.2
       graceful-fs: 4.2.9
+      chalk: 4.1.2
       is-ci: 2.0.0
       micromatch: 4.0.4
     dev: false
@@ -10704,10 +10712,10 @@ packages:
     peerDependencies:
       listr: ^0.14.2
     dependencies:
-      chalk: 1.1.3
       cli-truncate: 0.2.1
       elegant-spinner: 1.0.1
       figures: 1.7.0
+      chalk: 1.1.3
       indent-string: 3.2.0
       listr: 0.14.3
       log-symbols: 1.0.2
@@ -10719,10 +10727,10 @@ packages:
     resolution: {integrity: sha512-04PDPqSlsqIOaaaGZ+41vq5FejI9auqTInicFRndCBgE3bXG8D6W1I+mWhk+1nqbHmyhla/6BUrd5OSiHwKRXw==}
     engines: {node: '>=4'}
     dependencies:
-      chalk: 2.4.2
       cli-cursor: 2.1.0
       date-fns: 1.30.1
       figures: 2.0.0
+      chalk: 2.4.2
     dev: true
 
   /listr/0.14.3:
@@ -11336,6 +11344,10 @@ packages:
     resolution: {integrity: sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==}
     dev: false
 
+  /netlify-identity-widget/1.9.2:
+    resolution: {integrity: sha512-IbS1JHhs7BflCCvp3C9f6tmNSZqbyBhZ4Gs5+Qxt4IlPybTOVv0PqJ4TAsA7uxh1R+oXOAmk0OOMAkEaPYeCtA==}
+    dev: false
+
   /next-tick/1.0.0:
     resolution: {integrity: sha1-yobR/ogoFpsBICCOPchCS524NCw=}
     dev: false
@@ -11697,9 +11709,9 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       bl: 4.1.0
-      chalk: 4.1.2
       cli-cursor: 3.1.0
       cli-spinners: 2.6.1
+      chalk: 4.1.2
       is-interactive: 1.0.0
       is-unicode-supported: 0.1.0
       log-symbols: 4.1.0
@@ -12990,7 +13002,6 @@ packages:
       '@babel/code-frame': 7.10.4
       address: 1.1.2
       browserslist: 4.14.2
-      chalk: 2.4.2
       cross-spawn: 7.0.3
       detect-port-alt: 1.1.6
       escape-string-regexp: 2.0.0
@@ -13000,6 +13011,7 @@ packages:
       global-modules: 2.0.0
       globby: 11.0.1
       gzip-size: 5.1.1
+      chalk: 2.4.2
       immer: 8.0.1
       is-root: 2.1.0
       loader-utils: 2.0.0
@@ -13456,11 +13468,11 @@ packages:
       '@babel/traverse': 7.16.8
       '@babel/types': 7.16.8
       babel-preset-fbjs: 3.4.0_@babel+core@7.16.7
-      chalk: 4.1.2
       fb-watchman: 2.0.1
       fbjs: 3.0.2
       glob: 7.2.0
       graphql: 15.8.0
+      chalk: 4.1.2
       immutable: 3.7.6
       invariant: 2.2.4
       nullthrows: 1.1.1
@@ -13827,8 +13839,8 @@ packages:
       klona: 2.0.5
       loader-utils: 2.0.2
       neo-async: 2.6.2
-      schema-utils: 3.1.1
       semver: 7.3.2
+      schema-utils: 3.1.1
       webpack: 4.44.2
     dev: false
 
@@ -14606,12 +14618,12 @@ packages:
     deprecated: This SVGO version is no longer supported. Upgrade to v2.x.x.
     hasBin: true
     dependencies:
-      chalk: 2.4.2
       coa: 2.0.2
       css-select: 2.1.0
       css-select-base-adapter: 0.1.1
       css-tree: 1.0.0-alpha.37
       csso: 4.2.0
+      chalk: 2.4.2
       js-yaml: 3.14.1
       mkdirp: 0.5.5
       object.values: 1.1.5
@@ -14668,8 +14680,8 @@ packages:
     resolution: {integrity: sha512-an/KZQzQUkZCkuoAA64hM92X0Urb6VpRhAFllDzz44U2mcD5scmT3zBc4VgVpkugF580+DQn8eAFSyoQt0tznA==}
     engines: {node: '>= 10'}
     dependencies:
-      chownr: 2.0.0
       fs-minipass: 2.1.0
+      chownr: 2.0.0
       minipass: 3.1.6
       minizlib: 2.1.2
       mkdirp: 1.0.4
@@ -14707,8 +14719,8 @@ packages:
       cacache: 12.0.4
       find-cache-dir: 2.1.0
       is-wsl: 1.1.0
-      schema-utils: 1.0.0
       serialize-javascript: 4.0.0
+      schema-utils: 1.0.0
       source-map: 0.6.1
       terser: 4.8.0
       webpack: 4.44.2
@@ -14726,8 +14738,8 @@ packages:
       find-cache-dir: 3.3.2
       jest-worker: 26.6.2
       p-limit: 3.1.0
-      schema-utils: 3.1.1
       serialize-javascript: 5.0.1
+      schema-utils: 3.1.1
       source-map: 0.6.1
       terser: 5.10.0
       webpack: 4.44.2
@@ -15481,7 +15493,6 @@ packages:
     dependencies:
       ansi-html: 0.0.7
       bonjour: 3.5.0
-      chokidar: 2.1.8
       compression: 1.7.4
       connect-history-api-fallback: 1.6.0
       debug: 4.3.3_supports-color@6.1.0
@@ -15489,6 +15500,7 @@ packages:
       express: 4.17.2
       html-entities: 1.4.0
       http-proxy-middleware: 0.19.1_debug@4.3.3
+      chokidar: 2.1.8
       import-local: 2.0.0
       internal-ip: 4.3.0
       ip: 1.1.5
@@ -15498,10 +15510,10 @@ packages:
       opn: 5.5.0
       p-retry: 3.0.1
       portfinder: 1.0.28
-      schema-utils: 1.0.0
       selfsigned: 1.10.13
       semver: 6.3.0
       serve-index: 1.9.1
+      schema-utils: 1.0.0
       sockjs: 0.3.24
       sockjs-client: 1.5.2
       spdy: 4.0.2_supports-color@6.1.0
@@ -15563,9 +15575,9 @@ packages:
       acorn: 6.4.2
       ajv: 6.12.6
       ajv-keywords: 3.5.2_ajv@6.12.6
-      chrome-trace-event: 1.0.3
       enhanced-resolve: 4.5.0
       eslint-scope: 4.0.3
+      chrome-trace-event: 1.0.3
       json-parse-better-errors: 1.0.2
       loader-runner: 2.4.0
       loader-utils: 1.4.0
