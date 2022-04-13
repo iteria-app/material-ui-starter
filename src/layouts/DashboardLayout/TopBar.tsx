@@ -37,6 +37,9 @@ const TopBar = ({
 }) => {
   const classes = useStyles();
 
+  console.log(netlifyIdentity)
+  console.log(netlifyIdentity.currentUser())
+
   return (
     <AppBar
       className={clsx(classes.root, className)}
