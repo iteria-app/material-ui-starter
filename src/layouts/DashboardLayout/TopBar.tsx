@@ -62,9 +62,9 @@ const TopBar = ({
               <NotificationsIcon />
             </Badge>
           </IconButton>
-          {netlifyIdentity.currentUser() || <IconButton onClick={()=> {netlifyIdentity.open("login")}} color="inherit">
+          {!netlifyIdentity.currentUser() && (<IconButton onClick={()=> {netlifyIdentity.open("login")}} color="inherit">
             <LoginIcon/>
-          </IconButton>}
+          </IconButton>)}
           {/* {netlifyIdentity.currentUser() && <IconButton onClick={()=> {alert("CPX"); netlifyIdentity.logout()}} color="inherit">
             <LogoutIcon/>
           </IconButton>} */}
