@@ -37,11 +37,9 @@ const TopBar = ({
   const classes = useStyles();
 
   // Init netlify identity
-
   netlifyIdentity.on("login", user => {
     console.log("LOGGING IN")
   })
-  // window.netlifyIdentity = netlifyIdentity;
 
   return (
     <AppBar

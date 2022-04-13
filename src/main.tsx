@@ -7,6 +7,7 @@ import { LocaleContextProvider } from '@iteria-app/component-templates/src/i18n'
 import * as netlifyIdentity from "netlify-identity-widget";
 
 netlifyIdentity.init();
+window.netlifyIdentity = netlifyIdentity;
 
 // @ts-ignore
 if (!window.__skip_render) {
