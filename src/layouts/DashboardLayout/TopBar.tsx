@@ -63,7 +63,7 @@ const TopBar = ({
           </IconButton>
           {netlifyIdentity.currentUser() || <IconButton onClick={()=> {
             console.log("Gonna login");
-            console.log(netlifyIdentity);
+            console.log(netlifyIdentity.currentUser());
             netlifyIdentity.open("login");
             console.log("uz to zmizlo");
             }} color="inherit">
