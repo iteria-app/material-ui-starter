@@ -19,7 +19,7 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import Logo from '../../components/Logo'
 import { LocaleSwitch } from '@iteria-app/component-templates/src/i18n'
 import { locales } from '../../locale'
-
+import * as netlifyIdentity from "netlify-identity-widget"
 
 const useStyles = makeStyles(() => ({
   root: {},
@@ -31,14 +31,18 @@ const useStyles = makeStyles(() => ({
 
 const TopBar = ({
   className,
-  netlifyIdentity,
   onMobileNavOpen,
   ...rest
 }) => {
   const classes = useStyles();
 
-  console.log(netlifyIdentity)
-  console.log(netlifyIdentity.currentUser())
+    // Init netlify identity
+  console.log("INIT")
+  netlifyIdentity.init()
+
+  netlifyIdentity.on("login", user => {
+    console.log("LOGGING IN")
+  })
   window.netlifyIdentity = netlifyIdentity;
 
   return (
