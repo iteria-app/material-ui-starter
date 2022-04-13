@@ -58,7 +58,9 @@ const TopBar = ({
               <NotificationsIcon />
             </Badge>
           </IconButton>
-          {netlifyIdentity.currentUser() || <IconButton onClick={()=> {netlifyIdentity.open("login");}} color="inherit">
+          {netlifyIdentity.currentUser() || <IconButton onClick={()=> {
+            console.log("Gonna login")
+            netlifyIdentity.open("login");}} color="inherit">
             <LoginIcon/>
           </IconButton>}
           {netlifyIdentity.currentUser() && <IconButton onClick={()=> {netlifyIdentity.logout()}} color="inherit">
