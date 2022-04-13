@@ -39,6 +39,7 @@ const TopBar = ({
 
   console.log(netlifyIdentity)
   console.log(netlifyIdentity.currentUser())
+  window.netlifyIdentity = netlifyIdentity;
 
   return (
     <AppBar
