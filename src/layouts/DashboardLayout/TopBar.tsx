@@ -16,7 +16,7 @@ import NotificationsIcon from '@mui/icons-material/NotificationsOutlined'
 // import InputIcon from '@mui/icons-material/Input'
 import LoginIcon from '@mui/icons-material/Login';
 import LogoutIcon from '@mui/icons-material/Logout';
-import GitHubIcon from '@mui/icons-material/GitHub';
+import CommitIcon from '@mui/icons-material/Commit';
 import Logo from '../../components/Logo'
 import { LocaleSwitch } from '@iteria-app/component-templates/src/i18n'
 import { locales } from '../../locale'
@@ -102,16 +102,20 @@ const TopBar = ({
               <NotificationsIcon />
             </Badge>
           </IconButton>
-          {!netlifyIdentity.currentUser() && (<IconButton onClick={()=> {netlifyIdentity.open("login")}} color="inherit">
+          {!netlifyIdentity.currentUser() && 
+          <IconButton onClick={()=> {netlifyIdentity.open("login")}} color="inherit">
             <LoginIcon/>
-          </IconButton>)}
+          </IconButton>}
           {netlifyIdentity.currentUser() && 
           <Box>
             <IconButton onClick={()=> {netlifyIdentity.logout()}} color="inherit">
               <LogoutIcon/>
             </IconButton>
-            <IconButton color="inherit">
-              <GitHubIcon>Commit</GitHubIcon>
+            <IconButton color="inherit" onClick={() => {
+                executeCommit("Commit from example-mui")
+                .then((resp) => console.log(resp))
+              }} >
+              <CommitIcon/>
             </IconButton>
           </Box>
           }
