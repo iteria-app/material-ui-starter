@@ -16,6 +16,7 @@ import NotificationsIcon from '@mui/icons-material/NotificationsOutlined'
 // import InputIcon from '@mui/icons-material/Input'
 import LoginIcon from '@mui/icons-material/Login';
 import LogoutIcon from '@mui/icons-material/Logout';
+import GitHubIcon from '@mui/icons-material/GitHub';
 import Logo from '../../components/Logo'
 import { LocaleSwitch } from '@iteria-app/component-templates/src/i18n'
 import { locales } from '../../locale'
@@ -28,6 +29,45 @@ const useStyles = makeStyles(() => ({
     height: 60
   }
 }));
+
+async function fetchHeadOid(){
+
+  const resp = await fetch(`/.netlify/functions/GetFetchHeadOid`,
+    {
+        method: "POST",
+    });
+
+  const textResponse = await resp.json();
+  return textResponse.gitHub.repository.defaultBranchRef.target.oid;
+
+}
+
+async function executeCommit(commitMessage: string){
+
+  const headOid = await fetchHeadOid();
+  // const auth = new NetlifyGraphAuth({
+  //   siteId: "63d99234-22dc-434c-b607-343b0fbe6d70", // H A R D   C O D E D ! ! !
+  // })
+
+  const resp = await fetch(`/.netlify/functions/ExecuteCommitAddition`,
+    {
+        method: "POST",
+        headers: {
+            // ...auth?.authHeaders(),
+            headOid: headOid,
+            commitMessage: commitMessage
+        }
+    });
+
+  const textResponse = await resp.json();
+  if(textResponse.ExecuteCommitErrors){
+    alert("commit failed :(")
+  } else {
+    alert("commit successful :)")
+  }
+  return textResponse;
+}
+
 
 const TopBar = ({
   className,
@@ -65,9 +105,16 @@ const TopBar = ({
           {!netlifyIdentity.currentUser() && (<IconButton onClick={()=> {netlifyIdentity.open("login")}} color="inherit">
             <LoginIcon/>
           </IconButton>)}
-          {netlifyIdentity.currentUser() && <IconButton onClick={()=> {netlifyIdentity.logout()}} color="inherit">
-            <LogoutIcon/>
-          </IconButton>}
+          {netlifyIdentity.currentUser() && 
+          <Box>
+            <IconButton onClick={()=> {netlifyIdentity.logout()}} color="inherit">
+              <LogoutIcon/>
+            </IconButton>
+            <IconButton color="inherit">
+              <GitHubIcon>Commit</GitHubIcon>
+            </IconButton>
+          </Box>
+          }
         </Hidden>
         <LocaleSwitch locales={locales} />
         <Hidden lgUp>
