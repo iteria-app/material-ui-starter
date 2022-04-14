@@ -15,7 +15,7 @@ export const handler = async function(event, context) {
 
   const input: CommitAdditionInput = {
     branchName: "main",
-    repositoryNameWithOwner: "michal-komora/netlify-auth-app",
+    repositoryNameWithOwner: "misosviso/example-material-ui",
     expectedHeadOid: headOid,
     contents1: "YWJlY2VkYSB6amVkbGEgZGVkYQpwb3ZlZGFsYSBuYSBtZWR2ZWRhCmEgbWVkdmVkIGJvbCBvcGl0eQoKTmFrb3BhbCB0dSBiYWJrdSBqYWsgc2EgdnJhdmkuLi4gZG9yaWNpICg6ICg6",
     path: "bordel/bordel.txt",

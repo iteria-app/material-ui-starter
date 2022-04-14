@@ -76,7 +76,7 @@ query ExampleQuery @netlify(id: """bc06d036-531a-4152-b883-7ecfff0d27df""", doc:
 
 query fetchHeadOid @netlify(id: """b1476e35-b0d7-4065-a3b5-5db836263ed8""", doc: """An empty query to start from""") {
   gitHub {
-    repository(name: "netlify-auth-app", owner: "michal-komora") {
+    repository(name: "example-material-ui", owner: "misosviso") {
       id
       defaultBranchRef {
         target {
