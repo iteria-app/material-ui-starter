@@ -38,6 +38,8 @@ async function fetchHeadOid(){
     });
 
   const textResponse = await resp.json();
+  console.log("Response(gitHubOid)")
+  console.log(textResponse)
   return textResponse.gitHub.repository.defaultBranchRef.target.oid;
 
 }
