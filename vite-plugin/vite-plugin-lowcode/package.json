@@ -1,0 +1,14 @@
+{
+  "name": "@iteria-app/vite-plugin-lowcode",
+  "version": "0.1.6",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "esbuild src/index.ts --bundle --platform=node --target=node12 --external:@rollup/* --external:resolve --outfile=dist/index.js"
+  },
+  "peerDependencies": {
+    "vite": "2.7.10"
+  },
+  "devDependencies": {
+    "esbuild": "0.14.14"
+  }
+}
