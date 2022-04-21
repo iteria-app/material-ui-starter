@@ -205,7 +205,7 @@ function iteriaLowcode(options) {
     isDev: isViteDevServer
   }, options.cwd ? { cwd: options.cwd } : {}), options.graphQLEndpoint ? { graphQLEndpoint: options.graphQLEndpoint } : {});
   // const ideDevserverPath = `'https://unpkg.com/@iteria-app/ide-devserver@${(_a = options.version) != null ? _a : "1.2.8"}/dist/ide-devserver.es.js'`;
-  const ideDevserverPath = `'../ide-devserver/dist/ide-devserver.es.js'`;
+  const ideDevserverPath = `'../ide-devserver/ide-devserver.es.js'`;
   const injectDevServer = (options == null ? void 0 : options.version) === "workspace:*" ? false : true;
   const metas = [];
   const links = [
