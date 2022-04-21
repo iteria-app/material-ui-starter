@@ -30,45 +30,45 @@ const useStyles = makeStyles(() => ({
   }
 }));
 
-async function fetchHeadOid(){
+// async function fetchHeadOid(){
 
-  const resp = await fetch(`/.netlify/functions/GetFetchHeadOid`,
-    {
-        method: "POST",
-    });
+//   const resp = await fetch(`/.netlify/functions/GetFetchHeadOid`,
+//     {
+//         method: "POST",
+//     });
 
-  const textResponse = await resp.json();
-  console.log("Response(gitHubOid)")
-  console.log(textResponse)
-  return textResponse.gitHub.repository.defaultBranchRef.target.oid;
+//   const textResponse = await resp.json();
+//   return textResponse.gitHub.repository.defaultBranchRef.target.oid;
 
-}
+// }
 
-async function executeCommit(commitMessage: string){
+// async function executeCommit(commitMessage: string){
 
-  const headOid = await fetchHeadOid();
-  // const auth = new NetlifyGraphAuth({
-  //   siteId: "63d99234-22dc-434c-b607-343b0fbe6d70", // H A R D   C O D E D ! ! !
-  // })
+//   const headOid = await fetchHeadOid();
+//   // const auth = new NetlifyGraphAuth({
+//   //   siteId: "63d99234-22dc-434c-b607-343b0fbe6d70", // H A R D   C O D E D ! ! !
+//   // })
 
-  const resp = await fetch(`/.netlify/functions/ExecuteCommitAddition`,
-    {
-        method: "POST",
-        headers: {
-            // ...auth?.authHeaders(),
-            headOid: headOid,
-            commitMessage: commitMessage
-        }
-    });
+//   const resp = await fetch(`/.netlify/functions/ExecuteCommitAddition`,
+//     {
+//         method: "POST",
+//         headers: {
+//             // ...auth?.authHeaders(),
+//             headOid: headOid,
+//             commitMessage: commitMessage,
+//             branchname: "build-branch",
+//             repositoryNameWithOwner: ""
+//         }
+//     });
 
-  const textResponse = await resp.json();
-  if(textResponse.ExecuteCommitErrors){
-    alert("commit failed :(")
-  } else {
-    alert("commit successful :)")
-  }
-  return textResponse;
-}
+//   const textResponse = await resp.json();
+//   if(textResponse.ExecuteCommitErrors){
+//     alert("commit failed :(")
+//   } else {
+//     alert("commit successful :)")
+//   }
+//   return textResponse;
+// }
 
 
 const TopBar = ({
@@ -113,12 +113,14 @@ const TopBar = ({
             <IconButton onClick={()=> {netlifyIdentity.logout()}} color="inherit">
               <LogoutIcon/>
             </IconButton>
-            <IconButton color="inherit" onClick={() => {
-                executeCommit("Commit from example-mui")
+            {/* <IconButton color="inherit" onClick={() => {
+                var commitMessage = prompt("Commit message: ")
+                console.log("Commit message: " + commitMessage)
+                executeCommit(commitMessage)
                 .then((resp) => console.log(resp))
               }} >
               <CommitIcon/>
-            </IconButton>
+            </IconButton> */}
           </Box>
           }
         </Hidden>

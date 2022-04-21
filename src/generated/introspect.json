@@ -1897,7 +1897,7 @@
           },
           {
             "name": "orders",
-            "description": "fetch data from the table: \"orders\"",
+            "description": "An array relationship",
             "args": [
               {
                 "name": "distinct_on",
@@ -18082,7 +18082,7 @@
           },
           {
             "name": "orders",
-            "description": "fetch data from the table: \"orders\"",
+            "description": "An array relationship",
             "args": [
               {
                 "name": "distinct_on",
@@ -18444,7 +18444,7 @@
           },
           {
             "name": "test5Tables",
-            "description": "fetch data from the table: \"test5_tables\"",
+            "description": "An array relationship",
             "args": [
               {
                 "name": "distinct_on",
@@ -20636,7 +20636,7 @@
           },
           {
             "name": "orders",
-            "description": "fetch data from the table: \"orders\"",
+            "description": "An array relationship",
             "args": [
               {
                 "name": "distinct_on",
@@ -20925,7 +20925,7 @@
           },
           {
             "name": "test5Tables",
-            "description": "fetch data from the table: \"test5_tables\"",
+            "description": "An array relationship",
             "args": [
               {
                 "name": "distinct_on",
@@ -24003,7 +24003,7 @@
           },
           {
             "name": "test5Tables",
-            "description": "fetch data from the table: \"test5_tables\"",
+            "description": "An array relationship",
             "args": [
               {
                 "name": "distinct_on",

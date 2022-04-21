@@ -1,5 +1,6 @@
 [[plugins]]
 package = "/plugins/@iteria-netlify-plugin"
+package = "plugins/@iteria-vite-plugin"
 
 [build.environment]
   NODE_VERSION = "14"

@@ -135,7 +135,7 @@ export type Customers = {
   id: Scalars['uuid'];
   is_valid: Scalars['Boolean'];
   last_name: Scalars['String'];
-  /** fetch data from the table: "orders" */
+  /** An array relationship */
   orders: Array<Orders>;
   updated_at: Scalars['timestamptz'];
   vip: Scalars['Boolean'];
@@ -2504,7 +2504,7 @@ export type Query_Root = {
   order_products: Array<Order_Products>;
   /** fetch data from the table: "order_products" using primary key columns */
   order_products_by_pk?: Maybe<Order_Products>;
-  /** fetch data from the table: "orders" */
+  /** An array relationship */
   orders: Array<Orders>;
   /** fetch data from the table: "orders" using primary key columns */
   orders_by_pk?: Maybe<Orders>;
@@ -2516,7 +2516,7 @@ export type Query_Root = {
   test2Tables: Array<Test2Tables>;
   /** fetch data from the table: "test5_tables" using primary key columns */
   test5Table?: Maybe<Test5Tables>;
-  /** fetch data from the table: "test5_tables" */
+  /** An array relationship */
   test5Tables: Array<Test5Tables>;
   /** fetch data from the table: "test6_tables" using primary key columns */
   test6Table?: Maybe<Test6Tables>;
@@ -2875,7 +2875,7 @@ export type Subscription_Root = {
   order_products: Array<Order_Products>;
   /** fetch data from the table: "order_products" using primary key columns */
   order_products_by_pk?: Maybe<Order_Products>;
-  /** fetch data from the table: "orders" */
+  /** An array relationship */
   orders: Array<Orders>;
   /** fetch data from the table: "orders" using primary key columns */
   orders_by_pk?: Maybe<Orders>;
@@ -2885,7 +2885,7 @@ export type Subscription_Root = {
   test2Tables: Array<Test2Tables>;
   /** fetch data from the table: "test5_tables" using primary key columns */
   test5Table?: Maybe<Test5Tables>;
-  /** fetch data from the table: "test5_tables" */
+  /** An array relationship */
   test5Tables: Array<Test5Tables>;
   /** fetch data from the table: "test6_tables" using primary key columns */
   test6Table?: Maybe<Test6Tables>;
@@ -3493,7 +3493,7 @@ export type Test6Tables = {
   id: Scalars['uuid'];
   is_deleted: Scalars['Boolean'];
   name: Scalars['String'];
-  /** fetch data from the table: "test5_tables" */
+  /** An array relationship */
   test5Tables: Array<Test5Tables>;
   updated_at: Scalars['timestamptz'];
 };
