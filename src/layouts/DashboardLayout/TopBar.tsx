@@ -30,46 +30,42 @@ const useStyles = makeStyles(() => ({
   }
 }));
 
-// async function fetchHeadOid(){
+async function fetchHeadOid(){
 
-//   const resp = await fetch(`/.netlify/functions/GetFetchHeadOid`,
-//     {
-//         method: "POST",
-//     });
+  const resp = await fetch(`/.netlify/functions/GetFetchHeadOid`,
+    {
+        method: "POST",
+    });
 
-//   const textResponse = await resp.json();
-//   return textResponse.gitHub.repository.defaultBranchRef.target.oid;
+  const textResponse = await resp.json();
+  return textResponse.gitHub.repository.defaultBranchRef.target.oid;
 
-// }
+}
 
-// async function executeCommit(commitMessage: string){
+async function executeCommit(commitMessage: string){
 
-//   const headOid = await fetchHeadOid();
-//   // const auth = new NetlifyGraphAuth({
-//   //   siteId: "63d99234-22dc-434c-b607-343b0fbe6d70", // H A R D   C O D E D ! ! !
-//   // })
+  const headOid = await fetchHeadOid();
 
-//   const resp = await fetch(`/.netlify/functions/ExecuteCommitAddition`,
-//     {
-//         method: "POST",
-//         headers: {
-//             // ...auth?.authHeaders(),
-//             headOid: headOid,
-//             commitMessage: commitMessage,
-//             branchname: "build-branch",
-//             repositoryNameWithOwner: ""
-//         }
-//     });
+  const resp = await fetch(`/.netlify/functions/ExecuteCommitAddition`,
+    {
+        method: "POST",
+        headers: {
+            // ...auth?.authHeaders(),
+            headOid: headOid,
+            commitMessage: commitMessage,
+            branchname: "build-branch",
+            repositoryNameWithOwner: ""
+        }
+    });
 
-//   const textResponse = await resp.json();
-//   if(textResponse.ExecuteCommitErrors){
-//     alert("commit failed :(")
-//   } else {
-//     alert("commit successful :)")
-//   }
-//   return textResponse;
-// }
-
+  const textResponse = await resp.json();
+  if(textResponse.ExecuteCommitErrors){
+    alert("commit failed :(")
+  } else {
+    alert("commit successful :)")
+  }
+  return textResponse;
+}
 
 const TopBar = ({
   className,

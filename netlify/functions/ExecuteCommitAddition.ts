@@ -10,9 +10,9 @@ export const handler = async function(event, context) {
   ///////////////////////////////////////////
   const branchName = "build-branch"//event.headers.branchname
   const repositoryNameWithOwner = "misosviso/example-material-ui"//event.headers.repositorynamewithowner
-  ///////////////////////////////////
-  const content = event.headers.content
-  const path = event.header.path
+  ///////////////////////////////////////////
+  // const content = event.headers.content
+  // const path = event.header.path
 
   const input: CommitAdditionInput = {
     branchName: branchName,
