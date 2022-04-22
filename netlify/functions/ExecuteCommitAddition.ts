@@ -13,7 +13,7 @@ export const handler = async function (event, context) {
   const repositoryNameWithOwner = 'misosviso/example-material-ui'; //event.headers.repositorynamewithowner
   ///////////////////////////////////////////
   const content = event.headers.content;
-  const path = event.header.filePath;
+  const path = event.headers.filePath;
 
   const input: CommitAdditionInput = {
     branchName: branchName,
