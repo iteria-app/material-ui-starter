@@ -35,8 +35,9 @@ export default ({ command, mode }) => {
           ? 'devServer'
           : 'jamstack',
       }),
+
     ],  
-    assetsInclude: ["ide-devserver/.*"],
+    assetsInclude: ["ide-devserver/ide-devserver.es.js"],
     define: {
       "process.env.NODE_ENV": `"development"`,
     },
