@@ -11,15 +11,15 @@ export const handler = async function(event, context) {
   const branchName = "build-branch"//event.headers.branchname
   const repositoryNameWithOwner = "misosviso/example-material-ui"//event.headers.repositorynamewithowner
   ///////////////////////////////////////////
-  // const content = event.headers.content
-  // const path = event.header.path
+  const content = event.headers.content
+  const path = event.header.filePath
 
   const input: CommitAdditionInput = {
     branchName: branchName,
     repositoryNameWithOwner: repositoryNameWithOwner,
     expectedHeadOid: headOid,
-    contents1: "YWJlY2VkYSB6amVkbGEgZGVkYQpwb3ZlZGFsYSBuYSBtZWR2ZWRhCmEgbWVkdmVkIGJvbCBvcGl0eQoKTmFrb3BhbCB0dSBiYWJrdSBqYWsgc2EgdnJhdmkuLi4gZG9yaWNpICg6ICg6",
-    path: "bordel/bordel.txt",
+    contents1: content,
+    path: path,
     headline: commitMessage
   }
 
