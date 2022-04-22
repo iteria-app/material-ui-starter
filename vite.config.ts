@@ -23,7 +23,6 @@ export default ({ command, mode }) => {
     server: {
       port: 3000,
     },
-    publicDir: "/public",
     plugins: [
       react(),
       iteriaLowcode({
@@ -37,6 +36,7 @@ export default ({ command, mode }) => {
           : 'jamstack',
       }),
     ],  
+    assetsInclude: ["ide-devserver/.*"],
     define: {
       "process.env.NODE_ENV": `"development"`,
     },
