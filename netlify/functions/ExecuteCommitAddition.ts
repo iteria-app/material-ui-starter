@@ -1,18 +1,19 @@
-import { getSecrets, NetlifySecrets } from '@netlify/functions'
-import NetlifyGraph, { CommitAdditionInput, NetlifyGraphFunctionOptions } from './netlifyGraph'
+import { getSecrets, NetlifySecrets } from '@netlify/functions';
+import NetlifyGraph, {
+  CommitAdditionInput,
+  NetlifyGraphFunctionOptions
+} from './netlifyGraph';
 
-
-export const handler = async function(event, context) {
-
-  const headOid = event.headers.headoid
-  const commitMessage = event.headers.commitmessage
-  const accessToken = event.authlifyToken
+export const handler = async function (event, context) {
+  const headOid = event.headers.headoid;
+  const commitMessage = event.headers.commitmessage;
+  const accessToken = event.authlifyToken;
   ///////////////////////////////////////////
-  const branchName = "build-branch"//event.headers.branchname
-  const repositoryNameWithOwner = "misosviso/example-material-ui"//event.headers.repositorynamewithowner
+  const branchName = 'build-brach'; //event.headers.branchname
+  const repositoryNameWithOwner = 'misosviso/example-material-ui'; //event.headers.repositorynamewithowner
   ///////////////////////////////////////////
-  const content = event.headers.content
-  const path = event.header.filePath
+  const content = event.headers.content;
+  const path = event.header.filePath;
 
   const input: CommitAdditionInput = {
     branchName: branchName,
@@ -21,20 +22,21 @@ export const handler = async function(event, context) {
     contents1: content,
     path: path,
     headline: commitMessage
-  }
+  };
 
   // @ts-ignore
-  const { errors: ExecuteCommitErrors, data: ExecuteCommitData } = await NetlifyGraph.executeCommitAddition(input, { accessToken })
+  const { errors: ExecuteCommitErrors, data: ExecuteCommitData } =
+    await NetlifyGraph.executeCommitAddition(input, { accessToken });
 
   return {
     statusCode: 200,
     body: JSON.stringify({
       success: true,
       ExecuteCommitErrors: ExecuteCommitErrors,
-      ExecuteCommitData: ExecuteCommitData,
+      ExecuteCommitData: ExecuteCommitData
     }),
     headers: {
-      'content-type': 'application/json',
-    },
-  }
-}
+      'content-type': 'application/json'
+    }
+  };
+};
