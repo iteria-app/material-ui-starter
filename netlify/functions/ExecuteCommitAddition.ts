@@ -11,7 +11,7 @@ export const handler = async function (event, context) {
   const branchName = 'build-brach'; //event.headers.branchname
   const repositoryNameWithOwner = 'misosviso/example-material-ui'; //event.headers.repositorynamewithowner
   const content = event.headers.content;
-  const path = event.headers.filePath;
+  const path = event.headers.filepath;
 
   console.log("Path", path)
   console.log("Content", content)
