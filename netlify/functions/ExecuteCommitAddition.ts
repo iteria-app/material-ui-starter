@@ -8,10 +8,8 @@ export const handler = async function (event, context) {
   const headOid = event.headers.headoid;
   const commitMessage = event.headers.commitmessage;
   const accessToken = event.authlifyToken;
-  ///////////////////////////////////////////
   const branchName = 'build-brach'; //event.headers.branchname
   const repositoryNameWithOwner = 'misosviso/example-material-ui'; //event.headers.repositorynamewithowner
-  ///////////////////////////////////////////
   const content = event.headers.content;
   const path = event.headers.filePath;
 
@@ -28,8 +26,7 @@ export const handler = async function (event, context) {
   };
 
   // @ts-ignore
-  const { errors: ExecuteCommitErrors, data: ExecuteCommitData } =
-    await NetlifyGraph.executeCommitAddition(input, { accessToken });
+  const { errors: ExecuteCommitErrors, data: ExecuteCommitData } = await NetlifyGraph.executeCommitAddition(input, { accessToken });
 
   return {
     statusCode: 200,
