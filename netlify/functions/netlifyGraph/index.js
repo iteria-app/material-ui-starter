@@ -75,21 +75,7 @@ mutation CommitAddition($contents: GitHubBase64String = "", $branchName: String 
   }
 }
 
-mutation CommitDeletion($contents: GitHubBase64String = "", $branchName: String = "", $repositoryNameWithOwner: String = "", $clientMutationId: String = "", $headline: String = "", $expectedHeadOid: GitHubGitObjectID = null, $path: String = "") @netlify(id: """4c994897-cbb1-4d09-b1d1-ed41d60de031""", doc: """An empty mutation to start from""") {
-  gitHub {
-    createCommitOnBranch(
-      input: {branch: {branchName: $branchName, repositoryNameWithOwner: $repositoryNameWithOwner}, fileChanges: {deletions: {path: $path}}, message: {headline: $headline}, expectedHeadOid: $expectedHeadOid}
-    ) {
-      clientMutationId
-    }
-  }
-}
-
-query ExampleQuery @netlify(id: """bc06d036-531a-4152-b883-7ecfff0d27df""", doc: """An example query to start with.""") {
-  __typename
-}
-
-query fetchHeadOid @netlify(id: """b1476e35-b0d7-4065-a3b5-5db836263ed8""", doc: """An empty query to start from""") {
+query fetchHeadOid @netlify() {
   gitHub {
     repository(name: "example-material-ui", owner: "misosviso") {
       refs(refPrefix: "refs/heads/", first: 10) {

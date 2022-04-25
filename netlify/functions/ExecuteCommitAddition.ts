@@ -13,9 +13,6 @@ export const handler = async function (event, context) {
   const content = event.headers.content;
   const path = event.headers.filepath.substring(1);
 
-  console.log("Path", path)
-  console.log("Content", content)
-
   const input: CommitAdditionInput = {
     branchName: branchName,
     repositoryNameWithOwner: repositoryNameWithOwner,
