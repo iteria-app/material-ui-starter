@@ -9,8 +9,8 @@ specifiers:
   '@graphql-codegen/typescript-operations': ^2.1.5
   '@graphql-codegen/typescript-urql': ^3.2.0
   '@iteria-app/component-templates': ^1.0.8
-  '@iteria-app/graphql-lowcode': ^0.2.2
-  '@iteria-app/vite-plugin-lowcode': ^0.1.5
+  '@iteria-app/graphql-lowcode': 0.2.3
+  '@iteria-app/vite-plugin-lowcode': 0.1.6
   '@mui/icons-material': ^5.2.5
   '@mui/lab': ^5.0.0-alpha.64
   '@mui/material': ^5.2.7
@@ -23,6 +23,7 @@ specifiers:
   clsx: ^1.1.1
   concurrently: ^6.4.0
   cross-env: ^7.0.3
+  dotenv: ^16.0.0
   formik: ^2.2.9
   graphql: ^15.5.0
   graphql-tag: ^2.12.4
@@ -51,8 +52,8 @@ dependencies:
   '@emotion/react': 11.7.1_b08e3c15324cbe90a6ff8fcd416c932c
   '@emotion/styled': 11.6.0_0044a6ec6dcf5de7705bffaaff7afd26
   '@iteria-app/component-templates': 1.0.8_aa43b2d362ebcb2b73bb232a42e4e672
-  '@iteria-app/graphql-lowcode': 0.2.2
-  '@iteria-app/vite-plugin-lowcode': 0.1.5_vite@2.7.12
+  '@iteria-app/graphql-lowcode': 0.2.3
+  '@iteria-app/vite-plugin-lowcode': 0.1.6_vite@2.7.12
   '@mui/icons-material': 5.2.5_f463eef15d59df5aa770d062739aa27b
   '@mui/lab': 5.0.0-alpha.64_fce999263f7c98fefcb1b8fdff848936
   '@mui/material': 5.2.8_1b58045e2df093289efca6badd755276
@@ -60,6 +61,7 @@ dependencies:
   '@mui/x-data-grid': 5.2.2_@mui+material@5.2.8+react@17.0.2
   chart.js: 2.9.4
   clsx: 1.1.1
+  dotenv: 16.0.0
   formik: 2.2.9_react@17.0.2
   graphql: 15.8.0
   graphql-tag: 2.12.6_graphql@15.8.0
@@ -3266,16 +3268,16 @@ packages:
       - typescript
     dev: false
 
-  /@iteria-app/graphql-lowcode/0.2.2:
-    resolution: {integrity: sha512-BBhl1VQGy7j6xHGAhWdIP1YtZIVATakoTlYGY3LHM/eUVfzf8sCpCLE6Bsm/cZf9LCTwESDgyihrinTzilMvWg==}
+  /@iteria-app/graphql-lowcode/0.2.3:
+    resolution: {integrity: sha512-SUC+9LPhV2meT/QVyYVfhUx2R+Mh73PL1ciw53rIuU+zL8v58YVWquaqz/FaY5vWxq86frPF7EHPKa2djTd+xQ==}
     dependencies:
       '@iteria-app/component-templates-api': 1.0.0
       graphql: 15.8.0
       typescript: 4.5.4
     dev: false
 
-  /@iteria-app/vite-plugin-lowcode/0.1.5_vite@2.7.12:
-    resolution: {integrity: sha512-OtFVHCGN2nbAOCyDEY6lK5UmhvZUmDpksdwBb8WrJiaCoBxgjacBhm3CzrE3SSPYQ13XcoAdif7cuKYUkiWzSw==}
+  /@iteria-app/vite-plugin-lowcode/0.1.6_vite@2.7.12:
+    resolution: {integrity: sha512-R2r5ur6zjOhkPva0aUxZ0EUMUukcVP9YzfVbPO7jnXn4Inc2BqSj4f9pKwTpsJkS5I9VoQYunpyLjMBycv+UTg==}
     peerDependencies:
       vite: 2.7.10
     dependencies:
@@ -7286,6 +7288,11 @@ packages:
     resolution: {integrity: sha512-rlBi9d8jpv9Sf1klPjNfFAuWDjKLwTIJJ/VxtoTwIR6hnZxcEOQCZg2oIL3MWBYw5GpUDKOEnND7LXTbIpQ03Q==}
     engines: {node: '>=10'}
     dev: true
+
+  /dotenv/16.0.0:
+    resolution: {integrity: sha512-qD9WU0MPM4SWLPJy/r2Be+2WgQj8plChsyrCNQzW/0WjvcJQiKQJ9mH3ZgB3fxbUUxgc/11ZJ0Fi5KiimWGz2Q==}
+    engines: {node: '>=12'}
+    dev: false
 
   /dotenv/8.2.0:
     resolution: {integrity: sha512-8sJ78ElpbDJBHNeBzUbUVLsqKdccaa/BXF1uPTw3GrvQTBgrQrtObr2mUrE38vzYd8cEv+m/JBfDLioYcfXoaw==}
