@@ -19,7 +19,7 @@ const TotalProfit: React.FC<any> = ({ className, ...rest }) => {
               <FormattedMessage id="total.profit" tagName="span" />
             </Typography>
             <Typography color="textPrimary" variant="h3">
-              $23,200
+              $23,100
             </Typography>
           </Grid>
           <Grid item xs={3}>
