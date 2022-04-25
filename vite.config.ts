@@ -5,21 +5,25 @@ import iteriaLowcode from '@iteria-app/vite-plugin-lowcode'
 process.env.CWD = process.cwd()
 process.env.VITE_CWD = process.cwd()
 
-const endpointURL = loadEnv(
-  process.env.NODE_ENV ?? 'development',
-  process.env.CWD
-)?.VITE_HASURA_GRAPHQL_ENDPOINT
+export default ({ command, mode }) => {
+  process.env = {
+    ...process.env,
+    ...loadEnv(mode, process.cwd()),
+    VITE_CWD: process.cwd(),
+  }
 
-
-export default defineConfig(
-  {
-  plugins: [react(),
-  iteriaLowcode({ 
-    graphQLEndpoint: endpointURL,
-    //injectDevServer: true
-  })],
-  define: {
-    "process.env.NODE_ENV": `"development"`,
-  },
-})
-
+  return defineConfig({
+    plugins: [
+      react(),
+      iteriaLowcode({
+        command,
+        mode,
+        graphQLEndpoint: process.env.VITE_HASURA_GRAPHQL_ENDPOINT,
+        cwd: process.cwd(),
+      })
+    ],
+    define: {
+      'process.env.NODE_ENV': `"development"`
+    }
+  })
+}
