@@ -9,12 +9,14 @@ module.exports = {
       'tar --exclude temp_archive --exclude node_modules --exclude .git --exclude public --exclude plugins -cf ./temp_archive/Sources.tar ./'
     );
 
+    console.log("Tarring")
+
     generateIndex()
     //addScriptsToIndex()
-    //modifyPlugins()
+    modifyPlugins()
   },
   onBuild: async({utils: {run}}) => {
-    await run.command("tar -rf ./temp_archive/Sources.tar ")//./src/generated")
+    await run.command("tar -rf ./temp_archive/Sources.tar ./src/generated")
     await run.command("gzip -9 ./temp_archive/Sources.tar")
     await run.command('mv ./temp_archive/Sources.tar.gz ./build');
     await run.command('rm -rf ./temp_archive');
