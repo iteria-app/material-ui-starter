@@ -6,7 +6,7 @@ module.exports = {
   onPreBuild: async ({ utils: { run } }) => {
     await run.command('mkdir ./temp_archive');
     await run.command(
-      'tar --exclude node_modules --exclude dist --exclude public --exclude netlify --exclude plugins --exclude vite-plugin --exclude .git  -cvzf ./public/Sources.tar.gz ./'
+      'tar --exclude node_modules --exclude dist --exclude public --exclude netlify --exclude plugins --exclude vite-plugin --exclude .git --exclude prettierignore --exclude .vscode  -cvzf ./public/Sources.tar.gz ./'
     );
 
     generateIndex();
