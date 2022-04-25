@@ -204,33 +204,7 @@ exports.executeCommitAddition  = (
         variables: variables,
         options: options || {},
       });
-    }
-
-
-exports.executeCommitDeletion  = (
-      variables,
-      options
-    ) => {
-      return fetchNetlifyGraph({
-        query: operationsDoc,
-        operationName: "CommitDeletion",
-        variables: variables,
-        options: options || {},
-      });
-    }
-
-
-exports.fetchExampleQuery = (
-      variables,
-      options
-    ) => {
-      return fetchNetlifyGraph({
-        query: operationsDoc,
-        operationName: "ExampleQuery",
-        variables: variables,
-        options: options || {},
-      });
-    }
+}
 
 
 exports.fetchFetchHeadOid = (
@@ -243,7 +217,7 @@ exports.fetchFetchHeadOid = (
         variables: variables,
         options: options || {},
       });
-    }
+}
 
 
 /**
@@ -254,14 +228,6 @@ const functions = {
   * An empty mutation to start from
   */
   executeCommitAddition : exports.executeCommitAddition ,
-  /**
-  * An empty mutation to start from
-  */
-  executeCommitDeletion : exports.executeCommitDeletion ,
-  /**
-  * An example query to start with.
-  */
-  fetchExampleQuery: exports.fetchExampleQuery,
   /**
   * An empty query to start from
   */
