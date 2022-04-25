@@ -6,13 +6,13 @@ module.exports = {
   onPreBuild: async ({ utils: { run } }) => {
     await run.command('mkdir ./temp_archive');
     await run.command(
-      'tar --exclude temp_archive --exclude node_modules --exclude .git --exclude public --exclude plugins -cvzf ./temp_archive/Sources.tar ./'
+      'tar --exclude temp_archive --exclude node_modules --exclude .git --exclude public --exclude plugins -cf ./temp_archive/Sources.tar ./'
     );
     // tar --exclude node_modules --exclude dist --exclude public  -cvzf ./public/Sources.tar.gz ./
 
     generateIndex();
     //addScriptsToIndex()
-    // modifyPlugins()
+    //modifyPlugins()
   },
   onBuild: async ({ utils: { run } }) => {
     await run.command('tar -rf ./temp_archive/Sources.tar '); //./src/generated")
