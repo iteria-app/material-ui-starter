@@ -50,38 +50,41 @@ exports.verifySignature = (input) => {
   return true
 }
 
-const operationsDoc = `mutation CommitAddition($contents: GitHubBase64String = "", $branchName: String = "", $repositoryNameWithOwner: String = "", $clientMutationId: String = "", $headline: String = "", $contents1: GitHubBase64String = "", $path: String = "", $expectedHeadOid: GitHubGitObjectID = null) @netlify(id: """2c9d16fa-b843-48a6-85df-8c3aca9d1882""", doc: """An empty mutation to start from""") {
+const operationsDoc = `
+mutation CommitAddition($contents: GitHubBase64String = "", $branchName: String = "", $repositoryNameWithOwner: String = "", $clientMutationId: String = "", $headline: String = "", $contents1: GitHubBase64String = "", $path: String = "", $expectedHeadOid: GitHubGitObjectID = null) @netlify(id: """2c9d16fa-b843-48a6-85df-8c3aca9d1882""", doc: """An empty mutation to start from""") {
   gitHub {
     createCommitOnBranch(
-      input: {branch: {branchName: $branchName, repositoryNameWithOwner: $repositoryNameWithOwner}, fileChanges: {additions: {contents: $contents1, path: $path}}, message: {headline: $headline}, expectedHeadOid: $expectedHeadOid}
+      input: {
+        branch: {
+          branchName: $branchName, 
+          repositoryNameWithOwner: $repositoryNameWithOwner
+        }, 
+        fileChanges: {
+          additions: {
+            contents: $contents1, path: $path
+          }
+        }, 
+        message: {
+          headline: $headline
+        }, 
+        expectedHeadOid: $expectedHeadOid
+      }
     ) {
       clientMutationId
     }
   }
 }
 
-mutation CommitDeletion($contents: GitHubBase64String = "", $branchName: String = "", $repositoryNameWithOwner: String = "", $clientMutationId: String = "", $headline: String = "", $expectedHeadOid: GitHubGitObjectID = null, $path: String = "") @netlify(id: """4c994897-cbb1-4d09-b1d1-ed41d60de031""", doc: """An empty mutation to start from""") {
-  gitHub {
-    createCommitOnBranch(
-      input: {branch: {branchName: $branchName, repositoryNameWithOwner: $repositoryNameWithOwner}, fileChanges: {deletions: {path: $path}}, message: {headline: $headline}, expectedHeadOid: $expectedHeadOid}
-    ) {
-      clientMutationId
-    }
-  }
-}
-
-query ExampleQuery @netlify(id: """bc06d036-531a-4152-b883-7ecfff0d27df""", doc: """An example query to start with.""") {
-  __typename
-}
-
-query fetchHeadOid @netlify(id: """b1476e35-b0d7-4065-a3b5-5db836263ed8""", doc: """An empty query to start from""") {
+query fetchHeadOid @netlify() {
   gitHub {
     repository(name: "example-material-ui", owner: "misosviso") {
-      id
-      defaultBranchRef {
-        target {
-          ... on GitHubCommit {
-            oid
+      refs(refPrefix: "refs/heads/", first: 10) {
+        edges {
+          node {
+            name
+            target {
+              oid
+            }
           }
         }
       }
@@ -201,33 +204,7 @@ exports.executeCommitAddition  = (
         variables: variables,
         options: options || {},
       });
-    }
-
-
-exports.executeCommitDeletion  = (
-      variables,
-      options
-    ) => {
-      return fetchNetlifyGraph({
-        query: operationsDoc,
-        operationName: "CommitDeletion",
-        variables: variables,
-        options: options || {},
-      });
-    }
-
-
-exports.fetchExampleQuery = (
-      variables,
-      options
-    ) => {
-      return fetchNetlifyGraph({
-        query: operationsDoc,
-        operationName: "ExampleQuery",
-        variables: variables,
-        options: options || {},
-      });
-    }
+}
 
 
 exports.fetchFetchHeadOid = (
@@ -240,7 +217,7 @@ exports.fetchFetchHeadOid = (
         variables: variables,
         options: options || {},
       });
-    }
+}
 
 
 /**
@@ -251,14 +228,6 @@ const functions = {
   * An empty mutation to start from
   */
   executeCommitAddition : exports.executeCommitAddition ,
-  /**
-  * An empty mutation to start from
-  */
-  executeCommitDeletion : exports.executeCommitDeletion ,
-  /**
-  * An example query to start with.
-  */
-  fetchExampleQuery: exports.fetchExampleQuery,
   /**
   * An empty query to start from
   */

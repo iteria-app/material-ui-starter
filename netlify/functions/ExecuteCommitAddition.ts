@@ -1,19 +1,13 @@
-import { getSecrets, NetlifySecrets } from '@netlify/functions';
-import NetlifyGraph, {
-  CommitAdditionInput,
-  NetlifyGraphFunctionOptions
-} from './netlifyGraph';
+import NetlifyGraph, { CommitAdditionInput } from './netlifyGraph';
 
 export const handler = async function (event, context) {
   const headOid = event.headers.headoid;
   const commitMessage = event.headers.commitmessage;
   const accessToken = event.authlifyToken;
-  ///////////////////////////////////////////
   const branchName = 'build-brach'; //event.headers.branchname
   const repositoryNameWithOwner = 'misosviso/example-material-ui'; //event.headers.repositorynamewithowner
-  ///////////////////////////////////////////
   const content = event.headers.content;
-  const path = event.headers.filePath;
+  const path = event.headers.filepath.substring(1);
 
   const input: CommitAdditionInput = {
     branchName: branchName,
@@ -25,8 +19,7 @@ export const handler = async function (event, context) {
   };
 
   // @ts-ignore
-  const { errors: ExecuteCommitErrors, data: ExecuteCommitData } =
-    await NetlifyGraph.executeCommitAddition(input, { accessToken });
+  const { errors: ExecuteCommitErrors, data: ExecuteCommitData } = await NetlifyGraph.executeCommitAddition(input, { accessToken });
 
   return {
     statusCode: 200,
