@@ -1,8 +1,4 @@
-import { getSecrets, NetlifySecrets } from '@netlify/functions';
-import NetlifyGraph, {
-  CommitAdditionInput,
-  NetlifyGraphFunctionOptions
-} from './netlifyGraph';
+import NetlifyGraph, { CommitAdditionInput } from './netlifyGraph';
 
 export const handler = async function (event, context) {
   const headOid = event.headers.headoid;

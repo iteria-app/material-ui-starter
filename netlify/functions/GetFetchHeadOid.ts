@@ -1,4 +1,3 @@
-import { getSecrets, NetlifySecrets } from '@netlify/functions'
 import NetlifyGraph from './netlifyGraph'
 
 export const handler = async function(event, context) {
