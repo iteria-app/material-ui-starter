@@ -70,7 +70,6 @@ console.log(
   repository.toString().replace('https://github.com/', '')
 );
 console.log('Branch', branch);
-console.log('Head', head);
 
 const App = () => {
   const routing = useRoutes(routes);
