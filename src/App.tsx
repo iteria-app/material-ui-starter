@@ -60,11 +60,15 @@ const client = createClient({
 //   }
 // );
 
-console.log('Site is live 3');
+const repository = import.meta.env.VITE_REPOSITORY_URL;
+const branch = import.meta.env.VITE_BRANCH;
 
-console.log('Netlify', process.env.NETLIFY);
-console.log('Repo', process.env.REPOSITORY_URL);
-console.log('Branch', process.env.BRANCH);
+console.log('Repo', repository);
+console.log(
+  'RepositoryNameWithOwner',
+  repository.toString().replace('https://github.com/', '')
+);
+console.log('Branch', branch);
 
 const App = () => {
   const routing = useRoutes(routes);

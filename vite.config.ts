@@ -5,9 +5,12 @@ import iteriaLowcode from './vite-plugin';
 import * as path from 'path';
 
 export default ({ command, mode }) => {
-  process.env = { ...process.env, ...loadEnv(mode, process.cwd()) };
-
-  console.log('Branch from vite.config.ts', process.env);
+  process.env = {
+    ...process.env,
+    ...loadEnv(mode, process.cwd()),
+    VITE_BRANCH: process.env.BRANCH,
+    VITE_REPOSITORY_URL: process.env.REPOSITORY_URL
+  };
 
   return defineConfig({
     optimizeDeps: {
