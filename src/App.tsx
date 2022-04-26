@@ -62,6 +62,7 @@ const client = createClient({
 
 const repository = import.meta.env.VITE_REPOSITORY_URL;
 const branch = import.meta.env.VITE_BRANCH;
+const head = import.meta.env.VITE_HEAD;
 
 console.log('Repo', repository);
 console.log(
@@ -69,6 +70,7 @@ console.log(
   repository.toString().replace('https://github.com/', '')
 );
 console.log('Branch', branch);
+console.log('Head', head);
 
 const App = () => {
   const routing = useRoutes(routes);
