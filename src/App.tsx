@@ -60,8 +60,9 @@ const client = createClient({
 //   }
 // );
 
-console.log('Site is live 2');
+console.log('Site is live 3');
 
+console.log('Netlify', process.env.NETLIFY);
 console.log('Repo', process.env.REPOSITORY_URL);
 console.log('Branch', process.env.BRANCH);
 
