@@ -7,7 +7,7 @@ import * as path from 'path';
 export default ({ command, mode }) => {
   process.env = { ...process.env, ...loadEnv(mode, process.cwd()) };
 
-  console.log('Branch from vite.config.ts', process.env.BRANCH);
+  console.log('Branch from vite.config.ts', process.env);
 
   return defineConfig({
     optimizeDeps: {
