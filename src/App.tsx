@@ -60,6 +60,8 @@ const client = createClient({
 //   }
 // );
 
+console.log('Site is live');
+
 if (process.env.NETLIFY) {
   console.log('Repo', process.env.REPOSITORY_URL);
   console.log('Branch', process.env.BRANCH);
