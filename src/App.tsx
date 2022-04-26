@@ -60,12 +60,10 @@ const client = createClient({
 //   }
 // );
 
-console.log('Site is live');
+console.log('Site is live 2');
 
-if (process.env.NETLIFY) {
-  console.log('Repo', process.env.REPOSITORY_URL);
-  console.log('Branch', process.env.BRANCH);
-}
+console.log('Repo', process.env.REPOSITORY_URL);
+console.log('Branch', process.env.BRANCH);
 
 const App = () => {
   const routing = useRoutes(routes);
