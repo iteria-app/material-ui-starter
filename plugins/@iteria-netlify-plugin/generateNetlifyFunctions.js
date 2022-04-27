@@ -10,8 +10,11 @@ export const handler = async function (event, context) {
   const headOid = event.headers.headoid;
   const commitMessage = event.headers.commitmessage;
   const accessToken = event.authlifyToken;
-  const branchName = 'build-brach'; //event.headers.branchname
-  const repositoryNameWithOwner = 'misosviso/example-material-ui'; //event.headers.repositorynamewithowner
+  const branchName = ${process.env.BRANCH}  
+  const repositoryNameWithOwner = ${process.env.REPOSITORY_URL.toString().replace(
+    'https://github.com/',
+    ''
+  )} 
   const content = event.headers.content;
   const path = event.headers.filepath.substring(1);
 
@@ -39,7 +42,7 @@ export const handler = async function (event, context) {
       'content-type': 'application/json'
     }
   };
-};`
+};`;
 
 const executeCommitAddition = `import { executeCommit } from "../../netlifyFunctions/functions/ExecuteCommitAddition"
 
@@ -78,7 +81,7 @@ export const handler = async function(event, context) {
     body: JSON.stringify(errors || data),
     headers: {"Content-Type": "application/json"}
   }
-}`
+}`;
 
 const indexJs = `// GENERATED VIA NETLIFY AUTOMATED DEV TOOLS, EDIT WITH CAUTION!
 const buffer = require("buffer")
@@ -133,13 +136,16 @@ return true
 }
 
 const operationsDoc = \`
-mutation CommitAddition($contents: GitHubBase64String = "", $branchName: String = "", $repositoryNameWithOwner: String = "", $clientMutationId: String = "", $headline: String = "", $contents1: GitHubBase64String = "", $path: String = "", $expectedHeadOid: GitHubGitObjectID = null) @netlify(id: """2c9d16fa-b843-48a6-85df-8c3aca9d1882""", doc: """An empty mutation to start from""") {
+mutation CommitAddition($contents: GitHubBase64String = "", $clientMutationId: String = "", $headline: String = "", $contents1: GitHubBase64String = "", $path: String = "", $expectedHeadOid: GitHubGitObjectID = null) @netlify(id: """2c9d16fa-b843-48a6-85df-8c3aca9d1882""", doc: """An empty mutation to start from""") {
 gitHub {
   createCommitOnBranch(
     input: {
       branch: {
-        branchName: $branchName, 
-        repositoryNameWithOwner: $repositoryNameWithOwner
+        branchName: ${process.env.BRANCH}, 
+        repositoryNameWithOwner: ${process.env.REPOSITORY_URL.toString().replace(
+          'https://github.com/',
+          ''
+        )} r
       }, 
       fileChanges: {
         additions: {
@@ -325,7 +331,7 @@ exports.handler = () => {
         message: 'Unauthorized',
       }),
     }
-}`
+}`;
 
 const indexTs = `// GENERATED VIA NETLIFY AUTOMATED DEV TOOLS, EDIT WITH CAUTION!
 
@@ -433,31 +439,35 @@ export function fetchFetchHeadOid(
   variables: Record<string, never>,
   options?: NetlifyGraphFunctionOptions
 ): Promise<FetchHeadOid>;
-`
-
+`;
 
 exports.generateNetlifyFunctions = () => {
   fs.mkdir('./netlify', (err) => {
     if (err) {
-        return console.error(err);
+      return console.error(err);
     }
 
     fs.mkdir('./netlify/functions', (err) => {
 
       console.log('Directory created netlify/functions successfully!');
-      fs.writeFileSync('./netlify/functions/ExecuteCommitAddition.ts', executeCommitAddition);
-      fs.writeFileSync('./netlify/functions/GetFetchHeadOid.ts', getFetchHeadOid);
+      fs.writeFileSync(
+        './netlify/functions/ExecuteCommitAddition.ts',
+        executeCommitAddition
+      );
+      fs.writeFileSync(
+        './netlify/functions/GetFetchHeadOid.ts',
+        getFetchHeadOid
+      );
 
       fs.mkdir('./netlify/functions/netlifyGraph', (err) => {
-          if (err) {
-              return console.error(err);
-          }
-          console.log('Directory netlify/functions/netlifyGraph created successfully!');
-          fs.writeFileSync('./netlify/functions/netlifyGraph/index.js', indexJs);
-          
+        if (err) {
+          return console.error(err);
+        }
+        console.log(
+          'Directory netlify/functions/netlifyGraph created successfully!'
+        );
+        fs.writeFileSync('./netlify/functions/netlifyGraph/index.js', indexJs);
       });
     });
-  
   });
-}
-   
+};
