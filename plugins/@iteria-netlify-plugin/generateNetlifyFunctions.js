@@ -299,26 +299,27 @@ exports.handler = () => {
     }
 }`
 
-
-   
-fs.mkdir('./netlify', (err) => {
+exports.generateNetlifyFunctions = () => {
+  fs.mkdir('./netlify', (err) => {
     if (err) {
         return console.error(err);
     }
 
     fs.mkdir('./netlify/functions', (err) => {
-        console.log('Directory created netlify/functions successfully!');
-        fs.writeFileSync('./netlify/functions/ExecuteCommitAddition.js', executeCommitAddition);
-        fs.writeFileSync('./netlify/functions/GetFetchHeadOid', getFetchHeadOid);
+      console.log('Directory created netlify/functions successfully!');
+      fs.writeFileSync('./netlify/functions/ExecuteCommitAddition.js', executeCommitAddition);
+      fs.writeFileSync('./netlify/functions/GetFetchHeadOid', getFetchHeadOid);
 
-        fs.mkdir('./netlify/functions/netlifyGraph', (err) => {
-            if (err) {
-                return console.error(err);
-            }
-            console.log('Directory netlify/functions/netlifyGraph created successfully!');
-            fs.writeFileSync('./netlify/functions/netlifyGraph/index.js', indexJs);
-            
-        });
+      fs.mkdir('./netlify/functions/netlifyGraph', (err) => {
+          if (err) {
+              return console.error(err);
+          }
+          console.log('Directory netlify/functions/netlifyGraph created successfully!');
+          fs.writeFileSync('./netlify/functions/netlifyGraph/index.js', indexJs);
+          
+      });
     });
-
-});
+  
+  });
+}
+   
