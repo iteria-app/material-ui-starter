@@ -139,11 +139,8 @@ gitHub {
   createCommitOnBranch(
     input: {
       branch: {
-        branchName: ${process.env.BRANCH}, 
-        repositoryNameWithOwner: ${process.env.REPOSITORY_URL.toString().replace(
-          'https://github.com/',
-          ''
-        )}
+        branchName: "build-brach", 
+        repositoryNameWithOwner: "misosviso/example-material-ui"
       }, 
       fileChanges: {
         additions: {
