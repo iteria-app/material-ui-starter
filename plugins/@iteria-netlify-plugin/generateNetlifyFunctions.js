@@ -1,8 +1,5 @@
 const fs = require('fs');
 
-import { executeCommit } from "../../netlifyFunctions/functions/ExecuteCommitAddition
-executeCommit()
-
 const executeCommitAddition2 = `
 import NetlifyGraph, { CommitAdditionInput } from './netlifyGraph';
 
