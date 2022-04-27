@@ -41,7 +41,8 @@ export const handler = async function (event, context) {
   };
 };`;
 
-const executeCommitAddition = `import { executeCommit } from "../../netlifyFunctions/functions/ExecuteCommitAddition"
+const executeCommitAddition = `
+import { executeCommit } from "../../netlifyFunctions/functions/ExecuteCommitAddition"
 
 export const handler = async function (event, context) {
   
@@ -142,7 +143,7 @@ gitHub {
         repositoryNameWithOwner: ${process.env.REPOSITORY_URL.toString().replace(
           'https://github.com/',
           ''
-        )} r
+        )}
       }, 
       fileChanges: {
         additions: {
