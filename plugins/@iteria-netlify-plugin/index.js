@@ -12,11 +12,11 @@ module.exports = {
     console.log("Tarring")
 
     generateIndex()
-    //addScriptsToIndex()
+    // addScriptsToIndex()
     // modifyPlugins()
   },
   onBuild: async({utils: {run}}) => {
-    await run.command("tar -rf ./temp_archive/Sources.tar ./src/generated")
+    await run.command("tar -rf ./temp_archive/Sources.tar./src/generated")
     await run.command("gzip -9 ./temp_archive/Sources.tar")
     await run.command('mv ./temp_archive/Sources.tar.gz ./build');
     await run.command('rm -rf ./temp_archive');
