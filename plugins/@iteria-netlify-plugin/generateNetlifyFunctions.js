@@ -301,7 +301,7 @@ exports.handler = () => {
 
 
    
-fs.mkdir('./netlify/functions', (err) => {
+fs.mkdir('./netlify', (err) => {
     if (err) {
         return console.error(err);
     }
