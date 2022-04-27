@@ -61,8 +61,8 @@ export const handler = async function (event, context) {
     headers: {
       'content-type': 'application/json'
     }
-  };
-
+  }
+}
 `
 
 const getFetchHeadOid = `import NetlifyGraph from './netlifyGraph'
