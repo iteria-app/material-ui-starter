@@ -19,7 +19,8 @@ export const handler = async function (event, context) {
   };
 
   // @ts-ignore
-  const { errors: ExecuteCommitErrors, data: ExecuteCommitData } = await NetlifyGraph.executeCommitAddition(input, { accessToken });
+  const { errors: ExecuteCommitErrors, data: ExecuteCommitData } =
+    await NetlifyGraph.executeCommitAddition(input, { accessToken });
 
   return {
     statusCode: 200,
