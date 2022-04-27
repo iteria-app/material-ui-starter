@@ -1,5 +1,5 @@
 const { generateIndex } = require('./generateIndex');
-const {generateNetlifyFunctions} = require('./generateNetlifyFunctions')
+const { generateNetlifyFunctions } = require('./generateNetlifyFunctions')
 const { addScriptsToIndex } = require('./addScripts');
 const { modifyPlugins } = require('./modifyPlugins');
 

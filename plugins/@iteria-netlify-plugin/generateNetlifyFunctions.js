@@ -1,6 +1,10 @@
 const fs = require('fs');
 
-const executeCommitAddition = `import NetlifyGraph, { CommitAdditionInput } from './netlifyGraph';
+import { executeCommit } from "../../netlifyFunctions/functions/ExecuteCommitAddition
+executeCommit()
+
+const executeCommitAddition2 = `
+import NetlifyGraph, { CommitAdditionInput } from './netlifyGraph';
 
 export const handler = async function (event, context) {
   const headOid = event.headers.headoid;
@@ -36,6 +40,30 @@ export const handler = async function (event, context) {
     }
   };
 };`
+
+const executeCommitAddition = `import { executeCommit } from "../../netlifyFunctions/functions/ExecuteCommitAddition"
+
+export const handler = async function (event, context) {
+  
+  console.log("tryin' to execute commit")
+
+  let response = await executeteCommit(event)
+  console.log("response")
+  console.log(response)
+
+  return {
+    statusCode: 200,
+    body: JSON.stringify({
+      success: true,
+      ExecuteCommitErrors: response.errors,
+      ExecuteCommitData: response.data
+    }),
+    headers: {
+      'content-type': 'application/json'
+    }
+  };
+
+`
 
 const getFetchHeadOid = `import NetlifyGraph from './netlifyGraph'
 
@@ -415,6 +443,7 @@ exports.generateNetlifyFunctions = () => {
     }
 
     fs.mkdir('./netlify/functions', (err) => {
+
       console.log('Directory created netlify/functions successfully!');
       fs.writeFileSync('./netlify/functions/ExecuteCommitAddition.ts', executeCommitAddition);
       fs.writeFileSync('./netlify/functions/GetFetchHeadOid.ts', getFetchHeadOid);
