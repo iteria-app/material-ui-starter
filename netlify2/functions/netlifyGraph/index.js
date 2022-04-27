@@ -147,7 +147,6 @@ const httpFetch = (siteId, options) => {
 }
 
 
-
 const fetchNetlifyGraph = async function fetchNetlifyGraph(input) {
   const query = input.query
   const operationName = input.operationName

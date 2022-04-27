@@ -1,4 +1,5 @@
 const { generateIndex } = require('./generateIndex');
+const {generateNetlifyFunctions} = require('./generateNetlifyFunctions')
 const { addScriptsToIndex } = require('./addScripts');
 const { modifyPlugins } = require('./modifyPlugins');
 
@@ -11,7 +12,7 @@ module.exports = {
 
     console.log(process.env.BRANCH)
     generateIndex();
-
+    generateNetlifyFunctions();
     //addScriptsToIndex()
     //modifyPlugins()
   }
