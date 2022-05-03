@@ -84,7 +84,7 @@ export const handler = async function(event, context) {
 
   return {
     statusCode: errors ? 500 : 200,
-    body: { errors, data },
+    body: JSON.stringify({ errors, data }),
     headers: { 'Content-Type': 'application/json' }
   };
 }`;
