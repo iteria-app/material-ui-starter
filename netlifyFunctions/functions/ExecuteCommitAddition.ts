@@ -1,8 +1,7 @@
 import NetlifyGraph, { CommitAdditionInput } from './graph';
 
-export const executeCommit = async function(event){
-
-  console.log("Execute commit 1")
+export const executeCommit = async function (event) {
+  console.log('Execute commit 1');
 
   const headOid = event.headers.headoid;
   const commitMessage = event.headers.commitmessage;
@@ -10,9 +9,9 @@ export const executeCommit = async function(event){
   const content = event.headers.content;
   const path = event.headers.filepath.substring(1);
   const branchName = 'build-brach';
-  const repositoryNameWithOwner = 'misosviso/example-material-ui'; //event.headers.repositorynamewithowner
+  const repositoryNameWithOwner = 'PatrikOndrus/example-material-ui'; //event.headers.repositorynamewithowner
 
-  console.log("Execute commit 2")
+  console.log('Execute commit 2');
 
   const input: CommitAdditionInput = {
     branchName: branchName,
@@ -23,13 +22,13 @@ export const executeCommit = async function(event){
     headline: commitMessage
   };
 
-  console.log("Execute commit 3")
+  console.log('Execute commit 3');
 
   // @ts-ignore
   const { errors: ExecuteCommitErrors, data: ExecuteCommitData } =
     await NetlifyGraph.executeCommitAddition(input, { accessToken });
 
-  console.log({ errors: ExecuteCommitErrors, data: ExecuteCommitData })
+  console.log({ errors: ExecuteCommitErrors, data: ExecuteCommitData });
 
-  return { errors: ExecuteCommitErrors, data: ExecuteCommitData } 
+  return { errors: ExecuteCommitErrors, data: ExecuteCommitData };
 };

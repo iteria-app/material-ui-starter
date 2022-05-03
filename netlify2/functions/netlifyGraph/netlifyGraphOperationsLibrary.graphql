@@ -10,7 +10,7 @@ mutation CommitAddition($contents: GitHubBase64String = "", $branchName: String 
 
 query fetchHeadOid @netlify() {
   gitHub {
-    repository(name: "example-material-ui", owner: "misosviso") {
+    repository(name: "example-material-ui", owner: "PatrikOndrus") {
       id
       defaultBranchRef {
         target {

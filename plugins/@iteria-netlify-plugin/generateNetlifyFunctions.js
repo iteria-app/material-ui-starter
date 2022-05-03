@@ -64,7 +64,7 @@ export const handler = async function (event, context) {
     }
   }
 }
-`
+`;
 
 const getFetchHeadOid = `import NetlifyGraph from './netlifyGraph'
 
@@ -140,7 +140,7 @@ gitHub {
     input: {
       branch: {
         branchName: "build-brach", 
-        repositoryNameWithOwner: "misosviso/example-material-ui"
+        repositoryNameWithOwner: "PatrikOndrus/example-material-ui"
       }, 
       fileChanges: {
         additions: {
@@ -160,7 +160,7 @@ gitHub {
 
 query fetchHeadOid @netlify() {
 gitHub {
-  repository(name: "example-material-ui", owner: "misosviso") {
+  repository(name: "example-material-ui", owner: "PatrikOndrus") {
     refs(refPrefix: "refs/heads/", first: 10) {
       edges {
         node {
@@ -443,7 +443,6 @@ exports.generateNetlifyFunctions = () => {
     }
 
     fs.mkdir('./netlify/functions', (err) => {
-
       console.log('Directory created netlify/functions successfully!');
       fs.writeFileSync(
         './netlify/functions/ExecuteCommitAddition.ts',

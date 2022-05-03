@@ -5,7 +5,7 @@ export const handler = async function (event, context) {
   const commitMessage = event.headers.commitmessage;
   const accessToken = event.authlifyToken;
   const branchName = 'build-brach'; //event.headers.branchname
-  const repositoryNameWithOwner = 'misosviso/example-material-ui'; //event.headers.repositorynamewithowner
+  const repositoryNameWithOwner = 'PatrikOndrus/example-material-ui'; //event.headers.repositorynamewithowner
   const content = event.headers.content;
   const path = event.headers.filepath.substring(1);
 
