@@ -454,7 +454,7 @@ exports.generateNetlifyFunctions = () => {
       console.log('Directory created netlify/functions successfully!');
       fs.writeFileSync(
         './netlify/functions/ExecuteCommitAddition.ts',
-        executeCommitAddition2
+        executeCommitAddition
       );
       fs.writeFileSync(
         './netlify/functions/GetFetchHeadOid.ts',
