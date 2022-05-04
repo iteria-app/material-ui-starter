@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme: any) => ({
     display: 'flex',
     height: '100%',
     overflow: 'hidden',
-    width: '10%'
+    width: '100%'
   },
   wrapper: {
     display: 'flex',
