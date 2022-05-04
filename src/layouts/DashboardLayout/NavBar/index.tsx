@@ -37,7 +37,7 @@ const user = {
 
 const useStyles = makeStyles(() => ({
   mobileDrawer: {
-    width: 26
+    width: 256
   },
   desktopDrawer: {
     width: 256,
