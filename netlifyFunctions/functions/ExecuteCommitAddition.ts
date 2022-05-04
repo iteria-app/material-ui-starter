@@ -1,28 +1,27 @@
 import NetlifyGraph, { CommitAdditionInput } from './graph';
 
 export const executeCommit = async function (event) {
-  console.log('Execute commit 1');
-
   const headOid = event.headers.headoid;
   const commitMessage = event.headers.commitmessage;
   const accessToken = event.authlifyToken;
-  const content = event.headers.content;
-  const path = event.headers.filepath.substring(1);
+  const contents = JSON.parse(event.headers.contents);
+  const paths = JSON.parse(event.headers.filepaths); // event.headers.filepath.substring(1);
   const branchName = event.headers.branchname;
   const repositoryNameWithOwner = event.headers.repositorynamewithowner;
 
-  console.log('Execute commit 2');
+  console.log(contents);
+  console.log(paths);
 
   const input: CommitAdditionInput = {
     branchName: branchName,
     repositoryNameWithOwner: repositoryNameWithOwner,
     expectedHeadOid: headOid,
-    contents1: content,
-    path: path,
+    contents1: contents[0],
+    path: paths[0].substring(1),
     headline: commitMessage
   };
 
-  console.log('Execute commit 3');
+  console.log('Execute commit!');
 
   // @ts-ignore
   const { errors: ExecuteCommitErrors, data: ExecuteCommitData } =
