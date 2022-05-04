@@ -48,7 +48,7 @@ export const handler = async function (event, context) {
   
   console.log("tryin' to execute commit")
 
-  let response = await executeteCommit(event)
+  let response = await executeCommit(event)
   console.log("response")
   console.log(response)
 
@@ -79,8 +79,8 @@ export const handler = async function(event, context) {
     { accessToken: event.netlifyGraphToken }
   );
 
-  console.log(errors);
-  console.log(data);
+  console.log("error:", errors);
+  console.log("data:", data);
 
   return {
     statusCode: errors ? 500 : 200,
@@ -142,13 +142,13 @@ return true
 }
 
 const operationsDoc = \`
-mutation CommitAddition($contents: GitHubBase64String = "", $clientMutationId: String = "", $headline: String = "", $contents1: GitHubBase64String = "", $path: String = "", $expectedHeadOid: GitHubGitObjectID = null) @netlify(id: """2c9d16fa-b843-48a6-85df-8c3aca9d1882""", doc: """An empty mutation to start from""") {
+mutation CommitAddition($contents: GitHubBase64String = "", $branchName: String = "", $repositoryNameWithOwner: String = "", $clientMutationId: String = "", $headline: String = "", $contents1: GitHubBase64String = "", $path: String = "", $expectedHeadOid: GitHubGitObjectID = null) @netlify(id: """2c9d16fa-b843-48a6-85df-8c3aca9d1882""", doc: """An empty mutation to start from""") {
 gitHub {
   createCommitOnBranch(
     input: {
       branch: {
-        branchName: "build-brach", 
-        repositoryNameWithOwner: "PatrikOndrus/example-material-ui"
+        branchName: $branchName, 
+        repositoryNameWithOwner: $repositoryNameWithOwner
       }, 
       fileChanges: {
         additions: {
@@ -454,7 +454,7 @@ exports.generateNetlifyFunctions = () => {
       console.log('Directory created netlify/functions successfully!');
       fs.writeFileSync(
         './netlify/functions/ExecuteCommitAddition.ts',
-        executeCommitAddition
+        executeCommitAddition2
       );
       fs.writeFileSync(
         './netlify/functions/GetFetchHeadOid.ts',
