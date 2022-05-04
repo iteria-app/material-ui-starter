@@ -46,8 +46,6 @@ import { executeCommit } from "../../netlifyFunctions/functions/ExecuteCommitAdd
 
 export const handler = async function (event, context) {
   
-  console.log("tryin' to execute commit")
-
   let response = await executeCommit(event)
   console.log("response")
   console.log(response)

@@ -8,8 +8,8 @@ export const executeCommit = async function (event) {
   const accessToken = event.authlifyToken;
   const content = event.headers.content;
   const path = event.headers.filepath.substring(1);
-  const branchName = 'build-brach';
-  const repositoryNameWithOwner = 'PatrikOndrus/example-material-ui'; //event.headers.repositorynamewithowner
+  const branchName = event.headers.branchname;
+  const repositoryNameWithOwner = event.headers.repositorynamewithowner;
 
   console.log('Execute commit 2');
 
