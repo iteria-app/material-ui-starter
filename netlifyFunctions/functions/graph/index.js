@@ -50,19 +50,15 @@ exports.verifySignature = (input) => {
   return true;
 };
 
-const operationsCommitDoc = `
-input AdditionsInput {
-  contents1: GitHubBase64String = ""
-  path: String = ""
-}
-mutation CommitAddition($contents: GitHubBase64String = "", $branchName: String = "", $repositoryNameWithOwner: String = "", $clientMutationId: String = "", $headline: String = "", $additions: [AdditionsInput], $expectedHeadOid: GitHubGitObjectID = null) @netlify(id: """2c9d16fa-b843-48a6-85df-8c3aca9d1882""", doc: """An empty mutation to start from""") {
+const operationsDoc = `
+mutation CommitAddition($contents: GitHubBase64String = "", $branchName: String = "", $repositoryNameWithOwner: String = "", $clientMutationId: String = "", $headline: String = "", $additions: GitHubFileAddition = [], $expectedHeadOid: GitHubGitObjectID = null) @netlify(id: """2c9d16fa-b843-48a6-85df-8c3aca9d1882""", doc: """An empty mutation to start from""") {
   gitHub {
     createCommitOnBranch(
       input: {
         branch: {
           branchName: $branchName, 
           repositoryNameWithOwner: $repositoryNameWithOwner
-        },
+        }, 
         fileChanges: {
           additions: $additions
         }, 
@@ -75,9 +71,8 @@ mutation CommitAddition($contents: GitHubBase64String = "", $branchName: String 
       clientMutationId
     }
   }
-}`;
+}
 
-const operationsFetchDoc = `
 query fetchHeadOid @netlify() {
   gitHub {
     repository(name: "example-material-ui", owner: "PatrikOndrus") {
@@ -194,7 +189,7 @@ exports.verifyRequestSignature = (request, options) => {
 
 exports.executeCommitAddition = (variables, options) => {
   return fetchNetlifyGraph({
-    query: operationsCommitDoc,
+    query: operationsDoc,
     operationName: 'CommitAddition',
     variables: variables,
     options: options || {}
@@ -203,7 +198,7 @@ exports.executeCommitAddition = (variables, options) => {
 
 exports.fetchFetchHeadOid = (variables, options) => {
   return fetchNetlifyGraph({
-    query: operationsFetchDoc,
+    query: operationsDoc,
     operationName: 'fetchHeadOid',
     variables: variables,
     options: options || {}
