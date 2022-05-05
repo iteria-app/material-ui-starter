@@ -10,9 +10,9 @@ import {
   Drawer,
   Hidden,
   List,
-  Typography,
-} from '@mui/material'
-import { makeStyles } from '@mui/styles'
+  Typography
+} from '@mui/material';
+import { makeStyles } from '@mui/styles';
 import {
   AlertCircle as AlertCircleIcon,
   BarChart as BarChartIcon,
@@ -20,21 +20,20 @@ import {
   Settings as SettingsIcon,
   ShoppingBag as ShoppingBagIcon,
   User as UserIcon,
-  UserPlus as UserPlusIcon,
+  UserPlus as UserPlusIcon
 } from 'react-feather';
 import {
   MenuItems,
-  calculateMenuItems,
-} from '@iteria-app/component-templates/src/material-ui/menu'
-import * as graphqlGen from '../../../generated/graphql'
-import { Home } from 'react-feather'
+  calculateMenuItems
+} from '@iteria-app/component-templates/src/material-ui/menu';
+import * as graphqlGen from '../../../generated/graphql';
+import { Home } from 'react-feather';
 
 const user = {
   avatar: '/static/images/avatars/avatar_6.png',
   jobTitle: 'Senior Developer',
   name: 'Katarina Smith'
 };
-
 
 const useStyles = makeStyles(() => ({
   mobileDrawer: {
@@ -53,7 +52,7 @@ const useStyles = makeStyles(() => ({
 }));
 
 const NavBar = ({ onMobileClose, openMobile }) => {
-  const intl = useIntl()
+  const intl = useIntl();
 
   const items = [
     {
@@ -128,9 +127,9 @@ const NavBar = ({ onMobileClose, openMobile }) => {
                 href: '/app/dashboard',
                 icon: Home,
                 label: 'menu.dashboard',
-                title: 'Dashboard',
+                title: 'Dashboard'
               },
-              ...calculateMenuItems(graphqlGen, UserIcon),
+              ...calculateMenuItems(graphqlGen, UserIcon)
             ]}
           />
         </List>
@@ -190,7 +189,7 @@ NavBar.propTypes = {
 };
 
 NavBar.defaultProps = {
-  onMobileClose: () => { },
+  onMobileClose: () => {},
   openMobile: false
 };
 
