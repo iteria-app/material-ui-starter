@@ -15,21 +15,18 @@ export const executeCommit = async function (event) {
     changedFiles.push({ contents: contents[i], path: paths[i].substring(1) });
   }
 
-  console.log(deletedFiles);
+  deletedFiles.map((element) => {
+    return element.substring(1);
+  });
 
   const input: CommitAdditionInput = {
     branchName: branchName,
     repositoryNameWithOwner: repositoryNameWithOwner,
     expectedHeadOid: headOid,
     additions: changedFiles,
+    deletions: deletedFiles,
     headline: commitMessage
   };
-
-  if (deletedFiles !== null || deletedFiles.length > 0) {
-    input.deletions = deletedFiles.map((element) => {
-      return element.substring(1);
-    });
-  }
 
   console.log('Execute commit!');
 
