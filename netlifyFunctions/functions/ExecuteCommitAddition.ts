@@ -5,24 +5,31 @@ export const executeCommit = async function (event) {
   const commitMessage = event.headers.commitmessage;
   const accessToken = event.authlifyToken;
   const contents = JSON.parse(event.headers.contents);
-  const paths = JSON.parse(event.headers.filepaths); // event.headers.filepath.substring(1);
+  const paths = JSON.parse(event.headers.filepaths);
+  const deletedFiles = JSON.parse(event.headers.deletedfilepaths);
   const branchName = event.headers.branchname;
   const repositoryNameWithOwner = event.headers.repositorynamewithowner;
 
-  let changes = [];
+  let changedFiles = [];
   for (let i = 0; i < contents.length; i++) {
-    changes.push({ contents: contents[i], path: paths[i].substring(1) });
+    changedFiles.push({ contents: contents[i], path: paths[i].substring(1) });
   }
 
-  console.log('Changes to commit: ', changes);
+  console.log(deletedFiles);
 
   const input: CommitAdditionInput = {
     branchName: branchName,
     repositoryNameWithOwner: repositoryNameWithOwner,
     expectedHeadOid: headOid,
-    additions: changes,
+    additions: changedFiles,
     headline: commitMessage
   };
+
+  if (deletedFiles !== null || deletedFiles.length > 0) {
+    input.deletions = deletedFiles.map((element) => {
+      return element.substring(1);
+    });
+  }
 
   console.log('Execute commit!');
 
