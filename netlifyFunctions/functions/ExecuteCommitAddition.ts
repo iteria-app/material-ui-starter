@@ -9,17 +9,18 @@ export const executeCommit = async function (event) {
   const branchName = event.headers.branchname;
   const repositoryNameWithOwner = event.headers.repositorynamewithowner;
 
-  console.log(contents);
-  console.log(paths);
+  let changes = [];
+  for (let i = 0; i < contents.length; i++) {
+    changes.push({ contents: contents[i], path: paths[i].substring(1) });
+  }
+
+  console.log('Changes to commit: ', changes);
 
   const input: CommitAdditionInput = {
     branchName: branchName,
     repositoryNameWithOwner: repositoryNameWithOwner,
     expectedHeadOid: headOid,
-    additions: [
-      { contents: contents[0], path: paths[0].substring(1) },
-      { contents: contents[1], path: paths[1].substring(1) }
-    ],
+    additions: changes,
     headline: commitMessage
   };
 
