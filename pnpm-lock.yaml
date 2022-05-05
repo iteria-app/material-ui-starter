@@ -23,6 +23,7 @@ specifiers:
   clsx: ^1.1.1
   concurrently: ^6.4.0
   cross-env: ^7.0.3
+  dotenv: ^16.0.0
   formik: ^2.2.9
   graphql: ^15.7.2
   graphql-tag: ^2.12.4
@@ -62,6 +63,7 @@ dependencies:
   '@mui/x-data-grid': 5.6.0_@mui+material@5.5.0+react@17.0.2
   chart.js: 2.9.4
   clsx: 1.1.1
+  dotenv: 16.0.0
   formik: 2.2.9_react@17.0.2
   graphql: 15.8.0
   graphql-tag: 2.12.6_graphql@15.8.0
@@ -2454,6 +2456,7 @@ packages:
 
   /@iteria-app/graphql-lowcode/0.2.4:
     resolution: {integrity: sha512-2yoO2VfsQkH2DdtUpHdraRa++bxqVOZtw6VyhUq+dzSh8uYIawVrZxdNDWI5OgpGj5C9FEhe2YmDUVV0YvsAyA==}
+
     dependencies:
       '@iteria-app/component-templates-api': 1.0.1
       graphql: 15.8.0
@@ -6435,6 +6438,11 @@ packages:
     resolution: {integrity: sha512-qD9WU0MPM4SWLPJy/r2Be+2WgQj8plChsyrCNQzW/0WjvcJQiKQJ9mH3ZgB3fxbUUxgc/11ZJ0Fi5KiimWGz2Q==}
     engines: {node: '>=12'}
     dev: true
+
+  /dotenv/16.0.0:
+    resolution: {integrity: sha512-qD9WU0MPM4SWLPJy/r2Be+2WgQj8plChsyrCNQzW/0WjvcJQiKQJ9mH3ZgB3fxbUUxgc/11ZJ0Fi5KiimWGz2Q==}
+    engines: {node: '>=12'}
+    dev: false
 
   /dotenv/8.2.0:
     resolution: {integrity: sha512-8sJ78ElpbDJBHNeBzUbUVLsqKdccaa/BXF1uPTw3GrvQTBgrQrtObr2mUrE38vzYd8cEv+m/JBfDLioYcfXoaw==}
