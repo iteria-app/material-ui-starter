@@ -23,11 +23,6 @@ export type GraphQLError = {
   "extensions": Record<string, unknown>
 };
 
-export type AdditionsInput = {
-  "path"?: string,
-  "contents"?: unknown
-}
-
 // Add commit
  export type CommitAdditionInput = {
   "contents"?: unknown;  
@@ -52,7 +47,7 @@ export type AdditionsInput = {
  //  * The path in the repository where the file will be located
  //  */
  //  "path"?: string;  
-   "additions"?: [AdditionsInput]
+   "additions"?: unknown
  /**
   * The git commit oid expected at the head of the branch prior to the commit
   */
