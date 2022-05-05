@@ -16,7 +16,10 @@ export const executeCommit = async function (event) {
     branchName: branchName,
     repositoryNameWithOwner: repositoryNameWithOwner,
     expectedHeadOid: headOid,
-    additions: [{ contents: contents[0], path: paths[0].substring(1) }],
+    additions: [
+      { contents: contents[0], path: paths[0].substring(1) },
+      { contents: contents[1], path: paths[1].substring(1) }
+    ],
     headline: commitMessage
   };
 
