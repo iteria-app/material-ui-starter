@@ -11823,7 +11823,7 @@ class BaseTypesVisitor extends BaseVisitor {
   FieldDefinition(node) {
     const typeString = node.type;
     const { type } = this._parsedConfig.declarationKind;
-    const comment = this.getNodeComment(node);
+    const comment = this.getFieldComment(node);
     return comment + indent(`${node.name}: ${typeString}${this.getPunctuation(type)}`);
   }
   UnionTypeDefinition(node, key, parent) {
@@ -11861,6 +11861,17 @@ class BaseTypesVisitor extends BaseVisitor {
       this.appendInterfacesAndFieldsToBlock(declarationBlock, interfacesNames, allFields);
     }
     return declarationBlock;
+  }
+  getFieldComment(node) {
+    let commentText = node.description;
+    const deprecationDirective = node.directives.find((v) => v.name === "deprecated");
+    if (deprecationDirective) {
+      const deprecationReason = this.getDeprecationReason(deprecationDirective);
+      commentText = `${commentText ? `${commentText}
+` : ""}@deprecated ${deprecationReason}`;
+    }
+    const comment = transformComment(commentText, 1);
+    return comment;
   }
   mergeAllFields(allFields, _hasInterfaces) {
     return allFields.join("\n");
@@ -11933,7 +11944,7 @@ class BaseTypesVisitor extends BaseVisitor {
     const schemaEnumType = this._schema ? this._schema.getType(typeName) : void 0;
     return values.map((enumOption) => {
       const optionName = this.makeValidEnumIdentifier(this.convertName(enumOption, { useTypesPrefix: false, transformUnderscore: true }));
-      const comment = this.getNodeComment(enumOption);
+      const comment = transformComment(enumOption.description, 1);
       const schemaEnumValue = schemaEnumType && !this.config.ignoreEnumValuesFromSchema ? schemaEnumType.getValue(enumOption.name).value : void 0;
       let enumValue = typeof schemaEnumValue !== "undefined" ? schemaEnumValue : enumOption.name;
       if (this.config.enumValues[typeName] && this.config.enumValues[typeName].mappedValues && typeof this.config.enumValues[typeName].mappedValues[enumValue] !== "undefined") {
@@ -12005,17 +12016,6 @@ class BaseTypesVisitor extends BaseVisitor {
   }
   SchemaDefinition() {
     return null;
-  }
-  getNodeComment(node) {
-    let commentText = node.description;
-    const deprecationDirective = node.directives.find((v) => v.name === "deprecated");
-    if (deprecationDirective) {
-      const deprecationReason = this.getDeprecationReason(deprecationDirective);
-      commentText = `${commentText ? `${commentText}
-` : ""}@deprecated ${deprecationReason}`;
-    }
-    const comment = transformComment(commentText, 1);
-    return comment;
   }
   getDeprecationReason(directive) {
     if (directive.name === "deprecated") {

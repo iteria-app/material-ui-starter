@@ -234,7 +234,7 @@ class TsVisitor extends BaseTypesVisitor {
     const typeString = this.config.wrapEntireDefinitions ? `EntireFieldWrapper<${node.type}>` : node.type;
     const originalFieldNode = parent[key];
     const addOptionalSign = !this.config.avoidOptionals.field && originalFieldNode.type.kind !== Kind.NON_NULL_TYPE;
-    const comment = this.getNodeComment(node);
+    const comment = this.getFieldComment(node);
     const { type } = this.config.declarationKind;
     return comment + indent(`${this.config.immutableTypes ? "readonly " : ""}${node.name}${addOptionalSign ? "?" : ""}: ${typeString}${this.getPunctuation(type)}`);
   }
