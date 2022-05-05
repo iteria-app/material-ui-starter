@@ -23,36 +23,73 @@ export type GraphQLError = {
   "extensions": Record<string, unknown>
 };
 
+export type AdditionsInput = {
+  "path"?: string,
+  "contents1"?: unknown
+}
 
 // Add commit
-export type CommitAdditionInput = {
- "contents"?: unknown;  
+ export type CommitAdditionInput = {
+  "contents"?: unknown;  
+  /**
+  * The unqualified name of the branch to append the commit to.
+  */
+  "branchName"?: string;  
+  /**
+  * The nameWithOwner of the repository to commit to.
+  */
+  "repositoryNameWithOwner"?: string;  
+ "clientMutationId"?: string;  
+  /**
+  * The headline of the message.
+  */
+  "headline"?: string;  
+  /**
+  * The base64 encoded contents of the file
+  */
+ //  "contents1"?: unknown;  
+ //  /**
+ //  * The path in the repository where the file will be located
+ //  */
+ //  "path"?: string;  
+   "additions"?: [AdditionsInput]
  /**
- * The unqualified name of the branch to append the commit to.
- */
- "branchName"?: string;  
- /**
- * The nameWithOwner of the repository to commit to.
- */
- "repositoryNameWithOwner"?: string;  
-"clientMutationId"?: string;  
- /**
- * The headline of the message.
- */
- "headline"?: string;  
- /**
- * The base64 encoded contents of the file
- */
- "contents1"?: unknown;  
- /**
- * The path in the repository where the file will be located
- */
- "path"?: string;  
- /**
- * The git commit oid expected at the head of the branch prior to the commit
- */
- "expectedHeadOid"?: unknown
-};
+  * The git commit oid expected at the head of the branch prior to the commit
+  */
+  "expectedHeadOid"?: unknown
+ };
+ 
+// export type CommitAdditionInput = {
+//  "contents"?: unknown;  
+//  /**
+//  * The unqualified name of the branch to append the commit to.
+//  */
+//  "branchName"?: string;  
+//  /**
+//  * The nameWithOwner of the repository to commit to.
+//  */
+//  "repositoryNameWithOwner"?: string;  
+// "clientMutationId"?: string;  
+//  /**
+//  * The headline of the message.
+//  */
+//  "headline"?: string;  
+//  /**
+//  * The base64 encoded contents of the file
+//  */
+// //  "contents1"?: unknown;  
+// //  /**
+// //  * The path in the repository where the file will be located
+// //  */
+// //  "path"?: string;  
+// "fileChanges"?: { 
+//   "additions"?: [] 
+// }
+// /**
+//  * The git commit oid expected at the head of the branch prior to the commit
+//  */
+//  "expectedHeadOid"?: unknown
+// };
 
 export type CommitAddition = {
   data: {
