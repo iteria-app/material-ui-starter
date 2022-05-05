@@ -25,7 +25,7 @@ export type GraphQLError = {
 
 export type AdditionsInput = {
   "path"?: string,
-  "contents1"?: unknown
+  "contents"?: unknown
 }
 
 // Add commit
