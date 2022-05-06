@@ -1,4 +1,4 @@
-const fs = require('fs');
+const fs = require('fs')
 
 const executeCommitAddition2 = `
 import NetlifyGraph, { CommitAdditionInput } from './netlifyGraph';
@@ -39,7 +39,7 @@ export const handler = async function (event, context) {
       'content-type': 'application/json'
     }
   };
-};`;
+};`
 
 const executeCommitAddition = `
 import { executeCommit } from "../../netlifyFunctions/functions/ExecuteCommitAddition"
@@ -62,7 +62,7 @@ export const handler = async function (event, context) {
     }
   }
 }
-`;
+`
 
 const getFetchHeadOid = `import NetlifyGraph from './netlifyGraph'
 
@@ -85,7 +85,7 @@ export const handler = async function(event, context) {
     body: JSON.stringify({ errors, data }),
     headers: { 'Content-Type': 'application/json' }
   };
-}`;
+}`
 
 const indexJs = `// GENERATED VIA NETLIFY AUTOMATED DEV TOOLS, EDIT WITH CAUTION!
 const buffer = require("buffer")
@@ -140,7 +140,7 @@ return true
 }
 
 const operationsDoc = \`
-mutation CommitAddition($contents: GitHubBase64String = "", $branchName: String = "", $repositoryNameWithOwner: String = "", $clientMutationId: String = "", $headline: String = "", $additions: [GitHubFileAddition!] = [], $deletions: [GitHubFileDeletion!] = [], $expectedHeadOid: GitHubGitObjectID = null) @netlify(id: """2c9d16fa-b843-48a6-85df-8c3aca9d1882""", doc: """An empty mutation to start from""") {
+mutation CommitAddition($contents: GitHubBase64String = "", $branchName: String = "", $repositoryNameWithOwner: String = "", $clientMutationId: String = "", $headline: String = "", $additions: [GitHubFileAddition!] = [], $deletions: [GitHubFileDeletion!] = [], $expectedHeadOid: GitHubGitObjectID = null) @netlify() {
   gitHub {
     createCommitOnBranch(
       input: {
@@ -331,34 +331,34 @@ exports.handler = () => {
         message: 'Unauthorized',
       }),
     }
-}`;
+}`
 
 exports.generateNetlifyFunctions = () => {
   fs.mkdir('./netlify', (err) => {
     if (err) {
-      return console.error(err);
+      return console.error(err)
     }
 
     fs.mkdir('./netlify/functions', (err) => {
-      console.log('Directory created netlify/functions successfully!');
+      console.log('Directory created netlify/functions successfully!')
       fs.writeFileSync(
         './netlify/functions/ExecuteCommitAddition.ts',
         executeCommitAddition
-      );
+      )
       fs.writeFileSync(
         './netlify/functions/GetFetchHeadOid.ts',
         getFetchHeadOid
-      );
+      )
 
       fs.mkdir('./netlify/functions/netlifyGraph', (err) => {
         if (err) {
-          return console.error(err);
+          return console.error(err)
         }
         console.log(
           'Directory netlify/functions/netlifyGraph created successfully!'
-        );
-        fs.writeFileSync('./netlify/functions/netlifyGraph/index.js', indexJs);
-      });
-    });
-  });
-};
+        )
+        fs.writeFileSync('./netlify/functions/netlifyGraph/index.js', indexJs)
+      })
+    })
+  })
+}

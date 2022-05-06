@@ -1,28 +1,28 @@
 // GENERATED VIA NETLIFY AUTOMATED DEV TOOLS, EDIT WITH CAUTION!
-const buffer = require('buffer');
-const crypto = require('crypto');
-const https = require('https');
-const process = require('process');
+const buffer = require('buffer')
+const crypto = require('crypto')
+const https = require('https')
+const process = require('process')
 
 exports.verifySignature = (input) => {
-  const secret = input.secret;
-  const body = input.body;
-  const signature = input.signature;
+  const secret = input.secret
+  const body = input.body
+  const signature = input.signature
 
   if (!signature) {
-    console.error('Missing signature');
-    return false;
+    console.error('Missing signature')
+    return false
   }
 
-  const sig = {};
+  const sig = {}
   for (const pair of signature.split(',')) {
-    const [key, value] = pair.split('=');
-    sig[key] = value;
+    const [key, value] = pair.split('=')
+    sig[key] = value
   }
 
   if (!sig.t || !sig.hmac_sha256) {
-    console.error('Invalid signature header');
-    return false;
+    console.error('Invalid signature header')
+    return false
   }
 
   const hash = crypto
@@ -30,7 +30,7 @@ exports.verifySignature = (input) => {
     .update(sig.t)
     .update('.')
     .update(body)
-    .digest('hex');
+    .digest('hex')
 
   if (
     !crypto.timingSafeEqual(
@@ -38,20 +38,20 @@ exports.verifySignature = (input) => {
       Buffer.from(sig.hmac_sha256, 'hex')
     )
   ) {
-    console.error('Invalid signature');
-    return false;
+    console.error('Invalid signature')
+    return false
   }
 
   if (parseInt(sig.t, 10) < Date.now() / 1000 - 300 /* 5 minutes */) {
-    console.error('Request is too old');
-    return false;
+    console.error('Request is too old')
+    return false
   }
 
-  return true;
-};
+  return true
+}
 
 const operationsDoc = `
-mutation CommitAddition($contents: GitHubBase64String = "", $branchName: String = "", $repositoryNameWithOwner: String = "", $clientMutationId: String = "", $headline: String = "", $additions: [GitHubFileAddition!] = [], $deletions: [GitHubFileDeletion!] = [], $expectedHeadOid: GitHubGitObjectID = null) @netlify(id: """2c9d16fa-b843-48a6-85df-8c3aca9d1882""", doc: """An empty mutation to start from""") {
+mutation CommitAddition($contents: GitHubBase64String = "", $branchName: String = "", $repositoryNameWithOwner: String = "", $clientMutationId: String = "", $headline: String = "", $additions: [GitHubFileAddition!] = [], $deletions: [GitHubFileDeletion!] = [], $expectedHeadOid: GitHubGitObjectID = null) @netlify() {
   gitHub {
     createCommitOnBranch(
       input: {
@@ -90,28 +90,28 @@ query fetchHeadOid @netlify() {
     }
   }
 }
-`;
+`
 
 const httpFetch = (siteId, options) => {
-  const reqBody = options.body || null;
-  const userHeaders = options.headers || {};
+  const reqBody = options.body || null
+  const userHeaders = options.headers || {}
   const headers = {
     ...userHeaders,
     'Content-Type': 'application/json',
     'Content-Length': reqBody.length
-  };
+  }
 
-  const timeoutMs = 30_000;
+  const timeoutMs = 30_000
 
   const reqOptions = {
     method: 'POST',
     headers: headers,
     timeout: timeoutMs
-  };
+  }
 
-  const url = 'https://serve.onegraph.com/graphql?app_id=' + siteId;
+  const url = 'https://serve.onegraph.com/graphql?app_id=' + siteId
 
-  const respBody = [];
+  const respBody = []
 
   return new Promise((resolve, reject) => {
     const req = https.request(url, reqOptions, (res) => {
@@ -120,45 +120,45 @@ const httpFetch = (siteId, options) => {
           new Error(
             'Netlify Graph return non-OK HTTP status code' + res.statusCode
           )
-        );
+        )
       }
 
-      res.on('data', (chunk) => respBody.push(chunk));
+      res.on('data', (chunk) => respBody.push(chunk))
 
       res.on('end', () => {
-        const resString = buffer.Buffer.concat(respBody).toString();
-        resolve(resString);
-      });
-    });
+        const resString = buffer.Buffer.concat(respBody).toString()
+        resolve(resString)
+      })
+    })
 
     req.on('error', (error) => {
-      console.error('Error making request to Netlify Graph:', error);
-    });
+      console.error('Error making request to Netlify Graph:', error)
+    })
 
     req.on('timeout', () => {
-      req.destroy();
-      reject(new Error('Request to Netlify Graph timed out'));
-    });
+      req.destroy()
+      reject(new Error('Request to Netlify Graph timed out'))
+    })
 
-    req.write(reqBody);
-    req.end();
-  });
-};
+    req.write(reqBody)
+    req.end()
+  })
+}
 
 const fetchNetlifyGraph = async function fetchNetlifyGraph(input) {
-  const query = input.query;
-  const operationName = input.operationName;
-  const variables = input.variables;
+  const query = input.query
+  const operationName = input.operationName
+  const variables = input.variables
 
-  const options = input.options || {};
-  const accessToken = options.accessToken;
-  const siteId = options.siteId || process.env.SITE_ID;
+  const options = input.options || {}
+  const accessToken = options.accessToken
+  const siteId = options.siteId || process.env.SITE_ID
 
   const payload = {
     query: query,
     variables: variables,
     operationName: operationName
-  };
+  }
 
   const result = await httpFetch(siteId, {
     method: 'POST',
@@ -166,27 +166,27 @@ const fetchNetlifyGraph = async function fetchNetlifyGraph(input) {
       Authorization: accessToken ? 'Bearer ' + accessToken : ''
     },
     body: JSON.stringify(payload)
-  });
+  })
 
-  return JSON.parse(result);
-};
+  return JSON.parse(result)
+}
 
 exports.verifyRequestSignature = (request, options) => {
-  const event = request.event;
+  const event = request.event
   const secret =
-    options.webhookSecret || process.env.NETLIFY_GRAPH_WEBHOOK_SECRET;
-  const signature = event.headers['x-netlify-graph-signature'];
-  const body = event.body;
+    options.webhookSecret || process.env.NETLIFY_GRAPH_WEBHOOK_SECRET
+  const signature = event.headers['x-netlify-graph-signature']
+  const body = event.body
 
   if (!secret) {
     console.error(
       'NETLIFY_GRAPH_WEBHOOK_SECRET is not set, cannot verify incoming webhook request'
-    );
-    return false;
+    )
+    return false
   }
 
-  return verifySignature({ secret, signature, body: body || '' });
-};
+  return verifySignature({ secret, signature, body: body || '' })
+}
 
 exports.executeCommitAddition = (variables, options) => {
   return fetchNetlifyGraph({
@@ -194,8 +194,8 @@ exports.executeCommitAddition = (variables, options) => {
     operationName: 'CommitAddition',
     variables: variables,
     options: options || {}
-  });
-};
+  })
+}
 
 exports.fetchFetchHeadOid = (variables, options) => {
   return fetchNetlifyGraph({
@@ -203,8 +203,8 @@ exports.fetchFetchHeadOid = (variables, options) => {
     operationName: 'fetchHeadOid',
     variables: variables,
     options: options || {}
-  });
-};
+  })
+}
 
 /**
  * The generated NetlifyGraph library with your operations
@@ -218,9 +218,9 @@ const functions = {
    * An empty query to start from
    */
   fetchFetchHeadOid: exports.fetchFetchHeadOid
-};
+}
 
-exports.default = functions;
+exports.default = functions
 
 exports.handler = () => {
   // return a 401 json response
@@ -229,5 +229,5 @@ exports.handler = () => {
     body: JSON.stringify({
       message: 'Unauthorized'
     })
-  };
-};
+  }
+}
