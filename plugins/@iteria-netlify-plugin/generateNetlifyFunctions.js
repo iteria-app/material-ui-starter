@@ -68,15 +68,12 @@ const getFetchHeadOid = `import NetlifyGraph from './netlifyGraph'
 
 export const handler = async function(event, context) {
 
-  const branchName = event.headers.branchName;
-  const repositoryName = process.env.REPOSITORY_URL.toString().replace(
-    'https://github.com/',
-    ''
-  );
+  const branchName = event.headers.branchname;
+  console.log(branchName);
+  const repositoryName = process.env.REPOSITORY_URL;
+  console.log(repositoryName);
 
   console.log(event.netlifyGraphToken);
-  console.log(repositoryName);
-  console.log(branch);
 
   const { errors, data } = await NetlifyGraph.fetchFetchHeadOid(
     {
