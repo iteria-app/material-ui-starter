@@ -68,17 +68,23 @@ const getFetchHeadOid = `import NetlifyGraph from './netlifyGraph'
 
 export const handler = async function(event, context) {
 
+  const branchName = event.headers.branchName;
+  const repositoryName = process.env.REPOSITORY_URL.toString().replace(
+    'https://github.com/',
+    ''
+  );
+
   console.log(event.netlifyGraphToken);
+  console.log(repositoryName);
+  console.log(branch);
 
   const { errors, data } = await NetlifyGraph.fetchFetchHeadOid(
     {
-      /* variables */
+      repositoryName,
+      branchName
     },
     { accessToken: event.netlifyGraphToken }
   );
-
-  console.log("error:", errors);
-  console.log("data:", data);
 
   return {
     statusCode: errors ? 500 : 200,
@@ -163,9 +169,9 @@ mutation CommitAddition($contents: GitHubBase64String = "", $branchName: String 
   }
 }
 
-query fetchHeadOid @netlify() {
+query fetchHeadOid($repositoryName: String = "", $owner: String = "") @netlify() {
 gitHub {
-  repository(name: "example-material-ui", owner: "PatrikOndrus") {
+  repository(name: $repositoryName, owner: $owner) {
     refs(refPrefix: "refs/heads/", first: 10) {
       edges {
         node {
