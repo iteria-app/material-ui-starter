@@ -1,0 +1,37 @@
+mutation ExampleMutation @netlify(id: """b84e0aeb-e2a9-46c3-85fe-381933c8ee76""", doc: """An empty mutation to start from""") {
+  gitHub(auths: {})
+}
+
+mutation executeCommitAddition @netlify(id: """79e47abc-cf64-4f4c-a66a-d7ecb7f3f167""", doc: """An example query to start with.""") {
+  gitHub(auths: {})
+}
+
+query HeadOid @netlify(id: """d8ca26ea-df92-4d60-8065-e76b4b1ec10d""", doc: """An empty query to start from""") {
+  gitHub {
+    repository(name: "example-material-ui", owner: "PatrikOndrus") {
+      ref(qualifiedName: "build-brach") {
+        target {
+          oid
+        }
+        name
+      }
+    }
+  }
+}
+
+query HeadOids @netlify(id: """db064e81-e645-4469-bbb4-d18064cef33c""", doc: """An empty query to start from""") {
+  gitHub {
+    repository(name: "example-material-ui", owner: "PatrikOndrus") {
+      refs(refPrefix: "refs/heads/", first: 10) {
+        edges {
+          node {
+            name
+            target {
+              oid
+            }
+          }
+        }
+      }
+    }
+  }
+}
