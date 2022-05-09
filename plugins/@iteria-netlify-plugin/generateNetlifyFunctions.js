@@ -164,18 +164,14 @@ mutation CommitAddition($contents: GitHubBase64String = "", $branchName: String 
   }
 }
 
-query fetchHeadOid($repositoryName: String = "", $owner: String = "") @netlify() {
+query fetchHeadOid($repositoryName: String = "", $owner: String = "", $branchName: String = "") @netlify() {
 gitHub {
   repository(name: $repositoryName, owner: $owner) {
-    refs(refPrefix: "refs/heads/", first: 10) {
-      edges {
-        node {
-          name
-          target {
-            oid
-          }
-        }
+    ref(qualifiedName: $branchName) {
+      target {
+        oid
       }
+      name
     }
   }
 }
