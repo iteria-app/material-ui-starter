@@ -76,9 +76,9 @@ export const handler = async function(event, context) {
 
   const { errors, data } = await NetlifyGraph.fetchFetchHeadOid(
     {
-      repositoryName,
-      owner,
-      branchName,
+      repositoryName: repositoryName,
+      owner: owner,
+      branchName: branchName,
     },
     { accessToken: event.netlifyGraphToken }
   );
