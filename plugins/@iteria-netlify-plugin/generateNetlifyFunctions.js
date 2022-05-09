@@ -78,7 +78,7 @@ export const handler = async function(event, context) {
     {
       repositoryName,
       owner,
-      branchName
+      branchName,
     },
     { accessToken: event.netlifyGraphToken }
   );
