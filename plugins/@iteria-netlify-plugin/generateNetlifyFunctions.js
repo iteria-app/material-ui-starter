@@ -69,15 +69,13 @@ const getFetchHeadOid = `import NetlifyGraph from './netlifyGraph'
 export const handler = async function(event, context) {
 
   const branchName = event.headers.branchname;
-  console.log(branchName);
-  const repositoryName = process.env.REPOSITORY_URL;
-  console.log(repositoryName);
 
   console.log(event.netlifyGraphToken);
 
   const { errors, data } = await NetlifyGraph.fetchFetchHeadOid(
     {
-      repositoryName,
+      repositoryName: "example-material-ui",
+      owner: "PatrikOndrus",
       branchName
     },
     { accessToken: event.netlifyGraphToken }
