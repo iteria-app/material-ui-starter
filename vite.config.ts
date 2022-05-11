@@ -8,9 +8,7 @@ export default ({ command, mode }) => {
   process.env = {
     ...process.env,
     ...loadEnv(mode, process.cwd()),
-    VITE_BRANCH: process.env.BRANCH,
-    VITE_REPOSITORY_URL: process.env.REPOSITORY_URL,
-    VITE_SITE_ID: process.env.SITE_ID
+    NODE_ENV: 'development'
   }
 
   return defineConfig({
