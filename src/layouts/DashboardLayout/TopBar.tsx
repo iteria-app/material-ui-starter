@@ -87,7 +87,7 @@ const TopBar = ({
             color="inherit"
             onClick={onMobileNavOpen}
           >
-            <MenuIcon />
+            {/* <MenuIcon /> */}
           </IconButton>
         </Hidden>
       </Toolbar>
