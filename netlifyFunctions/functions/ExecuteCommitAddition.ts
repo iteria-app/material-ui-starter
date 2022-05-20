@@ -9,6 +9,8 @@ export const executeCommit = async function (event) {
   const branchName = event.headers.branchname
   const repositoryNameWithOwner = event.headers.repositorynamewithowner
 
+  console.log(accessToken)
+
   const input: CommitAdditionInput = {
     branchName: branchName,
     repositoryNameWithOwner: repositoryNameWithOwner,
