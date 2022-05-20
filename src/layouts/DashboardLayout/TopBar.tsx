@@ -24,7 +24,7 @@ import { locales } from '../../locale'
 const useStyles = makeStyles(() => ({
   root: {},
   avatar: {
-    width: 60,
+    width: 610,
     height: 60
   }
 }));
