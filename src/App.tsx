@@ -35,10 +35,6 @@ const client = createClient({
 })
 
 const App = () => {
-
-  console.log("NODE_ENV=" + process.env.NODE_ENV)
-  console.log("CWD=" + process.env.CWD)
-
   const routing = useRoutes(routes)
   const locale = useLocale()
   return (
