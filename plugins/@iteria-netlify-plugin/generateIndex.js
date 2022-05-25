@@ -87,7 +87,6 @@ const findProjectEntry = () => {
 exports.generateIndex = () => {
   const dependencies = getDependencies();
   const generatedIndex = generateIndexFile(dependencies);
-  console.log("test", generatedIndex)
 
   fs.writeFileSync('./src/iteriaIndex.js', generatedIndex);
   // fs.writeFileSync('./src/runtime.d.ts', `declare module 'react-refresh/runtime';`)
