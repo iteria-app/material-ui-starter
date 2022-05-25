@@ -37,10 +37,12 @@ const client = createClient({
 const App = () => {
   const routing = useRoutes(routes)
   const locale = useLocale()
+  const messagesObject = messages(locale)
+
   return (
     <DataContext.Provider value={graphqlcodegenDataProvider}>
       <UrqlProvider value={client}>
-        <I18nProvider locale={locale} messages={messages(locale)}>
+        <I18nProvider locale={locale} messages={messagesObject}>
           <ThemeProvider theme={theme}>
             <GlobalStyles />
             {routing}
