@@ -248,16 +248,17 @@ function iteriaLowcode(options) {
       }
       window.global = {}
     `
-    },
-    injectDevServer && {
-      type: "module",
-      content: `
-        import { iteriaApp } from ${ideDevserverPath}
-        iteriaApp(
-          ${JSON.stringify(ideDevServerIteriaAppInitConf)}
-        )`
     }
   ].filter(Boolean);
+  const iteriaScript = {
+    type: "module",
+    defer: '',
+    content: `
+      import { iteriaApp } from ${ideDevserverPath}
+      iteriaApp(
+        ${JSON.stringify(ideDevServerIteriaAppInitConf)}
+      )`
+  };
   const devtoolsScript = {
     src: "https://react-devtools-inline-initialize.netlify.app/react-devtools-inline-initialize.umd.js"
   };
@@ -333,6 +334,8 @@ function iteriaLowcode(options) {
           htmlResult.push(getScriptContent(script, "head-prepend"));
         });
       }
+      if (injectDevServer)
+        htmlResult.push(getScriptContent(iteriaScript, "body"));
       htmlResult.push(getScriptContent(devtoolsScript, "body-prepend"));
       return htmlResult;
     },

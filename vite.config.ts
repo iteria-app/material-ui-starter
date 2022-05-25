@@ -36,7 +36,7 @@ export default ({ command, mode }) => {
       }),
     ],
     define: {
-      'process.env.NODE_ENV': `"development"`
+      'process.env.NODE_ENV': `"development"` //for monorepo netlify preview pull req purposes only
     }
   })
 }
