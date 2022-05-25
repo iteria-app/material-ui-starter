@@ -89,15 +89,15 @@ exports.generateIndex = () => {
   const generatedIndex = generateIndexFile(dependencies);
 
   fs.writeFileSync('./src/iteriaIndex.js', generatedIndex);
-  fs.writeFileSync('./src/runtime.d.ts', `declare module 'react-refresh/runtime';`)
+  // fs.writeFileSync('./src/runtime.d.ts', `declare module 'react-refresh/runtime';`)
   //fs.writeFileSync('./src/iteriaIndex.d.ts', `declare module 'src/iteriaIndex';`)
   const projectEntry =  findProjectEntry();
   const currIndexFile = fs.readFileSync(projectEntry, 'utf-8');
 
   const newIndexFile =
-    `import * as runtime from 'react-refresh/runtime';\n
-    //@ts-ignore
-    import iteriaIndex from './iteriaIndex';\n` +
+    // `import * as runtime from 'react-refresh/runtime';\n
+    // //@ts-ignore
+    // import iteriaIndex from './iteriaIndex';\n` +
     currIndexFile +
     `//@ts-ignore
     window.$RefreshRegGlobal$ = runtime.register;
