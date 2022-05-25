@@ -97,7 +97,7 @@ exports.generateIndex = () => {
   const newIndexFile =
     // `import * as runtime from 'react-refresh/runtime';\n
     // //@ts-ignore
-    // import iteriaIndex from './iteriaIndex';\n` +
+    `import iteriaIndex from './iteriaIndex';\n` +
     currIndexFile +
     `//@ts-ignore
     window.$RefreshRegGlobal$ = runtime.register;
