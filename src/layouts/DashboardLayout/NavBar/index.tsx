@@ -130,6 +130,7 @@ const NavBar = ({ onMobileClose, openMobile }) => {
                 label: 'menu.dashboard',
                 title: 'Dashboard',
               },
+              ...calculateMenuItems(graphqlGen, UserIcon),
             ]}
           />
         </List>
