@@ -8,8 +8,9 @@ specifiers:
   '@graphql-codegen/typescript': ^2.2.2
   '@graphql-codegen/typescript-operations': ^2.1.5
   '@graphql-codegen/typescript-urql': ^3.2.0
-  '@iteria-app/component-templates': 1.0.8
-  '@iteria-app/graphql-lowcode': 0.2.3
+  '@iteria-app/component-templates': 1.1.0
+  '@iteria-app/component-templates-api': 1.0.1
+  '@iteria-app/graphql-lowcode': 0.2.6
   '@iteria-app/vite-plugin-lowcode': 0.1.6
   '@mui/icons-material': ^5.2.5
   '@mui/lab': ^5.0.0-alpha.64
@@ -18,6 +19,9 @@ specifiers:
   '@mui/x-data-grid': ^5.2.2
   '@types/react': ^17.0.0
   '@types/react-dom': ^17.0.0
+  '@uppy/aws-s3-multipart': ^2.3.0
+  '@uppy/core': ^2.2.0
+  '@uppy/react': ^2.2.0
   '@vitejs/plugin-react': 1.2.0
   chart.js: ^2.9.4
   clsx: ^1.1.1
@@ -30,6 +34,8 @@ specifiers:
   lodash: ^4.17.21
   moment: ^2.29.1
   nprogress: ^0.2.0
+  os-browserify: ^0.3.0
+  path-browserify: ^1.0.1
   prop-types: ^15.8.1
   react: ^17.0.2
   react-chartjs-2: ^2.10.0
@@ -49,14 +55,18 @@ specifiers:
 dependencies:
   '@emotion/react': 11.7.1_b08e3c15324cbe90a6ff8fcd416c932c
   '@emotion/styled': 11.6.0_0044a6ec6dcf5de7705bffaaff7afd26
-  '@iteria-app/component-templates': 1.0.8_aa43b2d362ebcb2b73bb232a42e4e672
-  '@iteria-app/graphql-lowcode': 0.2.3
+  '@iteria-app/component-templates': 1.1.0_react-dom@17.0.2+react@17.0.2
+  '@iteria-app/component-templates-api': 1.0.1
+  '@iteria-app/graphql-lowcode': 0.2.6
   '@iteria-app/vite-plugin-lowcode': 0.1.6_vite@2.8.6
   '@mui/icons-material': 5.2.5_f463eef15d59df5aa770d062739aa27b
   '@mui/lab': 5.0.0-alpha.64_a2f6ee90597e1b9dcc8a8e674ab37aba
   '@mui/material': 5.2.8_f5341c4d41f1e34c3a73251df9f98a19
   '@mui/styles': 5.2.3_b08e3c15324cbe90a6ff8fcd416c932c
   '@mui/x-data-grid': 5.2.2_@mui+material@5.2.8+react@17.0.2
+  '@uppy/aws-s3-multipart': 2.3.0_@uppy+core@2.2.0
+  '@uppy/core': 2.2.0
+  '@uppy/react': 2.2.0_@uppy+core@2.2.0+react@17.0.2
   chart.js: 2.9.4
   clsx: 1.1.1
   formik: 2.2.9_react@17.0.2
@@ -66,6 +76,8 @@ dependencies:
   lodash: 4.17.21
   moment: 2.29.1
   nprogress: 0.2.0
+  os-browserify: 0.3.0
+  path-browserify: 1.0.1
   prop-types: 15.8.1
   react: 17.0.2
   react-chartjs-2: 2.11.2_f236ea5690127753093b714bf94225a6
@@ -1419,57 +1431,24 @@ packages:
     resolution: {integrity: sha512-trnsAYxU3xnS1gPHPyU961coFyLkh4gAD/0zQ5mymY4yOZ+CYvsPqUbOFSw0aDM4y0tV7tiFxL/1XfXPNC6IPg==}
     dev: true
 
-  /@iteria-app/component-templates-api/1.0.0:
-    resolution: {integrity: sha512-5i5p4yX85YKP5KtGwUBo7tW8xDh8nL5PHw+zLfMFU19JKs5GDARjiqV+8sc/eccTL1V55l8hZrE+3bNq7Kijdw==}
-    dev: false
-
   /@iteria-app/component-templates-api/1.0.1:
     resolution: {integrity: sha512-DzxIW8SRCLCZ/daD3mmWHw/R5HFtoxvrvGLNdodEF911Vce/v4ESmxzyHDD+hixfSR9vCfryeMk54Z4Fozs6tg==}
     dev: false
 
-  /@iteria-app/component-templates/1.0.8_aa43b2d362ebcb2b73bb232a42e4e672:
-    resolution: {integrity: sha512-WYCIHGMgkk1UsWVaPYzaDVYk6nsO4nxN/B7IDyOqCi/DvfTqY2ckZwhGcRjnWRBtXqtVPlMPWDUMKnREm6jSKw==}
+  /@iteria-app/component-templates/1.1.0_react-dom@17.0.2+react@17.0.2:
+    resolution: {integrity: sha512-xxxEBLp8ddFwWRfgja+f6wHO1SxmfA6moskVLSJwY+P/Dg5iUIxEiahW52GS5UShO67S4wqemuqaPrk8SJeaVg==}
+    peerDependencies:
+      react: ^17.0.2
+      react-dom: ^17.0.2
     dependencies:
-      '@iteria-app/component-templates-api': 1.0.1
-      '@mui/icons-material': 5.2.5_f463eef15d59df5aa770d062739aa27b
-      '@mui/lab': 5.0.0-alpha.64_a2f6ee90597e1b9dcc8a8e674ab37aba
-      '@mui/material': 5.2.8_f5341c4d41f1e34c3a73251df9f98a19
-      '@mui/styles': 5.2.3_b08e3c15324cbe90a6ff8fcd416c932c
-      '@mui/x-data-grid': 5.2.2_@mui+material@5.2.8+react@17.0.2
-      '@types/react-intl': 3.0.0_react@17.0.2+typescript@4.5.4
-      '@uppy/aws-s3-multipart': 2.3.0_@uppy+core@2.2.0
-      '@uppy/core': 2.2.0
-      '@uppy/react': 2.2.0_@uppy+core@2.2.0+react@17.0.2
-      clsx: 1.1.1
-      formik: 2.2.9_react@17.0.2
-      graphql: 15.8.0
-      graphql-tag: 2.12.6_graphql@15.8.0
-      history: 5.2.0
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
-      react-intl: 5.24.2_react@17.0.2+typescript@4.5.4
-      react-router: 6.2.1_react@17.0.2
-      react-router-dom: 6.0.0-beta.8_7ff1ce7a6cb3b6853db516393b81cb00
-      urql: 2.1.3_graphql@15.8.0+react@17.0.2
-      uuid: 8.3.2
-    transitivePeerDependencies:
-      - '@emotion/react'
-      - '@emotion/styled'
-      - '@mui/system'
-      - '@types/react'
-      - date-fns
-      - dayjs
-      - luxon
-      - moment
-      - typescript
     dev: false
 
-  /@iteria-app/graphql-lowcode/0.2.3:
-    resolution: {integrity: sha512-SUC+9LPhV2meT/QVyYVfhUx2R+Mh73PL1ciw53rIuU+zL8v58YVWquaqz/FaY5vWxq86frPF7EHPKa2djTd+xQ==}
+  /@iteria-app/graphql-lowcode/0.2.6:
+    resolution: {integrity: sha512-LxMKuytzKf+pBxaN3cOXTj7imcWSXLbWWmxrC4n9mde/YbT2FjstRheuf3waeS7SOrRgbUcfBGHXHroZ239VQA==}
     dependencies:
-      '@iteria-app/component-templates-api': 1.0.0
-      graphql: 15.8.0
-      typescript: 4.5.4
+      uuid: 8.3.2
     dev: false
 
   /@iteria-app/vite-plugin-lowcode/0.1.6_vite@2.8.6:
@@ -1895,16 +1874,6 @@ packages:
     dependencies:
       '@types/react': 17.0.38
     dev: true
-
-  /@types/react-intl/3.0.0_react@17.0.2+typescript@4.5.4:
-    resolution: {integrity: sha512-k8F3d05XQGEqSWIfK97bBjZe4z9RruXU9Wa7OZ2iUC5pdeIpzuQDZe/9C2J3Xir5//ZtAkhcv08Wfx3n5TBTQg==}
-    deprecated: This is a stub types definition. react-intl provides its own type definitions, so you do not need this installed.
-    dependencies:
-      react-intl: 5.24.2_react@17.0.2+typescript@4.5.4
-    transitivePeerDependencies:
-      - react
-      - typescript
-    dev: false
 
   /@types/react-is/17.0.3:
     resolution: {integrity: sha512-aBTIWg1emtu95bLTLx0cpkxwGW3ueZv71nE2YFBpL8k/z5czEW8yYpOo8Dp+UUAFAtKwNaOsh/ioSeQnWlZcfw==}
@@ -4263,6 +4232,10 @@ packages:
       wcwidth: 1.0.1
     dev: true
 
+  /os-browserify/0.3.0:
+    resolution: {integrity: sha1-hUNzx/XCMVkU/Jv8a9gjj92h7Cc=}
+    dev: false
+
   /os-tmpdir/1.0.2:
     resolution: {integrity: sha1-u+Z0BseaqFxc/sdm/lc0VV36EnQ=}
     engines: {node: '>=0.10.0'}
@@ -4351,6 +4324,10 @@ packages:
       no-case: 3.0.4
       tslib: 2.3.1
     dev: true
+
+  /path-browserify/1.0.1:
+    resolution: {integrity: sha512-b7uo2UCUOYZcnF/3ID0lulOJi/bafxa1xPe7ZPsammBSpjSWQkjNxlt635YGS2MiR9GjvuXCtz2emr3jbsz98g==}
+    dev: false
 
   /path-case/3.0.4:
     resolution: {integrity: sha512-qO4qCFjXqVTrcbPt/hQfhTQ+VhFsqNKOPtytgNKkKxSoEp3XPUQ8ObFuePylOIok5gjn69ry8XiULxCwot3Wfg==}
@@ -5146,6 +5123,7 @@ packages:
     resolution: {integrity: sha512-VgYs2A2QIRuGphtzFV7aQJduJ2gyfTljngLzjpfW9FoYZF6xuw1W0vW9ghCKLfcWrCFxK81CSGRAvS1pn4fIUg==}
     engines: {node: '>=4.2.0'}
     hasBin: true
+    dev: true
 
   /ua-parser-js/0.7.31:
     resolution: {integrity: sha512-qLK/Xe9E2uzmYI3qLeOmI0tEOt+TBBQyUIAh4aAgU05FVYzeZrKUdkAZfBNVGRaHVgV0TDkdEngJSw/SyQchkQ==}

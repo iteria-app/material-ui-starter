@@ -1,5 +1,4 @@
-import { o as oldVisit } from "./index.js";
-import { isEnumType, concatAST, Kind, isNonNullType } from "https://esm.sh/graphql@15.7.2";
+import { i as isEnumType, c7 as concatAST, K as Kind, o as oldVisit, B as isNonNullType } from "./index.js";
 import { b as BaseDocumentsVisitor, g as getConfigValue, n as normalizeAvoidOptionals, a as autoBind, c as wrapTypeWithModifiers, S as SelectionSetToObject, d as generateFragmentImportStatement, o as optimizeOperations, P as PreResolveTypesProcessor, e as BaseSelectionSetProcessor } from "./index3.js";
 import { TypeScriptOperationVariablesToObject as TypeScriptOperationVariablesToObject$1 } from "./index2.js";
 import "https://esm.sh/typescript";

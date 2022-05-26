@@ -3,9 +3,9 @@ import { BrowserRouter as Router } from 'react-router-dom'
 import App from './App'
 import {
   ErrorBoundary,
+  LocaleContextProvider,
+  ThemeContextProvider
 } from '@iteria-app/component-templates'
-import { LocaleContextProvider } from '@iteria-app/component-templates/src/i18n'
-import { ThemeContextProvider } from '@iteria-app/component-templates/src/theme/ThemeContext'
 
 ReactDOM.render(
   <ErrorBoundary>

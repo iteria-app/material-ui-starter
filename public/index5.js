@@ -1,5 +1,4 @@
-import { o as oldVisit, p as pathBrowserify } from "./index.js";
-import { Kind, concatAST } from "https://esm.sh/graphql@15.7.2";
+import { K as Kind, c7 as concatAST, o as oldVisit, ce as pathBrowserify } from "./index.js";
 import { C as ClientSideBaseVisitor, g as getConfigValue, f as DocumentMode, a as autoBind, h as OMIT_TYPE } from "./index3.js";
 import "https://esm.sh/typescript";
 class UrqlVisitor extends ClientSideBaseVisitor {

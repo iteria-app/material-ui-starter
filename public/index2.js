@@ -17,8 +17,7 @@ var __spreadValues = (a, b) => {
   return a;
 };
 var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
-import { r as removeFederation, g as getCachedDocumentNodeFromSchema, o as oldVisit } from "./index.js";
-import { parse, extendSchema, visit, buildASTSchema, Kind, isEnumType, GraphQLObjectType, TypeInfo, visitWithTypeInfo, getNamedType, isIntrospectionType, printIntrospectionSchema, isObjectType } from "https://esm.sh/graphql@15.7.2";
+import { r as removeFederation, p as parse, e as extendSchema, g as getCachedDocumentNodeFromSchema, v as visit, b as buildASTSchema, K as Kind, i as isEnumType, G as GraphQLObjectType, o as oldVisit, T as TypeInfo, a as printIntrospectionSchema, c as isObjectType, d as getNamedType, f as visitWithTypeInfo, h as isIntrospectionType } from "./index.js";
 import { O as OperationVariablesToObject, n as normalizeAvoidOptionals, B as BaseTypesVisitor, g as getConfigValue, a as autoBind, D as DeclarationBlock, i as indent, t as transformComment, w as wrapWithSingleQuotes } from "./index3.js";
 import "https://esm.sh/typescript";
 function transformSchemaAST(schema, config) {

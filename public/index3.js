@@ -29,8 +29,1784 @@ var __objRest = (source, exclude) => {
     }
   return target;
 };
-import require$$2, { parse as parse$2, visit, concatAST, Kind, isNonNullType, isListType, isEnumType, print as print$3, isObjectType, isInterfaceType, isTypeSubTypeOf, isUnionType, isScalarType, isAbstractType, SchemaMetaFieldDef as SchemaMetaFieldDef$1, TypeMetaFieldDef as TypeMetaFieldDef$1 } from "https://esm.sh/graphql@15.7.2";
-import { c as commonjsGlobal, p as pathBrowserify, _ as __assign, a as printSchemaWithDirectives, b as pascalCase, o as oldVisit, d as getBaseType, e as getRootTypes, D as DetailedError, f as removeNonNullWrapper, h as resolveExternalModuleAndFn } from "./index.js";
+import { j as GraphQLError$1, k as devAssert, l as assertValidSchema, m as isObjectLike, K as Kind, n as getVariableValues, q as addPath, s as getDirectiveValues, t as GraphQLSkipDirective, u as GraphQLIncludeDirective, w as typeFromAST, x as isAbstractType, y as getArgumentValues, z as locatedError, A as pathToArray, B as isNonNullType, C as isListType, D as isLeafType, c as isObjectType, E as invariant$9, F as inspect, H as safeArrayFrom, I as isNamedType, S as SchemaMetaFieldDef$1, J as TypeMetaFieldDef$1, L as TypeNameMetaFieldDef, M as validateSchema, p as parse$2, N as validate, O as SYMBOL_ASYNC_ITERATOR, d as getNamedType, P as isInputObjectType, h as isIntrospectionType, Q as getIntrospectionQuery, R as keyValMap, U as naturalCompare, V as GraphQLSchema, W as objectValues, X as GraphQLDirective, Y as isScalarType, G as GraphQLObjectType, Z as isInterfaceType, _ as GraphQLInterfaceType, $ as isUnionType, a0 as GraphQLUnionType, i as isEnumType, a1 as GraphQLEnumType, a2 as GraphQLInputObjectType, a3 as GraphQLList, a4 as GraphQLNonNull, v as visit, a5 as isSource, a6 as Source$1, a7 as Lexer, a8 as TokenKind, a9 as isPunctuatorTokenKind, aa as dedentBlockStringValue, ab as getBlockStringIndentation, ac as isRequiredArgument, ad as isSpecifiedScalarType, ae as isRequiredInputField, af as print$3, ag as astFromValue, ah as keyMap, ai as version, aj as versionInfo, ak as GraphQLScalarType, al as specifiedScalarTypes, am as GraphQLInt$1, an as GraphQLFloat$1, ao as GraphQLString$1, ap as GraphQLBoolean$1, aq as GraphQLID$1, ar as specifiedDirectives, as as GraphQLDeprecatedDirective, at as GraphQLSpecifiedByDirective, au as TypeKind, av as DEFAULT_DEPRECATION_REASON, aw as introspectionTypes, ax as __Schema, ay as __Directive, az as __DirectiveLocation, aA as __Type, aB as __Field, aC as __InputValue, aD as __EnumValue, aE as __TypeKind, aF as isSchema, aG as isDirective, aH as isType, aI as isInputType, aJ as isOutputType, aK as isCompositeType, aL as isWrappingType, aM as isNullableType, aN as isSpecifiedDirective, aO as assertSchema, aP as assertDirective, aQ as assertType, aR as assertScalarType, aS as assertObjectType, aT as assertInterfaceType, aU as assertUnionType, aV as assertEnumType, aW as assertInputObjectType, aX as assertListType, aY as assertNonNullType, aZ as assertInputType, a_ as assertOutputType, a$ as assertLeafType, b0 as assertCompositeType, b1 as assertAbstractType, b2 as assertWrappingType, b3 as assertNullableType, b4 as assertNamedType, b5 as getNullableType, b6 as Token, b7 as Location, b8 as getLocation$1, b9 as printLocation, ba as printSourceLocation, bb as parseValue, bc as parseType$2, bd as visitInParallel, be as getVisitFn, bf as BREAK, bg as DirectiveLocation, bh as isDefinitionNode, bi as isExecutableDefinitionNode, bj as isSelectionNode, bk as isValueNode, bl as isTypeNode, bm as isTypeSystemDefinitionNode, bn as isTypeDefinitionNode, bo as isTypeSystemExtensionNode, bp as isTypeExtensionNode, bq as ValidationContext, br as specifiedRules, bs as ExecutableDefinitionsRule, bt as FieldsOnCorrectTypeRule, bu as FragmentsOnCompositeTypesRule, bv as KnownArgumentNamesRule, bw as KnownDirectivesRule, bx as KnownFragmentNamesRule, by as KnownTypeNamesRule, bz as LoneAnonymousOperationRule, bA as NoFragmentCyclesRule, bB as NoUndefinedVariablesRule, bC as NoUnusedFragmentsRule, bD as NoUnusedVariablesRule, bE as OverlappingFieldsCanBeMergedRule, bF as PossibleFragmentSpreadsRule, bG as ProvidedRequiredArgumentsRule, bH as ScalarLeafsRule, bI as SingleFieldSubscriptionsRule, bJ as UniqueArgumentNamesRule, bK as UniqueDirectivesPerLocationRule, bL as UniqueFragmentNamesRule, bM as UniqueInputFieldNamesRule, bN as UniqueOperationNamesRule, bO as UniqueVariableNamesRule, bP as ValuesOfCorrectTypeRule, bQ as VariablesAreInputTypesRule, bR as VariablesInAllowedPositionRule, bS as LoneSchemaDefinitionRule, bT as UniqueOperationTypesRule, bU as UniqueTypeNamesRule, bV as UniqueEnumValueNamesRule, bW as UniqueFieldDefinitionNamesRule, bX as UniqueDirectiveNamesRule, bY as PossibleTypeExtensionsRule, bZ as syntaxError, b_ as printError, b$ as buildClientSchema, b as buildASTSchema, c0 as buildSchema, c1 as getDescription, e as extendSchema, c2 as printSchema, c3 as printType, a as printIntrospectionSchema, c4 as valueFromAST, c5 as valueFromASTUntyped$1, T as TypeInfo, f as visitWithTypeInfo, c6 as coerceInputValue, c7 as concatAST, c8 as isEqualType, c9 as isTypeSubTypeOf, ca as doTypesOverlap, cb as assertValidName, cc as isValidNameError, cd as commonjsGlobal, ce as pathBrowserify, cf as __assign, cg as getAugmentedNamespace, ch as printSchemaWithDirectives, ci as pascalCase, o as oldVisit, cj as getBaseType, ck as getRootTypes, cl as DetailedError, cm as removeNonNullWrapper, cn as resolveExternalModuleAndFn } from "./index.js";
+function isPromise(value) {
+  return typeof (value === null || value === void 0 ? void 0 : value.then) === "function";
+}
+function memoize3(fn) {
+  var cache0;
+  return function memoized(a1, a2, a3) {
+    if (!cache0) {
+      cache0 = /* @__PURE__ */ new WeakMap();
+    }
+    var cache1 = cache0.get(a1);
+    var cache2;
+    if (cache1) {
+      cache2 = cache1.get(a2);
+      if (cache2) {
+        var cachedValue = cache2.get(a3);
+        if (cachedValue !== void 0) {
+          return cachedValue;
+        }
+      }
+    } else {
+      cache1 = /* @__PURE__ */ new WeakMap();
+      cache0.set(a1, cache1);
+    }
+    if (!cache2) {
+      cache2 = /* @__PURE__ */ new WeakMap();
+      cache1.set(a2, cache2);
+    }
+    var newValue = fn(a1, a2, a3);
+    cache2.set(a3, newValue);
+    return newValue;
+  };
+}
+function promiseReduce(values, callback, initialValue) {
+  return values.reduce(function(previous, value) {
+    return isPromise(previous) ? previous.then(function(resolved) {
+      return callback(resolved, value);
+    }) : callback(previous, value);
+  }, initialValue);
+}
+function promiseForObject(object) {
+  var keys = Object.keys(object);
+  var valuesAndPromises = keys.map(function(name) {
+    return object[name];
+  });
+  return Promise.all(valuesAndPromises).then(function(values) {
+    return values.reduce(function(resolvedObject, value, i) {
+      resolvedObject[keys[i]] = value;
+      return resolvedObject;
+    }, /* @__PURE__ */ Object.create(null));
+  });
+}
+function getOperationRootType(schema, operation) {
+  if (operation.operation === "query") {
+    var queryType = schema.getQueryType();
+    if (!queryType) {
+      throw new GraphQLError$1("Schema does not define the required query root type.", operation);
+    }
+    return queryType;
+  }
+  if (operation.operation === "mutation") {
+    var mutationType = schema.getMutationType();
+    if (!mutationType) {
+      throw new GraphQLError$1("Schema is not configured for mutations.", operation);
+    }
+    return mutationType;
+  }
+  if (operation.operation === "subscription") {
+    var subscriptionType = schema.getSubscriptionType();
+    if (!subscriptionType) {
+      throw new GraphQLError$1("Schema is not configured for subscriptions.", operation);
+    }
+    return subscriptionType;
+  }
+  throw new GraphQLError$1("Can only have query, mutation and subscription operations.", operation);
+}
+function execute(argsOrSchema, document, rootValue, contextValue, variableValues, operationName, fieldResolver, typeResolver) {
+  return arguments.length === 1 ? executeImpl(argsOrSchema) : executeImpl({
+    schema: argsOrSchema,
+    document,
+    rootValue,
+    contextValue,
+    variableValues,
+    operationName,
+    fieldResolver,
+    typeResolver
+  });
+}
+function executeSync(args) {
+  var result = executeImpl(args);
+  if (isPromise(result)) {
+    throw new Error("GraphQL execution failed to complete synchronously.");
+  }
+  return result;
+}
+function executeImpl(args) {
+  var schema = args.schema, document = args.document, rootValue = args.rootValue, contextValue = args.contextValue, variableValues = args.variableValues, operationName = args.operationName, fieldResolver = args.fieldResolver, typeResolver = args.typeResolver;
+  assertValidExecutionArguments(schema, document, variableValues);
+  var exeContext = buildExecutionContext(schema, document, rootValue, contextValue, variableValues, operationName, fieldResolver, typeResolver);
+  if (Array.isArray(exeContext)) {
+    return {
+      errors: exeContext
+    };
+  }
+  var data = executeOperation(exeContext, exeContext.operation, rootValue);
+  return buildResponse(exeContext, data);
+}
+function buildResponse(exeContext, data) {
+  if (isPromise(data)) {
+    return data.then(function(resolved) {
+      return buildResponse(exeContext, resolved);
+    });
+  }
+  return exeContext.errors.length === 0 ? {
+    data
+  } : {
+    errors: exeContext.errors,
+    data
+  };
+}
+function assertValidExecutionArguments(schema, document, rawVariableValues) {
+  document || devAssert(0, "Must provide document.");
+  assertValidSchema(schema);
+  rawVariableValues == null || isObjectLike(rawVariableValues) || devAssert(0, "Variables must be provided as an Object where each property is a variable value. Perhaps look to see if an unparsed JSON string was provided.");
+}
+function buildExecutionContext(schema, document, rootValue, contextValue, rawVariableValues, operationName, fieldResolver, typeResolver) {
+  var _definition$name, _operation$variableDe;
+  var operation;
+  var fragments = /* @__PURE__ */ Object.create(null);
+  for (var _i2 = 0, _document$definitions2 = document.definitions; _i2 < _document$definitions2.length; _i2++) {
+    var definition = _document$definitions2[_i2];
+    switch (definition.kind) {
+      case Kind.OPERATION_DEFINITION:
+        if (operationName == null) {
+          if (operation !== void 0) {
+            return [new GraphQLError$1("Must provide operation name if query contains multiple operations.")];
+          }
+          operation = definition;
+        } else if (((_definition$name = definition.name) === null || _definition$name === void 0 ? void 0 : _definition$name.value) === operationName) {
+          operation = definition;
+        }
+        break;
+      case Kind.FRAGMENT_DEFINITION:
+        fragments[definition.name.value] = definition;
+        break;
+    }
+  }
+  if (!operation) {
+    if (operationName != null) {
+      return [new GraphQLError$1('Unknown operation named "'.concat(operationName, '".'))];
+    }
+    return [new GraphQLError$1("Must provide an operation.")];
+  }
+  var variableDefinitions = (_operation$variableDe = operation.variableDefinitions) !== null && _operation$variableDe !== void 0 ? _operation$variableDe : [];
+  var coercedVariableValues = getVariableValues(schema, variableDefinitions, rawVariableValues !== null && rawVariableValues !== void 0 ? rawVariableValues : {}, {
+    maxErrors: 50
+  });
+  if (coercedVariableValues.errors) {
+    return coercedVariableValues.errors;
+  }
+  return {
+    schema,
+    fragments,
+    rootValue,
+    contextValue,
+    operation,
+    variableValues: coercedVariableValues.coerced,
+    fieldResolver: fieldResolver !== null && fieldResolver !== void 0 ? fieldResolver : defaultFieldResolver,
+    typeResolver: typeResolver !== null && typeResolver !== void 0 ? typeResolver : defaultTypeResolver,
+    errors: []
+  };
+}
+function executeOperation(exeContext, operation, rootValue) {
+  var type = getOperationRootType(exeContext.schema, operation);
+  var fields = collectFields(exeContext, type, operation.selectionSet, /* @__PURE__ */ Object.create(null), /* @__PURE__ */ Object.create(null));
+  var path2 = void 0;
+  try {
+    var result = operation.operation === "mutation" ? executeFieldsSerially(exeContext, type, rootValue, path2, fields) : executeFields(exeContext, type, rootValue, path2, fields);
+    if (isPromise(result)) {
+      return result.then(void 0, function(error) {
+        exeContext.errors.push(error);
+        return Promise.resolve(null);
+      });
+    }
+    return result;
+  } catch (error) {
+    exeContext.errors.push(error);
+    return null;
+  }
+}
+function executeFieldsSerially(exeContext, parentType, sourceValue, path2, fields) {
+  return promiseReduce(Object.keys(fields), function(results, responseName) {
+    var fieldNodes = fields[responseName];
+    var fieldPath = addPath(path2, responseName, parentType.name);
+    var result = resolveField(exeContext, parentType, sourceValue, fieldNodes, fieldPath);
+    if (result === void 0) {
+      return results;
+    }
+    if (isPromise(result)) {
+      return result.then(function(resolvedResult) {
+        results[responseName] = resolvedResult;
+        return results;
+      });
+    }
+    results[responseName] = result;
+    return results;
+  }, /* @__PURE__ */ Object.create(null));
+}
+function executeFields(exeContext, parentType, sourceValue, path2, fields) {
+  var results = /* @__PURE__ */ Object.create(null);
+  var containsPromise = false;
+  for (var _i4 = 0, _Object$keys2 = Object.keys(fields); _i4 < _Object$keys2.length; _i4++) {
+    var responseName = _Object$keys2[_i4];
+    var fieldNodes = fields[responseName];
+    var fieldPath = addPath(path2, responseName, parentType.name);
+    var result = resolveField(exeContext, parentType, sourceValue, fieldNodes, fieldPath);
+    if (result !== void 0) {
+      results[responseName] = result;
+      if (isPromise(result)) {
+        containsPromise = true;
+      }
+    }
+  }
+  if (!containsPromise) {
+    return results;
+  }
+  return promiseForObject(results);
+}
+function collectFields(exeContext, runtimeType, selectionSet, fields, visitedFragmentNames) {
+  for (var _i6 = 0, _selectionSet$selecti2 = selectionSet.selections; _i6 < _selectionSet$selecti2.length; _i6++) {
+    var selection = _selectionSet$selecti2[_i6];
+    switch (selection.kind) {
+      case Kind.FIELD: {
+        if (!shouldIncludeNode(exeContext, selection)) {
+          continue;
+        }
+        var name = getFieldEntryKey(selection);
+        if (!fields[name]) {
+          fields[name] = [];
+        }
+        fields[name].push(selection);
+        break;
+      }
+      case Kind.INLINE_FRAGMENT: {
+        if (!shouldIncludeNode(exeContext, selection) || !doesFragmentConditionMatch(exeContext, selection, runtimeType)) {
+          continue;
+        }
+        collectFields(exeContext, runtimeType, selection.selectionSet, fields, visitedFragmentNames);
+        break;
+      }
+      case Kind.FRAGMENT_SPREAD: {
+        var fragName = selection.name.value;
+        if (visitedFragmentNames[fragName] || !shouldIncludeNode(exeContext, selection)) {
+          continue;
+        }
+        visitedFragmentNames[fragName] = true;
+        var fragment = exeContext.fragments[fragName];
+        if (!fragment || !doesFragmentConditionMatch(exeContext, fragment, runtimeType)) {
+          continue;
+        }
+        collectFields(exeContext, runtimeType, fragment.selectionSet, fields, visitedFragmentNames);
+        break;
+      }
+    }
+  }
+  return fields;
+}
+function shouldIncludeNode(exeContext, node) {
+  var skip = getDirectiveValues(GraphQLSkipDirective, node, exeContext.variableValues);
+  if ((skip === null || skip === void 0 ? void 0 : skip.if) === true) {
+    return false;
+  }
+  var include = getDirectiveValues(GraphQLIncludeDirective, node, exeContext.variableValues);
+  if ((include === null || include === void 0 ? void 0 : include.if) === false) {
+    return false;
+  }
+  return true;
+}
+function doesFragmentConditionMatch(exeContext, fragment, type) {
+  var typeConditionNode = fragment.typeCondition;
+  if (!typeConditionNode) {
+    return true;
+  }
+  var conditionalType = typeFromAST(exeContext.schema, typeConditionNode);
+  if (conditionalType === type) {
+    return true;
+  }
+  if (isAbstractType(conditionalType)) {
+    return exeContext.schema.isSubType(conditionalType, type);
+  }
+  return false;
+}
+function getFieldEntryKey(node) {
+  return node.alias ? node.alias.value : node.name.value;
+}
+function resolveField(exeContext, parentType, source, fieldNodes, path2) {
+  var _fieldDef$resolve;
+  var fieldNode = fieldNodes[0];
+  var fieldName = fieldNode.name.value;
+  var fieldDef = getFieldDef(exeContext.schema, parentType, fieldName);
+  if (!fieldDef) {
+    return;
+  }
+  var returnType = fieldDef.type;
+  var resolveFn = (_fieldDef$resolve = fieldDef.resolve) !== null && _fieldDef$resolve !== void 0 ? _fieldDef$resolve : exeContext.fieldResolver;
+  var info = buildResolveInfo(exeContext, fieldDef, fieldNodes, parentType, path2);
+  try {
+    var args = getArgumentValues(fieldDef, fieldNodes[0], exeContext.variableValues);
+    var _contextValue = exeContext.contextValue;
+    var result = resolveFn(source, args, _contextValue, info);
+    var completed;
+    if (isPromise(result)) {
+      completed = result.then(function(resolved) {
+        return completeValue(exeContext, returnType, fieldNodes, info, path2, resolved);
+      });
+    } else {
+      completed = completeValue(exeContext, returnType, fieldNodes, info, path2, result);
+    }
+    if (isPromise(completed)) {
+      return completed.then(void 0, function(rawError) {
+        var error2 = locatedError(rawError, fieldNodes, pathToArray(path2));
+        return handleFieldError(error2, returnType, exeContext);
+      });
+    }
+    return completed;
+  } catch (rawError) {
+    var error = locatedError(rawError, fieldNodes, pathToArray(path2));
+    return handleFieldError(error, returnType, exeContext);
+  }
+}
+function buildResolveInfo(exeContext, fieldDef, fieldNodes, parentType, path2) {
+  return {
+    fieldName: fieldDef.name,
+    fieldNodes,
+    returnType: fieldDef.type,
+    parentType,
+    path: path2,
+    schema: exeContext.schema,
+    fragments: exeContext.fragments,
+    rootValue: exeContext.rootValue,
+    operation: exeContext.operation,
+    variableValues: exeContext.variableValues
+  };
+}
+function handleFieldError(error, returnType, exeContext) {
+  if (isNonNullType(returnType)) {
+    throw error;
+  }
+  exeContext.errors.push(error);
+  return null;
+}
+function completeValue(exeContext, returnType, fieldNodes, info, path2, result) {
+  if (result instanceof Error) {
+    throw result;
+  }
+  if (isNonNullType(returnType)) {
+    var completed = completeValue(exeContext, returnType.ofType, fieldNodes, info, path2, result);
+    if (completed === null) {
+      throw new Error("Cannot return null for non-nullable field ".concat(info.parentType.name, ".").concat(info.fieldName, "."));
+    }
+    return completed;
+  }
+  if (result == null) {
+    return null;
+  }
+  if (isListType(returnType)) {
+    return completeListValue(exeContext, returnType, fieldNodes, info, path2, result);
+  }
+  if (isLeafType(returnType)) {
+    return completeLeafValue(returnType, result);
+  }
+  if (isAbstractType(returnType)) {
+    return completeAbstractValue(exeContext, returnType, fieldNodes, info, path2, result);
+  }
+  if (isObjectType(returnType)) {
+    return completeObjectValue(exeContext, returnType, fieldNodes, info, path2, result);
+  }
+  invariant$9(0, "Cannot complete value of unexpected output type: " + inspect(returnType));
+}
+function completeListValue(exeContext, returnType, fieldNodes, info, path2, result) {
+  var itemType = returnType.ofType;
+  var containsPromise = false;
+  var completedResults = safeArrayFrom(result, function(item, index) {
+    var itemPath = addPath(path2, index, void 0);
+    try {
+      var completedItem;
+      if (isPromise(item)) {
+        completedItem = item.then(function(resolved) {
+          return completeValue(exeContext, itemType, fieldNodes, info, itemPath, resolved);
+        });
+      } else {
+        completedItem = completeValue(exeContext, itemType, fieldNodes, info, itemPath, item);
+      }
+      if (isPromise(completedItem)) {
+        containsPromise = true;
+        return completedItem.then(void 0, function(rawError) {
+          var error2 = locatedError(rawError, fieldNodes, pathToArray(itemPath));
+          return handleFieldError(error2, itemType, exeContext);
+        });
+      }
+      return completedItem;
+    } catch (rawError) {
+      var error = locatedError(rawError, fieldNodes, pathToArray(itemPath));
+      return handleFieldError(error, itemType, exeContext);
+    }
+  });
+  if (completedResults == null) {
+    throw new GraphQLError$1('Expected Iterable, but did not find one for field "'.concat(info.parentType.name, ".").concat(info.fieldName, '".'));
+  }
+  return containsPromise ? Promise.all(completedResults) : completedResults;
+}
+function completeLeafValue(returnType, result) {
+  var serializedResult = returnType.serialize(result);
+  if (serializedResult === void 0) {
+    throw new Error('Expected a value of type "'.concat(inspect(returnType), '" but ') + "received: ".concat(inspect(result)));
+  }
+  return serializedResult;
+}
+function completeAbstractValue(exeContext, returnType, fieldNodes, info, path2, result) {
+  var _returnType$resolveTy;
+  var resolveTypeFn = (_returnType$resolveTy = returnType.resolveType) !== null && _returnType$resolveTy !== void 0 ? _returnType$resolveTy : exeContext.typeResolver;
+  var contextValue = exeContext.contextValue;
+  var runtimeType = resolveTypeFn(result, contextValue, info, returnType);
+  if (isPromise(runtimeType)) {
+    return runtimeType.then(function(resolvedRuntimeType) {
+      return completeObjectValue(exeContext, ensureValidRuntimeType(resolvedRuntimeType, exeContext, returnType, fieldNodes, info, result), fieldNodes, info, path2, result);
+    });
+  }
+  return completeObjectValue(exeContext, ensureValidRuntimeType(runtimeType, exeContext, returnType, fieldNodes, info, result), fieldNodes, info, path2, result);
+}
+function ensureValidRuntimeType(runtimeTypeOrName, exeContext, returnType, fieldNodes, info, result) {
+  if (runtimeTypeOrName == null) {
+    throw new GraphQLError$1('Abstract type "'.concat(returnType.name, '" must resolve to an Object type at runtime for field "').concat(info.parentType.name, ".").concat(info.fieldName, '". Either the "').concat(returnType.name, '" type should provide a "resolveType" function or each possible type should provide an "isTypeOf" function.'), fieldNodes);
+  }
+  var runtimeTypeName = isNamedType(runtimeTypeOrName) ? runtimeTypeOrName.name : runtimeTypeOrName;
+  if (typeof runtimeTypeName !== "string") {
+    throw new GraphQLError$1('Abstract type "'.concat(returnType.name, '" must resolve to an Object type at runtime for field "').concat(info.parentType.name, ".").concat(info.fieldName, '" with ') + "value ".concat(inspect(result), ', received "').concat(inspect(runtimeTypeOrName), '".'));
+  }
+  var runtimeType = exeContext.schema.getType(runtimeTypeName);
+  if (runtimeType == null) {
+    throw new GraphQLError$1('Abstract type "'.concat(returnType.name, '" was resolve to a type "').concat(runtimeTypeName, '" that does not exist inside schema.'), fieldNodes);
+  }
+  if (!isObjectType(runtimeType)) {
+    throw new GraphQLError$1('Abstract type "'.concat(returnType.name, '" was resolve to a non-object type "').concat(runtimeTypeName, '".'), fieldNodes);
+  }
+  if (!exeContext.schema.isSubType(returnType, runtimeType)) {
+    throw new GraphQLError$1('Runtime Object type "'.concat(runtimeType.name, '" is not a possible type for "').concat(returnType.name, '".'), fieldNodes);
+  }
+  return runtimeType;
+}
+function completeObjectValue(exeContext, returnType, fieldNodes, info, path2, result) {
+  if (returnType.isTypeOf) {
+    var isTypeOf = returnType.isTypeOf(result, exeContext.contextValue, info);
+    if (isPromise(isTypeOf)) {
+      return isTypeOf.then(function(resolvedIsTypeOf) {
+        if (!resolvedIsTypeOf) {
+          throw invalidReturnTypeError(returnType, result, fieldNodes);
+        }
+        return collectAndExecuteSubfields(exeContext, returnType, fieldNodes, path2, result);
+      });
+    }
+    if (!isTypeOf) {
+      throw invalidReturnTypeError(returnType, result, fieldNodes);
+    }
+  }
+  return collectAndExecuteSubfields(exeContext, returnType, fieldNodes, path2, result);
+}
+function invalidReturnTypeError(returnType, result, fieldNodes) {
+  return new GraphQLError$1('Expected value of type "'.concat(returnType.name, '" but got: ').concat(inspect(result), "."), fieldNodes);
+}
+function collectAndExecuteSubfields(exeContext, returnType, fieldNodes, path2, result) {
+  var subFieldNodes = collectSubfields(exeContext, returnType, fieldNodes);
+  return executeFields(exeContext, returnType, result, path2, subFieldNodes);
+}
+var collectSubfields = memoize3(_collectSubfields);
+function _collectSubfields(exeContext, returnType, fieldNodes) {
+  var subFieldNodes = /* @__PURE__ */ Object.create(null);
+  var visitedFragmentNames = /* @__PURE__ */ Object.create(null);
+  for (var _i8 = 0; _i8 < fieldNodes.length; _i8++) {
+    var node = fieldNodes[_i8];
+    if (node.selectionSet) {
+      subFieldNodes = collectFields(exeContext, returnType, node.selectionSet, subFieldNodes, visitedFragmentNames);
+    }
+  }
+  return subFieldNodes;
+}
+var defaultTypeResolver = function defaultTypeResolver2(value, contextValue, info, abstractType) {
+  if (isObjectLike(value) && typeof value.__typename === "string") {
+    return value.__typename;
+  }
+  var possibleTypes = info.schema.getPossibleTypes(abstractType);
+  var promisedIsTypeOfResults = [];
+  for (var i = 0; i < possibleTypes.length; i++) {
+    var type = possibleTypes[i];
+    if (type.isTypeOf) {
+      var isTypeOfResult = type.isTypeOf(value, contextValue, info);
+      if (isPromise(isTypeOfResult)) {
+        promisedIsTypeOfResults[i] = isTypeOfResult;
+      } else if (isTypeOfResult) {
+        return type.name;
+      }
+    }
+  }
+  if (promisedIsTypeOfResults.length) {
+    return Promise.all(promisedIsTypeOfResults).then(function(isTypeOfResults) {
+      for (var _i9 = 0; _i9 < isTypeOfResults.length; _i9++) {
+        if (isTypeOfResults[_i9]) {
+          return possibleTypes[_i9].name;
+        }
+      }
+    });
+  }
+};
+var defaultFieldResolver = function defaultFieldResolver2(source, args, contextValue, info) {
+  if (isObjectLike(source) || typeof source === "function") {
+    var property = source[info.fieldName];
+    if (typeof property === "function") {
+      return source[info.fieldName](args, contextValue, info);
+    }
+    return property;
+  }
+};
+function getFieldDef(schema, parentType, fieldName) {
+  if (fieldName === SchemaMetaFieldDef$1.name && schema.getQueryType() === parentType) {
+    return SchemaMetaFieldDef$1;
+  } else if (fieldName === TypeMetaFieldDef$1.name && schema.getQueryType() === parentType) {
+    return TypeMetaFieldDef$1;
+  } else if (fieldName === TypeNameMetaFieldDef.name) {
+    return TypeNameMetaFieldDef;
+  }
+  return parentType.getFields()[fieldName];
+}
+function graphql$1(argsOrSchema, source, rootValue, contextValue, variableValues, operationName, fieldResolver, typeResolver) {
+  var _arguments = arguments;
+  return new Promise(function(resolve) {
+    return resolve(_arguments.length === 1 ? graphqlImpl(argsOrSchema) : graphqlImpl({
+      schema: argsOrSchema,
+      source,
+      rootValue,
+      contextValue,
+      variableValues,
+      operationName,
+      fieldResolver,
+      typeResolver
+    }));
+  });
+}
+function graphqlSync(argsOrSchema, source, rootValue, contextValue, variableValues, operationName, fieldResolver, typeResolver) {
+  var result = arguments.length === 1 ? graphqlImpl(argsOrSchema) : graphqlImpl({
+    schema: argsOrSchema,
+    source,
+    rootValue,
+    contextValue,
+    variableValues,
+    operationName,
+    fieldResolver,
+    typeResolver
+  });
+  if (isPromise(result)) {
+    throw new Error("GraphQL execution failed to complete synchronously.");
+  }
+  return result;
+}
+function graphqlImpl(args) {
+  var schema = args.schema, source = args.source, rootValue = args.rootValue, contextValue = args.contextValue, variableValues = args.variableValues, operationName = args.operationName, fieldResolver = args.fieldResolver, typeResolver = args.typeResolver;
+  var schemaValidationErrors = validateSchema(schema);
+  if (schemaValidationErrors.length > 0) {
+    return {
+      errors: schemaValidationErrors
+    };
+  }
+  var document;
+  try {
+    document = parse$2(source);
+  } catch (syntaxError2) {
+    return {
+      errors: [syntaxError2]
+    };
+  }
+  var validationErrors = validate(schema, document);
+  if (validationErrors.length > 0) {
+    return {
+      errors: validationErrors
+    };
+  }
+  return execute({
+    schema,
+    document,
+    rootValue,
+    contextValue,
+    variableValues,
+    operationName,
+    fieldResolver,
+    typeResolver
+  });
+}
+function isAsyncIterable(maybeAsyncIterable) {
+  return typeof (maybeAsyncIterable === null || maybeAsyncIterable === void 0 ? void 0 : maybeAsyncIterable[SYMBOL_ASYNC_ITERATOR]) === "function";
+}
+function _defineProperty$3(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, { value, enumerable: true, configurable: true, writable: true });
+  } else {
+    obj[key] = value;
+  }
+  return obj;
+}
+function mapAsyncIterator(iterable, callback, rejectCallback) {
+  var iteratorMethod = iterable[SYMBOL_ASYNC_ITERATOR];
+  var iterator = iteratorMethod.call(iterable);
+  var $return;
+  var abruptClose;
+  if (typeof iterator.return === "function") {
+    $return = iterator.return;
+    abruptClose = function abruptClose2(error) {
+      var rethrow = function rethrow2() {
+        return Promise.reject(error);
+      };
+      return $return.call(iterator).then(rethrow, rethrow);
+    };
+  }
+  function mapResult(result) {
+    return result.done ? result : asyncMapValue(result.value, callback).then(iteratorResult, abruptClose);
+  }
+  var mapReject;
+  if (rejectCallback) {
+    var reject = rejectCallback;
+    mapReject = function mapReject2(error) {
+      return asyncMapValue(error, reject).then(iteratorResult, abruptClose);
+    };
+  }
+  return _defineProperty$3({
+    next: function next() {
+      return iterator.next().then(mapResult, mapReject);
+    },
+    return: function _return() {
+      return $return ? $return.call(iterator).then(mapResult, mapReject) : Promise.resolve({
+        value: void 0,
+        done: true
+      });
+    },
+    throw: function _throw(error) {
+      if (typeof iterator.throw === "function") {
+        return iterator.throw(error).then(mapResult, mapReject);
+      }
+      return Promise.reject(error).catch(abruptClose);
+    }
+  }, SYMBOL_ASYNC_ITERATOR, function() {
+    return this;
+  });
+}
+function asyncMapValue(value, callback) {
+  return new Promise(function(resolve) {
+    return resolve(callback(value));
+  });
+}
+function iteratorResult(value) {
+  return {
+    value,
+    done: false
+  };
+}
+function subscribe(argsOrSchema, document, rootValue, contextValue, variableValues, operationName, fieldResolver, subscribeFieldResolver) {
+  return arguments.length === 1 ? subscribeImpl(argsOrSchema) : subscribeImpl({
+    schema: argsOrSchema,
+    document,
+    rootValue,
+    contextValue,
+    variableValues,
+    operationName,
+    fieldResolver,
+    subscribeFieldResolver
+  });
+}
+function reportGraphQLError(error) {
+  if (error instanceof GraphQLError$1) {
+    return {
+      errors: [error]
+    };
+  }
+  throw error;
+}
+function subscribeImpl(args) {
+  var schema = args.schema, document = args.document, rootValue = args.rootValue, contextValue = args.contextValue, variableValues = args.variableValues, operationName = args.operationName, fieldResolver = args.fieldResolver, subscribeFieldResolver = args.subscribeFieldResolver;
+  var sourcePromise = createSourceEventStream(schema, document, rootValue, contextValue, variableValues, operationName, subscribeFieldResolver);
+  var mapSourceToResponse = function mapSourceToResponse2(payload) {
+    return execute({
+      schema,
+      document,
+      rootValue: payload,
+      contextValue,
+      variableValues,
+      operationName,
+      fieldResolver
+    });
+  };
+  return sourcePromise.then(function(resultOrStream) {
+    return isAsyncIterable(resultOrStream) ? mapAsyncIterator(resultOrStream, mapSourceToResponse, reportGraphQLError) : resultOrStream;
+  });
+}
+function createSourceEventStream(schema, document, rootValue, contextValue, variableValues, operationName, fieldResolver) {
+  assertValidExecutionArguments(schema, document, variableValues);
+  return new Promise(function(resolve) {
+    var exeContext = buildExecutionContext(schema, document, rootValue, contextValue, variableValues, operationName, fieldResolver);
+    resolve(Array.isArray(exeContext) ? {
+      errors: exeContext
+    } : executeSubscription(exeContext));
+  }).catch(reportGraphQLError);
+}
+function executeSubscription(exeContext) {
+  var schema = exeContext.schema, operation = exeContext.operation, variableValues = exeContext.variableValues, rootValue = exeContext.rootValue;
+  var type = getOperationRootType(schema, operation);
+  var fields = collectFields(exeContext, type, operation.selectionSet, /* @__PURE__ */ Object.create(null), /* @__PURE__ */ Object.create(null));
+  var responseNames = Object.keys(fields);
+  var responseName = responseNames[0];
+  var fieldNodes = fields[responseName];
+  var fieldNode = fieldNodes[0];
+  var fieldName = fieldNode.name.value;
+  var fieldDef = getFieldDef(schema, type, fieldName);
+  if (!fieldDef) {
+    throw new GraphQLError$1('The subscription field "'.concat(fieldName, '" is not defined.'), fieldNodes);
+  }
+  var path2 = addPath(void 0, responseName, type.name);
+  var info = buildResolveInfo(exeContext, fieldDef, fieldNodes, type, path2);
+  return new Promise(function(resolveResult) {
+    var _fieldDef$subscribe;
+    var args = getArgumentValues(fieldDef, fieldNodes[0], variableValues);
+    var contextValue = exeContext.contextValue;
+    var resolveFn = (_fieldDef$subscribe = fieldDef.subscribe) !== null && _fieldDef$subscribe !== void 0 ? _fieldDef$subscribe : exeContext.fieldResolver;
+    resolveResult(resolveFn(rootValue, args, contextValue, info));
+  }).then(function(eventStream) {
+    if (eventStream instanceof Error) {
+      throw locatedError(eventStream, fieldNodes, pathToArray(path2));
+    }
+    if (!isAsyncIterable(eventStream)) {
+      throw new Error("Subscription field must return Async Iterable. " + "Received: ".concat(inspect(eventStream), "."));
+    }
+    return eventStream;
+  }, function(error) {
+    throw locatedError(error, fieldNodes, pathToArray(path2));
+  });
+}
+function NoDeprecatedCustomRule(context) {
+  return {
+    Field: function Field3(node) {
+      var fieldDef = context.getFieldDef();
+      var deprecationReason = fieldDef === null || fieldDef === void 0 ? void 0 : fieldDef.deprecationReason;
+      if (fieldDef && deprecationReason != null) {
+        var parentType = context.getParentType();
+        parentType != null || invariant$9(0);
+        context.reportError(new GraphQLError$1("The field ".concat(parentType.name, ".").concat(fieldDef.name, " is deprecated. ").concat(deprecationReason), node));
+      }
+    },
+    Argument: function Argument(node) {
+      var argDef = context.getArgument();
+      var deprecationReason = argDef === null || argDef === void 0 ? void 0 : argDef.deprecationReason;
+      if (argDef && deprecationReason != null) {
+        var directiveDef = context.getDirective();
+        if (directiveDef != null) {
+          context.reportError(new GraphQLError$1('Directive "@'.concat(directiveDef.name, '" argument "').concat(argDef.name, '" is deprecated. ').concat(deprecationReason), node));
+        } else {
+          var parentType = context.getParentType();
+          var fieldDef = context.getFieldDef();
+          parentType != null && fieldDef != null || invariant$9(0);
+          context.reportError(new GraphQLError$1('Field "'.concat(parentType.name, ".").concat(fieldDef.name, '" argument "').concat(argDef.name, '" is deprecated. ').concat(deprecationReason), node));
+        }
+      }
+    },
+    ObjectField: function ObjectField(node) {
+      var inputObjectDef = getNamedType(context.getParentInputType());
+      if (isInputObjectType(inputObjectDef)) {
+        var inputFieldDef = inputObjectDef.getFields()[node.name.value];
+        var deprecationReason = inputFieldDef === null || inputFieldDef === void 0 ? void 0 : inputFieldDef.deprecationReason;
+        if (deprecationReason != null) {
+          context.reportError(new GraphQLError$1("The input field ".concat(inputObjectDef.name, ".").concat(inputFieldDef.name, " is deprecated. ").concat(deprecationReason), node));
+        }
+      }
+    },
+    EnumValue: function EnumValue(node) {
+      var enumValueDef = context.getEnumValue();
+      var deprecationReason = enumValueDef === null || enumValueDef === void 0 ? void 0 : enumValueDef.deprecationReason;
+      if (enumValueDef && deprecationReason != null) {
+        var enumTypeDef = getNamedType(context.getInputType());
+        enumTypeDef != null || invariant$9(0);
+        context.reportError(new GraphQLError$1('The enum value "'.concat(enumTypeDef.name, ".").concat(enumValueDef.name, '" is deprecated. ').concat(deprecationReason), node));
+      }
+    }
+  };
+}
+function NoSchemaIntrospectionCustomRule(context) {
+  return {
+    Field: function Field3(node) {
+      var type = getNamedType(context.getType());
+      if (type && isIntrospectionType(type)) {
+        context.reportError(new GraphQLError$1('GraphQL introspection has been disabled, but the requested query contained the field "'.concat(node.name.value, '".'), node));
+      }
+    }
+  };
+}
+function formatError(error) {
+  var _error$message;
+  error || devAssert(0, "Received null or undefined error.");
+  var message = (_error$message = error.message) !== null && _error$message !== void 0 ? _error$message : "An unknown error occurred.";
+  var locations = error.locations;
+  var path2 = error.path;
+  var extensions = error.extensions;
+  return extensions && Object.keys(extensions).length > 0 ? {
+    message,
+    locations,
+    path: path2,
+    extensions
+  } : {
+    message,
+    locations,
+    path: path2
+  };
+}
+function getOperationAST(documentAST, operationName) {
+  var operation = null;
+  for (var _i2 = 0, _documentAST$definiti2 = documentAST.definitions; _i2 < _documentAST$definiti2.length; _i2++) {
+    var definition = _documentAST$definiti2[_i2];
+    if (definition.kind === Kind.OPERATION_DEFINITION) {
+      var _definition$name;
+      if (operationName == null) {
+        if (operation) {
+          return null;
+        }
+        operation = definition;
+      } else if (((_definition$name = definition.name) === null || _definition$name === void 0 ? void 0 : _definition$name.value) === operationName) {
+        return definition;
+      }
+    }
+  }
+  return operation;
+}
+function ownKeys$2(object, enumerableOnly) {
+  var keys = Object.keys(object);
+  if (Object.getOwnPropertySymbols) {
+    var symbols = Object.getOwnPropertySymbols(object);
+    if (enumerableOnly)
+      symbols = symbols.filter(function(sym) {
+        return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+      });
+    keys.push.apply(keys, symbols);
+  }
+  return keys;
+}
+function _objectSpread$2(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+    if (i % 2) {
+      ownKeys$2(Object(source), true).forEach(function(key) {
+        _defineProperty$2(target, key, source[key]);
+      });
+    } else if (Object.getOwnPropertyDescriptors) {
+      Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+    } else {
+      ownKeys$2(Object(source)).forEach(function(key) {
+        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+      });
+    }
+  }
+  return target;
+}
+function _defineProperty$2(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, { value, enumerable: true, configurable: true, writable: true });
+  } else {
+    obj[key] = value;
+  }
+  return obj;
+}
+function introspectionFromSchema(schema, options) {
+  var optionsWithDefaults = _objectSpread$2({
+    specifiedByUrl: true,
+    directiveIsRepeatable: true,
+    schemaDescription: true,
+    inputValueDeprecation: true
+  }, options);
+  var document = parse$2(getIntrospectionQuery(optionsWithDefaults));
+  var result = executeSync({
+    schema,
+    document
+  });
+  !result.errors && result.data || invariant$9(0);
+  return result.data;
+}
+function ownKeys$1(object, enumerableOnly) {
+  var keys = Object.keys(object);
+  if (Object.getOwnPropertySymbols) {
+    var symbols = Object.getOwnPropertySymbols(object);
+    if (enumerableOnly)
+      symbols = symbols.filter(function(sym) {
+        return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+      });
+    keys.push.apply(keys, symbols);
+  }
+  return keys;
+}
+function _objectSpread$1(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+    if (i % 2) {
+      ownKeys$1(Object(source), true).forEach(function(key) {
+        _defineProperty$1(target, key, source[key]);
+      });
+    } else if (Object.getOwnPropertyDescriptors) {
+      Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+    } else {
+      ownKeys$1(Object(source)).forEach(function(key) {
+        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+      });
+    }
+  }
+  return target;
+}
+function _defineProperty$1(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, { value, enumerable: true, configurable: true, writable: true });
+  } else {
+    obj[key] = value;
+  }
+  return obj;
+}
+function lexicographicSortSchema(schema) {
+  var schemaConfig = schema.toConfig();
+  var typeMap = keyValMap(sortByName(schemaConfig.types), function(type) {
+    return type.name;
+  }, sortNamedType);
+  return new GraphQLSchema(_objectSpread$1(_objectSpread$1({}, schemaConfig), {}, {
+    types: objectValues(typeMap),
+    directives: sortByName(schemaConfig.directives).map(sortDirective),
+    query: replaceMaybeType(schemaConfig.query),
+    mutation: replaceMaybeType(schemaConfig.mutation),
+    subscription: replaceMaybeType(schemaConfig.subscription)
+  }));
+  function replaceType(type) {
+    if (isListType(type)) {
+      return new GraphQLList(replaceType(type.ofType));
+    } else if (isNonNullType(type)) {
+      return new GraphQLNonNull(replaceType(type.ofType));
+    }
+    return replaceNamedType(type);
+  }
+  function replaceNamedType(type) {
+    return typeMap[type.name];
+  }
+  function replaceMaybeType(maybeType) {
+    return maybeType && replaceNamedType(maybeType);
+  }
+  function sortDirective(directive) {
+    var config = directive.toConfig();
+    return new GraphQLDirective(_objectSpread$1(_objectSpread$1({}, config), {}, {
+      locations: sortBy(config.locations, function(x) {
+        return x;
+      }),
+      args: sortArgs(config.args)
+    }));
+  }
+  function sortArgs(args) {
+    return sortObjMap(args, function(arg) {
+      return _objectSpread$1(_objectSpread$1({}, arg), {}, {
+        type: replaceType(arg.type)
+      });
+    });
+  }
+  function sortFields(fieldsMap) {
+    return sortObjMap(fieldsMap, function(field) {
+      return _objectSpread$1(_objectSpread$1({}, field), {}, {
+        type: replaceType(field.type),
+        args: sortArgs(field.args)
+      });
+    });
+  }
+  function sortInputFields(fieldsMap) {
+    return sortObjMap(fieldsMap, function(field) {
+      return _objectSpread$1(_objectSpread$1({}, field), {}, {
+        type: replaceType(field.type)
+      });
+    });
+  }
+  function sortTypes(arr) {
+    return sortByName(arr).map(replaceNamedType);
+  }
+  function sortNamedType(type) {
+    if (isScalarType(type) || isIntrospectionType(type)) {
+      return type;
+    }
+    if (isObjectType(type)) {
+      var config = type.toConfig();
+      return new GraphQLObjectType(_objectSpread$1(_objectSpread$1({}, config), {}, {
+        interfaces: function interfaces() {
+          return sortTypes(config.interfaces);
+        },
+        fields: function fields() {
+          return sortFields(config.fields);
+        }
+      }));
+    }
+    if (isInterfaceType(type)) {
+      var _config = type.toConfig();
+      return new GraphQLInterfaceType(_objectSpread$1(_objectSpread$1({}, _config), {}, {
+        interfaces: function interfaces() {
+          return sortTypes(_config.interfaces);
+        },
+        fields: function fields() {
+          return sortFields(_config.fields);
+        }
+      }));
+    }
+    if (isUnionType(type)) {
+      var _config2 = type.toConfig();
+      return new GraphQLUnionType(_objectSpread$1(_objectSpread$1({}, _config2), {}, {
+        types: function types() {
+          return sortTypes(_config2.types);
+        }
+      }));
+    }
+    if (isEnumType(type)) {
+      var _config3 = type.toConfig();
+      return new GraphQLEnumType(_objectSpread$1(_objectSpread$1({}, _config3), {}, {
+        values: sortObjMap(_config3.values)
+      }));
+    }
+    if (isInputObjectType(type)) {
+      var _config4 = type.toConfig();
+      return new GraphQLInputObjectType(_objectSpread$1(_objectSpread$1({}, _config4), {}, {
+        fields: function fields() {
+          return sortInputFields(_config4.fields);
+        }
+      }));
+    }
+    invariant$9(0, "Unexpected type: " + inspect(type));
+  }
+}
+function sortObjMap(map, sortValueFn) {
+  var sortedMap = /* @__PURE__ */ Object.create(null);
+  var sortedKeys = sortBy(Object.keys(map), function(x) {
+    return x;
+  });
+  for (var _i2 = 0; _i2 < sortedKeys.length; _i2++) {
+    var key = sortedKeys[_i2];
+    var value = map[key];
+    sortedMap[key] = sortValueFn ? sortValueFn(value) : value;
+  }
+  return sortedMap;
+}
+function sortByName(array) {
+  return sortBy(array, function(obj) {
+    return obj.name;
+  });
+}
+function sortBy(array, mapToKey) {
+  return array.slice().sort(function(obj1, obj2) {
+    var key1 = mapToKey(obj1);
+    var key2 = mapToKey(obj2);
+    return naturalCompare(key1, key2);
+  });
+}
+function separateOperations(documentAST) {
+  var operations = [];
+  var depGraph = /* @__PURE__ */ Object.create(null);
+  for (var _i2 = 0, _documentAST$definiti2 = documentAST.definitions; _i2 < _documentAST$definiti2.length; _i2++) {
+    var definitionNode = _documentAST$definiti2[_i2];
+    switch (definitionNode.kind) {
+      case Kind.OPERATION_DEFINITION:
+        operations.push(definitionNode);
+        break;
+      case Kind.FRAGMENT_DEFINITION:
+        depGraph[definitionNode.name.value] = collectDependencies(definitionNode.selectionSet);
+        break;
+    }
+  }
+  var separatedDocumentASTs = /* @__PURE__ */ Object.create(null);
+  var _loop = function _loop2(_i42) {
+    var operation = operations[_i42];
+    var dependencies = /* @__PURE__ */ new Set();
+    for (var _i6 = 0, _collectDependencies2 = collectDependencies(operation.selectionSet); _i6 < _collectDependencies2.length; _i6++) {
+      var fragmentName = _collectDependencies2[_i6];
+      collectTransitiveDependencies(dependencies, depGraph, fragmentName);
+    }
+    var operationName = operation.name ? operation.name.value : "";
+    separatedDocumentASTs[operationName] = {
+      kind: Kind.DOCUMENT,
+      definitions: documentAST.definitions.filter(function(node) {
+        return node === operation || node.kind === Kind.FRAGMENT_DEFINITION && dependencies.has(node.name.value);
+      })
+    };
+  };
+  for (var _i4 = 0; _i4 < operations.length; _i4++) {
+    _loop(_i4);
+  }
+  return separatedDocumentASTs;
+}
+function collectTransitiveDependencies(collected, depGraph, fromName) {
+  if (!collected.has(fromName)) {
+    collected.add(fromName);
+    var immediateDeps = depGraph[fromName];
+    if (immediateDeps !== void 0) {
+      for (var _i8 = 0; _i8 < immediateDeps.length; _i8++) {
+        var toName = immediateDeps[_i8];
+        collectTransitiveDependencies(collected, depGraph, toName);
+      }
+    }
+  }
+}
+function collectDependencies(selectionSet) {
+  var dependencies = [];
+  visit(selectionSet, {
+    FragmentSpread: function FragmentSpread(node) {
+      dependencies.push(node.name.value);
+    }
+  });
+  return dependencies;
+}
+function stripIgnoredCharacters(source) {
+  var sourceObj = isSource(source) ? source : new Source$1(source);
+  var body = sourceObj.body;
+  var lexer = new Lexer(sourceObj);
+  var strippedBody = "";
+  var wasLastAddedTokenNonPunctuator = false;
+  while (lexer.advance().kind !== TokenKind.EOF) {
+    var currentToken = lexer.token;
+    var tokenKind = currentToken.kind;
+    var isNonPunctuator = !isPunctuatorTokenKind(currentToken.kind);
+    if (wasLastAddedTokenNonPunctuator) {
+      if (isNonPunctuator || currentToken.kind === TokenKind.SPREAD) {
+        strippedBody += " ";
+      }
+    }
+    var tokenBody = body.slice(currentToken.start, currentToken.end);
+    if (tokenKind === TokenKind.BLOCK_STRING) {
+      strippedBody += dedentBlockString(tokenBody);
+    } else {
+      strippedBody += tokenBody;
+    }
+    wasLastAddedTokenNonPunctuator = isNonPunctuator;
+  }
+  return strippedBody;
+}
+function dedentBlockString(blockStr) {
+  var rawStr = blockStr.slice(3, -3);
+  var body = dedentBlockStringValue(rawStr);
+  if (getBlockStringIndentation(body) > 0) {
+    body = "\n" + body;
+  }
+  var lastChar = body[body.length - 1];
+  var hasTrailingQuote = lastChar === '"' && body.slice(-4) !== '\\"""';
+  if (hasTrailingQuote || lastChar === "\\") {
+    body += "\n";
+  }
+  return '"""' + body + '"""';
+}
+function ownKeys(object, enumerableOnly) {
+  var keys = Object.keys(object);
+  if (Object.getOwnPropertySymbols) {
+    var symbols = Object.getOwnPropertySymbols(object);
+    if (enumerableOnly)
+      symbols = symbols.filter(function(sym) {
+        return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+      });
+    keys.push.apply(keys, symbols);
+  }
+  return keys;
+}
+function _objectSpread(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+    if (i % 2) {
+      ownKeys(Object(source), true).forEach(function(key) {
+        _defineProperty(target, key, source[key]);
+      });
+    } else if (Object.getOwnPropertyDescriptors) {
+      Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+    } else {
+      ownKeys(Object(source)).forEach(function(key) {
+        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+      });
+    }
+  }
+  return target;
+}
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, { value, enumerable: true, configurable: true, writable: true });
+  } else {
+    obj[key] = value;
+  }
+  return obj;
+}
+var BreakingChangeType = Object.freeze({
+  TYPE_REMOVED: "TYPE_REMOVED",
+  TYPE_CHANGED_KIND: "TYPE_CHANGED_KIND",
+  TYPE_REMOVED_FROM_UNION: "TYPE_REMOVED_FROM_UNION",
+  VALUE_REMOVED_FROM_ENUM: "VALUE_REMOVED_FROM_ENUM",
+  REQUIRED_INPUT_FIELD_ADDED: "REQUIRED_INPUT_FIELD_ADDED",
+  IMPLEMENTED_INTERFACE_REMOVED: "IMPLEMENTED_INTERFACE_REMOVED",
+  FIELD_REMOVED: "FIELD_REMOVED",
+  FIELD_CHANGED_KIND: "FIELD_CHANGED_KIND",
+  REQUIRED_ARG_ADDED: "REQUIRED_ARG_ADDED",
+  ARG_REMOVED: "ARG_REMOVED",
+  ARG_CHANGED_KIND: "ARG_CHANGED_KIND",
+  DIRECTIVE_REMOVED: "DIRECTIVE_REMOVED",
+  DIRECTIVE_ARG_REMOVED: "DIRECTIVE_ARG_REMOVED",
+  REQUIRED_DIRECTIVE_ARG_ADDED: "REQUIRED_DIRECTIVE_ARG_ADDED",
+  DIRECTIVE_REPEATABLE_REMOVED: "DIRECTIVE_REPEATABLE_REMOVED",
+  DIRECTIVE_LOCATION_REMOVED: "DIRECTIVE_LOCATION_REMOVED"
+});
+var DangerousChangeType = Object.freeze({
+  VALUE_ADDED_TO_ENUM: "VALUE_ADDED_TO_ENUM",
+  TYPE_ADDED_TO_UNION: "TYPE_ADDED_TO_UNION",
+  OPTIONAL_INPUT_FIELD_ADDED: "OPTIONAL_INPUT_FIELD_ADDED",
+  OPTIONAL_ARG_ADDED: "OPTIONAL_ARG_ADDED",
+  IMPLEMENTED_INTERFACE_ADDED: "IMPLEMENTED_INTERFACE_ADDED",
+  ARG_DEFAULT_VALUE_CHANGE: "ARG_DEFAULT_VALUE_CHANGE"
+});
+function findBreakingChanges(oldSchema, newSchema) {
+  var breakingChanges = findSchemaChanges(oldSchema, newSchema).filter(function(change) {
+    return change.type in BreakingChangeType;
+  });
+  return breakingChanges;
+}
+function findDangerousChanges(oldSchema, newSchema) {
+  var dangerousChanges = findSchemaChanges(oldSchema, newSchema).filter(function(change) {
+    return change.type in DangerousChangeType;
+  });
+  return dangerousChanges;
+}
+function findSchemaChanges(oldSchema, newSchema) {
+  return [].concat(findTypeChanges(oldSchema, newSchema), findDirectiveChanges(oldSchema, newSchema));
+}
+function findDirectiveChanges(oldSchema, newSchema) {
+  var schemaChanges = [];
+  var directivesDiff = diff(oldSchema.getDirectives(), newSchema.getDirectives());
+  for (var _i2 = 0, _directivesDiff$remov2 = directivesDiff.removed; _i2 < _directivesDiff$remov2.length; _i2++) {
+    var oldDirective = _directivesDiff$remov2[_i2];
+    schemaChanges.push({
+      type: BreakingChangeType.DIRECTIVE_REMOVED,
+      description: "".concat(oldDirective.name, " was removed.")
+    });
+  }
+  for (var _i4 = 0, _directivesDiff$persi2 = directivesDiff.persisted; _i4 < _directivesDiff$persi2.length; _i4++) {
+    var _ref2 = _directivesDiff$persi2[_i4];
+    var _oldDirective = _ref2[0];
+    var newDirective = _ref2[1];
+    var argsDiff = diff(_oldDirective.args, newDirective.args);
+    for (var _i6 = 0, _argsDiff$added2 = argsDiff.added; _i6 < _argsDiff$added2.length; _i6++) {
+      var newArg = _argsDiff$added2[_i6];
+      if (isRequiredArgument(newArg)) {
+        schemaChanges.push({
+          type: BreakingChangeType.REQUIRED_DIRECTIVE_ARG_ADDED,
+          description: "A required arg ".concat(newArg.name, " on directive ").concat(_oldDirective.name, " was added.")
+        });
+      }
+    }
+    for (var _i8 = 0, _argsDiff$removed2 = argsDiff.removed; _i8 < _argsDiff$removed2.length; _i8++) {
+      var oldArg = _argsDiff$removed2[_i8];
+      schemaChanges.push({
+        type: BreakingChangeType.DIRECTIVE_ARG_REMOVED,
+        description: "".concat(oldArg.name, " was removed from ").concat(_oldDirective.name, ".")
+      });
+    }
+    if (_oldDirective.isRepeatable && !newDirective.isRepeatable) {
+      schemaChanges.push({
+        type: BreakingChangeType.DIRECTIVE_REPEATABLE_REMOVED,
+        description: "Repeatable flag was removed from ".concat(_oldDirective.name, ".")
+      });
+    }
+    for (var _i10 = 0, _oldDirective$locatio2 = _oldDirective.locations; _i10 < _oldDirective$locatio2.length; _i10++) {
+      var location = _oldDirective$locatio2[_i10];
+      if (newDirective.locations.indexOf(location) === -1) {
+        schemaChanges.push({
+          type: BreakingChangeType.DIRECTIVE_LOCATION_REMOVED,
+          description: "".concat(location, " was removed from ").concat(_oldDirective.name, ".")
+        });
+      }
+    }
+  }
+  return schemaChanges;
+}
+function findTypeChanges(oldSchema, newSchema) {
+  var schemaChanges = [];
+  var typesDiff = diff(objectValues(oldSchema.getTypeMap()), objectValues(newSchema.getTypeMap()));
+  for (var _i12 = 0, _typesDiff$removed2 = typesDiff.removed; _i12 < _typesDiff$removed2.length; _i12++) {
+    var oldType = _typesDiff$removed2[_i12];
+    schemaChanges.push({
+      type: BreakingChangeType.TYPE_REMOVED,
+      description: isSpecifiedScalarType(oldType) ? "Standard scalar ".concat(oldType.name, " was removed because it is not referenced anymore.") : "".concat(oldType.name, " was removed.")
+    });
+  }
+  for (var _i14 = 0, _typesDiff$persisted2 = typesDiff.persisted; _i14 < _typesDiff$persisted2.length; _i14++) {
+    var _ref4 = _typesDiff$persisted2[_i14];
+    var _oldType = _ref4[0];
+    var newType = _ref4[1];
+    if (isEnumType(_oldType) && isEnumType(newType)) {
+      schemaChanges.push.apply(schemaChanges, findEnumTypeChanges(_oldType, newType));
+    } else if (isUnionType(_oldType) && isUnionType(newType)) {
+      schemaChanges.push.apply(schemaChanges, findUnionTypeChanges(_oldType, newType));
+    } else if (isInputObjectType(_oldType) && isInputObjectType(newType)) {
+      schemaChanges.push.apply(schemaChanges, findInputObjectTypeChanges(_oldType, newType));
+    } else if (isObjectType(_oldType) && isObjectType(newType)) {
+      schemaChanges.push.apply(schemaChanges, findFieldChanges(_oldType, newType).concat(findImplementedInterfacesChanges(_oldType, newType)));
+    } else if (isInterfaceType(_oldType) && isInterfaceType(newType)) {
+      schemaChanges.push.apply(schemaChanges, findFieldChanges(_oldType, newType).concat(findImplementedInterfacesChanges(_oldType, newType)));
+    } else if (_oldType.constructor !== newType.constructor) {
+      schemaChanges.push({
+        type: BreakingChangeType.TYPE_CHANGED_KIND,
+        description: "".concat(_oldType.name, " changed from ") + "".concat(typeKindName(_oldType), " to ").concat(typeKindName(newType), ".")
+      });
+    }
+  }
+  return schemaChanges;
+}
+function findInputObjectTypeChanges(oldType, newType) {
+  var schemaChanges = [];
+  var fieldsDiff = diff(objectValues(oldType.getFields()), objectValues(newType.getFields()));
+  for (var _i16 = 0, _fieldsDiff$added2 = fieldsDiff.added; _i16 < _fieldsDiff$added2.length; _i16++) {
+    var newField = _fieldsDiff$added2[_i16];
+    if (isRequiredInputField(newField)) {
+      schemaChanges.push({
+        type: BreakingChangeType.REQUIRED_INPUT_FIELD_ADDED,
+        description: "A required field ".concat(newField.name, " on input type ").concat(oldType.name, " was added.")
+      });
+    } else {
+      schemaChanges.push({
+        type: DangerousChangeType.OPTIONAL_INPUT_FIELD_ADDED,
+        description: "An optional field ".concat(newField.name, " on input type ").concat(oldType.name, " was added.")
+      });
+    }
+  }
+  for (var _i18 = 0, _fieldsDiff$removed2 = fieldsDiff.removed; _i18 < _fieldsDiff$removed2.length; _i18++) {
+    var oldField = _fieldsDiff$removed2[_i18];
+    schemaChanges.push({
+      type: BreakingChangeType.FIELD_REMOVED,
+      description: "".concat(oldType.name, ".").concat(oldField.name, " was removed.")
+    });
+  }
+  for (var _i20 = 0, _fieldsDiff$persisted2 = fieldsDiff.persisted; _i20 < _fieldsDiff$persisted2.length; _i20++) {
+    var _ref6 = _fieldsDiff$persisted2[_i20];
+    var _oldField = _ref6[0];
+    var _newField = _ref6[1];
+    var isSafe = isChangeSafeForInputObjectFieldOrFieldArg(_oldField.type, _newField.type);
+    if (!isSafe) {
+      schemaChanges.push({
+        type: BreakingChangeType.FIELD_CHANGED_KIND,
+        description: "".concat(oldType.name, ".").concat(_oldField.name, " changed type from ") + "".concat(String(_oldField.type), " to ").concat(String(_newField.type), ".")
+      });
+    }
+  }
+  return schemaChanges;
+}
+function findUnionTypeChanges(oldType, newType) {
+  var schemaChanges = [];
+  var possibleTypesDiff = diff(oldType.getTypes(), newType.getTypes());
+  for (var _i22 = 0, _possibleTypesDiff$ad2 = possibleTypesDiff.added; _i22 < _possibleTypesDiff$ad2.length; _i22++) {
+    var newPossibleType = _possibleTypesDiff$ad2[_i22];
+    schemaChanges.push({
+      type: DangerousChangeType.TYPE_ADDED_TO_UNION,
+      description: "".concat(newPossibleType.name, " was added to union type ").concat(oldType.name, ".")
+    });
+  }
+  for (var _i24 = 0, _possibleTypesDiff$re2 = possibleTypesDiff.removed; _i24 < _possibleTypesDiff$re2.length; _i24++) {
+    var oldPossibleType = _possibleTypesDiff$re2[_i24];
+    schemaChanges.push({
+      type: BreakingChangeType.TYPE_REMOVED_FROM_UNION,
+      description: "".concat(oldPossibleType.name, " was removed from union type ").concat(oldType.name, ".")
+    });
+  }
+  return schemaChanges;
+}
+function findEnumTypeChanges(oldType, newType) {
+  var schemaChanges = [];
+  var valuesDiff = diff(oldType.getValues(), newType.getValues());
+  for (var _i26 = 0, _valuesDiff$added2 = valuesDiff.added; _i26 < _valuesDiff$added2.length; _i26++) {
+    var newValue = _valuesDiff$added2[_i26];
+    schemaChanges.push({
+      type: DangerousChangeType.VALUE_ADDED_TO_ENUM,
+      description: "".concat(newValue.name, " was added to enum type ").concat(oldType.name, ".")
+    });
+  }
+  for (var _i28 = 0, _valuesDiff$removed2 = valuesDiff.removed; _i28 < _valuesDiff$removed2.length; _i28++) {
+    var oldValue = _valuesDiff$removed2[_i28];
+    schemaChanges.push({
+      type: BreakingChangeType.VALUE_REMOVED_FROM_ENUM,
+      description: "".concat(oldValue.name, " was removed from enum type ").concat(oldType.name, ".")
+    });
+  }
+  return schemaChanges;
+}
+function findImplementedInterfacesChanges(oldType, newType) {
+  var schemaChanges = [];
+  var interfacesDiff = diff(oldType.getInterfaces(), newType.getInterfaces());
+  for (var _i30 = 0, _interfacesDiff$added2 = interfacesDiff.added; _i30 < _interfacesDiff$added2.length; _i30++) {
+    var newInterface = _interfacesDiff$added2[_i30];
+    schemaChanges.push({
+      type: DangerousChangeType.IMPLEMENTED_INTERFACE_ADDED,
+      description: "".concat(newInterface.name, " added to interfaces implemented by ").concat(oldType.name, ".")
+    });
+  }
+  for (var _i32 = 0, _interfacesDiff$remov2 = interfacesDiff.removed; _i32 < _interfacesDiff$remov2.length; _i32++) {
+    var oldInterface = _interfacesDiff$remov2[_i32];
+    schemaChanges.push({
+      type: BreakingChangeType.IMPLEMENTED_INTERFACE_REMOVED,
+      description: "".concat(oldType.name, " no longer implements interface ").concat(oldInterface.name, ".")
+    });
+  }
+  return schemaChanges;
+}
+function findFieldChanges(oldType, newType) {
+  var schemaChanges = [];
+  var fieldsDiff = diff(objectValues(oldType.getFields()), objectValues(newType.getFields()));
+  for (var _i34 = 0, _fieldsDiff$removed4 = fieldsDiff.removed; _i34 < _fieldsDiff$removed4.length; _i34++) {
+    var oldField = _fieldsDiff$removed4[_i34];
+    schemaChanges.push({
+      type: BreakingChangeType.FIELD_REMOVED,
+      description: "".concat(oldType.name, ".").concat(oldField.name, " was removed.")
+    });
+  }
+  for (var _i36 = 0, _fieldsDiff$persisted4 = fieldsDiff.persisted; _i36 < _fieldsDiff$persisted4.length; _i36++) {
+    var _ref8 = _fieldsDiff$persisted4[_i36];
+    var _oldField2 = _ref8[0];
+    var newField = _ref8[1];
+    schemaChanges.push.apply(schemaChanges, findArgChanges(oldType, _oldField2, newField));
+    var isSafe = isChangeSafeForObjectOrInterfaceField(_oldField2.type, newField.type);
+    if (!isSafe) {
+      schemaChanges.push({
+        type: BreakingChangeType.FIELD_CHANGED_KIND,
+        description: "".concat(oldType.name, ".").concat(_oldField2.name, " changed type from ") + "".concat(String(_oldField2.type), " to ").concat(String(newField.type), ".")
+      });
+    }
+  }
+  return schemaChanges;
+}
+function findArgChanges(oldType, oldField, newField) {
+  var schemaChanges = [];
+  var argsDiff = diff(oldField.args, newField.args);
+  for (var _i38 = 0, _argsDiff$removed4 = argsDiff.removed; _i38 < _argsDiff$removed4.length; _i38++) {
+    var oldArg = _argsDiff$removed4[_i38];
+    schemaChanges.push({
+      type: BreakingChangeType.ARG_REMOVED,
+      description: "".concat(oldType.name, ".").concat(oldField.name, " arg ").concat(oldArg.name, " was removed.")
+    });
+  }
+  for (var _i40 = 0, _argsDiff$persisted2 = argsDiff.persisted; _i40 < _argsDiff$persisted2.length; _i40++) {
+    var _ref10 = _argsDiff$persisted2[_i40];
+    var _oldArg = _ref10[0];
+    var newArg = _ref10[1];
+    var isSafe = isChangeSafeForInputObjectFieldOrFieldArg(_oldArg.type, newArg.type);
+    if (!isSafe) {
+      schemaChanges.push({
+        type: BreakingChangeType.ARG_CHANGED_KIND,
+        description: "".concat(oldType.name, ".").concat(oldField.name, " arg ").concat(_oldArg.name, " has changed type from ") + "".concat(String(_oldArg.type), " to ").concat(String(newArg.type), ".")
+      });
+    } else if (_oldArg.defaultValue !== void 0) {
+      if (newArg.defaultValue === void 0) {
+        schemaChanges.push({
+          type: DangerousChangeType.ARG_DEFAULT_VALUE_CHANGE,
+          description: "".concat(oldType.name, ".").concat(oldField.name, " arg ").concat(_oldArg.name, " defaultValue was removed.")
+        });
+      } else {
+        var oldValueStr = stringifyValue(_oldArg.defaultValue, _oldArg.type);
+        var newValueStr = stringifyValue(newArg.defaultValue, newArg.type);
+        if (oldValueStr !== newValueStr) {
+          schemaChanges.push({
+            type: DangerousChangeType.ARG_DEFAULT_VALUE_CHANGE,
+            description: "".concat(oldType.name, ".").concat(oldField.name, " arg ").concat(_oldArg.name, " has changed defaultValue from ").concat(oldValueStr, " to ").concat(newValueStr, ".")
+          });
+        }
+      }
+    }
+  }
+  for (var _i42 = 0, _argsDiff$added4 = argsDiff.added; _i42 < _argsDiff$added4.length; _i42++) {
+    var _newArg = _argsDiff$added4[_i42];
+    if (isRequiredArgument(_newArg)) {
+      schemaChanges.push({
+        type: BreakingChangeType.REQUIRED_ARG_ADDED,
+        description: "A required arg ".concat(_newArg.name, " on ").concat(oldType.name, ".").concat(oldField.name, " was added.")
+      });
+    } else {
+      schemaChanges.push({
+        type: DangerousChangeType.OPTIONAL_ARG_ADDED,
+        description: "An optional arg ".concat(_newArg.name, " on ").concat(oldType.name, ".").concat(oldField.name, " was added.")
+      });
+    }
+  }
+  return schemaChanges;
+}
+function isChangeSafeForObjectOrInterfaceField(oldType, newType) {
+  if (isListType(oldType)) {
+    return isListType(newType) && isChangeSafeForObjectOrInterfaceField(oldType.ofType, newType.ofType) || isNonNullType(newType) && isChangeSafeForObjectOrInterfaceField(oldType, newType.ofType);
+  }
+  if (isNonNullType(oldType)) {
+    return isNonNullType(newType) && isChangeSafeForObjectOrInterfaceField(oldType.ofType, newType.ofType);
+  }
+  return isNamedType(newType) && oldType.name === newType.name || isNonNullType(newType) && isChangeSafeForObjectOrInterfaceField(oldType, newType.ofType);
+}
+function isChangeSafeForInputObjectFieldOrFieldArg(oldType, newType) {
+  if (isListType(oldType)) {
+    return isListType(newType) && isChangeSafeForInputObjectFieldOrFieldArg(oldType.ofType, newType.ofType);
+  }
+  if (isNonNullType(oldType)) {
+    return isNonNullType(newType) && isChangeSafeForInputObjectFieldOrFieldArg(oldType.ofType, newType.ofType) || !isNonNullType(newType) && isChangeSafeForInputObjectFieldOrFieldArg(oldType.ofType, newType);
+  }
+  return isNamedType(newType) && oldType.name === newType.name;
+}
+function typeKindName(type) {
+  if (isScalarType(type)) {
+    return "a Scalar type";
+  }
+  if (isObjectType(type)) {
+    return "an Object type";
+  }
+  if (isInterfaceType(type)) {
+    return "an Interface type";
+  }
+  if (isUnionType(type)) {
+    return "a Union type";
+  }
+  if (isEnumType(type)) {
+    return "an Enum type";
+  }
+  if (isInputObjectType(type)) {
+    return "an Input type";
+  }
+  invariant$9(0, "Unexpected type: " + inspect(type));
+}
+function stringifyValue(value, type) {
+  var ast = astFromValue(value, type);
+  ast != null || invariant$9(0);
+  var sortedAST = visit(ast, {
+    ObjectValue: function ObjectValue(objectNode) {
+      var fields = [].concat(objectNode.fields);
+      fields.sort(function(fieldA, fieldB) {
+        return naturalCompare(fieldA.name.value, fieldB.name.value);
+      });
+      return _objectSpread(_objectSpread({}, objectNode), {}, {
+        fields
+      });
+    }
+  });
+  return print$3(sortedAST);
+}
+function diff(oldArray, newArray) {
+  var added = [];
+  var removed = [];
+  var persisted = [];
+  var oldMap = keyMap(oldArray, function(_ref11) {
+    var name = _ref11.name;
+    return name;
+  });
+  var newMap = keyMap(newArray, function(_ref12) {
+    var name = _ref12.name;
+    return name;
+  });
+  for (var _i44 = 0; _i44 < oldArray.length; _i44++) {
+    var oldItem = oldArray[_i44];
+    var newItem = newMap[oldItem.name];
+    if (newItem === void 0) {
+      removed.push(oldItem);
+    } else {
+      persisted.push([oldItem, newItem]);
+    }
+  }
+  for (var _i46 = 0; _i46 < newArray.length; _i46++) {
+    var _newItem = newArray[_i46];
+    if (oldMap[_newItem.name] === void 0) {
+      added.push(_newItem);
+    }
+  }
+  return {
+    added,
+    persisted,
+    removed
+  };
+}
+function findDeprecatedUsages(schema, ast) {
+  return validate(schema, ast, [NoDeprecatedCustomRule]);
+}
+var graphql = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  version,
+  versionInfo,
+  graphql: graphql$1,
+  graphqlSync,
+  GraphQLSchema,
+  GraphQLDirective,
+  GraphQLScalarType,
+  GraphQLObjectType,
+  GraphQLInterfaceType,
+  GraphQLUnionType,
+  GraphQLEnumType,
+  GraphQLInputObjectType,
+  GraphQLList,
+  GraphQLNonNull,
+  specifiedScalarTypes,
+  GraphQLInt: GraphQLInt$1,
+  GraphQLFloat: GraphQLFloat$1,
+  GraphQLString: GraphQLString$1,
+  GraphQLBoolean: GraphQLBoolean$1,
+  GraphQLID: GraphQLID$1,
+  specifiedDirectives,
+  GraphQLIncludeDirective,
+  GraphQLSkipDirective,
+  GraphQLDeprecatedDirective,
+  GraphQLSpecifiedByDirective,
+  TypeKind,
+  DEFAULT_DEPRECATION_REASON,
+  introspectionTypes,
+  __Schema,
+  __Directive,
+  __DirectiveLocation,
+  __Type,
+  __Field,
+  __InputValue,
+  __EnumValue,
+  __TypeKind,
+  SchemaMetaFieldDef: SchemaMetaFieldDef$1,
+  TypeMetaFieldDef: TypeMetaFieldDef$1,
+  TypeNameMetaFieldDef,
+  isSchema,
+  isDirective,
+  isType,
+  isScalarType,
+  isObjectType,
+  isInterfaceType,
+  isUnionType,
+  isEnumType,
+  isInputObjectType,
+  isListType,
+  isNonNullType,
+  isInputType,
+  isOutputType,
+  isLeafType,
+  isCompositeType,
+  isAbstractType,
+  isWrappingType,
+  isNullableType,
+  isNamedType,
+  isRequiredArgument,
+  isRequiredInputField,
+  isSpecifiedScalarType,
+  isIntrospectionType,
+  isSpecifiedDirective,
+  assertSchema,
+  assertDirective,
+  assertType,
+  assertScalarType,
+  assertObjectType,
+  assertInterfaceType,
+  assertUnionType,
+  assertEnumType,
+  assertInputObjectType,
+  assertListType,
+  assertNonNullType,
+  assertInputType,
+  assertOutputType,
+  assertLeafType,
+  assertCompositeType,
+  assertAbstractType,
+  assertWrappingType,
+  assertNullableType,
+  assertNamedType,
+  getNullableType,
+  getNamedType,
+  validateSchema,
+  assertValidSchema,
+  Token,
+  Source: Source$1,
+  Location,
+  getLocation: getLocation$1,
+  printLocation,
+  printSourceLocation,
+  Lexer,
+  TokenKind,
+  parse: parse$2,
+  parseValue,
+  parseType: parseType$2,
+  print: print$3,
+  visit,
+  visitInParallel,
+  getVisitFn,
+  BREAK,
+  Kind,
+  DirectiveLocation,
+  isDefinitionNode,
+  isExecutableDefinitionNode,
+  isSelectionNode,
+  isValueNode,
+  isTypeNode,
+  isTypeSystemDefinitionNode,
+  isTypeDefinitionNode,
+  isTypeSystemExtensionNode,
+  isTypeExtensionNode,
+  execute,
+  executeSync,
+  defaultFieldResolver,
+  defaultTypeResolver,
+  responsePathAsArray: pathToArray,
+  getDirectiveValues,
+  subscribe,
+  createSourceEventStream,
+  validate,
+  ValidationContext,
+  specifiedRules,
+  ExecutableDefinitionsRule,
+  FieldsOnCorrectTypeRule,
+  FragmentsOnCompositeTypesRule,
+  KnownArgumentNamesRule,
+  KnownDirectivesRule,
+  KnownFragmentNamesRule,
+  KnownTypeNamesRule,
+  LoneAnonymousOperationRule,
+  NoFragmentCyclesRule,
+  NoUndefinedVariablesRule,
+  NoUnusedFragmentsRule,
+  NoUnusedVariablesRule,
+  OverlappingFieldsCanBeMergedRule,
+  PossibleFragmentSpreadsRule,
+  ProvidedRequiredArgumentsRule,
+  ScalarLeafsRule,
+  SingleFieldSubscriptionsRule,
+  UniqueArgumentNamesRule,
+  UniqueDirectivesPerLocationRule,
+  UniqueFragmentNamesRule,
+  UniqueInputFieldNamesRule,
+  UniqueOperationNamesRule,
+  UniqueVariableNamesRule,
+  ValuesOfCorrectTypeRule,
+  VariablesAreInputTypesRule,
+  VariablesInAllowedPositionRule,
+  LoneSchemaDefinitionRule,
+  UniqueOperationTypesRule,
+  UniqueTypeNamesRule,
+  UniqueEnumValueNamesRule,
+  UniqueFieldDefinitionNamesRule,
+  UniqueDirectiveNamesRule,
+  PossibleTypeExtensionsRule,
+  NoDeprecatedCustomRule,
+  NoSchemaIntrospectionCustomRule,
+  GraphQLError: GraphQLError$1,
+  syntaxError,
+  locatedError,
+  printError,
+  formatError,
+  getIntrospectionQuery,
+  getOperationAST,
+  getOperationRootType,
+  introspectionFromSchema,
+  buildClientSchema,
+  buildASTSchema,
+  buildSchema,
+  getDescription,
+  extendSchema,
+  lexicographicSortSchema,
+  printSchema,
+  printType,
+  printIntrospectionSchema,
+  typeFromAST,
+  valueFromAST,
+  valueFromASTUntyped: valueFromASTUntyped$1,
+  astFromValue,
+  TypeInfo,
+  visitWithTypeInfo,
+  coerceInputValue,
+  concatAST,
+  separateOperations,
+  stripIgnoredCharacters,
+  isEqualType,
+  isTypeSubTypeOf,
+  doTypesOverlap,
+  assertValidName,
+  isValidNameError,
+  BreakingChangeType,
+  DangerousChangeType,
+  findBreakingChanges,
+  findDangerousChanges,
+  findDeprecatedUsages
+}, Symbol.toStringTag, { value: "Module" }));
 var uncPathRegex = function uncPathRegex2() {
   return /^[\\\/]{2,}[^\\\/]+[\\\/]+[^\\\/]+/;
 };
@@ -706,7 +2482,7 @@ var interopRequireDefault = { exports: {} };
 var objectSpread2 = { exports: {} };
 var defineProperty = { exports: {} };
 (function(module) {
-  function _defineProperty(obj, key, value) {
+  function _defineProperty2(obj, key, value) {
     if (key in obj) {
       Object.defineProperty(obj, key, {
         value,
@@ -719,11 +2495,11 @@ var defineProperty = { exports: {} };
     }
     return obj;
   }
-  module.exports = _defineProperty, module.exports.__esModule = true, module.exports["default"] = module.exports;
+  module.exports = _defineProperty2, module.exports.__esModule = true, module.exports["default"] = module.exports;
 })(defineProperty);
 (function(module) {
   var defineProperty$1 = defineProperty.exports;
-  function ownKeys(object, enumerableOnly) {
+  function ownKeys2(object, enumerableOnly) {
     var keys = Object.keys(object);
     if (Object.getOwnPropertySymbols) {
       var symbols = Object.getOwnPropertySymbols(object);
@@ -736,9 +2512,9 @@ var defineProperty = { exports: {} };
   function _objectSpread22(target) {
     for (var i = 1; i < arguments.length; i++) {
       var source = arguments[i] != null ? arguments[i] : {};
-      i % 2 ? ownKeys(Object(source), true).forEach(function(key) {
+      i % 2 ? ownKeys2(Object(source), true).forEach(function(key) {
         defineProperty$1(target, key, source[key]);
-      }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function(key) {
+      }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys2(Object(source)).forEach(function(key) {
         Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
       });
     }
@@ -893,9 +2669,10 @@ var createForOfIteratorHelper = { exports: {} };
   }
   module.exports = _createForOfIteratorHelper, module.exports.__esModule = true, module.exports["default"] = module.exports;
 })(createForOfIteratorHelper);
+var require$$5 = /* @__PURE__ */ getAugmentedNamespace(graphql);
 var _interopRequireDefault$7 = interopRequireDefault.exports;
 var _createForOfIteratorHelper2$4 = _interopRequireDefault$7(createForOfIteratorHelper.exports);
-var _require$c = require$$2, GraphQLError = _require$c.GraphQLError;
+var _require$c = require$$5, GraphQLError = _require$c.GraphQLError;
 function createUserError$4(message, locations, nodes) {
   var messageWithLocations = message;
   if (locations != null) {
@@ -1377,13 +3154,13 @@ var immutable = { exports: {} };
     Iterator.prototype[ITERATOR_SYMBOL] = function() {
       return this;
     };
-    function iteratorValue(type, k, v, iteratorResult) {
+    function iteratorValue(type, k, v, iteratorResult2) {
       var value = type === 0 ? k : type === 1 ? v : [k, v];
-      iteratorResult ? iteratorResult.value = value : iteratorResult = {
+      iteratorResult2 ? iteratorResult2.value = value : iteratorResult2 = {
         value,
         done: false
       };
-      return iteratorResult;
+      return iteratorResult2;
     }
     function iteratorDone() {
       return { value: void 0, done: true };
@@ -6698,7 +8475,7 @@ var SchemaUtils = {
 var _interopRequireDefault$2 = interopRequireDefault.exports;
 var _createForOfIteratorHelper2$2 = _interopRequireDefault$2(createForOfIteratorHelper.exports);
 var _require$2 = CompilerError, createCompilerError$2 = _require$2.createCompilerError;
-var _require2$2 = require$$2, SchemaMetaFieldDef = _require2$2.SchemaMetaFieldDef, TypeMetaFieldDef = _require2$2.TypeMetaFieldDef;
+var _require2$2 = require$$5, SchemaMetaFieldDef = _require2$2.SchemaMetaFieldDef, TypeMetaFieldDef = _require2$2.TypeMetaFieldDef;
 function getFieldDefinitionStrict(schema, parentType, fieldName) {
   var type = schema.getRawType(parentType);
   var queryType = schema.getQueryType();
@@ -6790,7 +8567,7 @@ var _require$1 = DefaultHandleKey, DEFAULT_HANDLE_KEY = _require$1.DEFAULT_HANDL
 var _require2$1 = CompilerError, createCompilerError$1 = _require2$1.createCompilerError, createUserError = _require2$1.createUserError, eachWithCombinedError = _require2$1.eachWithCombinedError;
 var _require3$1 = SchemaUtils, isExecutableDefinitionAST = _require3$1.isExecutableDefinitionAST;
 var _require4 = getFieldDefinition, getFieldDefinitionLegacy = _require4.getFieldDefinitionLegacy;
-var _require5 = require$$2, parseGraphQL = _require5.parse, parseType$1 = _require5.parseType, print$1 = _require5.print, Source = _require5.Source;
+var _require5 = require$$5, parseGraphQL = _require5.parse, parseType$1 = _require5.parseType, print$1 = _require5.print, Source = _require5.Source;
 var ARGUMENT_DEFINITIONS = "argumentDefinitions";
 var ARGUMENTS = "arguments";
 var DEPRECATED_UNCHECKED_ARGUMENTS = "uncheckedArguments_DEPRECATED";
@@ -6911,11 +8688,11 @@ var RelayParser = /* @__PURE__ */ function() {
       if (typeof typeString !== "string") {
         throw createUserError("Expected definition for variable '$".concat(argName, "' to be an object ") + "with the shape: '{type: string, defaultValue?: mixed}.", null, [arg.value]);
       }
-      var typeFromAST = _this3._schema.getTypeFromAST(parseType$1(typeString));
-      if (typeFromAST == null) {
+      var typeFromAST2 = _this3._schema.getTypeFromAST(parseType$1(typeString));
+      if (typeFromAST2 == null) {
         throw createUserError('Unknown type "'.concat(typeString, '" referenced in the argument definitions.'), null, [arg]);
       }
-      var type = _this3._schema.asInputType(typeFromAST);
+      var type = _this3._schema.asInputType(typeFromAST2);
       if (type == null) {
         throw createUserError('Expected type "'.concat(typeString, '" to be an input type in the "').concat(arg.name.value, '" argument definitions.'), null, [arg.value]);
       }
@@ -6940,11 +8717,11 @@ var RelayParser = /* @__PURE__ */ function() {
     var variableDefinitions = /* @__PURE__ */ new Map();
     (operation.variableDefinitions || []).forEach(function(def) {
       var name = getName$1(def.variable);
-      var typeFromAST = schema.getTypeFromAST(def.type);
-      if (typeFromAST == null) {
+      var typeFromAST2 = schema.getTypeFromAST(def.type);
+      if (typeFromAST2 == null) {
         throw createUserError("Unknown type: '".concat(getTypeName(def.type), "'."), null, [def.type]);
       }
-      var type = schema.asInputType(typeFromAST);
+      var type = schema.asInputType(typeFromAST2);
       if (type == null) {
         throw createUserError('Expected type "'.concat(getTypeName(def.type), '" to be an input type.'), null, [def.type]);
       }
@@ -7077,11 +8854,11 @@ var GraphQLDefinitionParser = /* @__PURE__ */ function() {
     var directives = this._transformDirectives((fragment.directives || []).filter(function(directive) {
       return getName$1(directive) !== ARGUMENT_DEFINITIONS;
     }), "FRAGMENT_DEFINITION");
-    var typeFromAST = this._schema.getTypeFromAST(fragment.typeCondition);
-    if (typeFromAST == null) {
+    var typeFromAST2 = this._schema.getTypeFromAST(fragment.typeCondition);
+    if (typeFromAST2 == null) {
       throw createUserError('Fragment "'.concat(fragment.name.value, '" cannot condition on unknown ') + 'type "'.concat(String(fragment.typeCondition.name.value), '".'), null, [fragment.typeCondition]);
     }
-    var type = this._schema.asCompositeType(typeFromAST);
+    var type = this._schema.asCompositeType(typeFromAST2);
     if (type == null) {
       throw createUserError('Fragment "'.concat(fragment.name.value, '" cannot condition on non composite ') + 'type "'.concat(String(type), '".'), null, [fragment.typeCondition]);
     }
@@ -7777,7 +9554,7 @@ var _createForOfIteratorHelper2 = _interopRequireDefault(createForOfIteratorHelp
 var _inheritsLoose2 = _interopRequireDefault(inheritsLoose.exports);
 var _require = CompilerError, createCompilerError = _require.createCompilerError;
 var _require2 = SchemaUtils, isSchemaDefinitionAST = _require2.isSchemaDefinitionAST;
-var _require3 = require$$2, GraphQLFloat = _require3.GraphQLFloat, GraphQLInt = _require3.GraphQLInt, GraphQLBoolean = _require3.GraphQLBoolean, GraphQLString = _require3.GraphQLString, GraphQLID = _require3.GraphQLID, parse = _require3.parse, parseType = _require3.parseType, print = _require3.print, valueFromASTUntyped = _require3.valueFromASTUntyped;
+var _require3 = require$$5, GraphQLFloat = _require3.GraphQLFloat, GraphQLInt = _require3.GraphQLInt, GraphQLBoolean = _require3.GraphQLBoolean, GraphQLString = _require3.GraphQLString, GraphQLID = _require3.GraphQLID, parse = _require3.parse, parseType = _require3.parseType, print = _require3.print, valueFromASTUntyped = _require3.valueFromASTUntyped;
 var Type = /* @__PURE__ */ function() {
   function Type2(name, isClient) {
     this.name = name;
@@ -8039,7 +9816,7 @@ var Schema = /* @__PURE__ */ function() {
   _proto4.getRawType = function getRawType(type) {
     return unwrap(type);
   };
-  _proto4.getNullableType = function getNullableType(type) {
+  _proto4.getNullableType = function getNullableType2(type) {
     if (type instanceof NonNull) {
       return type.ofType;
     }
@@ -8122,7 +9899,7 @@ var Schema = /* @__PURE__ */ function() {
     }
     return false;
   };
-  _proto4.doTypesOverlap = function doTypesOverlap(typeA, typeB) {
+  _proto4.doTypesOverlap = function doTypesOverlap2(typeA, typeB) {
     var _this4 = this;
     if (typeA === typeB) {
       return true;
@@ -8157,7 +9934,7 @@ var Schema = /* @__PURE__ */ function() {
     }
     return type;
   };
-  _proto4.assertInputType = function assertInputType(type) {
+  _proto4.assertInputType = function assertInputType2(type) {
     if (_isWrapper(type) && !_isInputType(unwrap(type)) || !_isWrapper(type) && !_isInputType(type)) {
       throw createCompilerError("Expected ".concat(String(type), " to be a Input, Scalar or Enum type."));
     }
@@ -8178,19 +9955,19 @@ var Schema = /* @__PURE__ */ function() {
       return type;
     }
   };
-  _proto4.assertScalarType = function assertScalarType(type) {
+  _proto4.assertScalarType = function assertScalarType2(type) {
     if (!_isScalar(type)) {
       throw createCompilerError("Expected ".concat(this.getTypeString(type), " to be a scalar type, got ").concat(this.getTypeString(type), "."));
     }
     return type;
   };
-  _proto4.assertObjectType = function assertObjectType(type) {
+  _proto4.assertObjectType = function assertObjectType2(type) {
     if (!_isObject(type)) {
       throw createCompilerError("Expected ".concat(this.getTypeString(type), " to be an object type."));
     }
     return type;
   };
-  _proto4.assertInputObjectType = function assertInputObjectType(type) {
+  _proto4.assertInputObjectType = function assertInputObjectType2(type) {
     if (!_isInputObject(type)) {
       throw createCompilerError("Expected ".concat(this.getTypeString(type), " to be an input type."));
     }
@@ -8202,37 +9979,37 @@ var Schema = /* @__PURE__ */ function() {
     }
     return type;
   };
-  _proto4.assertInterfaceType = function assertInterfaceType(type) {
+  _proto4.assertInterfaceType = function assertInterfaceType2(type) {
     if (!_isInterface(type)) {
       throw createCompilerError("Expected ".concat(this.getTypeString(type), " to be an interface type."));
     }
     return type;
   };
-  _proto4.assertCompositeType = function assertCompositeType(type) {
+  _proto4.assertCompositeType = function assertCompositeType2(type) {
     if (!_isCompositeType(type)) {
       throw createCompilerError("Expected ".concat(this.getTypeString(type), " to be a composite type."));
     }
     return type;
   };
-  _proto4.assertAbstractType = function assertAbstractType(type) {
+  _proto4.assertAbstractType = function assertAbstractType2(type) {
     if (!_isAbstractType(type)) {
       throw createCompilerError("Expected ".concat(this.getTypeString(type), " to be an abstract type."));
     }
     return type;
   };
-  _proto4.assertLeafType = function assertLeafType(type) {
+  _proto4.assertLeafType = function assertLeafType2(type) {
     if (!this.isLeafType(type)) {
       throw createCompilerError("Expected ".concat(this.getTypeString(type), " to be a leaf type."));
     }
     return type;
   };
-  _proto4.assertUnionType = function assertUnionType(type) {
+  _proto4.assertUnionType = function assertUnionType2(type) {
     if (!_isUnion(type)) {
       throw createCompilerError("Expected ".concat(this.getTypeString(type), " to be a union type."));
     }
     return type;
   };
-  _proto4.assertEnumType = function assertEnumType(type) {
+  _proto4.assertEnumType = function assertEnumType2(type) {
     if (!_isEnum(type)) {
       throw createCompilerError("Expected ".concat(String(type), " to be an enum type."));
     }
@@ -8349,16 +10126,16 @@ var Schema = /* @__PURE__ */ function() {
   _proto4.isInterface = function isInterface(type) {
     return _isInterface(type);
   };
-  _proto4.isInputType = function isInputType(type) {
+  _proto4.isInputType = function isInputType2(type) {
     return _isInputType(type) || _isWrapper(type) && _isInputType(unwrap(type));
   };
-  _proto4.isCompositeType = function isCompositeType(type) {
+  _proto4.isCompositeType = function isCompositeType2(type) {
     return _isCompositeType(type);
   };
   _proto4.isAbstractType = function isAbstractType2(type) {
     return _isAbstractType(type);
   };
-  _proto4.isLeafType = function isLeafType(type) {
+  _proto4.isLeafType = function isLeafType2(type) {
     return this.isScalar(type) || this.isEnum(type);
   };
   _proto4.isId = function isId(type) {
@@ -8548,7 +10325,7 @@ var Schema = /* @__PURE__ */ function() {
       }
     }
   };
-  _proto4.parseValue = function parseValue(type, value) {
+  _proto4.parseValue = function parseValue2(type, value) {
     if (type instanceof EnumType) {
       return type.values.includes(value) ? value : void 0;
     } else if (type instanceof ScalarType) {

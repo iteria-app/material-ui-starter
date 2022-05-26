@@ -2,14 +2,13 @@ import 'react-perfect-scrollbar/dist/css/styles.css'
 import React from 'react'
 import { useRoutes } from 'react-router-dom'
 import { ThemeProvider } from '@mui/material'
-import { GraphqlcodegenDataProvider } from '@iteria-app/graphql-lowcode'
-import { DataContext } from '@iteria-app/component-templates/src/gql'
-import GlobalStyles from '../src/components/GlobalStyles'
 import PropTypes from 'prop-types'
 import {
   I18nProvider,
   useLocale,
-} from '@iteria-app/component-templates/src/i18n'
+  DataContext,
+  GraphqlcodegenDataProvider
+} from '@iteria-app/component-templates'
 import '../src/mixins/chartjs'
 import theme from '../src/theme'
 import routes from '../src/routes'
@@ -44,7 +43,6 @@ const App = () => {
       <UrqlProvider value={client}>
         <I18nProvider locale={locale} messages={messagesObject}>
           <ThemeProvider theme={theme}>
-            <GlobalStyles />
             {routing}
           </ThemeProvider>
         </I18nProvider>

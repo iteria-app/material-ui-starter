@@ -1,6 +1,7 @@
 import { defineConfig, loadEnv } from 'vite'
 import react from '@vitejs/plugin-react'
 import iteriaLowcode from './plugin'
+import path from 'path'
 
 export default ({ command, mode }) => {
   process.env = {
@@ -15,6 +16,16 @@ export default ({ command, mode }) => {
   }
 
   return defineConfig({
+    optimizeDeps: {
+      exclude: ['@iteria-app/wysiwyg'], // [ '@iteria-app/component-templates',  '@iteria-app/ide-devserver', '@iteria-app/generator', '@iteria-app/graphql-lowcode']
+    },
+    resolve: {
+      alias: {
+        os: 'os-browserify',
+        path: 'path-browserify',
+        module: path.resolve(__dirname, './src/constants.ts'),
+      },
+    },
     plugins: [
       react(),
       iteriaLowcode({
@@ -31,7 +42,6 @@ export default ({ command, mode }) => {
           graphQLEndpoint: true,
           floatingButton: true,
         },
-        injectMode: process.env.VITE_INJECT_MODE,
         whitelistedEnvs: ['VITE_HASURA_GRAPHQL_ENDPOINT']
       }),
     ],

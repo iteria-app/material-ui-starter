@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 import {
   Avatar,
   Box,
-  Button,
   Divider,
   Drawer,
   Hidden,
@@ -24,8 +23,8 @@ import {
 } from 'react-feather';
 import {
   MenuItems,
-  calculateMenuItems,
-} from '@iteria-app/component-templates/src/material-ui/menu'
+  calculateMenuItems
+} from '@iteria-app/component-templates'
 import * as graphqlGen from '../../../generated/graphql'
 import { Home } from 'react-feather'
 
