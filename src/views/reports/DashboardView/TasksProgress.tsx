@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types";
 import {
   Avatar,
   Box,
@@ -8,14 +8,13 @@ import {
   LinearProgress,
   Typography,
   makeStyles,
-  colors
-} from '@mui/material'
-import { InsertChart } from '@mui/icons-material'
-import { FormattedMessage } from 'react-intl'
-
+  colors,
+} from "@mui/material";
+import { InsertChart } from "@mui/icons-material";
+import { FormattedMessage } from "react-intl";
 const TasksProgress: React.FC<any> = ({ className, ...rest }) => {
   return (
-    <Card sx={{ height: '100%' }} {...rest}>
+    <Card sx={{ height: "100%" }} {...rest}>
       <CardContent>
         <Grid container spacing={3}>
           <Grid item xs={9}>
@@ -33,6 +32,11 @@ const TasksProgress: React.FC<any> = ({ className, ...rest }) => {
               >
                 <InsertChart />
               </Avatar>
+              <Avatar
+                sx={{ bgcolor: colors.orange[600], height: 56, width: 56 }}
+              >
+                <InsertChart />
+              </Avatar>
             </Grid>
           </Grid>
         </Grid>
@@ -43,9 +47,7 @@ const TasksProgress: React.FC<any> = ({ className, ...rest }) => {
     </Card>
   );
 };
-
 TasksProgress.propTypes = {
-  className: PropTypes.string
+  className: PropTypes.string,
 };
-
 export default TasksProgress;

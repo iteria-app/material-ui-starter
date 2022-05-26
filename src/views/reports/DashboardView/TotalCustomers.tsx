@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types";
 import {
   Avatar,
   Box,
@@ -7,13 +7,12 @@ import {
   Grid,
   Typography,
   colors,
-} from '@mui/material'
-import { ArrowUpward, People } from '@mui/icons-material'
-import { FormattedMessage } from 'react-intl'
-
+} from "@mui/material";
+import { ArrowUpward, People } from "@mui/icons-material";
+import { FormattedMessage } from "react-intl";
 const TotalCustomers: React.FC<any> = ({ className, ...rest }) => {
   return (
-    <Card sx={{ height: '100%' }} {...rest}>
+    <Card sx={{ height: "100%" }} {...rest}>
       <CardContent>
         <Grid container spacing={3}>
           <Grid item xs={9}>
@@ -25,6 +24,7 @@ const TotalCustomers: React.FC<any> = ({ className, ...rest }) => {
             </Typography>
           </Grid>
           <Grid item xs={3}>
+            <Grid container justifyContent="right"></Grid>
             <Grid container justifyContent="right">
               <Avatar
                 sx={{ bgcolor: colors.green[600], height: 56, width: 56 }}
@@ -47,9 +47,7 @@ const TotalCustomers: React.FC<any> = ({ className, ...rest }) => {
     </Card>
   );
 };
-
 TotalCustomers.propTypes = {
-  className: PropTypes.string
+  className: PropTypes.string,
 };
-
 export default TotalCustomers;

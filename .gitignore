@@ -7,3 +7,6 @@ dist-ssr
 
 # Generated code
 src/generated/
+
+# Local Netlify folder
+.netlify

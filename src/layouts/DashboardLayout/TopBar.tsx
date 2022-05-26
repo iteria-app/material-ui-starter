@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState } from 'react'
 import { Link as RouterLink } from 'react-router-dom';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
@@ -14,15 +15,16 @@ import { makeStyles } from '@mui/styles'
 import MenuIcon from '@mui/icons-material/Menu'
 import NotificationsIcon from '@mui/icons-material/NotificationsOutlined'
 import InputIcon from '@mui/icons-material/Input'
+import LoginIcon from '@mui/icons-material/Login'
+import LogoutIcon from '@mui/icons-material/Logout'
 import Logo from '../../components/Logo'
 import { LocaleSwitch } from '@iteria-app/component-templates/src/i18n'
 import { locales } from '../../locale'
 
-
 const useStyles = makeStyles(() => ({
   root: {},
   avatar: {
-    width: 60,
+    width: 610,
     height: 60
   }
 }));
@@ -30,9 +32,14 @@ const useStyles = makeStyles(() => ({
 const TopBar = ({
   className,
   onMobileNavOpen,
+  // netlifyIdentity,
   ...rest
 }) => {
   const classes = useStyles();
+  
+  // netlifyIdentity.on("login", user => {setUser(user)})
+  // const [user, setUser] = useState(netlifyIdentity.currentUser())
+  const [user, setUser] = useState(null)
 
   return (
     <AppBar
@@ -55,9 +62,24 @@ const TopBar = ({
               <NotificationsIcon />
             </Badge>
           </IconButton>
-          <IconButton color="inherit">
+          {!user && 
+          (<IconButton color="inherit" onClick={() => {
+            console.log("LOGIN")
+            // netlifyIdentity.open("login")
+          }}>
+            <LoginIcon />
+          </IconButton>)}
+          {user && 
+          (<IconButton color="inherit" onClick={() => {
+            console.log("LOGOUT")
+            // netlifyIdentity.logout()
+            //   ?.then(() => setUser(null))
+          }}>
+            <LogoutIcon />
+          </IconButton>)}
+          {/* <IconButton color="inherit">
             <InputIcon />
-          </IconButton>
+          </IconButton> */}
         </Hidden>
         <LocaleSwitch locales={locales} />
         <Hidden lgUp>
@@ -65,7 +87,7 @@ const TopBar = ({
             color="inherit"
             onClick={onMobileNavOpen}
           >
-            <MenuIcon />
+            {/* <MenuIcon /> */}
           </IconButton>
         </Hidden>
       </Toolbar>
