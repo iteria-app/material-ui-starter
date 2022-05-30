@@ -11,6 +11,7 @@ specifiers:
   '@iteria-app/component-templates': 1.1.1
   '@iteria-app/component-templates-api': 1.0.1
   '@iteria-app/graphql-lowcode': 0.2.6
+  '@iteria-app/s3-graphql-client': ^0.0.3
   '@iteria-app/vite-plugin-lowcode': 0.1.7
   '@mui/icons-material': ^5.2.5
   '@mui/lab': ^5.0.0-alpha.64
@@ -58,6 +59,7 @@ dependencies:
   '@iteria-app/component-templates': 1.1.1_c307e8f1dd42b94261ce40ccffbe0600
   '@iteria-app/component-templates-api': 1.0.1
   '@iteria-app/graphql-lowcode': 0.2.6
+  '@iteria-app/s3-graphql-client': 0.0.3_graphql@15.8.0+react@17.0.2
   '@iteria-app/vite-plugin-lowcode': 0.1.7_vite@2.8.6
   '@mui/icons-material': 5.2.5_f463eef15d59df5aa770d062739aa27b
   '@mui/lab': 5.0.0-alpha.64_a2f6ee90597e1b9dcc8a8e674ab37aba
@@ -1461,6 +1463,18 @@ packages:
     resolution: {integrity: sha512-LxMKuytzKf+pBxaN3cOXTj7imcWSXLbWWmxrC4n9mde/YbT2FjstRheuf3waeS7SOrRgbUcfBGHXHroZ239VQA==}
     dependencies:
       uuid: 8.3.2
+    dev: false
+
+  /@iteria-app/s3-graphql-client/0.0.3_graphql@15.8.0+react@17.0.2:
+    resolution: {integrity: sha512-/0vxv5Tb0D0nIy+9lpGEOmdj3kJ/Jlbb+ZE15/NXLFAD6IMB2oPp3CZjkRrSo25OSI5uM8YDH8W6ETQwTLOujQ==}
+    dependencies:
+      '@uppy/aws-s3-multipart': 2.3.0_@uppy+core@2.2.0
+      '@uppy/core': 2.2.0
+      graphql-tag: 2.12.6_graphql@15.8.0
+      urql: 2.1.3_graphql@15.8.0+react@17.0.2
+    transitivePeerDependencies:
+      - graphql
+      - react
     dev: false
 
   /@iteria-app/vite-plugin-lowcode/0.1.7_vite@2.8.6:
