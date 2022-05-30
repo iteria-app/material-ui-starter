@@ -12,7 +12,7 @@
   "dependencies": {
     "@emotion/react": "^11.5.0",
     "@emotion/styled": "^11.3.0",
-    "@iteria-app/component-templates": "1.1.0",
+    "@iteria-app/component-templates": "1.1.1",
     "@iteria-app/component-templates-api": "1.0.1",
     "@iteria-app/graphql-lowcode": "0.2.6",
     "@iteria-app/s3-graphql-client": "0.0.3",
@@ -22,6 +22,9 @@
     "@mui/material": "^5.2.7",
     "@mui/styles": "^5.2.3",
     "@mui/x-data-grid": "^5.2.2",
+    "@uppy/aws-s3-multipart": "^2.3.0",
+    "@uppy/core": "^2.2.0",
+    "@uppy/react": "^2.2.0",
     "chart.js": "^2.9.4",
     "clsx": "^1.1.1",
     "dotenv": "^16.0.1",
