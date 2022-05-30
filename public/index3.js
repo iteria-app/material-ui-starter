@@ -2588,11 +2588,6 @@ var nonIterableSpread = { exports: {} };
   module.exports = _toConsumableArray, module.exports.__esModule = true, module.exports["default"] = module.exports;
 })(toConsumableArray);
 var invariant$8 = function(condition, format, a, b, c, d, e, f) {
-  {
-    if (format === void 0) {
-      throw new Error("invariant requires an error message argument");
-    }
-  }
   if (!condition) {
     var error;
     if (format === void 0) {
@@ -2968,7 +2963,7 @@ var Transformer = /* @__PURE__ */ function() {
         nextNode = this._traverseChildren(prevNode, ["selections"]);
         break;
       default:
-        invariant$7(false, "IRTransformer: Unknown kind `%s`.", prevNode.kind);
+        invariant$7(false);
     }
     return nextNode;
   };
@@ -2980,7 +2975,7 @@ var Transformer = /* @__PURE__ */ function() {
       if (!prevItems) {
         return;
       }
-      !Array.isArray(prevItems) ? invariant$7(false, "IRTransformer: Expected data for `%s` to be an array, got `%s`.", key, prevItems) : void 0;
+      !Array.isArray(prevItems) ? invariant$7(false) : void 0;
       var nextItems = _this._map(prevItems);
       if (nextNode || nextItems !== prevItems) {
         nextNode = nextNode || (0, _objectSpread2$4["default"])({}, prevNode);
@@ -3015,7 +3010,7 @@ var Transformer = /* @__PURE__ */ function() {
     return nextItems || prevItems;
   };
   _proto._getState = function _getState() {
-    !this._states.length ? invariant$7(false, "IRTransformer: Expected a current state to be set but found none. This is usually the result of mismatched number of pushState()/popState() calls.") : void 0;
+    !this._states.length ? invariant$7(false) : void 0;
     return this._states[this._states.length - 1];
   };
   return Transformer2;
@@ -6953,7 +6948,7 @@ function print$2(schema, node) {
     case "SplitOperation":
       return "SplitOperation ".concat(node.name, " on ").concat(schema.getTypeString(node.type)) + printSelections(schema, node, "", {}) + "\n";
     default:
-      invariant$6(false, "IRPrinter: Unsupported IR node `%s`.", node.kind);
+      invariant$6(false);
   }
 }
 function printSelections(schema, node, indent2, options) {
@@ -7021,7 +7016,7 @@ function printSelection(schema, selection, indent2, options) {
     str = "# ".concat(selection.name, " @inline") + "\n".concat(indent2).concat(INDENT, "...") + parentDirectives + printSelections(schema, selection, indent2 + INDENT, {});
   } else if (selection.kind === "Condition") {
     var value = printValue(schema, selection.condition, null);
-    !(value != null) ? invariant$6(false, "IRPrinter: Expected a variable for condition, got a literal `null`.") : void 0;
+    !(value != null) ? invariant$6(false) : void 0;
     var condStr = selection.passingValue ? " @include" : " @skip";
     condStr += "(if: " + value + ")";
     condStr += parentDirectives;
@@ -7080,7 +7075,7 @@ function printSelection(schema, selection, indent2, options) {
       });
     }
   } else if (selection.kind === "ClientExtension") {
-    !(isClientExtension === false) ? invariant$6(false, "IRPrinter: Did not expect to encounter a ClientExtension node as a descendant of another ClientExtension node.") : void 0;
+    !(isClientExtension === false) ? invariant$6(false) : void 0;
     str = "# Client-only selections:\n" + indent2 + INDENT + selection.selections.map(function(sel) {
       return printSelection(schema, sel, indent2, {
         parentDirectives,
@@ -7088,7 +7083,7 @@ function printSelection(schema, selection, indent2, options) {
       });
     }).join("\n" + indent2 + INDENT);
   } else {
-    invariant$6(false, "IRPrinter: Unknown selection kind `%s`.", selection.kind);
+    invariant$6(false);
   }
   return str;
 }
@@ -7168,7 +7163,7 @@ function printValue(schema, value, type) {
     }).filter(Boolean);
     return "{" + pairs.join(", ") + "}";
   } else if (value.kind === "ListValue") {
-    !(type && schema.isList(type)) ? invariant$6(false, "GraphQLIRPrinter: Need a type in order to print arrays.") : void 0;
+    !(type && schema.isList(type)) ? invariant$6(false) : void 0;
     var innerType = schema.getListItemType(type);
     return "[".concat(value.items.map(function(i) {
       return printValue(schema, i, innerType);
@@ -7188,12 +7183,11 @@ function printLiteral(schema, value, type) {
     type = schema.getNullableType(type);
   }
   if (type && schema.isEnum(type)) {
-    var _JSON$stringify2;
     var result = schema.serialize(schema.assertEnumType(type), value);
     if (result == null && typeof value === "string") {
       result = value;
     }
-    !(typeof result === "string") ? invariant$6(false, "IRPrinter: Expected value of type %s to be a valid enum value, got `%s`.", schema.getTypeString(type), (_JSON$stringify2 = JSON.stringify(value)) !== null && _JSON$stringify2 !== void 0 ? _JSON$stringify2 : "null") : void 0;
+    !(typeof result === "string") ? invariant$6(false) : void 0;
     return result;
   } else if (type && (schema.isId(type) || schema.isInt(type))) {
     var _JSON$stringify3;
@@ -7203,7 +7197,7 @@ function printLiteral(schema, value, type) {
     var _result = schema.serialize(schema.assertScalarType(type), value);
     return (_JSON$stringify4 = JSON.stringify(_result)) !== null && _JSON$stringify4 !== void 0 ? _JSON$stringify4 : "";
   } else if (Array.isArray(value)) {
-    !(type && schema.isList(type)) ? invariant$6(false, "IRPrinter: Need a type in order to print arrays.") : void 0;
+    !(type && schema.isList(type)) ? invariant$6(false) : void 0;
     var itemType = schema.getListItemType(type);
     return "[" + value.map(function(item) {
       return printLiteral(schema, item, itemType);
@@ -7212,7 +7206,7 @@ function printLiteral(schema, value, type) {
     return printLiteral(schema, value, schema.getListItemType(type));
   } else if (typeof value === "object" && value != null) {
     var fields = [];
-    !(type && schema.isInputObject(type)) ? invariant$6(false, "IRPrinter: Need an InputObject type to print objects.") : void 0;
+    !(type && schema.isInputObject(type)) ? invariant$6(false) : void 0;
     var inputType = schema.assertInputObjectType(type);
     for (var key in value) {
       if (value.hasOwnProperty(key)) {
@@ -7254,7 +7248,7 @@ function getIdentifierForSelection$2(schema, node) {
   } else if (node.kind === "Condition") {
     return "Condition:" + (node.condition.kind === "Variable" ? "$" + node.condition.variableName : String(node.condition.value)) + String(node.passingValue);
   } else {
-    invariant$5(false, "getIdentifierForSelection: Unexpected kind `%s`.", node.kind);
+    invariant$5(false);
   }
 }
 var getIdentifierForSelection_1 = getIdentifierForSelection$2;
@@ -7323,7 +7317,7 @@ function transformNode$1(schema, node, selectionMap) {
         break;
       }
       default:
-        invariant$4(false, "SkipRedundantNodesTransform: Unexpected node kind `%s`.", selection.kind);
+        invariant$4(false);
     }
   });
   var nextNode = selections.length ? (0, _objectSpread2$3["default"])((0, _objectSpread2$3["default"])({}, node), {}, {
@@ -7366,7 +7360,7 @@ function fragmentSpreadVisitor(cache2) {
     if (traverseResult != null) {
       return traverseResult;
     }
-    !(fragmentSpread.args.length === 0) ? invariant$3(false, "InlineFragmentsTransform: Cannot flatten fragment spread `%s` with arguments. Use the `ApplyFragmentArgumentTransform` before flattening", fragmentSpread.name) : void 0;
+    !(fragmentSpread.args.length === 0) ? invariant$3(false) : void 0;
     var fragment = this.getContext().getFragment(fragmentSpread.name, fragmentSpread.loc);
     var result = {
       kind: "InlineFragment",
@@ -7477,7 +7471,7 @@ function getIdentifierForArgumentValue$1(value) {
         })
       };
     default:
-      invariant$2(false, "getIdentifierForArgumentValue(): Unsupported AST kind `%s`.", value.kind);
+      invariant$2(false);
   }
 }
 var getIdentifierForArgumentValue_1 = getIdentifierForArgumentValue$1;
@@ -8263,8 +8257,8 @@ function end(traceIdx) {
     });
     return;
   }
-  !(trace.ph === "B") ? invariant$1(false, "Begin trace phase") : void 0;
-  !(stack.pop() === trace) ? invariant$1(false, "GraphQLCompilerProfiler: The profile trace %s ended before nested traces. If it is async, try using Profile.waitFor or Profile.profileWait.", trace.name) : void 0;
+  !(trace.ph === "B") ? invariant$1(false) : void 0;
+  !(stack.pop() === trace) ? invariant$1(false) : void 0;
   var prevTrace = traces[traces.length - 1];
   if (trace === prevTrace) {
     traces[traceIdx] = {
@@ -8318,13 +8312,13 @@ var CompilerContext = /* @__PURE__ */ function() {
   };
   _proto.replace = function replace(node) {
     return this._update(this._documents.update(node.name, function(existing) {
-      !existing ? invariant(false, "CompilerContext: Expected to replace existing node %s, but one was not found in the context.", node.name) : void 0;
+      !existing ? invariant(false) : void 0;
       return node;
     }));
   };
   _proto.add = function add(node) {
     return this._update(this._documents.update(node.name, function(existing) {
-      !!existing ? invariant(false, "CompilerContext: Duplicate document named `%s`. GraphQL fragments and roots must have unique names.", node.name) : void 0;
+      !!existing ? invariant(false) : void 0;
       return node;
     }));
   };
