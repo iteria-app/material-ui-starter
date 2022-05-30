@@ -17,7 +17,8 @@ export default ({ command, mode }) => {
 
   return defineConfig({
     optimizeDeps: {
-      exclude: ['@iteria-app/wysiwyg'], // [ '@iteria-app/component-templates',  '@iteria-app/ide-devserver', '@iteria-app/generator', '@iteria-app/graphql-lowcode']
+      exclude: ['@iteria-app/wysiwyg'],
+      include: ['@iteria-app/component-templates'],
     },
     resolve: {
       alias: {
