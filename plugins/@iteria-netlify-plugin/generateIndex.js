@@ -37,27 +37,27 @@ const generateIndexFile = (dependencies) => {
       .map((d, i) => {
         dependency += `['${d}']`;
         return `['${d}'] ${i !== slashedLength - 1
-            ? ` ?? (window.__deps${dependency} = {}))`
-            : ''
+          ? ` ?? (window.__deps${dependency} = {}))`
+          : ''
           }`;
       })
       .join('');
 
-      let dependencyDefault = '';
-      const slashedDependencyDefault = d
-        .split('/')
-        .map((d, i) => {
-          dependencyDefault += `['${d}']`;
-          return `${i !== slashedLength - 1
-              ? `window.__deps_default${dependencyDefault} = {}`
-              : ''
-            }`;
+    let dependencyDefault = '';
+    const slashedDependencyDefault = d
+      .split('/')
+      .map((d, i) => {
+        dependencyDefault += `['${d}']`;
+        return `${i !== slashedLength - 1
+          ? `window.__deps_default${dependencyDefault} = {}`
+          : ''
+          }`;
       })
       .join('');
 
     // add opening brackets
     const openingBrackets = '('.repeat(slashedLength - 1);
-    
+
     indexFile += `
     ${openingBrackets}window.__deps${slashedDependency} = ${importName};
     ${slashedDependencyDefault};
@@ -89,21 +89,17 @@ exports.generateIndex = () => {
   const generatedIndex = generateIndexFile(dependencies);
 
   fs.writeFileSync('./src/iteriaIndex.js', generatedIndex);
-  fs.writeFileSync('./src/runtime.d.ts', `declare module 'react-refresh/runtime';`)
+  // fs.writeFileSync('./src/runtime.d.ts', `declare module 'react-refresh/runtime';`)
   //fs.writeFileSync('./src/iteriaIndex.d.ts', `declare module 'src/iteriaIndex';`)
-  const projectEntry =  findProjectEntry();
+  const projectEntry = findProjectEntry();
   const currIndexFile = fs.readFileSync(projectEntry, 'utf-8');
 
   const newIndexFile =
-    `import * as runtime from 'react-refresh/runtime';\n
-    //@ts-ignore
-    import iteriaIndex from './iteriaIndex';\n` +
+    // `import * as runtime from 'react-refresh/runtime';\n
+    // //@ts-ignore
+    `import iteriaIndex from './iteriaIndex';\n` +
     currIndexFile +
-    `//@ts-ignore
-    window.$RefreshRegGlobal$ = runtime.register;
-    //@ts-ignore
-    window.$RefreshRuntime$ = runtime;
-    iteriaIndex();`;
-  
+    `\niteriaIndex();`;
+
   fs.writeFileSync(projectEntry, newIndexFile);
 };

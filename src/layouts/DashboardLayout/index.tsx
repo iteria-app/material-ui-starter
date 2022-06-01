@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { Outlet } from 'react-router-dom'
 import { makeStyles } from '@mui/styles'
 import NavBar from './NavBar'

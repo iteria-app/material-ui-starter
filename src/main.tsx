@@ -1,20 +1,23 @@
+import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter as Router } from 'react-router-dom'
-
 import App from './App'
+import {
+  ErrorBoundary,
+  LocaleContextProvider,
+  ThemeContextProvider
+} from '@iteria-app/component-templates'
+import './index.css'
 
-import { LocaleContextProvider } from '@iteria-app/component-templates/src/i18n'
-
-console.log("NODE_ENV=" + process.env.NODE_ENV)
-
-// @ts-ignore
-if (!window.__skip_render) {
-  ReactDOM.render(
-    <LocaleContextProvider>
-      <Router>
-        <App />
-      </Router>
-    </LocaleContextProvider>,
-    document.getElementById('root')
-  )
-}
+ReactDOM.render(
+  <ErrorBoundary>
+    <Router>
+      <LocaleContextProvider>
+        <ThemeContextProvider>
+          <App />
+        </ThemeContextProvider>
+      </LocaleContextProvider>
+    </Router>
+  </ErrorBoundary>,
+  document.getElementById('root')
+)

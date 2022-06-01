@@ -1,3 +1,4 @@
+import React from 'react'
 import PropTypes from 'prop-types'
 import {
   Avatar,
@@ -8,11 +9,10 @@ import {
   LinearProgress,
   Typography,
   makeStyles,
-  colors
+  colors,
 } from '@mui/material'
 import { InsertChart } from '@mui/icons-material'
 import { FormattedMessage } from 'react-intl'
-
 const TasksProgress: React.FC<any> = ({ className, ...rest }) => {
   return (
     <Card sx={{ height: '100%' }} {...rest}>
@@ -41,11 +41,9 @@ const TasksProgress: React.FC<any> = ({ className, ...rest }) => {
         </Box>
       </CardContent>
     </Card>
-  );
-};
-
+  )
+}
 TasksProgress.propTypes = {
-  className: PropTypes.string
-};
-
-export default TasksProgress;
+  className: PropTypes.string,
+}
+export default TasksProgress

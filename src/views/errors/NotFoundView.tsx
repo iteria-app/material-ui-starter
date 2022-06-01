@@ -1,3 +1,4 @@
+import React from 'react'
 import { Box, Container, Typography } from '@mui/material'
 import { makeStyles } from '@mui/styles'
 import Page from '../../components/Page'

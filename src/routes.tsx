@@ -1,3 +1,4 @@
+import React from 'react'
 import { Navigate } from 'react-router-dom'
 import DashboardLayout from './layouts/DashboardLayout'
 import MainLayout from './layouts/MainLayout'
@@ -10,7 +11,7 @@ import RegisterView from './views/auth/RegisterView'
 import SettingsView from './views/settings/SettingsView'
 import {
   generatePagesRoutes,
-} from '@iteria-app/component-templates/src/material-ui'
+} from '@iteria-app/component-templates'
 import * as generatedGraphql from './generated/graphql'
 
 const routing = generatePagesRoutes(generatedGraphql)  
