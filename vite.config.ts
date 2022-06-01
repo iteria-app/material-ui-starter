@@ -43,7 +43,7 @@ export default ({ command, mode }) => {
           graphQLEndpoint: true,
           floatingButton: true,
         },
-        version: "1.2.9",
+        version: "1.3.0",
         whitelistedEnvs: ['VITE_HASURA_GRAPHQL_ENDPOINT']
       }),
     ],
