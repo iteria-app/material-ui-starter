@@ -1,0 +1,10 @@
+{
+  "primary": "#404040",
+  "secondary": "#7d7d7d",
+  "error": "#d32f2f",
+  "warning": "#ed6c02",
+  "info": "#0288d1",
+  "success": "#2e7d32",
+  "background": "#ffffff",
+  "divider": "rgba(0, 0, 0, 0.12)"
+}

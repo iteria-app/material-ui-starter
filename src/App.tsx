@@ -10,7 +10,7 @@ import {
   GraphqlcodegenDataProvider
 } from '@iteria-app/component-templates'
 import '../src/mixins/chartjs'
-import theme from '../src/theme'
+import { theme } from '../src/theme'
 import routes from '../src/routes'
 import { messages } from './locale'
 import * as graphqlgen from './generated/graphql'
