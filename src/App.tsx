@@ -14,7 +14,7 @@ import theme from '../src/theme'
 import routes from '../src/routes'
 import { messages } from './locale'
 import * as graphqlgen from './generated/graphql'
-import * as introspection from './generated/introspect.json'
+import introspection from './generated/introspect.json'
 import {
   cacheExchange,
   createClient,
