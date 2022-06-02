@@ -303,7 +303,6 @@ function iteriaLowcode(options) {
     }
     return result;
   };
-  const nodeEnv = isDevelopmentBuild ? `"development"` : `"production"`;
   return {
     name: "@iteria-app/vite-plugin-lowcode",
     config: (config) => {
@@ -320,7 +319,7 @@ function iteriaLowcode(options) {
           })
         }),
         define: {
-          "process.env.NODE_ENV": nodeEnv
+          "process.env.NODE_ENV": isDevelopmentBuild ? `"development"` : `"production"`
         }
       });
     },
