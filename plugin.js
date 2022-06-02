@@ -317,7 +317,10 @@ function iteriaLowcode(options) {
           fs: __spreadProps(__spreadValues({}, (_b2 = config.server) == null ? void 0 : _b2.fs), {
             strict: false
           })
-        })
+        }),
+        define: {
+          "process.env.NODE_ENV": isDevelopmentBuild ? `"development"` : `"production"`
+        }
       });
     },
     transformIndexHtml(html, ctx) {
