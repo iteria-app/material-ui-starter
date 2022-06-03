@@ -45,9 +45,6 @@ const Budget: React.FC<any> = ({ className, ...rest }) => {
       <CardContent>
         <Grid container justify="space-between" spacing={3}>
           <Grid item xs={8}>
-            <Typography color="textSecondary" gutterBottom variant="h6">
-              <FormattedMessage id="budget" tagName="span" />
-            </Typography>
             <Typography color="textPrimary" variant="h3">
               $124,12
             </Typography>
