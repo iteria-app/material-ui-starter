@@ -1,7 +1,8 @@
 import { defineConfig, loadEnv } from 'vite'
 import react from '@vitejs/plugin-react'
-import iteriaLowcode from './plugin'
+import iteriaLowcode from '@iteria-app/vite-plugin-lowcode'
 import path from 'path'
+import replace from '@rollup/plugin-replace'
 
 export default ({ command, mode }) => {
   process.env = {
@@ -12,7 +13,6 @@ export default ({ command, mode }) => {
     VITE_BRANCH: process.env.BRANCH,
     VITE_REPOSITORY_URL: process.env.REPOSITORY_URL,
     VITE_SITE_ID: process.env.SITE_ID,
-    NODE_ENV: "development"
   }
 
   return defineConfig({
@@ -46,6 +46,9 @@ export default ({ command, mode }) => {
         version: "1.3.1",
         whitelistedEnvs: ['VITE_HASURA_GRAPHQL_ENDPOINT', 'VITE_BRANCH', 'VITE_REPOSITORY_URL', 'VITE_SITE_ID', 'VITE_NETLIFY']
       }),
+      replace({
+        'process.env.NODE_ENV': JSON.stringify('development')
+      })
     ],
   })
 }
