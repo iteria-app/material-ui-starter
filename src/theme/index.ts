@@ -1,29 +1,37 @@
-import { createTheme, colors } from '@mui/material'
-import shadows from './shadows';
-import typography from './typography';
+import { createTheme } from '@mui/material'
+import shadows from './shadows'
+import typography from './typography'
+import colors from './colors.json'
 
-const theme = createTheme({
+export const theme = createTheme({
   palette: {
-    background: {
-      // @ts-ignore
-      dark: '#F4F6F8',
-      default: colors.common.white,
-      paper: colors.common.white
-    },
     primary: {
-      main: colors.indigo[500]
+      main: colors?.primary ?? '#1976d2',
     },
     secondary: {
-      main: colors.indigo[500]
+      main: colors?.secondary ?? '#9c27b0',
+    },
+    error: {
+      main: colors?.error ?? '#d32f2f',
+    },
+    warning: {
+      main: colors?.warning ?? '#ed6c02',
+    },
+    info: {
+      main: colors?.info ?? '#0288d1',
+    },
+    success: {
+      main: colors?.success ?? '#2e7d32',
     },
     text: {
-      primary: colors.blueGrey[900],
-      secondary: colors.blueGrey[600]
-    }
+      primary: colors?.primary ?? '#1976d2',
+      secondary: colors?.secondary ?? '#9c27b0',
+    },
+    background: {
+      default: colors?.background ?? '#ffffff',
+    },
+    divider: colors?.divider ?? 'rgba(0, 0, 0, 0.12)',
   },
-  // @ts-ignore
   shadows,
-  typography
-});
-
-export default theme;
+  typography,
+})

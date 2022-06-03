@@ -197,19 +197,36 @@ var httpReadDir = (req, res) => {
 // src/index.ts
 function iteriaLowcode(options) {
   var _a, _b;
-  const ideDevServerIteriaAppInitConf = __spreadProps(__spreadValues(__spreadValues(__spreadValues(__spreadValues({
+  const isDevelopmentBuild = (options == null ? void 0 : options.development) === void 0 || (options == null ? void 0 : options.development) === true;
+  process.env = __spreadProps(__spreadValues({}, process.env), {
+    VITE_CWD: process.cwd(),
+    VITE_MODE: options.mode,
+    VITE_NETLIFY: process.env.NETLIFY,
+    VITE_BRANCH: process.env.BRANCH,
+    VITE_REPOSITORY_URL: process.env.REPOSITORY_URL,
+    VITE_SITE_ID: process.env.SITE_ID,
+    NODE_ENV: isDevelopmentBuild ? "development" : "production"
+  });
+  let injectedEnvs = {};
+  Object.keys(process.env).forEach((name) => {
+    if (options == null ? void 0 : options.whitelistedEnvs.includes(name))
+      injectedEnvs[name] = process.env[name];
+  });
+  const iteriaScript = __spreadProps(__spreadValues(__spreadValues({
     fsPort: 3e3,
-    injectMode: (_a = options.injectMode) != null ? _a : "jamstack"
-  }, options.cwd ? { cwd: options.cwd } : {}), options.graphQLEndpoint ? { graphQLEndpoint: options.graphQLEndpoint } : {}), options.features ? { features: options.features } : {}), options.whitelistedEnvs ? { whitelistedEnvs: options.whitelistedEnvs } : {}), {
+    injectMode: (_a = options.injectMode) != null ? _a : "jamstack",
+    cwd: process.cwd()
+  }, options.graphQLEndpoint ? { graphQLEndpoint: options.graphQLEndpoint } : {}), options.features ? { features: options.features } : {}), {
+    env: __spreadValues({}, injectedEnvs),
     mode: options.mode
   });
-  const ideDevserverPath = `'/ide-devserver.es.js'`//`'https://unpkg.com/@iteria-app/ide-devserver@${(_b = options.version) != null ? _b : "1.2.8"}/dist/ide-devserver.es.js'`;
+  const ideDevserverPath = `'https://unpkg.com/@iteria-app/ide-devserver@${(_b = options.version) != null ? _b : "1.3.0"}/dist/ide-devserver.es.js'`;
   const injectDevServer = (options == null ? void 0 : options.version) === "workspace:*" ? false : true;
   const metas = [];
   const links = [
     {
       rel: "stylesheet",
-      href: "https://unpkg.com/@iteria-app/wysiwyg@1.5.4/dist/style.css"
+      href: "https://unpkg.com/@iteria-app/wysiwyg@1.6.0/dist/style.css"
     },
     {
       href: "https://fonts.googleapis.com/icon?family=Material+Icons",
@@ -248,17 +265,16 @@ function iteriaLowcode(options) {
       }
       window.global = {}
     `
+    },
+    injectDevServer && {
+      type: "module",
+      content: `
+        import { iteriaApp } from ${ideDevserverPath}
+        iteriaApp(
+          ${JSON.stringify(iteriaScript)}
+        )`
     }
   ].filter(Boolean);
-  const iteriaScript = {
-    type: "module",
-    defer: '',
-    content: `
-      import { iteriaApp } from ${ideDevserverPath}
-      iteriaApp(
-        ${JSON.stringify(ideDevServerIteriaAppInitConf)}
-      )`
-  };
   const devtoolsScript = {
     src: "https://react-devtools-inline-initialize.netlify.app/react-devtools-inline-initialize.umd.js"
   };
@@ -301,7 +317,10 @@ function iteriaLowcode(options) {
           fs: __spreadProps(__spreadValues({}, (_b2 = config.server) == null ? void 0 : _b2.fs), {
             strict: false
           })
-        })
+        }),
+        define: {
+          "process.env.NODE_ENV": isDevelopmentBuild ? `"development"` : `"production"`
+        }
       });
     },
     transformIndexHtml(html, ctx) {
@@ -334,8 +353,6 @@ function iteriaLowcode(options) {
           htmlResult.push(getScriptContent(script, "head-prepend"));
         });
       }
-      if (injectDevServer)
-        htmlResult.push(getScriptContent(iteriaScript, "body"));
       htmlResult.push(getScriptContent(devtoolsScript, "body-prepend"));
       return htmlResult;
     },

@@ -1,6 +1,6 @@
 import { defineConfig, loadEnv } from 'vite'
 import react from '@vitejs/plugin-react'
-import iteriaLowcode from '@iteria-app/vite-plugin-lowcode'
+import iteriaLowcode from './plugin'
 import path from 'path'
 
 export default ({ command, mode }) => {
@@ -43,12 +43,9 @@ export default ({ command, mode }) => {
           graphQLEndpoint: true,
           floatingButton: true,
         },
-        version: "1.3.0",
-        whitelistedEnvs: ['VITE_HASURA_GRAPHQL_ENDPOINT']
+        version: "1.3.1",
+        whitelistedEnvs: ['VITE_HASURA_GRAPHQL_ENDPOINT', 'VITE_BRANCH', 'VITE_REPOSITORY_URL', 'VITE_SITE_ID', 'VITE_NETLIFY']
       }),
     ],
-    define: {
-      'process.env.NODE_ENV': `"development"` //for monorepo netlify preview pull req purposes only
-    }
   })
 }
