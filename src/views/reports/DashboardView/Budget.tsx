@@ -12,7 +12,7 @@ const Budget: React.FC<any> = ({ className, ...rest }) => {
             <FormattedMessage id="budget" tagName="span" />
           </Typography>
           <Typography color="textPrimary" variant="h3">
-            $24,000
+            $24,001
           </Typography>
         </Grid>
         <Grid item xs={4}>
