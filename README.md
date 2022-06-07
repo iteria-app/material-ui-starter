@@ -22,4 +22,4 @@ This button will do the following:
 - Connect to your GitHub account and create a new repository with the name you specify
 - Deploy your copy of the repository and setup continuous deployment
 
-Now you're all set, and you can start customizing your static site!
+Now you're all set and you can start customizing your static/jamstack site connected via GraphQL to Hasura!
