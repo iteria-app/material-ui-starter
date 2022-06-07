@@ -4,6 +4,11 @@ import iteriaLowcode from '@iteria-app/vite-plugin-lowcode'
 import path from 'path'
 
 export default ({ command, mode }) => {
+  process.env = {
+    ...process.env,
+    ...loadEnv(mode, process.cwd()),
+  }
+
   return defineConfig({
     optimizeDeps: {
       exclude: ['@iteria-app/wysiwyg'],
@@ -32,6 +37,7 @@ export default ({ command, mode }) => {
           graphQLEndpoint: true,
           floatingButton: true,
         },
+        version: "1.3.1",
         whitelistedEnvs: ['VITE_HASURA_GRAPHQL_ENDPOINT', 'VITE_BRANCH', 'VITE_REPOSITORY_URL', 'VITE_SITE_ID', 'VITE_NETLIFY']
       }),
     ],
