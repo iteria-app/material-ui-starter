@@ -15,10 +15,10 @@ Now you're all set and you can start customizing your [jamstack](https://jamstac
 Even non technical users can collaborate once initial netlify setup is done.
 
 ## Getting started on localhost
-You can run this demo locally using https://vitejs.dev/
+You can run this demo locally using https://vitejs.dev/ with all you development tools.
 
 ## Getting started on Gitpod
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/iteria-app/example-material-ui) to develop using vscode in cloud.
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/iteria-app/example-material-ui) to develop using vscode in cloud. Every Lowcode release is tested also in Gitpod.
 
 ## Getting started on Stackblitz, Codespace
 In future [#72](https://github.com/iteria-app/example-material-ui/issues/72) we might support [StackBlitz](https://stackblitz.com/github/iteria-app/example-material-ui) or codespaces.
