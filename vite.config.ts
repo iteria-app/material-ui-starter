@@ -7,6 +7,11 @@ export default ({ command, mode }) => {
   process.env = {
     ...process.env,
     ...loadEnv(mode, process.cwd()),
+    VITE_CWD: process.cwd(),
+    VITE_MODE: mode,
+    VITE_BRANCH: process.env.BRANCH,
+    VITE_REPOSITORY_URL: process.env.REPOSITORY_URL,
+    VITE_SITE_ID: process.env.SITE_ID,
   }
 
   return defineConfig({
@@ -37,7 +42,7 @@ export default ({ command, mode }) => {
           graphQLEndpoint: true,
           floatingButton: true,
         },
-        version: "1.3.1",
+        version: "1.3.2",
         whitelistedEnvs: ['VITE_HASURA_GRAPHQL_ENDPOINT', 'VITE_BRANCH', 'VITE_REPOSITORY_URL', 'VITE_SITE_ID', 'VITE_NETLIFY']
       }),
     ],
