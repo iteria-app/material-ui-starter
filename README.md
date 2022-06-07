@@ -13,7 +13,7 @@ Demonstrates Iteria React Lowcode features:
 - Connect to your GitHub account and create a new repository with the name you specify
 - Deploy your copy of the repository and setup continuous deployment
 
-Now you're all set and you can start customizing your static/jamstack site connected via GraphQL to Hasura!
+Now you're all set and you can start customizing your static/[jamstack](https://jamstack.org/) site connected via GraphQL to [Hasura](https://hasura.io/)!
 
 ## Getting started on localhost or Gitpod
 You can run this demo locally using https://vitejs.dev/ or in cloud using Gitpod. 
