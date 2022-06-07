@@ -6,9 +6,6 @@ package = "/plugins/@iteria-netlify-plugin"
   NPM_FLAGS = "--prefix=/dev/null"
   NODE_OPTIONS = "--max_old_space_size=4096"
 
-[context.production]
-  environment = { NODE_ENV = "development" }
-
 [[redirects]]
   from = "/*"
   to = "/index.html"
@@ -21,7 +18,7 @@ package = "/plugins/@iteria-netlify-plugin"
     Access-Control-Allow-Origin = "*"
 
 [build]
-  command = "npx pnpm@6.21.0 i --store=node_modules/.pnpm-store && npx pnpm@6.21.0 run build"
+  command = "npx pnpm@6.21.0 i --store=node_modules/.pnpm-store && npx pnpm@6.21.0 run build:development"
   publish = "dist"
 
 
