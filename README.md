@@ -12,7 +12,7 @@ Demonstrates Iteria React Lowcode features:
 - Deploy your copy of the repository and setup continuous deployment
 
 Now you're all set and you can start customizing your [jamstack](https://jamstack.org/) site connected via GraphQL to [Hasura](https://hasura.io/)!
-Even non technical users can collaborate once initial netlify setup is done.
+Even non technical users can collaborate once deployed to netlify!
 
 ## Getting started on localhost
 You can run this demo locally using https://vitejs.dev/ with all you development tools.
