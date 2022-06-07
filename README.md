@@ -8,8 +8,8 @@ Demonstrates Iteria React Lowcode features:
 
 
 ## Getting started on Netlify
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/iteria-app/example-material-ui&stack=cms) Use this deploy button to get your own copy of the repository. This button will do the following:
-
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/iteria-app/example-material-ui&stack=cms)
+Use this deploy button to get your own copy of the repository. This button will do the following:
 - Connect to your GitHub account and create a new repository with the name you specify
 - Deploy your copy of the repository and setup continuous deployment
 
