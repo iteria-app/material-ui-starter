@@ -19,4 +19,4 @@ Now you're all set and you can start customizing your static/[jamstack](https://
 You can run this demo locally using https://vitejs.dev/ or in cloud using Gitpod. 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/iteria-app/example-material-ui)
 
-In future #72 we might support [StackBlitz](https://stackblitz.com/github/iteria-app/example-material-ui) or codespaces.
+In future [#72](https://github.com/iteria-app/example-material-ui/issues/72) we might support [StackBlitz](https://stackblitz.com/github/iteria-app/example-material-ui) or codespaces.
