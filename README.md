@@ -5,6 +5,7 @@ Demonstrates Iteria React Lowcode features for [jamstack](https://jamstack.org/)
 * [Translation sheet](https://www.youtube.com/watch?v=5-U2vfgHkMA&t=396s) - spreadsheet with all messages and their translations
 
 [![Demo Video](https://img.youtube.com/vi/5-U2vfgHkMA/0.jpg)](https://www.youtube.com/watch?v=5-U2vfgHkMA&t=206s)
+[DOCS](https://docs.iteria.app/)
 
 ## Getting started on Netlify
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/iteria-app/example-material-ui&stack=cms) to get your own copy of the repository. This button will do the following:
@@ -13,7 +14,7 @@ Demonstrates Iteria React Lowcode features for [jamstack](https://jamstack.org/)
 
 Next steps:
 1. Customization: Now you're all set and you can start customizing your site.
-2. Consider connecting to your own GraphQL/Hasura endpoint (see [docs](https://docs.iteria.app/)).
+2. Consider connecting to your own GraphQL/Hasura endpoint (see [docs](https://docs.iteria.app/docs/getting-started/change-graphql-endpoint)).
 3. Even non technical users can collaborate once deployed to netlify!
 
 ## Getting started on localhost
