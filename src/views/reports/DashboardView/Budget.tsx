@@ -42,22 +42,6 @@ const Budget: React.FC<any> = ({ className, ...rest }) => {
           </Typography>
         </Box>
       </CardContent>
-      <CardContent>
-        <Grid container justify="space-between" spacing={3}>
-          <Grid item xs={8}>
-            <Typography color="textPrimary" variant="h3">
-              $124,12
-            </Typography>
-          </Grid>
-          <Grid item xs={4}>
-            <Grid container justifyContent="right">
-              <Avatar sx={{ bgcolor: colors.red[500], height: 56, width: 56 }}>
-                <Money />
-              </Avatar>
-            </Grid>
-          </Grid>
-        </Grid>
-      </CardContent>
     </Card>
   )
 }
