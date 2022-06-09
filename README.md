@@ -14,7 +14,7 @@ Demonstrates [Iteria React Lowcode](https://docs.iteria.app/) features for [jams
 Next steps:
 1. Customization: Now you're all set and you can start customizing your site (see [docs](https://docs.iteria.app/docs/category/features)).
 2. Consider connecting to your own GraphQL/Hasura endpoint (see [docs](https://docs.iteria.app/docs/getting-started/change-graphql-endpoint)).
-3. Even non technical users can collaborate once deployed to netlify! (see [docs](https://docs.iteria.app/docs/getting-started/netlify))
+3. Even non technical users can collaborate once deployed to netlify! (see [docs](https://docs.iteria.app/docs/category/extras))
 
 ## Getting started on localhost
 You can run this demo locally using https://vitejs.dev/ with all you development tools.
