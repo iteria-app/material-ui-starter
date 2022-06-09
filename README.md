@@ -13,7 +13,7 @@ Demonstrates Iteria React Lowcode features for [jamstack](https://jamstack.org/)
 
 Next steps:
 1. Customization: Now you're all set and you can start customizing your site.
-2. Consider connecting to your own GraphQL/Hasura endpoint (TODO docs).
+2. Consider connecting to your own GraphQL/Hasura endpoint (see [docs](https://docs.iteria.app/)).
 3. Even non technical users can collaborate once deployed to netlify!
 
 ## Getting started on localhost
