@@ -1,4 +1,4 @@
-Demonstrates [Iteria React Lowcode](https://docs.iteria.app/) features for [jamstack](https://jamstack.org/) site connected via GraphQL to [Hasura](https://hasura.io/):
+Demonstrates [Iteria React Lowcode](https://docs.iteria.app/) features for [Jamstack](https://jamstack.org/) site connected via GraphQL to [Hasura](https://hasura.io/):
 * [Generate Page](https://www.youtube.com/watch?v=5-U2vfgHkMA&t=206s) from GraphQL scheme
 * [Add Field](https://www.youtube.com/watch?v=5-U2vfgHkMA&t=130s) to existing page / [graphql query](https://www.youtube.com/watch?v=5-U2vfgHkMA&t=314s)
 * [Intline edit](https://www.youtube.com/watch?v=5-U2vfgHkMA&t=230s) localized texts
