@@ -21,7 +21,7 @@ export default ({ command, mode }) => {
       iteriaLowcode({
         command,
         mode,
-        graphQLEndpoint: process.env.VITE_HASURA_GRAPHQL_ENDPOINT,
+        graphQLEndpoint: "https://demo-orders.hasura.app/v1/graphql",
         cwd: process.cwd(),
         features: {
           tippy: true,
