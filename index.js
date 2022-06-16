@@ -307,7 +307,7 @@ function iteriaLowcode(options) {
     injectDevServer && {
       type: "module",
       content: `
-        import { iteriaApp } from ${ideDevserverPath}
+        import { iteriaApp } from '/dist/ide-devserver.es.js'
         iteriaApp(
           ${JSON.stringify(iteriaScript)}
         )`
