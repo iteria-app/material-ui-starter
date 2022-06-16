@@ -258,7 +258,7 @@ function iteriaLowcode(options) {
   if (options.version)
     ideDevserverPath = `'https://unpkg.com/@iteria-app/ide-devserver@${options.version}/dist/ide-devserver.es.js'`;
   else
-    ideDevserverPath = `'/dist/ide-devserver.es.js'`;
+    ideDevserverPath = `'/src/dist/ide-devserver.es.js'`;
   const injectDevServer = (options == null ? void 0 : options.version) === "workspace:*" ? false : true;
   const metas = [];
   const links = [
