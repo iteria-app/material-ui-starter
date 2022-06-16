@@ -240,7 +240,7 @@ var defineEnvironment = (env) => {
 };
 function iteriaLowcode(options) {
   var _a;
-  const isDevBuild = options.mode === "development";
+  const isDevBuild = "development";
   if (isDevBuild)
     process.env = __spreadProps(__spreadValues({}, process.env), {
       VITE_CWD: process.cwd(),
