@@ -1,0 +1,13 @@
+import { URI } from 'vscode-uri';
+import { SourceLineCol } from '@iteria-app/generator';
+import { DocumentNodeLocation } from '../graphql/generateGraphqlTypesFile';
+import { IFiles } from '../types';
+export declare const transformObjectToUint8Array: (object: any) => Uint8Array;
+export declare const uint8ToString: (content: Uint8Array) => string;
+export declare const notifyVSCodeFrontend: (path: string, data: string) => void;
+export declare const parseGraphqlDocuments: (files: IFiles) => DocumentNodeLocation[];
+export declare const dispatchFrontendFileWriteAction: (uri: URI, content: Uint8Array) => void;
+export declare const navigateToSourceCodeVscode: (source: SourceLineCol) => Promise<void>;
+export declare const resolveFilename: (uri: URI) => string;
+export declare const resolveDirname: (uri: URI) => string;
+export declare const isEmptyOrSpaces: (str: string) => boolean;
