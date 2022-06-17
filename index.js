@@ -258,7 +258,7 @@ function iteriaLowcode(options) {
   if (options.version)
     ideDevserverPath = `'https://unpkg.com/@iteria-app/ide-devserver@${options.version}/dist/ide-devserver.es.js'`;
   else
-    ideDevserverPath = `'/src/dist/ide-devserver.es.js'`;
+    ideDevserverPath = `'https://unpkg.com/@iteria-app/ide-devserver/dist/ide-devserver.es.js'`;
   const injectDevServer = (options == null ? void 0 : options.version) === "workspace:*" ? false : true;
   const metas = [];
   const links = [
@@ -272,6 +272,10 @@ function iteriaLowcode(options) {
     },
     {
       href: "https://bossanova.uk/jspreadsheet/v4/jexcel.css",
+      rel: "stylesheet"
+    },
+    {
+      href: "/dist/style.css",
       rel: "stylesheet"
     }
   ];

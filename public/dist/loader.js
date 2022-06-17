@@ -215,6 +215,7 @@ function hideSpinner() {
   spinner.remove();
   container.remove();
 }
+var spin = "";
 let devServer;
 async function iteriaApp(props) {
   showSpinner();
