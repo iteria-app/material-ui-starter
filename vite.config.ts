@@ -23,6 +23,7 @@ export default ({ command, mode }) => {
         mode,
         graphQLEndpoint: "https://demo-orders.hasura.app/v1/graphql",
         cwd: process.cwd(),
+        injectLowcode: true,
         features: {
           tippy: true,
           generator: true,
