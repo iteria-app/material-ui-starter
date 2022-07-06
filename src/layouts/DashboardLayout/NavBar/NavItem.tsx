@@ -1,84 +1,84 @@
 import React from 'react'
-import { NavLink as RouterLink } from 'react-router-dom';
-import clsx from 'clsx';
-import PropTypes from 'prop-types';
-import {
-  Button,
-  ListItem,
-} from '@mui/material'
-import { makeStyles } from '@mui/styles'
+import { NavLink as RouterLink } from 'react-router-dom'
+import PropTypes from 'prop-types'
+import { Button, ListItem } from '@mui/material'
+import { styled } from '@mui/material'
 
-const useStyles = makeStyles((theme) => ({
-  item: {
+const PREFIX = 'StyledListItem'
+const classes = {
+  root: `${PREFIX}-root`,
+  item: `${PREFIX}-item`,
+  button: `${PREFIX}-button`,
+  icon: `${PREFIX}-icon`,
+  title: `${PREFIX}-title`,
+  active: `${PREFIX}-active`,
+}
+const StyledListItem = styled(ListItem)(({ theme }) => ({
+  [`&.${classes.root}`]: {},
+  [`& .${classes.item}`]: {
     display: 'flex',
     paddingTop: 0,
-    paddingBottom: 0
+    paddingBottom: 0,
   },
-  button: {
+  [`& .${classes.button}`]: {
     color: theme.palette.text.secondary,
     fontWeight: theme.typography.fontWeightMedium,
     justifyContent: 'flex-start',
     letterSpacing: 0,
     padding: '10px 8px',
     textTransform: 'none',
-    width: '100%'
+    width: '100%',
   },
-  icon: {
-    marginRight: theme.spacing(1)
+  [`& .${classes.icon}`]: {
+    marginRight: theme.spacing(1),
   },
-  title: {
-    marginRight: 'auto'
+  [`& .${classes.title}`]: {
+    marginRight: 'auto',
   },
-  active: {
+  [`& .${classes.active}`]: {
     color: theme.palette.primary.main,
-    '& $title': {
-      fontWeight: theme.typography.fontWeightMedium
+    [`& .${classes.title}`]: {
+      fontWeight: theme.typography.fontWeightMedium,
     },
-    '& $icon': {
-      color: theme.palette.primary.main
-    }
-  }
-}));
+    [`& .${classes.icon}`]: {
+      color: theme.palette.primary.main,
+    },
+  },
+}))
 
-const NavItem = ({
-  className,
-  href,
-  icon: Icon,
-  title,
-  ...rest
-}) => {
-  const classes = useStyles();
+const removeLinkName = (props) => {
+  const { linkname, ...newProps } = props
+  return newProps
+}
 
+const LinkBehavior = React.forwardRef((props, ref) => (
+  <RouterLink {...removeLinkName(props)} className={props.linkname} />
+))
+
+const NavItem = ({ className, href, icon: Icon, title, ...rest }) => {
   return (
-    <ListItem
-      className={clsx(classes.item, className)}
-      disableGutters
-      {...rest}
-    >
+    <StyledListItem className={classes.item} disableGutters {...rest}>
       <Button
+        //@ts-ignore
+        linkname={({ isActive }) =>
+          isActive ? classes.active + ' ' + classes.button : classes.button
+        }
         className={classes.button}
-        component={RouterLink}
+        component={LinkBehavior}
         to={href}
       >
-        {Icon && (
-          <Icon
-            className={classes.icon}
-            size="20"
-          />
-        )}
-        <span className={classes.title}>
-          {title}
-        </span>
+        {Icon && <Icon className={classes.icon} size="20" />}
+        <span className={classes.title}>{title}</span>
       </Button>
-    </ListItem>
-  );
-};
+    </StyledListItem>
+  )
+}
 
 NavItem.propTypes = {
   className: PropTypes.string,
   href: PropTypes.string,
   icon: PropTypes.elementType,
-  title: PropTypes.string
-};
+  title: PropTypes.string,
+}
 
-export default NavItem;
+export default NavItem

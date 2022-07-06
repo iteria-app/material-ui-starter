@@ -1,39 +1,47 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
-import { makeStyles } from '@mui/styles'
+import { styled } from '@mui/material'
 import TopBar from './TopBar'
 
-const useStyles = makeStyles(theme => ({
-  root: {
+const PREFIX = 'StyledMainLayout'
+const classes = {
+  root: `${PREFIX}-root`,
+  wrapper: `${PREFIX}-wrapper`,
+  contentContainer: `${PREFIX}-contentContainer`,
+  content: `${PREFIX}-content`,
+}
+const StyledMainLayout = styled('div')(({ theme }) => ({
+  [`&.${classes.root}`]: {
     backgroundColor: theme.palette.background.default,
     display: 'flex',
     height: '100%',
     overflow: 'hidden',
-    width: '100%'
+    width: '100%',
   },
-  wrapper: {
+  [`& .${classes.wrapper}`]: {
     display: 'flex',
     flex: '1 1 auto',
     overflow: 'hidden',
-    paddingTop: 64
+    paddingTop: 64,
+    [theme.breakpoints.up('lg')]: {
+      paddingLeft: 256,
+    },
   },
-  contentContainer: {
+  [`& .${classes.contentContainer}`]: {
     display: 'flex',
     flex: '1 1 auto',
-    overflow: 'hidden'
+    overflow: 'hidden',
   },
-  content: {
+  [`& .${classes.content}`]: {
     flex: '1 1 auto',
     height: '100%',
-    overflow: 'auto'
-  }
-}));
+    overflow: 'auto',
+  },
+}))
 
 const MainLayout = () => {
-  const classes = useStyles();
-
   return (
-    <div className={classes.root}>
+    <StyledMainLayout className={classes.root}>
       <TopBar className="" />
       <div className={classes.wrapper}>
         <div className={classes.contentContainer}>
@@ -42,8 +50,8 @@ const MainLayout = () => {
           </div>
         </div>
       </div>
-    </div>
-  );
-};
+    </StyledMainLayout>
+  )
+}
 
-export default MainLayout;
+export default MainLayout

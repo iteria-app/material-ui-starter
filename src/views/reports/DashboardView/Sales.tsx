@@ -8,26 +8,27 @@ import {
   CardContent,
   CardHeader,
   Divider,
-  colors
+  colors,
 } from '@mui/material'
 import { ArrowDropDown, ArrowRight } from '@mui/icons-material'
+import { theme } from '../../../theme'
 
 const Sales: React.FC<any> = ({ className, ...rest }) => {
   const data = {
     datasets: [
       {
-        backgroundColor: colors.indigo[500],
+        backgroundColor: theme.palette.info.main,
         data: [18, 5, 19, 27, 29, 19, 20],
-        label: 'This year'
+        label: 'This year',
       },
       {
-        backgroundColor: colors.grey[300],
+        backgroundColor: theme.palette.warning.main,
         data: [11, 20, 12, 29, 30, 25, 13],
-        label: 'Last year'
-      }
+        label: 'Last year',
+      },
     ],
-    labels: ['1 Aug', '2 Aug', '3 Aug', '4 Aug', '5 Aug', '6 Aug']
-  };
+    labels: ['1 Aug', '2 Aug', '3 Aug', '4 Aug', '5 Aug', '6 Aug'],
+  }
 
   const options = {
     animation: false,
@@ -44,20 +45,20 @@ const Sales: React.FC<any> = ({ className, ...rest }) => {
           barPercentage: 0.5,
           categoryPercentage: 0.5,
           ticks: {
-            fontColor: colors.grey[1000]
+            fontColor: colors.grey[1000],
           },
           gridLines: {
             display: false,
-            drawBorder: false
-          }
-        }
+            drawBorder: false,
+          },
+        },
       ],
       yAxes: [
         {
           ticks: {
             fontColor: colors.grey[1000],
             beginAtZero: true,
-            min: 0
+            min: 0,
           },
           gridLines: {
             borderDash: [2],
@@ -66,10 +67,10 @@ const Sales: React.FC<any> = ({ className, ...rest }) => {
             drawBorder: false,
             zeroLineBorderDash: [2],
             zeroLineBorderDashOffset: [2],
-            zeroLineColor: colors.grey[300]
-          }
-        }
-      ]
+            zeroLineColor: colors.grey[300],
+          },
+        },
+      ],
     },
     tooltips: {
       backgroundColor: colors.grey[500],
@@ -80,9 +81,9 @@ const Sales: React.FC<any> = ({ className, ...rest }) => {
       footerFontColor: colors.grey[50],
       intersect: false,
       mode: 'index',
-      titleFontColor: colors.grey[500]
-    }
-  };
+      titleFontColor: theme.palette.info.main,
+    },
+  }
 
   return (
     <Card {...rest}>
@@ -112,11 +113,11 @@ const Sales: React.FC<any> = ({ className, ...rest }) => {
         </Button>
       </Box>
     </Card>
-  );
-};
+  )
+}
 
 Sales.propTypes = {
-  className: PropTypes.string
-};
+  className: PropTypes.string,
+}
 
-export default Sales;
+export default Sales
