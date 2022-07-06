@@ -258,14 +258,22 @@ const components: Components<Theme> = {
   },
   MuiSelect: {
     styleOverrides: {
-      // @ts-ignore
-      root: {
+      select: {
         margin: '0 15px',
         ':before': {
-          visibility: 'hidden',
+          visibility: 'hidden!important',
         },
       },
     },
+  },
+  MuiInput: {
+    styleOverrides: {
+      root: {        
+        ':before': {
+          visibility: 'hidden!important',
+        },
+      },
+    }
   },
   MuiPagination: {
     defaultProps: {
