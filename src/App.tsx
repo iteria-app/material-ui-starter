@@ -28,8 +28,13 @@ const graphqlcodegenDataProvider = new GraphqlcodegenDataProvider(
 )
 
 const client = createClient({
-  url: 'https://demo-orders.hasura.app/v1/graphql',
+  url: import.meta.env.VITE_HASURA_GRAPHQL_ENDPOINT as string,
   exchanges: [debugExchange, cacheExchange, fetchExchange],
+  fetchOptions: {
+    headers: {
+      'x-hasura-admin-secret': import.meta.env.VITE_HASURA_GRAPHQL_SECRET as string
+    }
+  },
 })
 
 const App = () => {

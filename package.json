@@ -5,7 +5,6 @@
   "scripts": {
     "dev": "concurrently \"vite\" \"npm run codegen:watch\"",
     "build": "vite build",
-    "build:development": "vite build --mode development",
     "serve": "vite preview",
     "codegen:watch": "cross-env DOTENV_CONFIG_PATH=./.env.development graphql-codegen --require dotenv/config  --watch --config codegen.yml",
     "codegen": "cross-env DOTENV_CONFIG_PATH=./.env.development graphql-codegen --require dotenv/config --config codegen.yml"
@@ -51,7 +50,7 @@
     "@graphql-codegen/typescript": "^2.2.2",
     "@graphql-codegen/typescript-operations": "^2.1.5",
     "@graphql-codegen/typescript-urql": "^3.2.0",
-    "@iteria-app/vite-plugin-lowcode": "^0.1.9",
+    "@iteria-app/vite-plugin-lowcode": "0.2.0",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@vitejs/plugin-react": "1.2.0",
