@@ -1,59 +1,44 @@
 import React, { useState } from 'react'
 import { Outlet } from 'react-router-dom'
-import { makeStyles } from '@mui/styles'
+import { Box, styled, useTheme } from '@mui/material'
 import NavBar from './NavBar'
 import TopBar from './TopBar'
 
-const useStyles = makeStyles((theme: any) => ({
-  root: {
-    backgroundColor: theme.palette.background.dark,
-    display: 'flex',
-    height: '100%',
-    overflow: 'hidden',
-    width: '100%'
-  },
-  wrapper: {
-    display: 'flex',
-    flex: '1 1 auto',
-    overflow: 'hidden',
-    paddingTop: 64,
-    [theme.breakpoints.up('lg')]: {
-      paddingLeft: 256
-    }
-  },
-  contentContainer: {
-    display: 'flex',
-    flex: '1 1 auto',
-    overflow: 'hidden'
-  },
-  content: {
-    flex: '1 1 auto',
-    height: '100%',
-    overflow: 'auto'
-  }
-}));
+const drawerWidth = 256
 
-const DashboardLayout = () => {
-  const classes = useStyles();
-  const [isMobileNavOpen, setMobileNavOpen] = useState(false);
+const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })<{
+  open?: boolean
+}>(({ theme, open }) => ({
+  flexGrow: 1,
+  padding: theme.spacing(3),
+  transition: theme.transitions.create('margin', {
+    easing: theme.transitions.easing.sharp,
+    duration: theme.transitions.duration.leavingScreen,
+  }),
+  marginTop: '48px',
+  marginLeft: `-${drawerWidth}px`,
+  ...(open && {
+    transition: theme.transitions.create('margin', {
+      easing: theme.transitions.easing.easeOut,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
+    marginLeft: 0,
+  }),
+}))
+
+const DashboardLayout = (): JSX.Element => {
+  const theme = useTheme()
+  const [open, setOpen] = useState(true)
 
   return (
-    <div className={classes.root}>
-      {/* // @ts/ignore */}
-      <TopBar className="" onMobileNavOpen={() => setMobileNavOpen(true)} />
-      <NavBar
-        onMobileClose={() => setMobileNavOpen(false)}
-        openMobile={isMobileNavOpen}
-      />
-      <div className={classes.wrapper}>
-        <div className={classes.contentContainer}>
-          <div className={classes.content}>
-            <Outlet />
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
+    <Box sx={{ display: 'flex', background: theme.palette.background.default }}>
+      <TopBar open={open} onOpen={() => setOpen(!open)} />
+      <NavBar open={open} drawerWidth={drawerWidth} />
+      <Main open={open}>
+        <Outlet />
+      </Main>
+    </Box>
+  )
+}
 
-export default DashboardLayout;
+export default DashboardLayout

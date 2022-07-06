@@ -1,33 +1,23 @@
 import React from 'react'
 import { Navigate } from 'react-router-dom'
-import DashboardLayout from './layouts/DashboardLayout'
-import MainLayout from './layouts/MainLayout'
-import AccountView from './views/account/AccountView'
-import DashboardView from './views/reports/DashboardView'
-import LoginView from './views/auth/LoginView'
-import NotFoundView from './views/errors/NotFoundView'
-import ProductListView from './views/product/ProductListView'
-import RegisterView from './views/auth/RegisterView'
-import SettingsView from './views/settings/SettingsView'
-import {
-  generatePagesRoutes,
-} from '@iteria-app/component-templates'
+import DashboardLayout from '../src/layouts/DashboardLayout'
+import MainLayout from '../src/layouts/MainLayout'
+import LoginView from '../src/views/auth/LoginView'
+import NotFoundView from '../src/views/errors/NotFoundView'
+import RegisterView from '../src/views/auth/RegisterView'
+import DashboardView from '../src/views/reports/DashboardView'
+
+import { generatePagesRoutes } from '@iteria-app/component-templates'
 import * as generatedGraphql from './generated/graphql'
 
-const routing = generatePagesRoutes(generatedGraphql)  
+const routing = generatePagesRoutes(generatedGraphql)
+routing.push({ path: 'dashboard', element: <DashboardView /> })
 
 const routes = [
   {
     path: 'app',
     element: <DashboardLayout />,
-    children: [
-      { path: 'account', element: <AccountView /> },
-      { path: 'dashboard', element: <DashboardView /> },
-      { path: 'products', element: <ProductListView /> },
-      { path: 'settings', element: <SettingsView /> },
-      { path: '*', element: <Navigate to="/404" /> },
-      ...routing
-    ]
+    children: routing,
   },
   {
     path: '/',
@@ -38,8 +28,8 @@ const routes = [
       { path: '404', element: <NotFoundView /> },
       { path: '/', element: <Navigate to="/app/dashboard" /> },
       { path: '*', element: <Navigate to="/404" /> },
-    ]
-  }
-];
+    ],
+  },
+]
 
-export default routes;
+export default routes
