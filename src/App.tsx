@@ -29,7 +29,7 @@ const graphqlcodegenDataProvider = new GraphqlcodegenDataProvider(
 
 const client = createClient({
   url: import.meta.env.VITE_HASURA_GRAPHQL_ENDPOINT as string,
-  exchanges: [debugExchange, cacheExchange, fetchExchange],
+  exchanges: [debugExchange, fetchExchange],
   fetchOptions: {
     headers: {
       'x-hasura-admin-secret': import.meta.env.VITE_HASURA_GRAPHQL_SECRET as string
