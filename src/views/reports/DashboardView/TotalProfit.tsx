@@ -9,7 +9,9 @@ import {
   colors,
 } from '@mui/material'
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney'
-import { FormattedMessage } from 'react-intl'
+import { Translate } from '@iteria-app/component-templates'
+import { theme } from '../../../theme'
+
 const TotalProfit: React.FC<any> = ({ className, ...rest }) => {
   return (
     <Card sx={{ height: '100%' }} {...rest}>
@@ -17,7 +19,7 @@ const TotalProfit: React.FC<any> = ({ className, ...rest }) => {
         <Grid container spacing={3}>
           <Grid item xs={9}>
             <Typography color="textSecondary" gutterBottom variant="h6">
-              <FormattedMessage id="total.profit" tagName="span" />
+              <Translate entityName="total.profit" />
             </Typography>
             <Typography color="textPrimary" variant="h3">
               $23,200
@@ -26,7 +28,7 @@ const TotalProfit: React.FC<any> = ({ className, ...rest }) => {
           <Grid item xs={3}>
             <Grid container justifyContent="right">
               <Avatar
-                sx={{ bgcolor: colors.indigo[600], height: 56, width: 56 }}
+                sx={{ bgcolor: theme.palette.info.main, height: 56, width: 56 }}
               >
                 <AttachMoneyIcon />
               </Avatar>
@@ -37,7 +39,9 @@ const TotalProfit: React.FC<any> = ({ className, ...rest }) => {
     </Card>
   )
 }
+
 TotalProfit.propTypes = {
   className: PropTypes.string,
 }
+
 export default TotalProfit

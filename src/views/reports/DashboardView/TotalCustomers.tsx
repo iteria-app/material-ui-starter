@@ -10,8 +10,8 @@ import {
   colors,
 } from '@mui/material'
 import { ArrowUpward, People } from '@mui/icons-material'
-import { FormattedMessage } from 'react-intl'
-
+import { Translate } from '@iteria-app/component-templates'
+import { theme } from '../../../theme'
 const TotalCustomers: React.FC<any> = ({ className, ...rest }) => {
   return (
     <Card sx={{ height: '100%' }} {...rest}>
@@ -19,7 +19,7 @@ const TotalCustomers: React.FC<any> = ({ className, ...rest }) => {
         <Grid container spacing={3}>
           <Grid item xs={9}>
             <Typography color="textSecondary" gutterBottom variant="h6">
-              <FormattedMessage id="total.customers" tagName="span" />
+              <Translate entityName="total.customers" />
             </Typography>
             <Typography color="textPrimary" variant="h3">
               1,600
@@ -28,7 +28,11 @@ const TotalCustomers: React.FC<any> = ({ className, ...rest }) => {
           <Grid item xs={3}>
             <Grid container justifyContent="right">
               <Avatar
-                sx={{ bgcolor: colors.green[600], height: 56, width: 56 }}
+                sx={{
+                  bgcolor: theme.palette.success.main,
+                  height: 56,
+                  width: 56,
+                }}
               >
                 <People />
               </Avatar>
@@ -46,11 +50,9 @@ const TotalCustomers: React.FC<any> = ({ className, ...rest }) => {
         </Box>
       </CardContent>
     </Card>
-  );
-};
-
+  )
+}
 TotalCustomers.propTypes = {
-  className: PropTypes.string
-};
-
-export default TotalCustomers;
+  className: PropTypes.string,
+}
+export default TotalCustomers

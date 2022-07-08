@@ -1,6 +1,6 @@
-import React, { forwardRef } from 'react';
-import { Helmet } from 'react-helmet';
-import PropTypes from 'prop-types';
+import React, { forwardRef } from 'react'
+import { Helmet } from 'react-helmet'
+import PropTypes from 'prop-types'
 // @ts-ignore
 const Page: React.FC<any> = forwardRef<any>(
   // @ts-ignore
@@ -8,18 +8,18 @@ const Page: React.FC<any> = forwardRef<any>(
     return (
       <div ref={ref} {...rest}>
         <Helmet>
-          <title>{title}</title>
+        <title>{title}</title>
         </Helmet>
         {children}
       </div>
-    );
+    )
   }
-);
+)
 
 Page.propTypes = {
   // @ts-ignore
   children: PropTypes.node.isRequired,
-  title: PropTypes.string
-};
+  title: PropTypes.string,
+}
 
-export default Page;
+export default Page
