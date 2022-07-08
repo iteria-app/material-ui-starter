@@ -8,7 +8,7 @@ specifiers:
   '@graphql-codegen/typescript': ^2.2.2
   '@graphql-codegen/typescript-operations': ^2.1.5
   '@graphql-codegen/typescript-urql': ^3.2.0
-  '@iteria-app/component-templates': 1.1.8
+  '@iteria-app/component-templates': 1.1.9
   '@iteria-app/vite-plugin-lowcode': 0.2.0
   '@mui/icons-material': ^5.2.5
   '@mui/lab': ^5.0.0-alpha.64
@@ -51,7 +51,7 @@ specifiers:
 dependencies:
   '@emotion/react': 11.9.0_wchdyfjsjs7jbjx7r7guc3etfq
   '@emotion/styled': 11.8.1_qqzyodsgsghzz6vpxsrxbwelfm
-  '@iteria-app/component-templates': 1.1.8_6yblogtuqdyivo7jlmlbr5fwmq
+  '@iteria-app/component-templates': 1.1.9_6yblogtuqdyivo7jlmlbr5fwmq
   '@mui/icons-material': 5.2.5_6rr654k5lhpvvj3q2brhhgvcpm
   '@mui/lab': 5.0.0-alpha.64_36tcmsjkij34qtj6ig5vagcjo4
   '@mui/material': 5.2.8_fxlt5dwjgsvn7y7rd6a4ypuxxu
@@ -1432,8 +1432,8 @@ packages:
     resolution: {integrity: sha512-DzxIW8SRCLCZ/daD3mmWHw/R5HFtoxvrvGLNdodEF911Vce/v4ESmxzyHDD+hixfSR9vCfryeMk54Z4Fozs6tg==}
     dev: false
 
-  /@iteria-app/component-templates/1.1.8_6yblogtuqdyivo7jlmlbr5fwmq:
-    resolution: {integrity: sha512-ZvOuntxivCIdumQgqJWYMJTTGr+w90GKpawZwIZenvjFnn+CKUYffuKQLLYUbqyQMvKva8S+KVikTWoGm+EzYQ==}
+  /@iteria-app/component-templates/1.1.9_6yblogtuqdyivo7jlmlbr5fwmq:
+    resolution: {integrity: sha512-Q8erZ0X+ietHouBuIl5X/7mBpGeS+YJ41JLns/mz/39izYCu20sKCZah2A3mr+FMNC6kA1u8m7oIfWFoSq3uHg==}
     peerDependencies:
       '@mui/icons-material': ^5.2.5
       '@mui/material': ^5.2.7
