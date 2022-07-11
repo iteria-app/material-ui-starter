@@ -179,7 +179,7 @@ const components: Components<Theme> = {
   MuiLinearProgress: {
     styleOverrides: {
       root: {
-        marginTop: '-14px',
+        marginTop: '42px',
         borderRadius: '8px',
       },
     },
