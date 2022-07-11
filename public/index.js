@@ -64938,6 +64938,7 @@ const forceSaveLocaleElement = (target, inspectedElement, event2, workbench2, on
   const LANGS_PATH = workbench2.injectMode === "devServer" ? cwd + "/src/compiled-lang" : "/src/compiled-lang";
   const langLocale = (_b = window.localStorage.getItem("langLocale")) != null ? _b : navigator.language.split("-")[0];
   const localeSourceUrl = LANGS_PATH + `/${langLocale}.json`;
+  console.log(cwd, LANGS_PATH, langLocale, localeSourceUrl)
   let data;
   workbench2.readFile(localeSourceUrl).then((originalLocaleStringJSON) => {
     const originalMessages = parseLocaleJSON(originalLocaleStringJSON);
@@ -64949,6 +64950,7 @@ const forceSaveLocaleElement = (target, inspectedElement, event2, workbench2, on
     newValue = escapeSpecialChars(newValue);
     const messageId = event2 ? event2.messageId : inspectedElement.props.data === null || inspectedElement.props.data === void 0 ? void 0 : inspectedElement.props.data.id;
     const found = originalMessages.find((message) => message.id === messageId);
+    console.log(originalMessages, spanNode, newValue, messageId, found)
     if (newValue === (found == null ? void 0 : found.value))
       return;
     if (onShowUserFeedback)
@@ -88470,7 +88472,7 @@ const fetchProjectTar = async (repoUrl, command) => {
     const res2 = await fetch(`${normalizedRepoUrl}/Sources.tar.gz`);
     const arrayBuffer = await res2.arrayBuffer();
     let inflated;
-    if (command === "serve") {
+    if (command   === "serve") {
       inflated = new Uint8Array(arrayBuffer);
     } else {
       inflated = pako.inflate(new Uint8Array(arrayBuffer));
