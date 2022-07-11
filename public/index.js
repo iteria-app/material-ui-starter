@@ -64969,7 +64969,7 @@ const forceSaveLocaleElement = (target, inspectedElement, event2, workbench2, on
     }
     if (originalMessages && found) {
       for (let i2 = originalMessages.length - 1; i2 >= 0; i2--) {
-        if (originalMessages[i2].id === messageId) {
+        if (originalMessages[i2].id === testId) {
           const before = originalLocaleStringJSON == null ? void 0 : originalLocaleStringJSON.substring(0, originalMessages[i2].position.pos + 2);
           const after = originalLocaleStringJSON == null ? void 0 : originalLocaleStringJSON.substring(originalMessages[i2].position.end - 1);
           originalLocaleStringJSON = before + newValue + after;
