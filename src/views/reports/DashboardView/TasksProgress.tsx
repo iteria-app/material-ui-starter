@@ -8,11 +8,12 @@ import {
   Grid,
   LinearProgress,
   Typography,
-  makeStyles,
   colors,
 } from '@mui/material'
 import { InsertChart } from '@mui/icons-material'
-import { FormattedMessage } from 'react-intl'
+import { Translate } from '@iteria-app/component-templates'
+import { theme } from '../../../theme'
+
 const TasksProgress: React.FC<any> = ({ className, ...rest }) => {
   return (
     <Card sx={{ height: '100%' }} {...rest}>
@@ -20,16 +21,20 @@ const TasksProgress: React.FC<any> = ({ className, ...rest }) => {
         <Grid container spacing={3}>
           <Grid item xs={9}>
             <Typography color="textSecondary" gutterBottom variant="h6">
-              <FormattedMessage id="tasks.progress" tagName="span" />
+              <Translate entityName="tasks.progress" />
             </Typography>
             <Typography color="textPrimary" variant="h3">
-              75.5%
+              88%
             </Typography>
           </Grid>
           <Grid item xs={3}>
             <Grid container justifyContent="right">
               <Avatar
-                sx={{ bgcolor: colors.orange[600], height: 56, width: 56 }}
+                sx={{
+                  bgcolor: theme.palette.warning.main,
+                  height: 56,
+                  width: 56,
+                }}
               >
                 <InsertChart />
               </Avatar>
@@ -43,7 +48,9 @@ const TasksProgress: React.FC<any> = ({ className, ...rest }) => {
     </Card>
   )
 }
+
 TasksProgress.propTypes = {
   className: PropTypes.string,
 }
+
 export default TasksProgress

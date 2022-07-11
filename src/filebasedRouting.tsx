@@ -1,12 +1,8 @@
-import React from 'react'
 import { Fragment } from 'react'
 import { Route, Routes } from 'react-router-dom'
 
-// const PRESERVED = import.meta.globEager('/pages/(_app|404).tsx')
-// const ROUTES = import.meta.globEager('/pages/**/[a-z[]*.tsx')
-
-const PRESERVED = []
-const ROUTES = []
+const PRESERVED = import.meta.globEager('/pages/(_app|404).tsx')
+const ROUTES = import.meta.globEager('/pages/**/[a-zA-Z[]*.tsx')
 
 const preserved = Object.keys(PRESERVED).reduce((preserved, file) => {
   const key = file.replace(/\/pages\/|\.tsx$/g, '')
@@ -21,8 +17,6 @@ const routes = Object.keys(ROUTES).map((route) => {
 
   return { path, component: ROUTES[route].default }
 })
-
-console.log('routes', routes, PRESERVED, ROUTES)
 
 export const FilebasedRoutes = () => {
   const App = preserved?.['_app'] || Fragment

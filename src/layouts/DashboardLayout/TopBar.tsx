@@ -1,81 +1,77 @@
-import React from 'react';
-import { Link as RouterLink } from 'react-router-dom';
-import clsx from 'clsx';
-import PropTypes from 'prop-types';
+import React from 'react'
+import PropTypes from 'prop-types'
 import {
-  AppBar,
   Badge,
   Box,
-  Hidden,
+  Divider,
   IconButton,
+  styled,
   Toolbar,
+  useTheme,
 } from '@mui/material'
-import { makeStyles } from '@mui/styles'
+import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar'
 import MenuIcon from '@mui/icons-material/Menu'
 import NotificationsIcon from '@mui/icons-material/NotificationsOutlined'
 import InputIcon from '@mui/icons-material/Input'
 import Logo from '../../components/Logo'
-import { LocaleSwitch } from '@iteria-app/component-templates'
+import {
+  LocaleSwitch,
+  getEntityNameFromUrl,
+} from '@iteria-app/component-templates'
 import { locales } from '../../locale'
 
+const drawerWidth = 256
 
-const useStyles = makeStyles(() => ({
-  root: {},
-  avatar: {
-    width: 60,
-    height: 60
-  }
-}));
+interface TopBarProps {
+  open: boolean
+  onOpen: () => void
+  rest?: any
+}
 
-const TopBar = ({
-  className,
-  onMobileNavOpen,
-  ...rest
-}) => {
-  const classes = useStyles();
+interface AppBarProps extends MuiAppBarProps {
+  open?: boolean
+}
 
+const AppBar = styled(MuiAppBar, {
+  shouldForwardProp: (prop) => prop !== 'open',
+})<AppBarProps>(({ theme, open }) => ({
+  transition: theme.transitions.create(['margin', 'width'], {
+    easing: theme.transitions.easing.sharp,
+    duration: theme.transitions.duration.leavingScreen,
+  }),
+  ...(open && {
+    width: `calc(100% - ${drawerWidth}px)`,
+    marginLeft: `${drawerWidth}px`,
+    transition: theme.transitions.create(['margin', 'width'], {
+      easing: theme.transitions.easing.easeOut,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
+  }),
+}))
+
+const TopBar = ({ open, onOpen, ...rest }: TopBarProps): JSX.Element => {
   return (
-    <AppBar
-      className={clsx(classes.root, className)}
-      elevation={0}
-      {...rest}
-    >
+    <AppBar open={open} {...rest}>
       <Toolbar>
-        <RouterLink to="/">
-          <Logo />
-        </RouterLink>
+        <IconButton aria-label="open drawer" onClick={onOpen} edge="start">
+          <MenuIcon />
+        </IconButton>
         <Box flexGrow={1} />
-        <Hidden mdDown>
-          <IconButton color="inherit">
-            <Badge
-              badgeContent={1}
-              color="primary"
-              variant="dot"
-            >
-              <NotificationsIcon />
-            </Badge>
-          </IconButton>
-          <IconButton color="inherit">
-            <InputIcon />
-          </IconButton>
-        </Hidden>
+        <IconButton>
+          <Badge badgeContent={1} color="warning" variant="dot">
+            <NotificationsIcon />
+          </Badge>
+        </IconButton>
+        <Divider orientation="vertical" sx={{ height: '32px' }} />
         <LocaleSwitch locales={locales} />
-        <Hidden lgUp>
-          <IconButton
-            color="inherit"
-            onClick={onMobileNavOpen}
-          >
-            <MenuIcon />
-          </IconButton>
-        </Hidden>
       </Toolbar>
     </AppBar>
-  );
-};
+  )
+}
 
 TopBar.propTypes = {
   className: PropTypes.string,
-  onMobileNavOpen: PropTypes.func
-};
+  onMobileNavOpen: PropTypes.func,
+}
 
-export default TopBar;
+export default TopBar

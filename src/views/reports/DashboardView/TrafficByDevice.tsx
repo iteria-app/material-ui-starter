@@ -11,32 +11,32 @@ import {
   colors,
 } from '@mui/material'
 import { LaptopMac, Phone, Tablet } from '@mui/icons-material'
+import { theme } from '../../../theme'
 
 const TrafficByDevice: React.FC<any> = ({ className, ...rest }) => {
-
   const data = {
     datasets: [
       {
         data: [63, 15, 22],
         backgroundColor: [
-          colors.indigo[500],
-          colors.red[600],
-          colors.orange[600]
+          theme.palette.info.main,
+          theme.palette.error.main,
+          theme.palette.warning.main,
         ],
         borderWidth: 8,
         borderColor: colors.grey[50],
         hoverBorderColor: colors.grey[50],
-      }
+      },
     ],
-    labels: ['Desktop', 'Tablet', 'Mobile']
-  };
+    labels: ['Desktop', 'Tablet', 'Mobile'],
+  }
 
   const options = {
     animation: false,
     cutoutPercentage: 80,
     layout: { padding: 0 },
     legend: {
-      display: false
+      display: false,
     },
     maintainAspectRatio: false,
     responsive: true,
@@ -49,30 +49,30 @@ const TrafficByDevice: React.FC<any> = ({ className, ...rest }) => {
       footerFontColor: colors.grey[50],
       intersect: false,
       mode: 'index',
-      titleFontColor: colors.indigo[500],
-    }
-  };
+      titleFontColor: theme.palette.info.main,
+    },
+  }
 
   const devices = [
     {
       title: 'Desktop',
       value: 63,
       icon: LaptopMac,
-      color: colors.indigo[500]
+      color: theme.palette.info.main,
     },
     {
       title: 'Tablet',
       value: 15,
       icon: Tablet,
-      color: colors.red[600]
+      color: theme.palette.error.main,
     },
     {
       title: 'Mobile',
       value: 23,
       icon: Phone,
-      color: colors.orange[600]
-    }
-  ];
+      color: theme.palette.warning.main,
+    },
+  ]
 
   return (
     <Card sx={{ height: '100%' }} {...rest}>
@@ -97,11 +97,11 @@ const TrafficByDevice: React.FC<any> = ({ className, ...rest }) => {
         </Box>
       </CardContent>
     </Card>
-  );
-};
+  )
+}
 
 TrafficByDevice.propTypes = {
-  className: PropTypes.string
-};
+  className: PropTypes.string,
+}
 
-export default TrafficByDevice;
+export default TrafficByDevice
