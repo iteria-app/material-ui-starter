@@ -64938,9 +64938,9 @@ const forceSaveLocaleElement = (target, inspectedElement, event2, workbench2, on
   const LANGS_PATH = workbench2.injectMode === "devServer" ? cwd + "/src/compiled-lang" : "/src/compiled-lang";
   const langLocale = (_b = window.localStorage.getItem("langLocale")) != null ? _b : navigator.language.split("-")[0];
   const localeSourceUrl = LANGS_PATH + `/${langLocale}.json`;
-  console.log(cwd, LANGS_PATH, langLocale, localeSourceUrl)
   let data;
   workbench2.readFile(localeSourceUrl).then((originalLocaleStringJSON) => {
+    var _a3, _b2;
     const originalMessages = parseLocaleJSON(originalLocaleStringJSON);
     let newValue = "";
     const spanNode = findSpanNode(target);
@@ -64948,10 +64948,8 @@ const forceSaveLocaleElement = (target, inspectedElement, event2, workbench2, on
       newValue = purify.sanitize(spanNode.innerHTML);
     }
     newValue = escapeSpecialChars(newValue);
-    const messageId = event2 ? event2.messageId : inspectedElement.props.data === null || inspectedElement.props.data === void 0 ? void 0 : inspectedElement.props.data.id;
-    const testId = Object.values(spanNode?.attributes).find(att => att.name === "data-message-id").value
-    const found = originalMessages.find((message) => message.id === messageId || message.id === testId);
-    console.log(messageId, testId, found)
+    const messageId = ((_b2 = (_a3 = inspectedElement == null ? void 0 : inspectedElement.props) == null ? void 0 : _a3.data) == null ? void 0 : _b2.id) || Object.values(spanNode == null ? void 0 : spanNode.attributes).find((att) => att.name === "data-message-id").value;
+    const found = originalMessages.find((message) => message.id === messageId);
     if (newValue === (found == null ? void 0 : found.value))
       return;
     if (onShowUserFeedback)
@@ -64969,14 +64967,13 @@ const forceSaveLocaleElement = (target, inspectedElement, event2, workbench2, on
     }
     if (originalMessages && found) {
       for (let i2 = originalMessages.length - 1; i2 >= 0; i2--) {
-        if (originalMessages[i2].id === testId) {
+        if (originalMessages[i2].id === messageId) {
           const before = originalLocaleStringJSON == null ? void 0 : originalLocaleStringJSON.substring(0, originalMessages[i2].position.pos + 2);
           const after = originalLocaleStringJSON == null ? void 0 : originalLocaleStringJSON.substring(originalMessages[i2].position.end - 1);
           originalLocaleStringJSON = before + newValue + after;
         }
       }
       data = originalLocaleStringJSON;
-      console.log(data)
     }
     if (onShowUserFeedback) {
       onShowUserFeedback({ type: "LOCAL_MESSAGE_TRANSLATE_SUCESS" });
@@ -88474,7 +88471,7 @@ const fetchProjectTar = async (repoUrl, command) => {
     const res2 = await fetch(`${normalizedRepoUrl}/Sources.tar.gz`);
     const arrayBuffer = await res2.arrayBuffer();
     let inflated;
-    if (command   === "serve") {
+    if (command === "serve") {
       inflated = new Uint8Array(arrayBuffer);
     } else {
       inflated = pako.inflate(new Uint8Array(arrayBuffer));
