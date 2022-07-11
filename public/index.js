@@ -64951,7 +64951,7 @@ const forceSaveLocaleElement = (target, inspectedElement, event2, workbench2, on
     const messageId = event2 ? event2.messageId : inspectedElement.props.data === null || inspectedElement.props.data === void 0 ? void 0 : inspectedElement.props.data.id;
     const testId = Object.values(spanNode?.attributes).find(att => att.name === "data-message-id").value
     const found = originalMessages.find((message) => message.id === messageId || message.id === testId);
-    console.log(messageId, testId)
+    console.log(messageId, testId, found)
     if (newValue === (found == null ? void 0 : found.value))
       return;
     if (onShowUserFeedback)
@@ -64976,6 +64976,7 @@ const forceSaveLocaleElement = (target, inspectedElement, event2, workbench2, on
         }
       }
       data = originalLocaleStringJSON;
+      console.log(data)
     }
     if (onShowUserFeedback) {
       onShowUserFeedback({ type: "LOCAL_MESSAGE_TRANSLATE_SUCESS" });
