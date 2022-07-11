@@ -9,7 +9,7 @@ specifiers:
   '@graphql-codegen/typescript-operations': ^2.1.5
   '@graphql-codegen/typescript-urql': ^3.2.0
   '@iteria-app/component-templates': 1.2.0
-  '@iteria-app/vite-plugin-lowcode': 0.2.0
+  '@iteria-app/vite-plugin-lowcode': 0.2.1
   '@mui/icons-material': ^5.2.5
   '@mui/lab': ^5.0.0-alpha.64
   '@mui/material': ^5.2.7
@@ -89,7 +89,7 @@ devDependencies:
   '@graphql-codegen/typescript': 2.4.2_graphql@15.8.0
   '@graphql-codegen/typescript-operations': 2.2.2_graphql@15.8.0
   '@graphql-codegen/typescript-urql': 3.4.2_3jt5ibhtazvod5hvf7xqhzsx4q
-  '@iteria-app/vite-plugin-lowcode': 0.2.0_vite@2.8.6
+  '@iteria-app/vite-plugin-lowcode': 0.2.1_vite@2.8.6
   '@types/react': 17.0.38
   '@types/react-dom': 17.0.11
   '@vitejs/plugin-react': 1.2.0
@@ -1492,8 +1492,8 @@ packages:
       - react
     dev: false
 
-  /@iteria-app/vite-plugin-lowcode/0.2.0_vite@2.8.6:
-    resolution: {integrity: sha512-7/SkCuC4+HO6y/5u53BbbA7zMyKkihpISwAXWNPOf/OTz9UEDMLmaeqJEKagzO1kXhtfzhSPErtGseUWzccaXg==}
+  /@iteria-app/vite-plugin-lowcode/0.2.1_vite@2.8.6:
+    resolution: {integrity: sha512-S1UGiQDT1KIbBP2LijrgDJnfUD8t7Z8sdyDFwZUzOgnkEuheJ/BvRUGr821fELM4lbtmlPGovoKNQHukf/xL/g==}
     peerDependencies:
       vite: ^2.8.6
     dependencies:

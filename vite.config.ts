@@ -1,9 +1,10 @@
-import { defineConfig } from 'vite'
+import { defineConfig, loadEnv } from 'vite'
 import react from '@vitejs/plugin-react'
 import iteriaLowcode from '@iteria-app/vite-plugin-lowcode'
 import path from 'path'
 
 export default ({ command, mode }) => {
+  const env = loadEnv(mode, '.')
   return defineConfig({
     optimizeDeps: {
       exclude: ['@iteria-app/wysiwyg'],
@@ -21,7 +22,8 @@ export default ({ command, mode }) => {
       iteriaLowcode({
         command,
         mode,
-        graphQLEndpoint: "https://demo-orders.hasura.app/v1/graphql",
+        graphQLEndpoint: env.VITE_HASURA_GRAPHQL_ENDPOINT,
+        graphQLSecret: env.VITE_HASURA_GRAPHQL_SECRET,
         cwd: process.cwd(),
         injectLowcode: true,
         features: {
@@ -34,7 +36,7 @@ export default ({ command, mode }) => {
           floatingButton: true,
         },
         version: "1.4.3",
-        whitelistedEnvs: ['VITE_HASURA_GRAPHQL_ENDPOINT', 'VITE_BRANCH', 'VITE_REPOSITORY_URL', 'VITE_SITE_ID', 'VITE_NETLIFY']
+        whitelistedEnvs: ['VITE_HASURA_GRAPHQL_ENDPOINT', 'VITE_HASURA_GRAPHQL_SECRET', 'VITE_BRANCH', 'VITE_REPOSITORY_URL', 'VITE_SITE_ID', 'VITE_NETLIFY']
       }),
     ],
   })
