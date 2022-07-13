@@ -65578,16 +65578,6 @@ const getParentId = (id, devtoolsTree) => {
 };
 const getDevtoolsTree = () => window.devtoolsTree;
 const isColumnTitle = (el2) => el2.classList.contains("MuiDataGrid-columnHeaderTitleContainer");
-const getSourceOfTable = (el2, contentWindow) => {
-  let currElement = el2;
-  while (currElement.parentElement) {
-    console.log(currElement.classList);
-    if (currElement.classList.contains("MuiDataGrid-root")) {
-      return getSourceFromElement(currElement);
-    }
-    currElement = currElement.parentElement;
-  }
-};
 const getColIndex = (el2) => {
   let currElement = el2;
   while (currElement.parentElement) {
@@ -79393,7 +79383,7 @@ const handleRemoveTableColumn = async (window2, el2, type2) => {
   if (!window2.__REACT_DEVTOOLS_GLOBAL_HOOK__)
     throw new Error("__REACT_DEVTOOLS_GLOBAL_HOOK__ not available on window object");
   const entityName = getEntityNameFromUrl();
-  const source = getSourceOfTable(el2);
+  const source = getSourceFromElement(getColumnTitle(el2));
   console.log("test", source);
   if (!source)
     return console.error("Source not found", el2);
