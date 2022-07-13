@@ -111,6 +111,13 @@ const palette = {
 }
 
 const components: Components<Theme> = {
+  MuiTypography:{
+    styleOverrides:{
+      root:{
+        fontFamily: `'Montserrat', 'Roboto', '"Helvetica Neue"', 'Arial', 'sans-serif'`
+      }
+    }
+  },
   MuiButton: {
     styleOverrides: {
       root: {
@@ -144,15 +151,10 @@ const components: Components<Theme> = {
   MuiDataGrid: {
     styleOverrides: {
       root: {
-        // minHeight: '750px',
         border: 'none',
         color: 'secondary.main',
         fontWeight: 400,
-        margin: '32px',
-        padding: '32px',
-        background: palette.background.paper,
-        borderRadius: '12px',
-        boxShadow: 'rgb(90 114 123 / 11%) 0px 7px 30px 0px',
+        padding: '16px',
       },
       row: {
         cursor: 'pointer',
@@ -176,10 +178,45 @@ const components: Components<Theme> = {
       },
     },
   },
+  MuiTableHead: {
+    styleOverrides: {
+      root: {
+        background: '#f5f3f2',
+        border: 'none',
+        fontWeight: 550,
+        fontSize: '14px',
+        color: 'secondary.dark',
+        borderRadius: '8px',
+        height: '40px',
+        minHeight: '0px !important',
+      },
+    },
+  },
+  MuiTableCell: {
+    styleOverrides: {
+      head: {
+        padding: '0 14px',
+      },
+      root: {
+        whiteSpace: 'nowrap',
+        background: 'none',
+        border: 'none',
+        padding: '10px 0',
+        ':first-of-type': {
+          borderTopLeftRadius: '8px',
+          borderBottomLeftRadius: '8px',
+        },
+        ':last-child': {
+          borderTopRightRadius: '8px',
+          borderBottomRightRadius: '8px',
+        },
+      },
+    },
+  },
   MuiLinearProgress: {
     styleOverrides: {
       root: {
-        marginTop: '42px',
+        marginTop: '-14px',
         borderRadius: '8px',
       },
     },
@@ -196,6 +233,7 @@ const components: Components<Theme> = {
     styleOverrides: {
       root: {
         borderRadius: '12px',
+        background: palette.background.paper,
         boxShadow: 'rgb(90 114 123 / 11%) 0px 7px 30px 0px',
       },
     },
@@ -258,22 +296,14 @@ const components: Components<Theme> = {
   },
   MuiSelect: {
     styleOverrides: {
-      select: {
+      // @ts-ignore
+      root: {
         margin: '0 15px',
         ':before': {
-          visibility: 'hidden!important',
+          visibility: 'hidden',
         },
       },
     },
-  },
-  MuiInput: {
-    styleOverrides: {
-      root: {        
-        ':before': {
-          visibility: 'hidden!important',
-        },
-      },
-    }
   },
   MuiPagination: {
     defaultProps: {

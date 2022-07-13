@@ -26,3 +26,14 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.MuiToolbar-root .MuiInput-root::before {
+  visibility: hidden;
+}
+.MuiToolbar-root .MuiSelect-select {
+  margin: 0 15px;
+}
+
+.MuiDrawer-root .MuiTypography-root {
+  white-space: nowrap;
+}
