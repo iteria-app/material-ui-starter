@@ -79394,19 +79394,14 @@ const handleRemoveTableColumn = async (window2, el2, type2) => {
   frontendActions.elementHighlightClick(type2, source);
 };
 const handleRemoveFormColumn = async (contentWindow, el2, type2) => {
-  var _a2;
-  const schema2 = await fetchGraphqlIntrospectionSchema(workbench.graphQLEndpoint, workbench.graphQLSecret);
+  var _a2, _b;
   const entityName = getEntityNameFromUrl();
-  const source = getSourceFromElement(el2);
-  if (!source)
-    return console.error("Source not found", el2);
-  source.schema = schema2;
+  const source = (_a2 = getSourceFromElement(el2)) != null ? _a2 : {};
+  source.schema = workbench.introspection;
   source.page = PageType.DETAIL;
   source.entityName = entityName;
-  const element2 = (_a2 = getInputElement(el2)) != null ? _a2 : el2;
+  const element2 = (_b = getInputElement(el2)) != null ? _b : el2;
   source.columnToDelete = element2.getAttribute("name");
-  if (!source)
-    return console.error("Source not found", el2);
   frontendActions.elementHighlightClick(type2, source);
 };
 const handleIconClick = (window2, el2, type2) => {
