@@ -10,6 +10,18 @@ import DashboardView from '../src/views/reports/DashboardView'
 import { generatePagesRoutes } from '@iteria-app/component-templates'
 import * as generatedGraphql from './generated/graphql'
 
+const filebasedRouting = import.meta.globEager('./pages/**/*Container.tsx')
+
+const newRoutes = Object.keys(filebasedRouting).map((route) => {
+  const path = route
+    .replace(/\/pages|index|\.tsx$/g, '')
+    .replace(/(\.\/|\/.*)/g, '')
+    .replace(/\[\.{3}.+\]/, '*')
+    .replace(/\[(.+)\]/, ':$1')
+  const Container = filebasedRouting[route].default ?? filebasedRouting[route]
+  return { path, element: <Container /> }
+})
+
 const routing = generatePagesRoutes(generatedGraphql)
 routing.push({ path: 'dashboard', element: <DashboardView /> })
 
@@ -18,6 +30,11 @@ const routes = [
     path: 'app',
     element: <DashboardLayout />,
     children: routing,
+  },
+  {
+    path: 'test',
+    element: <DashboardLayout />,
+    children: newRoutes
   },
   {
     path: '/',
