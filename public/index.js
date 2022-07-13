@@ -77122,7 +77122,7 @@ const addField = async (props) => {
   };
   if (page === PageType.LIST) {
     const found = generatedDirectory.filter((file) => file.fileName.includes(LIST_VIEW));
-    if (source && source?.fileName.includes(LIST_VIEW)) {
+    if (source && source.fileName.includes(LIST_VIEW)) {
       const code22 = await workbench2.readFile(source.fileName);
       const encoded = encodeEmptyLines$1(code22);
       columnInfo.ast = encoded;
