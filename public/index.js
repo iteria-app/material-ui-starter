@@ -11518,7 +11518,7 @@ const clear = `<svg xmlns="http://www.w3.org/2000/svg" width="18px" viewBox="0 0
 const content_copy = `<svg xmlns="http://www.w3.org/2000/svg" width="18px" viewBox="0 0 24 24" fill="currentColor"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>`;
 const code = `<svg xmlns="http://www.w3.org/2000/svg" width="18px" viewBox="0 0 24 24" fill="currentColor"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg>`;
 const edit = `<?xml version="1.0" encoding="iso-8859-1"?><!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  --><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" fill="currentColor" width="18px" height="18px" viewBox="0 0 494.936 494.936" style="enable-background:new 0 0 494.936 494.936;"	 xml:space="preserve"><g>	<g>		<path d="M389.844,182.85c-6.743,0-12.21,5.467-12.21,12.21v222.968c0,23.562-19.174,42.735-42.736,42.735H67.157			c-23.562,0-42.736-19.174-42.736-42.735V150.285c0-23.562,19.174-42.735,42.736-42.735h267.741c6.743,0,12.21-5.467,12.21-12.21			s-5.467-12.21-12.21-12.21H67.157C30.126,83.13,0,113.255,0,150.285v267.743c0,37.029,30.126,67.155,67.157,67.155h267.741			c37.03,0,67.156-30.126,67.156-67.155V195.061C402.054,188.318,396.587,182.85,389.844,182.85z"/>		<path d="M483.876,20.791c-14.72-14.72-38.669-14.714-53.377,0L221.352,229.944c-0.28,0.28-3.434,3.559-4.251,5.396l-28.963,65.069			c-2.057,4.619-1.056,10.027,2.521,13.6c2.337,2.336,5.461,3.576,8.639,3.576c1.675,0,3.362-0.346,4.96-1.057l65.07-28.963			c1.83-0.815,5.114-3.97,5.396-4.25L483.876,74.169c7.131-7.131,11.06-16.61,11.06-26.692			C494.936,37.396,491.007,27.915,483.876,20.791z M466.61,56.897L257.457,266.05c-0.035,0.036-0.055,0.078-0.089,0.107			l-33.989,15.131L238.51,247.3c0.03-0.036,0.071-0.055,0.107-0.09L447.765,38.058c5.038-5.039,13.819-5.033,18.846,0.005			c2.518,2.51,3.905,5.855,3.905,9.414C470.516,51.036,469.127,54.38,466.61,56.897z"/>	</g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>`;
-const addColumn$2 = `<img style="height:inherit;" src="https://img.icons8.com/ios/30/000000/add-column.png"/>`;
+const addColumn$1 = `<img style="height:inherit;" src="https://img.icons8.com/ios/30/000000/add-column.png"/>`;
 const remove = `<span class=""> <svg focusable="false" width="20" height="20" viewBox="0 0 24 24" class=" NMm5M" > <path fill="currentColor" d="M15 4V3H9v1H4v2h1v13c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V6h1V4h-5zm2 15H7V6h10v13z" /><path fill="currentColor" d="M9 8h2v9H9zm4 0h2v9h-2z" /> </svg> </span>`;
 const check = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="18px" height="18px" viewBox="0 0 24 24" fill="currentColor"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" /></svg>`;
 const drag_move = `<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><g><path fill="none" d="M0 0h24v24H0z"></path><path d="M18 11V8l4 4-4 4v-3h-5v5h3l-4 4-4-4h3v-5H6v3l-4-4 4-4v3h5V6H8l4-4 4 4h-3v5z"></path></g></svg>`;
@@ -11528,7 +11528,7 @@ const icons$1 = {
   content_copy,
   code,
   edit,
-  addColumn: addColumn$2,
+  addColumn: addColumn$1,
   remove,
   check,
   drag_move
@@ -62394,296 +62394,6 @@ var InsertType = /* @__PURE__ */ ((InsertType2) => {
   InsertType2[InsertType2["LAST"] = 3] = "LAST";
   return InsertType2;
 })(InsertType || {});
-var RelationshipType = /* @__PURE__ */ ((RelationshipType2) => {
-  RelationshipType2[RelationshipType2["OBJECT"] = 0] = "OBJECT";
-  RelationshipType2[RelationshipType2["ARRAY"] = 1] = "ARRAY";
-  return RelationshipType2;
-})(RelationshipType || {});
-const addFieldToFragment = (file, fragmentName, fieldTreeArray, referenceField, insertType, additionalFields) => {
-  try {
-    const ast = parse$6(file);
-    visit(ast, {
-      FragmentDefinition(node) {
-        var _a2, _b;
-        if (node.name.value === fragmentName) {
-          let fragmentFields = node.selectionSet.selections;
-          fieldTreeArray = fieldExistsInFragment(fragmentFields, fieldTreeArray);
-          if (fieldTreeArray.length === 0)
-            return BREAK;
-          const lastSelection = getLastSelection(fragmentFields, referenceField, insertType);
-          additionalFields = additionalFields.filter((field) => !fragmentFields.find((fragmentField) => fragmentField.kind === "Field" && fragmentField.name.value === field));
-          const newFragmentField = createFragmentField(fieldTreeArray, additionalFields);
-          const endPosition = insertType === InsertType.BEFORE || insertType === InsertType.FIRST ? ((_a2 = lastSelection.loc) == null ? void 0 : _a2.start) - 1 : (_b = lastSelection.loc) == null ? void 0 : _b.end;
-          file = file.substring(0, endPosition) + `
-  ${newFragmentField}` + file.substring(endPosition, file.length);
-          return BREAK;
-        }
-      }
-    });
-  } catch (error2) {
-    console.error(error2);
-  }
-  return file;
-};
-const getLastSelection = (fragmentFields, referenceField, insertType) => {
-  switch (insertType) {
-    case InsertType.AFTER:
-    case InsertType.BEFORE:
-      const lastSelection = fragmentFields.filter((fragmentField) => {
-        const name = fragmentField.name.value;
-        return name === (referenceField == null ? void 0 : referenceField.substring(referenceField.length - name.length, referenceField.length));
-      });
-      if (lastSelection.length !== 0)
-        return lastSelection[0];
-      return fragmentFields[fragmentFields.length - 1];
-    case InsertType.FIRST:
-      return fragmentFields[0];
-    case InsertType.LAST:
-      return fragmentFields[fragmentFields.length - 1];
-  }
-};
-const createFragmentField = (fieldsTree, additionalFields) => {
-  let scalarFields = [...additionalFields];
-  if (fieldsTree.length)
-    scalarFields = [fieldsTree.pop(), ...scalarFields];
-  const scalarFieldsString = createScalarFieldsString(scalarFields);
-  fieldsTree = fieldsTree.reverse();
-  let fragmentField = scalarFieldsString;
-  fieldsTree.forEach((field, i2) => {
-    if (i2 === 0)
-      fragmentField = `${field} {
-  ${indentField(fragmentField)}
-}`;
-    else
-      fragmentField = `${field} {
-  ${indentField(fragmentField)}
-}`;
-  });
-  return fragmentField;
-};
-const createScalarFieldsString = (fields8) => {
-  let scalarFields = "";
-  fields8.forEach((field, i2) => {
-    if (i2 === 0)
-      scalarFields = field;
-    else
-      scalarFields = `${scalarFields}
-  ${field}`;
-  });
-  return scalarFields;
-};
-const indentField = (field) => field.replaceAll(/\n  /g, "\n    ").replaceAll(/\n}/g, "\n  }");
-const indentEveryLineByNSpaces = (input, n2) => {
-  const tabs = Math.floor(n2 / 2);
-  for (let i2 = 0; i2 < tabs; i2++) {
-    input = indentField(input);
-  }
-  input = `${Array(n2).fill(" ").join("")}${input}`;
-  return input;
-};
-const fragmentExists = (file, fragmentName) => {
-  const ast = parse$6(file);
-  let exists = false;
-  visit(ast, {
-    FragmentDefinition(node) {
-      if (node.name.value === fragmentName) {
-        exists = true;
-        return BREAK;
-      }
-    }
-  });
-  return exists;
-};
-const fieldExistsInFragment = (fragmentFields, fieldNames) => {
-  const filtredFragmentFields = fragmentFields.map((fragmentField) => {
-    var _a2;
-    return (_a2 = fragmentField == null ? void 0 : fragmentField.name) == null ? void 0 : _a2.value;
-  }).filter((fragmentField) => fragmentField);
-  const filtredFieldNames = fieldNames.filter((field) => !filtredFragmentFields.includes(field));
-  return filtredFieldNames;
-};
-const insertFragmentSpreadIntoFragment = (file, queryName, entityName, fieldTree) => {
-  const ast = parse$6(file);
-  const fragmentSpreadName = buildFragmentNameFromFieldsTree([
-    queryName,
-    ...fieldTree
-  ]);
-  const fragmentName = `${queryName}_${entityName}`;
-  visit(ast, {
-    FragmentDefinition(node) {
-      var _a2, _b, _c;
-      if (node.name.value === fragmentName) {
-        let modifiedFieldTree = [...fieldTree];
-        let selectionSet = node.selectionSet;
-        for (const field of fieldTree) {
-          const actualSelection = selectionSet.selections.find((selection) => selection.kind === "Field" && selection.name.value === field);
-          if (actualSelection && actualSelection.selectionSet) {
-            selectionSet = actualSelection.selectionSet;
-            modifiedFieldTree.shift();
-          } else
-            break;
-        }
-        if (fieldTree.length === modifiedFieldTree.length) {
-          file = "";
-          return BREAK;
-        }
-        const nestedField = selectionSet.selections[selectionSet.selections.length - 1];
-        const fragmentParentTree = createFragmentField([...modifiedFieldTree, `...${fragmentSpreadName}`], []);
-        const { leftSpaces } = countWhitespacesAndNewLinesToLeft(file, (_a2 = nestedField.loc) == null ? void 0 : _a2.start);
-        const indentedfragmentParentTree = indentEveryLineByNSpaces(fragmentParentTree, leftSpaces);
-        file = file.substring(0, (_b = nestedField.loc) == null ? void 0 : _b.end) + `
-${indentedfragmentParentTree}` + file.substring((_c = nestedField.loc) == null ? void 0 : _c.end, file.length);
-        return BREAK;
-      }
-    }
-  });
-  return file;
-};
-const getScalarFieldsFromFragment = (file, fieldTree, fragmentName) => {
-  const ast = parse$6(file);
-  let scalarFields = [];
-  visit(ast, {
-    FragmentDefinition(node) {
-      if (node.name.value === fragmentName) {
-        let selectionSet = node.selectionSet;
-        fieldTree.forEach((field) => {
-          const actualSelection = selectionSet == null ? void 0 : selectionSet.selections.find((selection) => selection.kind === "Field" && selection.name.value === field);
-          selectionSet = actualSelection == null ? void 0 : actualSelection.selectionSet;
-        });
-        selectionSet == null ? void 0 : selectionSet.selections.forEach((field) => {
-          if (field.kind === "Field" && !field.selectionSet)
-            scalarFields = [...scalarFields, field.name.value];
-        });
-        return BREAK;
-      }
-    }
-  });
-  return scalarFields;
-};
-const removeFieldsFromFragment = (file, fieldTree, fieldsToDelete, fragmentName) => {
-  fieldsToDelete.forEach((field) => {
-    const ast = parse$6(file);
-    visit(ast, {
-      FragmentDefinition(node) {
-        var _a2, _b, _c;
-        if (node.name.value === fragmentName) {
-          let selectionSet = node.selectionSet;
-          fieldTree.forEach((field2) => {
-            const actualSelection = selectionSet == null ? void 0 : selectionSet.selections.find((selection) => selection.kind === "Field" && selection.name.value === field2);
-            selectionSet = actualSelection == null ? void 0 : actualSelection.selectionSet;
-          });
-          const nodeToBeDeleted = selectionSet == null ? void 0 : selectionSet.selections.find((selection) => selection.kind === "Field" && selection.name.value === field);
-          if (nodeToBeDeleted) {
-            const fragmentsToBeDeleted = getAllFragmentSpreadsFromField(nodeToBeDeleted);
-            fragmentsToBeDeleted.forEach((fragment) => {
-              const { originalFileContent } = removeFragment(file, fragment);
-              file = originalFileContent;
-            });
-            const { leftSpaces, leftNewLines } = countWhitespacesAndNewLinesToLeft(file, (_a2 = nodeToBeDeleted.loc) == null ? void 0 : _a2.start);
-            file = file.substring(0, ((_b = nodeToBeDeleted.loc) == null ? void 0 : _b.start) - leftSpaces - leftNewLines) + file.substring((_c = nodeToBeDeleted.loc) == null ? void 0 : _c.end, file.length);
-          }
-          return BREAK;
-        }
-      }
-    });
-  });
-  return file;
-};
-const getAllFragmentSpreadsFromField = (fieldNode) => {
-  let fragmentSpreadNames = [];
-  visit(fieldNode, {
-    FragmentSpread(node) {
-      fragmentSpreadNames = [...fragmentSpreadNames, node.name.value];
-    }
-  });
-  return fragmentSpreadNames;
-};
-function countWhitespacesAndNewLinesToLeft(file, pos) {
-  let spaces = 0;
-  let newLines = 0;
-  while (file.charAt(pos - 1) === " " || file.charAt(pos - 1) === "\n") {
-    if (file.charAt(pos - 1) === " ")
-      spaces++;
-    if (file.charAt(pos - 1) === "\n")
-      newLines++;
-    pos--;
-  }
-  return { leftSpaces: spaces, leftNewLines: newLines };
-}
-function countWhitespacesAndNewLinesToRight(file, pos) {
-  let spaces = 0;
-  let newLines = 0;
-  while (file.charAt(pos + 1) === " " || file.charAt(pos + 1) === "\n") {
-    if (file.charAt(pos + 1) === " ")
-      spaces++;
-    if (file.charAt(pos + 1) === "\n")
-      newLines++;
-    pos++;
-  }
-  return { rightSpaces: spaces, rightNewLines: newLines };
-}
-function removeFragment(file, fragmentName) {
-  const ast = parse$6(file);
-  let removedFragment = "";
-  let originalFileContent = "";
-  visit(ast, {
-    FragmentDefinition(node) {
-      var _a2, _b, _c, _d, _e;
-      if (node.name.value === fragmentName && node.loc) {
-        removedFragment = file.substr((_a2 = node.loc) == null ? void 0 : _a2.start, ((_b = node.loc) == null ? void 0 : _b.end) - ((_c = node.loc) == null ? void 0 : _c.start));
-        const { leftSpaces, leftNewLines } = countWhitespacesAndNewLinesToLeft(file, node.loc.start);
-        const { rightSpaces, rightNewLines } = countWhitespacesAndNewLinesToRight(file, node.loc.end);
-        originalFileContent = file.substr(0, ((_d = node.loc) == null ? void 0 : _d.start) - (leftSpaces + leftNewLines)) + file.substr(((_e = node.loc) == null ? void 0 : _e.end) + (rightSpaces + rightNewLines), file.length - 1);
-        return BREAK;
-      }
-    }
-  });
-  return { originalFileContent, removedFragment };
-}
-const buildFieldTreeInQuery = (file, queryName, entityName, fieldTree) => {
-  const ast = parse$6(file);
-  const fragmentName = buildFragmentNameFromFieldsTree([
-    queryName,
-    ...fieldTree
-  ]);
-  visit(ast, {
-    OperationDefinition(node) {
-      var _a2, _b, _c, _d;
-      if (((_a2 = node == null ? void 0 : node.name) == null ? void 0 : _a2.value) === queryName) {
-        let modifiedFieldTree = [...fieldTree];
-        const queryField = node.selectionSet.selections.find((selection) => selection.kind === "Field" && selection.name.value === queryName);
-        let selectionSet = queryField.selectionSet;
-        fieldTree.forEach((field) => {
-          const fieldExists2 = selectionSet.selections.find((selection) => selection.kind === "Field" && selection.name.value === field);
-          if (fieldExists2) {
-            selectionSet = fieldExists2.selectionSet;
-            modifiedFieldTree.shift();
-          }
-        });
-        const fragmentParentTree = createFragmentField([...modifiedFieldTree, `...${fragmentName}`], []);
-        const lastSelection = selectionSet.selections[selectionSet.selections.length - 1];
-        const { leftSpaces } = countWhitespacesAndNewLinesToLeft(file, (_b = lastSelection.loc) == null ? void 0 : _b.start);
-        const indentedfragmentParentTree = indentEveryLineByNSpaces(fragmentParentTree, leftSpaces);
-        file = file.substring(0, (_c = lastSelection.loc) == null ? void 0 : _c.end) + `
-${indentedfragmentParentTree}` + file.substring((_d = lastSelection.loc) == null ? void 0 : _d.end, file.length);
-        return BREAK;
-      }
-    }
-  });
-  return file;
-};
-const buildFragmentFromFieldsTree = (queryName, entityName, fieldTree, additionalFields) => {
-  const scalarFields = [fieldTree.pop(), ...additionalFields];
-  const scalarFieldsString = scalarFields.join("\n  ");
-  const fragmentName = buildFragmentNameFromFieldsTree([
-    queryName,
-    ...fieldTree
-  ]);
-  return `fragment ${fragmentName} on ${entityName} {
-  ${scalarFieldsString}
-}`;
-};
-const buildFragmentNameFromFieldsTree = (fieldTree) => fieldTree.join("_");
 const changeGraphQLEndpoint = async (envFile, endpointEnvName, newEndpointURL, secretEnvName, newSecret) => {
   const variables = envFile.split("\n");
   let urlExists = false;
@@ -63106,111 +62816,6 @@ function isOfTypePage(field, entityName, pageType) {
   }
   return false;
 }
-const correctTypeNames = (typeNames, fields8) => {
-  typeNames.forEach((typeName, index2) => {
-    fields8.every((field) => {
-      var _a2;
-      if (((_a2 = field.name) == null ? void 0 : _a2.toLowerCase()) === (typeName == null ? void 0 : typeName.toLowerCase())) {
-        let actualType = field.type;
-        let arrayType = false;
-        while (isInstanceOfType(actualType) && actualType.ofType) {
-          if ((actualType == null ? void 0 : actualType.kind) === "LIST")
-            arrayType = true;
-          actualType = actualType.ofType;
-        }
-        if (isInstanceOfType(actualType) && (actualType == null ? void 0 : actualType.kind) === "OBJECT") {
-          if (!arrayType)
-            typeNames[index2] = actualType.name;
-          return false;
-        }
-      }
-      return true;
-    });
-  });
-  return typeNames;
-};
-const lastFieldParent = (typeNames, fields8, introspection) => {
-  let actualTypeName = "";
-  typeNames.forEach((typeName, index2) => {
-    if (index2 === typeNames.length - 1)
-      return false;
-    fields8.every((field) => {
-      var _a2;
-      if (((_a2 = field.name) == null ? void 0 : _a2.toLowerCase()) === (typeName == null ? void 0 : typeName.toLowerCase())) {
-        let actualType = field.type;
-        while (isInstanceOfType(actualType) && actualType.ofType)
-          actualType = actualType.ofType;
-        if (isInstanceOfType(actualType) && (actualType == null ? void 0 : actualType.kind) === "OBJECT") {
-          actualTypeName = actualType.name;
-          return false;
-        }
-      }
-      return true;
-    });
-  });
-  const parent = introspection.types.find((type2) => {
-    var _a2;
-    return ((_a2 = type2 == null ? void 0 : type2.name) == null ? void 0 : _a2.toLowerCase()) === (actualTypeName == null ? void 0 : actualTypeName.toLowerCase());
-  });
-  return parent;
-};
-const findRelationshipType = (typeNames, fields8, introspection) => {
-  let relationshipName = void 0;
-  let relationshipType = RelationshipType.OBJECT;
-  typeNames.forEach((typeName) => {
-    let fieldOutsideOfTable = true;
-    fields8.every((field) => {
-      var _a2;
-      if (((_a2 = field.name) == null ? void 0 : _a2.toLowerCase()) === (typeName == null ? void 0 : typeName.toLowerCase())) {
-        fieldOutsideOfTable = false;
-        let actualType = field.type;
-        let arrayType = false;
-        while (isInstanceOfType(actualType) && actualType.ofType) {
-          if ((actualType == null ? void 0 : actualType.kind) === "LIST") {
-            arrayType = true;
-            relationshipType = RelationshipType.ARRAY;
-          }
-          actualType = actualType.ofType;
-        }
-        if (isInstanceOfType(actualType) && (actualType == null ? void 0 : actualType.kind) === "OBJECT") {
-          if (!arrayType)
-            relationshipType = RelationshipType.OBJECT;
-          relationshipName = actualType.name;
-          return false;
-        }
-      }
-      return true;
-    });
-    if (fieldOutsideOfTable) {
-      const outsideQueryWithFields = introspection.types.filter((type2) => {
-        var _a2;
-        return ((_a2 = type2 == null ? void 0 : type2.name) == null ? void 0 : _a2.toLowerCase()) === (relationshipName == null ? void 0 : relationshipName.toLowerCase());
-      })[0];
-      outsideQueryWithFields == null ? void 0 : outsideQueryWithFields.fields.every((field) => {
-        var _a2;
-        if (((_a2 = field.name) == null ? void 0 : _a2.toLowerCase()) === (typeName == null ? void 0 : typeName.toLowerCase())) {
-          let actualType = field.type;
-          let arrayType = false;
-          while (isInstanceOfType(actualType) && actualType.ofType) {
-            if (actualType.kind === "LIST") {
-              arrayType = true;
-              relationshipType = RelationshipType.ARRAY;
-            }
-            actualType = actualType.ofType;
-          }
-          if (isInstanceOfType(actualType) && (actualType == null ? void 0 : actualType.kind) === "OBJECT") {
-            if (!arrayType)
-              relationshipType = RelationshipType.OBJECT;
-            relationshipName = actualType.name;
-            return false;
-          }
-        }
-        return true;
-      });
-    }
-  });
-  return { relationshipName, relationshipType };
-};
 function isInstanceOfType(object) {
   return "name" in object && "ofType" in object && "kind" in object;
 }
@@ -63313,7 +62918,7 @@ const createTable$1 = (table) => {
     EXECUTE PROCEDURE "${table.schema}"."set_current_timestamp_updated_at"();
     `);
 };
-const addColumn$1 = (props) => {
+const addColumn = (props) => {
   let nullable = props.nullable ? " NULL" : " NOT NULL";
   let unique = props.unique ? " UNIQUE" : "";
   let defaultValue = props.defaultValue === "" ? " " : " default '" + props.defaultValue + "' ";
@@ -63547,7 +63152,7 @@ function createColumn(columnProps, migration, workbench2) {
   let promise2 = fetchHasuraQuery(getColumnNames({ name: columnProps.tableName, schema: columnProps.schema }), "get_columns", false, workbench2).then(handleErrors);
   promise2 = promise2.then((res2) => {
     columnNames = getColumns(res2, columnProps.columnName);
-    return fetchHasuraQuery(addColumn$1(columnProps), "add_column_" + columnProps.columnName, migration, workbench2).then(handleErrors);
+    return fetchHasuraQuery(addColumn(columnProps), "add_column_" + columnProps.columnName, migration, workbench2).then(handleErrors);
   }).catch((error2) => {
     return Promise.reject(error2);
   });
@@ -63998,66 +63603,6 @@ const filterIntrospection = (introspection, entityName) => {
   }
 };
 const entityExists = (types, entityName) => types.some((type2) => type2.name === entityName);
-const addColumn = async (graphQLFile, introspection, entityName, fieldTrees, pageType, referenceField, insertType = InsertType.BEFORE) => {
-  const [queryRoot] = getRoots(introspection);
-  const field = queryRoot.fields.find((field2) => isOfTypePage(field2, entityName, pageType));
-  const fieldName = field == null ? void 0 : field.name;
-  const queryName = fieldName != null ? fieldName : entityName;
-  let modifiedGraphQLFile = graphQLFile;
-  const queryWithFields = introspection.types.find((type2) => type2.name.toLowerCase() === entityName.toLowerCase());
-  fieldTrees.forEach((tree) => {
-    const fieldTreeArray = tree.split(".");
-    let typeNames = fieldTreeArray.slice(1);
-    typeNames = correctTypeNames(typeNames, queryWithFields.fields);
-    let { relationshipName } = findRelationshipType(typeNames, queryWithFields.fields, introspection);
-    const lastParent = lastFieldParent(typeNames, queryWithFields.fields, introspection);
-    const idField = typeNames[typeNames.length - 1] != "id" ? lastParent == null ? void 0 : lastParent.fields.find((field2) => field2.name === "id") : void 0;
-    const additionalFields = idField ? ["id"] : [];
-    const typeNamesSlice = typeNames.slice(0, -1);
-    const newFragmentName = getFragmentName$1([queryName, ...typeNamesSlice], modifiedGraphQLFile);
-    const insertedField = [typeNames[typeNames.length - 1]];
-    if (fragmentExists(modifiedGraphQLFile, newFragmentName)) {
-      modifiedGraphQLFile = addFieldToFragment(modifiedGraphQLFile, newFragmentName, insertedField, referenceField, insertType, additionalFields);
-    } else {
-      modifiedGraphQLFile += `
-
-${buildFragmentFromFieldsTree(queryName, relationshipName != null ? relationshipName : queryName, typeNames, additionalFields)}`;
-      const modifiedFile = insertFragmentSpreadIntoFragment(modifiedGraphQLFile, queryName, entityName, typeNamesSlice);
-      if (modifiedFile === "")
-        modifiedGraphQLFile = buildFieldTreeInQuery(modifiedGraphQLFile, queryName, entityName, typeNamesSlice);
-      else {
-        const scalarFieldsToBeMoved = getScalarFieldsFromFragment(modifiedFile, typeNamesSlice, `${queryName}_${entityName}`);
-        modifiedGraphQLFile = removeFieldsFromFragment(modifiedFile, typeNamesSlice, scalarFieldsToBeMoved, `${queryName}_${entityName}`);
-        modifiedGraphQLFile = addFieldToFragment(modifiedGraphQLFile, newFragmentName, [], referenceField, insertType, scalarFieldsToBeMoved);
-      }
-    }
-  });
-  modifiedGraphQLFile = print(parse$6(modifiedGraphQLFile));
-  return modifiedGraphQLFile;
-};
-const getFragmentName$1 = (fieldTree, graphqlFile) => {
-  if (fieldTree.length == 1) {
-    try {
-      const ast = parse$6(graphqlFile);
-      const entityName = fieldTree[0];
-      let fragmentSpreadName = "";
-      visit(ast, {
-        OperationDefinition(node) {
-          var _a2, _b;
-          if (((_a2 = node.name) == null ? void 0 : _a2.value) === entityName) {
-            const field = node.selectionSet.selections[0];
-            const fragmentSpread = (_b = field.selectionSet) == null ? void 0 : _b.selections[0];
-            fragmentSpreadName = fragmentSpread.name.value;
-          }
-        }
-      });
-      return fragmentSpreadName;
-    } catch (err2) {
-      console.error(err2);
-    }
-  }
-  return buildFragmentNameFromFieldsTree(fieldTree);
-};
 const createMixedImport = (namedImports, moduleSpecifier, defaultImport) => factory.createImportDeclaration(void 0, void 0, factory.createImportClause(false, defaultImport != null ? defaultImport : void 0, factory.createNamedImports(namedImports)), factory.createIdentifier(moduleSpecifier));
 const createNameSpaceImport = (namespace, module2) => {
   return factory.createImportDeclaration(void 0, void 0, factory.createImportClause(false, void 0, factory.createNamespaceImport(factory.createIdentifier(namespace))), factory.createIdentifier(module2));
@@ -79144,17 +78689,19 @@ const addElementHighlight = async (window2, injectMode, features) => {
       const code2 = (source == null ? void 0 : source.fileName) ? await workbench.readFile(source.fileName) : void 0;
       const selectedColumn = code2 ? findColumn(code2, source) : void 0;
       for (let selectedField of selectedFields2) {
-        const columnInfo = {
-          workbench,
-          source,
-          page,
-          entityName,
-          columnToAdd: selectedField,
-          selectedColumn,
-          insertType
-        };
-        const generatedFile = await addField(columnInfo);
-        await workbench.writeFile(generatedFile.path, generatedFile.generatedCode);
+        if (code2 && selectedColumn) {
+          const columnInfo = {
+            workbench,
+            source,
+            page,
+            entityName,
+            columnToAdd: selectedField,
+            selectedColumn,
+            insertType
+          };
+          const generatedFile = await addField(columnInfo);
+          await workbench.writeFile(generatedFile.path, generatedFile.generatedCode);
+        }
       }
       cloneColumn(selectedFields2, insertType, element2);
     } else if (type2 === "CLONE_AND_RENAME_ELEMENT") {
@@ -79390,7 +78937,7 @@ const handleRemoveTableColumn = async (window2, el2, type2) => {
   source.page = PageType.LIST;
   source.entityName = entityName;
   source.columnToDelete = getFieldNameFromElement(el2);
-  await removeFieldFromTable(workbench, getSourceFromElement(getColumnTitle(el2)));
+  await removeFieldFromTable(workbench, source);
   frontendActions.elementHighlightClick(type2, source);
 };
 const handleRemoveFormColumn = async (contentWindow, el2, type2) => {
@@ -85821,7 +85368,7 @@ const addFrontendListeners = (messagingService2, injectMode, features) => {
         pathToGraphqlFile = pathToGraphqlFile.substring(1, pathToGraphqlFile.length);
       }
       const graphQLFile = await workbench.readFile(pathToGraphqlFile);
-      const modifiedGraphQLFile = await addColumn(graphQLFile, introspectionDeepCopy(workbench.introspection), entityName, columnToAdd, page, referenceField, insertType);
+      const modifiedGraphQLFile = await iteriaGeneratorWorker.addColumn(graphQLFile, introspectionDeepCopy(workbench.introspection), entityName, columnToAdd, page, referenceField, insertType);
       workbench.writeFile(pathToGraphqlFile, modifiedGraphQLFile).then(() => delay(2e3)).then(() => {
         window.postMessage({
           type: "SHOW_USER_FEEDBACK",
