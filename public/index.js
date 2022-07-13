@@ -65123,15 +65123,6 @@ const getParentId = (id, devtoolsTree) => {
 };
 const getDevtoolsTree = () => window.devtoolsTree;
 const isColumnTitle = (el2) => el2.classList.contains("MuiDataGrid-columnHeaderTitleContainer");
-const getSourceOfTable = (el2, contentWindow) => {
-  let currElement = el2;
-  while (currElement.parentElement) {
-    if (currElement.classList.contains("MuiDataGrid-root")) {
-      return getSourceFromElement(currElement);
-    }
-    currElement = currElement.parentElement;
-  }
-};
 const getColIndex = (el2) => {
   let currElement = el2;
   while (currElement.parentElement) {
@@ -78940,36 +78931,28 @@ const handleShowAllTranslations = async (event2) => {
   });
 };
 const handleRemoveTableColumn = async (window2, el2, type2) => {
+  var _a2;
   if (!window2.__REACT_DEVTOOLS_GLOBAL_HOOK__)
     throw new Error("__REACT_DEVTOOLS_GLOBAL_HOOK__ not available on window object");
   const entityName = getEntityNameFromUrl();
-  const source = getSourceOfTable(el2);
-  if (!source)
-    return console.error("Source not found", el2);
+  const source = (_a2 = getSourceFromElement(getColumnTitle(el2))) != null ? _a2 : {};
   source.colIndex = getColIndex(el2);
   source.schema = workbench.introspection;
   source.page = PageType.LIST;
   source.entityName = entityName;
   source.columnToDelete = getFieldNameFromElement(el2);
-  await removeFieldFromTable(workbench, getSourceFromElement(getColumnTitle(el2)));
-  if (!source)
-    return console.error("Source not found", el2);
+  await removeFieldFromTable(workbench, source);
   frontendActions.elementHighlightClick(type2, source);
 };
 const handleRemoveFormColumn = async (contentWindow, el2, type2) => {
-  var _a2;
-  const schema2 = await fetchGraphqlIntrospectionSchema(workbench.graphQLEndpoint, workbench.graphQLSecret);
+  var _a2, _b;
   const entityName = getEntityNameFromUrl();
-  const source = getSourceFromElement(el2);
-  if (!source)
-    return console.error("Source not found", el2);
-  source.schema = schema2;
+  const source = (_a2 = getSourceFromElement(el2)) != null ? _a2 : {};
+  source.schema = workbench.introspection;
   source.page = PageType.DETAIL;
   source.entityName = entityName;
-  const element2 = (_a2 = getInputElement(el2)) != null ? _a2 : el2;
+  const element2 = (_b = getInputElement(el2)) != null ? _b : el2;
   source.columnToDelete = element2.getAttribute("name");
-  if (!source)
-    return console.error("Source not found", el2);
   frontendActions.elementHighlightClick(type2, source);
 };
 const handleIconClick = (window2, el2, type2) => {
@@ -85487,6 +85470,8 @@ const addFrontendListeners = (messagingService2, injectMode, features) => {
       });
       return;
     }
+    if (!source.fileName)
+      return console.error("Source not found");
     const file = await workbench.readFile(source.fileName);
     if (!file) {
       window.postMessage({
