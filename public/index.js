@@ -79380,21 +79380,17 @@ const handleShowAllTranslations = async (event2) => {
   });
 };
 const handleRemoveTableColumn = async (window2, el2, type2) => {
+  var _a2;
   if (!window2.__REACT_DEVTOOLS_GLOBAL_HOOK__)
     throw new Error("__REACT_DEVTOOLS_GLOBAL_HOOK__ not available on window object");
   const entityName = getEntityNameFromUrl();
-  const source = getSourceFromElement(getColumnTitle(el2));
-  console.log("test", source);
-  if (!source)
-    return console.error("Source not found", el2);
+  const source = (_a2 = getSourceFromElement(getColumnTitle(el2))) != null ? _a2 : {};
   source.colIndex = getColIndex(el2);
   source.schema = workbench.introspection;
   source.page = PageType.LIST;
   source.entityName = entityName;
   source.columnToDelete = getFieldNameFromElement(el2);
   await removeFieldFromTable(workbench, getSourceFromElement(getColumnTitle(el2)));
-  if (!source)
-    return console.error("Source not found", el2);
   frontendActions.elementHighlightClick(type2, source);
 };
 const handleRemoveFormColumn = async (contentWindow, el2, type2) => {
@@ -85928,6 +85924,8 @@ const addFrontendListeners = (messagingService2, injectMode, features) => {
       });
       return;
     }
+    if (!source.fileName)
+      return console.error("Source not found");
     const file = await workbench.readFile(source.fileName);
     if (!file) {
       window.postMessage({
