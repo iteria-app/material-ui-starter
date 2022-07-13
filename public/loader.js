@@ -266,7 +266,7 @@ let devServer;
 async function iteriaApp(props) {
   showSpinner();
   ({ devServer } = await import("./index.js").then(function(n) {
-    return n.co;
+    return n.cn;
   }));
   devServer({
     cwd: props.cwd,

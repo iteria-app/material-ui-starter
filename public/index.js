@@ -11518,7 +11518,7 @@ const clear = `<svg xmlns="http://www.w3.org/2000/svg" width="18px" viewBox="0 0
 const content_copy = `<svg xmlns="http://www.w3.org/2000/svg" width="18px" viewBox="0 0 24 24" fill="currentColor"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>`;
 const code = `<svg xmlns="http://www.w3.org/2000/svg" width="18px" viewBox="0 0 24 24" fill="currentColor"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg>`;
 const edit = `<?xml version="1.0" encoding="iso-8859-1"?><!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  --><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" fill="currentColor" width="18px" height="18px" viewBox="0 0 494.936 494.936" style="enable-background:new 0 0 494.936 494.936;"	 xml:space="preserve"><g>	<g>		<path d="M389.844,182.85c-6.743,0-12.21,5.467-12.21,12.21v222.968c0,23.562-19.174,42.735-42.736,42.735H67.157			c-23.562,0-42.736-19.174-42.736-42.735V150.285c0-23.562,19.174-42.735,42.736-42.735h267.741c6.743,0,12.21-5.467,12.21-12.21			s-5.467-12.21-12.21-12.21H67.157C30.126,83.13,0,113.255,0,150.285v267.743c0,37.029,30.126,67.155,67.157,67.155h267.741			c37.03,0,67.156-30.126,67.156-67.155V195.061C402.054,188.318,396.587,182.85,389.844,182.85z"/>		<path d="M483.876,20.791c-14.72-14.72-38.669-14.714-53.377,0L221.352,229.944c-0.28,0.28-3.434,3.559-4.251,5.396l-28.963,65.069			c-2.057,4.619-1.056,10.027,2.521,13.6c2.337,2.336,5.461,3.576,8.639,3.576c1.675,0,3.362-0.346,4.96-1.057l65.07-28.963			c1.83-0.815,5.114-3.97,5.396-4.25L483.876,74.169c7.131-7.131,11.06-16.61,11.06-26.692			C494.936,37.396,491.007,27.915,483.876,20.791z M466.61,56.897L257.457,266.05c-0.035,0.036-0.055,0.078-0.089,0.107			l-33.989,15.131L238.51,247.3c0.03-0.036,0.071-0.055,0.107-0.09L447.765,38.058c5.038-5.039,13.819-5.033,18.846,0.005			c2.518,2.51,3.905,5.855,3.905,9.414C470.516,51.036,469.127,54.38,466.61,56.897z"/>	</g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>`;
-const addColumn$1 = `<img style="height:inherit;" src="https://img.icons8.com/ios/30/000000/add-column.png"/>`;
+const addColumn$2 = `<img style="height:inherit;" src="https://img.icons8.com/ios/30/000000/add-column.png"/>`;
 const remove = `<span class=""> <svg focusable="false" width="20" height="20" viewBox="0 0 24 24" class=" NMm5M" > <path fill="currentColor" d="M15 4V3H9v1H4v2h1v13c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V6h1V4h-5zm2 15H7V6h10v13z" /><path fill="currentColor" d="M9 8h2v9H9zm4 0h2v9h-2z" /> </svg> </span>`;
 const check = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="18px" height="18px" viewBox="0 0 24 24" fill="currentColor"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" /></svg>`;
 const drag_move = `<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><g><path fill="none" d="M0 0h24v24H0z"></path><path d="M18 11V8l4 4-4 4v-3h-5v5h3l-4 4-4-4h3v-5H6v3l-4-4 4-4v3h5V6H8l4-4 4 4h-3v5z"></path></g></svg>`;
@@ -11528,7 +11528,7 @@ const icons$1 = {
   content_copy,
   code,
   edit,
-  addColumn: addColumn$1,
+  addColumn: addColumn$2,
   remove,
   check,
   drag_move
@@ -14238,8 +14238,17 @@ function instance_1$1($$self, $$props, $$invalidate) {
     });
   }
   function winbox2(target, { component: component2, html: html3 }) {
-    const _x = x2 === "left" ? 0 : x2 === "right" ? window.innerWidth - width : "center";
-    const _y = y2 === "top" ? 0 : y2 === "bottom" ? window.innerHeight - height : "center";
+    let _x, _y;
+    if (typeof width === "string") {
+      _x = x2 === "left" ? 0 : x2 === "right" ? window.innerWidth - window.innerWidth * parseFloat(width) / 100 : "center";
+    } else {
+      _x = x2 === "left" ? 0 : x2 === "right" ? window.innerWidth - width : "center";
+    }
+    if (typeof height === "string") {
+      _y = y2 === "top" ? 0 : y2 === "bottom" ? window.innerHeight - window.innerHeight * parseFloat(height) / 100 : "center";
+    } else {
+      _y = y2 === "top" ? 0 : y2 === "bottom" ? window.innerHeight - height : "center";
+    }
     let box = new WinBox({
       class: "iteria-ignore",
       title,
@@ -38078,16 +38087,20 @@ function create_fragment$k(ctx) {
   let updating_hidden;
   let current;
   function winbox_hidden_binding(value2) {
-    ctx[4](value2);
+    ctx[5](value2);
   }
   let winbox_props = {
     title: ctx[1],
-    backgroundColor: "#333333",
-    events: { iframeLoaded: ctx[3] },
+    events: {
+      iframeLoaded: ctx[4],
+      close: ctx[3]
+    },
     component: VscodeIframe,
     classes: "iteria-ignore",
-    closeless: true,
-    width: "70%",
+    closeless: false,
+    width: "50%",
+    x: "right",
+    y: "bottom",
     windowName: "vscode"
   };
   if (ctx[0] !== void 0) {
@@ -38133,6 +38146,9 @@ function instance$k($$self, $$props, $$invalidate) {
   let { title = "Title" } = $$props;
   let { hidden: hidden2 } = $$props;
   const dispatch2 = createEventDispatcher();
+  const close = () => {
+    dispatch2("close", []);
+  };
   const func = (e) => dispatch2("iframeLoaded", e.detail);
   function winbox_hidden_binding(value2) {
     hidden2 = value2;
@@ -38144,7 +38160,7 @@ function instance$k($$self, $$props, $$invalidate) {
     if ("hidden" in $$props2)
       $$invalidate(0, hidden2 = $$props2.hidden);
   };
-  return [hidden2, title, dispatch2, func, winbox_hidden_binding];
+  return [hidden2, title, dispatch2, close, func, winbox_hidden_binding];
 }
 class VscodeWindow extends SvelteComponent {
   constructor(options2) {
@@ -38185,8 +38201,8 @@ function __extends(d, b) {
   }
   d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 }
-var __assign$4 = function() {
-  __assign$4 = Object.assign || function __assign2(t) {
+var __assign$3 = function() {
+  __assign$3 = Object.assign || function __assign2(t) {
     for (var s, i2 = 1, n2 = arguments.length; i2 < n2; i2++) {
       s = arguments[i2];
       for (var p2 in s)
@@ -38195,7 +38211,7 @@ var __assign$4 = function() {
     }
     return t;
   };
-  return __assign$4.apply(this, arguments);
+  return __assign$3.apply(this, arguments);
 };
 function __decorate(decorators, target, key, desc) {
   var c2 = arguments.length, r = c2 < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -39989,7 +40005,7 @@ var REASON_ACTION = strings$2.REASON_ACTION, REASON_DISMISS = strings$2.REASON_D
 var MDCSnackbarFoundation = function(_super) {
   __extends(MDCSnackbarFoundation2, _super);
   function MDCSnackbarFoundation2(adapter) {
-    var _this = _super.call(this, __assign$4(__assign$4({}, MDCSnackbarFoundation2.defaultAdapter), adapter)) || this;
+    var _this = _super.call(this, __assign$3(__assign$3({}, MDCSnackbarFoundation2.defaultAdapter), adapter)) || this;
     _this.opened = false;
     _this.animationFrame = 0;
     _this.animationTimer = 0;
@@ -40755,7 +40771,7 @@ var activatedTargets = [];
 var MDCRippleFoundation = function(_super) {
   __extends(MDCRippleFoundation2, _super);
   function MDCRippleFoundation2(adapter) {
-    var _this = _super.call(this, __assign$4(__assign$4({}, MDCRippleFoundation2.defaultAdapter), adapter)) || this;
+    var _this = _super.call(this, __assign$3(__assign$3({}, MDCRippleFoundation2.defaultAdapter), adapter)) || this;
     _this.activationAnimationHasEnded = false;
     _this.activationTimer = 0;
     _this.fgDeactivationRemovalTimer = 0;
@@ -41182,7 +41198,7 @@ var MDCRippleFoundation = function(_super) {
     if (!activationState.isActivated) {
       return;
     }
-    var state2 = __assign$4({}, activationState);
+    var state2 = __assign$3({}, activationState);
     if (activationState.isProgrammatic) {
       requestAnimationFrame(function() {
         _this.animateDeactivation(state2);
@@ -42581,7 +42597,7 @@ var AnimationKeys;
 var MDCDialogFoundation = function(_super) {
   __extends(MDCDialogFoundation2, _super);
   function MDCDialogFoundation2(adapter) {
-    var _this = _super.call(this, __assign$4(__assign$4({}, MDCDialogFoundation2.defaultAdapter), adapter)) || this;
+    var _this = _super.call(this, __assign$3(__assign$3({}, MDCDialogFoundation2.defaultAdapter), adapter)) || this;
     _this.dialogOpen = false;
     _this.isFullscreen = false;
     _this.animationFrame = 0;
@@ -43554,7 +43570,7 @@ function add_css$9(target) {
   append_styles(target, "svelte-jt2bkg", ".fab-container.svelte-jt2bkg>li.svelte-jt2bkg{transition:transform 300ms ease-in-out}.fab-container.svelte-jt2bkg>li.svelte-jt2bkg:hover{transform:translate(10px, 0)}.save-icon.svelte-jt2bkg.svelte-jt2bkg:hover{color:#B8860B}.commit-icon.svelte-jt2bkg.svelte-jt2bkg:hover{color:#e53935}.column-icon.svelte-jt2bkg.svelte-jt2bkg:hover{color:#43a047}.translate-icon.svelte-jt2bkg.svelte-jt2bkg:hover{color:#4183c4}.tippy-icon.svelte-jt2bkg.svelte-jt2bkg:hover{color:#fb8c00}.generate-icon.svelte-jt2bkg.svelte-jt2bkg:hover{color:#3f51b5}.graphql-icon.svelte-jt2bkg.svelte-jt2bkg:hover{color:#e10098}.viewERD-icon.svelte-jt2bkg.svelte-jt2bkg:hover{color:#008080}.theme-icon.svelte-jt2bkg.svelte-jt2bkg:hover{color:#FF7F50}.fab-icon-label.svelte-jt2bkg.svelte-jt2bkg{padding-top:4px;color:#000 !important}.fab-download-icon-label.svelte-jt2bkg.svelte-jt2bkg{padding-top:5px}.fab-icon-container.svelte-jt2bkg.svelte-jt2bkg{width:48px;margin:2px;background-image:linear-gradient(\n      rgb(255, 255, 255),\n      rgb(244, 245, 247)\n    ) !important;box-shadow:rgb(67 90 111 / 14%) 0px 0px 0px 1px inset,\n      rgb(67 90 111 / 6%) 0px -1px 1px 0px inset;border-top-right-radius:8px;border-bottom-right-radius:8px;align-items:center;justify-content:center;height:52px;display:flex;cursor:pointer;transition:transform 0.3s;font-size:10px;flex-direction:column;text-align:center}.fab-container.svelte-jt2bkg.svelte-jt2bkg{z-index:10000000000;display:none;list-style-type:none;justify-content:space-evenly;align-items:center;opacity:0;transition:all 0.2s ease-in-out;flex-direction:column;left:-2px;position:absolute;bottom:5rem}.main-container.svelte-jt2bkg.svelte-jt2bkg{line-height:1.15;-webkit-text-size-adjust:100%;font-family:-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica,\n      Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;position:fixed;bottom:0px;left:0px;box-sizing:border-box;transform:translate(0px, 0px);display:flex;flex-direction:column-reverse;z-index:1000000000}.icon-container.svelte-jt2bkg.svelte-jt2bkg{line-height:1.15;-webkit-text-size-adjust:100%;font-family:-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica,\n      Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;box-sizing:border-box;padding-bottom:32px;position:relative;transition:transform 240ms cubic-bezier(0, 0, 0.2, 1) 0s;display:flex}.icon-container.svelte-jt2bkg:hover+.fab-container.svelte-jt2bkg,.fab-container.svelte-jt2bkg.svelte-jt2bkg:hover{display:flex;opacity:1;transition:all 0.3s ease-in-out}.svg-wrapper.svelte-jt2bkg.svelte-jt2bkg{-webkit-text-size-adjust:100%;text-transform:none;-webkit-font-smoothing:antialiased;font-weight:400;user-select:none;cursor:pointer;white-space:nowrap;font-family:'SF UI Text', -apple-system, BlinkMacSystemFont, 'Segoe UI',\n      Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji',\n      'Segoe UI Emoji', 'Segoe UI Symbol';color:rgb(66, 90, 112);font-size:16px;line-height:20px;letter-spacing:-0.05px;box-sizing:border-box;align-items:center;-webkit-box-align:center;justify-content:center;-webkit-box-pack:center;display:flex;flex-direction:row;-webkit-box-orient:horizontal;-webkit-box-direction:normal}.main-button.svelte-jt2bkg.svelte-jt2bkg{-webkit-text-size-adjust:100%;margin:0;overflow:visible;text-transform:none;-webkit-font-smoothing:antialiased;appearance:none;box-sizing:border-box;position:relative;width:48px;font-weight:400;display:inline-flex;align-items:center;-webkit-box-align:center;justify-content:center;-webkit-box-pack:center;text-decoration:none;vertical-align:middle;border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;outline:none;user-select:none;cursor:pointer;white-space:nowrap;font-family:'SF UI Text', -apple-system, BlinkMacSystemFont, 'Segoe UI',\n      Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji',\n      'Segoe UI Emoji', 'Segoe UI Symbol';border-bottom-left-radius:0px;border-bottom-right-radius:8px;border-top-left-radius:0px;border-top-right-radius:8px;color:rgb(66, 90, 112);height:48px;min-width:32px;font-size:16px;line-height:20px;padding-left:4px;padding-right:4px;background-color:white;background-image:linear-gradient(\n      rgb(255, 255, 255),\n      rgb(244, 245, 247)\n    ) !important;box-shadow:rgba(67, 90, 111, 0.14) 0px 0px 0px 1px inset,\n      rgba(67, 90, 111, 0.06) 0px -1px 1px 0px inset;padding-bottom:4px;padding-top:4px;transition:all 240ms ease 210ms;letter-spacing:-0.05px;transform:translateX(0px)}.svg-hamburger.svelte-jt2bkg.svelte-jt2bkg{-webkit-text-size-adjust:100%;text-transform:none;-webkit-font-smoothing:antialiased;font-weight:400;user-select:none;cursor:pointer;white-space:nowrap;font-family:'SF UI Text', -apple-system, BlinkMacSystemFont, 'Segoe UI',\n      Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji',\n      'Segoe UI Emoji', 'Segoe UI Symbol';color:rgb(66, 90, 112);font-size:16px;line-height:20px;letter-spacing:-0.05px;-webkit-box-direction:normal;fill:rgb(100, 111, 115);box-sizing:border-box;position:relative;left:2px;top:3px;width:16px;height:16px}.iteria-logo.svelte-jt2bkg.svelte-jt2bkg{-webkit-text-size-adjust:100%;text-transform:none;-webkit-font-smoothing:antialiased;font-weight:400;user-select:none;cursor:pointer;white-space:nowrap;font-family:'SF UI Text', -apple-system, BlinkMacSystemFont, 'Segoe UI',\n      Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji',\n      'Segoe UI Emoji', 'Segoe UI Symbol';color:rgb(66, 90, 112);font-size:16px;line-height:20px;letter-spacing:-0.05px;-webkit-box-direction:normal;-webkit-user-drag:none;border-style:none;box-sizing:border-box;height:20px;width:20px}");
 }
 function create_if_block$6(ctx) {
-  var _a2, _b, _c, _d, _e, _f, _g, _h, _i;
+  var _a2, _b, _c, _d, _e, _f, _g, _h, _i, _j;
   let div2;
   let div1;
   let t1;
@@ -43567,16 +43583,18 @@ function create_if_block$6(ctx) {
   let t7;
   let t8;
   let t9;
+  let t10;
   let current;
-  let if_block0 = !ctx[0] && ((_a2 = ctx[2]) == null ? void 0 : _a2.save) != false && create_if_block_10$1(ctx);
-  let if_block1 = ctx[1] && ((_b = ctx[2]) == null ? void 0 : _b.commit) != false && create_if_block_9$1(ctx);
-  let if_block2 = ((_c = ctx[2]) == null ? void 0 : _c.addFields) != false && create_if_block_8$1(ctx);
-  let if_block3 = ((_d = ctx[2]) == null ? void 0 : _d.translations) != false && create_if_block_7$1(ctx);
-  let if_block4 = ((_e = ctx[2]) == null ? void 0 : _e.tippy) != false && create_if_block_5$1(ctx);
-  let if_block5 = ((_f = ctx[2]) == null ? void 0 : _f.generator) != false && create_if_block_4$1(ctx);
-  let if_block6 = ((_g = ctx[2]) == null ? void 0 : _g.graphQLEndpoint) != false && create_if_block_3$2(ctx);
-  let if_block7 = ((_h = ctx[2]) == null ? void 0 : _h.erd) != false && create_if_block_2$2(ctx);
-  let if_block8 = ((_i = ctx[2]) == null ? void 0 : _i.themeEditor) != false && create_if_block_1$3(ctx);
+  let if_block0 = !ctx[2] && ((_a2 = ctx[4]) == null ? void 0 : _a2.save) != false && create_if_block_11$1(ctx);
+  let if_block1 = ctx[3] && ((_b = ctx[4]) == null ? void 0 : _b.commit) != false && create_if_block_10$1(ctx);
+  let if_block2 = ((_c = ctx[4]) == null ? void 0 : _c.addFields) != false && create_if_block_9$1(ctx);
+  let if_block3 = ((_d = ctx[4]) == null ? void 0 : _d.translations) != false && create_if_block_8$1(ctx);
+  let if_block4 = ((_e = ctx[4]) == null ? void 0 : _e.tippy) != false && create_if_block_6$1(ctx);
+  let if_block5 = ((_f = ctx[4]) == null ? void 0 : _f.generator) != false && create_if_block_5$1(ctx);
+  let if_block6 = ((_g = ctx[4]) == null ? void 0 : _g.graphQLEndpoint) != false && create_if_block_4$1(ctx);
+  let if_block7 = ((_h = ctx[4]) == null ? void 0 : _h.erd) != false && create_if_block_3$2(ctx);
+  let if_block8 = ((_i = ctx[4]) == null ? void 0 : _i.themeEditor) != false && create_if_block_2$2(ctx);
+  let if_block9 = ((_j = ctx[4]) == null ? void 0 : _j.vsCode) != false && create_if_block_1$3(ctx);
   return {
     c() {
       div2 = element("div");
@@ -43611,6 +43629,9 @@ function create_if_block$6(ctx) {
       t9 = space();
       if (if_block8)
         if_block8.c();
+      t10 = space();
+      if (if_block9)
+        if_block9.c();
       attr(div1, "class", "icon-container svelte-jt2bkg");
       attr(ul, "class", "fab-container svelte-jt2bkg");
       attr(div2, "class", "iteria-ignore main-container svelte-jt2bkg");
@@ -43646,18 +43667,21 @@ function create_if_block$6(ctx) {
       append$1(ul, t9);
       if (if_block8)
         if_block8.m(ul, null);
+      append$1(ul, t10);
+      if (if_block9)
+        if_block9.m(ul, null);
       current = true;
     },
     p(ctx2, dirty) {
-      var _a3, _b2, _c2, _d2, _e2, _f2, _g2, _h2, _i2;
-      if (!ctx2[0] && ((_a3 = ctx2[2]) == null ? void 0 : _a3.save) != false) {
+      var _a3, _b2, _c2, _d2, _e2, _f2, _g2, _h2, _i2, _j2;
+      if (!ctx2[2] && ((_a3 = ctx2[4]) == null ? void 0 : _a3.save) != false) {
         if (if_block0) {
           if_block0.p(ctx2, dirty);
-          if (dirty & 5) {
+          if (dirty & 20) {
             transition_in(if_block0, 1);
           }
         } else {
-          if_block0 = create_if_block_10$1(ctx2);
+          if_block0 = create_if_block_11$1(ctx2);
           if_block0.c();
           transition_in(if_block0, 1);
           if_block0.m(ul, t2);
@@ -43669,14 +43693,14 @@ function create_if_block$6(ctx) {
         });
         check_outros();
       }
-      if (ctx2[1] && ((_b2 = ctx2[2]) == null ? void 0 : _b2.commit) != false) {
+      if (ctx2[3] && ((_b2 = ctx2[4]) == null ? void 0 : _b2.commit) != false) {
         if (if_block1) {
           if_block1.p(ctx2, dirty);
-          if (dirty & 6) {
+          if (dirty & 24) {
             transition_in(if_block1, 1);
           }
         } else {
-          if_block1 = create_if_block_9$1(ctx2);
+          if_block1 = create_if_block_10$1(ctx2);
           if_block1.c();
           transition_in(if_block1, 1);
           if_block1.m(ul, t3);
@@ -43688,14 +43712,14 @@ function create_if_block$6(ctx) {
         });
         check_outros();
       }
-      if (((_c2 = ctx2[2]) == null ? void 0 : _c2.addFields) != false) {
+      if (((_c2 = ctx2[4]) == null ? void 0 : _c2.addFields) != false) {
         if (if_block2) {
           if_block2.p(ctx2, dirty);
-          if (dirty & 4) {
+          if (dirty & 16) {
             transition_in(if_block2, 1);
           }
         } else {
-          if_block2 = create_if_block_8$1(ctx2);
+          if_block2 = create_if_block_9$1(ctx2);
           if_block2.c();
           transition_in(if_block2, 1);
           if_block2.m(ul, t4);
@@ -43707,14 +43731,14 @@ function create_if_block$6(ctx) {
         });
         check_outros();
       }
-      if (((_d2 = ctx2[2]) == null ? void 0 : _d2.translations) != false) {
+      if (((_d2 = ctx2[4]) == null ? void 0 : _d2.translations) != false) {
         if (if_block3) {
           if_block3.p(ctx2, dirty);
-          if (dirty & 4) {
+          if (dirty & 16) {
             transition_in(if_block3, 1);
           }
         } else {
-          if_block3 = create_if_block_7$1(ctx2);
+          if_block3 = create_if_block_8$1(ctx2);
           if_block3.c();
           transition_in(if_block3, 1);
           if_block3.m(ul, t5);
@@ -43726,14 +43750,14 @@ function create_if_block$6(ctx) {
         });
         check_outros();
       }
-      if (((_e2 = ctx2[2]) == null ? void 0 : _e2.tippy) != false) {
+      if (((_e2 = ctx2[4]) == null ? void 0 : _e2.tippy) != false) {
         if (if_block4) {
           if_block4.p(ctx2, dirty);
-          if (dirty & 4) {
+          if (dirty & 16) {
             transition_in(if_block4, 1);
           }
         } else {
-          if_block4 = create_if_block_5$1(ctx2);
+          if_block4 = create_if_block_6$1(ctx2);
           if_block4.c();
           transition_in(if_block4, 1);
           if_block4.m(ul, t6);
@@ -43745,14 +43769,14 @@ function create_if_block$6(ctx) {
         });
         check_outros();
       }
-      if (((_f2 = ctx2[2]) == null ? void 0 : _f2.generator) != false) {
+      if (((_f2 = ctx2[4]) == null ? void 0 : _f2.generator) != false) {
         if (if_block5) {
           if_block5.p(ctx2, dirty);
-          if (dirty & 4) {
+          if (dirty & 16) {
             transition_in(if_block5, 1);
           }
         } else {
-          if_block5 = create_if_block_4$1(ctx2);
+          if_block5 = create_if_block_5$1(ctx2);
           if_block5.c();
           transition_in(if_block5, 1);
           if_block5.m(ul, t7);
@@ -43764,14 +43788,14 @@ function create_if_block$6(ctx) {
         });
         check_outros();
       }
-      if (((_g2 = ctx2[2]) == null ? void 0 : _g2.graphQLEndpoint) != false) {
+      if (((_g2 = ctx2[4]) == null ? void 0 : _g2.graphQLEndpoint) != false) {
         if (if_block6) {
           if_block6.p(ctx2, dirty);
-          if (dirty & 4) {
+          if (dirty & 16) {
             transition_in(if_block6, 1);
           }
         } else {
-          if_block6 = create_if_block_3$2(ctx2);
+          if_block6 = create_if_block_4$1(ctx2);
           if_block6.c();
           transition_in(if_block6, 1);
           if_block6.m(ul, t8);
@@ -43783,14 +43807,14 @@ function create_if_block$6(ctx) {
         });
         check_outros();
       }
-      if (((_h2 = ctx2[2]) == null ? void 0 : _h2.erd) != false) {
+      if (((_h2 = ctx2[4]) == null ? void 0 : _h2.erd) != false) {
         if (if_block7) {
           if_block7.p(ctx2, dirty);
-          if (dirty & 4) {
+          if (dirty & 16) {
             transition_in(if_block7, 1);
           }
         } else {
-          if_block7 = create_if_block_2$2(ctx2);
+          if_block7 = create_if_block_3$2(ctx2);
           if_block7.c();
           transition_in(if_block7, 1);
           if_block7.m(ul, t9);
@@ -43802,17 +43826,17 @@ function create_if_block$6(ctx) {
         });
         check_outros();
       }
-      if (((_i2 = ctx2[2]) == null ? void 0 : _i2.themeEditor) != false) {
+      if (((_i2 = ctx2[4]) == null ? void 0 : _i2.themeEditor) != false) {
         if (if_block8) {
           if_block8.p(ctx2, dirty);
-          if (dirty & 4) {
+          if (dirty & 16) {
             transition_in(if_block8, 1);
           }
         } else {
-          if_block8 = create_if_block_1$3(ctx2);
+          if_block8 = create_if_block_2$2(ctx2);
           if_block8.c();
           transition_in(if_block8, 1);
-          if_block8.m(ul, null);
+          if_block8.m(ul, t10);
         }
       } else if (if_block8) {
         group_outros();
@@ -43820,6 +43844,18 @@ function create_if_block$6(ctx) {
           if_block8 = null;
         });
         check_outros();
+      }
+      if (((_j2 = ctx2[4]) == null ? void 0 : _j2.vsCode) != false) {
+        if (if_block9) {
+          if_block9.p(ctx2, dirty);
+        } else {
+          if_block9 = create_if_block_1$3(ctx2);
+          if_block9.c();
+          if_block9.m(ul, null);
+        }
+      } else if (if_block9) {
+        if_block9.d(1);
+        if_block9 = null;
       }
     },
     i(local) {
@@ -43869,10 +43905,12 @@ function create_if_block$6(ctx) {
         if_block7.d();
       if (if_block8)
         if_block8.d();
+      if (if_block9)
+        if_block9.d();
     }
   };
 }
-function create_if_block_10$1(ctx) {
+function create_if_block_11$1(ctx) {
   let li;
   let icon;
   let t0;
@@ -43904,7 +43942,63 @@ function create_if_block_10$1(ctx) {
       append$1(li, span);
       current = true;
       if (!mounted) {
-        dispose = listen(li, "click", ctx[5]);
+        dispose = listen(li, "click", ctx[7]);
+        mounted = true;
+      }
+    },
+    p: noop$1,
+    i(local) {
+      if (current)
+        return;
+      transition_in(icon.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(icon.$$.fragment, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching)
+        detach(li);
+      destroy_component(icon);
+      mounted = false;
+      dispose();
+    }
+  };
+}
+function create_if_block_10$1(ctx) {
+  let li;
+  let icon;
+  let t0;
+  let span;
+  let current;
+  let mounted;
+  let dispose;
+  icon = new Icon$1({
+    props: {
+      color: "currentColor",
+      src: BiGitCommit,
+      size: "24"
+    }
+  });
+  return {
+    c() {
+      li = element("li");
+      create_component(icon.$$.fragment);
+      t0 = space();
+      span = element("span");
+      span.textContent = "Commit Changes";
+      attr(span, "class", "fab-icon-label fab-download-icon-label svelte-jt2bkg");
+      attr(li, "class", "fab-icon-container commit-icon svelte-jt2bkg");
+    },
+    m(target, anchor) {
+      insert(target, li, anchor);
+      mount_component(icon, li, null);
+      append$1(li, t0);
+      append$1(li, span);
+      current = true;
+      if (!mounted) {
+        dispose = listen(li, "click", ctx[8]);
         mounted = true;
       }
     },
@@ -43939,7 +44033,7 @@ function create_if_block_9$1(ctx) {
   icon = new Icon$1({
     props: {
       color: "currentColor",
-      src: BiGitCommit,
+      src: BsLayoutThreeColumns,
       size: "24"
     }
   });
@@ -43949,9 +44043,9 @@ function create_if_block_9$1(ctx) {
       create_component(icon.$$.fragment);
       t0 = space();
       span = element("span");
-      span.textContent = "Commit Changes";
-      attr(span, "class", "fab-icon-label fab-download-icon-label svelte-jt2bkg");
-      attr(li, "class", "fab-icon-container commit-icon svelte-jt2bkg");
+      span.textContent = "Add field";
+      attr(span, "class", "fab-icon-label svelte-jt2bkg");
+      attr(li, "class", "fab-icon-container column-icon svelte-jt2bkg");
     },
     m(target, anchor) {
       insert(target, li, anchor);
@@ -43960,7 +44054,7 @@ function create_if_block_9$1(ctx) {
       append$1(li, span);
       current = true;
       if (!mounted) {
-        dispose = listen(li, "click", ctx[6]);
+        dispose = listen(li, "click", ctx[9]);
         mounted = true;
       }
     },
@@ -43995,62 +44089,6 @@ function create_if_block_8$1(ctx) {
   icon = new Icon$1({
     props: {
       color: "currentColor",
-      src: BsLayoutThreeColumns,
-      size: "24"
-    }
-  });
-  return {
-    c() {
-      li = element("li");
-      create_component(icon.$$.fragment);
-      t0 = space();
-      span = element("span");
-      span.textContent = "Add field";
-      attr(span, "class", "fab-icon-label svelte-jt2bkg");
-      attr(li, "class", "fab-icon-container column-icon svelte-jt2bkg");
-    },
-    m(target, anchor) {
-      insert(target, li, anchor);
-      mount_component(icon, li, null);
-      append$1(li, t0);
-      append$1(li, span);
-      current = true;
-      if (!mounted) {
-        dispose = listen(li, "click", ctx[7]);
-        mounted = true;
-      }
-    },
-    p: noop$1,
-    i(local) {
-      if (current)
-        return;
-      transition_in(icon.$$.fragment, local);
-      current = true;
-    },
-    o(local) {
-      transition_out(icon.$$.fragment, local);
-      current = false;
-    },
-    d(detaching) {
-      if (detaching)
-        detach(li);
-      destroy_component(icon);
-      mounted = false;
-      dispose();
-    }
-  };
-}
-function create_if_block_7$1(ctx) {
-  let li;
-  let icon;
-  let t0;
-  let span;
-  let current;
-  let mounted;
-  let dispose;
-  icon = new Icon$1({
-    props: {
-      color: "currentColor",
       src: SiGoogletranslate,
       size: "24"
     }
@@ -44072,7 +44110,7 @@ function create_if_block_7$1(ctx) {
       append$1(li, span);
       current = true;
       if (!mounted) {
-        dispose = listen(li, "click", ctx[8]);
+        dispose = listen(li, "click", ctx[10]);
         mounted = true;
       }
     },
@@ -44096,23 +44134,23 @@ function create_if_block_7$1(ctx) {
     }
   };
 }
-function create_if_block_5$1(ctx) {
+function create_if_block_6$1(ctx) {
   let li;
   let current_block_type_index;
   let if_block;
   let t0;
   let span;
-  let t1_value = ctx[3] ? "Hide" : "Show";
+  let t1_value = ctx[5] ? "Hide" : "Show";
   let t1;
   let br;
   let t2;
   let current;
   let mounted;
   let dispose;
-  const if_block_creators = [create_if_block_6$1, create_else_block$2];
+  const if_block_creators = [create_if_block_7$1, create_else_block$2];
   const if_blocks = [];
   function select_block_type(ctx2, dirty) {
-    if (ctx2[3])
+    if (ctx2[5])
       return 0;
     return 1;
   }
@@ -44140,7 +44178,7 @@ function create_if_block_5$1(ctx) {
       append$1(span, t2);
       current = true;
       if (!mounted) {
-        dispose = listen(li, "click", ctx[9]);
+        dispose = listen(li, "click", ctx[11]);
         mounted = true;
       }
     },
@@ -44165,7 +44203,7 @@ function create_if_block_5$1(ctx) {
         transition_in(if_block, 1);
         if_block.m(li, t0);
       }
-      if ((!current || dirty & 8) && t1_value !== (t1_value = ctx2[3] ? "Hide" : "Show"))
+      if ((!current || dirty & 32) && t1_value !== (t1_value = ctx2[5] ? "Hide" : "Show"))
         set_data(t1, t1_value);
     },
     i(local) {
@@ -44221,7 +44259,7 @@ function create_else_block$2(ctx) {
     }
   };
 }
-function create_if_block_6$1(ctx) {
+function create_if_block_7$1(ctx) {
   let icon;
   let current;
   icon = new Icon$1({
@@ -44255,7 +44293,7 @@ function create_if_block_6$1(ctx) {
     }
   };
 }
-function create_if_block_4$1(ctx) {
+function create_if_block_5$1(ctx) {
   let li;
   let icon;
   let t0;
@@ -44287,7 +44325,63 @@ function create_if_block_4$1(ctx) {
       append$1(li, span);
       current = true;
       if (!mounted) {
-        dispose = listen(li, "click", ctx[10]);
+        dispose = listen(li, "click", ctx[12]);
+        mounted = true;
+      }
+    },
+    p: noop$1,
+    i(local) {
+      if (current)
+        return;
+      transition_in(icon.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(icon.$$.fragment, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching)
+        detach(li);
+      destroy_component(icon);
+      mounted = false;
+      dispose();
+    }
+  };
+}
+function create_if_block_4$1(ctx) {
+  let li;
+  let icon;
+  let t0;
+  let span;
+  let current;
+  let mounted;
+  let dispose;
+  icon = new Icon$1({
+    props: {
+      color: "currentColor",
+      src: SiGraphql,
+      size: "24"
+    }
+  });
+  return {
+    c() {
+      li = element("li");
+      create_component(icon.$$.fragment);
+      t0 = space();
+      span = element("span");
+      span.textContent = "GraphQL Endpoint";
+      attr(span, "class", "fab-icon-label svelte-jt2bkg");
+      attr(li, "class", "fab-icon-container graphql-icon svelte-jt2bkg");
+    },
+    m(target, anchor) {
+      insert(target, li, anchor);
+      mount_component(icon, li, null);
+      append$1(li, t0);
+      append$1(li, span);
+      current = true;
+      if (!mounted) {
+        dispose = listen(li, "click", ctx[13]);
         mounted = true;
       }
     },
@@ -44322,7 +44416,7 @@ function create_if_block_3$2(ctx) {
   icon = new Icon$1({
     props: {
       color: "currentColor",
-      src: SiGraphql,
+      src: AiOutlineCluster,
       size: "24"
     }
   });
@@ -44332,9 +44426,9 @@ function create_if_block_3$2(ctx) {
       create_component(icon.$$.fragment);
       t0 = space();
       span = element("span");
-      span.textContent = "GraphQL Endpoint";
+      span.textContent = "ERD";
       attr(span, "class", "fab-icon-label svelte-jt2bkg");
-      attr(li, "class", "fab-icon-container graphql-icon svelte-jt2bkg");
+      attr(li, "class", "fab-icon-container viewERD-icon svelte-jt2bkg");
     },
     m(target, anchor) {
       insert(target, li, anchor);
@@ -44343,7 +44437,7 @@ function create_if_block_3$2(ctx) {
       append$1(li, span);
       current = true;
       if (!mounted) {
-        dispose = listen(li, "click", ctx[11]);
+        dispose = listen(li, "click", ctx[14]);
         mounted = true;
       }
     },
@@ -44378,7 +44472,7 @@ function create_if_block_2$2(ctx) {
   icon = new Icon$1({
     props: {
       color: "currentColor",
-      src: AiOutlineCluster,
+      src: BiBrush,
       size: "24"
     }
   });
@@ -44388,9 +44482,9 @@ function create_if_block_2$2(ctx) {
       create_component(icon.$$.fragment);
       t0 = space();
       span = element("span");
-      span.textContent = "ERD";
+      span.textContent = "Theme Editor";
       attr(span, "class", "fab-icon-label svelte-jt2bkg");
-      attr(li, "class", "fab-icon-container viewERD-icon svelte-jt2bkg");
+      attr(li, "class", "fab-icon-container theme-icon svelte-jt2bkg");
     },
     m(target, anchor) {
       insert(target, li, anchor);
@@ -44399,7 +44493,7 @@ function create_if_block_2$2(ctx) {
       append$1(li, span);
       current = true;
       if (!mounted) {
-        dispose = listen(li, "click", ctx[12]);
+        dispose = listen(li, "click", ctx[15]);
         mounted = true;
       }
     },
@@ -44425,55 +44519,37 @@ function create_if_block_2$2(ctx) {
 }
 function create_if_block_1$3(ctx) {
   let li;
-  let icon;
+  let html_tag;
+  let raw_value = icons$1.code + "";
   let t0;
   let span;
-  let current;
   let mounted;
   let dispose;
-  icon = new Icon$1({
-    props: {
-      color: "currentColor",
-      src: BiBrush,
-      size: "24"
-    }
-  });
   return {
     c() {
       li = element("li");
-      create_component(icon.$$.fragment);
+      html_tag = new HtmlTag();
       t0 = space();
       span = element("span");
-      span.textContent = "Theme Editor";
+      span.textContent = "VS Code";
+      html_tag.a = t0;
       attr(span, "class", "fab-icon-label svelte-jt2bkg");
-      attr(li, "class", "fab-icon-container theme-icon svelte-jt2bkg");
+      attr(li, "class", "fab-icon-container show-vs-code svelte-jt2bkg");
     },
     m(target, anchor) {
       insert(target, li, anchor);
-      mount_component(icon, li, null);
+      html_tag.m(raw_value, li);
       append$1(li, t0);
       append$1(li, span);
-      current = true;
       if (!mounted) {
-        dispose = listen(li, "click", ctx[13]);
+        dispose = listen(li, "click", ctx[16]);
         mounted = true;
       }
     },
     p: noop$1,
-    i(local) {
-      if (current)
-        return;
-      transition_in(icon.$$.fragment, local);
-      current = true;
-    },
-    o(local) {
-      transition_out(icon.$$.fragment, local);
-      current = false;
-    },
     d(detaching) {
       if (detaching)
         detach(li);
-      destroy_component(icon);
       mounted = false;
       dispose();
     }
@@ -44483,7 +44559,7 @@ function create_fragment$i(ctx) {
   var _a2;
   let if_block_anchor;
   let current;
-  let if_block = ((_a2 = ctx[2]) == null ? void 0 : _a2.floatingButton) != false && create_if_block$6(ctx);
+  let if_block = ((_a2 = ctx[4]) == null ? void 0 : _a2.floatingButton) != false && create_if_block$6(ctx);
   return {
     c() {
       if (if_block)
@@ -44498,10 +44574,10 @@ function create_fragment$i(ctx) {
     },
     p(ctx2, [dirty]) {
       var _a3;
-      if (((_a3 = ctx2[2]) == null ? void 0 : _a3.floatingButton) != false) {
+      if (((_a3 = ctx2[4]) == null ? void 0 : _a3.floatingButton) != false) {
         if (if_block) {
           if_block.p(ctx2, dirty);
-          if (dirty & 4) {
+          if (dirty & 16) {
             transition_in(if_block, 1);
           }
         } else {
@@ -44538,10 +44614,12 @@ function create_fragment$i(ctx) {
 }
 function instance$i($$self, $$props, $$invalidate) {
   const dispatch2 = createEventDispatcher();
+  let { hidden: hidden2 = false } = $$props;
   let { isDevserver = false } = $$props;
   let { isNetlify = false } = $$props;
   let { features = void 0 } = $$props;
   let { showTippy } = $$props;
+  let { showVsCode } = $$props;
   const click_handler2 = () => dispatch2("saveProjectZip");
   const click_handler_1 = () => dispatch2("commitAllChanges");
   const click_handler_2 = () => dispatch2("addColumn");
@@ -44551,17 +44629,28 @@ function instance$i($$self, $$props, $$invalidate) {
   const click_handler_6 = () => dispatch2("changeGraphqlEndpoint");
   const click_handler_7 = () => dispatch2("viewERD");
   const click_handler_8 = () => dispatch2("changeTheme");
+  const click_handler_9 = () => {
+    $$invalidate(0, hidden2 = false);
+    window.windows.vscode.show();
+    $$invalidate(1, showVsCode = true);
+  };
   $$self.$$set = ($$props2) => {
+    if ("hidden" in $$props2)
+      $$invalidate(0, hidden2 = $$props2.hidden);
     if ("isDevserver" in $$props2)
-      $$invalidate(0, isDevserver = $$props2.isDevserver);
+      $$invalidate(2, isDevserver = $$props2.isDevserver);
     if ("isNetlify" in $$props2)
-      $$invalidate(1, isNetlify = $$props2.isNetlify);
+      $$invalidate(3, isNetlify = $$props2.isNetlify);
     if ("features" in $$props2)
-      $$invalidate(2, features = $$props2.features);
+      $$invalidate(4, features = $$props2.features);
     if ("showTippy" in $$props2)
-      $$invalidate(3, showTippy = $$props2.showTippy);
+      $$invalidate(5, showTippy = $$props2.showTippy);
+    if ("showVsCode" in $$props2)
+      $$invalidate(1, showVsCode = $$props2.showVsCode);
   };
   return [
+    hidden2,
+    showVsCode,
     isDevserver,
     isNetlify,
     features,
@@ -44575,17 +44664,20 @@ function instance$i($$self, $$props, $$invalidate) {
     click_handler_5,
     click_handler_6,
     click_handler_7,
-    click_handler_8
+    click_handler_8,
+    click_handler_9
   ];
 }
 class FloatingButton extends SvelteComponent {
   constructor(options2) {
     super();
     init$1(this, options2, instance$i, create_fragment$i, safe_not_equal, {
-      isDevserver: 0,
-      isNetlify: 1,
-      features: 2,
-      showTippy: 3
+      hidden: 0,
+      isDevserver: 2,
+      isNetlify: 3,
+      features: 4,
+      showTippy: 5,
+      showVsCode: 1
     }, add_css$9);
   }
 }
@@ -50554,7 +50646,7 @@ const { window: window_1 } = globals;
 function add_css(target) {
   append_styles(target, "svelte-wo59zv", ".sortable-ghost{opacity:0.4}.dragable-item{cursor:move;transition:transform 0.3s;-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.dragable-item:hover{transform:scale(1.05)}.dragable-item.dragable-ignore{cursor:alias;pointer-events:none}");
 }
-function create_if_block_16(ctx) {
+function create_if_block_15(ctx) {
   let errorsnackbar;
   let t;
   let vscodewindow;
@@ -50564,7 +50656,7 @@ function create_if_block_16(ctx) {
     props: { bundlerError: ctx[1] }
   });
   function vscodewindow_hidden_binding(value2) {
-    ctx[61](value2);
+    ctx[62](value2);
   }
   let vscodewindow_props = { title: "Iteria Vscode" };
   if (ctx[31] !== void 0) {
@@ -50572,7 +50664,8 @@ function create_if_block_16(ctx) {
   }
   vscodewindow = new VscodeWindow({ props: vscodewindow_props });
   binding_callbacks.push(() => bind(vscodewindow, "hidden", vscodewindow_hidden_binding));
-  vscodewindow.$on("iframeLoaded", ctx[62]);
+  vscodewindow.$on("iframeLoaded", ctx[63]);
+  vscodewindow.$on("close", ctx[64]);
   return {
     c() {
       create_component(errorsnackbar.$$.fragment);
@@ -50618,72 +50711,16 @@ function create_if_block_16(ctx) {
     }
   };
 }
-function create_if_block_15(ctx) {
-  let floatingbutton;
-  let current;
-  floatingbutton = new FloatingButton({
-    props: {
-      isDevserver: ctx[2],
-      isNetlify: ctx[5],
-      showTippy: ctx[28],
-      features: ctx[4]
-    }
-  });
-  floatingbutton.$on("generatePage", ctx[48]);
-  floatingbutton.$on("commitAllChanges", ctx[56]);
-  floatingbutton.$on("saveProjectZip", ctx[57]);
-  floatingbutton.$on("loadIntrospection", ctx[63]);
-  floatingbutton.$on("addColumn", ctx[38]);
-  floatingbutton.$on("toggleTippy", ctx[64]);
-  floatingbutton.$on("changeGraphqlEndpoint", ctx[49]);
-  floatingbutton.$on("editTranslations", ctx[65]);
-  floatingbutton.$on("changeTheme", ctx[51]);
-  floatingbutton.$on("viewERD", ctx[55]);
-  return {
-    c() {
-      create_component(floatingbutton.$$.fragment);
-    },
-    m(target, anchor) {
-      mount_component(floatingbutton, target, anchor);
-      current = true;
-    },
-    p(ctx2, dirty) {
-      const floatingbutton_changes = {};
-      if (dirty[0] & 4)
-        floatingbutton_changes.isDevserver = ctx2[2];
-      if (dirty[0] & 32)
-        floatingbutton_changes.isNetlify = ctx2[5];
-      if (dirty[0] & 268435456)
-        floatingbutton_changes.showTippy = ctx2[28];
-      if (dirty[0] & 16)
-        floatingbutton_changes.features = ctx2[4];
-      floatingbutton.$set(floatingbutton_changes);
-    },
-    i(local) {
-      if (current)
-        return;
-      transition_in(floatingbutton.$$.fragment, local);
-      current = true;
-    },
-    o(local) {
-      transition_out(floatingbutton.$$.fragment, local);
-      current = false;
-    },
-    d(detaching) {
-      destroy_component(floatingbutton, detaching);
-    }
-  };
-}
 function create_if_block_8(ctx) {
   let t0;
   let t1;
   let t2;
   let if_block3_anchor;
   let current;
-  let if_block0 = (ctx[28] || ctx[25] === "dragable-editing") && create_if_block_14(ctx);
-  let if_block1 = ctx[23] && (ctx[25] === "editing" || ctx[25] === "dragable-editing") && create_if_block_12(ctx);
-  let if_block2 = ctx[24] && create_if_block_10(ctx);
-  let if_block3 = ctx[10] && create_if_block_9(ctx);
+  let if_block0 = (ctx[27] || ctx[24] === "dragable-editing") && create_if_block_14(ctx);
+  let if_block1 = ctx[22] && (ctx[24] === "editing" || ctx[24] === "dragable-editing") && create_if_block_12(ctx);
+  let if_block2 = ctx[23] && create_if_block_10(ctx);
+  let if_block3 = ctx[9] && create_if_block_9(ctx);
   return {
     c() {
       if (if_block0)
@@ -50715,10 +50752,10 @@ function create_if_block_8(ctx) {
       current = true;
     },
     p(ctx2, dirty) {
-      if (ctx2[28] || ctx2[25] === "dragable-editing") {
+      if (ctx2[27] || ctx2[24] === "dragable-editing") {
         if (if_block0) {
           if_block0.p(ctx2, dirty);
-          if (dirty[0] & 301989888) {
+          if (dirty[0] & 150994944) {
             transition_in(if_block0, 1);
           }
         } else {
@@ -50734,10 +50771,10 @@ function create_if_block_8(ctx) {
         });
         check_outros();
       }
-      if (ctx2[23] && (ctx2[25] === "editing" || ctx2[25] === "dragable-editing")) {
+      if (ctx2[22] && (ctx2[24] === "editing" || ctx2[24] === "dragable-editing")) {
         if (if_block1) {
           if_block1.p(ctx2, dirty);
-          if (dirty[0] & 41943040) {
+          if (dirty[0] & 20971520) {
             transition_in(if_block1, 1);
           }
         } else {
@@ -50753,10 +50790,10 @@ function create_if_block_8(ctx) {
         });
         check_outros();
       }
-      if (ctx2[24]) {
+      if (ctx2[23]) {
         if (if_block2) {
           if_block2.p(ctx2, dirty);
-          if (dirty[0] & 16777216) {
+          if (dirty[0] & 8388608) {
             transition_in(if_block2, 1);
           }
         } else {
@@ -50772,10 +50809,10 @@ function create_if_block_8(ctx) {
         });
         check_outros();
       }
-      if (ctx2[10]) {
+      if (ctx2[9]) {
         if (if_block3) {
           if_block3.p(ctx2, dirty);
-          if (dirty[0] & 1024) {
+          if (dirty[0] & 512) {
             transition_in(if_block3, 1);
           }
         } else {
@@ -50834,21 +50871,21 @@ function create_if_block_14(ctx) {
   let updating_boundries;
   let current;
   function widgetframe_offset_binding(value2) {
-    ctx[66](value2);
+    ctx[70](value2);
   }
   function widgetframe_boundries_binding(value2) {
-    ctx[67](value2);
+    ctx[71](value2);
   }
   let widgetframe_props = {
-    mode: ctx[25],
-    element: ctx[23] && ctx[25] !== "inspecting" ? ctx[23] : ctx[22],
+    mode: ctx[24],
+    element: ctx[22] && ctx[24] !== "inspecting" ? ctx[22] : ctx[21],
     activeAction: ctx[32]
   };
-  if (ctx[8] !== void 0) {
-    widgetframe_props.offset = ctx[8];
+  if (ctx[7] !== void 0) {
+    widgetframe_props.offset = ctx[7];
   }
-  if (ctx[9] !== void 0) {
-    widgetframe_props.boundries = ctx[9];
+  if (ctx[8] !== void 0) {
+    widgetframe_props.boundries = ctx[8];
   }
   widgetframe = new WidgetFrame({ props: widgetframe_props });
   binding_callbacks.push(() => bind(widgetframe, "offset", widgetframe_offset_binding));
@@ -50875,20 +50912,20 @@ function create_if_block_14(ctx) {
     },
     p(ctx2, dirty) {
       const widgetframe_changes = {};
-      if (dirty[0] & 33554432)
-        widgetframe_changes.mode = ctx2[25];
-      if (dirty[0] & 46137344)
-        widgetframe_changes.element = ctx2[23] && ctx2[25] !== "inspecting" ? ctx2[23] : ctx2[22];
+      if (dirty[0] & 16777216)
+        widgetframe_changes.mode = ctx2[24];
+      if (dirty[0] & 23068672)
+        widgetframe_changes.element = ctx2[22] && ctx2[24] !== "inspecting" ? ctx2[22] : ctx2[21];
       if (dirty[1] & 2)
         widgetframe_changes.activeAction = ctx2[32];
-      if (!updating_offset && dirty[0] & 256) {
+      if (!updating_offset && dirty[0] & 128) {
         updating_offset = true;
-        widgetframe_changes.offset = ctx2[8];
+        widgetframe_changes.offset = ctx2[7];
         add_flush_callback(() => updating_offset = false);
       }
-      if (!updating_boundries && dirty[0] & 512) {
+      if (!updating_boundries && dirty[0] & 256) {
         updating_boundries = true;
-        widgetframe_changes.boundries = ctx2[9];
+        widgetframe_changes.boundries = ctx2[8];
         add_flush_callback(() => updating_boundries = false);
       }
       widgetframe.$set(widgetframe_changes);
@@ -50915,13 +50952,13 @@ function create_if_block_12(ctx) {
   let current;
   widgetelevation = new WidgetElevation({
     props: {
-      element: ctx[25] === "dragable-editing" ? ctx[23].parentElement : ctx[23],
+      element: ctx[24] === "dragable-editing" ? ctx[22].parentElement : ctx[22],
       firstElement: ctx[33].firstElement,
       lastElement: ctx[33].lastElement
     }
   });
   widgetelevation.$on("click", click_handler);
-  let if_block = ctx[15] && create_if_block_13(ctx);
+  let if_block = ctx[14] && create_if_block_13(ctx);
   return {
     c() {
       create_component(widgetelevation.$$.fragment);
@@ -50940,17 +50977,17 @@ function create_if_block_12(ctx) {
     },
     p(ctx2, dirty) {
       const widgetelevation_changes = {};
-      if (dirty[0] & 41943040)
-        widgetelevation_changes.element = ctx2[25] === "dragable-editing" ? ctx2[23].parentElement : ctx2[23];
+      if (dirty[0] & 20971520)
+        widgetelevation_changes.element = ctx2[24] === "dragable-editing" ? ctx2[22].parentElement : ctx2[22];
       if (dirty[1] & 4)
         widgetelevation_changes.firstElement = ctx2[33].firstElement;
       if (dirty[1] & 4)
         widgetelevation_changes.lastElement = ctx2[33].lastElement;
       widgetelevation.$set(widgetelevation_changes);
-      if (ctx2[15]) {
+      if (ctx2[14]) {
         if (if_block) {
           if_block.p(ctx2, dirty);
-          if (dirty[0] & 32768) {
+          if (dirty[0] & 16384) {
             transition_in(if_block, 1);
           }
         } else {
@@ -50994,18 +51031,18 @@ function create_if_block_13(ctx) {
   let widgetfieldsdialog;
   let current;
   const widgetfieldsdialog_spread_levels = [
-    { x: ctx[26] },
-    { y: ctx[27] },
+    { x: ctx[25] },
+    { y: ctx[26] },
     { title: "Fields" },
-    ctx[15]
+    ctx[14]
   ];
   let widgetfieldsdialog_props = {};
   for (let i2 = 0; i2 < widgetfieldsdialog_spread_levels.length; i2 += 1) {
     widgetfieldsdialog_props = assign$1(widgetfieldsdialog_props, widgetfieldsdialog_spread_levels[i2]);
   }
   widgetfieldsdialog = new WidgetFieldsDialog({ props: widgetfieldsdialog_props });
-  widgetfieldsdialog.$on("close", ctx[68]);
-  widgetfieldsdialog.$on("change", ctx[69]);
+  widgetfieldsdialog.$on("close", ctx[72]);
+  widgetfieldsdialog.$on("change", ctx[73]);
   return {
     c() {
       create_component(widgetfieldsdialog.$$.fragment);
@@ -51015,11 +51052,11 @@ function create_if_block_13(ctx) {
       current = true;
     },
     p(ctx2, dirty) {
-      const widgetfieldsdialog_changes = dirty[0] & 201359360 ? get_spread_update(widgetfieldsdialog_spread_levels, [
-        dirty[0] & 67108864 && { x: ctx2[26] },
-        dirty[0] & 134217728 && { y: ctx2[27] },
+      const widgetfieldsdialog_changes = dirty[0] & 100679680 ? get_spread_update(widgetfieldsdialog_spread_levels, [
+        dirty[0] & 33554432 && { x: ctx2[25] },
+        dirty[0] & 67108864 && { y: ctx2[26] },
         widgetfieldsdialog_spread_levels[2],
-        dirty[0] & 32768 && get_spread_object(ctx2[15])
+        dirty[0] & 16384 && get_spread_object(ctx2[14])
       ]) : {};
       widgetfieldsdialog.$set(widgetfieldsdialog_changes);
     },
@@ -51041,7 +51078,7 @@ function create_if_block_13(ctx) {
 function create_if_block_10(ctx) {
   let if_block_anchor;
   let current;
-  let if_block = ctx[14] && create_if_block_11(ctx);
+  let if_block = ctx[13] && create_if_block_11(ctx);
   return {
     c() {
       if (if_block)
@@ -51055,10 +51092,10 @@ function create_if_block_10(ctx) {
       current = true;
     },
     p(ctx2, dirty) {
-      if (ctx2[14]) {
+      if (ctx2[13]) {
         if (if_block) {
           if_block.p(ctx2, dirty);
-          if (dirty[0] & 16384) {
+          if (dirty[0] & 8192) {
             transition_in(if_block, 1);
           }
         } else {
@@ -51097,21 +51134,21 @@ function create_if_block_11(ctx) {
   let chooseentitydialog;
   let current;
   const chooseentitydialog_spread_levels = [
-    { x: ctx[26] },
-    { y: ctx[27] },
+    { x: ctx[25] },
+    { y: ctx[26] },
     { title: "Choose Entity" },
-    ctx[14]
+    ctx[13]
   ];
   let chooseentitydialog_props = {};
   for (let i2 = 0; i2 < chooseentitydialog_spread_levels.length; i2 += 1) {
     chooseentitydialog_props = assign$1(chooseentitydialog_props, chooseentitydialog_spread_levels[i2]);
   }
   chooseentitydialog = new ChooseEntityDialog({ props: chooseentitydialog_props });
-  chooseentitydialog.$on("close", ctx[70]);
-  chooseentitydialog.$on("select", ctx[71]);
-  chooseentitydialog.$on("ok", ctx[72]);
-  chooseentitydialog.$on("create", ctx[73]);
-  chooseentitydialog.$on("loadIntrospection", ctx[74]);
+  chooseentitydialog.$on("close", ctx[74]);
+  chooseentitydialog.$on("select", ctx[75]);
+  chooseentitydialog.$on("ok", ctx[76]);
+  chooseentitydialog.$on("create", ctx[77]);
+  chooseentitydialog.$on("loadIntrospection", ctx[78]);
   return {
     c() {
       create_component(chooseentitydialog.$$.fragment);
@@ -51121,11 +51158,11 @@ function create_if_block_11(ctx) {
       current = true;
     },
     p(ctx2, dirty) {
-      const chooseentitydialog_changes = dirty[0] & 201342976 ? get_spread_update(chooseentitydialog_spread_levels, [
-        dirty[0] & 67108864 && { x: ctx2[26] },
-        dirty[0] & 134217728 && { y: ctx2[27] },
+      const chooseentitydialog_changes = dirty[0] & 100671488 ? get_spread_update(chooseentitydialog_spread_levels, [
+        dirty[0] & 33554432 && { x: ctx2[25] },
+        dirty[0] & 67108864 && { y: ctx2[26] },
         chooseentitydialog_spread_levels[2],
-        dirty[0] & 16384 && get_spread_object(ctx2[14])
+        dirty[0] & 8192 && get_spread_object(ctx2[13])
       ]) : {};
       chooseentitydialog.$set(chooseentitydialog_changes);
     },
@@ -51149,15 +51186,15 @@ function create_if_block_9(ctx) {
   let current;
   translationsheetdialog = new TranslationSheetDialog({
     props: {
-      x: ctx[26],
-      y: ctx[27],
+      x: ctx[25],
+      y: ctx[26],
       title: "Choose Translation",
-      translations: ctx[10]
+      translations: ctx[9]
     }
   });
-  translationsheetdialog.$on("close", ctx[75]);
-  translationsheetdialog.$on("change", ctx[76]);
-  translationsheetdialog.$on("ok", ctx[77]);
+  translationsheetdialog.$on("close", ctx[79]);
+  translationsheetdialog.$on("change", ctx[80]);
+  translationsheetdialog.$on("ok", ctx[81]);
   return {
     c() {
       create_component(translationsheetdialog.$$.fragment);
@@ -51168,12 +51205,12 @@ function create_if_block_9(ctx) {
     },
     p(ctx2, dirty) {
       const translationsheetdialog_changes = {};
+      if (dirty[0] & 33554432)
+        translationsheetdialog_changes.x = ctx2[25];
       if (dirty[0] & 67108864)
-        translationsheetdialog_changes.x = ctx2[26];
-      if (dirty[0] & 134217728)
-        translationsheetdialog_changes.y = ctx2[27];
-      if (dirty[0] & 1024)
-        translationsheetdialog_changes.translations = ctx2[10];
+        translationsheetdialog_changes.y = ctx2[26];
+      if (dirty[0] & 512)
+        translationsheetdialog_changes.translations = ctx2[9];
       translationsheetdialog.$set(translationsheetdialog_changes);
     },
     i(local) {
@@ -51196,16 +51233,16 @@ function create_if_block_7(ctx) {
   let current;
   insertfielddialog = new InsertFieldDialog({
     props: {
-      x: ctx[26],
-      y: ctx[27],
+      x: ctx[25],
+      y: ctx[26],
       title: "Add field",
       intro: ctx[0]
     }
   });
-  insertfielddialog.$on("close", ctx[78]);
-  insertfielddialog.$on("select", ctx[79]);
-  insertfielddialog.$on("addColumn", ctx[80]);
-  insertfielddialog.$on("loadIntrospection", ctx[81]);
+  insertfielddialog.$on("close", ctx[82]);
+  insertfielddialog.$on("select", ctx[83]);
+  insertfielddialog.$on("addColumn", ctx[84]);
+  insertfielddialog.$on("loadIntrospection", ctx[85]);
   return {
     c() {
       create_component(insertfielddialog.$$.fragment);
@@ -51216,10 +51253,10 @@ function create_if_block_7(ctx) {
     },
     p(ctx2, dirty) {
       const insertfielddialog_changes = {};
+      if (dirty[0] & 33554432)
+        insertfielddialog_changes.x = ctx2[25];
       if (dirty[0] & 67108864)
-        insertfielddialog_changes.x = ctx2[26];
-      if (dirty[0] & 134217728)
-        insertfielddialog_changes.y = ctx2[27];
+        insertfielddialog_changes.y = ctx2[26];
       if (dirty[0] & 1)
         insertfielddialog_changes.intro = ctx2[0];
       insertfielddialog.$set(insertfielddialog_changes);
@@ -51246,11 +51283,11 @@ function create_if_block_6(ctx) {
     props: {
       intro: ctx[0],
       isInsideTable: ctx[3],
-      __typename: ctx[7]
+      __typename: ctx[6]
     }
   });
-  clonedialog.$on("close", ctx[82]);
-  clonedialog.$on("ok", ctx[83]);
+  clonedialog.$on("close", ctx[86]);
+  clonedialog.$on("ok", ctx[87]);
   return {
     c() {
       create_component(clonedialog.$$.fragment);
@@ -51265,8 +51302,8 @@ function create_if_block_6(ctx) {
         clonedialog_changes.intro = ctx2[0];
       if (dirty[0] & 8)
         clonedialog_changes.isInsideTable = ctx2[3];
-      if (dirty[0] & 128)
-        clonedialog_changes.__typename = ctx2[7];
+      if (dirty[0] & 64)
+        clonedialog_changes.__typename = ctx2[6];
       clonedialog.$set(clonedialog_changes);
     },
     i(local) {
@@ -51287,15 +51324,15 @@ function create_if_block_6(ctx) {
 function create_if_block_5(ctx) {
   let commitchangesdialog;
   let current;
-  const commitchangesdialog_spread_levels = [ctx[17]];
+  const commitchangesdialog_spread_levels = [ctx[16]];
   let commitchangesdialog_props = {};
   for (let i2 = 0; i2 < commitchangesdialog_spread_levels.length; i2 += 1) {
     commitchangesdialog_props = assign$1(commitchangesdialog_props, commitchangesdialog_spread_levels[i2]);
   }
   commitchangesdialog = new CommitChangesDialog({ props: commitchangesdialog_props });
-  commitchangesdialog.$on("close", ctx[84]);
-  commitchangesdialog.$on("save", ctx[85]);
-  commitchangesdialog.$on("login", ctx[86]);
+  commitchangesdialog.$on("close", ctx[88]);
+  commitchangesdialog.$on("save", ctx[89]);
+  commitchangesdialog.$on("login", ctx[90]);
   return {
     c() {
       create_component(commitchangesdialog.$$.fragment);
@@ -51305,7 +51342,7 @@ function create_if_block_5(ctx) {
       current = true;
     },
     p(ctx2, dirty) {
-      const commitchangesdialog_changes = dirty[0] & 131072 ? get_spread_update(commitchangesdialog_spread_levels, [get_spread_object(ctx2[17])]) : {};
+      const commitchangesdialog_changes = dirty[0] & 65536 ? get_spread_update(commitchangesdialog_spread_levels, [get_spread_object(ctx2[16])]) : {};
       commitchangesdialog.$set(commitchangesdialog_changes);
     },
     i(local) {
@@ -51326,17 +51363,17 @@ function create_if_block_5(ctx) {
 function create_if_block_4(ctx) {
   let graphqlendpointdialog;
   let current;
-  const graphqlendpointdialog_spread_levels = [ctx[16]];
+  const graphqlendpointdialog_spread_levels = [ctx[15]];
   let graphqlendpointdialog_props = {};
   for (let i2 = 0; i2 < graphqlendpointdialog_spread_levels.length; i2 += 1) {
     graphqlendpointdialog_props = assign$1(graphqlendpointdialog_props, graphqlendpointdialog_spread_levels[i2]);
   }
   graphqlendpointdialog = new GraphqlEndpointDialog({ props: graphqlendpointdialog_props });
-  graphqlendpointdialog.$on("close", ctx[87]);
-  graphqlendpointdialog.$on("save", ctx[88]);
-  graphqlendpointdialog.$on("create", ctx[89]);
-  graphqlendpointdialog.$on("addColumn", ctx[90]);
-  graphqlendpointdialog.$on("loadIntrospection", ctx[91]);
+  graphqlendpointdialog.$on("close", ctx[91]);
+  graphqlendpointdialog.$on("save", ctx[92]);
+  graphqlendpointdialog.$on("create", ctx[93]);
+  graphqlendpointdialog.$on("addColumn", ctx[94]);
+  graphqlendpointdialog.$on("loadIntrospection", ctx[95]);
   return {
     c() {
       create_component(graphqlendpointdialog.$$.fragment);
@@ -51346,7 +51383,7 @@ function create_if_block_4(ctx) {
       current = true;
     },
     p(ctx2, dirty) {
-      const graphqlendpointdialog_changes = dirty[0] & 65536 ? get_spread_update(graphqlendpointdialog_spread_levels, [get_spread_object(ctx2[16])]) : {};
+      const graphqlendpointdialog_changes = dirty[0] & 32768 ? get_spread_update(graphqlendpointdialog_spread_levels, [get_spread_object(ctx2[15])]) : {};
       graphqlendpointdialog.$set(graphqlendpointdialog_changes);
     },
     i(local) {
@@ -51367,14 +51404,14 @@ function create_if_block_4(ctx) {
 function create_if_block_3(ctx) {
   let createtabledialog;
   let current;
-  const createtabledialog_spread_levels = [ctx[19]];
+  const createtabledialog_spread_levels = [ctx[18]];
   let createtabledialog_props = {};
   for (let i2 = 0; i2 < createtabledialog_spread_levels.length; i2 += 1) {
     createtabledialog_props = assign$1(createtabledialog_props, createtabledialog_spread_levels[i2]);
   }
   createtabledialog = new CreateTableDialog({ props: createtabledialog_props });
-  createtabledialog.$on("close", ctx[92]);
-  createtabledialog.$on("createTable", ctx[93]);
+  createtabledialog.$on("close", ctx[96]);
+  createtabledialog.$on("createTable", ctx[97]);
   return {
     c() {
       create_component(createtabledialog.$$.fragment);
@@ -51384,7 +51421,7 @@ function create_if_block_3(ctx) {
       current = true;
     },
     p(ctx2, dirty) {
-      const createtabledialog_changes = dirty[0] & 524288 ? get_spread_update(createtabledialog_spread_levels, [get_spread_object(ctx2[19])]) : {};
+      const createtabledialog_changes = dirty[0] & 262144 ? get_spread_update(createtabledialog_spread_levels, [get_spread_object(ctx2[18])]) : {};
       createtabledialog.$set(createtabledialog_changes);
     },
     i(local) {
@@ -51405,14 +51442,14 @@ function create_if_block_3(ctx) {
 function create_if_block_2(ctx) {
   let addcolumndialog;
   let current;
-  const addcolumndialog_spread_levels = [ctx[20]];
+  const addcolumndialog_spread_levels = [ctx[19]];
   let addcolumndialog_props = {};
   for (let i2 = 0; i2 < addcolumndialog_spread_levels.length; i2 += 1) {
     addcolumndialog_props = assign$1(addcolumndialog_props, addcolumndialog_spread_levels[i2]);
   }
   addcolumndialog = new AddColumnDialog({ props: addcolumndialog_props });
-  addcolumndialog.$on("close", ctx[94]);
-  addcolumndialog.$on("addNewColumn", ctx[95]);
+  addcolumndialog.$on("close", ctx[98]);
+  addcolumndialog.$on("addNewColumn", ctx[99]);
   return {
     c() {
       create_component(addcolumndialog.$$.fragment);
@@ -51422,7 +51459,7 @@ function create_if_block_2(ctx) {
       current = true;
     },
     p(ctx2, dirty) {
-      const addcolumndialog_changes = dirty[0] & 1048576 ? get_spread_update(addcolumndialog_spread_levels, [get_spread_object(ctx2[20])]) : {};
+      const addcolumndialog_changes = dirty[0] & 524288 ? get_spread_update(addcolumndialog_spread_levels, [get_spread_object(ctx2[19])]) : {};
       addcolumndialog.$set(addcolumndialog_changes);
     },
     i(local) {
@@ -51443,13 +51480,13 @@ function create_if_block_2(ctx) {
 function create_if_block_1(ctx) {
   let erdviewerdialog;
   let current;
-  const erdviewerdialog_spread_levels = [ctx[21]];
+  const erdviewerdialog_spread_levels = [ctx[20]];
   let erdviewerdialog_props = {};
   for (let i2 = 0; i2 < erdviewerdialog_spread_levels.length; i2 += 1) {
     erdviewerdialog_props = assign$1(erdviewerdialog_props, erdviewerdialog_spread_levels[i2]);
   }
   erdviewerdialog = new ERDViewerDialog({ props: erdviewerdialog_props });
-  erdviewerdialog.$on("close", ctx[96]);
+  erdviewerdialog.$on("close", ctx[100]);
   return {
     c() {
       create_component(erdviewerdialog.$$.fragment);
@@ -51459,7 +51496,7 @@ function create_if_block_1(ctx) {
       current = true;
     },
     p(ctx2, dirty) {
-      const erdviewerdialog_changes = dirty[0] & 2097152 ? get_spread_update(erdviewerdialog_spread_levels, [get_spread_object(ctx2[21])]) : {};
+      const erdviewerdialog_changes = dirty[0] & 1048576 ? get_spread_update(erdviewerdialog_spread_levels, [get_spread_object(ctx2[20])]) : {};
       erdviewerdialog.$set(erdviewerdialog_changes);
     },
     i(local) {
@@ -51480,14 +51517,14 @@ function create_if_block_1(ctx) {
 function create_if_block(ctx) {
   let themeeditordialog;
   let current;
-  const themeeditordialog_spread_levels = [ctx[18]];
+  const themeeditordialog_spread_levels = [ctx[17]];
   let themeeditordialog_props = {};
   for (let i2 = 0; i2 < themeeditordialog_spread_levels.length; i2 += 1) {
     themeeditordialog_props = assign$1(themeeditordialog_props, themeeditordialog_spread_levels[i2]);
   }
   themeeditordialog = new ThemeEditorDialog({ props: themeeditordialog_props });
-  themeeditordialog.$on("close", ctx[97]);
-  themeeditordialog.$on("save", ctx[98]);
+  themeeditordialog.$on("close", ctx[101]);
+  themeeditordialog.$on("save", ctx[102]);
   return {
     c() {
       create_component(themeeditordialog.$$.fragment);
@@ -51497,7 +51534,7 @@ function create_if_block(ctx) {
       current = true;
     },
     p(ctx2, dirty) {
-      const themeeditordialog_changes = dirty[0] & 262144 ? get_spread_update(themeeditordialog_spread_levels, [get_spread_object(ctx2[18])]) : {};
+      const themeeditordialog_changes = dirty[0] & 131072 ? get_spread_update(themeeditordialog_spread_levels, [get_spread_object(ctx2[17])]) : {};
       themeeditordialog.$set(themeeditordialog_changes);
     },
     i(local) {
@@ -51516,7 +51553,11 @@ function create_if_block(ctx) {
   };
 }
 function create_fragment$1(ctx) {
+  var _a2;
   let t0;
+  let floatingbutton;
+  let updating_showVsCode;
+  let updating_hidden;
   let t1;
   let t2;
   let t3;
@@ -51526,109 +51567,138 @@ function create_fragment$1(ctx) {
   let t7;
   let t8;
   let t9;
-  let if_block10_anchor;
+  let if_block9_anchor;
   let current;
   let mounted;
   let dispose;
-  let if_block0 = !ctx[2] && create_if_block_16(ctx);
-  let if_block1 = ctx[6] && create_if_block_15(ctx);
-  let if_block2 = (ctx[22] || ctx[23]) && create_if_block_8(ctx);
-  let if_block3 = ctx[0] && !ctx[29] && ctx[30] && create_if_block_7(ctx);
-  let if_block4 = ctx[29] && create_if_block_6(ctx);
-  let if_block5 = ctx[17] && create_if_block_5(ctx);
-  let if_block6 = ctx[16] && create_if_block_4(ctx);
-  let if_block7 = ctx[19] && create_if_block_3(ctx);
-  let if_block8 = ctx[20] && create_if_block_2(ctx);
-  let if_block9 = ctx[21] && create_if_block_1(ctx);
-  let if_block10 = ctx[18] && create_if_block(ctx);
+  let if_block0 = !ctx[2] && ((_a2 = ctx[4]) == null ? void 0 : _a2.vsCode) != false && ctx[30] != false && create_if_block_15(ctx);
+  function floatingbutton_showVsCode_binding(value2) {
+    ctx[65](value2);
+  }
+  function floatingbutton_hidden_binding(value2) {
+    ctx[66](value2);
+  }
+  let floatingbutton_props = {
+    isDevserver: ctx[2],
+    isNetlify: ctx[5],
+    showTippy: ctx[27],
+    features: ctx[4]
+  };
+  if (ctx[30] !== void 0) {
+    floatingbutton_props.showVsCode = ctx[30];
+  }
+  if (ctx[31] !== void 0) {
+    floatingbutton_props.hidden = ctx[31];
+  }
+  floatingbutton = new FloatingButton({ props: floatingbutton_props });
+  binding_callbacks.push(() => bind(floatingbutton, "showVsCode", floatingbutton_showVsCode_binding));
+  binding_callbacks.push(() => bind(floatingbutton, "hidden", floatingbutton_hidden_binding));
+  floatingbutton.$on("generatePage", ctx[48]);
+  floatingbutton.$on("commitAllChanges", ctx[56]);
+  floatingbutton.$on("saveProjectZip", ctx[57]);
+  floatingbutton.$on("loadIntrospection", ctx[67]);
+  floatingbutton.$on("addColumn", ctx[38]);
+  floatingbutton.$on("toggleTippy", ctx[68]);
+  floatingbutton.$on("changeGraphqlEndpoint", ctx[49]);
+  floatingbutton.$on("editTranslations", ctx[69]);
+  floatingbutton.$on("changeTheme", ctx[51]);
+  floatingbutton.$on("viewERD", ctx[55]);
+  let if_block1 = (ctx[21] || ctx[22]) && create_if_block_8(ctx);
+  let if_block2 = ctx[0] && !ctx[28] && ctx[29] && create_if_block_7(ctx);
+  let if_block3 = ctx[28] && create_if_block_6(ctx);
+  let if_block4 = ctx[16] && create_if_block_5(ctx);
+  let if_block5 = ctx[15] && create_if_block_4(ctx);
+  let if_block6 = ctx[18] && create_if_block_3(ctx);
+  let if_block7 = ctx[19] && create_if_block_2(ctx);
+  let if_block8 = ctx[20] && create_if_block_1(ctx);
+  let if_block9 = ctx[17] && create_if_block(ctx);
   return {
     c() {
       if (if_block0)
         if_block0.c();
       t0 = space();
+      create_component(floatingbutton.$$.fragment);
+      t1 = space();
       if (if_block1)
         if_block1.c();
-      t1 = space();
+      t2 = space();
       if (if_block2)
         if_block2.c();
-      t2 = space();
+      t3 = space();
       if (if_block3)
         if_block3.c();
-      t3 = space();
+      t4 = space();
       if (if_block4)
         if_block4.c();
-      t4 = space();
+      t5 = space();
       if (if_block5)
         if_block5.c();
-      t5 = space();
+      t6 = space();
       if (if_block6)
         if_block6.c();
-      t6 = space();
+      t7 = space();
       if (if_block7)
         if_block7.c();
-      t7 = space();
+      t8 = space();
       if (if_block8)
         if_block8.c();
-      t8 = space();
+      t9 = space();
       if (if_block9)
         if_block9.c();
-      t9 = space();
-      if (if_block10)
-        if_block10.c();
-      if_block10_anchor = empty();
+      if_block9_anchor = empty();
     },
     m(target, anchor) {
       if (if_block0)
         if_block0.m(target, anchor);
       insert(target, t0, anchor);
+      mount_component(floatingbutton, target, anchor);
+      insert(target, t1, anchor);
       if (if_block1)
         if_block1.m(target, anchor);
-      insert(target, t1, anchor);
+      insert(target, t2, anchor);
       if (if_block2)
         if_block2.m(target, anchor);
-      insert(target, t2, anchor);
+      insert(target, t3, anchor);
       if (if_block3)
         if_block3.m(target, anchor);
-      insert(target, t3, anchor);
+      insert(target, t4, anchor);
       if (if_block4)
         if_block4.m(target, anchor);
-      insert(target, t4, anchor);
+      insert(target, t5, anchor);
       if (if_block5)
         if_block5.m(target, anchor);
-      insert(target, t5, anchor);
+      insert(target, t6, anchor);
       if (if_block6)
         if_block6.m(target, anchor);
-      insert(target, t6, anchor);
+      insert(target, t7, anchor);
       if (if_block7)
         if_block7.m(target, anchor);
-      insert(target, t7, anchor);
+      insert(target, t8, anchor);
       if (if_block8)
         if_block8.m(target, anchor);
-      insert(target, t8, anchor);
+      insert(target, t9, anchor);
       if (if_block9)
         if_block9.m(target, anchor);
-      insert(target, t9, anchor);
-      if (if_block10)
-        if_block10.m(target, anchor);
-      insert(target, if_block10_anchor, anchor);
+      insert(target, if_block9_anchor, anchor);
       current = true;
       if (!mounted) {
         dispose = [
-          listen(window_1, "keydown", ctx[60]),
+          listen(window_1, "keydown", ctx[61]),
           listen(window_1, "pointermove", ctx[35])
         ];
         mounted = true;
       }
     },
     p(ctx2, dirty) {
-      if (!ctx2[2]) {
+      var _a3;
+      if (!ctx2[2] && ((_a3 = ctx2[4]) == null ? void 0 : _a3.vsCode) != false && ctx2[30] != false) {
         if (if_block0) {
           if_block0.p(ctx2, dirty);
-          if (dirty[0] & 4) {
+          if (dirty[0] & 1073741844) {
             transition_in(if_block0, 1);
           }
         } else {
-          if_block0 = create_if_block_16(ctx2);
+          if_block0 = create_if_block_15(ctx2);
           if_block0.c();
           transition_in(if_block0, 1);
           if_block0.m(t0.parentNode, t0);
@@ -51640,17 +51710,37 @@ function create_fragment$1(ctx) {
         });
         check_outros();
       }
-      if (ctx2[6]) {
+      const floatingbutton_changes = {};
+      if (dirty[0] & 4)
+        floatingbutton_changes.isDevserver = ctx2[2];
+      if (dirty[0] & 32)
+        floatingbutton_changes.isNetlify = ctx2[5];
+      if (dirty[0] & 134217728)
+        floatingbutton_changes.showTippy = ctx2[27];
+      if (dirty[0] & 16)
+        floatingbutton_changes.features = ctx2[4];
+      if (!updating_showVsCode && dirty[0] & 1073741824) {
+        updating_showVsCode = true;
+        floatingbutton_changes.showVsCode = ctx2[30];
+        add_flush_callback(() => updating_showVsCode = false);
+      }
+      if (!updating_hidden && dirty[1] & 1) {
+        updating_hidden = true;
+        floatingbutton_changes.hidden = ctx2[31];
+        add_flush_callback(() => updating_hidden = false);
+      }
+      floatingbutton.$set(floatingbutton_changes);
+      if (ctx2[21] || ctx2[22]) {
         if (if_block1) {
           if_block1.p(ctx2, dirty);
-          if (dirty[0] & 64) {
+          if (dirty[0] & 6291456) {
             transition_in(if_block1, 1);
           }
         } else {
-          if_block1 = create_if_block_15(ctx2);
+          if_block1 = create_if_block_8(ctx2);
           if_block1.c();
           transition_in(if_block1, 1);
-          if_block1.m(t1.parentNode, t1);
+          if_block1.m(t2.parentNode, t2);
         }
       } else if (if_block1) {
         group_outros();
@@ -51659,17 +51749,17 @@ function create_fragment$1(ctx) {
         });
         check_outros();
       }
-      if (ctx2[22] || ctx2[23]) {
+      if (ctx2[0] && !ctx2[28] && ctx2[29]) {
         if (if_block2) {
           if_block2.p(ctx2, dirty);
-          if (dirty[0] & 12582912) {
+          if (dirty[0] & 805306369) {
             transition_in(if_block2, 1);
           }
         } else {
-          if_block2 = create_if_block_8(ctx2);
+          if_block2 = create_if_block_7(ctx2);
           if_block2.c();
           transition_in(if_block2, 1);
-          if_block2.m(t2.parentNode, t2);
+          if_block2.m(t3.parentNode, t3);
         }
       } else if (if_block2) {
         group_outros();
@@ -51678,17 +51768,17 @@ function create_fragment$1(ctx) {
         });
         check_outros();
       }
-      if (ctx2[0] && !ctx2[29] && ctx2[30]) {
+      if (ctx2[28]) {
         if (if_block3) {
           if_block3.p(ctx2, dirty);
-          if (dirty[0] & 1610612737) {
+          if (dirty[0] & 268435456) {
             transition_in(if_block3, 1);
           }
         } else {
-          if_block3 = create_if_block_7(ctx2);
+          if_block3 = create_if_block_6(ctx2);
           if_block3.c();
           transition_in(if_block3, 1);
-          if_block3.m(t3.parentNode, t3);
+          if_block3.m(t4.parentNode, t4);
         }
       } else if (if_block3) {
         group_outros();
@@ -51697,17 +51787,17 @@ function create_fragment$1(ctx) {
         });
         check_outros();
       }
-      if (ctx2[29]) {
+      if (ctx2[16]) {
         if (if_block4) {
           if_block4.p(ctx2, dirty);
-          if (dirty[0] & 536870912) {
+          if (dirty[0] & 65536) {
             transition_in(if_block4, 1);
           }
         } else {
-          if_block4 = create_if_block_6(ctx2);
+          if_block4 = create_if_block_5(ctx2);
           if_block4.c();
           transition_in(if_block4, 1);
-          if_block4.m(t4.parentNode, t4);
+          if_block4.m(t5.parentNode, t5);
         }
       } else if (if_block4) {
         group_outros();
@@ -51716,17 +51806,17 @@ function create_fragment$1(ctx) {
         });
         check_outros();
       }
-      if (ctx2[17]) {
+      if (ctx2[15]) {
         if (if_block5) {
           if_block5.p(ctx2, dirty);
-          if (dirty[0] & 131072) {
+          if (dirty[0] & 32768) {
             transition_in(if_block5, 1);
           }
         } else {
-          if_block5 = create_if_block_5(ctx2);
+          if_block5 = create_if_block_4(ctx2);
           if_block5.c();
           transition_in(if_block5, 1);
-          if_block5.m(t5.parentNode, t5);
+          if_block5.m(t6.parentNode, t6);
         }
       } else if (if_block5) {
         group_outros();
@@ -51735,17 +51825,17 @@ function create_fragment$1(ctx) {
         });
         check_outros();
       }
-      if (ctx2[16]) {
+      if (ctx2[18]) {
         if (if_block6) {
           if_block6.p(ctx2, dirty);
-          if (dirty[0] & 65536) {
+          if (dirty[0] & 262144) {
             transition_in(if_block6, 1);
           }
         } else {
-          if_block6 = create_if_block_4(ctx2);
+          if_block6 = create_if_block_3(ctx2);
           if_block6.c();
           transition_in(if_block6, 1);
-          if_block6.m(t6.parentNode, t6);
+          if_block6.m(t7.parentNode, t7);
         }
       } else if (if_block6) {
         group_outros();
@@ -51761,10 +51851,10 @@ function create_fragment$1(ctx) {
             transition_in(if_block7, 1);
           }
         } else {
-          if_block7 = create_if_block_3(ctx2);
+          if_block7 = create_if_block_2(ctx2);
           if_block7.c();
           transition_in(if_block7, 1);
-          if_block7.m(t7.parentNode, t7);
+          if_block7.m(t8.parentNode, t8);
         }
       } else if (if_block7) {
         group_outros();
@@ -51780,10 +51870,10 @@ function create_fragment$1(ctx) {
             transition_in(if_block8, 1);
           }
         } else {
-          if_block8 = create_if_block_2(ctx2);
+          if_block8 = create_if_block_1(ctx2);
           if_block8.c();
           transition_in(if_block8, 1);
-          if_block8.m(t8.parentNode, t8);
+          if_block8.m(t9.parentNode, t9);
         }
       } else if (if_block8) {
         group_outros();
@@ -51792,17 +51882,17 @@ function create_fragment$1(ctx) {
         });
         check_outros();
       }
-      if (ctx2[21]) {
+      if (ctx2[17]) {
         if (if_block9) {
           if_block9.p(ctx2, dirty);
-          if (dirty[0] & 2097152) {
+          if (dirty[0] & 131072) {
             transition_in(if_block9, 1);
           }
         } else {
-          if_block9 = create_if_block_1(ctx2);
+          if_block9 = create_if_block(ctx2);
           if_block9.c();
           transition_in(if_block9, 1);
-          if_block9.m(t9.parentNode, t9);
+          if_block9.m(if_block9_anchor.parentNode, if_block9_anchor);
         }
       } else if (if_block9) {
         group_outros();
@@ -51811,30 +51901,12 @@ function create_fragment$1(ctx) {
         });
         check_outros();
       }
-      if (ctx2[18]) {
-        if (if_block10) {
-          if_block10.p(ctx2, dirty);
-          if (dirty[0] & 262144) {
-            transition_in(if_block10, 1);
-          }
-        } else {
-          if_block10 = create_if_block(ctx2);
-          if_block10.c();
-          transition_in(if_block10, 1);
-          if_block10.m(if_block10_anchor.parentNode, if_block10_anchor);
-        }
-      } else if (if_block10) {
-        group_outros();
-        transition_out(if_block10, 1, 1, () => {
-          if_block10 = null;
-        });
-        check_outros();
-      }
     },
     i(local) {
       if (current)
         return;
       transition_in(if_block0);
+      transition_in(floatingbutton.$$.fragment, local);
       transition_in(if_block1);
       transition_in(if_block2);
       transition_in(if_block3);
@@ -51844,11 +51916,11 @@ function create_fragment$1(ctx) {
       transition_in(if_block7);
       transition_in(if_block8);
       transition_in(if_block9);
-      transition_in(if_block10);
       current = true;
     },
     o(local) {
       transition_out(if_block0);
+      transition_out(floatingbutton.$$.fragment, local);
       transition_out(if_block1);
       transition_out(if_block2);
       transition_out(if_block3);
@@ -51858,7 +51930,6 @@ function create_fragment$1(ctx) {
       transition_out(if_block7);
       transition_out(if_block8);
       transition_out(if_block9);
-      transition_out(if_block10);
       current = false;
     },
     d(detaching) {
@@ -51866,46 +51937,45 @@ function create_fragment$1(ctx) {
         if_block0.d(detaching);
       if (detaching)
         detach(t0);
+      destroy_component(floatingbutton, detaching);
+      if (detaching)
+        detach(t1);
       if (if_block1)
         if_block1.d(detaching);
       if (detaching)
-        detach(t1);
+        detach(t2);
       if (if_block2)
         if_block2.d(detaching);
       if (detaching)
-        detach(t2);
+        detach(t3);
       if (if_block3)
         if_block3.d(detaching);
       if (detaching)
-        detach(t3);
+        detach(t4);
       if (if_block4)
         if_block4.d(detaching);
       if (detaching)
-        detach(t4);
+        detach(t5);
       if (if_block5)
         if_block5.d(detaching);
       if (detaching)
-        detach(t5);
+        detach(t6);
       if (if_block6)
         if_block6.d(detaching);
       if (detaching)
-        detach(t6);
+        detach(t7);
       if (if_block7)
         if_block7.d(detaching);
       if (detaching)
-        detach(t7);
+        detach(t8);
       if (if_block8)
         if_block8.d(detaching);
       if (detaching)
-        detach(t8);
+        detach(t9);
       if (if_block9)
         if_block9.d(detaching);
       if (detaching)
-        detach(t9);
-      if (if_block10)
-        if_block10.d(detaching);
-      if (detaching)
-        detach(if_block10_anchor);
+        detach(if_block9_anchor);
       mounted = false;
       run_all(dispose);
     }
@@ -51948,6 +52018,7 @@ function instance$1($$self, $$props, $$invalidate) {
   let showTippy = (_a2 = features == null ? void 0 : features.tippy) != null ? _a2 : true;
   let showCloneDialog = false;
   let showAddColumnDialog = false;
+  let showVsCode = true;
   let hidden2 = false;
   let extraPayload = void 0;
   let activeAction = void 0;
@@ -51966,8 +52037,8 @@ function instance$1($$self, $$props, $$invalidate) {
   function pointerMoved(event2) {
     const target = event2.target;
     if (!checkIgnore(target)) {
-      $$invalidate(22, hoverElement = target);
-      $$invalidate(9, frameBoundries = hoverElement.getBoundingClientRect());
+      $$invalidate(21, hoverElement = target);
+      $$invalidate(8, frameBoundries = hoverElement.getBoundingClientRect());
     }
   }
   function setExtraPayload(event2) {
@@ -51982,40 +52053,40 @@ function instance$1($$self, $$props, $$invalidate) {
       });
       hide();
     } else
-      $$invalidate(29, showCloneDialog = true);
+      $$invalidate(28, showCloneDialog = true);
     cleanUpAction();
   }
   function onAddColumn() {
     dispatch2("filterIntrospection");
-    $$invalidate(30, showAddColumnDialog = !showAddColumnDialog);
+    $$invalidate(29, showAddColumnDialog = !showAddColumnDialog);
   }
   function dialogWidgetFields(params) {
-    $$invalidate(15, displayWidgetFields = params);
+    $$invalidate(14, displayWidgetFields = params);
   }
   function dialogChooseEntityFields(params) {
-    $$invalidate(14, displayChooseEntity = params);
+    $$invalidate(13, displayChooseEntity = params);
   }
   function dialogChangeGraphqlEndpoint(params) {
-    $$invalidate(16, displayChangeGraphqlEndpoint = params);
+    $$invalidate(15, displayChangeGraphqlEndpoint = params);
   }
   function dialogCommitChanges(params) {
-    $$invalidate(17, displayCommitChanges = params);
+    $$invalidate(16, displayCommitChanges = params);
   }
   function dialogTranslationSheet(params) {
-    $$invalidate(10, displayTranslationSheet = params);
-    $$invalidate(11, translations = params.translations);
+    $$invalidate(9, displayTranslationSheet = params);
+    $$invalidate(10, translations = params.translations);
   }
   function dialogThemeEditor(params) {
-    $$invalidate(18, displayChangeTheme = params);
+    $$invalidate(17, displayChangeTheme = params);
   }
   function dialogCreateTable(params) {
-    $$invalidate(19, displayCreateTable = params);
+    $$invalidate(18, displayCreateTable = params);
   }
   function dialogAddNewColum(params) {
-    $$invalidate(20, displayAddColumn = params);
+    $$invalidate(19, displayAddColumn = params);
   }
   function dialogViewERD(params) {
-    $$invalidate(21, displayViewERD = params);
+    $$invalidate(20, displayViewERD = params);
   }
   function onMouseOver(e) {
     dispatch2("hover", {
@@ -52027,11 +52098,11 @@ function instance$1($$self, $$props, $$invalidate) {
   function onModeChange(e) {
     $$invalidate(32, activeAction = void 0);
     if (wysiwygMode === "inspecting") {
-      $$invalidate(12, displayInsertField = void 0);
-      $$invalidate(15, displayWidgetFields = void 0);
-      $$invalidate(23, editingElement = hoverElement);
+      $$invalidate(11, displayInsertField = void 0);
+      $$invalidate(14, displayWidgetFields = void 0);
+      $$invalidate(22, editingElement = hoverElement);
     }
-    $$invalidate(25, wysiwygMode = e.detail.mode);
+    $$invalidate(24, wysiwygMode = e.detail.mode);
     dispatch2("modechange", {
       mode: e.detail.mode,
       editingElement,
@@ -52062,10 +52133,10 @@ function instance$1($$self, $$props, $$invalidate) {
     cleanUpAction();
   }
   function onTranslate() {
-    $$invalidate(23, editingElement = hoverElement);
+    $$invalidate(22, editingElement = hoverElement);
     if (extraPayload.formattedMessageElement) {
       prevHoverElement = hoverElement;
-      $$invalidate(23, editingElement = extraPayload.formattedMessageElement);
+      $$invalidate(22, editingElement = extraPayload.formattedMessageElement);
     }
     dispatch2("translate", { editingElement });
   }
@@ -52077,7 +52148,7 @@ function instance$1($$self, $$props, $$invalidate) {
     $$invalidate(33, sortableState.parentNode = editingElement.parentNode, sortableState);
     const { foundList, hasRoutes } = elementHasList(editingElement.parentNode, 10);
     if (foundList !== void 0) {
-      $$invalidate(23, editingElement = foundList);
+      $$invalidate(22, editingElement = foundList);
       $$invalidate(33, sortableState.parentNode = foundList, sortableState);
       $$invalidate(33, sortableState.hasRoutes = hasRoutes, sortableState);
     }
@@ -52086,12 +52157,12 @@ function instance$1($$self, $$props, $$invalidate) {
       $$invalidate(33, sortableState.parentNode = parentElement, sortableState);
       $$invalidate(33, sortableState.hasColumns = true, sortableState);
       $$invalidate(33, sortableState.relationName = getDeepNodeAttribute(editingElement, "data-entity", "span"), sortableState);
-      $$invalidate(23, editingElement = parentElement);
+      $$invalidate(22, editingElement = parentElement);
     }
     if (sortableState.parentNode === void 0) {
       cleanUpAction();
     }
-    $$invalidate(28, showTippy = false);
+    $$invalidate(27, showTippy = false);
     let editingElementHasField = void 0;
     const fieldName = hasInputElement(editingElement, 10);
     if (fieldName) {
@@ -52141,12 +52212,12 @@ function instance$1($$self, $$props, $$invalidate) {
     if (found) {
       $$invalidate(33, sortableState.parentNode = parentElement, sortableState);
       $$invalidate(33, sortableState.hasRelations = true, sortableState);
-      $$invalidate(23, editingElement = parentElement);
+      $$invalidate(22, editingElement = parentElement);
     }
     if (sortableState.parentNode === void 0) {
       cleanUpAction();
     }
-    $$invalidate(28, showTippy = false);
+    $$invalidate(27, showTippy = false);
     const childNodes = Array.from(sortableState.parentNode.childNodes);
     let allPresentRelations = {};
     let prevIndex = 0;
@@ -52194,8 +52265,8 @@ function instance$1($$self, $$props, $$invalidate) {
   }
   function cleanUpAction() {
     if (activeAction === "translate") {
-      $$invalidate(23, editingElement = prevHoverElement);
-      $$invalidate(25, wysiwygMode = "inspecting");
+      $$invalidate(22, editingElement = prevHoverElement);
+      $$invalidate(24, wysiwygMode = "inspecting");
     }
     if (wysiwygMode === "dragable-editing") {
       if (activeAction === "drag_and_drop_relations") {
@@ -52218,9 +52289,9 @@ function instance$1($$self, $$props, $$invalidate) {
         delete element2.dataset.sortableField;
       });
       $$invalidate(33, sortableState.parentNode = void 0, sortableState);
-      $$invalidate(28, showTippy = true);
-      $$invalidate(25, wysiwygMode = "editing");
-      $$invalidate(23, editingElement = prevHoverElement);
+      $$invalidate(27, showTippy = true);
+      $$invalidate(24, wysiwygMode = "editing");
+      $$invalidate(22, editingElement = prevHoverElement);
     }
     $$invalidate(32, activeAction = void 0);
   }
@@ -52266,8 +52337,8 @@ function instance$1($$self, $$props, $$invalidate) {
     cleanUpAction();
   }
   function onGeneratePage() {
-    $$invalidate(23, editingElement = hoverElement);
-    $$invalidate(24, generatePageButton = hoverElement);
+    $$invalidate(22, editingElement = hoverElement);
+    $$invalidate(23, generatePageButton = hoverElement);
     dispatch2("generatePage", {
       editingElement,
       dialogChooseEntityFields,
@@ -52308,11 +52379,11 @@ function instance$1($$self, $$props, $$invalidate) {
     dispatch2("saveProjectZip", {});
   }
   function hide() {
-    $$invalidate(23, editingElement = null);
-    $$invalidate(24, generatePageButton = null);
-    $$invalidate(25, wysiwygMode = "inspecting");
-    $$invalidate(12, displayInsertField = null);
-    $$invalidate(29, showCloneDialog = false);
+    $$invalidate(22, editingElement = null);
+    $$invalidate(23, generatePageButton = null);
+    $$invalidate(24, wysiwygMode = "inspecting");
+    $$invalidate(11, displayInsertField = null);
+    $$invalidate(28, showCloneDialog = false);
   }
   const keydown_handler = (event2) => {
     if (event2.key === "Escape") {
@@ -52326,29 +52397,40 @@ function instance$1($$self, $$props, $$invalidate) {
   function iframeLoaded_handler(event2) {
     bubble.call(this, $$self, event2);
   }
+  const close_handler = () => {
+    $$invalidate(30, showVsCode = false);
+  };
+  function floatingbutton_showVsCode_binding(value2) {
+    showVsCode = value2;
+    $$invalidate(30, showVsCode);
+  }
+  function floatingbutton_hidden_binding(value2) {
+    hidden2 = value2;
+    $$invalidate(31, hidden2);
+  }
   function loadIntrospection_handler(event2) {
     bubble.call(this, $$self, event2);
   }
-  const toggleTippy_handler = () => $$invalidate(28, showTippy = !showTippy);
+  const toggleTippy_handler = () => $$invalidate(27, showTippy = !showTippy);
   const editTranslations_handler = () => onShowAllTranslations();
   function widgetframe_offset_binding(value2) {
     frameOffset = value2;
-    $$invalidate(8, frameOffset);
+    $$invalidate(7, frameOffset);
   }
   function widgetframe_boundries_binding(value2) {
     frameBoundries = value2;
-    $$invalidate(9, frameBoundries);
+    $$invalidate(8, frameBoundries);
   }
-  const close_handler = () => {
-    $$invalidate(15, displayWidgetFields = void 0);
+  const close_handler_1 = () => {
+    $$invalidate(14, displayWidgetFields = void 0);
     if (!displayInsertField)
-      $$invalidate(25, wysiwygMode = "inspecting");
+      $$invalidate(24, wysiwygMode = "inspecting");
   };
   const change_handler = (e) => displayWidgetFields && displayWidgetFields.fieldsChanged && displayWidgetFields.fieldsChanged(e.detail);
-  const close_handler_1 = () => {
-    $$invalidate(14, displayChooseEntity = void 0);
-    $$invalidate(24, generatePageButton = void 0);
-    $$invalidate(25, wysiwygMode = "inspecting");
+  const close_handler_2 = () => {
+    $$invalidate(13, displayChooseEntity = void 0);
+    $$invalidate(23, generatePageButton = void 0);
+    $$invalidate(24, wysiwygMode = "inspecting");
     $$invalidate(0, introspection = null);
   };
   const select_handler = (e) => {
@@ -52356,10 +52438,10 @@ function instance$1($$self, $$props, $$invalidate) {
     $$invalidate(0, introspection = null);
   };
   const ok_handler = (e) => {
-    $$invalidate(14, displayChooseEntity = void 0);
-    $$invalidate(24, generatePageButton = void 0);
-    $$invalidate(25, wysiwygMode = "inspecting");
-    $$invalidate(13, displayChooseEntityResponse = e.detail);
+    $$invalidate(13, displayChooseEntity = void 0);
+    $$invalidate(23, generatePageButton = void 0);
+    $$invalidate(24, wysiwygMode = "inspecting");
+    $$invalidate(12, displayChooseEntityResponse = e.detail);
     $$invalidate(0, introspection = null);
   };
   const create_handler = () => {
@@ -52368,22 +52450,22 @@ function instance$1($$self, $$props, $$invalidate) {
   function loadIntrospection_handler_1(event2) {
     bubble.call(this, $$self, event2);
   }
-  const close_handler_2 = () => {
-    $$invalidate(10, displayTranslationSheet = void 0);
-    $$invalidate(25, wysiwygMode = "inspecting");
+  const close_handler_3 = () => {
+    $$invalidate(9, displayTranslationSheet = void 0);
+    $$invalidate(24, wysiwygMode = "inspecting");
   };
   const change_handler_1 = (e) => {
-    $$invalidate(11, translations = e.detail.translations);
+    $$invalidate(10, translations = e.detail.translations);
   };
   const ok_handler_1 = (e) => {
     displayTranslationSheet.ok(translations, e.detail);
-    $$invalidate(10, displayTranslationSheet = void 0);
+    $$invalidate(9, displayTranslationSheet = void 0);
   };
-  const close_handler_3 = () => {
-    $$invalidate(12, displayInsertField = void 0);
+  const close_handler_4 = () => {
+    $$invalidate(11, displayInsertField = void 0);
     if (!displayWidgetFields)
-      $$invalidate(25, wysiwygMode = "inspecting");
-    $$invalidate(30, showAddColumnDialog = false);
+      $$invalidate(24, wysiwygMode = "inspecting");
+    $$invalidate(29, showAddColumnDialog = false);
     $$invalidate(0, introspection = null);
   };
   const select_handler_1 = (e) => {
@@ -52394,7 +52476,7 @@ function instance$1($$self, $$props, $$invalidate) {
         insertType: e.detail.insertType
       }
     });
-    $$invalidate(30, showAddColumnDialog = false);
+    $$invalidate(29, showAddColumnDialog = false);
     $$invalidate(0, introspection = null);
   };
   const addColumn_handler = (e) => {
@@ -52403,8 +52485,8 @@ function instance$1($$self, $$props, $$invalidate) {
   function loadIntrospection_handler_2(event2) {
     bubble.call(this, $$self, event2);
   }
-  const close_handler_4 = () => {
-    $$invalidate(29, showCloneDialog = false);
+  const close_handler_5 = () => {
+    $$invalidate(28, showCloneDialog = false);
     $$invalidate(0, introspection = null);
   };
   const ok_handler_2 = (e) => {
@@ -52427,12 +52509,12 @@ function instance$1($$self, $$props, $$invalidate) {
       type: "CLONE_ELEMENT",
       payload: { element: hoverElement }
     });
-    $$invalidate(25, wysiwygMode = "inspecting");
-    $$invalidate(29, showCloneDialog = false);
+    $$invalidate(24, wysiwygMode = "inspecting");
+    $$invalidate(28, showCloneDialog = false);
     $$invalidate(0, introspection = null);
   };
-  const close_handler_5 = () => {
-    $$invalidate(17, displayCommitChanges = void 0);
+  const close_handler_6 = () => {
+    $$invalidate(16, displayCommitChanges = void 0);
   };
   const save_handler = (e) => {
     dispatch2("commitAllChanges", { payload: e.detail.commitMessage });
@@ -52440,8 +52522,8 @@ function instance$1($$self, $$props, $$invalidate) {
   const login_handler = (e) => {
     dispatch2("loginGithub", { payload: e.detail.login });
   };
-  const close_handler_6 = () => {
-    $$invalidate(16, displayChangeGraphqlEndpoint = void 0);
+  const close_handler_7 = () => {
+    $$invalidate(15, displayChangeGraphqlEndpoint = void 0);
   };
   const save_handler_1 = (e) => {
     dispatch2("changeGraphqlEndpoint", {
@@ -52458,23 +52540,23 @@ function instance$1($$self, $$props, $$invalidate) {
   function loadIntrospection_handler_3(event2) {
     bubble.call(this, $$self, event2);
   }
-  const close_handler_7 = () => {
-    $$invalidate(19, displayCreateTable = void 0);
+  const close_handler_8 = () => {
+    $$invalidate(18, displayCreateTable = void 0);
   };
   const createTable_handler = (e) => {
     dispatch2("createTable", { payload: e.detail.name });
   };
-  const close_handler_8 = () => {
-    $$invalidate(20, displayAddColumn = void 0);
+  const close_handler_9 = () => {
+    $$invalidate(19, displayAddColumn = void 0);
   };
   const addNewColumn_handler = (e) => {
     dispatch2("addNewColumn", { payload: e.detail });
   };
-  const close_handler_9 = () => {
-    $$invalidate(21, displayViewERD = void 0);
-  };
   const close_handler_10 = () => {
-    $$invalidate(18, displayChangeTheme = void 0);
+    $$invalidate(20, displayViewERD = void 0);
+  };
+  const close_handler_11 = () => {
+    $$invalidate(17, displayChangeTheme = void 0);
   };
   const save_handler_2 = (e) => {
     displayChangeTheme.save(e.detail.theme);
@@ -52495,17 +52577,17 @@ function instance$1($$self, $$props, $$invalidate) {
     if ("isNetlify" in $$props2)
       $$invalidate(5, isNetlify = $$props2.isNetlify);
     if ("isInitialized" in $$props2)
-      $$invalidate(6, isInitialized = $$props2.isInitialized);
+      $$invalidate(60, isInitialized = $$props2.isInitialized);
     if ("__typename" in $$props2)
-      $$invalidate(7, __typename = $$props2.__typename);
+      $$invalidate(6, __typename = $$props2.__typename);
   };
   $$self.$$.update = () => {
-    if ($$self.$$.dirty[0] & 768) {
+    if ($$self.$$.dirty[0] & 384) {
       if (frameBoundries) {
         let top = frameOffset.top + frameBoundries.top;
         let left = frameOffset.left + frameBoundries.left;
-        $$invalidate(26, winboxPosX = left < (window.innerWidth - frameBoundries.width) / 2 ? "right" : "left");
-        $$invalidate(27, winboxPosY = top < (window.innerHeight - frameBoundries.height) / 2 ? "bottom" : "top");
+        $$invalidate(25, winboxPosX = left < (window.innerWidth - frameBoundries.width) / 2 ? "right" : "left");
+        $$invalidate(26, winboxPosY = top < (window.innerHeight - frameBoundries.height) / 2 ? "bottom" : "top");
       }
     }
   };
@@ -52516,7 +52598,6 @@ function instance$1($$self, $$props, $$invalidate) {
     isInsideTable2,
     features,
     isNetlify,
-    isInitialized,
     __typename,
     frameOffset,
     frameBoundries,
@@ -52541,6 +52622,7 @@ function instance$1($$self, $$props, $$invalidate) {
     showTippy,
     showCloneDialog,
     showAddColumnDialog,
+    showVsCode,
     hidden2,
     activeAction,
     sortableState,
@@ -52570,44 +52652,48 @@ function instance$1($$self, $$props, $$invalidate) {
     onSaveProjectZip,
     hide,
     win,
+    isInitialized,
     keydown_handler,
     vscodewindow_hidden_binding,
     iframeLoaded_handler,
+    close_handler,
+    floatingbutton_showVsCode_binding,
+    floatingbutton_hidden_binding,
     loadIntrospection_handler,
     toggleTippy_handler,
     editTranslations_handler,
     widgetframe_offset_binding,
     widgetframe_boundries_binding,
-    close_handler,
-    change_handler,
     close_handler_1,
+    change_handler,
+    close_handler_2,
     select_handler,
     ok_handler,
     create_handler,
     loadIntrospection_handler_1,
-    close_handler_2,
+    close_handler_3,
     change_handler_1,
     ok_handler_1,
-    close_handler_3,
+    close_handler_4,
     select_handler_1,
     addColumn_handler,
     loadIntrospection_handler_2,
-    close_handler_4,
-    ok_handler_2,
     close_handler_5,
+    ok_handler_2,
+    close_handler_6,
     save_handler,
     login_handler,
-    close_handler_6,
+    close_handler_7,
     save_handler_1,
     create_handler_1,
     addColumn_handler_1,
     loadIntrospection_handler_3,
-    close_handler_7,
-    createTable_handler,
     close_handler_8,
-    addNewColumn_handler,
+    createTable_handler,
     close_handler_9,
+    addNewColumn_handler,
     close_handler_10,
+    close_handler_11,
     save_handler_2
   ];
 }
@@ -52622,8 +52708,8 @@ class Wysiwyg extends SvelteComponent {
       isInsideTable: 3,
       features: 4,
       isNetlify: 5,
-      isInitialized: 6,
-      __typename: 7
+      isInitialized: 60,
+      __typename: 6
     }, add_css, [-1, -1, -1, -1]);
   }
 }
@@ -53328,55 +53414,55 @@ function expose(obj2, ep = self) {
     }
     const { id, type: type2, path: path2 } = Object.assign({ path: [] }, ev.data);
     const argumentList = (ev.data.argumentList || []).map(fromWireValue);
-    let returnValue;
+    let returnValue2;
     try {
       const parent = path2.slice(0, -1).reduce((obj3, prop) => obj3[prop], obj2);
       const rawValue = path2.reduce((obj3, prop) => obj3[prop], obj2);
       switch (type2) {
         case "GET":
           {
-            returnValue = rawValue;
+            returnValue2 = rawValue;
           }
           break;
         case "SET":
           {
             parent[path2.slice(-1)[0]] = fromWireValue(ev.data.value);
-            returnValue = true;
+            returnValue2 = true;
           }
           break;
         case "APPLY":
           {
-            returnValue = rawValue.apply(parent, argumentList);
+            returnValue2 = rawValue.apply(parent, argumentList);
           }
           break;
         case "CONSTRUCT":
           {
             const value2 = new rawValue(...argumentList);
-            returnValue = proxy(value2);
+            returnValue2 = proxy(value2);
           }
           break;
         case "ENDPOINT":
           {
             const { port1, port2 } = new MessageChannel();
             expose(obj2, port2);
-            returnValue = transfer(port1, [port1]);
+            returnValue2 = transfer(port1, [port1]);
           }
           break;
         case "RELEASE":
           {
-            returnValue = void 0;
+            returnValue2 = void 0;
           }
           break;
         default:
           return;
       }
     } catch (value2) {
-      returnValue = { value: value2, [throwMarker]: 0 };
+      returnValue2 = { value: value2, [throwMarker]: 0 };
     }
-    Promise.resolve(returnValue).catch((value2) => {
+    Promise.resolve(returnValue2).catch((value2) => {
       return { value: value2, [throwMarker]: 0 };
-    }).then((returnValue2) => {
-      const [wireValue, transferables] = toWireValue(returnValue2);
+    }).then((returnValue3) => {
+      const [wireValue, transferables] = toWireValue(returnValue3);
       ep.postMessage(Object.assign(Object.assign({}, wireValue), { id }), transferables);
       if (type2 === "RELEASE") {
         ep.removeEventListener("message", callback);
@@ -53568,7 +53654,7 @@ const printFormattedSourceFile$1 = async (sourceFile) => {
   const formattedCode = await iteriaPrettierWorker.formatCode(decoded);
   return formattedCode;
 };
-const encodedJs = "KGZ1bmN0aW9uKCl7InVzZSBzdHJpY3QiO3ZhciB2bj1PYmplY3QuZGVmaW5lUHJvcGVydHksSWU9T2JqZWN0LmdldE93blByb3BlcnR5U3ltYm9scyxtbj1PYmplY3QucHJvdG90eXBlLmhhc093blByb3BlcnR5LHluPU9iamVjdC5wcm90b3R5cGUucHJvcGVydHlJc0VudW1lcmFibGUsQWU9KEQsQSxFKT0+QSBpbiBEP3ZuKEQsQSx7ZW51bWVyYWJsZTohMCxjb25maWd1cmFibGU6ITAsd3JpdGFibGU6ITAsdmFsdWU6RX0pOkRbQV09RSxFbj0oRCxBKT0+e2Zvcih2YXIgRSBpbiBBfHwoQT17fSkpbW4uY2FsbChBLEUpJiZBZShELEUsQVtFXSk7aWYoSWUpZm9yKHZhciBFIG9mIEllKEEpKXluLmNhbGwoQSxFKSYmQWUoRCxFLEFbRV0pO3JldHVybiBEfTsoZnVuY3Rpb24oRCxBKXt0eXBlb2YgZXhwb3J0cz09Im9iamVjdCImJnR5cGVvZiBtb2R1bGUhPSJ1bmRlZmluZWQiP0EocmVxdWlyZSgiaHR0cHM6Ly9lc20uc2gvdHlwZXNjcmlwdCIpKTp0eXBlb2YgZGVmaW5lPT0iZnVuY3Rpb24iJiZkZWZpbmUuYW1kP2RlZmluZShbImh0dHBzOi8vZXNtLnNoL3R5cGVzY3JpcHQiXSxBKTooRD10eXBlb2YgZ2xvYmFsVGhpcyE9InVuZGVmaW5lZCI/Z2xvYmFsVGhpczpEfHxzZWxmLEEoRC50cykpfSkodm9pZCAwLGZ1bmN0aW9uKEQpe2Z1bmN0aW9uIEEoZSl7cmV0dXJuIGUmJnR5cGVvZiBlPT0ib2JqZWN0IiYmImRlZmF1bHQiaW4gZT9lOntkZWZhdWx0OmV9fXZhciBFPUEoRCk7Y29uc3QgYmU9U3ltYm9sKCJDb21saW5rLnByb3h5IiksVG49U3ltYm9sKCJDb21saW5rLmVuZHBvaW50IiksTm49U3ltYm9sKCJDb21saW5rLnJlbGVhc2VQcm94eSIpLGNlPVN5bWJvbCgiQ29tbGluay50aHJvd24iKSxTZT1lPT50eXBlb2YgZT09Im9iamVjdCImJmUhPT1udWxsfHx0eXBlb2YgZT09ImZ1bmN0aW9uIixnbj17Y2FuSGFuZGxlOmU9PlNlKGUpJiZlW2JlXSxzZXJpYWxpemUoZSl7Y29uc3R7cG9ydDE6bixwb3J0Mjp0fT1uZXcgTWVzc2FnZUNoYW5uZWw7cmV0dXJuIGxlKGUsbiksW3QsW3RdXX0sZGVzZXJpYWxpemUoZSl7cmV0dXJuIGUuc3RhcnQoKSxBbihlKX19LE9uPXtjYW5IYW5kbGU6ZT0+U2UoZSkmJmNlIGluIGUsc2VyaWFsaXplKHt2YWx1ZTplfSl7bGV0IG47cmV0dXJuIGUgaW5zdGFuY2VvZiBFcnJvcj9uPXtpc0Vycm9yOiEwLHZhbHVlOnttZXNzYWdlOmUubWVzc2FnZSxuYW1lOmUubmFtZSxzdGFjazplLnN0YWNrfX06bj17aXNFcnJvcjohMSx2YWx1ZTplfSxbbixbXV19LGRlc2VyaWFsaXplKGUpe3Rocm93IGUuaXNFcnJvcj9PYmplY3QuYXNzaWduKG5ldyBFcnJvcihlLnZhbHVlLm1lc3NhZ2UpLGUudmFsdWUpOmUudmFsdWV9fSxEZT1uZXcgTWFwKFtbInByb3h5Iixnbl0sWyJ0aHJvdyIsT25dXSk7ZnVuY3Rpb24gbGUoZSxuPXNlbGYpe24uYWRkRXZlbnRMaXN0ZW5lcigibWVzc2FnZSIsZnVuY3Rpb24gdChpKXtpZighaXx8IWkuZGF0YSlyZXR1cm47Y29uc3R7aWQ6byx0eXBlOnIscGF0aDphfT1PYmplY3QuYXNzaWduKHtwYXRoOltdfSxpLmRhdGEpLHM9KGkuZGF0YS5hcmd1bWVudExpc3R8fFtdKS5tYXAoTSk7bGV0IGM7dHJ5e2NvbnN0IGw9YS5zbGljZSgwLC0xKS5yZWR1Y2UoKGYsbSk9PmZbbV0sZSkscD1hLnJlZHVjZSgoZixtKT0+ZlttXSxlKTtzd2l0Y2gocil7Y2FzZSJHRVQiOmM9cDticmVhaztjYXNlIlNFVCI6bFthLnNsaWNlKC0xKVswXV09TShpLmRhdGEudmFsdWUpLGM9ITA7YnJlYWs7Y2FzZSJBUFBMWSI6Yz1wLmFwcGx5KGwscyk7YnJlYWs7Y2FzZSJDT05TVFJVQ1QiOntjb25zdCBmPW5ldyBwKC4uLnMpO2M9RG4oZil9YnJlYWs7Y2FzZSJFTkRQT0lOVCI6e2NvbnN0e3BvcnQxOmYscG9ydDI6bX09bmV3IE1lc3NhZ2VDaGFubmVsO2xlKGUsbSksYz1TbihmLFtmXSl9YnJlYWs7Y2FzZSJSRUxFQVNFIjpjPXZvaWQgMDticmVhaztkZWZhdWx0OnJldHVybn19Y2F0Y2gobCl7Yz17dmFsdWU6bCxbY2VdOjB9fVByb21pc2UucmVzb2x2ZShjKS5jYXRjaChsPT4oe3ZhbHVlOmwsW2NlXTowfSkpLnRoZW4obD0+e2NvbnN0W3AsZl09ZmUobCk7bi5wb3N0TWVzc2FnZShPYmplY3QuYXNzaWduKE9iamVjdC5hc3NpZ24oe30scCkse2lkOm99KSxmKSxyPT09IlJFTEVBU0UiJiYobi5yZW1vdmVFdmVudExpc3RlbmVyKCJtZXNzYWdlIix0KSx4ZShuKSl9KX0pLG4uc3RhcnQmJm4uc3RhcnQoKX1mdW5jdGlvbiBJbihlKXtyZXR1cm4gZS5jb25zdHJ1Y3Rvci5uYW1lPT09Ik1lc3NhZ2VQb3J0In1mdW5jdGlvbiB4ZShlKXtJbihlKSYmZS5jbG9zZSgpfWZ1bmN0aW9uIEFuKGUsbil7cmV0dXJuIHVlKGUsW10sbil9ZnVuY3Rpb24geihlKXtpZihlKXRocm93IG5ldyBFcnJvcigiUHJveHkgaGFzIGJlZW4gcmVsZWFzZWQgYW5kIGlzIG5vdCB1c2VhYmxlIil9ZnVuY3Rpb24gdWUoZSxuPVtdLHQ9ZnVuY3Rpb24oKXt9KXtsZXQgaT0hMTtjb25zdCBvPW5ldyBQcm94eSh0LHtnZXQocixhKXtpZih6KGkpLGE9PT1ObilyZXR1cm4oKT0+JChlLHt0eXBlOiJSRUxFQVNFIixwYXRoOm4ubWFwKHM9PnMudG9TdHJpbmcoKSl9KS50aGVuKCgpPT57eGUoZSksaT0hMH0pO2lmKGE9PT0idGhlbiIpe2lmKG4ubGVuZ3RoPT09MClyZXR1cm57dGhlbjooKT0+b307Y29uc3Qgcz0kKGUse3R5cGU6IkdFVCIscGF0aDpuLm1hcChjPT5jLnRvU3RyaW5nKCkpfSkudGhlbihNKTtyZXR1cm4gcy50aGVuLmJpbmQocyl9cmV0dXJuIHVlKGUsWy4uLm4sYV0pfSxzZXQocixhLHMpe3ooaSk7Y29uc3RbYyxsXT1mZShzKTtyZXR1cm4gJChlLHt0eXBlOiJTRVQiLHBhdGg6Wy4uLm4sYV0ubWFwKHA9PnAudG9TdHJpbmcoKSksdmFsdWU6Y30sbCkudGhlbihNKX0sYXBwbHkocixhLHMpe3ooaSk7Y29uc3QgYz1uW24ubGVuZ3RoLTFdO2lmKGM9PT1UbilyZXR1cm4gJChlLHt0eXBlOiJFTkRQT0lOVCJ9KS50aGVuKE0pO2lmKGM9PT0iYmluZCIpcmV0dXJuIHVlKGUsbi5zbGljZSgwLC0xKSk7Y29uc3RbbCxwXT1rZShzKTtyZXR1cm4gJChlLHt0eXBlOiJBUFBMWSIscGF0aDpuLm1hcChmPT5mLnRvU3RyaW5nKCkpLGFyZ3VtZW50TGlzdDpsfSxwKS50aGVuKE0pfSxjb25zdHJ1Y3QocixhKXt6KGkpO2NvbnN0W3MsY109a2UoYSk7cmV0dXJuICQoZSx7dHlwZToiQ09OU1RSVUNUIixwYXRoOm4ubWFwKGw9PmwudG9TdHJpbmcoKSksYXJndW1lbnRMaXN0OnN9LGMpLnRoZW4oTSl9fSk7cmV0dXJuIG99ZnVuY3Rpb24gYm4oZSl7cmV0dXJuIEFycmF5LnByb3RvdHlwZS5jb25jYXQuYXBwbHkoW10sZSl9ZnVuY3Rpb24ga2UoZSl7Y29uc3Qgbj1lLm1hcChmZSk7cmV0dXJuW24ubWFwKHQ9PnRbMF0pLGJuKG4ubWFwKHQ9PnRbMV0pKV19Y29uc3QgX2U9bmV3IFdlYWtNYXA7ZnVuY3Rpb24gU24oZSxuKXtyZXR1cm4gX2Uuc2V0KGUsbiksZX1mdW5jdGlvbiBEbihlKXtyZXR1cm4gT2JqZWN0LmFzc2lnbihlLHtbYmVdOiEwfSl9ZnVuY3Rpb24gZmUoZSl7Zm9yKGNvbnN0W24sdF1vZiBEZSlpZih0LmNhbkhhbmRsZShlKSl7Y29uc3RbaSxvXT10LnNlcmlhbGl6ZShlKTtyZXR1cm5be3R5cGU6IkhBTkRMRVIiLG5hbWU6bix2YWx1ZTppfSxvXX1yZXR1cm5be3R5cGU6IlJBVyIsdmFsdWU6ZX0sX2UuZ2V0KGUpfHxbXV19ZnVuY3Rpb24gTShlKXtzd2l0Y2goZS50eXBlKXtjYXNlIkhBTkRMRVIiOnJldHVybiBEZS5nZXQoZS5uYW1lKS5kZXNlcmlhbGl6ZShlLnZhbHVlKTtjYXNlIlJBVyI6cmV0dXJuIGUudmFsdWV9fWZ1bmN0aW9uICQoZSxuLHQpe3JldHVybiBuZXcgUHJvbWlzZShpPT57Y29uc3Qgbz14bigpO2UuYWRkRXZlbnRMaXN0ZW5lcigibWVzc2FnZSIsZnVuY3Rpb24gcihhKXshYS5kYXRhfHwhYS5kYXRhLmlkfHxhLmRhdGEuaWQhPT1vfHwoZS5yZW1vdmVFdmVudExpc3RlbmVyKCJtZXNzYWdlIixyKSxpKGEuZGF0YSkpfSksZS5zdGFydCYmZS5zdGFydCgpLGUucG9zdE1lc3NhZ2UoT2JqZWN0LmFzc2lnbih7aWQ6b30sbiksdCl9KX1mdW5jdGlvbiB4bigpe3JldHVybiBuZXcgQXJyYXkoNCkuZmlsbCgwKS5tYXAoKCk9Pk1hdGguZmxvb3IoTWF0aC5yYW5kb20oKSpOdW1iZXIuTUFYX1NBRkVfSU5URUdFUikudG9TdHJpbmcoMTYpKS5qb2luKCItIil9ZnVuY3Rpb24gSChlKXtyZXR1cm4gdHlwZW9mIFN5bWJvbD09ImZ1bmN0aW9uIiYmdHlwZW9mIFN5bWJvbC5pdGVyYXRvcj09InN5bWJvbCI/SD1mdW5jdGlvbihuKXtyZXR1cm4gdHlwZW9mIG59Okg9ZnVuY3Rpb24obil7cmV0dXJuIG4mJnR5cGVvZiBTeW1ib2w9PSJmdW5jdGlvbiImJm4uY29uc3RydWN0b3I9PT1TeW1ib2wmJm4hPT1TeW1ib2wucHJvdG90eXBlPyJzeW1ib2wiOnR5cGVvZiBufSxIKGUpfWZ1bmN0aW9uIGtuKGUpe3JldHVybiBIKGUpPT0ib2JqZWN0IiYmZSE9PW51bGx9dmFyIENlPXR5cGVvZiBTeW1ib2w9PSJmdW5jdGlvbiImJlN5bWJvbC50b1N0cmluZ1RhZyE9bnVsbD9TeW1ib2wudG9TdHJpbmdUYWc6IkBAdG9TdHJpbmdUYWciO2Z1bmN0aW9uIHBlKGUsbil7Zm9yKHZhciB0PS9cclxufFtcblxyXS9nLGk9MSxvPW4rMSxyOyhyPXQuZXhlYyhlLmJvZHkpKSYmci5pbmRleDxuOylpKz0xLG89bisxLShyLmluZGV4K3JbMF0ubGVuZ3RoKTtyZXR1cm57bGluZTppLGNvbHVtbjpvfX1mdW5jdGlvbiBfbihlKXtyZXR1cm4gTGUoZS5zb3VyY2UscGUoZS5zb3VyY2UsZS5zdGFydCkpfWZ1bmN0aW9uIExlKGUsbil7dmFyIHQ9ZS5sb2NhdGlvbk9mZnNldC5jb2x1bW4tMSxpPVEodCkrZS5ib2R5LG89bi5saW5lLTEscj1lLmxvY2F0aW9uT2Zmc2V0LmxpbmUtMSxhPW4ubGluZStyLHM9bi5saW5lPT09MT90OjAsYz1uLmNvbHVtbitzLGw9IiIuY29uY2F0KGUubmFtZSwiOiIpLmNvbmNhdChhLCI6IikuY29uY2F0KGMsYApgKSxwPWkuc3BsaXQoL1xyXG58W1xuXHJdL2cpLGY9cFtvXTtpZihmLmxlbmd0aD4xMjApe2Zvcih2YXIgbT1NYXRoLmZsb29yKGMvODApLHY9YyU4MCxkPVtdLFQ9MDtUPGYubGVuZ3RoO1QrPTgwKWQucHVzaChmLnNsaWNlKFQsVCs4MCkpO3JldHVybiBsK3dlKFtbIiIuY29uY2F0KGEpLGRbMF1dXS5jb25jYXQoZC5zbGljZSgxLG0rMSkubWFwKGZ1bmN0aW9uKE4pe3JldHVyblsiIixOXX0pLFtbIiAiLFEodi0xKSsiXiJdLFsiIixkW20rMV1dXSkpfXJldHVybiBsK3dlKFtbIiIuY29uY2F0KGEtMSkscFtvLTFdXSxbIiIuY29uY2F0KGEpLGZdLFsiIixRKGMtMSkrIl4iXSxbIiIuY29uY2F0KGErMSkscFtvKzFdXV0pfWZ1bmN0aW9uIHdlKGUpe3ZhciBuPWUuZmlsdGVyKGZ1bmN0aW9uKGkpe2lbMF07dmFyIG89aVsxXTtyZXR1cm4gbyE9PXZvaWQgMH0pLHQ9TWF0aC5tYXguYXBwbHkoTWF0aCxuLm1hcChmdW5jdGlvbihpKXt2YXIgbz1pWzBdO3JldHVybiBvLmxlbmd0aH0pKTtyZXR1cm4gbi5tYXAoZnVuY3Rpb24oaSl7dmFyIG89aVswXSxyPWlbMV07cmV0dXJuIENuKHQsbykrKHI/IiB8ICIrcjoiIHwiKX0pLmpvaW4oYApgKX1mdW5jdGlvbiBRKGUpe3JldHVybiBBcnJheShlKzEpLmpvaW4oIiAiKX1mdW5jdGlvbiBDbihlLG4pe3JldHVybiBRKGUtbi5sZW5ndGgpK259ZnVuY3Rpb24gVyhlKXtyZXR1cm4gdHlwZW9mIFN5bWJvbD09ImZ1bmN0aW9uIiYmdHlwZW9mIFN5bWJvbC5pdGVyYXRvcj09InN5bWJvbCI/Vz1mdW5jdGlvbihuKXtyZXR1cm4gdHlwZW9mIG59Olc9ZnVuY3Rpb24obil7cmV0dXJuIG4mJnR5cGVvZiBTeW1ib2w9PSJmdW5jdGlvbiImJm4uY29uc3RydWN0b3I9PT1TeW1ib2wmJm4hPT1TeW1ib2wucHJvdG90eXBlPyJzeW1ib2wiOnR5cGVvZiBufSxXKGUpfWZ1bmN0aW9uIFJlKGUsbil7dmFyIHQ9T2JqZWN0LmtleXMoZSk7aWYoT2JqZWN0LmdldE93blByb3BlcnR5U3ltYm9scyl7dmFyIGk9T2JqZWN0LmdldE93blByb3BlcnR5U3ltYm9scyhlKTtuJiYoaT1pLmZpbHRlcihmdW5jdGlvbihvKXtyZXR1cm4gT2JqZWN0LmdldE93blByb3BlcnR5RGVzY3JpcHRvcihlLG8pLmVudW1lcmFibGV9KSksdC5wdXNoLmFwcGx5KHQsaSl9cmV0dXJuIHR9ZnVuY3Rpb24gTG4oZSl7Zm9yKHZhciBuPTE7bjxhcmd1bWVudHMubGVuZ3RoO24rKyl7dmFyIHQ9YXJndW1lbnRzW25dIT1udWxsP2FyZ3VtZW50c1tuXTp7fTtuJTI/UmUoT2JqZWN0KHQpLCEwKS5mb3JFYWNoKGZ1bmN0aW9uKGkpe3duKGUsaSx0W2ldKX0pOk9iamVjdC5nZXRPd25Qcm9wZXJ0eURlc2NyaXB0b3JzP09iamVjdC5kZWZpbmVQcm9wZXJ0aWVzKGUsT2JqZWN0LmdldE93blByb3BlcnR5RGVzY3JpcHRvcnModCkpOlJlKE9iamVjdCh0KSkuZm9yRWFjaChmdW5jdGlvbihpKXtPYmplY3QuZGVmaW5lUHJvcGVydHkoZSxpLE9iamVjdC5nZXRPd25Qcm9wZXJ0eURlc2NyaXB0b3IodCxpKSl9KX1yZXR1cm4gZX1mdW5jdGlvbiB3bihlLG4sdCl7cmV0dXJuIG4gaW4gZT9PYmplY3QuZGVmaW5lUHJvcGVydHkoZSxuLHt2YWx1ZTp0LGVudW1lcmFibGU6ITAsY29uZmlndXJhYmxlOiEwLHdyaXRhYmxlOiEwfSk6ZVtuXT10LGV9ZnVuY3Rpb24gUm4oZSxuKXtpZighKGUgaW5zdGFuY2VvZiBuKSl0aHJvdyBuZXcgVHlwZUVycm9yKCJDYW5ub3QgY2FsbCBhIGNsYXNzIGFzIGEgZnVuY3Rpb24iKX1mdW5jdGlvbiBGZShlLG4pe2Zvcih2YXIgdD0wO3Q8bi5sZW5ndGg7dCsrKXt2YXIgaT1uW3RdO2kuZW51bWVyYWJsZT1pLmVudW1lcmFibGV8fCExLGkuY29uZmlndXJhYmxlPSEwLCJ2YWx1ZSJpbiBpJiYoaS53cml0YWJsZT0hMCksT2JqZWN0LmRlZmluZVByb3BlcnR5KGUsaS5rZXksaSl9fWZ1bmN0aW9uIEZuKGUsbix0KXtyZXR1cm4gbiYmRmUoZS5wcm90b3R5cGUsbiksdCYmRmUoZSx0KSxlfWZ1bmN0aW9uIFBuKGUsbil7aWYodHlwZW9mIG4hPSJmdW5jdGlvbiImJm4hPT1udWxsKXRocm93IG5ldyBUeXBlRXJyb3IoIlN1cGVyIGV4cHJlc3Npb24gbXVzdCBlaXRoZXIgYmUgbnVsbCBvciBhIGZ1bmN0aW9uIik7ZS5wcm90b3R5cGU9T2JqZWN0LmNyZWF0ZShuJiZuLnByb3RvdHlwZSx7Y29uc3RydWN0b3I6e3ZhbHVlOmUsd3JpdGFibGU6ITAsY29uZmlndXJhYmxlOiEwfX0pLG4mJkooZSxuKX1mdW5jdGlvbiBqbihlKXt2YXIgbj1qZSgpO3JldHVybiBmdW5jdGlvbigpe3ZhciB0PUcoZSksaTtpZihuKXt2YXIgbz1HKHRoaXMpLmNvbnN0cnVjdG9yO2k9UmVmbGVjdC5jb25zdHJ1Y3QodCxhcmd1bWVudHMsbyl9ZWxzZSBpPXQuYXBwbHkodGhpcyxhcmd1bWVudHMpO3JldHVybiBQZSh0aGlzLGkpfX1mdW5jdGlvbiBQZShlLG4pe3JldHVybiBuJiYoVyhuKT09PSJvYmplY3QifHx0eXBlb2Ygbj09ImZ1bmN0aW9uIik/bjpZKGUpfWZ1bmN0aW9uIFkoZSl7aWYoZT09PXZvaWQgMCl0aHJvdyBuZXcgUmVmZXJlbmNlRXJyb3IoInRoaXMgaGFzbid0IGJlZW4gaW5pdGlhbGlzZWQgLSBzdXBlcigpIGhhc24ndCBiZWVuIGNhbGxlZCIpO3JldHVybiBlfWZ1bmN0aW9uIGRlKGUpe3ZhciBuPXR5cGVvZiBNYXA9PSJmdW5jdGlvbiI/bmV3IE1hcDp2b2lkIDA7cmV0dXJuIGRlPWZ1bmN0aW9uKHQpe2lmKHQ9PT1udWxsfHwhTW4odCkpcmV0dXJuIHQ7aWYodHlwZW9mIHQhPSJmdW5jdGlvbiIpdGhyb3cgbmV3IFR5cGVFcnJvcigiU3VwZXIgZXhwcmVzc2lvbiBtdXN0IGVpdGhlciBiZSBudWxsIG9yIGEgZnVuY3Rpb24iKTtpZih0eXBlb2YgbiE9InVuZGVmaW5lZCIpe2lmKG4uaGFzKHQpKXJldHVybiBuLmdldCh0KTtuLnNldCh0LGkpfWZ1bmN0aW9uIGkoKXtyZXR1cm4gWih0LGFyZ3VtZW50cyxHKHRoaXMpLmNvbnN0cnVjdG9yKX1yZXR1cm4gaS5wcm90b3R5cGU9T2JqZWN0LmNyZWF0ZSh0LnByb3RvdHlwZSx7Y29uc3RydWN0b3I6e3ZhbHVlOmksZW51bWVyYWJsZTohMSx3cml0YWJsZTohMCxjb25maWd1cmFibGU6ITB9fSksSihpLHQpfSxkZShlKX1mdW5jdGlvbiBaKGUsbix0KXtyZXR1cm4gamUoKT9aPVJlZmxlY3QuY29uc3RydWN0Olo9ZnVuY3Rpb24oaSxvLHIpe3ZhciBhPVtudWxsXTthLnB1c2guYXBwbHkoYSxvKTt2YXIgcz1GdW5jdGlvbi5iaW5kLmFwcGx5KGksYSksYz1uZXcgcztyZXR1cm4gciYmSihjLHIucHJvdG90eXBlKSxjfSxaLmFwcGx5KG51bGwsYXJndW1lbnRzKX1mdW5jdGlvbiBqZSgpe2lmKHR5cGVvZiBSZWZsZWN0PT0idW5kZWZpbmVkInx8IVJlZmxlY3QuY29uc3RydWN0fHxSZWZsZWN0LmNvbnN0cnVjdC5zaGFtKXJldHVybiExO2lmKHR5cGVvZiBQcm94eT09ImZ1bmN0aW9uIilyZXR1cm4hMDt0cnl7cmV0dXJuIERhdGUucHJvdG90eXBlLnRvU3RyaW5nLmNhbGwoUmVmbGVjdC5jb25zdHJ1Y3QoRGF0ZSxbXSxmdW5jdGlvbigpe30pKSwhMH1jYXRjaHtyZXR1cm4hMX19ZnVuY3Rpb24gTW4oZSl7cmV0dXJuIEZ1bmN0aW9uLnRvU3RyaW5nLmNhbGwoZSkuaW5kZXhPZigiW25hdGl2ZSBjb2RlXSIpIT09LTF9ZnVuY3Rpb24gSihlLG4pe3JldHVybiBKPU9iamVjdC5zZXRQcm90b3R5cGVPZnx8ZnVuY3Rpb24odCxpKXtyZXR1cm4gdC5fX3Byb3RvX189aSx0fSxKKGUsbil9ZnVuY3Rpb24gRyhlKXtyZXR1cm4gRz1PYmplY3Quc2V0UHJvdG90eXBlT2Y/T2JqZWN0LmdldFByb3RvdHlwZU9mOmZ1bmN0aW9uKG4pe3JldHVybiBuLl9fcHJvdG9fX3x8T2JqZWN0LmdldFByb3RvdHlwZU9mKG4pfSxHKGUpfXZhciBCbj1mdW5jdGlvbihlKXtQbih0LGUpO3ZhciBuPWpuKHQpO2Z1bmN0aW9uIHQoaSxvLHIsYSxzLGMsbCl7dmFyIHAsZixtLHY7Um4odGhpcyx0KSx2PW4uY2FsbCh0aGlzLGkpLHYubmFtZT0iR3JhcGhRTEVycm9yIix2Lm9yaWdpbmFsRXJyb3I9YyE9bnVsbD9jOnZvaWQgMCx2Lm5vZGVzPU1lKEFycmF5LmlzQXJyYXkobyk/bzpvP1tvXTp2b2lkIDApO2Zvcih2YXIgZD1bXSxUPTAsTj0oTz12Lm5vZGVzKSE9PW51bGwmJk8hPT12b2lkIDA/TzpbXTtUPE4ubGVuZ3RoO1QrKyl7dmFyIE8sYj1OW1RdLHg9Yi5sb2M7eCE9bnVsbCYmZC5wdXNoKHgpfWQ9TWUoZCksdi5zb3VyY2U9ciE9bnVsbD9yOihwPWQpPT09bnVsbHx8cD09PXZvaWQgMD92b2lkIDA6cFswXS5zb3VyY2Usdi5wb3NpdGlvbnM9YSE9bnVsbD9hOihmPWQpPT09bnVsbHx8Zj09PXZvaWQgMD92b2lkIDA6Zi5tYXAoZnVuY3Rpb24oUyl7cmV0dXJuIFMuc3RhcnR9KSx2LmxvY2F0aW9ucz1hJiZyP2EubWFwKGZ1bmN0aW9uKFMpe3JldHVybiBwZShyLFMpfSk6KG09ZCk9PT1udWxsfHxtPT09dm9pZCAwP3ZvaWQgMDptLm1hcChmdW5jdGlvbihTKXtyZXR1cm4gcGUoUy5zb3VyY2UsUy5zdGFydCl9KSx2LnBhdGg9cyE9bnVsbD9zOnZvaWQgMDt2YXIgVT1jPT1udWxsP3ZvaWQgMDpjLmV4dGVuc2lvbnM7cmV0dXJuIGw9PW51bGwmJmtuKFUpP3YuZXh0ZW5zaW9ucz1Mbih7fSxVKTp2LmV4dGVuc2lvbnM9bCE9bnVsbD9sOnt9LE9iamVjdC5kZWZpbmVQcm9wZXJ0aWVzKFkodikse21lc3NhZ2U6e2VudW1lcmFibGU6ITB9LGxvY2F0aW9uczp7ZW51bWVyYWJsZTp2LmxvY2F0aW9ucyE9bnVsbH0scGF0aDp7ZW51bWVyYWJsZTp2LnBhdGghPW51bGx9LGV4dGVuc2lvbnM6e2VudW1lcmFibGU6di5leHRlbnNpb25zIT1udWxsJiZPYmplY3Qua2V5cyh2LmV4dGVuc2lvbnMpLmxlbmd0aD4wfSxuYW1lOntlbnVtZXJhYmxlOiExfSxub2Rlczp7ZW51bWVyYWJsZTohMX0sc291cmNlOntlbnVtZXJhYmxlOiExfSxwb3NpdGlvbnM6e2VudW1lcmFibGU6ITF9LG9yaWdpbmFsRXJyb3I6e2VudW1lcmFibGU6ITF9fSksYyE9bnVsbCYmYy5zdGFjaz8oT2JqZWN0LmRlZmluZVByb3BlcnR5KFkodiksInN0YWNrIix7dmFsdWU6Yy5zdGFjayx3cml0YWJsZTohMCxjb25maWd1cmFibGU6ITB9KSxQZSh2KSk6KEVycm9yLmNhcHR1cmVTdGFja1RyYWNlP0Vycm9yLmNhcHR1cmVTdGFja1RyYWNlKFkodiksdCk6T2JqZWN0LmRlZmluZVByb3BlcnR5KFkodiksInN0YWNrIix7dmFsdWU6RXJyb3IoKS5zdGFjayx3cml0YWJsZTohMCxjb25maWd1cmFibGU6ITB9KSx2KX1yZXR1cm4gRm4odCxbe2tleToidG9TdHJpbmciLHZhbHVlOmZ1bmN0aW9uKCl7cmV0dXJuIFZuKHRoaXMpfX0se2tleTpDZSxnZXQ6ZnVuY3Rpb24oKXtyZXR1cm4iT2JqZWN0In19XSksdH0oZGUoRXJyb3IpKTtmdW5jdGlvbiBNZShlKXtyZXR1cm4gZT09PXZvaWQgMHx8ZS5sZW5ndGg9PT0wP3ZvaWQgMDplfWZ1bmN0aW9uIFZuKGUpe3ZhciBuPWUubWVzc2FnZTtpZihlLm5vZGVzKWZvcih2YXIgdD0wLGk9ZS5ub2Rlczt0PGkubGVuZ3RoO3QrKyl7dmFyIG89aVt0XTtvLmxvYyYmKG4rPWAKCmArX24oby5sb2MpKX1lbHNlIGlmKGUuc291cmNlJiZlLmxvY2F0aW9ucylmb3IodmFyIHI9MCxhPWUubG9jYXRpb25zO3I8YS5sZW5ndGg7cisrKXt2YXIgcz1hW3JdO24rPWAKCmArTGUoZS5zb3VyY2Uscyl9cmV0dXJuIG59ZnVuY3Rpb24gXyhlLG4sdCl7cmV0dXJuIG5ldyBCbigiU3ludGF4IEVycm9yOiAiLmNvbmNhdCh0KSx2b2lkIDAsZSxbbl0pfXZhciB5PU9iamVjdC5mcmVlemUoe05BTUU6Ik5hbWUiLERPQ1VNRU5UOiJEb2N1bWVudCIsT1BFUkFUSU9OX0RFRklOSVRJT046Ik9wZXJhdGlvbkRlZmluaXRpb24iLFZBUklBQkxFX0RFRklOSVRJT046IlZhcmlhYmxlRGVmaW5pdGlvbiIsU0VMRUNUSU9OX1NFVDoiU2VsZWN0aW9uU2V0IixGSUVMRDoiRmllbGQiLEFSR1VNRU5UOiJBcmd1bWVudCIsRlJBR01FTlRfU1BSRUFEOiJGcmFnbWVudFNwcmVhZCIsSU5MSU5FX0ZSQUdNRU5UOiJJbmxpbmVGcmFnbWVudCIsRlJBR01FTlRfREVGSU5JVElPTjoiRnJhZ21lbnREZWZpbml0aW9uIixWQVJJQUJMRToiVmFyaWFibGUiLElOVDoiSW50VmFsdWUiLEZMT0FUOiJGbG9hdFZhbHVlIixTVFJJTkc6IlN0cmluZ1ZhbHVlIixCT09MRUFOOiJCb29sZWFuVmFsdWUiLE5VTEw6Ik51bGxWYWx1ZSIsRU5VTToiRW51bVZhbHVlIixMSVNUOiJMaXN0VmFsdWUiLE9CSkVDVDoiT2JqZWN0VmFsdWUiLE9CSkVDVF9GSUVMRDoiT2JqZWN0RmllbGQiLERJUkVDVElWRToiRGlyZWN0aXZlIixOQU1FRF9UWVBFOiJOYW1lZFR5cGUiLExJU1RfVFlQRToiTGlzdFR5cGUiLE5PTl9OVUxMX1RZUEU6Ik5vbk51bGxUeXBlIixTQ0hFTUFfREVGSU5JVElPTjoiU2NoZW1hRGVmaW5pdGlvbiIsT1BFUkFUSU9OX1RZUEVfREVGSU5JVElPTjoiT3BlcmF0aW9uVHlwZURlZmluaXRpb24iLFNDQUxBUl9UWVBFX0RFRklOSVRJT046IlNjYWxhclR5cGVEZWZpbml0aW9uIixPQkpFQ1RfVFlQRV9ERUZJTklUSU9OOiJPYmplY3RUeXBlRGVmaW5pdGlvbiIsRklFTERfREVGSU5JVElPTjoiRmllbGREZWZpbml0aW9uIixJTlBVVF9WQUxVRV9ERUZJTklUSU9OOiJJbnB1dFZhbHVlRGVmaW5pdGlvbiIsSU5URVJGQUNFX1RZUEVfREVGSU5JVElPTjoiSW50ZXJmYWNlVHlwZURlZmluaXRpb24iLFVOSU9OX1RZUEVfREVGSU5JVElPTjoiVW5pb25UeXBlRGVmaW5pdGlvbiIsRU5VTV9UWVBFX0RFRklOSVRJT046IkVudW1UeXBlRGVmaW5pdGlvbiIsRU5VTV9WQUxVRV9ERUZJTklUSU9OOiJFbnVtVmFsdWVEZWZpbml0aW9uIixJTlBVVF9PQkpFQ1RfVFlQRV9ERUZJTklUSU9OOiJJbnB1dE9iamVjdFR5cGVEZWZpbml0aW9uIixESVJFQ1RJVkVfREVGSU5JVElPTjoiRGlyZWN0aXZlRGVmaW5pdGlvbiIsU0NIRU1BX0VYVEVOU0lPTjoiU2NoZW1hRXh0ZW5zaW9uIixTQ0FMQVJfVFlQRV9FWFRFTlNJT046IlNjYWxhclR5cGVFeHRlbnNpb24iLE9CSkVDVF9UWVBFX0VYVEVOU0lPTjoiT2JqZWN0VHlwZUV4dGVuc2lvbiIsSU5URVJGQUNFX1RZUEVfRVhURU5TSU9OOiJJbnRlcmZhY2VUeXBlRXh0ZW5zaW9uIixVTklPTl9UWVBFX0VYVEVOU0lPTjoiVW5pb25UeXBlRXh0ZW5zaW9uIixFTlVNX1RZUEVfRVhURU5TSU9OOiJFbnVtVHlwZUV4dGVuc2lvbiIsSU5QVVRfT0JKRUNUX1RZUEVfRVhURU5TSU9OOiJJbnB1dE9iamVjdFR5cGVFeHRlbnNpb24ifSk7ZnVuY3Rpb24gVW4oZSxuKXt2YXIgdD1Cb29sZWFuKGUpO2lmKCF0KXRocm93IG5ldyBFcnJvcihuIT1udWxsP246IlVuZXhwZWN0ZWQgaW52YXJpYW50IHRyaWdnZXJlZC4iKX12YXIgJG49dHlwZW9mIFN5bWJvbD09ImZ1bmN0aW9uIiYmdHlwZW9mIFN5bWJvbC5mb3I9PSJmdW5jdGlvbiI/U3ltYm9sLmZvcigibm9kZWpzLnV0aWwuaW5zcGVjdC5jdXN0b20iKTp2b2lkIDAsaGU9JG47ZnVuY3Rpb24gQmUoZSl7dmFyIG49ZS5wcm90b3R5cGUudG9KU09OO3R5cGVvZiBuPT0iZnVuY3Rpb24ifHxVbigwKSxlLnByb3RvdHlwZS5pbnNwZWN0PW4saGUmJihlLnByb3RvdHlwZVtoZV09bil9dmFyIFZlPWZ1bmN0aW9uKCl7ZnVuY3Rpb24gZSh0LGksbyl7dGhpcy5zdGFydD10LnN0YXJ0LHRoaXMuZW5kPWkuZW5kLHRoaXMuc3RhcnRUb2tlbj10LHRoaXMuZW5kVG9rZW49aSx0aGlzLnNvdXJjZT1vfXZhciBuPWUucHJvdG90eXBlO3JldHVybiBuLnRvSlNPTj1mdW5jdGlvbigpe3JldHVybntzdGFydDp0aGlzLnN0YXJ0LGVuZDp0aGlzLmVuZH19LGV9KCk7QmUoVmUpO3ZhciBJPWZ1bmN0aW9uKCl7ZnVuY3Rpb24gZSh0LGksbyxyLGEscyxjKXt0aGlzLmtpbmQ9dCx0aGlzLnN0YXJ0PWksdGhpcy5lbmQ9byx0aGlzLmxpbmU9cix0aGlzLmNvbHVtbj1hLHRoaXMudmFsdWU9Yyx0aGlzLnByZXY9cyx0aGlzLm5leHQ9bnVsbH12YXIgbj1lLnByb3RvdHlwZTtyZXR1cm4gbi50b0pTT049ZnVuY3Rpb24oKXtyZXR1cm57a2luZDp0aGlzLmtpbmQsdmFsdWU6dGhpcy52YWx1ZSxsaW5lOnRoaXMubGluZSxjb2x1bW46dGhpcy5jb2x1bW59fSxlfSgpO0JlKEkpO2Z1bmN0aW9uIFVlKGUpe3JldHVybiBlIT1udWxsJiZ0eXBlb2YgZS5raW5kPT0ic3RyaW5nIn12YXIgdT1PYmplY3QuZnJlZXplKHtTT0Y6IjxTT0Y+IixFT0Y6IjxFT0Y+IixCQU5HOiIhIixET0xMQVI6IiQiLEFNUDoiJiIsUEFSRU5fTDoiKCIsUEFSRU5fUjoiKSIsU1BSRUFEOiIuLi4iLENPTE9OOiI6IixFUVVBTFM6Ij0iLEFUOiJAIixCUkFDS0VUX0w6IlsiLEJSQUNLRVRfUjoiXSIsQlJBQ0VfTDoieyIsUElQRToifCIsQlJBQ0VfUjoifSIsTkFNRToiTmFtZSIsSU5UOiJJbnQiLEZMT0FUOiJGbG9hdCIsU1RSSU5HOiJTdHJpbmciLEJMT0NLX1NUUklORzoiQmxvY2tTdHJpbmciLENPTU1FTlQ6IkNvbW1lbnQifSk7ZnVuY3Rpb24gZWUoZSl7cmV0dXJuIHR5cGVvZiBTeW1ib2w9PSJmdW5jdGlvbiImJnR5cGVvZiBTeW1ib2wuaXRlcmF0b3I9PSJzeW1ib2wiP2VlPWZ1bmN0aW9uKG4pe3JldHVybiB0eXBlb2Ygbn06ZWU9ZnVuY3Rpb24obil7cmV0dXJuIG4mJnR5cGVvZiBTeW1ib2w9PSJmdW5jdGlvbiImJm4uY29uc3RydWN0b3I9PT1TeW1ib2wmJm4hPT1TeW1ib2wucHJvdG90eXBlPyJzeW1ib2wiOnR5cGVvZiBufSxlZShlKX12YXIgS249MTAsJGU9MjtmdW5jdGlvbiBLZShlKXtyZXR1cm4gbmUoZSxbXSl9ZnVuY3Rpb24gbmUoZSxuKXtzd2l0Y2goZWUoZSkpe2Nhc2Uic3RyaW5nIjpyZXR1cm4gSlNPTi5zdHJpbmdpZnkoZSk7Y2FzZSJmdW5jdGlvbiI6cmV0dXJuIGUubmFtZT8iW2Z1bmN0aW9uICIuY29uY2F0KGUubmFtZSwiXSIpOiJbZnVuY3Rpb25dIjtjYXNlIm9iamVjdCI6cmV0dXJuIGU9PT1udWxsPyJudWxsIjpZbihlLG4pO2RlZmF1bHQ6cmV0dXJuIFN0cmluZyhlKX19ZnVuY3Rpb24gWW4oZSxuKXtpZihuLmluZGV4T2YoZSkhPT0tMSlyZXR1cm4iW0NpcmN1bGFyXSI7dmFyIHQ9W10uY29uY2F0KG4sW2VdKSxpPXFuKGUpO2lmKGkhPT12b2lkIDApe3ZhciBvPWkuY2FsbChlKTtpZihvIT09ZSlyZXR1cm4gdHlwZW9mIG89PSJzdHJpbmciP286bmUobyx0KX1lbHNlIGlmKEFycmF5LmlzQXJyYXkoZSkpcmV0dXJuIEduKGUsdCk7cmV0dXJuIEpuKGUsdCl9ZnVuY3Rpb24gSm4oZSxuKXt2YXIgdD1PYmplY3Qua2V5cyhlKTtpZih0Lmxlbmd0aD09PTApcmV0dXJuInt9IjtpZihuLmxlbmd0aD4kZSlyZXR1cm4iWyIrWG4oZSkrIl0iO3ZhciBpPXQubWFwKGZ1bmN0aW9uKG8pe3ZhciByPW5lKGVbb10sbik7cmV0dXJuIG8rIjogIityfSk7cmV0dXJuInsgIitpLmpvaW4oIiwgIikrIiB9In1mdW5jdGlvbiBHbihlLG4pe2lmKGUubGVuZ3RoPT09MClyZXR1cm4iW10iO2lmKG4ubGVuZ3RoPiRlKXJldHVybiJbQXJyYXldIjtmb3IodmFyIHQ9TWF0aC5taW4oS24sZS5sZW5ndGgpLGk9ZS5sZW5ndGgtdCxvPVtdLHI9MDtyPHQ7KytyKW8ucHVzaChuZShlW3JdLG4pKTtyZXR1cm4gaT09PTE/by5wdXNoKCIuLi4gMSBtb3JlIGl0ZW0iKTppPjEmJm8ucHVzaCgiLi4uICIuY29uY2F0KGksIiBtb3JlIGl0ZW1zIikpLCJbIitvLmpvaW4oIiwgIikrIl0ifWZ1bmN0aW9uIHFuKGUpe3ZhciBuPWVbU3RyaW5nKGhlKV07aWYodHlwZW9mIG49PSJmdW5jdGlvbiIpcmV0dXJuIG47aWYodHlwZW9mIGUuaW5zcGVjdD09ImZ1bmN0aW9uIilyZXR1cm4gZS5pbnNwZWN0fWZ1bmN0aW9uIFhuKGUpe3ZhciBuPU9iamVjdC5wcm90b3R5cGUudG9TdHJpbmcuY2FsbChlKS5yZXBsYWNlKC9eXFtvYmplY3QgLywiIikucmVwbGFjZSgvXSQvLCIiKTtpZihuPT09Ik9iamVjdCImJnR5cGVvZiBlLmNvbnN0cnVjdG9yPT0iZnVuY3Rpb24iKXt2YXIgdD1lLmNvbnN0cnVjdG9yLm5hbWU7aWYodHlwZW9mIHQ9PSJzdHJpbmciJiZ0IT09IiIpcmV0dXJuIHR9cmV0dXJuIG59ZnVuY3Rpb24gdmUoZSxuKXt2YXIgdD1Cb29sZWFuKGUpO2lmKCF0KXRocm93IG5ldyBFcnJvcihuKX12YXIgem49ZnVuY3Rpb24oZSxuKXtyZXR1cm4gZSBpbnN0YW5jZW9mIG59O2Z1bmN0aW9uIFllKGUsbil7Zm9yKHZhciB0PTA7dDxuLmxlbmd0aDt0Kyspe3ZhciBpPW5bdF07aS5lbnVtZXJhYmxlPWkuZW51bWVyYWJsZXx8ITEsaS5jb25maWd1cmFibGU9ITAsInZhbHVlImluIGkmJihpLndyaXRhYmxlPSEwKSxPYmplY3QuZGVmaW5lUHJvcGVydHkoZSxpLmtleSxpKX19ZnVuY3Rpb24gSG4oZSxuLHQpe3JldHVybiBuJiZZZShlLnByb3RvdHlwZSxuKSx0JiZZZShlLHQpLGV9dmFyIEplPWZ1bmN0aW9uKCl7ZnVuY3Rpb24gZShuKXt2YXIgdD1hcmd1bWVudHMubGVuZ3RoPjEmJmFyZ3VtZW50c1sxXSE9PXZvaWQgMD9hcmd1bWVudHNbMV06IkdyYXBoUUwgcmVxdWVzdCIsaT1hcmd1bWVudHMubGVuZ3RoPjImJmFyZ3VtZW50c1syXSE9PXZvaWQgMD9hcmd1bWVudHNbMl06e2xpbmU6MSxjb2x1bW46MX07dHlwZW9mIG49PSJzdHJpbmcifHx2ZSgwLCJCb2R5IG11c3QgYmUgYSBzdHJpbmcuIFJlY2VpdmVkOiAiLmNvbmNhdChLZShuKSwiLiIpKSx0aGlzLmJvZHk9bix0aGlzLm5hbWU9dCx0aGlzLmxvY2F0aW9uT2Zmc2V0PWksdGhpcy5sb2NhdGlvbk9mZnNldC5saW5lPjB8fHZlKDAsImxpbmUgaW4gbG9jYXRpb25PZmZzZXQgaXMgMS1pbmRleGVkIGFuZCBtdXN0IGJlIHBvc2l0aXZlLiIpLHRoaXMubG9jYXRpb25PZmZzZXQuY29sdW1uPjB8fHZlKDAsImNvbHVtbiBpbiBsb2NhdGlvbk9mZnNldCBpcyAxLWluZGV4ZWQgYW5kIG11c3QgYmUgcG9zaXRpdmUuIil9cmV0dXJuIEhuKGUsW3trZXk6Q2UsZ2V0OmZ1bmN0aW9uKCl7cmV0dXJuIlNvdXJjZSJ9fV0pLGV9KCk7ZnVuY3Rpb24gUW4oZSl7cmV0dXJuIHpuKGUsSmUpfXZhciBXbj1PYmplY3QuZnJlZXplKHtRVUVSWToiUVVFUlkiLE1VVEFUSU9OOiJNVVRBVElPTiIsU1VCU0NSSVBUSU9OOiJTVUJTQ1JJUFRJT04iLEZJRUxEOiJGSUVMRCIsRlJBR01FTlRfREVGSU5JVElPTjoiRlJBR01FTlRfREVGSU5JVElPTiIsRlJBR01FTlRfU1BSRUFEOiJGUkFHTUVOVF9TUFJFQUQiLElOTElORV9GUkFHTUVOVDoiSU5MSU5FX0ZSQUdNRU5UIixWQVJJQUJMRV9ERUZJTklUSU9OOiJWQVJJQUJMRV9ERUZJTklUSU9OIixTQ0hFTUE6IlNDSEVNQSIsU0NBTEFSOiJTQ0FMQVIiLE9CSkVDVDoiT0JKRUNUIixGSUVMRF9ERUZJTklUSU9OOiJGSUVMRF9ERUZJTklUSU9OIixBUkdVTUVOVF9ERUZJTklUSU9OOiJBUkdVTUVOVF9ERUZJTklUSU9OIixJTlRFUkZBQ0U6IklOVEVSRkFDRSIsVU5JT046IlVOSU9OIixFTlVNOiJFTlVNIixFTlVNX1ZBTFVFOiJFTlVNX1ZBTFVFIixJTlBVVF9PQkpFQ1Q6IklOUFVUX09CSkVDVCIsSU5QVVRfRklFTERfREVGSU5JVElPTjoiSU5QVVRfRklFTERfREVGSU5JVElPTiJ9KTtmdW5jdGlvbiBabihlKXt2YXIgbj1lLnNwbGl0KC9cclxufFtcblxyXS9nKSx0PWV0KGUpO2lmKHQhPT0wKWZvcih2YXIgaT0xO2k8bi5sZW5ndGg7aSsrKW5baV09bltpXS5zbGljZSh0KTtmb3IodmFyIG89MDtvPG4ubGVuZ3RoJiZHZShuW29dKTspKytvO2Zvcih2YXIgcj1uLmxlbmd0aDtyPm8mJkdlKG5bci0xXSk7KS0tcjtyZXR1cm4gbi5zbGljZShvLHIpLmpvaW4oYApgKX1mdW5jdGlvbiBHZShlKXtmb3IodmFyIG49MDtuPGUubGVuZ3RoOysrbilpZihlW25dIT09IiAiJiZlW25dIT09IgkiKXJldHVybiExO3JldHVybiEwfWZ1bmN0aW9uIGV0KGUpe2Zvcih2YXIgbix0PSEwLGk9ITAsbz0wLHI9bnVsbCxhPTA7YTxlLmxlbmd0aDsrK2Epc3dpdGNoKGUuY2hhckNvZGVBdChhKSl7Y2FzZSAxMzplLmNoYXJDb2RlQXQoYSsxKT09PTEwJiYrK2E7Y2FzZSAxMDp0PSExLGk9ITAsbz0wO2JyZWFrO2Nhc2UgOTpjYXNlIDMyOisrbzticmVhaztkZWZhdWx0OmkmJiF0JiYocj09PW51bGx8fG88cikmJihyPW8pLGk9ITF9cmV0dXJuKG49cikhPT1udWxsJiZuIT09dm9pZCAwP246MH1mdW5jdGlvbiBudChlKXt2YXIgbj1hcmd1bWVudHMubGVuZ3RoPjEmJmFyZ3VtZW50c1sxXSE9PXZvaWQgMD9hcmd1bWVudHNbMV06IiIsdD1hcmd1bWVudHMubGVuZ3RoPjImJmFyZ3VtZW50c1syXSE9PXZvaWQgMD9hcmd1bWVudHNbMl06ITEsaT1lLmluZGV4T2YoYApgKT09PS0xLG89ZVswXT09PSIgInx8ZVswXT09PSIJIixyPWVbZS5sZW5ndGgtMV09PT0nIicsYT1lW2UubGVuZ3RoLTFdPT09IlxcIixzPSFpfHxyfHxhfHx0LGM9IiI7cmV0dXJuIHMmJiEoaSYmbykmJihjKz1gCmArbiksYys9bj9lLnJlcGxhY2UoL1xuL2csYApgK24pOmUscyYmKGMrPWAKYCksJyIiIicrYy5yZXBsYWNlKC8iIiIvZywnXFwiIiInKSsnIiIiJ312YXIgdHQ9ZnVuY3Rpb24oKXtmdW5jdGlvbiBlKHQpe3ZhciBpPW5ldyBJKHUuU09GLDAsMCwwLDAsbnVsbCk7dGhpcy5zb3VyY2U9dCx0aGlzLmxhc3RUb2tlbj1pLHRoaXMudG9rZW49aSx0aGlzLmxpbmU9MSx0aGlzLmxpbmVTdGFydD0wfXZhciBuPWUucHJvdG90eXBlO3JldHVybiBuLmFkdmFuY2U9ZnVuY3Rpb24oKXt0aGlzLmxhc3RUb2tlbj10aGlzLnRva2VuO3ZhciB0PXRoaXMudG9rZW49dGhpcy5sb29rYWhlYWQoKTtyZXR1cm4gdH0sbi5sb29rYWhlYWQ9ZnVuY3Rpb24oKXt2YXIgdD10aGlzLnRva2VuO2lmKHQua2luZCE9PXUuRU9GKWRve3ZhciBpO3Q9KGk9dC5uZXh0KSE9PW51bGwmJmkhPT12b2lkIDA/aTp0Lm5leHQ9cnQodGhpcyx0KX13aGlsZSh0LmtpbmQ9PT11LkNPTU1FTlQpO3JldHVybiB0fSxlfSgpO2Z1bmN0aW9uIGl0KGUpe3JldHVybiBlPT09dS5CQU5HfHxlPT09dS5ET0xMQVJ8fGU9PT11LkFNUHx8ZT09PXUuUEFSRU5fTHx8ZT09PXUuUEFSRU5fUnx8ZT09PXUuU1BSRUFEfHxlPT09dS5DT0xPTnx8ZT09PXUuRVFVQUxTfHxlPT09dS5BVHx8ZT09PXUuQlJBQ0tFVF9MfHxlPT09dS5CUkFDS0VUX1J8fGU9PT11LkJSQUNFX0x8fGU9PT11LlBJUEV8fGU9PT11LkJSQUNFX1J9ZnVuY3Rpb24gQihlKXtyZXR1cm4gaXNOYU4oZSk/dS5FT0Y6ZTwxMjc/SlNPTi5zdHJpbmdpZnkoU3RyaW5nLmZyb21DaGFyQ29kZShlKSk6JyJcXHUnLmNvbmNhdCgoIjAwIitlLnRvU3RyaW5nKDE2KS50b1VwcGVyQ2FzZSgpKS5zbGljZSgtNCksJyInKX1mdW5jdGlvbiBydChlLG4pe2Zvcih2YXIgdD1lLnNvdXJjZSxpPXQuYm9keSxvPWkubGVuZ3RoLHI9bi5lbmQ7cjxvOyl7dmFyIGE9aS5jaGFyQ29kZUF0KHIpLHM9ZS5saW5lLGM9MStyLWUubGluZVN0YXJ0O3N3aXRjaChhKXtjYXNlIDY1Mjc5OmNhc2UgOTpjYXNlIDMyOmNhc2UgNDQ6KytyO2NvbnRpbnVlO2Nhc2UgMTA6KytyLCsrZS5saW5lLGUubGluZVN0YXJ0PXI7Y29udGludWU7Y2FzZSAxMzppLmNoYXJDb2RlQXQocisxKT09PTEwP3IrPTI6KytyLCsrZS5saW5lLGUubGluZVN0YXJ0PXI7Y29udGludWU7Y2FzZSAzMzpyZXR1cm4gbmV3IEkodS5CQU5HLHIscisxLHMsYyxuKTtjYXNlIDM1OnJldHVybiBhdCh0LHIscyxjLG4pO2Nhc2UgMzY6cmV0dXJuIG5ldyBJKHUuRE9MTEFSLHIscisxLHMsYyxuKTtjYXNlIDM4OnJldHVybiBuZXcgSSh1LkFNUCxyLHIrMSxzLGMsbik7Y2FzZSA0MDpyZXR1cm4gbmV3IEkodS5QQVJFTl9MLHIscisxLHMsYyxuKTtjYXNlIDQxOnJldHVybiBuZXcgSSh1LlBBUkVOX1IscixyKzEscyxjLG4pO2Nhc2UgNDY6aWYoaS5jaGFyQ29kZUF0KHIrMSk9PT00NiYmaS5jaGFyQ29kZUF0KHIrMik9PT00NilyZXR1cm4gbmV3IEkodS5TUFJFQUQscixyKzMscyxjLG4pO2JyZWFrO2Nhc2UgNTg6cmV0dXJuIG5ldyBJKHUuQ09MT04scixyKzEscyxjLG4pO2Nhc2UgNjE6cmV0dXJuIG5ldyBJKHUuRVFVQUxTLHIscisxLHMsYyxuKTtjYXNlIDY0OnJldHVybiBuZXcgSSh1LkFULHIscisxLHMsYyxuKTtjYXNlIDkxOnJldHVybiBuZXcgSSh1LkJSQUNLRVRfTCxyLHIrMSxzLGMsbik7Y2FzZSA5MzpyZXR1cm4gbmV3IEkodS5CUkFDS0VUX1IscixyKzEscyxjLG4pO2Nhc2UgMTIzOnJldHVybiBuZXcgSSh1LkJSQUNFX0wscixyKzEscyxjLG4pO2Nhc2UgMTI0OnJldHVybiBuZXcgSSh1LlBJUEUscixyKzEscyxjLG4pO2Nhc2UgMTI1OnJldHVybiBuZXcgSSh1LkJSQUNFX1IscixyKzEscyxjLG4pO2Nhc2UgMzQ6cmV0dXJuIGkuY2hhckNvZGVBdChyKzEpPT09MzQmJmkuY2hhckNvZGVBdChyKzIpPT09MzQ/bHQodCxyLHMsYyxuLGUpOmN0KHQscixzLGMsbik7Y2FzZSA0NTpjYXNlIDQ4OmNhc2UgNDk6Y2FzZSA1MDpjYXNlIDUxOmNhc2UgNTI6Y2FzZSA1MzpjYXNlIDU0OmNhc2UgNTU6Y2FzZSA1NjpjYXNlIDU3OnJldHVybiBzdCh0LHIsYSxzLGMsbik7Y2FzZSA2NTpjYXNlIDY2OmNhc2UgNjc6Y2FzZSA2ODpjYXNlIDY5OmNhc2UgNzA6Y2FzZSA3MTpjYXNlIDcyOmNhc2UgNzM6Y2FzZSA3NDpjYXNlIDc1OmNhc2UgNzY6Y2FzZSA3NzpjYXNlIDc4OmNhc2UgNzk6Y2FzZSA4MDpjYXNlIDgxOmNhc2UgODI6Y2FzZSA4MzpjYXNlIDg0OmNhc2UgODU6Y2FzZSA4NjpjYXNlIDg3OmNhc2UgODg6Y2FzZSA4OTpjYXNlIDkwOmNhc2UgOTU6Y2FzZSA5NzpjYXNlIDk4OmNhc2UgOTk6Y2FzZSAxMDA6Y2FzZSAxMDE6Y2FzZSAxMDI6Y2FzZSAxMDM6Y2FzZSAxMDQ6Y2FzZSAxMDU6Y2FzZSAxMDY6Y2FzZSAxMDc6Y2FzZSAxMDg6Y2FzZSAxMDk6Y2FzZSAxMTA6Y2FzZSAxMTE6Y2FzZSAxMTI6Y2FzZSAxMTM6Y2FzZSAxMTQ6Y2FzZSAxMTU6Y2FzZSAxMTY6Y2FzZSAxMTc6Y2FzZSAxMTg6Y2FzZSAxMTk6Y2FzZSAxMjA6Y2FzZSAxMjE6Y2FzZSAxMjI6cmV0dXJuIGZ0KHQscixzLGMsbil9dGhyb3cgXyh0LHIsb3QoYSkpfXZhciBsPWUubGluZSxwPTErci1lLmxpbmVTdGFydDtyZXR1cm4gbmV3IEkodS5FT0YsbyxvLGwscCxuKX1mdW5jdGlvbiBvdChlKXtyZXR1cm4gZTwzMiYmZSE9PTkmJmUhPT0xMCYmZSE9PTEzPyJDYW5ub3QgY29udGFpbiB0aGUgaW52YWxpZCBjaGFyYWN0ZXIgIi5jb25jYXQoQihlKSwiLiIpOmU9PT0zOT9gVW5leHBlY3RlZCBzaW5nbGUgcXVvdGUgY2hhcmFjdGVyICgnKSwgZGlkIHlvdSBtZWFuIHRvIHVzZSBhIGRvdWJsZSBxdW90ZSAoIik/YDoiQ2Fubm90IHBhcnNlIHRoZSB1bmV4cGVjdGVkIGNoYXJhY3RlciAiLmNvbmNhdChCKGUpLCIuIil9ZnVuY3Rpb24gYXQoZSxuLHQsaSxvKXt2YXIgcj1lLmJvZHksYSxzPW47ZG8gYT1yLmNoYXJDb2RlQXQoKytzKTt3aGlsZSghaXNOYU4oYSkmJihhPjMxfHxhPT09OSkpO3JldHVybiBuZXcgSSh1LkNPTU1FTlQsbixzLHQsaSxvLHIuc2xpY2UobisxLHMpKX1mdW5jdGlvbiBzdChlLG4sdCxpLG8scil7dmFyIGE9ZS5ib2R5LHM9dCxjPW4sbD0hMTtpZihzPT09NDUmJihzPWEuY2hhckNvZGVBdCgrK2MpKSxzPT09NDgpe2lmKHM9YS5jaGFyQ29kZUF0KCsrYykscz49NDgmJnM8PTU3KXRocm93IF8oZSxjLCJJbnZhbGlkIG51bWJlciwgdW5leHBlY3RlZCBkaWdpdCBhZnRlciAwOiAiLmNvbmNhdChCKHMpLCIuIikpfWVsc2UgYz1tZShlLGMscykscz1hLmNoYXJDb2RlQXQoYyk7aWYocz09PTQ2JiYobD0hMCxzPWEuY2hhckNvZGVBdCgrK2MpLGM9bWUoZSxjLHMpLHM9YS5jaGFyQ29kZUF0KGMpKSwocz09PTY5fHxzPT09MTAxKSYmKGw9ITAscz1hLmNoYXJDb2RlQXQoKytjKSwocz09PTQzfHxzPT09NDUpJiYocz1hLmNoYXJDb2RlQXQoKytjKSksYz1tZShlLGMscykscz1hLmNoYXJDb2RlQXQoYykpLHM9PT00Nnx8cHQocykpdGhyb3cgXyhlLGMsIkludmFsaWQgbnVtYmVyLCBleHBlY3RlZCBkaWdpdCBidXQgZ290OiAiLmNvbmNhdChCKHMpLCIuIikpO3JldHVybiBuZXcgSShsP3UuRkxPQVQ6dS5JTlQsbixjLGksbyxyLGEuc2xpY2UobixjKSl9ZnVuY3Rpb24gbWUoZSxuLHQpe3ZhciBpPWUuYm9keSxvPW4scj10O2lmKHI+PTQ4JiZyPD01Nyl7ZG8gcj1pLmNoYXJDb2RlQXQoKytvKTt3aGlsZShyPj00OCYmcjw9NTcpO3JldHVybiBvfXRocm93IF8oZSxvLCJJbnZhbGlkIG51bWJlciwgZXhwZWN0ZWQgZGlnaXQgYnV0IGdvdDogIi5jb25jYXQoQihyKSwiLiIpKX1mdW5jdGlvbiBjdChlLG4sdCxpLG8pe2Zvcih2YXIgcj1lLmJvZHksYT1uKzEscz1hLGM9MCxsPSIiO2E8ci5sZW5ndGgmJiFpc05hTihjPXIuY2hhckNvZGVBdChhKSkmJmMhPT0xMCYmYyE9PTEzOyl7aWYoYz09PTM0KXJldHVybiBsKz1yLnNsaWNlKHMsYSksbmV3IEkodS5TVFJJTkcsbixhKzEsdCxpLG8sbCk7aWYoYzwzMiYmYyE9PTkpdGhyb3cgXyhlLGEsIkludmFsaWQgY2hhcmFjdGVyIHdpdGhpbiBTdHJpbmc6ICIuY29uY2F0KEIoYyksIi4iKSk7aWYoKythLGM9PT05Mil7c3dpdGNoKGwrPXIuc2xpY2UocyxhLTEpLGM9ci5jaGFyQ29kZUF0KGEpLGMpe2Nhc2UgMzQ6bCs9JyInO2JyZWFrO2Nhc2UgNDc6bCs9Ii8iO2JyZWFrO2Nhc2UgOTI6bCs9IlxcIjticmVhaztjYXNlIDk4OmwrPSJcYiI7YnJlYWs7Y2FzZSAxMDI6bCs9IlxmIjticmVhaztjYXNlIDExMDpsKz1gCmA7YnJlYWs7Y2FzZSAxMTQ6bCs9IlxyIjticmVhaztjYXNlIDExNjpsKz0iCSI7YnJlYWs7Y2FzZSAxMTc6e3ZhciBwPXV0KHIuY2hhckNvZGVBdChhKzEpLHIuY2hhckNvZGVBdChhKzIpLHIuY2hhckNvZGVBdChhKzMpLHIuY2hhckNvZGVBdChhKzQpKTtpZihwPDApe3ZhciBmPXIuc2xpY2UoYSsxLGErNSk7dGhyb3cgXyhlLGEsIkludmFsaWQgY2hhcmFjdGVyIGVzY2FwZSBzZXF1ZW5jZTogXFx1Ii5jb25jYXQoZiwiLiIpKX1sKz1TdHJpbmcuZnJvbUNoYXJDb2RlKHApLGErPTQ7YnJlYWt9ZGVmYXVsdDp0aHJvdyBfKGUsYSwiSW52YWxpZCBjaGFyYWN0ZXIgZXNjYXBlIHNlcXVlbmNlOiBcXCIuY29uY2F0KFN0cmluZy5mcm9tQ2hhckNvZGUoYyksIi4iKSl9KythLHM9YX19dGhyb3cgXyhlLGEsIlVudGVybWluYXRlZCBzdHJpbmcuIil9ZnVuY3Rpb24gbHQoZSxuLHQsaSxvLHIpe2Zvcih2YXIgYT1lLmJvZHkscz1uKzMsYz1zLGw9MCxwPSIiO3M8YS5sZW5ndGgmJiFpc05hTihsPWEuY2hhckNvZGVBdChzKSk7KXtpZihsPT09MzQmJmEuY2hhckNvZGVBdChzKzEpPT09MzQmJmEuY2hhckNvZGVBdChzKzIpPT09MzQpcmV0dXJuIHArPWEuc2xpY2UoYyxzKSxuZXcgSSh1LkJMT0NLX1NUUklORyxuLHMrMyx0LGksbyxabihwKSk7aWYobDwzMiYmbCE9PTkmJmwhPT0xMCYmbCE9PTEzKXRocm93IF8oZSxzLCJJbnZhbGlkIGNoYXJhY3RlciB3aXRoaW4gU3RyaW5nOiAiLmNvbmNhdChCKGwpLCIuIikpO2w9PT0xMD8oKytzLCsrci5saW5lLHIubGluZVN0YXJ0PXMpOmw9PT0xMz8oYS5jaGFyQ29kZUF0KHMrMSk9PT0xMD9zKz0yOisrcywrK3IubGluZSxyLmxpbmVTdGFydD1zKTpsPT09OTImJmEuY2hhckNvZGVBdChzKzEpPT09MzQmJmEuY2hhckNvZGVBdChzKzIpPT09MzQmJmEuY2hhckNvZGVBdChzKzMpPT09MzQ/KHArPWEuc2xpY2UoYyxzKSsnIiIiJyxzKz00LGM9cyk6KytzfXRocm93IF8oZSxzLCJVbnRlcm1pbmF0ZWQgc3RyaW5nLiIpfWZ1bmN0aW9uIHV0KGUsbix0LGkpe3JldHVybiB0ZShlKTw8MTJ8dGUobik8PDh8dGUodCk8PDR8dGUoaSl9ZnVuY3Rpb24gdGUoZSl7cmV0dXJuIGU+PTQ4JiZlPD01Nz9lLTQ4OmU+PTY1JiZlPD03MD9lLTU1OmU+PTk3JiZlPD0xMDI/ZS04NzotMX1mdW5jdGlvbiBmdChlLG4sdCxpLG8pe2Zvcih2YXIgcj1lLmJvZHksYT1yLmxlbmd0aCxzPW4rMSxjPTA7cyE9PWEmJiFpc05hTihjPXIuY2hhckNvZGVBdChzKSkmJihjPT09OTV8fGM+PTQ4JiZjPD01N3x8Yz49NjUmJmM8PTkwfHxjPj05NyYmYzw9MTIyKTspKytzO3JldHVybiBuZXcgSSh1Lk5BTUUsbixzLHQsaSxvLHIuc2xpY2UobixzKSl9ZnVuY3Rpb24gcHQoZSl7cmV0dXJuIGU9PT05NXx8ZT49NjUmJmU8PTkwfHxlPj05NyYmZTw9MTIyfWZ1bmN0aW9uIFIoZSxuKXt2YXIgdD1uZXcgZHQoZSxuKTtyZXR1cm4gdC5wYXJzZURvY3VtZW50KCl9dmFyIGR0PWZ1bmN0aW9uKCl7ZnVuY3Rpb24gZSh0LGkpe3ZhciBvPVFuKHQpP3Q6bmV3IEplKHQpO3RoaXMuX2xleGVyPW5ldyB0dChvKSx0aGlzLl9vcHRpb25zPWl9dmFyIG49ZS5wcm90b3R5cGU7cmV0dXJuIG4ucGFyc2VOYW1lPWZ1bmN0aW9uKCl7dmFyIHQ9dGhpcy5leHBlY3RUb2tlbih1Lk5BTUUpO3JldHVybntraW5kOnkuTkFNRSx2YWx1ZTp0LnZhbHVlLGxvYzp0aGlzLmxvYyh0KX19LG4ucGFyc2VEb2N1bWVudD1mdW5jdGlvbigpe3ZhciB0PXRoaXMuX2xleGVyLnRva2VuO3JldHVybntraW5kOnkuRE9DVU1FTlQsZGVmaW5pdGlvbnM6dGhpcy5tYW55KHUuU09GLHRoaXMucGFyc2VEZWZpbml0aW9uLHUuRU9GKSxsb2M6dGhpcy5sb2ModCl9fSxuLnBhcnNlRGVmaW5pdGlvbj1mdW5jdGlvbigpe2lmKHRoaXMucGVlayh1Lk5BTUUpKXN3aXRjaCh0aGlzLl9sZXhlci50b2tlbi52YWx1ZSl7Y2FzZSJxdWVyeSI6Y2FzZSJtdXRhdGlvbiI6Y2FzZSJzdWJzY3JpcHRpb24iOnJldHVybiB0aGlzLnBhcnNlT3BlcmF0aW9uRGVmaW5pdGlvbigpO2Nhc2UiZnJhZ21lbnQiOnJldHVybiB0aGlzLnBhcnNlRnJhZ21lbnREZWZpbml0aW9uKCk7Y2FzZSJzY2hlbWEiOmNhc2Uic2NhbGFyIjpjYXNlInR5cGUiOmNhc2UiaW50ZXJmYWNlIjpjYXNlInVuaW9uIjpjYXNlImVudW0iOmNhc2UiaW5wdXQiOmNhc2UiZGlyZWN0aXZlIjpyZXR1cm4gdGhpcy5wYXJzZVR5cGVTeXN0ZW1EZWZpbml0aW9uKCk7Y2FzZSJleHRlbmQiOnJldHVybiB0aGlzLnBhcnNlVHlwZVN5c3RlbUV4dGVuc2lvbigpfWVsc2V7aWYodGhpcy5wZWVrKHUuQlJBQ0VfTCkpcmV0dXJuIHRoaXMucGFyc2VPcGVyYXRpb25EZWZpbml0aW9uKCk7aWYodGhpcy5wZWVrRGVzY3JpcHRpb24oKSlyZXR1cm4gdGhpcy5wYXJzZVR5cGVTeXN0ZW1EZWZpbml0aW9uKCl9dGhyb3cgdGhpcy51bmV4cGVjdGVkKCl9LG4ucGFyc2VPcGVyYXRpb25EZWZpbml0aW9uPWZ1bmN0aW9uKCl7dmFyIHQ9dGhpcy5fbGV4ZXIudG9rZW47aWYodGhpcy5wZWVrKHUuQlJBQ0VfTCkpcmV0dXJue2tpbmQ6eS5PUEVSQVRJT05fREVGSU5JVElPTixvcGVyYXRpb246InF1ZXJ5IixuYW1lOnZvaWQgMCx2YXJpYWJsZURlZmluaXRpb25zOltdLGRpcmVjdGl2ZXM6W10sc2VsZWN0aW9uU2V0OnRoaXMucGFyc2VTZWxlY3Rpb25TZXQoKSxsb2M6dGhpcy5sb2ModCl9O3ZhciBpPXRoaXMucGFyc2VPcGVyYXRpb25UeXBlKCksbztyZXR1cm4gdGhpcy5wZWVrKHUuTkFNRSkmJihvPXRoaXMucGFyc2VOYW1lKCkpLHtraW5kOnkuT1BFUkFUSU9OX0RFRklOSVRJT04sb3BlcmF0aW9uOmksbmFtZTpvLHZhcmlhYmxlRGVmaW5pdGlvbnM6dGhpcy5wYXJzZVZhcmlhYmxlRGVmaW5pdGlvbnMoKSxkaXJlY3RpdmVzOnRoaXMucGFyc2VEaXJlY3RpdmVzKCExKSxzZWxlY3Rpb25TZXQ6dGhpcy5wYXJzZVNlbGVjdGlvblNldCgpLGxvYzp0aGlzLmxvYyh0KX19LG4ucGFyc2VPcGVyYXRpb25UeXBlPWZ1bmN0aW9uKCl7dmFyIHQ9dGhpcy5leHBlY3RUb2tlbih1Lk5BTUUpO3N3aXRjaCh0LnZhbHVlKXtjYXNlInF1ZXJ5IjpyZXR1cm4icXVlcnkiO2Nhc2UibXV0YXRpb24iOnJldHVybiJtdXRhdGlvbiI7Y2FzZSJzdWJzY3JpcHRpb24iOnJldHVybiJzdWJzY3JpcHRpb24ifXRocm93IHRoaXMudW5leHBlY3RlZCh0KX0sbi5wYXJzZVZhcmlhYmxlRGVmaW5pdGlvbnM9ZnVuY3Rpb24oKXtyZXR1cm4gdGhpcy5vcHRpb25hbE1hbnkodS5QQVJFTl9MLHRoaXMucGFyc2VWYXJpYWJsZURlZmluaXRpb24sdS5QQVJFTl9SKX0sbi5wYXJzZVZhcmlhYmxlRGVmaW5pdGlvbj1mdW5jdGlvbigpe3ZhciB0PXRoaXMuX2xleGVyLnRva2VuO3JldHVybntraW5kOnkuVkFSSUFCTEVfREVGSU5JVElPTix2YXJpYWJsZTp0aGlzLnBhcnNlVmFyaWFibGUoKSx0eXBlOih0aGlzLmV4cGVjdFRva2VuKHUuQ09MT04pLHRoaXMucGFyc2VUeXBlUmVmZXJlbmNlKCkpLGRlZmF1bHRWYWx1ZTp0aGlzLmV4cGVjdE9wdGlvbmFsVG9rZW4odS5FUVVBTFMpP3RoaXMucGFyc2VWYWx1ZUxpdGVyYWwoITApOnZvaWQgMCxkaXJlY3RpdmVzOnRoaXMucGFyc2VEaXJlY3RpdmVzKCEwKSxsb2M6dGhpcy5sb2ModCl9fSxuLnBhcnNlVmFyaWFibGU9ZnVuY3Rpb24oKXt2YXIgdD10aGlzLl9sZXhlci50b2tlbjtyZXR1cm4gdGhpcy5leHBlY3RUb2tlbih1LkRPTExBUikse2tpbmQ6eS5WQVJJQUJMRSxuYW1lOnRoaXMucGFyc2VOYW1lKCksbG9jOnRoaXMubG9jKHQpfX0sbi5wYXJzZVNlbGVjdGlvblNldD1mdW5jdGlvbigpe3ZhciB0PXRoaXMuX2xleGVyLnRva2VuO3JldHVybntraW5kOnkuU0VMRUNUSU9OX1NFVCxzZWxlY3Rpb25zOnRoaXMubWFueSh1LkJSQUNFX0wsdGhpcy5wYXJzZVNlbGVjdGlvbix1LkJSQUNFX1IpLGxvYzp0aGlzLmxvYyh0KX19LG4ucGFyc2VTZWxlY3Rpb249ZnVuY3Rpb24oKXtyZXR1cm4gdGhpcy5wZWVrKHUuU1BSRUFEKT90aGlzLnBhcnNlRnJhZ21lbnQoKTp0aGlzLnBhcnNlRmllbGQoKX0sbi5wYXJzZUZpZWxkPWZ1bmN0aW9uKCl7dmFyIHQ9dGhpcy5fbGV4ZXIudG9rZW4saT10aGlzLnBhcnNlTmFtZSgpLG8scjtyZXR1cm4gdGhpcy5leHBlY3RPcHRpb25hbFRva2VuKHUuQ09MT04pPyhvPWkscj10aGlzLnBhcnNlTmFtZSgpKTpyPWkse2tpbmQ6eS5GSUVMRCxhbGlhczpvLG5hbWU6cixhcmd1bWVudHM6dGhpcy5wYXJzZUFyZ3VtZW50cyghMSksZGlyZWN0aXZlczp0aGlzLnBhcnNlRGlyZWN0aXZlcyghMSksc2VsZWN0aW9uU2V0OnRoaXMucGVlayh1LkJSQUNFX0wpP3RoaXMucGFyc2VTZWxlY3Rpb25TZXQoKTp2b2lkIDAsbG9jOnRoaXMubG9jKHQpfX0sbi5wYXJzZUFyZ3VtZW50cz1mdW5jdGlvbih0KXt2YXIgaT10P3RoaXMucGFyc2VDb25zdEFyZ3VtZW50OnRoaXMucGFyc2VBcmd1bWVudDtyZXR1cm4gdGhpcy5vcHRpb25hbE1hbnkodS5QQVJFTl9MLGksdS5QQVJFTl9SKX0sbi5wYXJzZUFyZ3VtZW50PWZ1bmN0aW9uKCl7dmFyIHQ9dGhpcy5fbGV4ZXIudG9rZW4saT10aGlzLnBhcnNlTmFtZSgpO3JldHVybiB0aGlzLmV4cGVjdFRva2VuKHUuQ09MT04pLHtraW5kOnkuQVJHVU1FTlQsbmFtZTppLHZhbHVlOnRoaXMucGFyc2VWYWx1ZUxpdGVyYWwoITEpLGxvYzp0aGlzLmxvYyh0KX19LG4ucGFyc2VDb25zdEFyZ3VtZW50PWZ1bmN0aW9uKCl7dmFyIHQ9dGhpcy5fbGV4ZXIudG9rZW47cmV0dXJue2tpbmQ6eS5BUkdVTUVOVCxuYW1lOnRoaXMucGFyc2VOYW1lKCksdmFsdWU6KHRoaXMuZXhwZWN0VG9rZW4odS5DT0xPTiksdGhpcy5wYXJzZVZhbHVlTGl0ZXJhbCghMCkpLGxvYzp0aGlzLmxvYyh0KX19LG4ucGFyc2VGcmFnbWVudD1mdW5jdGlvbigpe3ZhciB0PXRoaXMuX2xleGVyLnRva2VuO3RoaXMuZXhwZWN0VG9rZW4odS5TUFJFQUQpO3ZhciBpPXRoaXMuZXhwZWN0T3B0aW9uYWxLZXl3b3JkKCJvbiIpO3JldHVybiFpJiZ0aGlzLnBlZWsodS5OQU1FKT97a2luZDp5LkZSQUdNRU5UX1NQUkVBRCxuYW1lOnRoaXMucGFyc2VGcmFnbWVudE5hbWUoKSxkaXJlY3RpdmVzOnRoaXMucGFyc2VEaXJlY3RpdmVzKCExKSxsb2M6dGhpcy5sb2ModCl9OntraW5kOnkuSU5MSU5FX0ZSQUdNRU5ULHR5cGVDb25kaXRpb246aT90aGlzLnBhcnNlTmFtZWRUeXBlKCk6dm9pZCAwLGRpcmVjdGl2ZXM6dGhpcy5wYXJzZURpcmVjdGl2ZXMoITEpLHNlbGVjdGlvblNldDp0aGlzLnBhcnNlU2VsZWN0aW9uU2V0KCksbG9jOnRoaXMubG9jKHQpfX0sbi5wYXJzZUZyYWdtZW50RGVmaW5pdGlvbj1mdW5jdGlvbigpe3ZhciB0LGk9dGhpcy5fbGV4ZXIudG9rZW47cmV0dXJuIHRoaXMuZXhwZWN0S2V5d29yZCgiZnJhZ21lbnQiKSwoKHQ9dGhpcy5fb3B0aW9ucyk9PT1udWxsfHx0PT09dm9pZCAwP3ZvaWQgMDp0LmV4cGVyaW1lbnRhbEZyYWdtZW50VmFyaWFibGVzKT09PSEwP3traW5kOnkuRlJBR01FTlRfREVGSU5JVElPTixuYW1lOnRoaXMucGFyc2VGcmFnbWVudE5hbWUoKSx2YXJpYWJsZURlZmluaXRpb25zOnRoaXMucGFyc2VWYXJpYWJsZURlZmluaXRpb25zKCksdHlwZUNvbmRpdGlvbjoodGhpcy5leHBlY3RLZXl3b3JkKCJvbiIpLHRoaXMucGFyc2VOYW1lZFR5cGUoKSksZGlyZWN0aXZlczp0aGlzLnBhcnNlRGlyZWN0aXZlcyghMSksc2VsZWN0aW9uU2V0OnRoaXMucGFyc2VTZWxlY3Rpb25TZXQoKSxsb2M6dGhpcy5sb2MoaSl9OntraW5kOnkuRlJBR01FTlRfREVGSU5JVElPTixuYW1lOnRoaXMucGFyc2VGcmFnbWVudE5hbWUoKSx0eXBlQ29uZGl0aW9uOih0aGlzLmV4cGVjdEtleXdvcmQoIm9uIiksdGhpcy5wYXJzZU5hbWVkVHlwZSgpKSxkaXJlY3RpdmVzOnRoaXMucGFyc2VEaXJlY3RpdmVzKCExKSxzZWxlY3Rpb25TZXQ6dGhpcy5wYXJzZVNlbGVjdGlvblNldCgpLGxvYzp0aGlzLmxvYyhpKX19LG4ucGFyc2VGcmFnbWVudE5hbWU9ZnVuY3Rpb24oKXtpZih0aGlzLl9sZXhlci50b2tlbi52YWx1ZT09PSJvbiIpdGhyb3cgdGhpcy51bmV4cGVjdGVkKCk7cmV0dXJuIHRoaXMucGFyc2VOYW1lKCl9LG4ucGFyc2VWYWx1ZUxpdGVyYWw9ZnVuY3Rpb24odCl7dmFyIGk9dGhpcy5fbGV4ZXIudG9rZW47c3dpdGNoKGkua2luZCl7Y2FzZSB1LkJSQUNLRVRfTDpyZXR1cm4gdGhpcy5wYXJzZUxpc3QodCk7Y2FzZSB1LkJSQUNFX0w6cmV0dXJuIHRoaXMucGFyc2VPYmplY3QodCk7Y2FzZSB1LklOVDpyZXR1cm4gdGhpcy5fbGV4ZXIuYWR2YW5jZSgpLHtraW5kOnkuSU5ULHZhbHVlOmkudmFsdWUsbG9jOnRoaXMubG9jKGkpfTtjYXNlIHUuRkxPQVQ6cmV0dXJuIHRoaXMuX2xleGVyLmFkdmFuY2UoKSx7a2luZDp5LkZMT0FULHZhbHVlOmkudmFsdWUsbG9jOnRoaXMubG9jKGkpfTtjYXNlIHUuU1RSSU5HOmNhc2UgdS5CTE9DS19TVFJJTkc6cmV0dXJuIHRoaXMucGFyc2VTdHJpbmdMaXRlcmFsKCk7Y2FzZSB1Lk5BTUU6c3dpdGNoKHRoaXMuX2xleGVyLmFkdmFuY2UoKSxpLnZhbHVlKXtjYXNlInRydWUiOnJldHVybntraW5kOnkuQk9PTEVBTix2YWx1ZTohMCxsb2M6dGhpcy5sb2MoaSl9O2Nhc2UiZmFsc2UiOnJldHVybntraW5kOnkuQk9PTEVBTix2YWx1ZTohMSxsb2M6dGhpcy5sb2MoaSl9O2Nhc2UibnVsbCI6cmV0dXJue2tpbmQ6eS5OVUxMLGxvYzp0aGlzLmxvYyhpKX07ZGVmYXVsdDpyZXR1cm57a2luZDp5LkVOVU0sdmFsdWU6aS52YWx1ZSxsb2M6dGhpcy5sb2MoaSl9fWNhc2UgdS5ET0xMQVI6aWYoIXQpcmV0dXJuIHRoaXMucGFyc2VWYXJpYWJsZSgpO2JyZWFrfXRocm93IHRoaXMudW5leHBlY3RlZCgpfSxuLnBhcnNlU3RyaW5nTGl0ZXJhbD1mdW5jdGlvbigpe3ZhciB0PXRoaXMuX2xleGVyLnRva2VuO3JldHVybiB0aGlzLl9sZXhlci5hZHZhbmNlKCkse2tpbmQ6eS5TVFJJTkcsdmFsdWU6dC52YWx1ZSxibG9jazp0LmtpbmQ9PT11LkJMT0NLX1NUUklORyxsb2M6dGhpcy5sb2ModCl9fSxuLnBhcnNlTGlzdD1mdW5jdGlvbih0KXt2YXIgaT10aGlzLG89dGhpcy5fbGV4ZXIudG9rZW4scj1mdW5jdGlvbigpe3JldHVybiBpLnBhcnNlVmFsdWVMaXRlcmFsKHQpfTtyZXR1cm57a2luZDp5LkxJU1QsdmFsdWVzOnRoaXMuYW55KHUuQlJBQ0tFVF9MLHIsdS5CUkFDS0VUX1IpLGxvYzp0aGlzLmxvYyhvKX19LG4ucGFyc2VPYmplY3Q9ZnVuY3Rpb24odCl7dmFyIGk9dGhpcyxvPXRoaXMuX2xleGVyLnRva2VuLHI9ZnVuY3Rpb24oKXtyZXR1cm4gaS5wYXJzZU9iamVjdEZpZWxkKHQpfTtyZXR1cm57a2luZDp5Lk9CSkVDVCxmaWVsZHM6dGhpcy5hbnkodS5CUkFDRV9MLHIsdS5CUkFDRV9SKSxsb2M6dGhpcy5sb2Mobyl9fSxuLnBhcnNlT2JqZWN0RmllbGQ9ZnVuY3Rpb24odCl7dmFyIGk9dGhpcy5fbGV4ZXIudG9rZW4sbz10aGlzLnBhcnNlTmFtZSgpO3JldHVybiB0aGlzLmV4cGVjdFRva2VuKHUuQ09MT04pLHtraW5kOnkuT0JKRUNUX0ZJRUxELG5hbWU6byx2YWx1ZTp0aGlzLnBhcnNlVmFsdWVMaXRlcmFsKHQpLGxvYzp0aGlzLmxvYyhpKX19LG4ucGFyc2VEaXJlY3RpdmVzPWZ1bmN0aW9uKHQpe2Zvcih2YXIgaT1bXTt0aGlzLnBlZWsodS5BVCk7KWkucHVzaCh0aGlzLnBhcnNlRGlyZWN0aXZlKHQpKTtyZXR1cm4gaX0sbi5wYXJzZURpcmVjdGl2ZT1mdW5jdGlvbih0KXt2YXIgaT10aGlzLl9sZXhlci50b2tlbjtyZXR1cm4gdGhpcy5leHBlY3RUb2tlbih1LkFUKSx7a2luZDp5LkRJUkVDVElWRSxuYW1lOnRoaXMucGFyc2VOYW1lKCksYXJndW1lbnRzOnRoaXMucGFyc2VBcmd1bWVudHModCksbG9jOnRoaXMubG9jKGkpfX0sbi5wYXJzZVR5cGVSZWZlcmVuY2U9ZnVuY3Rpb24oKXt2YXIgdD10aGlzLl9sZXhlci50b2tlbixpO3JldHVybiB0aGlzLmV4cGVjdE9wdGlvbmFsVG9rZW4odS5CUkFDS0VUX0wpPyhpPXRoaXMucGFyc2VUeXBlUmVmZXJlbmNlKCksdGhpcy5leHBlY3RUb2tlbih1LkJSQUNLRVRfUiksaT17a2luZDp5LkxJU1RfVFlQRSx0eXBlOmksbG9jOnRoaXMubG9jKHQpfSk6aT10aGlzLnBhcnNlTmFtZWRUeXBlKCksdGhpcy5leHBlY3RPcHRpb25hbFRva2VuKHUuQkFORyk/e2tpbmQ6eS5OT05fTlVMTF9UWVBFLHR5cGU6aSxsb2M6dGhpcy5sb2ModCl9Oml9LG4ucGFyc2VOYW1lZFR5cGU9ZnVuY3Rpb24oKXt2YXIgdD10aGlzLl9sZXhlci50b2tlbjtyZXR1cm57a2luZDp5Lk5BTUVEX1RZUEUsbmFtZTp0aGlzLnBhcnNlTmFtZSgpLGxvYzp0aGlzLmxvYyh0KX19LG4ucGFyc2VUeXBlU3lzdGVtRGVmaW5pdGlvbj1mdW5jdGlvbigpe3ZhciB0PXRoaXMucGVla0Rlc2NyaXB0aW9uKCk/dGhpcy5fbGV4ZXIubG9va2FoZWFkKCk6dGhpcy5fbGV4ZXIudG9rZW47aWYodC5raW5kPT09dS5OQU1FKXN3aXRjaCh0LnZhbHVlKXtjYXNlInNjaGVtYSI6cmV0dXJuIHRoaXMucGFyc2VTY2hlbWFEZWZpbml0aW9uKCk7Y2FzZSJzY2FsYXIiOnJldHVybiB0aGlzLnBhcnNlU2NhbGFyVHlwZURlZmluaXRpb24oKTtjYXNlInR5cGUiOnJldHVybiB0aGlzLnBhcnNlT2JqZWN0VHlwZURlZmluaXRpb24oKTtjYXNlImludGVyZmFjZSI6cmV0dXJuIHRoaXMucGFyc2VJbnRlcmZhY2VUeXBlRGVmaW5pdGlvbigpO2Nhc2UidW5pb24iOnJldHVybiB0aGlzLnBhcnNlVW5pb25UeXBlRGVmaW5pdGlvbigpO2Nhc2UiZW51bSI6cmV0dXJuIHRoaXMucGFyc2VFbnVtVHlwZURlZmluaXRpb24oKTtjYXNlImlucHV0IjpyZXR1cm4gdGhpcy5wYXJzZUlucHV0T2JqZWN0VHlwZURlZmluaXRpb24oKTtjYXNlImRpcmVjdGl2ZSI6cmV0dXJuIHRoaXMucGFyc2VEaXJlY3RpdmVEZWZpbml0aW9uKCl9dGhyb3cgdGhpcy51bmV4cGVjdGVkKHQpfSxuLnBlZWtEZXNjcmlwdGlvbj1mdW5jdGlvbigpe3JldHVybiB0aGlzLnBlZWsodS5TVFJJTkcpfHx0aGlzLnBlZWsodS5CTE9DS19TVFJJTkcpfSxuLnBhcnNlRGVzY3JpcHRpb249ZnVuY3Rpb24oKXtpZih0aGlzLnBlZWtEZXNjcmlwdGlvbigpKXJldHVybiB0aGlzLnBhcnNlU3RyaW5nTGl0ZXJhbCgpfSxuLnBhcnNlU2NoZW1hRGVmaW5pdGlvbj1mdW5jdGlvbigpe3ZhciB0PXRoaXMuX2xleGVyLnRva2VuLGk9dGhpcy5wYXJzZURlc2NyaXB0aW9uKCk7dGhpcy5leHBlY3RLZXl3b3JkKCJzY2hlbWEiKTt2YXIgbz10aGlzLnBhcnNlRGlyZWN0aXZlcyghMCkscj10aGlzLm1hbnkodS5CUkFDRV9MLHRoaXMucGFyc2VPcGVyYXRpb25UeXBlRGVmaW5pdGlvbix1LkJSQUNFX1IpO3JldHVybntraW5kOnkuU0NIRU1BX0RFRklOSVRJT04sZGVzY3JpcHRpb246aSxkaXJlY3RpdmVzOm8sb3BlcmF0aW9uVHlwZXM6cixsb2M6dGhpcy5sb2ModCl9fSxuLnBhcnNlT3BlcmF0aW9uVHlwZURlZmluaXRpb249ZnVuY3Rpb24oKXt2YXIgdD10aGlzLl9sZXhlci50b2tlbixpPXRoaXMucGFyc2VPcGVyYXRpb25UeXBlKCk7dGhpcy5leHBlY3RUb2tlbih1LkNPTE9OKTt2YXIgbz10aGlzLnBhcnNlTmFtZWRUeXBlKCk7cmV0dXJue2tpbmQ6eS5PUEVSQVRJT05fVFlQRV9ERUZJTklUSU9OLG9wZXJhdGlvbjppLHR5cGU6byxsb2M6dGhpcy5sb2ModCl9fSxuLnBhcnNlU2NhbGFyVHlwZURlZmluaXRpb249ZnVuY3Rpb24oKXt2YXIgdD10aGlzLl9sZXhlci50b2tlbixpPXRoaXMucGFyc2VEZXNjcmlwdGlvbigpO3RoaXMuZXhwZWN0S2V5d29yZCgic2NhbGFyIik7dmFyIG89dGhpcy5wYXJzZU5hbWUoKSxyPXRoaXMucGFyc2VEaXJlY3RpdmVzKCEwKTtyZXR1cm57a2luZDp5LlNDQUxBUl9UWVBFX0RFRklOSVRJT04sZGVzY3JpcHRpb246aSxuYW1lOm8sZGlyZWN0aXZlczpyLGxvYzp0aGlzLmxvYyh0KX19LG4ucGFyc2VPYmplY3RUeXBlRGVmaW5pdGlvbj1mdW5jdGlvbigpe3ZhciB0PXRoaXMuX2xleGVyLnRva2VuLGk9dGhpcy5wYXJzZURlc2NyaXB0aW9uKCk7dGhpcy5leHBlY3RLZXl3b3JkKCJ0eXBlIik7dmFyIG89dGhpcy5wYXJzZU5hbWUoKSxyPXRoaXMucGFyc2VJbXBsZW1lbnRzSW50ZXJmYWNlcygpLGE9dGhpcy5wYXJzZURpcmVjdGl2ZXMoITApLHM9dGhpcy5wYXJzZUZpZWxkc0RlZmluaXRpb24oKTtyZXR1cm57a2luZDp5Lk9CSkVDVF9UWVBFX0RFRklOSVRJT04sZGVzY3JpcHRpb246aSxuYW1lOm8saW50ZXJmYWNlczpyLGRpcmVjdGl2ZXM6YSxmaWVsZHM6cyxsb2M6dGhpcy5sb2ModCl9fSxuLnBhcnNlSW1wbGVtZW50c0ludGVyZmFjZXM9ZnVuY3Rpb24oKXt2YXIgdDtpZighdGhpcy5leHBlY3RPcHRpb25hbEtleXdvcmQoImltcGxlbWVudHMiKSlyZXR1cm5bXTtpZigoKHQ9dGhpcy5fb3B0aW9ucyk9PT1udWxsfHx0PT09dm9pZCAwP3ZvaWQgMDp0LmFsbG93TGVnYWN5U0RMSW1wbGVtZW50c0ludGVyZmFjZXMpPT09ITApe3ZhciBpPVtdO3RoaXMuZXhwZWN0T3B0aW9uYWxUb2tlbih1LkFNUCk7ZG8gaS5wdXNoKHRoaXMucGFyc2VOYW1lZFR5cGUoKSk7d2hpbGUodGhpcy5leHBlY3RPcHRpb25hbFRva2VuKHUuQU1QKXx8dGhpcy5wZWVrKHUuTkFNRSkpO3JldHVybiBpfXJldHVybiB0aGlzLmRlbGltaXRlZE1hbnkodS5BTVAsdGhpcy5wYXJzZU5hbWVkVHlwZSl9LG4ucGFyc2VGaWVsZHNEZWZpbml0aW9uPWZ1bmN0aW9uKCl7dmFyIHQ7cmV0dXJuKCh0PXRoaXMuX29wdGlvbnMpPT09bnVsbHx8dD09PXZvaWQgMD92b2lkIDA6dC5hbGxvd0xlZ2FjeVNETEVtcHR5RmllbGRzKT09PSEwJiZ0aGlzLnBlZWsodS5CUkFDRV9MKSYmdGhpcy5fbGV4ZXIubG9va2FoZWFkKCkua2luZD09PXUuQlJBQ0VfUj8odGhpcy5fbGV4ZXIuYWR2YW5jZSgpLHRoaXMuX2xleGVyLmFkdmFuY2UoKSxbXSk6dGhpcy5vcHRpb25hbE1hbnkodS5CUkFDRV9MLHRoaXMucGFyc2VGaWVsZERlZmluaXRpb24sdS5CUkFDRV9SKX0sbi5wYXJzZUZpZWxkRGVmaW5pdGlvbj1mdW5jdGlvbigpe3ZhciB0PXRoaXMuX2xleGVyLnRva2VuLGk9dGhpcy5wYXJzZURlc2NyaXB0aW9uKCksbz10aGlzLnBhcnNlTmFtZSgpLHI9dGhpcy5wYXJzZUFyZ3VtZW50RGVmcygpO3RoaXMuZXhwZWN0VG9rZW4odS5DT0xPTik7dmFyIGE9dGhpcy5wYXJzZVR5cGVSZWZlcmVuY2UoKSxzPXRoaXMucGFyc2VEaXJlY3RpdmVzKCEwKTtyZXR1cm57a2luZDp5LkZJRUxEX0RFRklOSVRJT04sZGVzY3JpcHRpb246aSxuYW1lOm8sYXJndW1lbnRzOnIsdHlwZTphLGRpcmVjdGl2ZXM6cyxsb2M6dGhpcy5sb2ModCl9fSxuLnBhcnNlQXJndW1lbnREZWZzPWZ1bmN0aW9uKCl7cmV0dXJuIHRoaXMub3B0aW9uYWxNYW55KHUuUEFSRU5fTCx0aGlzLnBhcnNlSW5wdXRWYWx1ZURlZix1LlBBUkVOX1IpfSxuLnBhcnNlSW5wdXRWYWx1ZURlZj1mdW5jdGlvbigpe3ZhciB0PXRoaXMuX2xleGVyLnRva2VuLGk9dGhpcy5wYXJzZURlc2NyaXB0aW9uKCksbz10aGlzLnBhcnNlTmFtZSgpO3RoaXMuZXhwZWN0VG9rZW4odS5DT0xPTik7dmFyIHI9dGhpcy5wYXJzZVR5cGVSZWZlcmVuY2UoKSxhO3RoaXMuZXhwZWN0T3B0aW9uYWxUb2tlbih1LkVRVUFMUykmJihhPXRoaXMucGFyc2VWYWx1ZUxpdGVyYWwoITApKTt2YXIgcz10aGlzLnBhcnNlRGlyZWN0aXZlcyghMCk7cmV0dXJue2tpbmQ6eS5JTlBVVF9WQUxVRV9ERUZJTklUSU9OLGRlc2NyaXB0aW9uOmksbmFtZTpvLHR5cGU6cixkZWZhdWx0VmFsdWU6YSxkaXJlY3RpdmVzOnMsbG9jOnRoaXMubG9jKHQpfX0sbi5wYXJzZUludGVyZmFjZVR5cGVEZWZpbml0aW9uPWZ1bmN0aW9uKCl7dmFyIHQ9dGhpcy5fbGV4ZXIudG9rZW4saT10aGlzLnBhcnNlRGVzY3JpcHRpb24oKTt0aGlzLmV4cGVjdEtleXdvcmQoImludGVyZmFjZSIpO3ZhciBvPXRoaXMucGFyc2VOYW1lKCkscj10aGlzLnBhcnNlSW1wbGVtZW50c0ludGVyZmFjZXMoKSxhPXRoaXMucGFyc2VEaXJlY3RpdmVzKCEwKSxzPXRoaXMucGFyc2VGaWVsZHNEZWZpbml0aW9uKCk7cmV0dXJue2tpbmQ6eS5JTlRFUkZBQ0VfVFlQRV9ERUZJTklUSU9OLGRlc2NyaXB0aW9uOmksbmFtZTpvLGludGVyZmFjZXM6cixkaXJlY3RpdmVzOmEsZmllbGRzOnMsbG9jOnRoaXMubG9jKHQpfX0sbi5wYXJzZVVuaW9uVHlwZURlZmluaXRpb249ZnVuY3Rpb24oKXt2YXIgdD10aGlzLl9sZXhlci50b2tlbixpPXRoaXMucGFyc2VEZXNjcmlwdGlvbigpO3RoaXMuZXhwZWN0S2V5d29yZCgidW5pb24iKTt2YXIgbz10aGlzLnBhcnNlTmFtZSgpLHI9dGhpcy5wYXJzZURpcmVjdGl2ZXMoITApLGE9dGhpcy5wYXJzZVVuaW9uTWVtYmVyVHlwZXMoKTtyZXR1cm57a2luZDp5LlVOSU9OX1RZUEVfREVGSU5JVElPTixkZXNjcmlwdGlvbjppLG5hbWU6byxkaXJlY3RpdmVzOnIsdHlwZXM6YSxsb2M6dGhpcy5sb2ModCl9fSxuLnBhcnNlVW5pb25NZW1iZXJUeXBlcz1mdW5jdGlvbigpe3JldHVybiB0aGlzLmV4cGVjdE9wdGlvbmFsVG9rZW4odS5FUVVBTFMpP3RoaXMuZGVsaW1pdGVkTWFueSh1LlBJUEUsdGhpcy5wYXJzZU5hbWVkVHlwZSk6W119LG4ucGFyc2VFbnVtVHlwZURlZmluaXRpb249ZnVuY3Rpb24oKXt2YXIgdD10aGlzLl9sZXhlci50b2tlbixpPXRoaXMucGFyc2VEZXNjcmlwdGlvbigpO3RoaXMuZXhwZWN0S2V5d29yZCgiZW51bSIpO3ZhciBvPXRoaXMucGFyc2VOYW1lKCkscj10aGlzLnBhcnNlRGlyZWN0aXZlcyghMCksYT10aGlzLnBhcnNlRW51bVZhbHVlc0RlZmluaXRpb24oKTtyZXR1cm57a2luZDp5LkVOVU1fVFlQRV9ERUZJTklUSU9OLGRlc2NyaXB0aW9uOmksbmFtZTpvLGRpcmVjdGl2ZXM6cix2YWx1ZXM6YSxsb2M6dGhpcy5sb2ModCl9fSxuLnBhcnNlRW51bVZhbHVlc0RlZmluaXRpb249ZnVuY3Rpb24oKXtyZXR1cm4gdGhpcy5vcHRpb25hbE1hbnkodS5CUkFDRV9MLHRoaXMucGFyc2VFbnVtVmFsdWVEZWZpbml0aW9uLHUuQlJBQ0VfUil9LG4ucGFyc2VFbnVtVmFsdWVEZWZpbml0aW9uPWZ1bmN0aW9uKCl7dmFyIHQ9dGhpcy5fbGV4ZXIudG9rZW4saT10aGlzLnBhcnNlRGVzY3JpcHRpb24oKSxvPXRoaXMucGFyc2VOYW1lKCkscj10aGlzLnBhcnNlRGlyZWN0aXZlcyghMCk7cmV0dXJue2tpbmQ6eS5FTlVNX1ZBTFVFX0RFRklOSVRJT04sZGVzY3JpcHRpb246aSxuYW1lOm8sZGlyZWN0aXZlczpyLGxvYzp0aGlzLmxvYyh0KX19LG4ucGFyc2VJbnB1dE9iamVjdFR5cGVEZWZpbml0aW9uPWZ1bmN0aW9uKCl7dmFyIHQ9dGhpcy5fbGV4ZXIudG9rZW4saT10aGlzLnBhcnNlRGVzY3JpcHRpb24oKTt0aGlzLmV4cGVjdEtleXdvcmQoImlucHV0Iik7dmFyIG89dGhpcy5wYXJzZU5hbWUoKSxyPXRoaXMucGFyc2VEaXJlY3RpdmVzKCEwKSxhPXRoaXMucGFyc2VJbnB1dEZpZWxkc0RlZmluaXRpb24oKTtyZXR1cm57a2luZDp5LklOUFVUX09CSkVDVF9UWVBFX0RFRklOSVRJT04sZGVzY3JpcHRpb246aSxuYW1lOm8sZGlyZWN0aXZlczpyLGZpZWxkczphLGxvYzp0aGlzLmxvYyh0KX19LG4ucGFyc2VJbnB1dEZpZWxkc0RlZmluaXRpb249ZnVuY3Rpb24oKXtyZXR1cm4gdGhpcy5vcHRpb25hbE1hbnkodS5CUkFDRV9MLHRoaXMucGFyc2VJbnB1dFZhbHVlRGVmLHUuQlJBQ0VfUil9LG4ucGFyc2VUeXBlU3lzdGVtRXh0ZW5zaW9uPWZ1bmN0aW9uKCl7dmFyIHQ9dGhpcy5fbGV4ZXIubG9va2FoZWFkKCk7aWYodC5raW5kPT09dS5OQU1FKXN3aXRjaCh0LnZhbHVlKXtjYXNlInNjaGVtYSI6cmV0dXJuIHRoaXMucGFyc2VTY2hlbWFFeHRlbnNpb24oKTtjYXNlInNjYWxhciI6cmV0dXJuIHRoaXMucGFyc2VTY2FsYXJUeXBlRXh0ZW5zaW9uKCk7Y2FzZSJ0eXBlIjpyZXR1cm4gdGhpcy5wYXJzZU9iamVjdFR5cGVFeHRlbnNpb24oKTtjYXNlImludGVyZmFjZSI6cmV0dXJuIHRoaXMucGFyc2VJbnRlcmZhY2VUeXBlRXh0ZW5zaW9uKCk7Y2FzZSJ1bmlvbiI6cmV0dXJuIHRoaXMucGFyc2VVbmlvblR5cGVFeHRlbnNpb24oKTtjYXNlImVudW0iOnJldHVybiB0aGlzLnBhcnNlRW51bVR5cGVFeHRlbnNpb24oKTtjYXNlImlucHV0IjpyZXR1cm4gdGhpcy5wYXJzZUlucHV0T2JqZWN0VHlwZUV4dGVuc2lvbigpfXRocm93IHRoaXMudW5leHBlY3RlZCh0KX0sbi5wYXJzZVNjaGVtYUV4dGVuc2lvbj1mdW5jdGlvbigpe3ZhciB0PXRoaXMuX2xleGVyLnRva2VuO3RoaXMuZXhwZWN0S2V5d29yZCgiZXh0ZW5kIiksdGhpcy5leHBlY3RLZXl3b3JkKCJzY2hlbWEiKTt2YXIgaT10aGlzLnBhcnNlRGlyZWN0aXZlcyghMCksbz10aGlzLm9wdGlvbmFsTWFueSh1LkJSQUNFX0wsdGhpcy5wYXJzZU9wZXJhdGlvblR5cGVEZWZpbml0aW9uLHUuQlJBQ0VfUik7aWYoaS5sZW5ndGg9PT0wJiZvLmxlbmd0aD09PTApdGhyb3cgdGhpcy51bmV4cGVjdGVkKCk7cmV0dXJue2tpbmQ6eS5TQ0hFTUFfRVhURU5TSU9OLGRpcmVjdGl2ZXM6aSxvcGVyYXRpb25UeXBlczpvLGxvYzp0aGlzLmxvYyh0KX19LG4ucGFyc2VTY2FsYXJUeXBlRXh0ZW5zaW9uPWZ1bmN0aW9uKCl7dmFyIHQ9dGhpcy5fbGV4ZXIudG9rZW47dGhpcy5leHBlY3RLZXl3b3JkKCJleHRlbmQiKSx0aGlzLmV4cGVjdEtleXdvcmQoInNjYWxhciIpO3ZhciBpPXRoaXMucGFyc2VOYW1lKCksbz10aGlzLnBhcnNlRGlyZWN0aXZlcyghMCk7aWYoby5sZW5ndGg9PT0wKXRocm93IHRoaXMudW5leHBlY3RlZCgpO3JldHVybntraW5kOnkuU0NBTEFSX1RZUEVfRVhURU5TSU9OLG5hbWU6aSxkaXJlY3RpdmVzOm8sbG9jOnRoaXMubG9jKHQpfX0sbi5wYXJzZU9iamVjdFR5cGVFeHRlbnNpb249ZnVuY3Rpb24oKXt2YXIgdD10aGlzLl9sZXhlci50b2tlbjt0aGlzLmV4cGVjdEtleXdvcmQoImV4dGVuZCIpLHRoaXMuZXhwZWN0S2V5d29yZCgidHlwZSIpO3ZhciBpPXRoaXMucGFyc2VOYW1lKCksbz10aGlzLnBhcnNlSW1wbGVtZW50c0ludGVyZmFjZXMoKSxyPXRoaXMucGFyc2VEaXJlY3RpdmVzKCEwKSxhPXRoaXMucGFyc2VGaWVsZHNEZWZpbml0aW9uKCk7aWYoby5sZW5ndGg9PT0wJiZyLmxlbmd0aD09PTAmJmEubGVuZ3RoPT09MCl0aHJvdyB0aGlzLnVuZXhwZWN0ZWQoKTtyZXR1cm57a2luZDp5Lk9CSkVDVF9UWVBFX0VYVEVOU0lPTixuYW1lOmksaW50ZXJmYWNlczpvLGRpcmVjdGl2ZXM6cixmaWVsZHM6YSxsb2M6dGhpcy5sb2ModCl9fSxuLnBhcnNlSW50ZXJmYWNlVHlwZUV4dGVuc2lvbj1mdW5jdGlvbigpe3ZhciB0PXRoaXMuX2xleGVyLnRva2VuO3RoaXMuZXhwZWN0S2V5d29yZCgiZXh0ZW5kIiksdGhpcy5leHBlY3RLZXl3b3JkKCJpbnRlcmZhY2UiKTt2YXIgaT10aGlzLnBhcnNlTmFtZSgpLG89dGhpcy5wYXJzZUltcGxlbWVudHNJbnRlcmZhY2VzKCkscj10aGlzLnBhcnNlRGlyZWN0aXZlcyghMCksYT10aGlzLnBhcnNlRmllbGRzRGVmaW5pdGlvbigpO2lmKG8ubGVuZ3RoPT09MCYmci5sZW5ndGg9PT0wJiZhLmxlbmd0aD09PTApdGhyb3cgdGhpcy51bmV4cGVjdGVkKCk7cmV0dXJue2tpbmQ6eS5JTlRFUkZBQ0VfVFlQRV9FWFRFTlNJT04sbmFtZTppLGludGVyZmFjZXM6byxkaXJlY3RpdmVzOnIsZmllbGRzOmEsbG9jOnRoaXMubG9jKHQpfX0sbi5wYXJzZVVuaW9uVHlwZUV4dGVuc2lvbj1mdW5jdGlvbigpe3ZhciB0PXRoaXMuX2xleGVyLnRva2VuO3RoaXMuZXhwZWN0S2V5d29yZCgiZXh0ZW5kIiksdGhpcy5leHBlY3RLZXl3b3JkKCJ1bmlvbiIpO3ZhciBpPXRoaXMucGFyc2VOYW1lKCksbz10aGlzLnBhcnNlRGlyZWN0aXZlcyghMCkscj10aGlzLnBhcnNlVW5pb25NZW1iZXJUeXBlcygpO2lmKG8ubGVuZ3RoPT09MCYmci5sZW5ndGg9PT0wKXRocm93IHRoaXMudW5leHBlY3RlZCgpO3JldHVybntraW5kOnkuVU5JT05fVFlQRV9FWFRFTlNJT04sbmFtZTppLGRpcmVjdGl2ZXM6byx0eXBlczpyLGxvYzp0aGlzLmxvYyh0KX19LG4ucGFyc2VFbnVtVHlwZUV4dGVuc2lvbj1mdW5jdGlvbigpe3ZhciB0PXRoaXMuX2xleGVyLnRva2VuO3RoaXMuZXhwZWN0S2V5d29yZCgiZXh0ZW5kIiksdGhpcy5leHBlY3RLZXl3b3JkKCJlbnVtIik7dmFyIGk9dGhpcy5wYXJzZU5hbWUoKSxvPXRoaXMucGFyc2VEaXJlY3RpdmVzKCEwKSxyPXRoaXMucGFyc2VFbnVtVmFsdWVzRGVmaW5pdGlvbigpO2lmKG8ubGVuZ3RoPT09MCYmci5sZW5ndGg9PT0wKXRocm93IHRoaXMudW5leHBlY3RlZCgpO3JldHVybntraW5kOnkuRU5VTV9UWVBFX0VYVEVOU0lPTixuYW1lOmksZGlyZWN0aXZlczpvLHZhbHVlczpyLGxvYzp0aGlzLmxvYyh0KX19LG4ucGFyc2VJbnB1dE9iamVjdFR5cGVFeHRlbnNpb249ZnVuY3Rpb24oKXt2YXIgdD10aGlzLl9sZXhlci50b2tlbjt0aGlzLmV4cGVjdEtleXdvcmQoImV4dGVuZCIpLHRoaXMuZXhwZWN0S2V5d29yZCgiaW5wdXQiKTt2YXIgaT10aGlzLnBhcnNlTmFtZSgpLG89dGhpcy5wYXJzZURpcmVjdGl2ZXMoITApLHI9dGhpcy5wYXJzZUlucHV0RmllbGRzRGVmaW5pdGlvbigpO2lmKG8ubGVuZ3RoPT09MCYmci5sZW5ndGg9PT0wKXRocm93IHRoaXMudW5leHBlY3RlZCgpO3JldHVybntraW5kOnkuSU5QVVRfT0JKRUNUX1RZUEVfRVhURU5TSU9OLG5hbWU6aSxkaXJlY3RpdmVzOm8sZmllbGRzOnIsbG9jOnRoaXMubG9jKHQpfX0sbi5wYXJzZURpcmVjdGl2ZURlZmluaXRpb249ZnVuY3Rpb24oKXt2YXIgdD10aGlzLl9sZXhlci50b2tlbixpPXRoaXMucGFyc2VEZXNjcmlwdGlvbigpO3RoaXMuZXhwZWN0S2V5d29yZCgiZGlyZWN0aXZlIiksdGhpcy5leHBlY3RUb2tlbih1LkFUKTt2YXIgbz10aGlzLnBhcnNlTmFtZSgpLHI9dGhpcy5wYXJzZUFyZ3VtZW50RGVmcygpLGE9dGhpcy5leHBlY3RPcHRpb25hbEtleXdvcmQoInJlcGVhdGFibGUiKTt0aGlzLmV4cGVjdEtleXdvcmQoIm9uIik7dmFyIHM9dGhpcy5wYXJzZURpcmVjdGl2ZUxvY2F0aW9ucygpO3JldHVybntraW5kOnkuRElSRUNUSVZFX0RFRklOSVRJT04sZGVzY3JpcHRpb246aSxuYW1lOm8sYXJndW1lbnRzOnIscmVwZWF0YWJsZTphLGxvY2F0aW9uczpzLGxvYzp0aGlzLmxvYyh0KX19LG4ucGFyc2VEaXJlY3RpdmVMb2NhdGlvbnM9ZnVuY3Rpb24oKXtyZXR1cm4gdGhpcy5kZWxpbWl0ZWRNYW55KHUuUElQRSx0aGlzLnBhcnNlRGlyZWN0aXZlTG9jYXRpb24pfSxuLnBhcnNlRGlyZWN0aXZlTG9jYXRpb249ZnVuY3Rpb24oKXt2YXIgdD10aGlzLl9sZXhlci50b2tlbixpPXRoaXMucGFyc2VOYW1lKCk7aWYoV25baS52YWx1ZV0hPT12b2lkIDApcmV0dXJuIGk7dGhyb3cgdGhpcy51bmV4cGVjdGVkKHQpfSxuLmxvYz1mdW5jdGlvbih0KXt2YXIgaTtpZigoKGk9dGhpcy5fb3B0aW9ucyk9PT1udWxsfHxpPT09dm9pZCAwP3ZvaWQgMDppLm5vTG9jYXRpb24pIT09ITApcmV0dXJuIG5ldyBWZSh0LHRoaXMuX2xleGVyLmxhc3RUb2tlbix0aGlzLl9sZXhlci5zb3VyY2UpfSxuLnBlZWs9ZnVuY3Rpb24odCl7cmV0dXJuIHRoaXMuX2xleGVyLnRva2VuLmtpbmQ9PT10fSxuLmV4cGVjdFRva2VuPWZ1bmN0aW9uKHQpe3ZhciBpPXRoaXMuX2xleGVyLnRva2VuO2lmKGkua2luZD09PXQpcmV0dXJuIHRoaXMuX2xleGVyLmFkdmFuY2UoKSxpO3Rocm93IF8odGhpcy5fbGV4ZXIuc291cmNlLGkuc3RhcnQsIkV4cGVjdGVkICIuY29uY2F0KHFlKHQpLCIsIGZvdW5kICIpLmNvbmNhdCh5ZShpKSwiLiIpKX0sbi5leHBlY3RPcHRpb25hbFRva2VuPWZ1bmN0aW9uKHQpe3ZhciBpPXRoaXMuX2xleGVyLnRva2VuO2lmKGkua2luZD09PXQpcmV0dXJuIHRoaXMuX2xleGVyLmFkdmFuY2UoKSxpfSxuLmV4cGVjdEtleXdvcmQ9ZnVuY3Rpb24odCl7dmFyIGk9dGhpcy5fbGV4ZXIudG9rZW47aWYoaS5raW5kPT09dS5OQU1FJiZpLnZhbHVlPT09dCl0aGlzLl9sZXhlci5hZHZhbmNlKCk7ZWxzZSB0aHJvdyBfKHRoaXMuX2xleGVyLnNvdXJjZSxpLnN0YXJ0LCdFeHBlY3RlZCAiJy5jb25jYXQodCwnIiwgZm91bmQgJykuY29uY2F0KHllKGkpLCIuIikpfSxuLmV4cGVjdE9wdGlvbmFsS2V5d29yZD1mdW5jdGlvbih0KXt2YXIgaT10aGlzLl9sZXhlci50b2tlbjtyZXR1cm4gaS5raW5kPT09dS5OQU1FJiZpLnZhbHVlPT09dD8odGhpcy5fbGV4ZXIuYWR2YW5jZSgpLCEwKTohMX0sbi51bmV4cGVjdGVkPWZ1bmN0aW9uKHQpe3ZhciBpPXQhPW51bGw/dDp0aGlzLl9sZXhlci50b2tlbjtyZXR1cm4gXyh0aGlzLl9sZXhlci5zb3VyY2UsaS5zdGFydCwiVW5leHBlY3RlZCAiLmNvbmNhdCh5ZShpKSwiLiIpKX0sbi5hbnk9ZnVuY3Rpb24odCxpLG8pe3RoaXMuZXhwZWN0VG9rZW4odCk7Zm9yKHZhciByPVtdOyF0aGlzLmV4cGVjdE9wdGlvbmFsVG9rZW4obyk7KXIucHVzaChpLmNhbGwodGhpcykpO3JldHVybiByfSxuLm9wdGlvbmFsTWFueT1mdW5jdGlvbih0LGksbyl7aWYodGhpcy5leHBlY3RPcHRpb25hbFRva2VuKHQpKXt2YXIgcj1bXTtkbyByLnB1c2goaS5jYWxsKHRoaXMpKTt3aGlsZSghdGhpcy5leHBlY3RPcHRpb25hbFRva2VuKG8pKTtyZXR1cm4gcn1yZXR1cm5bXX0sbi5tYW55PWZ1bmN0aW9uKHQsaSxvKXt0aGlzLmV4cGVjdFRva2VuKHQpO3ZhciByPVtdO2RvIHIucHVzaChpLmNhbGwodGhpcykpO3doaWxlKCF0aGlzLmV4cGVjdE9wdGlvbmFsVG9rZW4obykpO3JldHVybiByfSxuLmRlbGltaXRlZE1hbnk9ZnVuY3Rpb24odCxpKXt0aGlzLmV4cGVjdE9wdGlvbmFsVG9rZW4odCk7dmFyIG89W107ZG8gby5wdXNoKGkuY2FsbCh0aGlzKSk7d2hpbGUodGhpcy5leHBlY3RPcHRpb25hbFRva2VuKHQpKTtyZXR1cm4gb30sZX0oKTtmdW5jdGlvbiB5ZShlKXt2YXIgbj1lLnZhbHVlO3JldHVybiBxZShlLmtpbmQpKyhuIT1udWxsPycgIicuY29uY2F0KG4sJyInKToiIil9ZnVuY3Rpb24gcWUoZSl7cmV0dXJuIGl0KGUpPyciJy5jb25jYXQoZSwnIicpOmV9dmFyIGh0PXtOYW1lOltdLERvY3VtZW50OlsiZGVmaW5pdGlvbnMiXSxPcGVyYXRpb25EZWZpbml0aW9uOlsibmFtZSIsInZhcmlhYmxlRGVmaW5pdGlvbnMiLCJkaXJlY3RpdmVzIiwic2VsZWN0aW9uU2V0Il0sVmFyaWFibGVEZWZpbml0aW9uOlsidmFyaWFibGUiLCJ0eXBlIiwiZGVmYXVsdFZhbHVlIiwiZGlyZWN0aXZlcyJdLFZhcmlhYmxlOlsibmFtZSJdLFNlbGVjdGlvblNldDpbInNlbGVjdGlvbnMiXSxGaWVsZDpbImFsaWFzIiwibmFtZSIsImFyZ3VtZW50cyIsImRpcmVjdGl2ZXMiLCJzZWxlY3Rpb25TZXQiXSxBcmd1bWVudDpbIm5hbWUiLCJ2YWx1ZSJdLEZyYWdtZW50U3ByZWFkOlsibmFtZSIsImRpcmVjdGl2ZXMiXSxJbmxpbmVGcmFnbWVudDpbInR5cGVDb25kaXRpb24iLCJkaXJlY3RpdmVzIiwic2VsZWN0aW9uU2V0Il0sRnJhZ21lbnREZWZpbml0aW9uOlsibmFtZSIsInZhcmlhYmxlRGVmaW5pdGlvbnMiLCJ0eXBlQ29uZGl0aW9uIiwiZGlyZWN0aXZlcyIsInNlbGVjdGlvblNldCJdLEludFZhbHVlOltdLEZsb2F0VmFsdWU6W10sU3RyaW5nVmFsdWU6W10sQm9vbGVhblZhbHVlOltdLE51bGxWYWx1ZTpbXSxFbnVtVmFsdWU6W10sTGlzdFZhbHVlOlsidmFsdWVzIl0sT2JqZWN0VmFsdWU6WyJmaWVsZHMiXSxPYmplY3RGaWVsZDpbIm5hbWUiLCJ2YWx1ZSJdLERpcmVjdGl2ZTpbIm5hbWUiLCJhcmd1bWVudHMiXSxOYW1lZFR5cGU6WyJuYW1lIl0sTGlzdFR5cGU6WyJ0eXBlIl0sTm9uTnVsbFR5cGU6WyJ0eXBlIl0sU2NoZW1hRGVmaW5pdGlvbjpbImRlc2NyaXB0aW9uIiwiZGlyZWN0aXZlcyIsIm9wZXJhdGlvblR5cGVzIl0sT3BlcmF0aW9uVHlwZURlZmluaXRpb246WyJ0eXBlIl0sU2NhbGFyVHlwZURlZmluaXRpb246WyJkZXNjcmlwdGlvbiIsIm5hbWUiLCJkaXJlY3RpdmVzIl0sT2JqZWN0VHlwZURlZmluaXRpb246WyJkZXNjcmlwdGlvbiIsIm5hbWUiLCJpbnRlcmZhY2VzIiwiZGlyZWN0aXZlcyIsImZpZWxkcyJdLEZpZWxkRGVmaW5pdGlvbjpbImRlc2NyaXB0aW9uIiwibmFtZSIsImFyZ3VtZW50cyIsInR5cGUiLCJkaXJlY3RpdmVzIl0sSW5wdXRWYWx1ZURlZmluaXRpb246WyJkZXNjcmlwdGlvbiIsIm5hbWUiLCJ0eXBlIiwiZGVmYXVsdFZhbHVlIiwiZGlyZWN0aXZlcyJdLEludGVyZmFjZVR5cGVEZWZpbml0aW9uOlsiZGVzY3JpcHRpb24iLCJuYW1lIiwiaW50ZXJmYWNlcyIsImRpcmVjdGl2ZXMiLCJmaWVsZHMiXSxVbmlvblR5cGVEZWZpbml0aW9uOlsiZGVzY3JpcHRpb24iLCJuYW1lIiwiZGlyZWN0aXZlcyIsInR5cGVzIl0sRW51bVR5cGVEZWZpbml0aW9uOlsiZGVzY3JpcHRpb24iLCJuYW1lIiwiZGlyZWN0aXZlcyIsInZhbHVlcyJdLEVudW1WYWx1ZURlZmluaXRpb246WyJkZXNjcmlwdGlvbiIsIm5hbWUiLCJkaXJlY3RpdmVzIl0sSW5wdXRPYmplY3RUeXBlRGVmaW5pdGlvbjpbImRlc2NyaXB0aW9uIiwibmFtZSIsImRpcmVjdGl2ZXMiLCJmaWVsZHMiXSxEaXJlY3RpdmVEZWZpbml0aW9uOlsiZGVzY3JpcHRpb24iLCJuYW1lIiwiYXJndW1lbnRzIiwibG9jYXRpb25zIl0sU2NoZW1hRXh0ZW5zaW9uOlsiZGlyZWN0aXZlcyIsIm9wZXJhdGlvblR5cGVzIl0sU2NhbGFyVHlwZUV4dGVuc2lvbjpbIm5hbWUiLCJkaXJlY3RpdmVzIl0sT2JqZWN0VHlwZUV4dGVuc2lvbjpbIm5hbWUiLCJpbnRlcmZhY2VzIiwiZGlyZWN0aXZlcyIsImZpZWxkcyJdLEludGVyZmFjZVR5cGVFeHRlbnNpb246WyJuYW1lIiwiaW50ZXJmYWNlcyIsImRpcmVjdGl2ZXMiLCJmaWVsZHMiXSxVbmlvblR5cGVFeHRlbnNpb246WyJuYW1lIiwiZGlyZWN0aXZlcyIsInR5cGVzIl0sRW51bVR5cGVFeHRlbnNpb246WyJuYW1lIiwiZGlyZWN0aXZlcyIsInZhbHVlcyJdLElucHV0T2JqZWN0VHlwZUV4dGVuc2lvbjpbIm5hbWUiLCJkaXJlY3RpdmVzIiwiZmllbGRzIl19LEY9T2JqZWN0LmZyZWV6ZSh7fSk7ZnVuY3Rpb24gQyhlLG4pe3ZhciB0PWFyZ3VtZW50cy5sZW5ndGg+MiYmYXJndW1lbnRzWzJdIT09dm9pZCAwP2FyZ3VtZW50c1syXTpodCxpPXZvaWQgMCxvPUFycmF5LmlzQXJyYXkoZSkscj1bZV0sYT0tMSxzPVtdLGM9dm9pZCAwLGw9dm9pZCAwLHA9dm9pZCAwLGY9W10sbT1bXSx2PWU7ZG97YSsrO3ZhciBkPWE9PT1yLmxlbmd0aCxUPWQmJnMubGVuZ3RoIT09MDtpZihkKXtpZihsPW0ubGVuZ3RoPT09MD92b2lkIDA6ZltmLmxlbmd0aC0xXSxjPXAscD1tLnBvcCgpLFQpe2lmKG8pYz1jLnNsaWNlKCk7ZWxzZXtmb3IodmFyIE49e30sTz0wLGI9T2JqZWN0LmtleXMoYyk7TzxiLmxlbmd0aDtPKyspe3ZhciB4PWJbT107Tlt4XT1jW3hdfWM9Tn1mb3IodmFyIFU9MCxTPTA7UzxzLmxlbmd0aDtTKyspe3ZhciBLPXNbU11bMF0sZG49c1tTXVsxXTtvJiYoSy09VSksbyYmZG49PT1udWxsPyhjLnNwbGljZShLLDEpLFUrKyk6Y1tLXT1kbn19YT1pLmluZGV4LHI9aS5rZXlzLHM9aS5lZGl0cyxvPWkuaW5BcnJheSxpPWkucHJldn1lbHNle2lmKGw9cD9vP2E6clthXTp2b2lkIDAsYz1wP3BbbF06dixjPT1udWxsKWNvbnRpbnVlO3AmJmYucHVzaChsKX12YXIgaj12b2lkIDA7aWYoIUFycmF5LmlzQXJyYXkoYykpe2lmKCFVZShjKSl0aHJvdyBuZXcgRXJyb3IoIkludmFsaWQgQVNUIE5vZGU6ICIuY29uY2F0KEtlKGMpLCIuIikpO3ZhciBobj12dChuLGMua2luZCxkKTtpZihobil7aWYoaj1obi5jYWxsKG4sYyxsLHAsZixtKSxqPT09RilicmVhaztpZihqPT09ITEpe2lmKCFkKXtmLnBvcCgpO2NvbnRpbnVlfX1lbHNlIGlmKGohPT12b2lkIDAmJihzLnB1c2goW2wsal0pLCFkKSlpZihVZShqKSljPWo7ZWxzZXtmLnBvcCgpO2NvbnRpbnVlfX19aWYoaj09PXZvaWQgMCYmVCYmcy5wdXNoKFtsLGNdKSxkKWYucG9wKCk7ZWxzZXt2YXIgT2U7aT17aW5BcnJheTpvLGluZGV4OmEsa2V5czpyLGVkaXRzOnMscHJldjppfSxvPUFycmF5LmlzQXJyYXkoYykscj1vP2M6KE9lPXRbYy5raW5kXSkhPT1udWxsJiZPZSE9PXZvaWQgMD9PZTpbXSxhPS0xLHM9W10scCYmbS5wdXNoKHApLHA9Y319d2hpbGUoaSE9PXZvaWQgMCk7cmV0dXJuIHMubGVuZ3RoIT09MCYmKHY9c1tzLmxlbmd0aC0xXVsxXSksdn1mdW5jdGlvbiB2dChlLG4sdCl7dmFyIGk9ZVtuXTtpZihpKXtpZighdCYmdHlwZW9mIGk9PSJmdW5jdGlvbiIpcmV0dXJuIGk7dmFyIG89dD9pLmxlYXZlOmkuZW50ZXI7aWYodHlwZW9mIG89PSJmdW5jdGlvbiIpcmV0dXJuIG99ZWxzZXt2YXIgcj10P2UubGVhdmU6ZS5lbnRlcjtpZihyKXtpZih0eXBlb2Ygcj09ImZ1bmN0aW9uIilyZXR1cm4gcjt2YXIgYT1yW25dO2lmKHR5cGVvZiBhPT0iZnVuY3Rpb24iKXJldHVybiBhfX19ZnVuY3Rpb24gbXQoZSl7cmV0dXJuIEMoZSx7bGVhdmU6RXR9KX12YXIgeXQ9ODAsRXQ9e05hbWU6ZnVuY3Rpb24oZSl7cmV0dXJuIGUudmFsdWV9LFZhcmlhYmxlOmZ1bmN0aW9uKGUpe3JldHVybiIkIitlLm5hbWV9LERvY3VtZW50OmZ1bmN0aW9uKGUpe3JldHVybiBoKGUuZGVmaW5pdGlvbnMsYAoKYCkrYApgfSxPcGVyYXRpb25EZWZpbml0aW9uOmZ1bmN0aW9uKGUpe3ZhciBuPWUub3BlcmF0aW9uLHQ9ZS5uYW1lLGk9ZygiKCIsaChlLnZhcmlhYmxlRGVmaW5pdGlvbnMsIiwgIiksIikiKSxvPWgoZS5kaXJlY3RpdmVzLCIgIikscj1lLnNlbGVjdGlvblNldDtyZXR1cm4hdCYmIW8mJiFpJiZuPT09InF1ZXJ5Ij9yOmgoW24saChbdCxpXSksbyxyXSwiICIpfSxWYXJpYWJsZURlZmluaXRpb246ZnVuY3Rpb24oZSl7dmFyIG49ZS52YXJpYWJsZSx0PWUudHlwZSxpPWUuZGVmYXVsdFZhbHVlLG89ZS5kaXJlY3RpdmVzO3JldHVybiBuKyI6ICIrdCtnKCIgPSAiLGkpK2coIiAiLGgobywiICIpKX0sU2VsZWN0aW9uU2V0OmZ1bmN0aW9uKGUpe3ZhciBuPWUuc2VsZWN0aW9ucztyZXR1cm4gdyhuKX0sRmllbGQ6ZnVuY3Rpb24oZSl7dmFyIG49ZS5hbGlhcyx0PWUubmFtZSxpPWUuYXJndW1lbnRzLG89ZS5kaXJlY3RpdmVzLHI9ZS5zZWxlY3Rpb25TZXQsYT1nKCIiLG4sIjogIikrdCxzPWErZygiKCIsaChpLCIsICIpLCIpIik7cmV0dXJuIHMubGVuZ3RoPnl0JiYocz1hK2coYCgKYCxpZShoKGksYApgKSksYAopYCkpLGgoW3MsaChvLCIgIikscl0sIiAiKX0sQXJndW1lbnQ6ZnVuY3Rpb24oZSl7dmFyIG49ZS5uYW1lLHQ9ZS52YWx1ZTtyZXR1cm4gbisiOiAiK3R9LEZyYWdtZW50U3ByZWFkOmZ1bmN0aW9uKGUpe3ZhciBuPWUubmFtZSx0PWUuZGlyZWN0aXZlcztyZXR1cm4iLi4uIituK2coIiAiLGgodCwiICIpKX0sSW5saW5lRnJhZ21lbnQ6ZnVuY3Rpb24oZSl7dmFyIG49ZS50eXBlQ29uZGl0aW9uLHQ9ZS5kaXJlY3RpdmVzLGk9ZS5zZWxlY3Rpb25TZXQ7cmV0dXJuIGgoWyIuLi4iLGcoIm9uICIsbiksaCh0LCIgIiksaV0sIiAiKX0sRnJhZ21lbnREZWZpbml0aW9uOmZ1bmN0aW9uKGUpe3ZhciBuPWUubmFtZSx0PWUudHlwZUNvbmRpdGlvbixpPWUudmFyaWFibGVEZWZpbml0aW9ucyxvPWUuZGlyZWN0aXZlcyxyPWUuc2VsZWN0aW9uU2V0O3JldHVybiJmcmFnbWVudCAiLmNvbmNhdChuKS5jb25jYXQoZygiKCIsaChpLCIsICIpLCIpIiksIiAiKSsib24gIi5jb25jYXQodCwiICIpLmNvbmNhdChnKCIiLGgobywiICIpLCIgIikpK3J9LEludFZhbHVlOmZ1bmN0aW9uKGUpe3ZhciBuPWUudmFsdWU7cmV0dXJuIG59LEZsb2F0VmFsdWU6ZnVuY3Rpb24oZSl7dmFyIG49ZS52YWx1ZTtyZXR1cm4gbn0sU3RyaW5nVmFsdWU6ZnVuY3Rpb24oZSxuKXt2YXIgdD1lLnZhbHVlLGk9ZS5ibG9jaztyZXR1cm4gaT9udCh0LG49PT0iZGVzY3JpcHRpb24iPyIiOiIgICIpOkpTT04uc3RyaW5naWZ5KHQpfSxCb29sZWFuVmFsdWU6ZnVuY3Rpb24oZSl7dmFyIG49ZS52YWx1ZTtyZXR1cm4gbj8idHJ1ZSI6ImZhbHNlIn0sTnVsbFZhbHVlOmZ1bmN0aW9uKCl7cmV0dXJuIm51bGwifSxFbnVtVmFsdWU6ZnVuY3Rpb24oZSl7dmFyIG49ZS52YWx1ZTtyZXR1cm4gbn0sTGlzdFZhbHVlOmZ1bmN0aW9uKGUpe3ZhciBuPWUudmFsdWVzO3JldHVybiJbIitoKG4sIiwgIikrIl0ifSxPYmplY3RWYWx1ZTpmdW5jdGlvbihlKXt2YXIgbj1lLmZpZWxkcztyZXR1cm4ieyIraChuLCIsICIpKyJ9In0sT2JqZWN0RmllbGQ6ZnVuY3Rpb24oZSl7dmFyIG49ZS5uYW1lLHQ9ZS52YWx1ZTtyZXR1cm4gbisiOiAiK3R9LERpcmVjdGl2ZTpmdW5jdGlvbihlKXt2YXIgbj1lLm5hbWUsdD1lLmFyZ3VtZW50cztyZXR1cm4iQCIrbitnKCIoIixoKHQsIiwgIiksIikiKX0sTmFtZWRUeXBlOmZ1bmN0aW9uKGUpe3ZhciBuPWUubmFtZTtyZXR1cm4gbn0sTGlzdFR5cGU6ZnVuY3Rpb24oZSl7dmFyIG49ZS50eXBlO3JldHVybiJbIituKyJdIn0sTm9uTnVsbFR5cGU6ZnVuY3Rpb24oZSl7dmFyIG49ZS50eXBlO3JldHVybiBuKyIhIn0sU2NoZW1hRGVmaW5pdGlvbjpMKGZ1bmN0aW9uKGUpe3ZhciBuPWUuZGlyZWN0aXZlcyx0PWUub3BlcmF0aW9uVHlwZXM7cmV0dXJuIGgoWyJzY2hlbWEiLGgobiwiICIpLHcodCldLCIgIil9KSxPcGVyYXRpb25UeXBlRGVmaW5pdGlvbjpmdW5jdGlvbihlKXt2YXIgbj1lLm9wZXJhdGlvbix0PWUudHlwZTtyZXR1cm4gbisiOiAiK3R9LFNjYWxhclR5cGVEZWZpbml0aW9uOkwoZnVuY3Rpb24oZSl7dmFyIG49ZS5uYW1lLHQ9ZS5kaXJlY3RpdmVzO3JldHVybiBoKFsic2NhbGFyIixuLGgodCwiICIpXSwiICIpfSksT2JqZWN0VHlwZURlZmluaXRpb246TChmdW5jdGlvbihlKXt2YXIgbj1lLm5hbWUsdD1lLmludGVyZmFjZXMsaT1lLmRpcmVjdGl2ZXMsbz1lLmZpZWxkcztyZXR1cm4gaChbInR5cGUiLG4sZygiaW1wbGVtZW50cyAiLGgodCwiICYgIikpLGgoaSwiICIpLHcobyldLCIgIil9KSxGaWVsZERlZmluaXRpb246TChmdW5jdGlvbihlKXt2YXIgbj1lLm5hbWUsdD1lLmFyZ3VtZW50cyxpPWUudHlwZSxvPWUuZGlyZWN0aXZlcztyZXR1cm4gbisoWGUodCk/ZyhgKApgLGllKGgodCxgCmApKSxgCilgKTpnKCIoIixoKHQsIiwgIiksIikiKSkrIjogIitpK2coIiAiLGgobywiICIpKX0pLElucHV0VmFsdWVEZWZpbml0aW9uOkwoZnVuY3Rpb24oZSl7dmFyIG49ZS5uYW1lLHQ9ZS50eXBlLGk9ZS5kZWZhdWx0VmFsdWUsbz1lLmRpcmVjdGl2ZXM7cmV0dXJuIGgoW24rIjogIit0LGcoIj0gIixpKSxoKG8sIiAiKV0sIiAiKX0pLEludGVyZmFjZVR5cGVEZWZpbml0aW9uOkwoZnVuY3Rpb24oZSl7dmFyIG49ZS5uYW1lLHQ9ZS5pbnRlcmZhY2VzLGk9ZS5kaXJlY3RpdmVzLG89ZS5maWVsZHM7cmV0dXJuIGgoWyJpbnRlcmZhY2UiLG4sZygiaW1wbGVtZW50cyAiLGgodCwiICYgIikpLGgoaSwiICIpLHcobyldLCIgIil9KSxVbmlvblR5cGVEZWZpbml0aW9uOkwoZnVuY3Rpb24oZSl7dmFyIG49ZS5uYW1lLHQ9ZS5kaXJlY3RpdmVzLGk9ZS50eXBlcztyZXR1cm4gaChbInVuaW9uIixuLGgodCwiICIpLGkmJmkubGVuZ3RoIT09MD8iPSAiK2goaSwiIHwgIik6IiJdLCIgIil9KSxFbnVtVHlwZURlZmluaXRpb246TChmdW5jdGlvbihlKXt2YXIgbj1lLm5hbWUsdD1lLmRpcmVjdGl2ZXMsaT1lLnZhbHVlcztyZXR1cm4gaChbImVudW0iLG4saCh0LCIgIiksdyhpKV0sIiAiKX0pLEVudW1WYWx1ZURlZmluaXRpb246TChmdW5jdGlvbihlKXt2YXIgbj1lLm5hbWUsdD1lLmRpcmVjdGl2ZXM7cmV0dXJuIGgoW24saCh0LCIgIildLCIgIil9KSxJbnB1dE9iamVjdFR5cGVEZWZpbml0aW9uOkwoZnVuY3Rpb24oZSl7dmFyIG49ZS5uYW1lLHQ9ZS5kaXJlY3RpdmVzLGk9ZS5maWVsZHM7cmV0dXJuIGgoWyJpbnB1dCIsbixoKHQsIiAiKSx3KGkpXSwiICIpfSksRGlyZWN0aXZlRGVmaW5pdGlvbjpMKGZ1bmN0aW9uKGUpe3ZhciBuPWUubmFtZSx0PWUuYXJndW1lbnRzLGk9ZS5yZXBlYXRhYmxlLG89ZS5sb2NhdGlvbnM7cmV0dXJuImRpcmVjdGl2ZSBAIituKyhYZSh0KT9nKGAoCmAsaWUoaCh0LGAKYCkpLGAKKWApOmcoIigiLGgodCwiLCAiKSwiKSIpKSsoaT8iIHJlcGVhdGFibGUiOiIiKSsiIG9uICIraChvLCIgfCAiKX0pLFNjaGVtYUV4dGVuc2lvbjpmdW5jdGlvbihlKXt2YXIgbj1lLmRpcmVjdGl2ZXMsdD1lLm9wZXJhdGlvblR5cGVzO3JldHVybiBoKFsiZXh0ZW5kIHNjaGVtYSIsaChuLCIgIiksdyh0KV0sIiAiKX0sU2NhbGFyVHlwZUV4dGVuc2lvbjpmdW5jdGlvbihlKXt2YXIgbj1lLm5hbWUsdD1lLmRpcmVjdGl2ZXM7cmV0dXJuIGgoWyJleHRlbmQgc2NhbGFyIixuLGgodCwiICIpXSwiICIpfSxPYmplY3RUeXBlRXh0ZW5zaW9uOmZ1bmN0aW9uKGUpe3ZhciBuPWUubmFtZSx0PWUuaW50ZXJmYWNlcyxpPWUuZGlyZWN0aXZlcyxvPWUuZmllbGRzO3JldHVybiBoKFsiZXh0ZW5kIHR5cGUiLG4sZygiaW1wbGVtZW50cyAiLGgodCwiICYgIikpLGgoaSwiICIpLHcobyldLCIgIil9LEludGVyZmFjZVR5cGVFeHRlbnNpb246ZnVuY3Rpb24oZSl7dmFyIG49ZS5uYW1lLHQ9ZS5pbnRlcmZhY2VzLGk9ZS5kaXJlY3RpdmVzLG89ZS5maWVsZHM7cmV0dXJuIGgoWyJleHRlbmQgaW50ZXJmYWNlIixuLGcoImltcGxlbWVudHMgIixoKHQsIiAmICIpKSxoKGksIiAiKSx3KG8pXSwiICIpfSxVbmlvblR5cGVFeHRlbnNpb246ZnVuY3Rpb24oZSl7dmFyIG49ZS5uYW1lLHQ9ZS5kaXJlY3RpdmVzLGk9ZS50eXBlcztyZXR1cm4gaChbImV4dGVuZCB1bmlvbiIsbixoKHQsIiAiKSxpJiZpLmxlbmd0aCE9PTA/Ij0gIitoKGksIiB8ICIpOiIiXSwiICIpfSxFbnVtVHlwZUV4dGVuc2lvbjpmdW5jdGlvbihlKXt2YXIgbj1lLm5hbWUsdD1lLmRpcmVjdGl2ZXMsaT1lLnZhbHVlcztyZXR1cm4gaChbImV4dGVuZCBlbnVtIixuLGgodCwiICIpLHcoaSldLCIgIil9LElucHV0T2JqZWN0VHlwZUV4dGVuc2lvbjpmdW5jdGlvbihlKXt2YXIgbj1lLm5hbWUsdD1lLmRpcmVjdGl2ZXMsaT1lLmZpZWxkcztyZXR1cm4gaChbImV4dGVuZCBpbnB1dCIsbixoKHQsIiAiKSx3KGkpXSwiICIpfX07ZnVuY3Rpb24gTChlKXtyZXR1cm4gZnVuY3Rpb24obil7cmV0dXJuIGgoW24uZGVzY3JpcHRpb24sZShuKV0sYApgKX19ZnVuY3Rpb24gaChlKXt2YXIgbix0PWFyZ3VtZW50cy5sZW5ndGg+MSYmYXJndW1lbnRzWzFdIT09dm9pZCAwP2FyZ3VtZW50c1sxXToiIjtyZXR1cm4obj1lPT1udWxsP3ZvaWQgMDplLmZpbHRlcihmdW5jdGlvbihpKXtyZXR1cm4gaX0pLmpvaW4odCkpIT09bnVsbCYmbiE9PXZvaWQgMD9uOiIifWZ1bmN0aW9uIHcoZSl7cmV0dXJuIGcoYHsKYCxpZShoKGUsYApgKSksYAp9YCl9ZnVuY3Rpb24gZyhlLG4pe3ZhciB0PWFyZ3VtZW50cy5sZW5ndGg+MiYmYXJndW1lbnRzWzJdIT09dm9pZCAwP2FyZ3VtZW50c1syXToiIjtyZXR1cm4gbiE9bnVsbCYmbiE9PSIiP2Urbit0OiIifWZ1bmN0aW9uIGllKGUpe3JldHVybiBnKCIgICIsZS5yZXBsYWNlKC9cbi9nLGAKICBgKSl9ZnVuY3Rpb24gVHQoZSl7cmV0dXJuIGUuaW5kZXhPZihgCmApIT09LTF9ZnVuY3Rpb24gWGUoZSl7cmV0dXJuIGUhPW51bGwmJmUuc29tZShUdCl9Y29uc3QgemU9KGUsbix0LGksbyxyKT0+e3RyeXtjb25zdCBhPVIoZSk7QyhhLHtGcmFnbWVudERlZmluaXRpb24ocyl7dmFyIGMsbDtpZihzLm5hbWUudmFsdWU9PT1uKXtsZXQgcD1zLnNlbGVjdGlvblNldC5zZWxlY3Rpb25zO2NvbnN0IGY9cFtwLmxlbmd0aC0xXTtyPXIuZmlsdGVyKHY9PiFwLmZpbmQoZD0+ZC5raW5kPT09IkZpZWxkIiYmZC5uYW1lLnZhbHVlPT09dikpO2NvbnN0IG09RWUodCxyKTtyZXR1cm4gZT1lLnN1YnN0cmluZygwLChjPWYubG9jKT09bnVsbD92b2lkIDA6Yy5lbmQpK2AKICAke219YCtlLnN1YnN0cmluZygobD1mLmxvYyk9PW51bGw/dm9pZCAwOmwuZW5kLGUubGVuZ3RoKSxGfX19KX1jYXRjaChhKXtjb25zb2xlLmVycm9yKGEpfXJldHVybiBlfSxFZT0oZSxuKT0+e2xldCB0PVsuLi5uXTtlLmxlbmd0aCYmKHQ9W2UucG9wKCksLi4udF0pO2NvbnN0IGk9TnQodCk7ZT1lLnJldmVyc2UoKTtsZXQgbz1pO3JldHVybiBlLmZvckVhY2goKHIsYSk9PnthPT09MD9vPWAke3J9IHsKICAke1RlKG8pfQp9YDpvPWAke3J9IHsKICAke1RlKG8pfQp9YH0pLG99LE50PWU9PntsZXQgbj0iIjtyZXR1cm4gZS5mb3JFYWNoKCh0LGkpPT57aT09PTA/bj10Om49YCR7bn0KICAke3R9YH0pLG59LFRlPWU9PmUucmVwbGFjZUFsbCgvXG4gIC9nLGAKICAgIGApLnJlcGxhY2VBbGwoL1xufS9nLGAKICB9YCksSGU9KGUsbik9Pntjb25zdCB0PU1hdGguZmxvb3Iobi8yKTtmb3IobGV0IGk9MDtpPHQ7aSsrKWU9VGUoZSk7cmV0dXJuIGU9YCR7QXJyYXkobikuZmlsbCgiICIpLmpvaW4oIiIpfSR7ZX1gLGV9LGd0PShlLG4pPT57Y29uc3QgdD1SKGUpO2xldCBpPSExO3JldHVybiBDKHQse0ZyYWdtZW50RGVmaW5pdGlvbihvKXtpZihvLm5hbWUudmFsdWU9PT1uKXJldHVybiBpPSEwLEZ9fSksaX0sT3Q9KGUsbix0LGkpPT57Y29uc3Qgbz1SKGUpLHI9cmUoW24sLi4uaV0pLGE9YCR7bn1fJHt0fWA7cmV0dXJuIEMobyx7RnJhZ21lbnREZWZpbml0aW9uKHMpe3ZhciBjLGwscDtpZihzLm5hbWUudmFsdWU9PT1hKXtsZXQgZj1bLi4uaV0sbT1zLnNlbGVjdGlvblNldDtmb3IoY29uc3QgTyBvZiBpKXtjb25zdCBiPW0uc2VsZWN0aW9ucy5maW5kKHg9Pngua2luZD09PSJGaWVsZCImJngubmFtZS52YWx1ZT09PU8pO2lmKGImJmIuc2VsZWN0aW9uU2V0KW09Yi5zZWxlY3Rpb25TZXQsZi5zaGlmdCgpO2Vsc2UgYnJlYWt9aWYoaS5sZW5ndGg9PT1mLmxlbmd0aClyZXR1cm4gZT0iIixGO2NvbnN0IHY9bS5zZWxlY3Rpb25zW20uc2VsZWN0aW9ucy5sZW5ndGgtMV0sZD1FZShbLi4uZixgLi4uJHtyfWBdLFtdKSx7bGVmdFNwYWNlczpUfT1xKGUsKGM9di5sb2MpPT1udWxsP3ZvaWQgMDpjLnN0YXJ0KSxOPUhlKGQsVCk7cmV0dXJuIGU9ZS5zdWJzdHJpbmcoMCwobD12LmxvYyk9PW51bGw/dm9pZCAwOmwuZW5kKStgCiR7Tn1gK2Uuc3Vic3RyaW5nKChwPXYubG9jKT09bnVsbD92b2lkIDA6cC5lbmQsZS5sZW5ndGgpLEZ9fX0pLGV9LEl0PShlLG4sdCk9Pntjb25zdCBpPVIoZSk7bGV0IG89W107cmV0dXJuIEMoaSx7RnJhZ21lbnREZWZpbml0aW9uKHIpe2lmKHIubmFtZS52YWx1ZT09PXQpe2xldCBhPXIuc2VsZWN0aW9uU2V0O3JldHVybiBuLmZvckVhY2gocz0+e2NvbnN0IGM9YT09bnVsbD92b2lkIDA6YS5zZWxlY3Rpb25zLmZpbmQobD0+bC5raW5kPT09IkZpZWxkIiYmbC5uYW1lLnZhbHVlPT09cyk7YT1jPT1udWxsP3ZvaWQgMDpjLnNlbGVjdGlvblNldH0pLGE9PW51bGx8fGEuc2VsZWN0aW9ucy5mb3JFYWNoKHM9PntzLmtpbmQ9PT0iRmllbGQiJiYhcy5zZWxlY3Rpb25TZXQmJihvPVsuLi5vLHMubmFtZS52YWx1ZV0pfSksRn19fSksb30sUWU9KGUsbix0LGkpPT4odC5mb3JFYWNoKG89Pntjb25zdCByPVIoZSk7QyhyLHtGcmFnbWVudERlZmluaXRpb24oYSl7dmFyIHMsYyxsO2lmKGEubmFtZS52YWx1ZT09PWkpe2xldCBwPWEuc2VsZWN0aW9uU2V0O24uZm9yRWFjaChtPT57Y29uc3Qgdj1wPT1udWxsP3ZvaWQgMDpwLnNlbGVjdGlvbnMuZmluZChkPT5kLmtpbmQ9PT0iRmllbGQiJiZkLm5hbWUudmFsdWU9PT1tKTtwPXY9PW51bGw/dm9pZCAwOnYuc2VsZWN0aW9uU2V0fSk7Y29uc3QgZj1wPT1udWxsP3ZvaWQgMDpwLnNlbGVjdGlvbnMuZmluZChtPT5tLmtpbmQ9PT0iRmllbGQiJiZtLm5hbWUudmFsdWU9PT1vKTtpZihmKXtXZShmKS5mb3JFYWNoKGQ9Pntjb25zdHtvcmlnaW5hbEZpbGVDb250ZW50OlR9PVplKGUsZCk7ZT1UfSk7Y29uc3R7bGVmdFNwYWNlczptLGxlZnROZXdMaW5lczp2fT1xKGUsKHM9Zi5sb2MpPT1udWxsP3ZvaWQgMDpzLnN0YXJ0KTtlPWUuc3Vic3RyaW5nKDAsKChjPWYubG9jKT09bnVsbD92b2lkIDA6Yy5zdGFydCktbS12KStlLnN1YnN0cmluZygobD1mLmxvYyk9PW51bGw/dm9pZCAwOmwuZW5kLGUubGVuZ3RoKX1yZXR1cm4gRn19fSl9KSxlKSxBdD0oZSxuLHQpPT4obi5mb3JFYWNoKGk9Pntjb25zdCBvPVIoZSk7QyhvLHtPcGVyYXRpb25EZWZpbml0aW9uKHIpe3ZhciBhLHMsYyxsLHA7aWYoKChhPXIubmFtZSk9PW51bGw/dm9pZCAwOmEudmFsdWUpPT09dCl7Y29uc3QgZj1yLnNlbGVjdGlvblNldC5zZWxlY3Rpb25zLmZpbmQodj0+di5raW5kPT09IkZpZWxkIiYmdi5uYW1lLnZhbHVlPT09dCksbT0ocz1mPT1udWxsP3ZvaWQgMDpmLnNlbGVjdGlvblNldCk9PW51bGw/dm9pZCAwOnMuc2VsZWN0aW9ucy5maW5kKHY9PnYua2luZD09PSJGaWVsZCImJnYubmFtZS52YWx1ZT09PWkpO2lmKG0pe1dlKG0pLmZvckVhY2goVD0+e2NvbnN0e29yaWdpbmFsRmlsZUNvbnRlbnQ6Tn09WmUoZSxUKTtlPU59KTtjb25zdHtsZWZ0U3BhY2VzOnYsbGVmdE5ld0xpbmVzOmR9PXEoZSwoYz1tLmxvYyk9PW51bGw/dm9pZCAwOmMuc3RhcnQpO2U9ZS5zdWJzdHJpbmcoMCwoKGw9bS5sb2MpPT1udWxsP3ZvaWQgMDpsLnN0YXJ0KS12LWQpK2Uuc3Vic3RyaW5nKChwPW0ubG9jKT09bnVsbD92b2lkIDA6cC5lbmQsZS5sZW5ndGgpfXJldHVybiBGfX19KX0pLGUpLFdlPWU9PntsZXQgbj1bXTtyZXR1cm4gQyhlLHtGcmFnbWVudFNwcmVhZCh0KXtuPVsuLi5uLHQubmFtZS52YWx1ZV19fSksbn07ZnVuY3Rpb24gcShlLG4pe2xldCB0PTAsaT0wO2Zvcig7ZS5jaGFyQXQobi0xKT09PSIgInx8ZS5jaGFyQXQobi0xKT09PWAKYDspZS5jaGFyQXQobi0xKT09PSIgIiYmdCsrLGUuY2hhckF0KG4tMSk9PT1gCmAmJmkrKyxuLS07cmV0dXJue2xlZnRTcGFjZXM6dCxsZWZ0TmV3TGluZXM6aX19ZnVuY3Rpb24gYnQoZSxuKXtsZXQgdD0wLGk9MDtmb3IoO2UuY2hhckF0KG4rMSk9PT0iICJ8fGUuY2hhckF0KG4rMSk9PT1gCmA7KWUuY2hhckF0KG4rMSk9PT0iICImJnQrKyxlLmNoYXJBdChuKzEpPT09YApgJiZpKyssbisrO3JldHVybntyaWdodFNwYWNlczp0LHJpZ2h0TmV3TGluZXM6aX19ZnVuY3Rpb24gWmUoZSxuKXtjb25zdCB0PVIoZSk7bGV0IGk9IiIsbz0iIjtyZXR1cm4gQyh0LHtGcmFnbWVudERlZmluaXRpb24ocil7dmFyIGEscyxjLGwscDtpZihyLm5hbWUudmFsdWU9PT1uJiZyLmxvYyl7aT1lLnN1YnN0cigoYT1yLmxvYyk9PW51bGw/dm9pZCAwOmEuc3RhcnQsKChzPXIubG9jKT09bnVsbD92b2lkIDA6cy5lbmQpLSgoYz1yLmxvYyk9PW51bGw/dm9pZCAwOmMuc3RhcnQpKTtjb25zdHtsZWZ0U3BhY2VzOmYsbGVmdE5ld0xpbmVzOm19PXEoZSxyLmxvYy5zdGFydCkse3JpZ2h0U3BhY2VzOnYscmlnaHROZXdMaW5lczpkfT1idChlLHIubG9jLmVuZCk7cmV0dXJuIG89ZS5zdWJzdHIoMCwoKGw9ci5sb2MpPT1udWxsP3ZvaWQgMDpsLnN0YXJ0KS0oZittKSkrZS5zdWJzdHIoKChwPXIubG9jKT09bnVsbD92b2lkIDA6cC5lbmQpKyh2K2QpLGUubGVuZ3RoLTEpLEZ9fX0pLHtvcmlnaW5hbEZpbGVDb250ZW50Om8scmVtb3ZlZEZyYWdtZW50Oml9fWNvbnN0IFN0PShlLG4sdCxpKT0+e2NvbnN0IG89UihlKSxyPXJlKFtuLC4uLmldKTtyZXR1cm4gQyhvLHtPcGVyYXRpb25EZWZpbml0aW9uKGEpe3ZhciBzLGMsbCxwO2lmKCgocz1hPT1udWxsP3ZvaWQgMDphLm5hbWUpPT1udWxsP3ZvaWQgMDpzLnZhbHVlKT09PW4pe2xldCBmPVsuLi5pXSxtPWEuc2VsZWN0aW9uU2V0LnNlbGVjdGlvbnMuZmluZChPPT5PLmtpbmQ9PT0iRmllbGQiJiZPLm5hbWUudmFsdWU9PT1uKS5zZWxlY3Rpb25TZXQ7aS5mb3JFYWNoKE89Pntjb25zdCBiPW0uc2VsZWN0aW9ucy5maW5kKHg9Pngua2luZD09PSJGaWVsZCImJngubmFtZS52YWx1ZT09PU8pO2ImJihtPWIuc2VsZWN0aW9uU2V0LGYuc2hpZnQoKSl9KTtjb25zdCB2PUVlKFsuLi5mLGAuLi4ke3J9YF0sW10pLGQ9bS5zZWxlY3Rpb25zW20uc2VsZWN0aW9ucy5sZW5ndGgtMV0se2xlZnRTcGFjZXM6VH09cShlLChjPWQubG9jKT09bnVsbD92b2lkIDA6Yy5zdGFydCksTj1IZSh2LFQpO3JldHVybiBlPWUuc3Vic3RyaW5nKDAsKGw9ZC5sb2MpPT1udWxsP3ZvaWQgMDpsLmVuZCkrYAoke059YCtlLnN1YnN0cmluZygocD1kLmxvYyk9PW51bGw/dm9pZCAwOnAuZW5kLGUubGVuZ3RoKSxGfX19KSxlfSxEdD0oZSxuLHQsaSk9Pntjb25zdCBvPVt0LnBvcCgpLC4uLmldLmpvaW4oYAogIGApO3JldHVybmBmcmFnbWVudCAke3JlKFtlLC4uLnRdKX0gb24gJHtufSB7CiAgJHtvfQp9YH0scmU9ZT0+ZS5qb2luKCJfIik7dmFyIE5lPShlPT4oZVtlLkxJU1Q9MF09IkxJU1QiLGVbZS5ERVRBSUw9MV09IkRFVEFJTCIsZSkpKE5lfHx7fSksZW49KGU9PihlW2UuQkVGT1JFPTBdPSJCRUZPUkUiLGVbZS5BRlRFUj0xXT0iQUZURVIiLGUpKShlbnx8e30pLFY9KGU9PihlW2UuT0JKRUNUPTBdPSJPQkpFQ1QiLGVbZS5BUlJBWT0xXT0iQVJSQVkiLGUpKShWfHx7fSk7ZnVuY3Rpb24gbm4oZSxuLHQpe2xldCBpPVtdLG89W107cmV0dXJuIGUuYXJncy5mb3JFYWNoKHI9Pnt2YXIgYTtjb25zdHtuZXdQYXJhbWV0ZXI6cyxuZXdWYXJpYWJsZTpjfT0oYT1DdChyLG4sdCkpIT1udWxsP2E6e25ld1BhcmFtZXRlcjpgJHtyLm5hbWV9OiAkJHtyLm5hbWV9YCxuZXdWYXJpYWJsZTpgJCR7ci5uYW1lfTogJHt0bihyLHQpfWB9O2k9Wy4uLmksc10sbz1bLi4ubyxjXX0pLHtwYXJhbXM6aS5sZW5ndGg/YCgke2kuam9pbigiLCAiKX0pYDoiIix2YXJpYWJsZXM6by5sZW5ndGg/YCgke28uam9pbigiLCAiKX0pYDoiIn19ZnVuY3Rpb24gdG4oZSxuKXtjb25zdCB0PXh0KGUpLnJldmVyc2UoKTtsZXQgaT0iIjtyZXR1cm4gdC5mb3JFYWNoKG89Pnt2YXIgcixhO2lmKG8ua2luZD09PSJOT05fTlVMTCImJihpPWAke2l9IWApLG8ua2luZD09PSJMSVNUIiYmKGk9YFske2l9XWAsZS5uYW1lPT09Im9yZGVyX2J5Iikpe2NvbnN0IHM9KHI9dFswXS5uYW1lKSE9bnVsbD9yOiIiLGM9YWUobixzKSxsPShhPWM9PW51bGw/dm9pZCAwOmMuaW5wdXRGaWVsZHMpPT1udWxsP3ZvaWQgMDphLmZpbmQocD0+cC5uYW1lPT09InVwZGF0ZWRfYXQiKTtsJiYoaT1gJHtpfSA9IHsgJHtsLm5hbWV9OiBkZXNjIH1gKX1vLm5hbWUmJihpPWAke28ubmFtZX1gKX0pLGl9ZnVuY3Rpb24geHQoZSl7bGV0IG49W10sdD1lLnR5cGU7Zm9yKDt0OyluPVsuLi5uLHRdLHQ9dC5vZlR5cGU7cmV0dXJuIG59ZnVuY3Rpb24ga3QoZSxuKXt2YXIgdDtjb25zdCBpPWUuZmluZChhPT5hLm5hbWU9PT1uKSxvPSh0PWk9PW51bGw/dm9pZCAwOmkuZmllbGRzKT09bnVsbD92b2lkIDA6dC5maWx0ZXIoYT0+e3ZhciBzO3JldHVybiBQKGEpLmtpbmQ9PT0iU0NBTEFSInx8KChzPWUuZmluZChjPT5jLm5hbWU9PT1hLnR5cGUpKT09bnVsbD92b2lkIDA6cy5raW5kKT09PSJTQ0FMQVIifSkscj1vPT1udWxsP3ZvaWQgMDpvLm1hcChhPT5hLm5hbWUpO3JldHVybiByP2ByZXR1cm5pbmcgewogICAgJHtyLmpvaW4oYAogICAgYCl9CiAgfWA6IiJ9ZnVuY3Rpb24gX3QoZSl7bGV0IG49ZS50eXBlO2Zvcig7bi5vZlR5cGU7KW49bi5vZlR5cGU7cmV0dXJuIG4ubmFtZT9uLm5hbWU6bn1mdW5jdGlvbiBDdChlLG4sdCl7Y29uc3QgaT10bihlLHQpO2lmKGUubmFtZT09PSJfc2V0IilyZXR1cm57bmV3UGFyYW1ldGVyOmAke2UubmFtZX06ICQke24hPSIiP246Il9zZXQifWAsbmV3VmFyaWFibGU6YCQke24hPSIiP246Il9zZXQifTogJHtpfWB9O2lmKGUubmFtZT09PSJvYmplY3QiKXJldHVybntuZXdQYXJhbWV0ZXI6YCR7ZS5uYW1lfTogJCR7biE9IiI/bjoib2JqZWN0In1gLG5ld1ZhcmlhYmxlOmAkJHtuIT0iIj9uOiJvYmplY3QifTogJHtpfWB9O2lmKGUubmFtZT09PSJvYmplY3RzIilyZXR1cm57bmV3UGFyYW1ldGVyOmAke2UubmFtZX06ICQke24hPSIiP246Im9iamVjdHMifWAsbmV3VmFyaWFibGU6YCQke24hPSIiP246Im9iamVjdHMifTogJHtpfWB9fWNvbnN0IEx0PShlLG4sdCk9PntsZXQgaT1bXTtyZXR1cm4gbi5mb3JFYWNoKG89PntsZXQgcj1bXSxhPVtdLHM9W10sYz1bXSxsPVtdLHA9W10sZj0iIjtvLmZpZWxkcy5mb3JFYWNoKGQ9Pnt2YXIgVDtpZihkLm5hbWU9PT0icmV0dXJuaW5nIil7Y29uc3QgTj1fdChkKTtmPWt0KHQsTil9ZWxzZSBpZihkLm5hbWUhPSJjcmVhdGVkX2F0IiYmZC5uYW1lIT0idXBkYXRlZF9hdCIpe2NvbnN0IE49UHQoZCxlLnR5cGVzKTtpZigoTj09bnVsbD92b2lkIDA6Ti5raW5kKT09PSJTQ0FMQVIiKXtjb25zdCBPPShUPU49PW51bGw/dm9pZCAwOk4ubmFtZSk9PW51bGw/dm9pZCAwOlQudG9Mb2NhbGVMb3dlckNhc2UoKTtkLm5hbWU9PT0iaWQiP3I9Wy4uLnIsZC5uYW1lXTpkLm5hbWU9PT0iY3JlYXRlZF9hdCJ8fGQubmFtZT09PSJ1cGRhdGVkX2F0Ij9jPVsuLi5jLGQubmFtZV06Tz09PSJzdHJpbmciP2QubmFtZT09InRpdGxlInx8ZC5uYW1lPT0ibmFtZSI/YT1bLi4uYSxkLm5hbWVdOnM9Wy4uLnMsZC5uYW1lXTpPIT1udWxsJiZPLmluY2x1ZGVzKCJkYXRlIik/bD1bLi4ubCxkLm5hbWVdOk8hPW51bGwmJk8uaW5jbHVkZXMoInRpbWUiKT9sPVsuLi5sLGQubmFtZV06cD1bLi4ucCxkLm5hbWVdfX19KTtsZXQgbT1bLi4uciwuLi5hLC4uLnMsLi4ubF07Y29uc3Qgdj1gZnJhZ21lbnQgJHtvLnF1ZXJ5TmFtZX1fJHtvLmVudGl0eU5hbWV9IG9uICR7by5lbnRpdHlOYW1lfSB7CiAgJHsoZj9bLi4ubSxmXTptKS5qb2luKGAKICBgKX0KfWA7aT1bLi4uaSx2XX0pLGkuam9pbihgCgpgKX0sb2U9ZT0+e2NvbnN0IG49ZS50eXBlcyx0PWUucXVlcnlUeXBlLGk9ZS5tdXRhdGlvblR5cGUsbz1lLnN1YnNjcmlwdGlvblR5cGUscj1uLmZpbHRlcihsPT5sLm5hbWU9PT0odD09bnVsbD92b2lkIDA6dC5uYW1lKXx8bC5uYW1lPT09KGk9PW51bGw/dm9pZCAwOmkubmFtZSl8fGwubmFtZT09PShvPT1udWxsP3ZvaWQgMDpvLm5hbWUpKS5tYXAobD0+e3ZhciBwO3JldHVybntmaWVsZHM6KHA9bC5maWVsZHMpIT1udWxsP3A6W10sa2luZDpsLmtpbmQsbmFtZTpsLm5hbWUsdHlwZTpsLnR5cGUsYXJnczpsLmFyZ3N9fSksYT1yLmZpbmQobD0+bC5uYW1lPT09KHQ9PW51bGw/dm9pZCAwOnQubmFtZSkpLHM9ci5maW5kKGw9PmwubmFtZT09PShpPT1udWxsP3ZvaWQgMDppLm5hbWUpKSxjPXIuZmluZChsPT5sLm5hbWU9PT0obz09bnVsbD92b2lkIDA6by5uYW1lKSk7cmV0dXJuW2EscyxjXX07ZnVuY3Rpb24gd3QoZSxuKXtjb25zdCB0PWUudHlwZXMsW2ksbyxyXT1vZShlKSxhPVJ0KFtpLG9dLHQpLHM9THQoZSxhLHQpLGM9aT9qdChpLG4sdCk6IiIsbD1vP010KG8sbix0KToiIjtyZXR1cm4gVnQoW2MsbCxzXSl9ZnVuY3Rpb24gUnQoZSxuLHQpe2NvbnN0IGk9ZS5tYXAobz0+e3ZhciByO2xldCBhPVtdO2lmKG8hPW51bGwmJm8ubmFtZSlmb3IoY29uc3QgcyBvZiBvLmZpZWxkcyl7Y29uc3QgYz1zLm5hbWUsbD0ocj1QKHMpLm5hbWUpIT1udWxsP3I6IiI7bGV0IHA9RnQobCxuKTtpZih0JiYhcC5zb21lKGY9PlAoZikua2luZD09PXQpKXtvLmZpZWxkcz1vLmZpZWxkcy5maWx0ZXIoZj0+ZiE9PXMpO2NvbnRpbnVlfWE9Wy4uLmEse3F1ZXJ5TmFtZTpjLGVudGl0eU5hbWU6bCxmaWVsZHM6cH1dfXJldHVybiBhfSk7cmV0dXJuIEFycmF5LnByb3RvdHlwZS5jb25jYXQuYXBwbHkoW10saSl9ZnVuY3Rpb24gRnQoZSxuKXtjb25zdCB0PW4uZmluZChpPT5pLm5hbWU9PT1lKTtyZXR1cm4gdCYmdC5maWVsZHM/dC5maWVsZHM6W119ZnVuY3Rpb24gUChlKXt2YXIgbjtsZXQgdD0obj1lLnR5cGUpIT1udWxsP246ZS5vZlR5cGU7Zm9yKDt0Lm9mVHlwZTspdD10Lm9mVHlwZTtyZXR1cm4gdC5uYW1lP3Q6e25hbWU6ZS50eXBlLGtpbmQ6IiJ9fWZ1bmN0aW9uIGFlKGUsbil7cmV0dXJuIGUuZmluZCh0PT50Lm5hbWU9PT1uKX1mdW5jdGlvbiBQdChlLG4pe2NvbnN0IHQ9UChlKTtpZih0LmtpbmQ9PT0iU0NBTEFSIilyZXR1cm4gdDtpZih0LmtpbmQ9PSIiKXtjb25zdCBpPWFlKG4sdC5uYW1lKTtpZigoaT09bnVsbD92b2lkIDA6aS5raW5kKT09PSJTQ0FMQVIiKXJldHVybiBpfX1mdW5jdGlvbiBqdChlLG4sdCl7bGV0IGk9W107cmV0dXJuIGUuZmllbGRzLmZvckVhY2gobz0+e2NvbnN0IHI9YCR7by5uYW1lfV8ke1AobykubmFtZX1gLHtwYXJhbXM6YSx2YXJpYWJsZXM6c309bm4obyxuLHQpLGM9YHF1ZXJ5ICR7by5uYW1lfSR7c30gewogICR7by5uYW1lfSR7YX0gewogICAgLi4uJHtyfQogIH0KfWA7aT1bLi4uaSxjXX0pLGkuam9pbihgCgpgKX1mdW5jdGlvbiBNdChlLG4sdCl7bGV0IGk9W107cmV0dXJuIGUuZmllbGRzLmZvckVhY2gobz0+e2NvbnN0IHI9YCR7by5uYW1lfV8ke1AobykubmFtZX1gO2k9Wy4uLmksQnQobyxyLG4sdCldfSksaS5qb2luKGAKCmApfWZ1bmN0aW9uIEJ0KGUsbix0LGkpe2NvbnN0e3BhcmFtczpvLHZhcmlhYmxlczpyfT1ubihlLHQsaSk7cmV0dXJuYG11dGF0aW9uICR7ZS5uYW1lfSR7cn0gewogICR7ZS5uYW1lfSR7b30gewogICAgLi4uJHtufQogIH0KfWB9ZnVuY3Rpb24gVnQoZSl7cmV0dXJuIGU9ZS5maWx0ZXIobj0+biE9IiIpLGAke2Uuam9pbihgCgpgKX1gfWNvbnN0IFV0PWU9PmUuYXJncy5zb21lKG49Pm4ubmFtZT09PSJpZCIpO2Z1bmN0aW9uICR0KGUsbil7Y29uc3QgdD1vZShlKTtsZXQgaT1bXTtyZXR1cm4gbi5tYXAobz0+e3ZhciByLGE7Y29uc3Qgcz1ZdCh0LGUudHlwZXMsbyxpKTtzLmZvckVhY2goZj0+Zj09bnVsbD92b2lkIDA6Zi5maWVsZHMuZm9yRWFjaChtPT5pPVsuLi5pLG0ubmFtZV0pKTtjb25zdCBjPUt0KHMsZSksbD0oYT0ocj1hZShjLnR5cGVzLG8pKT09bnVsbD92b2lkIDA6ci5maWVsZHMpPT1udWxsP3ZvaWQgMDphLmZpbHRlcihmPT57Y29uc3QgbT1QKGYpO2lmKG0ua2luZCYmbS5raW5kIT0iIiYmbS5raW5kPT09IlNDQUxBUiIpcmV0dXJuITA7Y29uc3Qgdj1hZShjLnR5cGVzLG0ubmFtZSk7cmV0dXJuKHY9PW51bGw/dm9pZCAwOnYua2luZCk9PT0iU0NBTEFSIn0pLHA9bD09bnVsbD92b2lkIDA6bC5tYXAoZj0+KHtuYW1lOmYubmFtZSx0eXBlOlAoZikubmFtZX0pKTtyZXR1cm57cXVlcmllczp3dChjLG8pLGVudGl0eU5hbWU6byxwcm9wZXJ0aWVzOnAhPW51bGw/cDpbXX19KX1mdW5jdGlvbiBLdChlLG4pe2NvbnN0IHQ9SlNPTi5wYXJzZShKU09OLnN0cmluZ2lmeShuKSk7cmV0dXJuIGUuZm9yRWFjaChpPT57aWYoaSl7Y29uc3Qgbz10LnR5cGVzLmZpbmQocj0+ci5uYW1lPT09aS5uYW1lKTtvJiYoby5maWVsZHM9Wy4uLmkuZmllbGRzXSl9fSksdH1mdW5jdGlvbiBZdChlLG4sdCxpKXtyZXR1cm4gZS5tYXAobz0+e2lmKG8pe2NvbnN0IHI9RW4oe30sbyk7cmV0dXJuIHIuZmllbGRzPXIuZmllbGRzLmZpbHRlcihhPT5KdChhLG4sdCkmJiFpLmluY2x1ZGVzKGEubmFtZSkpLHJ9cmV0dXJuIG99KX1mdW5jdGlvbiBKdChlLG4sdCl7cmV0dXJuISEocXQoZSx0KXx8R3QoZSxuLHQpKX1mdW5jdGlvbiBHdChlLG4sdCl7dmFyIGk7Y29uc3Qgbz10eXBlb2YgZS50eXBlPT0ic3RyaW5nIj9lLnR5cGU6UChlKS5uYW1lLHI9bi5maW5kKHM9PnMubmFtZT09PW8pO2lmKCFyKXJldHVybiExO2NvbnN0IGE9KGk9ci5maWVsZHMpPT1udWxsP3ZvaWQgMDppLmZpbmQocz0+cy5uYW1lPT09InJldHVybmluZyIpO3JldHVybiBhP1AoYSkubmFtZT09PXQ6ITF9ZnVuY3Rpb24gcXQoZSxuKXt2YXIgdDtsZXQgaT1lLnR5cGU7aWYodHlwZW9mIGkhPSJzdHJpbmciKXtmb3IoO2soaSkmJmkub2ZUeXBlOylpPWkub2ZUeXBlO2lmKGsoaSkmJigodD1pLm5hbWUpPT1udWxsP3ZvaWQgMDp0LnRvTG93ZXJDYXNlKCkpPT09KG49PW51bGw/dm9pZCAwOm4udG9Mb3dlckNhc2UoKSkpcmV0dXJuITB9ZWxzZSBpZih0eXBlb2YgaT09InN0cmluZyImJmk9PT0obj09bnVsbD92b2lkIDA6bi50b0xvd2VyQ2FzZSgpKSlyZXR1cm4hMDtyZXR1cm4hMX1mdW5jdGlvbiBybihlLG4sdCl7dmFyIGksbztsZXQgcj1lLnR5cGU7aWYodD09PU5lLkRFVEFJTCYmVXQoZSkpe2lmKHR5cGVvZiByIT0ic3RyaW5nIil7Zm9yKDtrKHIpJiZyLm9mVHlwZTspcj1yLm9mVHlwZTtpZihrKHIpJiYoKGk9ci5uYW1lKT09bnVsbD92b2lkIDA6aS50b0xvd2VyQ2FzZSgpKT09PShuPT1udWxsP3ZvaWQgMDpuLnRvTG93ZXJDYXNlKCkpKXJldHVybiEwfWVsc2UgaWYodHlwZW9mIHI9PSJzdHJpbmciJiZyPT09KG49PW51bGw/dm9pZCAwOm4udG9Mb3dlckNhc2UoKSkpcmV0dXJuITB9ZWxzZSBpZih0PT09TmUuTElTVCYmKHI9PW51bGw/dm9pZCAwOnIua2luZCkhPT0iT0JKRUNUIil7aWYodHlwZW9mIHIhPSJzdHJpbmciKXtmb3IoO2socikmJnIub2ZUeXBlOylyPXIub2ZUeXBlO2lmKGsocikmJigobz1yLm5hbWUpPT1udWxsP3ZvaWQgMDpvLnRvTG93ZXJDYXNlKCkpPT09KG49PW51bGw/dm9pZCAwOm4udG9Mb3dlckNhc2UoKSkpcmV0dXJuITB9ZWxzZSBpZih0eXBlb2Ygcj09InN0cmluZyImJnI9PT0obj09bnVsbD92b2lkIDA6bi50b0xvd2VyQ2FzZSgpKSlyZXR1cm4hMH1yZXR1cm4hMX1jb25zdCBYdD0oZSxuKT0+KGUuZm9yRWFjaCgodCxpKT0+e24uZXZlcnkobz0+e3ZhciByO2lmKCgocj1vLm5hbWUpPT1udWxsP3ZvaWQgMDpyLnRvTG93ZXJDYXNlKCkpPT09KHQ9PW51bGw/dm9pZCAwOnQudG9Mb3dlckNhc2UoKSkpe2xldCBhPW8udHlwZSxzPSExO2Zvcig7ayhhKSYmYS5vZlR5cGU7KShhPT1udWxsP3ZvaWQgMDphLmtpbmQpPT09IkxJU1QiJiYocz0hMCksYT1hLm9mVHlwZTtpZihrKGEpJiYoYT09bnVsbD92b2lkIDA6YS5raW5kKT09PSJPQkpFQ1QiKXJldHVybiBzfHwoZVtpXT1hLm5hbWUpLCExfXJldHVybiEwfSl9KSxlKSx6dD0oZSxuLHQpPT57bGV0IGk9IiI7cmV0dXJuIGUuZm9yRWFjaCgobyxyKT0+e2lmKHI9PT1lLmxlbmd0aC0xKXJldHVybiExO24uZXZlcnkoYT0+e3ZhciBzO2lmKCgocz1hLm5hbWUpPT1udWxsP3ZvaWQgMDpzLnRvTG93ZXJDYXNlKCkpPT09KG89PW51bGw/dm9pZCAwOm8udG9Mb3dlckNhc2UoKSkpe2xldCBjPWEudHlwZTtmb3IoO2soYykmJmMub2ZUeXBlOyljPWMub2ZUeXBlO2lmKGsoYykmJihjPT1udWxsP3ZvaWQgMDpjLmtpbmQpPT09Ik9CSkVDVCIpcmV0dXJuIGk9Yy5uYW1lLCExfXJldHVybiEwfSl9KSx0LnR5cGVzLmZpbmQobz0+e3ZhciByO3JldHVybigocj1vPT1udWxsP3ZvaWQgMDpvLm5hbWUpPT1udWxsP3ZvaWQgMDpyLnRvTG93ZXJDYXNlKCkpPT09KGk9PW51bGw/dm9pZCAwOmkudG9Mb3dlckNhc2UoKSl9KX0sb249KGUsbix0KT0+e2xldCBpLG89Vi5PQkpFQ1Q7cmV0dXJuIGUuZm9yRWFjaChyPT57bGV0IGE9ITA7bi5ldmVyeShzPT57dmFyIGM7aWYoKChjPXMubmFtZSk9PW51bGw/dm9pZCAwOmMudG9Mb3dlckNhc2UoKSk9PT0ocj09bnVsbD92b2lkIDA6ci50b0xvd2VyQ2FzZSgpKSl7YT0hMTtsZXQgbD1zLnR5cGUscD0hMTtmb3IoO2sobCkmJmwub2ZUeXBlOykobD09bnVsbD92b2lkIDA6bC5raW5kKT09PSJMSVNUIiYmKHA9ITAsbz1WLkFSUkFZKSxsPWwub2ZUeXBlO2lmKGsobCkmJihsPT1udWxsP3ZvaWQgMDpsLmtpbmQpPT09Ik9CSkVDVCIpcmV0dXJuIHB8fChvPVYuT0JKRUNUKSxpPWwubmFtZSwhMX1yZXR1cm4hMH0pLGEmJnQudHlwZXMuZmlsdGVyKHM9Pnt2YXIgYztyZXR1cm4oKGM9cz09bnVsbD92b2lkIDA6cy5uYW1lKT09bnVsbD92b2lkIDA6Yy50b0xvd2VyQ2FzZSgpKT09PShpPT1udWxsP3ZvaWQgMDppLnRvTG93ZXJDYXNlKCkpfSlbMF0uZmllbGRzLmV2ZXJ5KHM9Pnt2YXIgYztpZigoKGM9cy5uYW1lKT09bnVsbD92b2lkIDA6Yy50b0xvd2VyQ2FzZSgpKT09PShyPT1udWxsP3ZvaWQgMDpyLnRvTG93ZXJDYXNlKCkpKXtsZXQgbD1zLnR5cGUscD0hMTtmb3IoO2sobCkmJmwub2ZUeXBlOylsLmtpbmQ9PT0iTElTVCImJihwPSEwLG89Vi5BUlJBWSksbD1sLm9mVHlwZTtpZihrKGwpJiYobD09bnVsbD92b2lkIDA6bC5raW5kKT09PSJPQkpFQ1QiKXJldHVybiBwfHwobz1WLk9CSkVDVCksaT1sLm5hbWUsITF9cmV0dXJuITB9KX0pLHtyZWxhdGlvbnNoaXBOYW1lOmkscmVsYXRpb25zaGlwVHlwZTpvfX07ZnVuY3Rpb24gayhlKXtyZXR1cm4ibmFtZSJpbiBlJiYib2ZUeXBlImluIGUmJiJraW5kImluIGV9Y29uc3QgSHQ9YXN5bmMoZSxuLHQsaSxvLHI9MSxhPWVuLkJFRk9SRSk9Pntjb25zdFtzXT1vZShuKSxjPXMuZmllbGRzLmZpbmQodj0+cm4odix0LG8pKSxsPWM9PW51bGw/dm9pZCAwOmMubmFtZSxwPWwhPW51bGw/bDp0O2xldCBmPWU7Y29uc3QgbT1uLnR5cGVzLmZpbmQodj0+di5uYW1lLnRvTG93ZXJDYXNlKCk9PT10LnRvTG93ZXJDYXNlKCkpO3JldHVybiBpLmZvckVhY2godj0+e2xldCBkPXYuc3BsaXQoIi4iKS5zbGljZSgxKTtkPVh0KGQsbS5maWVsZHMpO2xldHtyZWxhdGlvbnNoaXBOYW1lOlR9PW9uKGQsbS5maWVsZHMsbik7Y29uc3QgTj16dChkLG0uZmllbGRzLG4pLE89ZFtkLmxlbmd0aC0xXSE9ImlkIiYmKE49PW51bGw/dm9pZCAwOk4uZmllbGRzLmZpbmQoUz0+Uy5uYW1lPT09ImlkIikpP1siaWQiXTpbXSxiPWQuc2xpY2UoMCwtMSkseD1hbihbcCwuLi5iXSxmKSxVPVtkW2QubGVuZ3RoLTFdXTtpZihndChmLHgpKWY9emUoZix4LFUsci0xLGEsTyk7ZWxzZXtmKz1gCgoke0R0KHAsVCE9bnVsbD9UOnAsZCxPKX1gO2NvbnN0IFM9T3QoZixwLHQsYik7aWYoUz09PSIiKWY9U3QoZixwLHQsYik7ZWxzZXtjb25zdCBLPUl0KFMsYixgJHtwfV8ke3R9YCk7Zj1RZShTLGIsSyxgJHtwfV8ke3R9YCksZj16ZShmLHgsW10sci0xLGEsSyl9fX0pLGY9bXQoUihmKSksZn0sUXQ9YXN5bmMoZSxuLHQsaSxvLHIpPT57dmFyIGE7Y29uc3Rbc109b2UobiksYz1zLmZpZWxkcy5maW5kKE49PnJuKE4sdCxvKSksbD0oYT1jPT1udWxsP3ZvaWQgMDpjLm5hbWUpIT1udWxsP2E6dCxwPW4udHlwZXMuZmluZChOPT5OLm5hbWUudG9Mb3dlckNhc2UoKT09PXQudG9Mb3dlckNhc2UoKSksZj1pLnNwbGl0KCIuIik7bGV0e3JlbGF0aW9uc2hpcE5hbWU6bSxyZWxhdGlvbnNoaXBUeXBlOnZ9PW9uKGYscC5maWVsZHMsbik7Y29uc3QgZD1tPT09dm9pZCAwP1tsXTp2PT09Vi5PQkpFQ1Q/W2wsbV06W2wsLi4uZi5zbGljZSgwLC0xKV0sVD1hbihkLGUpO3JldHVybiBlPUF0KGUsW2ZbZi5sZW5ndGgtMV1dLHQpLGU9UWUoZSxbXSxbZltmLmxlbmd0aC0xXV0sVCksZX0sYW49KGUsbik9PntpZihlLmxlbmd0aD09MSl0cnl7Y29uc3QgdD1SKG4pLGk9ZVswXTtsZXQgbz0iIjtyZXR1cm4gQyh0LHtPcGVyYXRpb25EZWZpbml0aW9uKHIpe3ZhciBhLHM7KChhPXIubmFtZSk9PW51bGw/dm9pZCAwOmEudmFsdWUpPT09aSYmKG89KChzPXIuc2VsZWN0aW9uU2V0LnNlbGVjdGlvbnNbMF0uc2VsZWN0aW9uU2V0KT09bnVsbD92b2lkIDA6cy5zZWxlY3Rpb25zWzBdKS5uYW1lLnZhbHVlKX19KSxvfWNhdGNoKHQpe2NvbnNvbGUuZXJyb3IodCl9cmV0dXJuIHJlKGUpfSxzbj0oZSxuKT0+e2NvbnN0IHQ9W10saT0obyxyKT0+KHIobykmJnQucHVzaChvKSxvLmZvckVhY2hDaGlsZChhPT5pKGEscikpKTtyZXR1cm4gaShlLG4pLHR9LGdlPShlLG49RS5kZWZhdWx0LlNjcmlwdFRhcmdldC5FU05leHQsdD1FLmRlZmF1bHQuU2NyaXB0S2luZC5UU1gsaT0iL3RzLWFzdC12aWV3ZXIudHN4Iik9Pntjb25zdCBvPUUuZGVmYXVsdC5jcmVhdGVTb3VyY2VGaWxlKGksZSxuLCEwLHQpO3JldHVybiBXdChpLG8sbikuZ2V0U291cmNlRmlsZShpKX0sV3Q9KGUsbix0KT0+e2NvbnN0IGk9e3N0cmljdDohMCx0YXJnZXQ6dCxhbGxvd0pzOiEwLG1vZHVsZTpFLmRlZmF1bHQuTW9kdWxlS2luZC5FU05leHQsanN4OkUuZGVmYXVsdC5Kc3hFbWl0LlJlYWN0fSxvPXtbZV06bn0scj17Z2V0U291cmNlRmlsZTphPT5vW2FdLGdldERlZmF1bHRMaWJGaWxlTmFtZTooKT0+Ii9saWIiLHdyaXRlRmlsZTooKT0+e30sZ2V0Q3VycmVudERpcmVjdG9yeTooKT0+Ii8iLGdldERpcmVjdG9yaWVzOigpPT5bXSxmaWxlRXhpc3RzOmE9Pm9bYV0hPW51bGwscmVhZEZpbGU6YT0+b1thXSE9bnVsbD9vW2FdLmdldEZ1bGxUZXh0KCk6dm9pZCAwLGdldENhbm9uaWNhbEZpbGVOYW1lOmE9PmEsdXNlQ2FzZVNlbnNpdGl2ZUZpbGVOYW1lczooKT0+ITAsZ2V0TmV3TGluZTooKT0+YApgLGdldEVudmlyb25tZW50VmFyaWFibGU6KCk9PiIifTtyZXR1cm4gRS5kZWZhdWx0LmNyZWF0ZVByb2dyYW0oWy4uLk9iamVjdC5rZXlzKG8pXSxpLHIpfSxadD0oe3BvczplLGVuZDpufSx0KT0+aT0+e2NvbnN0IG89cj0+ci5wb3M9PT1lJiZyLmVuZD09PW4/QXJyYXkuaXNBcnJheSh0KT9bciwuLi50XTpbcix0XTpFLmRlZmF1bHQudmlzaXRFYWNoQ2hpbGQocixhPT5vKGEpLGkpO3JldHVybiByPT5FLmRlZmF1bHQudmlzaXROb2RlKHIsbyl9LGVpPShlLG4sdCk9Pmk9Pntjb25zdCBvPXI9PmUocixuKT90OkUuZGVmYXVsdC52aXNpdEVhY2hDaGlsZChyLGE9Pm8oYSksaSk7cmV0dXJuIHI9PkUuZGVmYXVsdC52aXNpdE5vZGUocixvKX0sY249KGUsbix0KT0+RS5kZWZhdWx0LnRyYW5zZm9ybShlLFtadChuLHQpXSkudHJhbnNmb3JtZWRbMF0sbG49KGUsbix0LGkpPT5FLmRlZmF1bHQudHJhbnNmb3JtKGUsW2VpKG4sdCxpKV0pLnRyYW5zZm9ybWVkWzBdLHNlPWU9PntlLnBvcz0tMSxlLmVuZD0tMSxFLmRlZmF1bHQuZm9yRWFjaENoaWxkKGUsc2UpfSxuaT0oZSxuKT0+RS5kZWZhdWx0LmlzSWRlbnRpZmllcihlKSYmZS50ZXh0PT09bix0aT0oZSxuKT0+RS5kZWZhdWx0LmlzU3RyaW5nTGl0ZXJhbExpa2UoZSkmJmUudGV4dD09PW4saWk9KGUsbix0KT0+e2NvbnN0IGk9Wy4uLnNuKGUsRS5kZWZhdWx0LmlzSWRlbnRpZmllciksLi4uc24oZSxFLmRlZmF1bHQuaXNTdHJpbmdMaXRlcmFsKV0ucmVkdWNlKChzLGMpPT4oYy5nZXRUZXh0KCkuaW5kZXhPZihuKSE9PS0xJiZzLnB1c2goYy5nZXRUZXh0KCkucmVwbGFjZUFsbCgvInwnL2csIiIpKSxzKSxbXSksbz1bLi4ubmV3IFNldChpKV0scj1vLm1hcChzPT5zLnJlcGxhY2VBbGwoLyd8Ii9nLCIiKS5zcGxpdCgiLiIpKS5tYXAocz0+cy5tYXAoYz0+Yz09PW4/dDpjKSkubWFwKHM9PnMuam9pbigiLiIpKTtsZXQgYTtpZihyLmZvckVhY2goKHMsYyk9Pntjb25zdCBsPUQuZmFjdG9yeS5jcmVhdGVJZGVudGlmaWVyKHMpO3NlKGwpLGE9bG4oZSxuaSxvW2NdLGwpfSksci5mb3JFYWNoKChzLGMpPT57Y29uc3QgbD1ELmZhY3RvcnkuY3JlYXRlU3RyaW5nTGl0ZXJhbChzKTtzZShsKSxhPWxuKGEsdGksb1tjXSxsKX0pLCEhYSlyZXR1cm4gc2UoYSksYX0scmk9KGUsbik9Pntjb25zdCB0PXNpKGUsbik7aWYoIXQpcmV0dXJuIG51bGw7Y29uc3QgaT1mbihlLHQpO2lmKCFpKXJldHVybiBudWxsO2lmKEUuZGVmYXVsdC5pc0pzeFNlbGZDbG9zaW5nRWxlbWVudChpLnBhcmVudCkpcmV0dXJuIGkucGFyZW50LnBvcztpZihFLmRlZmF1bHQuaXNKc3hPcGVuaW5nRWxlbWVudChpLnBhcmVudCkpcmV0dXJuIGkucGFyZW50LnBhcmVudC5wb3N9LG9pPShlLG4pPT57Y29uc3QgdD1nZShlKSxpPXVuKGUsbik7aWYoIWl8fCF0KXJldHVybiBudWxsO2NvbnN0IG89RS5kZWZhdWx0LmlzUGFyZW50aGVzaXplZEV4cHJlc3Npb24oaSk/aS5leHByZXNzaW9uOmk7cmV0dXJuIGNuKHQse3BvczpvLnBvcyxlbmQ6by5lbmR9LFtvXSl9LGFpPShlLG4sdCxpKT0+e2NvbnN0IG89Z2UoZSkscj11bihlLG4pO2lmKCFyfHwhbylyZXR1cm4gbnVsbDtjb25zdCBhPWlpKHIsdCxpKTtyZXR1cm4gYT9jbihvLHtwb3M6ci5wb3MsZW5kOnIuZW5kfSxbYV0pOm51bGx9O2Z1bmN0aW9uIHVuKGUsbil7Y29uc3QgdD1yaShlLG4pO3JldHVybiB0P2ZuKGUsdCk6bnVsbH1mdW5jdGlvbiBzaShlLG4pe2lmKHR5cGVvZiBlIT0ic3RyaW5nIilyZXR1cm4gbnVsbDtjb25zdCB0PWUuc3BsaXQoYApgKTtpZihuLmxpbmVOdW1iZXI+MCYmbi5saW5lTnVtYmVyPHQubGVuZ3RoKXtjb25zdCBpPW4ubGluZU51bWJlci0xO2xldCBvPTA7Zm9yKGxldCByPTA7cjxpOysrcilvKz10W3JdLmxlbmd0aCsxO3JldHVybiBvKz1uLmNvbHVtbk51bWJlci0xLG8rPTEsb31yZXR1cm4gbnVsbH1mdW5jdGlvbiBmbihlLG4pe2NvbnN0IHQ9Z2UoZSksaT1vPT57Y29uc3Qgcj1vLnBvcztyZXR1cm4gcjw9biYmbjw9by5lbmQ/cj09PW4/bzpFLmRlZmF1bHQuZm9yRWFjaENoaWxkKG8saSk6bnVsbH07cmV0dXJuIHQ/RS5kZWZhdWx0LmZvckVhY2hDaGlsZCh0LGkpOm51bGx9dHlwZW9mIFRleHREZWNvZGVyPT0iZnVuY3Rpb24iJiZuZXcgVGV4dERlY29kZXIsdHlwZW9mIFRleHRFbmNvZGVyPT0iZnVuY3Rpb24iJiZuZXcgVGV4dEVuY29kZXI7Y29uc3QgY2k9IkFCQ0RFRkdISUpLTE1OT1BRUlNUVVZXWFlaYWJjZGVmZ2hpamtsbW5vcHFyc3R1dnd4eXowMTIzNDU2Nzg5Ky89IixsaT1BcnJheS5wcm90b3R5cGUuc2xpY2UuY2FsbChjaSk7KGU9PntsZXQgbj17fTtyZXR1cm4gZS5mb3JFYWNoKCh0LGkpPT5uW3RdPWkpLG59KShsaSksU3RyaW5nLmZyb21DaGFyQ29kZS5iaW5kKFN0cmluZyksdHlwZW9mIFVpbnQ4QXJyYXkuZnJvbT09ImZ1bmN0aW9uIiYmVWludDhBcnJheS5mcm9tLmJpbmQoVWludDhBcnJheSk7Y29uc3QgcG49KGUsbik9PmUuc3RhcnRzV2l0aChuKT9lLnNwbGl0KG4pWzFdOmUsdWk9KGUsbik9PntpZihuPT09Ii4iKXJldHVybiBYKGUsIi4vaW5kZXgiKTtpZihuLnN0YXJ0c1dpdGgoIi4vIikpcmV0dXJuIFgoZSxuKTtpZihuPT09Ii4uIil7Y29uc3Qgcj1lLnN1YnN0cmluZygwLGUubGFzdEluZGV4T2YoIi8iKSk7cmV0dXJuIFgociwiLi9pbmRleCIpfWNvbnN0IHQ9bi5zcGxpdCgiLyIpLmZpbHRlcihyPT5yPT09Ii4uIiksaT1uLnNwbGl0KCIvIikuZmlsdGVyKHI9PnIhPT0iLi4iKS5qb2luKCIvIiksbz1YKGUsIiIpLnNwbGl0KCIvIikuZmlsdGVyKEJvb2xlYW4pO3JldHVybiB0LmZvckVhY2goKCk9Pm8ucG9wKCkpLFgoIi8iK28uam9pbigiLyIpKyIvIixpKX0sWD0oZSxuKT0+e2NvbnN0IHQ9ZS5lbmRzV2l0aCgiLyIpP2U6ZS5zdWJzdHJpbmcoMCxlLmxhc3RJbmRleE9mKCIvIikpKyIvIjtsZXQgaT1wbihuLCIuLyIpO3JldHVybiBpPXBuKGksIi8iKSx0K2l9O2FzeW5jIGZ1bmN0aW9uIGZpKGUsbil7Y29uc3QgdD1uLmVudGl0aWVzLGk9JHQoZSx0KSxvPW5ldyBNYXA7cmV0dXJuIGkuZm9yRWFjaCgocixhKT0+e2NvbnN0IHM9dWkoYC9zcmMvcGFnZXMvJHtyLmVudGl0eU5hbWV9L2AsIi4vaW5kZXguZ3JhcGhxbCIpO28uc2V0KHMsaVthXS5xdWVyaWVzKX0pLG99bGUoe2FkZENvbHVtbjpIdCxyZW1vdmVDb2x1bW46UXQsZ2VuZXJhdGVQYWdlczpmaSxjbG9uZUVsZW1lbnRJbkFzdDpvaSxjbG9uZUFuZFJlbmFtZUVsZW1lbnRJbkFzdDphaX0pfSl9KSgpOwo=";
+const encodedJs = "KGZ1bmN0aW9uKCl7InVzZSBzdHJpY3QiO3ZhciBLdD1PYmplY3QuZGVmaW5lUHJvcGVydHksUGU9T2JqZWN0LmdldE93blByb3BlcnR5U3ltYm9scyxKdD1PYmplY3QucHJvdG90eXBlLmhhc093blByb3BlcnR5LFl0PU9iamVjdC5wcm90b3R5cGUucHJvcGVydHlJc0VudW1lcmFibGUsamU9KEUsYix1KT0+YiBpbiBFP0t0KEUsYix7ZW51bWVyYWJsZTohMCxjb25maWd1cmFibGU6ITAsd3JpdGFibGU6ITAsdmFsdWU6dX0pOkVbYl09dSxHdD0oRSxiKT0+e2Zvcih2YXIgdSBpbiBifHwoYj17fSkpSnQuY2FsbChiLHUpJiZqZShFLHUsYlt1XSk7aWYoUGUpZm9yKHZhciB1IG9mIFBlKGIpKVl0LmNhbGwoYix1KSYmamUoRSx1LGJbdV0pO3JldHVybiBFfTsoZnVuY3Rpb24oRSxiKXt0eXBlb2YgZXhwb3J0cz09Im9iamVjdCImJnR5cGVvZiBtb2R1bGUhPSJ1bmRlZmluZWQiP2IocmVxdWlyZSgiaHR0cHM6Ly9lc20uc2gvdHlwZXNjcmlwdCIpKTp0eXBlb2YgZGVmaW5lPT0iZnVuY3Rpb24iJiZkZWZpbmUuYW1kP2RlZmluZShbImh0dHBzOi8vZXNtLnNoL3R5cGVzY3JpcHQiXSxiKTooRT10eXBlb2YgZ2xvYmFsVGhpcyE9InVuZGVmaW5lZCI/Z2xvYmFsVGhpczpFfHxzZWxmLGIoRS50cykpfSkodm9pZCAwLGZ1bmN0aW9uKEUpe2Z1bmN0aW9uIGIoZSl7cmV0dXJuIGUmJnR5cGVvZiBlPT0ib2JqZWN0IiYmImRlZmF1bHQiaW4gZT9lOntkZWZhdWx0OmV9fXZhciB1PWIoRSk7Y29uc3QgQmU9U3ltYm9sKCJDb21saW5rLnByb3h5IiksenQ9U3ltYm9sKCJDb21saW5rLmVuZHBvaW50IikscXQ9U3ltYm9sKCJDb21saW5rLnJlbGVhc2VQcm94eSIpLEVlPVN5bWJvbCgiQ29tbGluay50aHJvd24iKSxNZT1lPT50eXBlb2YgZT09Im9iamVjdCImJmUhPT1udWxsfHx0eXBlb2YgZT09ImZ1bmN0aW9uIixYdD17Y2FuSGFuZGxlOmU9Pk1lKGUpJiZlW0JlXSxzZXJpYWxpemUoZSl7Y29uc3R7cG9ydDE6dCxwb3J0MjpufT1uZXcgTWVzc2FnZUNoYW5uZWw7cmV0dXJuIFRlKGUsdCksW24sW25dXX0sZGVzZXJpYWxpemUoZSl7cmV0dXJuIGUuc3RhcnQoKSxXdChlKX19LEh0PXtjYW5IYW5kbGU6ZT0+TWUoZSkmJkVlIGluIGUsc2VyaWFsaXplKHt2YWx1ZTplfSl7bGV0IHQ7cmV0dXJuIGUgaW5zdGFuY2VvZiBFcnJvcj90PXtpc0Vycm9yOiEwLHZhbHVlOnttZXNzYWdlOmUubWVzc2FnZSxuYW1lOmUubmFtZSxzdGFjazplLnN0YWNrfX06dD17aXNFcnJvcjohMSx2YWx1ZTplfSxbdCxbXV19LGRlc2VyaWFsaXplKGUpe3Rocm93IGUuaXNFcnJvcj9PYmplY3QuYXNzaWduKG5ldyBFcnJvcihlLnZhbHVlLm1lc3NhZ2UpLGUudmFsdWUpOmUudmFsdWV9fSxWZT1uZXcgTWFwKFtbInByb3h5IixYdF0sWyJ0aHJvdyIsSHRdXSk7ZnVuY3Rpb24gVGUoZSx0PXNlbGYpe3QuYWRkRXZlbnRMaXN0ZW5lcigibWVzc2FnZSIsZnVuY3Rpb24gbihpKXtpZighaXx8IWkuZGF0YSlyZXR1cm47Y29uc3R7aWQ6cix0eXBlOmEscGF0aDpvfT1PYmplY3QuYXNzaWduKHtwYXRoOltdfSxpLmRhdGEpLGw9KGkuZGF0YS5hcmd1bWVudExpc3R8fFtdKS5tYXAoSyk7bGV0IHM7dHJ5e2NvbnN0IGM9by5zbGljZSgwLC0xKS5yZWR1Y2UoKGQsdik9PmRbdl0sZSksZj1vLnJlZHVjZSgoZCx2KT0+ZFt2XSxlKTtzd2l0Y2goYSl7Y2FzZSJHRVQiOnM9ZjticmVhaztjYXNlIlNFVCI6Y1tvLnNsaWNlKC0xKVswXV09SyhpLmRhdGEudmFsdWUpLHM9ITA7YnJlYWs7Y2FzZSJBUFBMWSI6cz1mLmFwcGx5KGMsbCk7YnJlYWs7Y2FzZSJDT05TVFJVQ1QiOntjb25zdCBkPW5ldyBmKC4uLmwpO3M9dG4oZCl9YnJlYWs7Y2FzZSJFTkRQT0lOVCI6e2NvbnN0e3BvcnQxOmQscG9ydDI6dn09bmV3IE1lc3NhZ2VDaGFubmVsO1RlKGUsdikscz1lbihkLFtkXSl9YnJlYWs7Y2FzZSJSRUxFQVNFIjpzPXZvaWQgMDticmVhaztkZWZhdWx0OnJldHVybn19Y2F0Y2goYyl7cz17dmFsdWU6YyxbRWVdOjB9fVByb21pc2UucmVzb2x2ZShzKS5jYXRjaChjPT4oe3ZhbHVlOmMsW0VlXTowfSkpLnRoZW4oYz0+e2NvbnN0W2YsZF09TmUoYyk7dC5wb3N0TWVzc2FnZShPYmplY3QuYXNzaWduKE9iamVjdC5hc3NpZ24oe30sZikse2lkOnJ9KSxkKSxhPT09IlJFTEVBU0UiJiYodC5yZW1vdmVFdmVudExpc3RlbmVyKCJtZXNzYWdlIixuKSwkZSh0KSl9KX0pLHQuc3RhcnQmJnQuc3RhcnQoKX1mdW5jdGlvbiBRdChlKXtyZXR1cm4gZS5jb25zdHJ1Y3Rvci5uYW1lPT09Ik1lc3NhZ2VQb3J0In1mdW5jdGlvbiAkZShlKXtRdChlKSYmZS5jbG9zZSgpfWZ1bmN0aW9uIFd0KGUsdCl7cmV0dXJuIGdlKGUsW10sdCl9ZnVuY3Rpb24gcmUoZSl7aWYoZSl0aHJvdyBuZXcgRXJyb3IoIlByb3h5IGhhcyBiZWVuIHJlbGVhc2VkIGFuZCBpcyBub3QgdXNlYWJsZSIpfWZ1bmN0aW9uIGdlKGUsdD1bXSxuPWZ1bmN0aW9uKCl7fSl7bGV0IGk9ITE7Y29uc3Qgcj1uZXcgUHJveHkobix7Z2V0KGEsbyl7aWYocmUoaSksbz09PXF0KXJldHVybigpPT5YKGUse3R5cGU6IlJFTEVBU0UiLHBhdGg6dC5tYXAobD0+bC50b1N0cmluZygpKX0pLnRoZW4oKCk9PnskZShlKSxpPSEwfSk7aWYobz09PSJ0aGVuIil7aWYodC5sZW5ndGg9PT0wKXJldHVybnt0aGVuOigpPT5yfTtjb25zdCBsPVgoZSx7dHlwZToiR0VUIixwYXRoOnQubWFwKHM9PnMudG9TdHJpbmcoKSl9KS50aGVuKEspO3JldHVybiBsLnRoZW4uYmluZChsKX1yZXR1cm4gZ2UoZSxbLi4udCxvXSl9LHNldChhLG8sbCl7cmUoaSk7Y29uc3RbcyxjXT1OZShsKTtyZXR1cm4gWChlLHt0eXBlOiJTRVQiLHBhdGg6Wy4uLnQsb10ubWFwKGY9PmYudG9TdHJpbmcoKSksdmFsdWU6c30sYykudGhlbihLKX0sYXBwbHkoYSxvLGwpe3JlKGkpO2NvbnN0IHM9dFt0Lmxlbmd0aC0xXTtpZihzPT09enQpcmV0dXJuIFgoZSx7dHlwZToiRU5EUE9JTlQifSkudGhlbihLKTtpZihzPT09ImJpbmQiKXJldHVybiBnZShlLHQuc2xpY2UoMCwtMSkpO2NvbnN0W2MsZl09VWUobCk7cmV0dXJuIFgoZSx7dHlwZToiQVBQTFkiLHBhdGg6dC5tYXAoZD0+ZC50b1N0cmluZygpKSxhcmd1bWVudExpc3Q6Y30sZikudGhlbihLKX0sY29uc3RydWN0KGEsbyl7cmUoaSk7Y29uc3RbbCxzXT1VZShvKTtyZXR1cm4gWChlLHt0eXBlOiJDT05TVFJVQ1QiLHBhdGg6dC5tYXAoYz0+Yy50b1N0cmluZygpKSxhcmd1bWVudExpc3Q6bH0scykudGhlbihLKX19KTtyZXR1cm4gcn1mdW5jdGlvbiBadChlKXtyZXR1cm4gQXJyYXkucHJvdG90eXBlLmNvbmNhdC5hcHBseShbXSxlKX1mdW5jdGlvbiBVZShlKXtjb25zdCB0PWUubWFwKE5lKTtyZXR1cm5bdC5tYXAobj0+blswXSksWnQodC5tYXAobj0+blsxXSkpXX1jb25zdCBLZT1uZXcgV2Vha01hcDtmdW5jdGlvbiBlbihlLHQpe3JldHVybiBLZS5zZXQoZSx0KSxlfWZ1bmN0aW9uIHRuKGUpe3JldHVybiBPYmplY3QuYXNzaWduKGUse1tCZV06ITB9KX1mdW5jdGlvbiBOZShlKXtmb3IoY29uc3RbdCxuXW9mIFZlKWlmKG4uY2FuSGFuZGxlKGUpKXtjb25zdFtpLHJdPW4uc2VyaWFsaXplKGUpO3JldHVyblt7dHlwZToiSEFORExFUiIsbmFtZTp0LHZhbHVlOml9LHJdfXJldHVyblt7dHlwZToiUkFXIix2YWx1ZTplfSxLZS5nZXQoZSl8fFtdXX1mdW5jdGlvbiBLKGUpe3N3aXRjaChlLnR5cGUpe2Nhc2UiSEFORExFUiI6cmV0dXJuIFZlLmdldChlLm5hbWUpLmRlc2VyaWFsaXplKGUudmFsdWUpO2Nhc2UiUkFXIjpyZXR1cm4gZS52YWx1ZX19ZnVuY3Rpb24gWChlLHQsbil7cmV0dXJuIG5ldyBQcm9taXNlKGk9Pntjb25zdCByPW5uKCk7ZS5hZGRFdmVudExpc3RlbmVyKCJtZXNzYWdlIixmdW5jdGlvbiBhKG8peyFvLmRhdGF8fCFvLmRhdGEuaWR8fG8uZGF0YS5pZCE9PXJ8fChlLnJlbW92ZUV2ZW50TGlzdGVuZXIoIm1lc3NhZ2UiLGEpLGkoby5kYXRhKSl9KSxlLnN0YXJ0JiZlLnN0YXJ0KCksZS5wb3N0TWVzc2FnZShPYmplY3QuYXNzaWduKHtpZDpyfSx0KSxuKX0pfWZ1bmN0aW9uIG5uKCl7cmV0dXJuIG5ldyBBcnJheSg0KS5maWxsKDApLm1hcCgoKT0+TWF0aC5mbG9vcihNYXRoLnJhbmRvbSgpKk51bWJlci5NQVhfU0FGRV9JTlRFR0VSKS50b1N0cmluZygxNikpLmpvaW4oIi0iKX1mdW5jdGlvbiBhZShlKXtyZXR1cm4gdHlwZW9mIFN5bWJvbD09ImZ1bmN0aW9uIiYmdHlwZW9mIFN5bWJvbC5pdGVyYXRvcj09InN5bWJvbCI/YWU9ZnVuY3Rpb24odCl7cmV0dXJuIHR5cGVvZiB0fTphZT1mdW5jdGlvbih0KXtyZXR1cm4gdCYmdHlwZW9mIFN5bWJvbD09ImZ1bmN0aW9uIiYmdC5jb25zdHJ1Y3Rvcj09PVN5bWJvbCYmdCE9PVN5bWJvbC5wcm90b3R5cGU/InN5bWJvbCI6dHlwZW9mIHR9LGFlKGUpfWZ1bmN0aW9uIHJuKGUpe3JldHVybiBhZShlKT09Im9iamVjdCImJmUhPT1udWxsfXZhciBKZT10eXBlb2YgU3ltYm9sPT0iZnVuY3Rpb24iJiZTeW1ib2wudG9TdHJpbmdUYWchPW51bGw/U3ltYm9sLnRvU3RyaW5nVGFnOiJAQHRvU3RyaW5nVGFnIjtmdW5jdGlvbiB4ZShlLHQpe2Zvcih2YXIgbj0vXHJcbnxbXG5ccl0vZyxpPTEscj10KzEsYTsoYT1uLmV4ZWMoZS5ib2R5KSkmJmEuaW5kZXg8dDspaSs9MSxyPXQrMS0oYS5pbmRleCthWzBdLmxlbmd0aCk7cmV0dXJue2xpbmU6aSxjb2x1bW46cn19ZnVuY3Rpb24gYW4oZSl7cmV0dXJuIFllKGUuc291cmNlLHhlKGUuc291cmNlLGUuc3RhcnQpKX1mdW5jdGlvbiBZZShlLHQpe3ZhciBuPWUubG9jYXRpb25PZmZzZXQuY29sdW1uLTEsaT1vZShuKStlLmJvZHkscj10LmxpbmUtMSxhPWUubG9jYXRpb25PZmZzZXQubGluZS0xLG89dC5saW5lK2EsbD10LmxpbmU9PT0xP246MCxzPXQuY29sdW1uK2wsYz0iIi5jb25jYXQoZS5uYW1lLCI6IikuY29uY2F0KG8sIjoiKS5jb25jYXQocyxgCmApLGY9aS5zcGxpdCgvXHJcbnxbXG5ccl0vZyksZD1mW3JdO2lmKGQubGVuZ3RoPjEyMCl7Zm9yKHZhciB2PU1hdGguZmxvb3Iocy84MCksbT1zJTgwLGg9W10sTj0wO048ZC5sZW5ndGg7Tis9ODApaC5wdXNoKGQuc2xpY2UoTixOKzgwKSk7cmV0dXJuIGMrR2UoW1siIi5jb25jYXQobyksaFswXV1dLmNvbmNhdChoLnNsaWNlKDEsdisxKS5tYXAoZnVuY3Rpb24oZyl7cmV0dXJuWyIiLGddfSksW1siICIsb2UobS0xKSsiXiJdLFsiIixoW3YrMV1dXSkpfXJldHVybiBjK0dlKFtbIiIuY29uY2F0KG8tMSksZltyLTFdXSxbIiIuY29uY2F0KG8pLGRdLFsiIixvZShzLTEpKyJeIl0sWyIiLmNvbmNhdChvKzEpLGZbcisxXV1dKX1mdW5jdGlvbiBHZShlKXt2YXIgdD1lLmZpbHRlcihmdW5jdGlvbihpKXtpWzBdO3ZhciByPWlbMV07cmV0dXJuIHIhPT12b2lkIDB9KSxuPU1hdGgubWF4LmFwcGx5KE1hdGgsdC5tYXAoZnVuY3Rpb24oaSl7dmFyIHI9aVswXTtyZXR1cm4gci5sZW5ndGh9KSk7cmV0dXJuIHQubWFwKGZ1bmN0aW9uKGkpe3ZhciByPWlbMF0sYT1pWzFdO3JldHVybiBvbihuLHIpKyhhPyIgfCAiK2E6IiB8Iil9KS5qb2luKGAKYCl9ZnVuY3Rpb24gb2UoZSl7cmV0dXJuIEFycmF5KGUrMSkuam9pbigiICIpfWZ1bmN0aW9uIG9uKGUsdCl7cmV0dXJuIG9lKGUtdC5sZW5ndGgpK3R9ZnVuY3Rpb24gc2UoZSl7cmV0dXJuIHR5cGVvZiBTeW1ib2w9PSJmdW5jdGlvbiImJnR5cGVvZiBTeW1ib2wuaXRlcmF0b3I9PSJzeW1ib2wiP3NlPWZ1bmN0aW9uKHQpe3JldHVybiB0eXBlb2YgdH06c2U9ZnVuY3Rpb24odCl7cmV0dXJuIHQmJnR5cGVvZiBTeW1ib2w9PSJmdW5jdGlvbiImJnQuY29uc3RydWN0b3I9PT1TeW1ib2wmJnQhPT1TeW1ib2wucHJvdG90eXBlPyJzeW1ib2wiOnR5cGVvZiB0fSxzZShlKX1mdW5jdGlvbiB6ZShlLHQpe3ZhciBuPU9iamVjdC5rZXlzKGUpO2lmKE9iamVjdC5nZXRPd25Qcm9wZXJ0eVN5bWJvbHMpe3ZhciBpPU9iamVjdC5nZXRPd25Qcm9wZXJ0eVN5bWJvbHMoZSk7dCYmKGk9aS5maWx0ZXIoZnVuY3Rpb24ocil7cmV0dXJuIE9iamVjdC5nZXRPd25Qcm9wZXJ0eURlc2NyaXB0b3IoZSxyKS5lbnVtZXJhYmxlfSkpLG4ucHVzaC5hcHBseShuLGkpfXJldHVybiBufWZ1bmN0aW9uIHNuKGUpe2Zvcih2YXIgdD0xO3Q8YXJndW1lbnRzLmxlbmd0aDt0Kyspe3ZhciBuPWFyZ3VtZW50c1t0XSE9bnVsbD9hcmd1bWVudHNbdF06e307dCUyP3plKE9iamVjdChuKSwhMCkuZm9yRWFjaChmdW5jdGlvbihpKXtsbihlLGksbltpXSl9KTpPYmplY3QuZ2V0T3duUHJvcGVydHlEZXNjcmlwdG9ycz9PYmplY3QuZGVmaW5lUHJvcGVydGllcyhlLE9iamVjdC5nZXRPd25Qcm9wZXJ0eURlc2NyaXB0b3JzKG4pKTp6ZShPYmplY3QobikpLmZvckVhY2goZnVuY3Rpb24oaSl7T2JqZWN0LmRlZmluZVByb3BlcnR5KGUsaSxPYmplY3QuZ2V0T3duUHJvcGVydHlEZXNjcmlwdG9yKG4saSkpfSl9cmV0dXJuIGV9ZnVuY3Rpb24gbG4oZSx0LG4pe3JldHVybiB0IGluIGU/T2JqZWN0LmRlZmluZVByb3BlcnR5KGUsdCx7dmFsdWU6bixlbnVtZXJhYmxlOiEwLGNvbmZpZ3VyYWJsZTohMCx3cml0YWJsZTohMH0pOmVbdF09bixlfWZ1bmN0aW9uIGNuKGUsdCl7aWYoIShlIGluc3RhbmNlb2YgdCkpdGhyb3cgbmV3IFR5cGVFcnJvcigiQ2Fubm90IGNhbGwgYSBjbGFzcyBhcyBhIGZ1bmN0aW9uIil9ZnVuY3Rpb24gcWUoZSx0KXtmb3IodmFyIG49MDtuPHQubGVuZ3RoO24rKyl7dmFyIGk9dFtuXTtpLmVudW1lcmFibGU9aS5lbnVtZXJhYmxlfHwhMSxpLmNvbmZpZ3VyYWJsZT0hMCwidmFsdWUiaW4gaSYmKGkud3JpdGFibGU9ITApLE9iamVjdC5kZWZpbmVQcm9wZXJ0eShlLGkua2V5LGkpfX1mdW5jdGlvbiB1bihlLHQsbil7cmV0dXJuIHQmJnFlKGUucHJvdG90eXBlLHQpLG4mJnFlKGUsbiksZX1mdW5jdGlvbiBmbihlLHQpe2lmKHR5cGVvZiB0IT0iZnVuY3Rpb24iJiZ0IT09bnVsbCl0aHJvdyBuZXcgVHlwZUVycm9yKCJTdXBlciBleHByZXNzaW9uIG11c3QgZWl0aGVyIGJlIG51bGwgb3IgYSBmdW5jdGlvbiIpO2UucHJvdG90eXBlPU9iamVjdC5jcmVhdGUodCYmdC5wcm90b3R5cGUse2NvbnN0cnVjdG9yOnt2YWx1ZTplLHdyaXRhYmxlOiEwLGNvbmZpZ3VyYWJsZTohMH19KSx0JiZaKGUsdCl9ZnVuY3Rpb24gcG4oZSl7dmFyIHQ9SGUoKTtyZXR1cm4gZnVuY3Rpb24oKXt2YXIgbj1lZShlKSxpO2lmKHQpe3ZhciByPWVlKHRoaXMpLmNvbnN0cnVjdG9yO2k9UmVmbGVjdC5jb25zdHJ1Y3Qobixhcmd1bWVudHMscil9ZWxzZSBpPW4uYXBwbHkodGhpcyxhcmd1bWVudHMpO3JldHVybiBYZSh0aGlzLGkpfX1mdW5jdGlvbiBYZShlLHQpe3JldHVybiB0JiYoc2UodCk9PT0ib2JqZWN0Inx8dHlwZW9mIHQ9PSJmdW5jdGlvbiIpP3Q6VyhlKX1mdW5jdGlvbiBXKGUpe2lmKGU9PT12b2lkIDApdGhyb3cgbmV3IFJlZmVyZW5jZUVycm9yKCJ0aGlzIGhhc24ndCBiZWVuIGluaXRpYWxpc2VkIC0gc3VwZXIoKSBoYXNuJ3QgYmVlbiBjYWxsZWQiKTtyZXR1cm4gZX1mdW5jdGlvbiBJZShlKXt2YXIgdD10eXBlb2YgTWFwPT0iZnVuY3Rpb24iP25ldyBNYXA6dm9pZCAwO3JldHVybiBJZT1mdW5jdGlvbihuKXtpZihuPT09bnVsbHx8IWRuKG4pKXJldHVybiBuO2lmKHR5cGVvZiBuIT0iZnVuY3Rpb24iKXRocm93IG5ldyBUeXBlRXJyb3IoIlN1cGVyIGV4cHJlc3Npb24gbXVzdCBlaXRoZXIgYmUgbnVsbCBvciBhIGZ1bmN0aW9uIik7aWYodHlwZW9mIHQhPSJ1bmRlZmluZWQiKXtpZih0LmhhcyhuKSlyZXR1cm4gdC5nZXQobik7dC5zZXQobixpKX1mdW5jdGlvbiBpKCl7cmV0dXJuIGxlKG4sYXJndW1lbnRzLGVlKHRoaXMpLmNvbnN0cnVjdG9yKX1yZXR1cm4gaS5wcm90b3R5cGU9T2JqZWN0LmNyZWF0ZShuLnByb3RvdHlwZSx7Y29uc3RydWN0b3I6e3ZhbHVlOmksZW51bWVyYWJsZTohMSx3cml0YWJsZTohMCxjb25maWd1cmFibGU6ITB9fSksWihpLG4pfSxJZShlKX1mdW5jdGlvbiBsZShlLHQsbil7cmV0dXJuIEhlKCk/bGU9UmVmbGVjdC5jb25zdHJ1Y3Q6bGU9ZnVuY3Rpb24oaSxyLGEpe3ZhciBvPVtudWxsXTtvLnB1c2guYXBwbHkobyxyKTt2YXIgbD1GdW5jdGlvbi5iaW5kLmFwcGx5KGksbykscz1uZXcgbDtyZXR1cm4gYSYmWihzLGEucHJvdG90eXBlKSxzfSxsZS5hcHBseShudWxsLGFyZ3VtZW50cyl9ZnVuY3Rpb24gSGUoKXtpZih0eXBlb2YgUmVmbGVjdD09InVuZGVmaW5lZCJ8fCFSZWZsZWN0LmNvbnN0cnVjdHx8UmVmbGVjdC5jb25zdHJ1Y3Quc2hhbSlyZXR1cm4hMTtpZih0eXBlb2YgUHJveHk9PSJmdW5jdGlvbiIpcmV0dXJuITA7dHJ5e3JldHVybiBEYXRlLnByb3RvdHlwZS50b1N0cmluZy5jYWxsKFJlZmxlY3QuY29uc3RydWN0KERhdGUsW10sZnVuY3Rpb24oKXt9KSksITB9Y2F0Y2h7cmV0dXJuITF9fWZ1bmN0aW9uIGRuKGUpe3JldHVybiBGdW5jdGlvbi50b1N0cmluZy5jYWxsKGUpLmluZGV4T2YoIltuYXRpdmUgY29kZV0iKSE9PS0xfWZ1bmN0aW9uIFooZSx0KXtyZXR1cm4gWj1PYmplY3Quc2V0UHJvdG90eXBlT2Z8fGZ1bmN0aW9uKG4saSl7cmV0dXJuIG4uX19wcm90b19fPWksbn0sWihlLHQpfWZ1bmN0aW9uIGVlKGUpe3JldHVybiBlZT1PYmplY3Quc2V0UHJvdG90eXBlT2Y/T2JqZWN0LmdldFByb3RvdHlwZU9mOmZ1bmN0aW9uKHQpe3JldHVybiB0Ll9fcHJvdG9fX3x8T2JqZWN0LmdldFByb3RvdHlwZU9mKHQpfSxlZShlKX12YXIgbW49ZnVuY3Rpb24oZSl7Zm4obixlKTt2YXIgdD1wbihuKTtmdW5jdGlvbiBuKGkscixhLG8sbCxzLGMpe3ZhciBmLGQsdixtO2NuKHRoaXMsbiksbT10LmNhbGwodGhpcyxpKSxtLm5hbWU9IkdyYXBoUUxFcnJvciIsbS5vcmlnaW5hbEVycm9yPXMhPW51bGw/czp2b2lkIDAsbS5ub2Rlcz1RZShBcnJheS5pc0FycmF5KHIpP3I6cj9bcl06dm9pZCAwKTtmb3IodmFyIGg9W10sTj0wLGc9KEE9bS5ub2RlcykhPT1udWxsJiZBIT09dm9pZCAwP0E6W107TjxnLmxlbmd0aDtOKyspe3ZhciBBLHg9Z1tOXSxPPXgubG9jO08hPW51bGwmJmgucHVzaChPKX1oPVFlKGgpLG0uc291cmNlPWEhPW51bGw/YTooZj1oKT09PW51bGx8fGY9PT12b2lkIDA/dm9pZCAwOmZbMF0uc291cmNlLG0ucG9zaXRpb25zPW8hPW51bGw/bzooZD1oKT09PW51bGx8fGQ9PT12b2lkIDA/dm9pZCAwOmQubWFwKGZ1bmN0aW9uKGspe3JldHVybiBrLnN0YXJ0fSksbS5sb2NhdGlvbnM9byYmYT9vLm1hcChmdW5jdGlvbihrKXtyZXR1cm4geGUoYSxrKX0pOih2PWgpPT09bnVsbHx8dj09PXZvaWQgMD92b2lkIDA6di5tYXAoZnVuY3Rpb24oayl7cmV0dXJuIHhlKGsuc291cmNlLGsuc3RhcnQpfSksbS5wYXRoPWwhPW51bGw/bDp2b2lkIDA7dmFyIHE9cz09bnVsbD92b2lkIDA6cy5leHRlbnNpb25zO3JldHVybiBjPT1udWxsJiZybihxKT9tLmV4dGVuc2lvbnM9c24oe30scSk6bS5leHRlbnNpb25zPWMhPW51bGw/Yzp7fSxPYmplY3QuZGVmaW5lUHJvcGVydGllcyhXKG0pLHttZXNzYWdlOntlbnVtZXJhYmxlOiEwfSxsb2NhdGlvbnM6e2VudW1lcmFibGU6bS5sb2NhdGlvbnMhPW51bGx9LHBhdGg6e2VudW1lcmFibGU6bS5wYXRoIT1udWxsfSxleHRlbnNpb25zOntlbnVtZXJhYmxlOm0uZXh0ZW5zaW9ucyE9bnVsbCYmT2JqZWN0LmtleXMobS5leHRlbnNpb25zKS5sZW5ndGg+MH0sbmFtZTp7ZW51bWVyYWJsZTohMX0sbm9kZXM6e2VudW1lcmFibGU6ITF9LHNvdXJjZTp7ZW51bWVyYWJsZTohMX0scG9zaXRpb25zOntlbnVtZXJhYmxlOiExfSxvcmlnaW5hbEVycm9yOntlbnVtZXJhYmxlOiExfX0pLHMhPW51bGwmJnMuc3RhY2s/KE9iamVjdC5kZWZpbmVQcm9wZXJ0eShXKG0pLCJzdGFjayIse3ZhbHVlOnMuc3RhY2ssd3JpdGFibGU6ITAsY29uZmlndXJhYmxlOiEwfSksWGUobSkpOihFcnJvci5jYXB0dXJlU3RhY2tUcmFjZT9FcnJvci5jYXB0dXJlU3RhY2tUcmFjZShXKG0pLG4pOk9iamVjdC5kZWZpbmVQcm9wZXJ0eShXKG0pLCJzdGFjayIse3ZhbHVlOkVycm9yKCkuc3RhY2ssd3JpdGFibGU6ITAsY29uZmlndXJhYmxlOiEwfSksbSl9cmV0dXJuIHVuKG4sW3trZXk6InRvU3RyaW5nIix2YWx1ZTpmdW5jdGlvbigpe3JldHVybiBobih0aGlzKX19LHtrZXk6SmUsZ2V0OmZ1bmN0aW9uKCl7cmV0dXJuIk9iamVjdCJ9fV0pLG59KEllKEVycm9yKSk7ZnVuY3Rpb24gUWUoZSl7cmV0dXJuIGU9PT12b2lkIDB8fGUubGVuZ3RoPT09MD92b2lkIDA6ZX1mdW5jdGlvbiBobihlKXt2YXIgdD1lLm1lc3NhZ2U7aWYoZS5ub2Rlcylmb3IodmFyIG49MCxpPWUubm9kZXM7bjxpLmxlbmd0aDtuKyspe3ZhciByPWlbbl07ci5sb2MmJih0Kz1gCgpgK2FuKHIubG9jKSl9ZWxzZSBpZihlLnNvdXJjZSYmZS5sb2NhdGlvbnMpZm9yKHZhciBhPTAsbz1lLmxvY2F0aW9uczthPG8ubGVuZ3RoO2ErKyl7dmFyIGw9b1thXTt0Kz1gCgpgK1llKGUuc291cmNlLGwpfXJldHVybiB0fWZ1bmN0aW9uIF8oZSx0LG4pe3JldHVybiBuZXcgbW4oIlN5bnRheCBFcnJvcjogIi5jb25jYXQobiksdm9pZCAwLGUsW3RdKX12YXIgVD1PYmplY3QuZnJlZXplKHtOQU1FOiJOYW1lIixET0NVTUVOVDoiRG9jdW1lbnQiLE9QRVJBVElPTl9ERUZJTklUSU9OOiJPcGVyYXRpb25EZWZpbml0aW9uIixWQVJJQUJMRV9ERUZJTklUSU9OOiJWYXJpYWJsZURlZmluaXRpb24iLFNFTEVDVElPTl9TRVQ6IlNlbGVjdGlvblNldCIsRklFTEQ6IkZpZWxkIixBUkdVTUVOVDoiQXJndW1lbnQiLEZSQUdNRU5UX1NQUkVBRDoiRnJhZ21lbnRTcHJlYWQiLElOTElORV9GUkFHTUVOVDoiSW5saW5lRnJhZ21lbnQiLEZSQUdNRU5UX0RFRklOSVRJT046IkZyYWdtZW50RGVmaW5pdGlvbiIsVkFSSUFCTEU6IlZhcmlhYmxlIixJTlQ6IkludFZhbHVlIixGTE9BVDoiRmxvYXRWYWx1ZSIsU1RSSU5HOiJTdHJpbmdWYWx1ZSIsQk9PTEVBTjoiQm9vbGVhblZhbHVlIixOVUxMOiJOdWxsVmFsdWUiLEVOVU06IkVudW1WYWx1ZSIsTElTVDoiTGlzdFZhbHVlIixPQkpFQ1Q6Ik9iamVjdFZhbHVlIixPQkpFQ1RfRklFTEQ6Ik9iamVjdEZpZWxkIixESVJFQ1RJVkU6IkRpcmVjdGl2ZSIsTkFNRURfVFlQRToiTmFtZWRUeXBlIixMSVNUX1RZUEU6Ikxpc3RUeXBlIixOT05fTlVMTF9UWVBFOiJOb25OdWxsVHlwZSIsU0NIRU1BX0RFRklOSVRJT046IlNjaGVtYURlZmluaXRpb24iLE9QRVJBVElPTl9UWVBFX0RFRklOSVRJT046Ik9wZXJhdGlvblR5cGVEZWZpbml0aW9uIixTQ0FMQVJfVFlQRV9ERUZJTklUSU9OOiJTY2FsYXJUeXBlRGVmaW5pdGlvbiIsT0JKRUNUX1RZUEVfREVGSU5JVElPTjoiT2JqZWN0VHlwZURlZmluaXRpb24iLEZJRUxEX0RFRklOSVRJT046IkZpZWxkRGVmaW5pdGlvbiIsSU5QVVRfVkFMVUVfREVGSU5JVElPTjoiSW5wdXRWYWx1ZURlZmluaXRpb24iLElOVEVSRkFDRV9UWVBFX0RFRklOSVRJT046IkludGVyZmFjZVR5cGVEZWZpbml0aW9uIixVTklPTl9UWVBFX0RFRklOSVRJT046IlVuaW9uVHlwZURlZmluaXRpb24iLEVOVU1fVFlQRV9ERUZJTklUSU9OOiJFbnVtVHlwZURlZmluaXRpb24iLEVOVU1fVkFMVUVfREVGSU5JVElPTjoiRW51bVZhbHVlRGVmaW5pdGlvbiIsSU5QVVRfT0JKRUNUX1RZUEVfREVGSU5JVElPTjoiSW5wdXRPYmplY3RUeXBlRGVmaW5pdGlvbiIsRElSRUNUSVZFX0RFRklOSVRJT046IkRpcmVjdGl2ZURlZmluaXRpb24iLFNDSEVNQV9FWFRFTlNJT046IlNjaGVtYUV4dGVuc2lvbiIsU0NBTEFSX1RZUEVfRVhURU5TSU9OOiJTY2FsYXJUeXBlRXh0ZW5zaW9uIixPQkpFQ1RfVFlQRV9FWFRFTlNJT046Ik9iamVjdFR5cGVFeHRlbnNpb24iLElOVEVSRkFDRV9UWVBFX0VYVEVOU0lPTjoiSW50ZXJmYWNlVHlwZUV4dGVuc2lvbiIsVU5JT05fVFlQRV9FWFRFTlNJT046IlVuaW9uVHlwZUV4dGVuc2lvbiIsRU5VTV9UWVBFX0VYVEVOU0lPTjoiRW51bVR5cGVFeHRlbnNpb24iLElOUFVUX09CSkVDVF9UWVBFX0VYVEVOU0lPTjoiSW5wdXRPYmplY3RUeXBlRXh0ZW5zaW9uIn0pO2Z1bmN0aW9uIHZuKGUsdCl7dmFyIG49Qm9vbGVhbihlKTtpZighbil0aHJvdyBuZXcgRXJyb3IodCE9bnVsbD90OiJVbmV4cGVjdGVkIGludmFyaWFudCB0cmlnZ2VyZWQuIil9dmFyIHluPXR5cGVvZiBTeW1ib2w9PSJmdW5jdGlvbiImJnR5cGVvZiBTeW1ib2wuZm9yPT0iZnVuY3Rpb24iP1N5bWJvbC5mb3IoIm5vZGVqcy51dGlsLmluc3BlY3QuY3VzdG9tIik6dm9pZCAwLFNlPXluO2Z1bmN0aW9uIFdlKGUpe3ZhciB0PWUucHJvdG90eXBlLnRvSlNPTjt0eXBlb2YgdD09ImZ1bmN0aW9uInx8dm4oMCksZS5wcm90b3R5cGUuaW5zcGVjdD10LFNlJiYoZS5wcm90b3R5cGVbU2VdPXQpfXZhciBaZT1mdW5jdGlvbigpe2Z1bmN0aW9uIGUobixpLHIpe3RoaXMuc3RhcnQ9bi5zdGFydCx0aGlzLmVuZD1pLmVuZCx0aGlzLnN0YXJ0VG9rZW49bix0aGlzLmVuZFRva2VuPWksdGhpcy5zb3VyY2U9cn12YXIgdD1lLnByb3RvdHlwZTtyZXR1cm4gdC50b0pTT049ZnVuY3Rpb24oKXtyZXR1cm57c3RhcnQ6dGhpcy5zdGFydCxlbmQ6dGhpcy5lbmR9fSxlfSgpO1dlKFplKTt2YXIgUz1mdW5jdGlvbigpe2Z1bmN0aW9uIGUobixpLHIsYSxvLGwscyl7dGhpcy5raW5kPW4sdGhpcy5zdGFydD1pLHRoaXMuZW5kPXIsdGhpcy5saW5lPWEsdGhpcy5jb2x1bW49byx0aGlzLnZhbHVlPXMsdGhpcy5wcmV2PWwsdGhpcy5uZXh0PW51bGx9dmFyIHQ9ZS5wcm90b3R5cGU7cmV0dXJuIHQudG9KU09OPWZ1bmN0aW9uKCl7cmV0dXJue2tpbmQ6dGhpcy5raW5kLHZhbHVlOnRoaXMudmFsdWUsbGluZTp0aGlzLmxpbmUsY29sdW1uOnRoaXMuY29sdW1ufX0sZX0oKTtXZShTKTtmdW5jdGlvbiBldChlKXtyZXR1cm4gZSE9bnVsbCYmdHlwZW9mIGUua2luZD09InN0cmluZyJ9dmFyIHA9T2JqZWN0LmZyZWV6ZSh7U09GOiI8U09GPiIsRU9GOiI8RU9GPiIsQkFORzoiISIsRE9MTEFSOiIkIixBTVA6IiYiLFBBUkVOX0w6IigiLFBBUkVOX1I6IikiLFNQUkVBRDoiLi4uIixDT0xPTjoiOiIsRVFVQUxTOiI9IixBVDoiQCIsQlJBQ0tFVF9MOiJbIixCUkFDS0VUX1I6Il0iLEJSQUNFX0w6InsiLFBJUEU6InwiLEJSQUNFX1I6In0iLE5BTUU6Ik5hbWUiLElOVDoiSW50IixGTE9BVDoiRmxvYXQiLFNUUklORzoiU3RyaW5nIixCTE9DS19TVFJJTkc6IkJsb2NrU3RyaW5nIixDT01NRU5UOiJDb21tZW50In0pO2Z1bmN0aW9uIGNlKGUpe3JldHVybiB0eXBlb2YgU3ltYm9sPT0iZnVuY3Rpb24iJiZ0eXBlb2YgU3ltYm9sLml0ZXJhdG9yPT0ic3ltYm9sIj9jZT1mdW5jdGlvbih0KXtyZXR1cm4gdHlwZW9mIHR9OmNlPWZ1bmN0aW9uKHQpe3JldHVybiB0JiZ0eXBlb2YgU3ltYm9sPT0iZnVuY3Rpb24iJiZ0LmNvbnN0cnVjdG9yPT09U3ltYm9sJiZ0IT09U3ltYm9sLnByb3RvdHlwZT8ic3ltYm9sIjp0eXBlb2YgdH0sY2UoZSl9dmFyIEVuPTEwLHR0PTI7ZnVuY3Rpb24gbnQoZSl7cmV0dXJuIHVlKGUsW10pfWZ1bmN0aW9uIHVlKGUsdCl7c3dpdGNoKGNlKGUpKXtjYXNlInN0cmluZyI6cmV0dXJuIEpTT04uc3RyaW5naWZ5KGUpO2Nhc2UiZnVuY3Rpb24iOnJldHVybiBlLm5hbWU/IltmdW5jdGlvbiAiLmNvbmNhdChlLm5hbWUsIl0iKToiW2Z1bmN0aW9uXSI7Y2FzZSJvYmplY3QiOnJldHVybiBlPT09bnVsbD8ibnVsbCI6VG4oZSx0KTtkZWZhdWx0OnJldHVybiBTdHJpbmcoZSl9fWZ1bmN0aW9uIFRuKGUsdCl7aWYodC5pbmRleE9mKGUpIT09LTEpcmV0dXJuIltDaXJjdWxhcl0iO3ZhciBuPVtdLmNvbmNhdCh0LFtlXSksaT14bihlKTtpZihpIT09dm9pZCAwKXt2YXIgcj1pLmNhbGwoZSk7aWYociE9PWUpcmV0dXJuIHR5cGVvZiByPT0ic3RyaW5nIj9yOnVlKHIsbil9ZWxzZSBpZihBcnJheS5pc0FycmF5KGUpKXJldHVybiBObihlLG4pO3JldHVybiBnbihlLG4pfWZ1bmN0aW9uIGduKGUsdCl7dmFyIG49T2JqZWN0LmtleXMoZSk7aWYobi5sZW5ndGg9PT0wKXJldHVybiJ7fSI7aWYodC5sZW5ndGg+dHQpcmV0dXJuIlsiK0luKGUpKyJdIjt2YXIgaT1uLm1hcChmdW5jdGlvbihyKXt2YXIgYT11ZShlW3JdLHQpO3JldHVybiByKyI6ICIrYX0pO3JldHVybiJ7ICIraS5qb2luKCIsICIpKyIgfSJ9ZnVuY3Rpb24gTm4oZSx0KXtpZihlLmxlbmd0aD09PTApcmV0dXJuIltdIjtpZih0Lmxlbmd0aD50dClyZXR1cm4iW0FycmF5XSI7Zm9yKHZhciBuPU1hdGgubWluKEVuLGUubGVuZ3RoKSxpPWUubGVuZ3RoLW4scj1bXSxhPTA7YTxuOysrYSlyLnB1c2godWUoZVthXSx0KSk7cmV0dXJuIGk9PT0xP3IucHVzaCgiLi4uIDEgbW9yZSBpdGVtIik6aT4xJiZyLnB1c2goIi4uLiAiLmNvbmNhdChpLCIgbW9yZSBpdGVtcyIpKSwiWyIrci5qb2luKCIsICIpKyJdIn1mdW5jdGlvbiB4bihlKXt2YXIgdD1lW1N0cmluZyhTZSldO2lmKHR5cGVvZiB0PT0iZnVuY3Rpb24iKXJldHVybiB0O2lmKHR5cGVvZiBlLmluc3BlY3Q9PSJmdW5jdGlvbiIpcmV0dXJuIGUuaW5zcGVjdH1mdW5jdGlvbiBJbihlKXt2YXIgdD1PYmplY3QucHJvdG90eXBlLnRvU3RyaW5nLmNhbGwoZSkucmVwbGFjZSgvXlxbb2JqZWN0IC8sIiIpLnJlcGxhY2UoL10kLywiIik7aWYodD09PSJPYmplY3QiJiZ0eXBlb2YgZS5jb25zdHJ1Y3Rvcj09ImZ1bmN0aW9uIil7dmFyIG49ZS5jb25zdHJ1Y3Rvci5uYW1lO2lmKHR5cGVvZiBuPT0ic3RyaW5nIiYmbiE9PSIiKXJldHVybiBufXJldHVybiB0fWZ1bmN0aW9uIE9lKGUsdCl7dmFyIG49Qm9vbGVhbihlKTtpZighbil0aHJvdyBuZXcgRXJyb3IodCl9dmFyIFNuPWZ1bmN0aW9uKGUsdCl7cmV0dXJuIGUgaW5zdGFuY2VvZiB0fTtmdW5jdGlvbiBpdChlLHQpe2Zvcih2YXIgbj0wO248dC5sZW5ndGg7bisrKXt2YXIgaT10W25dO2kuZW51bWVyYWJsZT1pLmVudW1lcmFibGV8fCExLGkuY29uZmlndXJhYmxlPSEwLCJ2YWx1ZSJpbiBpJiYoaS53cml0YWJsZT0hMCksT2JqZWN0LmRlZmluZVByb3BlcnR5KGUsaS5rZXksaSl9fWZ1bmN0aW9uIE9uKGUsdCxuKXtyZXR1cm4gdCYmaXQoZS5wcm90b3R5cGUsdCksbiYmaXQoZSxuKSxlfXZhciBydD1mdW5jdGlvbigpe2Z1bmN0aW9uIGUodCl7dmFyIG49YXJndW1lbnRzLmxlbmd0aD4xJiZhcmd1bWVudHNbMV0hPT12b2lkIDA/YXJndW1lbnRzWzFdOiJHcmFwaFFMIHJlcXVlc3QiLGk9YXJndW1lbnRzLmxlbmd0aD4yJiZhcmd1bWVudHNbMl0hPT12b2lkIDA/YXJndW1lbnRzWzJdOntsaW5lOjEsY29sdW1uOjF9O3R5cGVvZiB0PT0ic3RyaW5nInx8T2UoMCwiQm9keSBtdXN0IGJlIGEgc3RyaW5nLiBSZWNlaXZlZDogIi5jb25jYXQobnQodCksIi4iKSksdGhpcy5ib2R5PXQsdGhpcy5uYW1lPW4sdGhpcy5sb2NhdGlvbk9mZnNldD1pLHRoaXMubG9jYXRpb25PZmZzZXQubGluZT4wfHxPZSgwLCJsaW5lIGluIGxvY2F0aW9uT2Zmc2V0IGlzIDEtaW5kZXhlZCBhbmQgbXVzdCBiZSBwb3NpdGl2ZS4iKSx0aGlzLmxvY2F0aW9uT2Zmc2V0LmNvbHVtbj4wfHxPZSgwLCJjb2x1bW4gaW4gbG9jYXRpb25PZmZzZXQgaXMgMS1pbmRleGVkIGFuZCBtdXN0IGJlIHBvc2l0aXZlLiIpfXJldHVybiBPbihlLFt7a2V5OkplLGdldDpmdW5jdGlvbigpe3JldHVybiJTb3VyY2UifX1dKSxlfSgpO2Z1bmN0aW9uIEFuKGUpe3JldHVybiBTbihlLHJ0KX12YXIgYm49T2JqZWN0LmZyZWV6ZSh7UVVFUlk6IlFVRVJZIixNVVRBVElPTjoiTVVUQVRJT04iLFNVQlNDUklQVElPTjoiU1VCU0NSSVBUSU9OIixGSUVMRDoiRklFTEQiLEZSQUdNRU5UX0RFRklOSVRJT046IkZSQUdNRU5UX0RFRklOSVRJT04iLEZSQUdNRU5UX1NQUkVBRDoiRlJBR01FTlRfU1BSRUFEIixJTkxJTkVfRlJBR01FTlQ6IklOTElORV9GUkFHTUVOVCIsVkFSSUFCTEVfREVGSU5JVElPTjoiVkFSSUFCTEVfREVGSU5JVElPTiIsU0NIRU1BOiJTQ0hFTUEiLFNDQUxBUjoiU0NBTEFSIixPQkpFQ1Q6Ik9CSkVDVCIsRklFTERfREVGSU5JVElPTjoiRklFTERfREVGSU5JVElPTiIsQVJHVU1FTlRfREVGSU5JVElPTjoiQVJHVU1FTlRfREVGSU5JVElPTiIsSU5URVJGQUNFOiJJTlRFUkZBQ0UiLFVOSU9OOiJVTklPTiIsRU5VTToiRU5VTSIsRU5VTV9WQUxVRToiRU5VTV9WQUxVRSIsSU5QVVRfT0JKRUNUOiJJTlBVVF9PQkpFQ1QiLElOUFVUX0ZJRUxEX0RFRklOSVRJT046IklOUFVUX0ZJRUxEX0RFRklOSVRJT04ifSk7ZnVuY3Rpb24ga24oZSl7dmFyIHQ9ZS5zcGxpdCgvXHJcbnxbXG5ccl0vZyksbj1EbihlKTtpZihuIT09MClmb3IodmFyIGk9MTtpPHQubGVuZ3RoO2krKyl0W2ldPXRbaV0uc2xpY2Uobik7Zm9yKHZhciByPTA7cjx0Lmxlbmd0aCYmYXQodFtyXSk7KSsrcjtmb3IodmFyIGE9dC5sZW5ndGg7YT5yJiZhdCh0W2EtMV0pOyktLWE7cmV0dXJuIHQuc2xpY2UocixhKS5qb2luKGAKYCl9ZnVuY3Rpb24gYXQoZSl7Zm9yKHZhciB0PTA7dDxlLmxlbmd0aDsrK3QpaWYoZVt0XSE9PSIgIiYmZVt0XSE9PSIJIilyZXR1cm4hMTtyZXR1cm4hMH1mdW5jdGlvbiBEbihlKXtmb3IodmFyIHQsbj0hMCxpPSEwLHI9MCxhPW51bGwsbz0wO288ZS5sZW5ndGg7KytvKXN3aXRjaChlLmNoYXJDb2RlQXQobykpe2Nhc2UgMTM6ZS5jaGFyQ29kZUF0KG8rMSk9PT0xMCYmKytvO2Nhc2UgMTA6bj0hMSxpPSEwLHI9MDticmVhaztjYXNlIDk6Y2FzZSAzMjorK3I7YnJlYWs7ZGVmYXVsdDppJiYhbiYmKGE9PT1udWxsfHxyPGEpJiYoYT1yKSxpPSExfXJldHVybih0PWEpIT09bnVsbCYmdCE9PXZvaWQgMD90OjB9ZnVuY3Rpb24gX24oZSl7dmFyIHQ9YXJndW1lbnRzLmxlbmd0aD4xJiZhcmd1bWVudHNbMV0hPT12b2lkIDA/YXJndW1lbnRzWzFdOiIiLG49YXJndW1lbnRzLmxlbmd0aD4yJiZhcmd1bWVudHNbMl0hPT12b2lkIDA/YXJndW1lbnRzWzJdOiExLGk9ZS5pbmRleE9mKGAKYCk9PT0tMSxyPWVbMF09PT0iICJ8fGVbMF09PT0iCSIsYT1lW2UubGVuZ3RoLTFdPT09JyInLG89ZVtlLmxlbmd0aC0xXT09PSJcXCIsbD0haXx8YXx8b3x8bixzPSIiO3JldHVybiBsJiYhKGkmJnIpJiYocys9YApgK3QpLHMrPXQ/ZS5yZXBsYWNlKC9cbi9nLGAKYCt0KTplLGwmJihzKz1gCmApLCciIiInK3MucmVwbGFjZSgvIiIiL2csJ1xcIiIiJykrJyIiIid9dmFyIExuPWZ1bmN0aW9uKCl7ZnVuY3Rpb24gZShuKXt2YXIgaT1uZXcgUyhwLlNPRiwwLDAsMCwwLG51bGwpO3RoaXMuc291cmNlPW4sdGhpcy5sYXN0VG9rZW49aSx0aGlzLnRva2VuPWksdGhpcy5saW5lPTEsdGhpcy5saW5lU3RhcnQ9MH12YXIgdD1lLnByb3RvdHlwZTtyZXR1cm4gdC5hZHZhbmNlPWZ1bmN0aW9uKCl7dGhpcy5sYXN0VG9rZW49dGhpcy50b2tlbjt2YXIgbj10aGlzLnRva2VuPXRoaXMubG9va2FoZWFkKCk7cmV0dXJuIG59LHQubG9va2FoZWFkPWZ1bmN0aW9uKCl7dmFyIG49dGhpcy50b2tlbjtpZihuLmtpbmQhPT1wLkVPRilkb3t2YXIgaTtuPShpPW4ubmV4dCkhPT1udWxsJiZpIT09dm9pZCAwP2k6bi5uZXh0PXduKHRoaXMsbil9d2hpbGUobi5raW5kPT09cC5DT01NRU5UKTtyZXR1cm4gbn0sZX0oKTtmdW5jdGlvbiBDbihlKXtyZXR1cm4gZT09PXAuQkFOR3x8ZT09PXAuRE9MTEFSfHxlPT09cC5BTVB8fGU9PT1wLlBBUkVOX0x8fGU9PT1wLlBBUkVOX1J8fGU9PT1wLlNQUkVBRHx8ZT09PXAuQ09MT058fGU9PT1wLkVRVUFMU3x8ZT09PXAuQVR8fGU9PT1wLkJSQUNLRVRfTHx8ZT09PXAuQlJBQ0tFVF9SfHxlPT09cC5CUkFDRV9MfHxlPT09cC5QSVBFfHxlPT09cC5CUkFDRV9SfWZ1bmN0aW9uIEooZSl7cmV0dXJuIGlzTmFOKGUpP3AuRU9GOmU8MTI3P0pTT04uc3RyaW5naWZ5KFN0cmluZy5mcm9tQ2hhckNvZGUoZSkpOiciXFx1Jy5jb25jYXQoKCIwMCIrZS50b1N0cmluZygxNikudG9VcHBlckNhc2UoKSkuc2xpY2UoLTQpLCciJyl9ZnVuY3Rpb24gd24oZSx0KXtmb3IodmFyIG49ZS5zb3VyY2UsaT1uLmJvZHkscj1pLmxlbmd0aCxhPXQuZW5kO2E8cjspe3ZhciBvPWkuY2hhckNvZGVBdChhKSxsPWUubGluZSxzPTErYS1lLmxpbmVTdGFydDtzd2l0Y2gobyl7Y2FzZSA2NTI3OTpjYXNlIDk6Y2FzZSAzMjpjYXNlIDQ0OisrYTtjb250aW51ZTtjYXNlIDEwOisrYSwrK2UubGluZSxlLmxpbmVTdGFydD1hO2NvbnRpbnVlO2Nhc2UgMTM6aS5jaGFyQ29kZUF0KGErMSk9PT0xMD9hKz0yOisrYSwrK2UubGluZSxlLmxpbmVTdGFydD1hO2NvbnRpbnVlO2Nhc2UgMzM6cmV0dXJuIG5ldyBTKHAuQkFORyxhLGErMSxsLHMsdCk7Y2FzZSAzNTpyZXR1cm4gUm4obixhLGwscyx0KTtjYXNlIDM2OnJldHVybiBuZXcgUyhwLkRPTExBUixhLGErMSxsLHMsdCk7Y2FzZSAzODpyZXR1cm4gbmV3IFMocC5BTVAsYSxhKzEsbCxzLHQpO2Nhc2UgNDA6cmV0dXJuIG5ldyBTKHAuUEFSRU5fTCxhLGErMSxsLHMsdCk7Y2FzZSA0MTpyZXR1cm4gbmV3IFMocC5QQVJFTl9SLGEsYSsxLGwscyx0KTtjYXNlIDQ2OmlmKGkuY2hhckNvZGVBdChhKzEpPT09NDYmJmkuY2hhckNvZGVBdChhKzIpPT09NDYpcmV0dXJuIG5ldyBTKHAuU1BSRUFELGEsYSszLGwscyx0KTticmVhaztjYXNlIDU4OnJldHVybiBuZXcgUyhwLkNPTE9OLGEsYSsxLGwscyx0KTtjYXNlIDYxOnJldHVybiBuZXcgUyhwLkVRVUFMUyxhLGErMSxsLHMsdCk7Y2FzZSA2NDpyZXR1cm4gbmV3IFMocC5BVCxhLGErMSxsLHMsdCk7Y2FzZSA5MTpyZXR1cm4gbmV3IFMocC5CUkFDS0VUX0wsYSxhKzEsbCxzLHQpO2Nhc2UgOTM6cmV0dXJuIG5ldyBTKHAuQlJBQ0tFVF9SLGEsYSsxLGwscyx0KTtjYXNlIDEyMzpyZXR1cm4gbmV3IFMocC5CUkFDRV9MLGEsYSsxLGwscyx0KTtjYXNlIDEyNDpyZXR1cm4gbmV3IFMocC5QSVBFLGEsYSsxLGwscyx0KTtjYXNlIDEyNTpyZXR1cm4gbmV3IFMocC5CUkFDRV9SLGEsYSsxLGwscyx0KTtjYXNlIDM0OnJldHVybiBpLmNoYXJDb2RlQXQoYSsxKT09PTM0JiZpLmNoYXJDb2RlQXQoYSsyKT09PTM0P0JuKG4sYSxsLHMsdCxlKTpqbihuLGEsbCxzLHQpO2Nhc2UgNDU6Y2FzZSA0ODpjYXNlIDQ5OmNhc2UgNTA6Y2FzZSA1MTpjYXNlIDUyOmNhc2UgNTM6Y2FzZSA1NDpjYXNlIDU1OmNhc2UgNTY6Y2FzZSA1NzpyZXR1cm4gUG4obixhLG8sbCxzLHQpO2Nhc2UgNjU6Y2FzZSA2NjpjYXNlIDY3OmNhc2UgNjg6Y2FzZSA2OTpjYXNlIDcwOmNhc2UgNzE6Y2FzZSA3MjpjYXNlIDczOmNhc2UgNzQ6Y2FzZSA3NTpjYXNlIDc2OmNhc2UgNzc6Y2FzZSA3ODpjYXNlIDc5OmNhc2UgODA6Y2FzZSA4MTpjYXNlIDgyOmNhc2UgODM6Y2FzZSA4NDpjYXNlIDg1OmNhc2UgODY6Y2FzZSA4NzpjYXNlIDg4OmNhc2UgODk6Y2FzZSA5MDpjYXNlIDk1OmNhc2UgOTc6Y2FzZSA5ODpjYXNlIDk5OmNhc2UgMTAwOmNhc2UgMTAxOmNhc2UgMTAyOmNhc2UgMTAzOmNhc2UgMTA0OmNhc2UgMTA1OmNhc2UgMTA2OmNhc2UgMTA3OmNhc2UgMTA4OmNhc2UgMTA5OmNhc2UgMTEwOmNhc2UgMTExOmNhc2UgMTEyOmNhc2UgMTEzOmNhc2UgMTE0OmNhc2UgMTE1OmNhc2UgMTE2OmNhc2UgMTE3OmNhc2UgMTE4OmNhc2UgMTE5OmNhc2UgMTIwOmNhc2UgMTIxOmNhc2UgMTIyOnJldHVybiBWbihuLGEsbCxzLHQpfXRocm93IF8obixhLEZuKG8pKX12YXIgYz1lLmxpbmUsZj0xK2EtZS5saW5lU3RhcnQ7cmV0dXJuIG5ldyBTKHAuRU9GLHIscixjLGYsdCl9ZnVuY3Rpb24gRm4oZSl7cmV0dXJuIGU8MzImJmUhPT05JiZlIT09MTAmJmUhPT0xMz8iQ2Fubm90IGNvbnRhaW4gdGhlIGludmFsaWQgY2hhcmFjdGVyICIuY29uY2F0KEooZSksIi4iKTplPT09Mzk/YFVuZXhwZWN0ZWQgc2luZ2xlIHF1b3RlIGNoYXJhY3RlciAoJyksIGRpZCB5b3UgbWVhbiB0byB1c2UgYSBkb3VibGUgcXVvdGUgKCIpP2A6IkNhbm5vdCBwYXJzZSB0aGUgdW5leHBlY3RlZCBjaGFyYWN0ZXIgIi5jb25jYXQoSihlKSwiLiIpfWZ1bmN0aW9uIFJuKGUsdCxuLGkscil7dmFyIGE9ZS5ib2R5LG8sbD10O2RvIG89YS5jaGFyQ29kZUF0KCsrbCk7d2hpbGUoIWlzTmFOKG8pJiYobz4zMXx8bz09PTkpKTtyZXR1cm4gbmV3IFMocC5DT01NRU5ULHQsbCxuLGkscixhLnNsaWNlKHQrMSxsKSl9ZnVuY3Rpb24gUG4oZSx0LG4saSxyLGEpe3ZhciBvPWUuYm9keSxsPW4scz10LGM9ITE7aWYobD09PTQ1JiYobD1vLmNoYXJDb2RlQXQoKytzKSksbD09PTQ4KXtpZihsPW8uY2hhckNvZGVBdCgrK3MpLGw+PTQ4JiZsPD01Nyl0aHJvdyBfKGUscywiSW52YWxpZCBudW1iZXIsIHVuZXhwZWN0ZWQgZGlnaXQgYWZ0ZXIgMDogIi5jb25jYXQoSihsKSwiLiIpKX1lbHNlIHM9QWUoZSxzLGwpLGw9by5jaGFyQ29kZUF0KHMpO2lmKGw9PT00NiYmKGM9ITAsbD1vLmNoYXJDb2RlQXQoKytzKSxzPUFlKGUscyxsKSxsPW8uY2hhckNvZGVBdChzKSksKGw9PT02OXx8bD09PTEwMSkmJihjPSEwLGw9by5jaGFyQ29kZUF0KCsrcyksKGw9PT00M3x8bD09PTQ1KSYmKGw9by5jaGFyQ29kZUF0KCsrcykpLHM9QWUoZSxzLGwpLGw9by5jaGFyQ29kZUF0KHMpKSxsPT09NDZ8fCRuKGwpKXRocm93IF8oZSxzLCJJbnZhbGlkIG51bWJlciwgZXhwZWN0ZWQgZGlnaXQgYnV0IGdvdDogIi5jb25jYXQoSihsKSwiLiIpKTtyZXR1cm4gbmV3IFMoYz9wLkZMT0FUOnAuSU5ULHQscyxpLHIsYSxvLnNsaWNlKHQscykpfWZ1bmN0aW9uIEFlKGUsdCxuKXt2YXIgaT1lLmJvZHkscj10LGE9bjtpZihhPj00OCYmYTw9NTcpe2RvIGE9aS5jaGFyQ29kZUF0KCsrcik7d2hpbGUoYT49NDgmJmE8PTU3KTtyZXR1cm4gcn10aHJvdyBfKGUsciwiSW52YWxpZCBudW1iZXIsIGV4cGVjdGVkIGRpZ2l0IGJ1dCBnb3Q6ICIuY29uY2F0KEooYSksIi4iKSl9ZnVuY3Rpb24gam4oZSx0LG4saSxyKXtmb3IodmFyIGE9ZS5ib2R5LG89dCsxLGw9byxzPTAsYz0iIjtvPGEubGVuZ3RoJiYhaXNOYU4ocz1hLmNoYXJDb2RlQXQobykpJiZzIT09MTAmJnMhPT0xMzspe2lmKHM9PT0zNClyZXR1cm4gYys9YS5zbGljZShsLG8pLG5ldyBTKHAuU1RSSU5HLHQsbysxLG4saSxyLGMpO2lmKHM8MzImJnMhPT05KXRocm93IF8oZSxvLCJJbnZhbGlkIGNoYXJhY3RlciB3aXRoaW4gU3RyaW5nOiAiLmNvbmNhdChKKHMpLCIuIikpO2lmKCsrbyxzPT09OTIpe3N3aXRjaChjKz1hLnNsaWNlKGwsby0xKSxzPWEuY2hhckNvZGVBdChvKSxzKXtjYXNlIDM0OmMrPSciJzticmVhaztjYXNlIDQ3OmMrPSIvIjticmVhaztjYXNlIDkyOmMrPSJcXCI7YnJlYWs7Y2FzZSA5ODpjKz0iXGIiO2JyZWFrO2Nhc2UgMTAyOmMrPSJcZiI7YnJlYWs7Y2FzZSAxMTA6Yys9YApgO2JyZWFrO2Nhc2UgMTE0OmMrPSJcciI7YnJlYWs7Y2FzZSAxMTY6Yys9IgkiO2JyZWFrO2Nhc2UgMTE3Ont2YXIgZj1NbihhLmNoYXJDb2RlQXQobysxKSxhLmNoYXJDb2RlQXQobysyKSxhLmNoYXJDb2RlQXQobyszKSxhLmNoYXJDb2RlQXQobys0KSk7aWYoZjwwKXt2YXIgZD1hLnNsaWNlKG8rMSxvKzUpO3Rocm93IF8oZSxvLCJJbnZhbGlkIGNoYXJhY3RlciBlc2NhcGUgc2VxdWVuY2U6IFxcdSIuY29uY2F0KGQsIi4iKSl9Yys9U3RyaW5nLmZyb21DaGFyQ29kZShmKSxvKz00O2JyZWFrfWRlZmF1bHQ6dGhyb3cgXyhlLG8sIkludmFsaWQgY2hhcmFjdGVyIGVzY2FwZSBzZXF1ZW5jZTogXFwiLmNvbmNhdChTdHJpbmcuZnJvbUNoYXJDb2RlKHMpLCIuIikpfSsrbyxsPW99fXRocm93IF8oZSxvLCJVbnRlcm1pbmF0ZWQgc3RyaW5nLiIpfWZ1bmN0aW9uIEJuKGUsdCxuLGkscixhKXtmb3IodmFyIG89ZS5ib2R5LGw9dCszLHM9bCxjPTAsZj0iIjtsPG8ubGVuZ3RoJiYhaXNOYU4oYz1vLmNoYXJDb2RlQXQobCkpOyl7aWYoYz09PTM0JiZvLmNoYXJDb2RlQXQobCsxKT09PTM0JiZvLmNoYXJDb2RlQXQobCsyKT09PTM0KXJldHVybiBmKz1vLnNsaWNlKHMsbCksbmV3IFMocC5CTE9DS19TVFJJTkcsdCxsKzMsbixpLHIsa24oZikpO2lmKGM8MzImJmMhPT05JiZjIT09MTAmJmMhPT0xMyl0aHJvdyBfKGUsbCwiSW52YWxpZCBjaGFyYWN0ZXIgd2l0aGluIFN0cmluZzogIi5jb25jYXQoSihjKSwiLiIpKTtjPT09MTA/KCsrbCwrK2EubGluZSxhLmxpbmVTdGFydD1sKTpjPT09MTM/KG8uY2hhckNvZGVBdChsKzEpPT09MTA/bCs9MjorK2wsKythLmxpbmUsYS5saW5lU3RhcnQ9bCk6Yz09PTkyJiZvLmNoYXJDb2RlQXQobCsxKT09PTM0JiZvLmNoYXJDb2RlQXQobCsyKT09PTM0JiZvLmNoYXJDb2RlQXQobCszKT09PTM0PyhmKz1vLnNsaWNlKHMsbCkrJyIiIicsbCs9NCxzPWwpOisrbH10aHJvdyBfKGUsbCwiVW50ZXJtaW5hdGVkIHN0cmluZy4iKX1mdW5jdGlvbiBNbihlLHQsbixpKXtyZXR1cm4gZmUoZSk8PDEyfGZlKHQpPDw4fGZlKG4pPDw0fGZlKGkpfWZ1bmN0aW9uIGZlKGUpe3JldHVybiBlPj00OCYmZTw9NTc/ZS00ODplPj02NSYmZTw9NzA/ZS01NTplPj05NyYmZTw9MTAyP2UtODc6LTF9ZnVuY3Rpb24gVm4oZSx0LG4saSxyKXtmb3IodmFyIGE9ZS5ib2R5LG89YS5sZW5ndGgsbD10KzEscz0wO2whPT1vJiYhaXNOYU4ocz1hLmNoYXJDb2RlQXQobCkpJiYocz09PTk1fHxzPj00OCYmczw9NTd8fHM+PTY1JiZzPD05MHx8cz49OTcmJnM8PTEyMik7KSsrbDtyZXR1cm4gbmV3IFMocC5OQU1FLHQsbCxuLGkscixhLnNsaWNlKHQsbCkpfWZ1bmN0aW9uICRuKGUpe3JldHVybiBlPT09OTV8fGU+PTY1JiZlPD05MHx8ZT49OTcmJmU8PTEyMn1mdW5jdGlvbiBQKGUsdCl7dmFyIG49bmV3IFVuKGUsdCk7cmV0dXJuIG4ucGFyc2VEb2N1bWVudCgpfXZhciBVbj1mdW5jdGlvbigpe2Z1bmN0aW9uIGUobixpKXt2YXIgcj1BbihuKT9uOm5ldyBydChuKTt0aGlzLl9sZXhlcj1uZXcgTG4ociksdGhpcy5fb3B0aW9ucz1pfXZhciB0PWUucHJvdG90eXBlO3JldHVybiB0LnBhcnNlTmFtZT1mdW5jdGlvbigpe3ZhciBuPXRoaXMuZXhwZWN0VG9rZW4ocC5OQU1FKTtyZXR1cm57a2luZDpULk5BTUUsdmFsdWU6bi52YWx1ZSxsb2M6dGhpcy5sb2Mobil9fSx0LnBhcnNlRG9jdW1lbnQ9ZnVuY3Rpb24oKXt2YXIgbj10aGlzLl9sZXhlci50b2tlbjtyZXR1cm57a2luZDpULkRPQ1VNRU5ULGRlZmluaXRpb25zOnRoaXMubWFueShwLlNPRix0aGlzLnBhcnNlRGVmaW5pdGlvbixwLkVPRiksbG9jOnRoaXMubG9jKG4pfX0sdC5wYXJzZURlZmluaXRpb249ZnVuY3Rpb24oKXtpZih0aGlzLnBlZWsocC5OQU1FKSlzd2l0Y2godGhpcy5fbGV4ZXIudG9rZW4udmFsdWUpe2Nhc2UicXVlcnkiOmNhc2UibXV0YXRpb24iOmNhc2Uic3Vic2NyaXB0aW9uIjpyZXR1cm4gdGhpcy5wYXJzZU9wZXJhdGlvbkRlZmluaXRpb24oKTtjYXNlImZyYWdtZW50IjpyZXR1cm4gdGhpcy5wYXJzZUZyYWdtZW50RGVmaW5pdGlvbigpO2Nhc2Uic2NoZW1hIjpjYXNlInNjYWxhciI6Y2FzZSJ0eXBlIjpjYXNlImludGVyZmFjZSI6Y2FzZSJ1bmlvbiI6Y2FzZSJlbnVtIjpjYXNlImlucHV0IjpjYXNlImRpcmVjdGl2ZSI6cmV0dXJuIHRoaXMucGFyc2VUeXBlU3lzdGVtRGVmaW5pdGlvbigpO2Nhc2UiZXh0ZW5kIjpyZXR1cm4gdGhpcy5wYXJzZVR5cGVTeXN0ZW1FeHRlbnNpb24oKX1lbHNle2lmKHRoaXMucGVlayhwLkJSQUNFX0wpKXJldHVybiB0aGlzLnBhcnNlT3BlcmF0aW9uRGVmaW5pdGlvbigpO2lmKHRoaXMucGVla0Rlc2NyaXB0aW9uKCkpcmV0dXJuIHRoaXMucGFyc2VUeXBlU3lzdGVtRGVmaW5pdGlvbigpfXRocm93IHRoaXMudW5leHBlY3RlZCgpfSx0LnBhcnNlT3BlcmF0aW9uRGVmaW5pdGlvbj1mdW5jdGlvbigpe3ZhciBuPXRoaXMuX2xleGVyLnRva2VuO2lmKHRoaXMucGVlayhwLkJSQUNFX0wpKXJldHVybntraW5kOlQuT1BFUkFUSU9OX0RFRklOSVRJT04sb3BlcmF0aW9uOiJxdWVyeSIsbmFtZTp2b2lkIDAsdmFyaWFibGVEZWZpbml0aW9uczpbXSxkaXJlY3RpdmVzOltdLHNlbGVjdGlvblNldDp0aGlzLnBhcnNlU2VsZWN0aW9uU2V0KCksbG9jOnRoaXMubG9jKG4pfTt2YXIgaT10aGlzLnBhcnNlT3BlcmF0aW9uVHlwZSgpLHI7cmV0dXJuIHRoaXMucGVlayhwLk5BTUUpJiYocj10aGlzLnBhcnNlTmFtZSgpKSx7a2luZDpULk9QRVJBVElPTl9ERUZJTklUSU9OLG9wZXJhdGlvbjppLG5hbWU6cix2YXJpYWJsZURlZmluaXRpb25zOnRoaXMucGFyc2VWYXJpYWJsZURlZmluaXRpb25zKCksZGlyZWN0aXZlczp0aGlzLnBhcnNlRGlyZWN0aXZlcyghMSksc2VsZWN0aW9uU2V0OnRoaXMucGFyc2VTZWxlY3Rpb25TZXQoKSxsb2M6dGhpcy5sb2Mobil9fSx0LnBhcnNlT3BlcmF0aW9uVHlwZT1mdW5jdGlvbigpe3ZhciBuPXRoaXMuZXhwZWN0VG9rZW4ocC5OQU1FKTtzd2l0Y2gobi52YWx1ZSl7Y2FzZSJxdWVyeSI6cmV0dXJuInF1ZXJ5IjtjYXNlIm11dGF0aW9uIjpyZXR1cm4ibXV0YXRpb24iO2Nhc2Uic3Vic2NyaXB0aW9uIjpyZXR1cm4ic3Vic2NyaXB0aW9uIn10aHJvdyB0aGlzLnVuZXhwZWN0ZWQobil9LHQucGFyc2VWYXJpYWJsZURlZmluaXRpb25zPWZ1bmN0aW9uKCl7cmV0dXJuIHRoaXMub3B0aW9uYWxNYW55KHAuUEFSRU5fTCx0aGlzLnBhcnNlVmFyaWFibGVEZWZpbml0aW9uLHAuUEFSRU5fUil9LHQucGFyc2VWYXJpYWJsZURlZmluaXRpb249ZnVuY3Rpb24oKXt2YXIgbj10aGlzLl9sZXhlci50b2tlbjtyZXR1cm57a2luZDpULlZBUklBQkxFX0RFRklOSVRJT04sdmFyaWFibGU6dGhpcy5wYXJzZVZhcmlhYmxlKCksdHlwZToodGhpcy5leHBlY3RUb2tlbihwLkNPTE9OKSx0aGlzLnBhcnNlVHlwZVJlZmVyZW5jZSgpKSxkZWZhdWx0VmFsdWU6dGhpcy5leHBlY3RPcHRpb25hbFRva2VuKHAuRVFVQUxTKT90aGlzLnBhcnNlVmFsdWVMaXRlcmFsKCEwKTp2b2lkIDAsZGlyZWN0aXZlczp0aGlzLnBhcnNlRGlyZWN0aXZlcyghMCksbG9jOnRoaXMubG9jKG4pfX0sdC5wYXJzZVZhcmlhYmxlPWZ1bmN0aW9uKCl7dmFyIG49dGhpcy5fbGV4ZXIudG9rZW47cmV0dXJuIHRoaXMuZXhwZWN0VG9rZW4ocC5ET0xMQVIpLHtraW5kOlQuVkFSSUFCTEUsbmFtZTp0aGlzLnBhcnNlTmFtZSgpLGxvYzp0aGlzLmxvYyhuKX19LHQucGFyc2VTZWxlY3Rpb25TZXQ9ZnVuY3Rpb24oKXt2YXIgbj10aGlzLl9sZXhlci50b2tlbjtyZXR1cm57a2luZDpULlNFTEVDVElPTl9TRVQsc2VsZWN0aW9uczp0aGlzLm1hbnkocC5CUkFDRV9MLHRoaXMucGFyc2VTZWxlY3Rpb24scC5CUkFDRV9SKSxsb2M6dGhpcy5sb2Mobil9fSx0LnBhcnNlU2VsZWN0aW9uPWZ1bmN0aW9uKCl7cmV0dXJuIHRoaXMucGVlayhwLlNQUkVBRCk/dGhpcy5wYXJzZUZyYWdtZW50KCk6dGhpcy5wYXJzZUZpZWxkKCl9LHQucGFyc2VGaWVsZD1mdW5jdGlvbigpe3ZhciBuPXRoaXMuX2xleGVyLnRva2VuLGk9dGhpcy5wYXJzZU5hbWUoKSxyLGE7cmV0dXJuIHRoaXMuZXhwZWN0T3B0aW9uYWxUb2tlbihwLkNPTE9OKT8ocj1pLGE9dGhpcy5wYXJzZU5hbWUoKSk6YT1pLHtraW5kOlQuRklFTEQsYWxpYXM6cixuYW1lOmEsYXJndW1lbnRzOnRoaXMucGFyc2VBcmd1bWVudHMoITEpLGRpcmVjdGl2ZXM6dGhpcy5wYXJzZURpcmVjdGl2ZXMoITEpLHNlbGVjdGlvblNldDp0aGlzLnBlZWsocC5CUkFDRV9MKT90aGlzLnBhcnNlU2VsZWN0aW9uU2V0KCk6dm9pZCAwLGxvYzp0aGlzLmxvYyhuKX19LHQucGFyc2VBcmd1bWVudHM9ZnVuY3Rpb24obil7dmFyIGk9bj90aGlzLnBhcnNlQ29uc3RBcmd1bWVudDp0aGlzLnBhcnNlQXJndW1lbnQ7cmV0dXJuIHRoaXMub3B0aW9uYWxNYW55KHAuUEFSRU5fTCxpLHAuUEFSRU5fUil9LHQucGFyc2VBcmd1bWVudD1mdW5jdGlvbigpe3ZhciBuPXRoaXMuX2xleGVyLnRva2VuLGk9dGhpcy5wYXJzZU5hbWUoKTtyZXR1cm4gdGhpcy5leHBlY3RUb2tlbihwLkNPTE9OKSx7a2luZDpULkFSR1VNRU5ULG5hbWU6aSx2YWx1ZTp0aGlzLnBhcnNlVmFsdWVMaXRlcmFsKCExKSxsb2M6dGhpcy5sb2Mobil9fSx0LnBhcnNlQ29uc3RBcmd1bWVudD1mdW5jdGlvbigpe3ZhciBuPXRoaXMuX2xleGVyLnRva2VuO3JldHVybntraW5kOlQuQVJHVU1FTlQsbmFtZTp0aGlzLnBhcnNlTmFtZSgpLHZhbHVlOih0aGlzLmV4cGVjdFRva2VuKHAuQ09MT04pLHRoaXMucGFyc2VWYWx1ZUxpdGVyYWwoITApKSxsb2M6dGhpcy5sb2Mobil9fSx0LnBhcnNlRnJhZ21lbnQ9ZnVuY3Rpb24oKXt2YXIgbj10aGlzLl9sZXhlci50b2tlbjt0aGlzLmV4cGVjdFRva2VuKHAuU1BSRUFEKTt2YXIgaT10aGlzLmV4cGVjdE9wdGlvbmFsS2V5d29yZCgib24iKTtyZXR1cm4haSYmdGhpcy5wZWVrKHAuTkFNRSk/e2tpbmQ6VC5GUkFHTUVOVF9TUFJFQUQsbmFtZTp0aGlzLnBhcnNlRnJhZ21lbnROYW1lKCksZGlyZWN0aXZlczp0aGlzLnBhcnNlRGlyZWN0aXZlcyghMSksbG9jOnRoaXMubG9jKG4pfTp7a2luZDpULklOTElORV9GUkFHTUVOVCx0eXBlQ29uZGl0aW9uOmk/dGhpcy5wYXJzZU5hbWVkVHlwZSgpOnZvaWQgMCxkaXJlY3RpdmVzOnRoaXMucGFyc2VEaXJlY3RpdmVzKCExKSxzZWxlY3Rpb25TZXQ6dGhpcy5wYXJzZVNlbGVjdGlvblNldCgpLGxvYzp0aGlzLmxvYyhuKX19LHQucGFyc2VGcmFnbWVudERlZmluaXRpb249ZnVuY3Rpb24oKXt2YXIgbixpPXRoaXMuX2xleGVyLnRva2VuO3JldHVybiB0aGlzLmV4cGVjdEtleXdvcmQoImZyYWdtZW50IiksKChuPXRoaXMuX29wdGlvbnMpPT09bnVsbHx8bj09PXZvaWQgMD92b2lkIDA6bi5leHBlcmltZW50YWxGcmFnbWVudFZhcmlhYmxlcyk9PT0hMD97a2luZDpULkZSQUdNRU5UX0RFRklOSVRJT04sbmFtZTp0aGlzLnBhcnNlRnJhZ21lbnROYW1lKCksdmFyaWFibGVEZWZpbml0aW9uczp0aGlzLnBhcnNlVmFyaWFibGVEZWZpbml0aW9ucygpLHR5cGVDb25kaXRpb246KHRoaXMuZXhwZWN0S2V5d29yZCgib24iKSx0aGlzLnBhcnNlTmFtZWRUeXBlKCkpLGRpcmVjdGl2ZXM6dGhpcy5wYXJzZURpcmVjdGl2ZXMoITEpLHNlbGVjdGlvblNldDp0aGlzLnBhcnNlU2VsZWN0aW9uU2V0KCksbG9jOnRoaXMubG9jKGkpfTp7a2luZDpULkZSQUdNRU5UX0RFRklOSVRJT04sbmFtZTp0aGlzLnBhcnNlRnJhZ21lbnROYW1lKCksdHlwZUNvbmRpdGlvbjoodGhpcy5leHBlY3RLZXl3b3JkKCJvbiIpLHRoaXMucGFyc2VOYW1lZFR5cGUoKSksZGlyZWN0aXZlczp0aGlzLnBhcnNlRGlyZWN0aXZlcyghMSksc2VsZWN0aW9uU2V0OnRoaXMucGFyc2VTZWxlY3Rpb25TZXQoKSxsb2M6dGhpcy5sb2MoaSl9fSx0LnBhcnNlRnJhZ21lbnROYW1lPWZ1bmN0aW9uKCl7aWYodGhpcy5fbGV4ZXIudG9rZW4udmFsdWU9PT0ib24iKXRocm93IHRoaXMudW5leHBlY3RlZCgpO3JldHVybiB0aGlzLnBhcnNlTmFtZSgpfSx0LnBhcnNlVmFsdWVMaXRlcmFsPWZ1bmN0aW9uKG4pe3ZhciBpPXRoaXMuX2xleGVyLnRva2VuO3N3aXRjaChpLmtpbmQpe2Nhc2UgcC5CUkFDS0VUX0w6cmV0dXJuIHRoaXMucGFyc2VMaXN0KG4pO2Nhc2UgcC5CUkFDRV9MOnJldHVybiB0aGlzLnBhcnNlT2JqZWN0KG4pO2Nhc2UgcC5JTlQ6cmV0dXJuIHRoaXMuX2xleGVyLmFkdmFuY2UoKSx7a2luZDpULklOVCx2YWx1ZTppLnZhbHVlLGxvYzp0aGlzLmxvYyhpKX07Y2FzZSBwLkZMT0FUOnJldHVybiB0aGlzLl9sZXhlci5hZHZhbmNlKCkse2tpbmQ6VC5GTE9BVCx2YWx1ZTppLnZhbHVlLGxvYzp0aGlzLmxvYyhpKX07Y2FzZSBwLlNUUklORzpjYXNlIHAuQkxPQ0tfU1RSSU5HOnJldHVybiB0aGlzLnBhcnNlU3RyaW5nTGl0ZXJhbCgpO2Nhc2UgcC5OQU1FOnN3aXRjaCh0aGlzLl9sZXhlci5hZHZhbmNlKCksaS52YWx1ZSl7Y2FzZSJ0cnVlIjpyZXR1cm57a2luZDpULkJPT0xFQU4sdmFsdWU6ITAsbG9jOnRoaXMubG9jKGkpfTtjYXNlImZhbHNlIjpyZXR1cm57a2luZDpULkJPT0xFQU4sdmFsdWU6ITEsbG9jOnRoaXMubG9jKGkpfTtjYXNlIm51bGwiOnJldHVybntraW5kOlQuTlVMTCxsb2M6dGhpcy5sb2MoaSl9O2RlZmF1bHQ6cmV0dXJue2tpbmQ6VC5FTlVNLHZhbHVlOmkudmFsdWUsbG9jOnRoaXMubG9jKGkpfX1jYXNlIHAuRE9MTEFSOmlmKCFuKXJldHVybiB0aGlzLnBhcnNlVmFyaWFibGUoKTticmVha310aHJvdyB0aGlzLnVuZXhwZWN0ZWQoKX0sdC5wYXJzZVN0cmluZ0xpdGVyYWw9ZnVuY3Rpb24oKXt2YXIgbj10aGlzLl9sZXhlci50b2tlbjtyZXR1cm4gdGhpcy5fbGV4ZXIuYWR2YW5jZSgpLHtraW5kOlQuU1RSSU5HLHZhbHVlOm4udmFsdWUsYmxvY2s6bi5raW5kPT09cC5CTE9DS19TVFJJTkcsbG9jOnRoaXMubG9jKG4pfX0sdC5wYXJzZUxpc3Q9ZnVuY3Rpb24obil7dmFyIGk9dGhpcyxyPXRoaXMuX2xleGVyLnRva2VuLGE9ZnVuY3Rpb24oKXtyZXR1cm4gaS5wYXJzZVZhbHVlTGl0ZXJhbChuKX07cmV0dXJue2tpbmQ6VC5MSVNULHZhbHVlczp0aGlzLmFueShwLkJSQUNLRVRfTCxhLHAuQlJBQ0tFVF9SKSxsb2M6dGhpcy5sb2Mocil9fSx0LnBhcnNlT2JqZWN0PWZ1bmN0aW9uKG4pe3ZhciBpPXRoaXMscj10aGlzLl9sZXhlci50b2tlbixhPWZ1bmN0aW9uKCl7cmV0dXJuIGkucGFyc2VPYmplY3RGaWVsZChuKX07cmV0dXJue2tpbmQ6VC5PQkpFQ1QsZmllbGRzOnRoaXMuYW55KHAuQlJBQ0VfTCxhLHAuQlJBQ0VfUiksbG9jOnRoaXMubG9jKHIpfX0sdC5wYXJzZU9iamVjdEZpZWxkPWZ1bmN0aW9uKG4pe3ZhciBpPXRoaXMuX2xleGVyLnRva2VuLHI9dGhpcy5wYXJzZU5hbWUoKTtyZXR1cm4gdGhpcy5leHBlY3RUb2tlbihwLkNPTE9OKSx7a2luZDpULk9CSkVDVF9GSUVMRCxuYW1lOnIsdmFsdWU6dGhpcy5wYXJzZVZhbHVlTGl0ZXJhbChuKSxsb2M6dGhpcy5sb2MoaSl9fSx0LnBhcnNlRGlyZWN0aXZlcz1mdW5jdGlvbihuKXtmb3IodmFyIGk9W107dGhpcy5wZWVrKHAuQVQpOylpLnB1c2godGhpcy5wYXJzZURpcmVjdGl2ZShuKSk7cmV0dXJuIGl9LHQucGFyc2VEaXJlY3RpdmU9ZnVuY3Rpb24obil7dmFyIGk9dGhpcy5fbGV4ZXIudG9rZW47cmV0dXJuIHRoaXMuZXhwZWN0VG9rZW4ocC5BVCkse2tpbmQ6VC5ESVJFQ1RJVkUsbmFtZTp0aGlzLnBhcnNlTmFtZSgpLGFyZ3VtZW50czp0aGlzLnBhcnNlQXJndW1lbnRzKG4pLGxvYzp0aGlzLmxvYyhpKX19LHQucGFyc2VUeXBlUmVmZXJlbmNlPWZ1bmN0aW9uKCl7dmFyIG49dGhpcy5fbGV4ZXIudG9rZW4saTtyZXR1cm4gdGhpcy5leHBlY3RPcHRpb25hbFRva2VuKHAuQlJBQ0tFVF9MKT8oaT10aGlzLnBhcnNlVHlwZVJlZmVyZW5jZSgpLHRoaXMuZXhwZWN0VG9rZW4ocC5CUkFDS0VUX1IpLGk9e2tpbmQ6VC5MSVNUX1RZUEUsdHlwZTppLGxvYzp0aGlzLmxvYyhuKX0pOmk9dGhpcy5wYXJzZU5hbWVkVHlwZSgpLHRoaXMuZXhwZWN0T3B0aW9uYWxUb2tlbihwLkJBTkcpP3traW5kOlQuTk9OX05VTExfVFlQRSx0eXBlOmksbG9jOnRoaXMubG9jKG4pfTppfSx0LnBhcnNlTmFtZWRUeXBlPWZ1bmN0aW9uKCl7dmFyIG49dGhpcy5fbGV4ZXIudG9rZW47cmV0dXJue2tpbmQ6VC5OQU1FRF9UWVBFLG5hbWU6dGhpcy5wYXJzZU5hbWUoKSxsb2M6dGhpcy5sb2Mobil9fSx0LnBhcnNlVHlwZVN5c3RlbURlZmluaXRpb249ZnVuY3Rpb24oKXt2YXIgbj10aGlzLnBlZWtEZXNjcmlwdGlvbigpP3RoaXMuX2xleGVyLmxvb2thaGVhZCgpOnRoaXMuX2xleGVyLnRva2VuO2lmKG4ua2luZD09PXAuTkFNRSlzd2l0Y2gobi52YWx1ZSl7Y2FzZSJzY2hlbWEiOnJldHVybiB0aGlzLnBhcnNlU2NoZW1hRGVmaW5pdGlvbigpO2Nhc2Uic2NhbGFyIjpyZXR1cm4gdGhpcy5wYXJzZVNjYWxhclR5cGVEZWZpbml0aW9uKCk7Y2FzZSJ0eXBlIjpyZXR1cm4gdGhpcy5wYXJzZU9iamVjdFR5cGVEZWZpbml0aW9uKCk7Y2FzZSJpbnRlcmZhY2UiOnJldHVybiB0aGlzLnBhcnNlSW50ZXJmYWNlVHlwZURlZmluaXRpb24oKTtjYXNlInVuaW9uIjpyZXR1cm4gdGhpcy5wYXJzZVVuaW9uVHlwZURlZmluaXRpb24oKTtjYXNlImVudW0iOnJldHVybiB0aGlzLnBhcnNlRW51bVR5cGVEZWZpbml0aW9uKCk7Y2FzZSJpbnB1dCI6cmV0dXJuIHRoaXMucGFyc2VJbnB1dE9iamVjdFR5cGVEZWZpbml0aW9uKCk7Y2FzZSJkaXJlY3RpdmUiOnJldHVybiB0aGlzLnBhcnNlRGlyZWN0aXZlRGVmaW5pdGlvbigpfXRocm93IHRoaXMudW5leHBlY3RlZChuKX0sdC5wZWVrRGVzY3JpcHRpb249ZnVuY3Rpb24oKXtyZXR1cm4gdGhpcy5wZWVrKHAuU1RSSU5HKXx8dGhpcy5wZWVrKHAuQkxPQ0tfU1RSSU5HKX0sdC5wYXJzZURlc2NyaXB0aW9uPWZ1bmN0aW9uKCl7aWYodGhpcy5wZWVrRGVzY3JpcHRpb24oKSlyZXR1cm4gdGhpcy5wYXJzZVN0cmluZ0xpdGVyYWwoKX0sdC5wYXJzZVNjaGVtYURlZmluaXRpb249ZnVuY3Rpb24oKXt2YXIgbj10aGlzLl9sZXhlci50b2tlbixpPXRoaXMucGFyc2VEZXNjcmlwdGlvbigpO3RoaXMuZXhwZWN0S2V5d29yZCgic2NoZW1hIik7dmFyIHI9dGhpcy5wYXJzZURpcmVjdGl2ZXMoITApLGE9dGhpcy5tYW55KHAuQlJBQ0VfTCx0aGlzLnBhcnNlT3BlcmF0aW9uVHlwZURlZmluaXRpb24scC5CUkFDRV9SKTtyZXR1cm57a2luZDpULlNDSEVNQV9ERUZJTklUSU9OLGRlc2NyaXB0aW9uOmksZGlyZWN0aXZlczpyLG9wZXJhdGlvblR5cGVzOmEsbG9jOnRoaXMubG9jKG4pfX0sdC5wYXJzZU9wZXJhdGlvblR5cGVEZWZpbml0aW9uPWZ1bmN0aW9uKCl7dmFyIG49dGhpcy5fbGV4ZXIudG9rZW4saT10aGlzLnBhcnNlT3BlcmF0aW9uVHlwZSgpO3RoaXMuZXhwZWN0VG9rZW4ocC5DT0xPTik7dmFyIHI9dGhpcy5wYXJzZU5hbWVkVHlwZSgpO3JldHVybntraW5kOlQuT1BFUkFUSU9OX1RZUEVfREVGSU5JVElPTixvcGVyYXRpb246aSx0eXBlOnIsbG9jOnRoaXMubG9jKG4pfX0sdC5wYXJzZVNjYWxhclR5cGVEZWZpbml0aW9uPWZ1bmN0aW9uKCl7dmFyIG49dGhpcy5fbGV4ZXIudG9rZW4saT10aGlzLnBhcnNlRGVzY3JpcHRpb24oKTt0aGlzLmV4cGVjdEtleXdvcmQoInNjYWxhciIpO3ZhciByPXRoaXMucGFyc2VOYW1lKCksYT10aGlzLnBhcnNlRGlyZWN0aXZlcyghMCk7cmV0dXJue2tpbmQ6VC5TQ0FMQVJfVFlQRV9ERUZJTklUSU9OLGRlc2NyaXB0aW9uOmksbmFtZTpyLGRpcmVjdGl2ZXM6YSxsb2M6dGhpcy5sb2Mobil9fSx0LnBhcnNlT2JqZWN0VHlwZURlZmluaXRpb249ZnVuY3Rpb24oKXt2YXIgbj10aGlzLl9sZXhlci50b2tlbixpPXRoaXMucGFyc2VEZXNjcmlwdGlvbigpO3RoaXMuZXhwZWN0S2V5d29yZCgidHlwZSIpO3ZhciByPXRoaXMucGFyc2VOYW1lKCksYT10aGlzLnBhcnNlSW1wbGVtZW50c0ludGVyZmFjZXMoKSxvPXRoaXMucGFyc2VEaXJlY3RpdmVzKCEwKSxsPXRoaXMucGFyc2VGaWVsZHNEZWZpbml0aW9uKCk7cmV0dXJue2tpbmQ6VC5PQkpFQ1RfVFlQRV9ERUZJTklUSU9OLGRlc2NyaXB0aW9uOmksbmFtZTpyLGludGVyZmFjZXM6YSxkaXJlY3RpdmVzOm8sZmllbGRzOmwsbG9jOnRoaXMubG9jKG4pfX0sdC5wYXJzZUltcGxlbWVudHNJbnRlcmZhY2VzPWZ1bmN0aW9uKCl7dmFyIG47aWYoIXRoaXMuZXhwZWN0T3B0aW9uYWxLZXl3b3JkKCJpbXBsZW1lbnRzIikpcmV0dXJuW107aWYoKChuPXRoaXMuX29wdGlvbnMpPT09bnVsbHx8bj09PXZvaWQgMD92b2lkIDA6bi5hbGxvd0xlZ2FjeVNETEltcGxlbWVudHNJbnRlcmZhY2VzKT09PSEwKXt2YXIgaT1bXTt0aGlzLmV4cGVjdE9wdGlvbmFsVG9rZW4ocC5BTVApO2RvIGkucHVzaCh0aGlzLnBhcnNlTmFtZWRUeXBlKCkpO3doaWxlKHRoaXMuZXhwZWN0T3B0aW9uYWxUb2tlbihwLkFNUCl8fHRoaXMucGVlayhwLk5BTUUpKTtyZXR1cm4gaX1yZXR1cm4gdGhpcy5kZWxpbWl0ZWRNYW55KHAuQU1QLHRoaXMucGFyc2VOYW1lZFR5cGUpfSx0LnBhcnNlRmllbGRzRGVmaW5pdGlvbj1mdW5jdGlvbigpe3ZhciBuO3JldHVybigobj10aGlzLl9vcHRpb25zKT09PW51bGx8fG49PT12b2lkIDA/dm9pZCAwOm4uYWxsb3dMZWdhY3lTRExFbXB0eUZpZWxkcyk9PT0hMCYmdGhpcy5wZWVrKHAuQlJBQ0VfTCkmJnRoaXMuX2xleGVyLmxvb2thaGVhZCgpLmtpbmQ9PT1wLkJSQUNFX1I/KHRoaXMuX2xleGVyLmFkdmFuY2UoKSx0aGlzLl9sZXhlci5hZHZhbmNlKCksW10pOnRoaXMub3B0aW9uYWxNYW55KHAuQlJBQ0VfTCx0aGlzLnBhcnNlRmllbGREZWZpbml0aW9uLHAuQlJBQ0VfUil9LHQucGFyc2VGaWVsZERlZmluaXRpb249ZnVuY3Rpb24oKXt2YXIgbj10aGlzLl9sZXhlci50b2tlbixpPXRoaXMucGFyc2VEZXNjcmlwdGlvbigpLHI9dGhpcy5wYXJzZU5hbWUoKSxhPXRoaXMucGFyc2VBcmd1bWVudERlZnMoKTt0aGlzLmV4cGVjdFRva2VuKHAuQ09MT04pO3ZhciBvPXRoaXMucGFyc2VUeXBlUmVmZXJlbmNlKCksbD10aGlzLnBhcnNlRGlyZWN0aXZlcyghMCk7cmV0dXJue2tpbmQ6VC5GSUVMRF9ERUZJTklUSU9OLGRlc2NyaXB0aW9uOmksbmFtZTpyLGFyZ3VtZW50czphLHR5cGU6byxkaXJlY3RpdmVzOmwsbG9jOnRoaXMubG9jKG4pfX0sdC5wYXJzZUFyZ3VtZW50RGVmcz1mdW5jdGlvbigpe3JldHVybiB0aGlzLm9wdGlvbmFsTWFueShwLlBBUkVOX0wsdGhpcy5wYXJzZUlucHV0VmFsdWVEZWYscC5QQVJFTl9SKX0sdC5wYXJzZUlucHV0VmFsdWVEZWY9ZnVuY3Rpb24oKXt2YXIgbj10aGlzLl9sZXhlci50b2tlbixpPXRoaXMucGFyc2VEZXNjcmlwdGlvbigpLHI9dGhpcy5wYXJzZU5hbWUoKTt0aGlzLmV4cGVjdFRva2VuKHAuQ09MT04pO3ZhciBhPXRoaXMucGFyc2VUeXBlUmVmZXJlbmNlKCksbzt0aGlzLmV4cGVjdE9wdGlvbmFsVG9rZW4ocC5FUVVBTFMpJiYobz10aGlzLnBhcnNlVmFsdWVMaXRlcmFsKCEwKSk7dmFyIGw9dGhpcy5wYXJzZURpcmVjdGl2ZXMoITApO3JldHVybntraW5kOlQuSU5QVVRfVkFMVUVfREVGSU5JVElPTixkZXNjcmlwdGlvbjppLG5hbWU6cix0eXBlOmEsZGVmYXVsdFZhbHVlOm8sZGlyZWN0aXZlczpsLGxvYzp0aGlzLmxvYyhuKX19LHQucGFyc2VJbnRlcmZhY2VUeXBlRGVmaW5pdGlvbj1mdW5jdGlvbigpe3ZhciBuPXRoaXMuX2xleGVyLnRva2VuLGk9dGhpcy5wYXJzZURlc2NyaXB0aW9uKCk7dGhpcy5leHBlY3RLZXl3b3JkKCJpbnRlcmZhY2UiKTt2YXIgcj10aGlzLnBhcnNlTmFtZSgpLGE9dGhpcy5wYXJzZUltcGxlbWVudHNJbnRlcmZhY2VzKCksbz10aGlzLnBhcnNlRGlyZWN0aXZlcyghMCksbD10aGlzLnBhcnNlRmllbGRzRGVmaW5pdGlvbigpO3JldHVybntraW5kOlQuSU5URVJGQUNFX1RZUEVfREVGSU5JVElPTixkZXNjcmlwdGlvbjppLG5hbWU6cixpbnRlcmZhY2VzOmEsZGlyZWN0aXZlczpvLGZpZWxkczpsLGxvYzp0aGlzLmxvYyhuKX19LHQucGFyc2VVbmlvblR5cGVEZWZpbml0aW9uPWZ1bmN0aW9uKCl7dmFyIG49dGhpcy5fbGV4ZXIudG9rZW4saT10aGlzLnBhcnNlRGVzY3JpcHRpb24oKTt0aGlzLmV4cGVjdEtleXdvcmQoInVuaW9uIik7dmFyIHI9dGhpcy5wYXJzZU5hbWUoKSxhPXRoaXMucGFyc2VEaXJlY3RpdmVzKCEwKSxvPXRoaXMucGFyc2VVbmlvbk1lbWJlclR5cGVzKCk7cmV0dXJue2tpbmQ6VC5VTklPTl9UWVBFX0RFRklOSVRJT04sZGVzY3JpcHRpb246aSxuYW1lOnIsZGlyZWN0aXZlczphLHR5cGVzOm8sbG9jOnRoaXMubG9jKG4pfX0sdC5wYXJzZVVuaW9uTWVtYmVyVHlwZXM9ZnVuY3Rpb24oKXtyZXR1cm4gdGhpcy5leHBlY3RPcHRpb25hbFRva2VuKHAuRVFVQUxTKT90aGlzLmRlbGltaXRlZE1hbnkocC5QSVBFLHRoaXMucGFyc2VOYW1lZFR5cGUpOltdfSx0LnBhcnNlRW51bVR5cGVEZWZpbml0aW9uPWZ1bmN0aW9uKCl7dmFyIG49dGhpcy5fbGV4ZXIudG9rZW4saT10aGlzLnBhcnNlRGVzY3JpcHRpb24oKTt0aGlzLmV4cGVjdEtleXdvcmQoImVudW0iKTt2YXIgcj10aGlzLnBhcnNlTmFtZSgpLGE9dGhpcy5wYXJzZURpcmVjdGl2ZXMoITApLG89dGhpcy5wYXJzZUVudW1WYWx1ZXNEZWZpbml0aW9uKCk7cmV0dXJue2tpbmQ6VC5FTlVNX1RZUEVfREVGSU5JVElPTixkZXNjcmlwdGlvbjppLG5hbWU6cixkaXJlY3RpdmVzOmEsdmFsdWVzOm8sbG9jOnRoaXMubG9jKG4pfX0sdC5wYXJzZUVudW1WYWx1ZXNEZWZpbml0aW9uPWZ1bmN0aW9uKCl7cmV0dXJuIHRoaXMub3B0aW9uYWxNYW55KHAuQlJBQ0VfTCx0aGlzLnBhcnNlRW51bVZhbHVlRGVmaW5pdGlvbixwLkJSQUNFX1IpfSx0LnBhcnNlRW51bVZhbHVlRGVmaW5pdGlvbj1mdW5jdGlvbigpe3ZhciBuPXRoaXMuX2xleGVyLnRva2VuLGk9dGhpcy5wYXJzZURlc2NyaXB0aW9uKCkscj10aGlzLnBhcnNlTmFtZSgpLGE9dGhpcy5wYXJzZURpcmVjdGl2ZXMoITApO3JldHVybntraW5kOlQuRU5VTV9WQUxVRV9ERUZJTklUSU9OLGRlc2NyaXB0aW9uOmksbmFtZTpyLGRpcmVjdGl2ZXM6YSxsb2M6dGhpcy5sb2Mobil9fSx0LnBhcnNlSW5wdXRPYmplY3RUeXBlRGVmaW5pdGlvbj1mdW5jdGlvbigpe3ZhciBuPXRoaXMuX2xleGVyLnRva2VuLGk9dGhpcy5wYXJzZURlc2NyaXB0aW9uKCk7dGhpcy5leHBlY3RLZXl3b3JkKCJpbnB1dCIpO3ZhciByPXRoaXMucGFyc2VOYW1lKCksYT10aGlzLnBhcnNlRGlyZWN0aXZlcyghMCksbz10aGlzLnBhcnNlSW5wdXRGaWVsZHNEZWZpbml0aW9uKCk7cmV0dXJue2tpbmQ6VC5JTlBVVF9PQkpFQ1RfVFlQRV9ERUZJTklUSU9OLGRlc2NyaXB0aW9uOmksbmFtZTpyLGRpcmVjdGl2ZXM6YSxmaWVsZHM6byxsb2M6dGhpcy5sb2Mobil9fSx0LnBhcnNlSW5wdXRGaWVsZHNEZWZpbml0aW9uPWZ1bmN0aW9uKCl7cmV0dXJuIHRoaXMub3B0aW9uYWxNYW55KHAuQlJBQ0VfTCx0aGlzLnBhcnNlSW5wdXRWYWx1ZURlZixwLkJSQUNFX1IpfSx0LnBhcnNlVHlwZVN5c3RlbUV4dGVuc2lvbj1mdW5jdGlvbigpe3ZhciBuPXRoaXMuX2xleGVyLmxvb2thaGVhZCgpO2lmKG4ua2luZD09PXAuTkFNRSlzd2l0Y2gobi52YWx1ZSl7Y2FzZSJzY2hlbWEiOnJldHVybiB0aGlzLnBhcnNlU2NoZW1hRXh0ZW5zaW9uKCk7Y2FzZSJzY2FsYXIiOnJldHVybiB0aGlzLnBhcnNlU2NhbGFyVHlwZUV4dGVuc2lvbigpO2Nhc2UidHlwZSI6cmV0dXJuIHRoaXMucGFyc2VPYmplY3RUeXBlRXh0ZW5zaW9uKCk7Y2FzZSJpbnRlcmZhY2UiOnJldHVybiB0aGlzLnBhcnNlSW50ZXJmYWNlVHlwZUV4dGVuc2lvbigpO2Nhc2UidW5pb24iOnJldHVybiB0aGlzLnBhcnNlVW5pb25UeXBlRXh0ZW5zaW9uKCk7Y2FzZSJlbnVtIjpyZXR1cm4gdGhpcy5wYXJzZUVudW1UeXBlRXh0ZW5zaW9uKCk7Y2FzZSJpbnB1dCI6cmV0dXJuIHRoaXMucGFyc2VJbnB1dE9iamVjdFR5cGVFeHRlbnNpb24oKX10aHJvdyB0aGlzLnVuZXhwZWN0ZWQobil9LHQucGFyc2VTY2hlbWFFeHRlbnNpb249ZnVuY3Rpb24oKXt2YXIgbj10aGlzLl9sZXhlci50b2tlbjt0aGlzLmV4cGVjdEtleXdvcmQoImV4dGVuZCIpLHRoaXMuZXhwZWN0S2V5d29yZCgic2NoZW1hIik7dmFyIGk9dGhpcy5wYXJzZURpcmVjdGl2ZXMoITApLHI9dGhpcy5vcHRpb25hbE1hbnkocC5CUkFDRV9MLHRoaXMucGFyc2VPcGVyYXRpb25UeXBlRGVmaW5pdGlvbixwLkJSQUNFX1IpO2lmKGkubGVuZ3RoPT09MCYmci5sZW5ndGg9PT0wKXRocm93IHRoaXMudW5leHBlY3RlZCgpO3JldHVybntraW5kOlQuU0NIRU1BX0VYVEVOU0lPTixkaXJlY3RpdmVzOmksb3BlcmF0aW9uVHlwZXM6cixsb2M6dGhpcy5sb2Mobil9fSx0LnBhcnNlU2NhbGFyVHlwZUV4dGVuc2lvbj1mdW5jdGlvbigpe3ZhciBuPXRoaXMuX2xleGVyLnRva2VuO3RoaXMuZXhwZWN0S2V5d29yZCgiZXh0ZW5kIiksdGhpcy5leHBlY3RLZXl3b3JkKCJzY2FsYXIiKTt2YXIgaT10aGlzLnBhcnNlTmFtZSgpLHI9dGhpcy5wYXJzZURpcmVjdGl2ZXMoITApO2lmKHIubGVuZ3RoPT09MCl0aHJvdyB0aGlzLnVuZXhwZWN0ZWQoKTtyZXR1cm57a2luZDpULlNDQUxBUl9UWVBFX0VYVEVOU0lPTixuYW1lOmksZGlyZWN0aXZlczpyLGxvYzp0aGlzLmxvYyhuKX19LHQucGFyc2VPYmplY3RUeXBlRXh0ZW5zaW9uPWZ1bmN0aW9uKCl7dmFyIG49dGhpcy5fbGV4ZXIudG9rZW47dGhpcy5leHBlY3RLZXl3b3JkKCJleHRlbmQiKSx0aGlzLmV4cGVjdEtleXdvcmQoInR5cGUiKTt2YXIgaT10aGlzLnBhcnNlTmFtZSgpLHI9dGhpcy5wYXJzZUltcGxlbWVudHNJbnRlcmZhY2VzKCksYT10aGlzLnBhcnNlRGlyZWN0aXZlcyghMCksbz10aGlzLnBhcnNlRmllbGRzRGVmaW5pdGlvbigpO2lmKHIubGVuZ3RoPT09MCYmYS5sZW5ndGg9PT0wJiZvLmxlbmd0aD09PTApdGhyb3cgdGhpcy51bmV4cGVjdGVkKCk7cmV0dXJue2tpbmQ6VC5PQkpFQ1RfVFlQRV9FWFRFTlNJT04sbmFtZTppLGludGVyZmFjZXM6cixkaXJlY3RpdmVzOmEsZmllbGRzOm8sbG9jOnRoaXMubG9jKG4pfX0sdC5wYXJzZUludGVyZmFjZVR5cGVFeHRlbnNpb249ZnVuY3Rpb24oKXt2YXIgbj10aGlzLl9sZXhlci50b2tlbjt0aGlzLmV4cGVjdEtleXdvcmQoImV4dGVuZCIpLHRoaXMuZXhwZWN0S2V5d29yZCgiaW50ZXJmYWNlIik7dmFyIGk9dGhpcy5wYXJzZU5hbWUoKSxyPXRoaXMucGFyc2VJbXBsZW1lbnRzSW50ZXJmYWNlcygpLGE9dGhpcy5wYXJzZURpcmVjdGl2ZXMoITApLG89dGhpcy5wYXJzZUZpZWxkc0RlZmluaXRpb24oKTtpZihyLmxlbmd0aD09PTAmJmEubGVuZ3RoPT09MCYmby5sZW5ndGg9PT0wKXRocm93IHRoaXMudW5leHBlY3RlZCgpO3JldHVybntraW5kOlQuSU5URVJGQUNFX1RZUEVfRVhURU5TSU9OLG5hbWU6aSxpbnRlcmZhY2VzOnIsZGlyZWN0aXZlczphLGZpZWxkczpvLGxvYzp0aGlzLmxvYyhuKX19LHQucGFyc2VVbmlvblR5cGVFeHRlbnNpb249ZnVuY3Rpb24oKXt2YXIgbj10aGlzLl9sZXhlci50b2tlbjt0aGlzLmV4cGVjdEtleXdvcmQoImV4dGVuZCIpLHRoaXMuZXhwZWN0S2V5d29yZCgidW5pb24iKTt2YXIgaT10aGlzLnBhcnNlTmFtZSgpLHI9dGhpcy5wYXJzZURpcmVjdGl2ZXMoITApLGE9dGhpcy5wYXJzZVVuaW9uTWVtYmVyVHlwZXMoKTtpZihyLmxlbmd0aD09PTAmJmEubGVuZ3RoPT09MCl0aHJvdyB0aGlzLnVuZXhwZWN0ZWQoKTtyZXR1cm57a2luZDpULlVOSU9OX1RZUEVfRVhURU5TSU9OLG5hbWU6aSxkaXJlY3RpdmVzOnIsdHlwZXM6YSxsb2M6dGhpcy5sb2Mobil9fSx0LnBhcnNlRW51bVR5cGVFeHRlbnNpb249ZnVuY3Rpb24oKXt2YXIgbj10aGlzLl9sZXhlci50b2tlbjt0aGlzLmV4cGVjdEtleXdvcmQoImV4dGVuZCIpLHRoaXMuZXhwZWN0S2V5d29yZCgiZW51bSIpO3ZhciBpPXRoaXMucGFyc2VOYW1lKCkscj10aGlzLnBhcnNlRGlyZWN0aXZlcyghMCksYT10aGlzLnBhcnNlRW51bVZhbHVlc0RlZmluaXRpb24oKTtpZihyLmxlbmd0aD09PTAmJmEubGVuZ3RoPT09MCl0aHJvdyB0aGlzLnVuZXhwZWN0ZWQoKTtyZXR1cm57a2luZDpULkVOVU1fVFlQRV9FWFRFTlNJT04sbmFtZTppLGRpcmVjdGl2ZXM6cix2YWx1ZXM6YSxsb2M6dGhpcy5sb2Mobil9fSx0LnBhcnNlSW5wdXRPYmplY3RUeXBlRXh0ZW5zaW9uPWZ1bmN0aW9uKCl7dmFyIG49dGhpcy5fbGV4ZXIudG9rZW47dGhpcy5leHBlY3RLZXl3b3JkKCJleHRlbmQiKSx0aGlzLmV4cGVjdEtleXdvcmQoImlucHV0Iik7dmFyIGk9dGhpcy5wYXJzZU5hbWUoKSxyPXRoaXMucGFyc2VEaXJlY3RpdmVzKCEwKSxhPXRoaXMucGFyc2VJbnB1dEZpZWxkc0RlZmluaXRpb24oKTtpZihyLmxlbmd0aD09PTAmJmEubGVuZ3RoPT09MCl0aHJvdyB0aGlzLnVuZXhwZWN0ZWQoKTtyZXR1cm57a2luZDpULklOUFVUX09CSkVDVF9UWVBFX0VYVEVOU0lPTixuYW1lOmksZGlyZWN0aXZlczpyLGZpZWxkczphLGxvYzp0aGlzLmxvYyhuKX19LHQucGFyc2VEaXJlY3RpdmVEZWZpbml0aW9uPWZ1bmN0aW9uKCl7dmFyIG49dGhpcy5fbGV4ZXIudG9rZW4saT10aGlzLnBhcnNlRGVzY3JpcHRpb24oKTt0aGlzLmV4cGVjdEtleXdvcmQoImRpcmVjdGl2ZSIpLHRoaXMuZXhwZWN0VG9rZW4ocC5BVCk7dmFyIHI9dGhpcy5wYXJzZU5hbWUoKSxhPXRoaXMucGFyc2VBcmd1bWVudERlZnMoKSxvPXRoaXMuZXhwZWN0T3B0aW9uYWxLZXl3b3JkKCJyZXBlYXRhYmxlIik7dGhpcy5leHBlY3RLZXl3b3JkKCJvbiIpO3ZhciBsPXRoaXMucGFyc2VEaXJlY3RpdmVMb2NhdGlvbnMoKTtyZXR1cm57a2luZDpULkRJUkVDVElWRV9ERUZJTklUSU9OLGRlc2NyaXB0aW9uOmksbmFtZTpyLGFyZ3VtZW50czphLHJlcGVhdGFibGU6byxsb2NhdGlvbnM6bCxsb2M6dGhpcy5sb2Mobil9fSx0LnBhcnNlRGlyZWN0aXZlTG9jYXRpb25zPWZ1bmN0aW9uKCl7cmV0dXJuIHRoaXMuZGVsaW1pdGVkTWFueShwLlBJUEUsdGhpcy5wYXJzZURpcmVjdGl2ZUxvY2F0aW9uKX0sdC5wYXJzZURpcmVjdGl2ZUxvY2F0aW9uPWZ1bmN0aW9uKCl7dmFyIG49dGhpcy5fbGV4ZXIudG9rZW4saT10aGlzLnBhcnNlTmFtZSgpO2lmKGJuW2kudmFsdWVdIT09dm9pZCAwKXJldHVybiBpO3Rocm93IHRoaXMudW5leHBlY3RlZChuKX0sdC5sb2M9ZnVuY3Rpb24obil7dmFyIGk7aWYoKChpPXRoaXMuX29wdGlvbnMpPT09bnVsbHx8aT09PXZvaWQgMD92b2lkIDA6aS5ub0xvY2F0aW9uKSE9PSEwKXJldHVybiBuZXcgWmUobix0aGlzLl9sZXhlci5sYXN0VG9rZW4sdGhpcy5fbGV4ZXIuc291cmNlKX0sdC5wZWVrPWZ1bmN0aW9uKG4pe3JldHVybiB0aGlzLl9sZXhlci50b2tlbi5raW5kPT09bn0sdC5leHBlY3RUb2tlbj1mdW5jdGlvbihuKXt2YXIgaT10aGlzLl9sZXhlci50b2tlbjtpZihpLmtpbmQ9PT1uKXJldHVybiB0aGlzLl9sZXhlci5hZHZhbmNlKCksaTt0aHJvdyBfKHRoaXMuX2xleGVyLnNvdXJjZSxpLnN0YXJ0LCJFeHBlY3RlZCAiLmNvbmNhdChvdChuKSwiLCBmb3VuZCAiKS5jb25jYXQoYmUoaSksIi4iKSl9LHQuZXhwZWN0T3B0aW9uYWxUb2tlbj1mdW5jdGlvbihuKXt2YXIgaT10aGlzLl9sZXhlci50b2tlbjtpZihpLmtpbmQ9PT1uKXJldHVybiB0aGlzLl9sZXhlci5hZHZhbmNlKCksaX0sdC5leHBlY3RLZXl3b3JkPWZ1bmN0aW9uKG4pe3ZhciBpPXRoaXMuX2xleGVyLnRva2VuO2lmKGkua2luZD09PXAuTkFNRSYmaS52YWx1ZT09PW4pdGhpcy5fbGV4ZXIuYWR2YW5jZSgpO2Vsc2UgdGhyb3cgXyh0aGlzLl9sZXhlci5zb3VyY2UsaS5zdGFydCwnRXhwZWN0ZWQgIicuY29uY2F0KG4sJyIsIGZvdW5kICcpLmNvbmNhdChiZShpKSwiLiIpKX0sdC5leHBlY3RPcHRpb25hbEtleXdvcmQ9ZnVuY3Rpb24obil7dmFyIGk9dGhpcy5fbGV4ZXIudG9rZW47cmV0dXJuIGkua2luZD09PXAuTkFNRSYmaS52YWx1ZT09PW4/KHRoaXMuX2xleGVyLmFkdmFuY2UoKSwhMCk6ITF9LHQudW5leHBlY3RlZD1mdW5jdGlvbihuKXt2YXIgaT1uIT1udWxsP246dGhpcy5fbGV4ZXIudG9rZW47cmV0dXJuIF8odGhpcy5fbGV4ZXIuc291cmNlLGkuc3RhcnQsIlVuZXhwZWN0ZWQgIi5jb25jYXQoYmUoaSksIi4iKSl9LHQuYW55PWZ1bmN0aW9uKG4saSxyKXt0aGlzLmV4cGVjdFRva2VuKG4pO2Zvcih2YXIgYT1bXTshdGhpcy5leHBlY3RPcHRpb25hbFRva2VuKHIpOylhLnB1c2goaS5jYWxsKHRoaXMpKTtyZXR1cm4gYX0sdC5vcHRpb25hbE1hbnk9ZnVuY3Rpb24obixpLHIpe2lmKHRoaXMuZXhwZWN0T3B0aW9uYWxUb2tlbihuKSl7dmFyIGE9W107ZG8gYS5wdXNoKGkuY2FsbCh0aGlzKSk7d2hpbGUoIXRoaXMuZXhwZWN0T3B0aW9uYWxUb2tlbihyKSk7cmV0dXJuIGF9cmV0dXJuW119LHQubWFueT1mdW5jdGlvbihuLGkscil7dGhpcy5leHBlY3RUb2tlbihuKTt2YXIgYT1bXTtkbyBhLnB1c2goaS5jYWxsKHRoaXMpKTt3aGlsZSghdGhpcy5leHBlY3RPcHRpb25hbFRva2VuKHIpKTtyZXR1cm4gYX0sdC5kZWxpbWl0ZWRNYW55PWZ1bmN0aW9uKG4saSl7dGhpcy5leHBlY3RPcHRpb25hbFRva2VuKG4pO3ZhciByPVtdO2RvIHIucHVzaChpLmNhbGwodGhpcykpO3doaWxlKHRoaXMuZXhwZWN0T3B0aW9uYWxUb2tlbihuKSk7cmV0dXJuIHJ9LGV9KCk7ZnVuY3Rpb24gYmUoZSl7dmFyIHQ9ZS52YWx1ZTtyZXR1cm4gb3QoZS5raW5kKSsodCE9bnVsbD8nICInLmNvbmNhdCh0LCciJyk6IiIpfWZ1bmN0aW9uIG90KGUpe3JldHVybiBDbihlKT8nIicuY29uY2F0KGUsJyInKTplfXZhciBLbj17TmFtZTpbXSxEb2N1bWVudDpbImRlZmluaXRpb25zIl0sT3BlcmF0aW9uRGVmaW5pdGlvbjpbIm5hbWUiLCJ2YXJpYWJsZURlZmluaXRpb25zIiwiZGlyZWN0aXZlcyIsInNlbGVjdGlvblNldCJdLFZhcmlhYmxlRGVmaW5pdGlvbjpbInZhcmlhYmxlIiwidHlwZSIsImRlZmF1bHRWYWx1ZSIsImRpcmVjdGl2ZXMiXSxWYXJpYWJsZTpbIm5hbWUiXSxTZWxlY3Rpb25TZXQ6WyJzZWxlY3Rpb25zIl0sRmllbGQ6WyJhbGlhcyIsIm5hbWUiLCJhcmd1bWVudHMiLCJkaXJlY3RpdmVzIiwic2VsZWN0aW9uU2V0Il0sQXJndW1lbnQ6WyJuYW1lIiwidmFsdWUiXSxGcmFnbWVudFNwcmVhZDpbIm5hbWUiLCJkaXJlY3RpdmVzIl0sSW5saW5lRnJhZ21lbnQ6WyJ0eXBlQ29uZGl0aW9uIiwiZGlyZWN0aXZlcyIsInNlbGVjdGlvblNldCJdLEZyYWdtZW50RGVmaW5pdGlvbjpbIm5hbWUiLCJ2YXJpYWJsZURlZmluaXRpb25zIiwidHlwZUNvbmRpdGlvbiIsImRpcmVjdGl2ZXMiLCJzZWxlY3Rpb25TZXQiXSxJbnRWYWx1ZTpbXSxGbG9hdFZhbHVlOltdLFN0cmluZ1ZhbHVlOltdLEJvb2xlYW5WYWx1ZTpbXSxOdWxsVmFsdWU6W10sRW51bVZhbHVlOltdLExpc3RWYWx1ZTpbInZhbHVlcyJdLE9iamVjdFZhbHVlOlsiZmllbGRzIl0sT2JqZWN0RmllbGQ6WyJuYW1lIiwidmFsdWUiXSxEaXJlY3RpdmU6WyJuYW1lIiwiYXJndW1lbnRzIl0sTmFtZWRUeXBlOlsibmFtZSJdLExpc3RUeXBlOlsidHlwZSJdLE5vbk51bGxUeXBlOlsidHlwZSJdLFNjaGVtYURlZmluaXRpb246WyJkZXNjcmlwdGlvbiIsImRpcmVjdGl2ZXMiLCJvcGVyYXRpb25UeXBlcyJdLE9wZXJhdGlvblR5cGVEZWZpbml0aW9uOlsidHlwZSJdLFNjYWxhclR5cGVEZWZpbml0aW9uOlsiZGVzY3JpcHRpb24iLCJuYW1lIiwiZGlyZWN0aXZlcyJdLE9iamVjdFR5cGVEZWZpbml0aW9uOlsiZGVzY3JpcHRpb24iLCJuYW1lIiwiaW50ZXJmYWNlcyIsImRpcmVjdGl2ZXMiLCJmaWVsZHMiXSxGaWVsZERlZmluaXRpb246WyJkZXNjcmlwdGlvbiIsIm5hbWUiLCJhcmd1bWVudHMiLCJ0eXBlIiwiZGlyZWN0aXZlcyJdLElucHV0VmFsdWVEZWZpbml0aW9uOlsiZGVzY3JpcHRpb24iLCJuYW1lIiwidHlwZSIsImRlZmF1bHRWYWx1ZSIsImRpcmVjdGl2ZXMiXSxJbnRlcmZhY2VUeXBlRGVmaW5pdGlvbjpbImRlc2NyaXB0aW9uIiwibmFtZSIsImludGVyZmFjZXMiLCJkaXJlY3RpdmVzIiwiZmllbGRzIl0sVW5pb25UeXBlRGVmaW5pdGlvbjpbImRlc2NyaXB0aW9uIiwibmFtZSIsImRpcmVjdGl2ZXMiLCJ0eXBlcyJdLEVudW1UeXBlRGVmaW5pdGlvbjpbImRlc2NyaXB0aW9uIiwibmFtZSIsImRpcmVjdGl2ZXMiLCJ2YWx1ZXMiXSxFbnVtVmFsdWVEZWZpbml0aW9uOlsiZGVzY3JpcHRpb24iLCJuYW1lIiwiZGlyZWN0aXZlcyJdLElucHV0T2JqZWN0VHlwZURlZmluaXRpb246WyJkZXNjcmlwdGlvbiIsIm5hbWUiLCJkaXJlY3RpdmVzIiwiZmllbGRzIl0sRGlyZWN0aXZlRGVmaW5pdGlvbjpbImRlc2NyaXB0aW9uIiwibmFtZSIsImFyZ3VtZW50cyIsImxvY2F0aW9ucyJdLFNjaGVtYUV4dGVuc2lvbjpbImRpcmVjdGl2ZXMiLCJvcGVyYXRpb25UeXBlcyJdLFNjYWxhclR5cGVFeHRlbnNpb246WyJuYW1lIiwiZGlyZWN0aXZlcyJdLE9iamVjdFR5cGVFeHRlbnNpb246WyJuYW1lIiwiaW50ZXJmYWNlcyIsImRpcmVjdGl2ZXMiLCJmaWVsZHMiXSxJbnRlcmZhY2VUeXBlRXh0ZW5zaW9uOlsibmFtZSIsImludGVyZmFjZXMiLCJkaXJlY3RpdmVzIiwiZmllbGRzIl0sVW5pb25UeXBlRXh0ZW5zaW9uOlsibmFtZSIsImRpcmVjdGl2ZXMiLCJ0eXBlcyJdLEVudW1UeXBlRXh0ZW5zaW9uOlsibmFtZSIsImRpcmVjdGl2ZXMiLCJ2YWx1ZXMiXSxJbnB1dE9iamVjdFR5cGVFeHRlbnNpb246WyJuYW1lIiwiZGlyZWN0aXZlcyIsImZpZWxkcyJdfSxMPU9iamVjdC5mcmVlemUoe30pO2Z1bmN0aW9uIEMoZSx0KXt2YXIgbj1hcmd1bWVudHMubGVuZ3RoPjImJmFyZ3VtZW50c1syXSE9PXZvaWQgMD9hcmd1bWVudHNbMl06S24saT12b2lkIDAscj1BcnJheS5pc0FycmF5KGUpLGE9W2VdLG89LTEsbD1bXSxzPXZvaWQgMCxjPXZvaWQgMCxmPXZvaWQgMCxkPVtdLHY9W10sbT1lO2Rve28rKzt2YXIgaD1vPT09YS5sZW5ndGgsTj1oJiZsLmxlbmd0aCE9PTA7aWYoaCl7aWYoYz12Lmxlbmd0aD09PTA/dm9pZCAwOmRbZC5sZW5ndGgtMV0scz1mLGY9di5wb3AoKSxOKXtpZihyKXM9cy5zbGljZSgpO2Vsc2V7Zm9yKHZhciBnPXt9LEE9MCx4PU9iamVjdC5rZXlzKHMpO0E8eC5sZW5ndGg7QSsrKXt2YXIgTz14W0FdO2dbT109c1tPXX1zPWd9Zm9yKHZhciBxPTAsaz0wO2s8bC5sZW5ndGg7aysrKXt2YXIgUT1sW2tdWzBdLCR0PWxba11bMV07ciYmKFEtPXEpLHImJiR0PT09bnVsbD8ocy5zcGxpY2UoUSwxKSxxKyspOnNbUV09JHR9fW89aS5pbmRleCxhPWkua2V5cyxsPWkuZWRpdHMscj1pLmluQXJyYXksaT1pLnByZXZ9ZWxzZXtpZihjPWY/cj9vOmFbb106dm9pZCAwLHM9Zj9mW2NdOm0scz09bnVsbCljb250aW51ZTtmJiZkLnB1c2goYyl9dmFyIFU9dm9pZCAwO2lmKCFBcnJheS5pc0FycmF5KHMpKXtpZighZXQocykpdGhyb3cgbmV3IEVycm9yKCJJbnZhbGlkIEFTVCBOb2RlOiAiLmNvbmNhdChudChzKSwiLiIpKTt2YXIgVXQ9Sm4odCxzLmtpbmQsaCk7aWYoVXQpe2lmKFU9VXQuY2FsbCh0LHMsYyxmLGQsdiksVT09PUwpYnJlYWs7aWYoVT09PSExKXtpZighaCl7ZC5wb3AoKTtjb250aW51ZX19ZWxzZSBpZihVIT09dm9pZCAwJiYobC5wdXNoKFtjLFVdKSwhaCkpaWYoZXQoVSkpcz1VO2Vsc2V7ZC5wb3AoKTtjb250aW51ZX19fWlmKFU9PT12b2lkIDAmJk4mJmwucHVzaChbYyxzXSksaClkLnBvcCgpO2Vsc2V7dmFyIFJlO2k9e2luQXJyYXk6cixpbmRleDpvLGtleXM6YSxlZGl0czpsLHByZXY6aX0scj1BcnJheS5pc0FycmF5KHMpLGE9cj9zOihSZT1uW3Mua2luZF0pIT09bnVsbCYmUmUhPT12b2lkIDA/UmU6W10sbz0tMSxsPVtdLGYmJnYucHVzaChmKSxmPXN9fXdoaWxlKGkhPT12b2lkIDApO3JldHVybiBsLmxlbmd0aCE9PTAmJihtPWxbbC5sZW5ndGgtMV1bMV0pLG19ZnVuY3Rpb24gSm4oZSx0LG4pe3ZhciBpPWVbdF07aWYoaSl7aWYoIW4mJnR5cGVvZiBpPT0iZnVuY3Rpb24iKXJldHVybiBpO3ZhciByPW4/aS5sZWF2ZTppLmVudGVyO2lmKHR5cGVvZiByPT0iZnVuY3Rpb24iKXJldHVybiByfWVsc2V7dmFyIGE9bj9lLmxlYXZlOmUuZW50ZXI7aWYoYSl7aWYodHlwZW9mIGE9PSJmdW5jdGlvbiIpcmV0dXJuIGE7dmFyIG89YVt0XTtpZih0eXBlb2Ygbz09ImZ1bmN0aW9uIilyZXR1cm4gb319fWZ1bmN0aW9uIFluKGUpe3JldHVybiBDKGUse2xlYXZlOnpufSl9dmFyIEduPTgwLHpuPXtOYW1lOmZ1bmN0aW9uKGUpe3JldHVybiBlLnZhbHVlfSxWYXJpYWJsZTpmdW5jdGlvbihlKXtyZXR1cm4iJCIrZS5uYW1lfSxEb2N1bWVudDpmdW5jdGlvbihlKXtyZXR1cm4geShlLmRlZmluaXRpb25zLGAKCmApK2AKYH0sT3BlcmF0aW9uRGVmaW5pdGlvbjpmdW5jdGlvbihlKXt2YXIgdD1lLm9wZXJhdGlvbixuPWUubmFtZSxpPUkoIigiLHkoZS52YXJpYWJsZURlZmluaXRpb25zLCIsICIpLCIpIikscj15KGUuZGlyZWN0aXZlcywiICIpLGE9ZS5zZWxlY3Rpb25TZXQ7cmV0dXJuIW4mJiFyJiYhaSYmdD09PSJxdWVyeSI/YTp5KFt0LHkoW24saV0pLHIsYV0sIiAiKX0sVmFyaWFibGVEZWZpbml0aW9uOmZ1bmN0aW9uKGUpe3ZhciB0PWUudmFyaWFibGUsbj1lLnR5cGUsaT1lLmRlZmF1bHRWYWx1ZSxyPWUuZGlyZWN0aXZlcztyZXR1cm4gdCsiOiAiK24rSSgiID0gIixpKStJKCIgIix5KHIsIiAiKSl9LFNlbGVjdGlvblNldDpmdW5jdGlvbihlKXt2YXIgdD1lLnNlbGVjdGlvbnM7cmV0dXJuIEYodCl9LEZpZWxkOmZ1bmN0aW9uKGUpe3ZhciB0PWUuYWxpYXMsbj1lLm5hbWUsaT1lLmFyZ3VtZW50cyxyPWUuZGlyZWN0aXZlcyxhPWUuc2VsZWN0aW9uU2V0LG89SSgiIix0LCI6ICIpK24sbD1vK0koIigiLHkoaSwiLCAiKSwiKSIpO3JldHVybiBsLmxlbmd0aD5HbiYmKGw9bytJKGAoCmAscGUoeShpLGAKYCkpLGAKKWApKSx5KFtsLHkociwiICIpLGFdLCIgIil9LEFyZ3VtZW50OmZ1bmN0aW9uKGUpe3ZhciB0PWUubmFtZSxuPWUudmFsdWU7cmV0dXJuIHQrIjogIitufSxGcmFnbWVudFNwcmVhZDpmdW5jdGlvbihlKXt2YXIgdD1lLm5hbWUsbj1lLmRpcmVjdGl2ZXM7cmV0dXJuIi4uLiIrdCtJKCIgIix5KG4sIiAiKSl9LElubGluZUZyYWdtZW50OmZ1bmN0aW9uKGUpe3ZhciB0PWUudHlwZUNvbmRpdGlvbixuPWUuZGlyZWN0aXZlcyxpPWUuc2VsZWN0aW9uU2V0O3JldHVybiB5KFsiLi4uIixJKCJvbiAiLHQpLHkobiwiICIpLGldLCIgIil9LEZyYWdtZW50RGVmaW5pdGlvbjpmdW5jdGlvbihlKXt2YXIgdD1lLm5hbWUsbj1lLnR5cGVDb25kaXRpb24saT1lLnZhcmlhYmxlRGVmaW5pdGlvbnMscj1lLmRpcmVjdGl2ZXMsYT1lLnNlbGVjdGlvblNldDtyZXR1cm4iZnJhZ21lbnQgIi5jb25jYXQodCkuY29uY2F0KEkoIigiLHkoaSwiLCAiKSwiKSIpLCIgIikrIm9uICIuY29uY2F0KG4sIiAiKS5jb25jYXQoSSgiIix5KHIsIiAiKSwiICIpKSthfSxJbnRWYWx1ZTpmdW5jdGlvbihlKXt2YXIgdD1lLnZhbHVlO3JldHVybiB0fSxGbG9hdFZhbHVlOmZ1bmN0aW9uKGUpe3ZhciB0PWUudmFsdWU7cmV0dXJuIHR9LFN0cmluZ1ZhbHVlOmZ1bmN0aW9uKGUsdCl7dmFyIG49ZS52YWx1ZSxpPWUuYmxvY2s7cmV0dXJuIGk/X24obix0PT09ImRlc2NyaXB0aW9uIj8iIjoiICAiKTpKU09OLnN0cmluZ2lmeShuKX0sQm9vbGVhblZhbHVlOmZ1bmN0aW9uKGUpe3ZhciB0PWUudmFsdWU7cmV0dXJuIHQ/InRydWUiOiJmYWxzZSJ9LE51bGxWYWx1ZTpmdW5jdGlvbigpe3JldHVybiJudWxsIn0sRW51bVZhbHVlOmZ1bmN0aW9uKGUpe3ZhciB0PWUudmFsdWU7cmV0dXJuIHR9LExpc3RWYWx1ZTpmdW5jdGlvbihlKXt2YXIgdD1lLnZhbHVlcztyZXR1cm4iWyIreSh0LCIsICIpKyJdIn0sT2JqZWN0VmFsdWU6ZnVuY3Rpb24oZSl7dmFyIHQ9ZS5maWVsZHM7cmV0dXJuInsiK3kodCwiLCAiKSsifSJ9LE9iamVjdEZpZWxkOmZ1bmN0aW9uKGUpe3ZhciB0PWUubmFtZSxuPWUudmFsdWU7cmV0dXJuIHQrIjogIitufSxEaXJlY3RpdmU6ZnVuY3Rpb24oZSl7dmFyIHQ9ZS5uYW1lLG49ZS5hcmd1bWVudHM7cmV0dXJuIkAiK3QrSSgiKCIseShuLCIsICIpLCIpIil9LE5hbWVkVHlwZTpmdW5jdGlvbihlKXt2YXIgdD1lLm5hbWU7cmV0dXJuIHR9LExpc3RUeXBlOmZ1bmN0aW9uKGUpe3ZhciB0PWUudHlwZTtyZXR1cm4iWyIrdCsiXSJ9LE5vbk51bGxUeXBlOmZ1bmN0aW9uKGUpe3ZhciB0PWUudHlwZTtyZXR1cm4gdCsiISJ9LFNjaGVtYURlZmluaXRpb246dyhmdW5jdGlvbihlKXt2YXIgdD1lLmRpcmVjdGl2ZXMsbj1lLm9wZXJhdGlvblR5cGVzO3JldHVybiB5KFsic2NoZW1hIix5KHQsIiAiKSxGKG4pXSwiICIpfSksT3BlcmF0aW9uVHlwZURlZmluaXRpb246ZnVuY3Rpb24oZSl7dmFyIHQ9ZS5vcGVyYXRpb24sbj1lLnR5cGU7cmV0dXJuIHQrIjogIitufSxTY2FsYXJUeXBlRGVmaW5pdGlvbjp3KGZ1bmN0aW9uKGUpe3ZhciB0PWUubmFtZSxuPWUuZGlyZWN0aXZlcztyZXR1cm4geShbInNjYWxhciIsdCx5KG4sIiAiKV0sIiAiKX0pLE9iamVjdFR5cGVEZWZpbml0aW9uOncoZnVuY3Rpb24oZSl7dmFyIHQ9ZS5uYW1lLG49ZS5pbnRlcmZhY2VzLGk9ZS5kaXJlY3RpdmVzLHI9ZS5maWVsZHM7cmV0dXJuIHkoWyJ0eXBlIix0LEkoImltcGxlbWVudHMgIix5KG4sIiAmICIpKSx5KGksIiAiKSxGKHIpXSwiICIpfSksRmllbGREZWZpbml0aW9uOncoZnVuY3Rpb24oZSl7dmFyIHQ9ZS5uYW1lLG49ZS5hcmd1bWVudHMsaT1lLnR5cGUscj1lLmRpcmVjdGl2ZXM7cmV0dXJuIHQrKHN0KG4pP0koYCgKYCxwZSh5KG4sYApgKSksYAopYCk6SSgiKCIseShuLCIsICIpLCIpIikpKyI6ICIraStJKCIgIix5KHIsIiAiKSl9KSxJbnB1dFZhbHVlRGVmaW5pdGlvbjp3KGZ1bmN0aW9uKGUpe3ZhciB0PWUubmFtZSxuPWUudHlwZSxpPWUuZGVmYXVsdFZhbHVlLHI9ZS5kaXJlY3RpdmVzO3JldHVybiB5KFt0KyI6ICIrbixJKCI9ICIsaSkseShyLCIgIildLCIgIil9KSxJbnRlcmZhY2VUeXBlRGVmaW5pdGlvbjp3KGZ1bmN0aW9uKGUpe3ZhciB0PWUubmFtZSxuPWUuaW50ZXJmYWNlcyxpPWUuZGlyZWN0aXZlcyxyPWUuZmllbGRzO3JldHVybiB5KFsiaW50ZXJmYWNlIix0LEkoImltcGxlbWVudHMgIix5KG4sIiAmICIpKSx5KGksIiAiKSxGKHIpXSwiICIpfSksVW5pb25UeXBlRGVmaW5pdGlvbjp3KGZ1bmN0aW9uKGUpe3ZhciB0PWUubmFtZSxuPWUuZGlyZWN0aXZlcyxpPWUudHlwZXM7cmV0dXJuIHkoWyJ1bmlvbiIsdCx5KG4sIiAiKSxpJiZpLmxlbmd0aCE9PTA/Ij0gIit5KGksIiB8ICIpOiIiXSwiICIpfSksRW51bVR5cGVEZWZpbml0aW9uOncoZnVuY3Rpb24oZSl7dmFyIHQ9ZS5uYW1lLG49ZS5kaXJlY3RpdmVzLGk9ZS52YWx1ZXM7cmV0dXJuIHkoWyJlbnVtIix0LHkobiwiICIpLEYoaSldLCIgIil9KSxFbnVtVmFsdWVEZWZpbml0aW9uOncoZnVuY3Rpb24oZSl7dmFyIHQ9ZS5uYW1lLG49ZS5kaXJlY3RpdmVzO3JldHVybiB5KFt0LHkobiwiICIpXSwiICIpfSksSW5wdXRPYmplY3RUeXBlRGVmaW5pdGlvbjp3KGZ1bmN0aW9uKGUpe3ZhciB0PWUubmFtZSxuPWUuZGlyZWN0aXZlcyxpPWUuZmllbGRzO3JldHVybiB5KFsiaW5wdXQiLHQseShuLCIgIiksRihpKV0sIiAiKX0pLERpcmVjdGl2ZURlZmluaXRpb246dyhmdW5jdGlvbihlKXt2YXIgdD1lLm5hbWUsbj1lLmFyZ3VtZW50cyxpPWUucmVwZWF0YWJsZSxyPWUubG9jYXRpb25zO3JldHVybiJkaXJlY3RpdmUgQCIrdCsoc3Qobik/SShgKApgLHBlKHkobixgCmApKSxgCilgKTpJKCIoIix5KG4sIiwgIiksIikiKSkrKGk/IiByZXBlYXRhYmxlIjoiIikrIiBvbiAiK3kociwiIHwgIil9KSxTY2hlbWFFeHRlbnNpb246ZnVuY3Rpb24oZSl7dmFyIHQ9ZS5kaXJlY3RpdmVzLG49ZS5vcGVyYXRpb25UeXBlcztyZXR1cm4geShbImV4dGVuZCBzY2hlbWEiLHkodCwiICIpLEYobildLCIgIil9LFNjYWxhclR5cGVFeHRlbnNpb246ZnVuY3Rpb24oZSl7dmFyIHQ9ZS5uYW1lLG49ZS5kaXJlY3RpdmVzO3JldHVybiB5KFsiZXh0ZW5kIHNjYWxhciIsdCx5KG4sIiAiKV0sIiAiKX0sT2JqZWN0VHlwZUV4dGVuc2lvbjpmdW5jdGlvbihlKXt2YXIgdD1lLm5hbWUsbj1lLmludGVyZmFjZXMsaT1lLmRpcmVjdGl2ZXMscj1lLmZpZWxkcztyZXR1cm4geShbImV4dGVuZCB0eXBlIix0LEkoImltcGxlbWVudHMgIix5KG4sIiAmICIpKSx5KGksIiAiKSxGKHIpXSwiICIpfSxJbnRlcmZhY2VUeXBlRXh0ZW5zaW9uOmZ1bmN0aW9uKGUpe3ZhciB0PWUubmFtZSxuPWUuaW50ZXJmYWNlcyxpPWUuZGlyZWN0aXZlcyxyPWUuZmllbGRzO3JldHVybiB5KFsiZXh0ZW5kIGludGVyZmFjZSIsdCxJKCJpbXBsZW1lbnRzICIseShuLCIgJiAiKSkseShpLCIgIiksRihyKV0sIiAiKX0sVW5pb25UeXBlRXh0ZW5zaW9uOmZ1bmN0aW9uKGUpe3ZhciB0PWUubmFtZSxuPWUuZGlyZWN0aXZlcyxpPWUudHlwZXM7cmV0dXJuIHkoWyJleHRlbmQgdW5pb24iLHQseShuLCIgIiksaSYmaS5sZW5ndGghPT0wPyI9ICIreShpLCIgfCAiKToiIl0sIiAiKX0sRW51bVR5cGVFeHRlbnNpb246ZnVuY3Rpb24oZSl7dmFyIHQ9ZS5uYW1lLG49ZS5kaXJlY3RpdmVzLGk9ZS52YWx1ZXM7cmV0dXJuIHkoWyJleHRlbmQgZW51bSIsdCx5KG4sIiAiKSxGKGkpXSwiICIpfSxJbnB1dE9iamVjdFR5cGVFeHRlbnNpb246ZnVuY3Rpb24oZSl7dmFyIHQ9ZS5uYW1lLG49ZS5kaXJlY3RpdmVzLGk9ZS5maWVsZHM7cmV0dXJuIHkoWyJleHRlbmQgaW5wdXQiLHQseShuLCIgIiksRihpKV0sIiAiKX19O2Z1bmN0aW9uIHcoZSl7cmV0dXJuIGZ1bmN0aW9uKHQpe3JldHVybiB5KFt0LmRlc2NyaXB0aW9uLGUodCldLGAKYCl9fWZ1bmN0aW9uIHkoZSl7dmFyIHQsbj1hcmd1bWVudHMubGVuZ3RoPjEmJmFyZ3VtZW50c1sxXSE9PXZvaWQgMD9hcmd1bWVudHNbMV06IiI7cmV0dXJuKHQ9ZT09bnVsbD92b2lkIDA6ZS5maWx0ZXIoZnVuY3Rpb24oaSl7cmV0dXJuIGl9KS5qb2luKG4pKSE9PW51bGwmJnQhPT12b2lkIDA/dDoiIn1mdW5jdGlvbiBGKGUpe3JldHVybiBJKGB7CmAscGUoeShlLGAKYCkpLGAKfWApfWZ1bmN0aW9uIEkoZSx0KXt2YXIgbj1hcmd1bWVudHMubGVuZ3RoPjImJmFyZ3VtZW50c1syXSE9PXZvaWQgMD9hcmd1bWVudHNbMl06IiI7cmV0dXJuIHQhPW51bGwmJnQhPT0iIj9lK3QrbjoiIn1mdW5jdGlvbiBwZShlKXtyZXR1cm4gSSgiICAiLGUucmVwbGFjZSgvXG4vZyxgCiAgYCkpfWZ1bmN0aW9uIHFuKGUpe3JldHVybiBlLmluZGV4T2YoYApgKSE9PS0xfWZ1bmN0aW9uIHN0KGUpe3JldHVybiBlIT1udWxsJiZlLnNvbWUocW4pfXZhciBIPShlPT4oZVtlLkxJU1Q9MF09IkxJU1QiLGVbZS5ERVRBSUw9MV09IkRFVEFJTCIsZSkpKEh8fHt9KSxSPShlPT4oZVtlLkJFRk9SRT0wXT0iQkVGT1JFIixlW2UuQUZURVI9MV09IkFGVEVSIixlW2UuRklSU1Q9Ml09IkZJUlNUIixlW2UuTEFTVD0zXT0iTEFTVCIsZSkpKFJ8fHt9KSxZPShlPT4oZVtlLk9CSkVDVD0wXT0iT0JKRUNUIixlW2UuQVJSQVk9MV09IkFSUkFZIixlKSkoWXx8e30pO2NvbnN0IGx0PShlLHQsbixpLHIsYSk9Pnt0cnl7Y29uc3Qgbz1QKGUpO0Mobyx7RnJhZ21lbnREZWZpbml0aW9uKGwpe3ZhciBzLGM7aWYobC5uYW1lLnZhbHVlPT09dCl7bGV0IGY9bC5zZWxlY3Rpb25TZXQuc2VsZWN0aW9ucztpZihuPVduKGYsbiksbi5sZW5ndGg9PT0wKXJldHVybiBMO2NvbnN0IGQ9WG4oZixpLHIpO2E9YS5maWx0ZXIoaD0+IWYuZmluZChOPT5OLmtpbmQ9PT0iRmllbGQiJiZOLm5hbWUudmFsdWU9PT1oKSk7Y29uc3Qgdj1rZShuLGEpLG09cj09PVIuQkVGT1JFfHxyPT09Ui5GSVJTVD8oKHM9ZC5sb2MpPT1udWxsP3ZvaWQgMDpzLnN0YXJ0KS0xOihjPWQubG9jKT09bnVsbD92b2lkIDA6Yy5lbmQ7cmV0dXJuIGU9ZS5zdWJzdHJpbmcoMCxtKStgCiAgJHt2fWArZS5zdWJzdHJpbmcobSxlLmxlbmd0aCksTH19fSl9Y2F0Y2gobyl7Y29uc29sZS5lcnJvcihvKX1yZXR1cm4gZX0sWG49KGUsdCxuKT0+e3N3aXRjaChuKXtjYXNlIFIuQUZURVI6Y2FzZSBSLkJFRk9SRTpjb25zdCBpPWUuZmlsdGVyKHI9Pntjb25zdCBhPXIubmFtZS52YWx1ZTtyZXR1cm4gYT09PSh0PT1udWxsP3ZvaWQgMDp0LnN1YnN0cmluZyh0Lmxlbmd0aC1hLmxlbmd0aCx0Lmxlbmd0aCkpfSk7cmV0dXJuIGkubGVuZ3RoIT09MD9pWzBdOmVbZS5sZW5ndGgtMV07Y2FzZSBSLkZJUlNUOnJldHVybiBlWzBdO2Nhc2UgUi5MQVNUOnJldHVybiBlW2UubGVuZ3RoLTFdfX0sa2U9KGUsdCk9PntsZXQgbj1bLi4udF07ZS5sZW5ndGgmJihuPVtlLnBvcCgpLC4uLm5dKTtjb25zdCBpPUhuKG4pO2U9ZS5yZXZlcnNlKCk7bGV0IHI9aTtyZXR1cm4gZS5mb3JFYWNoKChhLG8pPT57bz09PTA/cj1gJHthfSB7CiAgJHtEZShyKX0KfWA6cj1gJHthfSB7CiAgJHtEZShyKX0KfWB9KSxyfSxIbj1lPT57bGV0IHQ9IiI7cmV0dXJuIGUuZm9yRWFjaCgobixpKT0+e2k9PT0wP3Q9bjp0PWAke3R9CiAgJHtufWB9KSx0fSxEZT1lPT5lLnJlcGxhY2VBbGwoL1xuICAvZyxgCiAgICBgKS5yZXBsYWNlQWxsKC9cbn0vZyxgCiAgfWApLGN0PShlLHQpPT57Y29uc3Qgbj1NYXRoLmZsb29yKHQvMik7Zm9yKGxldCBpPTA7aTxuO2krKyllPURlKGUpO3JldHVybiBlPWAke0FycmF5KHQpLmZpbGwoIiAiKS5qb2luKCIiKX0ke2V9YCxlfSxRbj0oZSx0KT0+e2NvbnN0IG49UChlKTtsZXQgaT0hMTtyZXR1cm4gQyhuLHtGcmFnbWVudERlZmluaXRpb24ocil7aWYoci5uYW1lLnZhbHVlPT09dClyZXR1cm4gaT0hMCxMfX0pLGl9LFduPShlLHQpPT57Y29uc3Qgbj1lLm1hcChpPT57dmFyIHI7cmV0dXJuKHI9aT09bnVsbD92b2lkIDA6aS5uYW1lKT09bnVsbD92b2lkIDA6ci52YWx1ZX0pLmZpbHRlcihpPT5pKTtyZXR1cm4gdC5maWx0ZXIoaT0+IW4uaW5jbHVkZXMoaSkpfSxabj0oZSx0LG4saSk9Pntjb25zdCByPVAoZSksYT1kZShbdCwuLi5pXSksbz1gJHt0fV8ke259YDtyZXR1cm4gQyhyLHtGcmFnbWVudERlZmluaXRpb24obCl7dmFyIHMsYyxmO2lmKGwubmFtZS52YWx1ZT09PW8pe2xldCBkPVsuLi5pXSx2PWwuc2VsZWN0aW9uU2V0O2Zvcihjb25zdCBBIG9mIGkpe2NvbnN0IHg9di5zZWxlY3Rpb25zLmZpbmQoTz0+Ty5raW5kPT09IkZpZWxkIiYmTy5uYW1lLnZhbHVlPT09QSk7aWYoeCYmeC5zZWxlY3Rpb25TZXQpdj14LnNlbGVjdGlvblNldCxkLnNoaWZ0KCk7ZWxzZSBicmVha31pZihpLmxlbmd0aD09PWQubGVuZ3RoKXJldHVybiBlPSIiLEw7Y29uc3QgbT12LnNlbGVjdGlvbnNbdi5zZWxlY3Rpb25zLmxlbmd0aC0xXSxoPWtlKFsuLi5kLGAuLi4ke2F9YF0sW10pLHtsZWZ0U3BhY2VzOk59PXRlKGUsKHM9bS5sb2MpPT1udWxsP3ZvaWQgMDpzLnN0YXJ0KSxnPWN0KGgsTik7cmV0dXJuIGU9ZS5zdWJzdHJpbmcoMCwoYz1tLmxvYyk9PW51bGw/dm9pZCAwOmMuZW5kKStgCiR7Z31gK2Uuc3Vic3RyaW5nKChmPW0ubG9jKT09bnVsbD92b2lkIDA6Zi5lbmQsZS5sZW5ndGgpLEx9fX0pLGV9LGVpPShlLHQsbik9Pntjb25zdCBpPVAoZSk7bGV0IHI9W107cmV0dXJuIEMoaSx7RnJhZ21lbnREZWZpbml0aW9uKGEpe2lmKGEubmFtZS52YWx1ZT09PW4pe2xldCBvPWEuc2VsZWN0aW9uU2V0O3JldHVybiB0LmZvckVhY2gobD0+e2NvbnN0IHM9bz09bnVsbD92b2lkIDA6by5zZWxlY3Rpb25zLmZpbmQoYz0+Yy5raW5kPT09IkZpZWxkIiYmYy5uYW1lLnZhbHVlPT09bCk7bz1zPT1udWxsP3ZvaWQgMDpzLnNlbGVjdGlvblNldH0pLG89PW51bGx8fG8uc2VsZWN0aW9ucy5mb3JFYWNoKGw9PntsLmtpbmQ9PT0iRmllbGQiJiYhbC5zZWxlY3Rpb25TZXQmJihyPVsuLi5yLGwubmFtZS52YWx1ZV0pfSksTH19fSkscn0sdXQ9KGUsdCxuLGkpPT4obi5mb3JFYWNoKHI9Pntjb25zdCBhPVAoZSk7QyhhLHtGcmFnbWVudERlZmluaXRpb24obyl7dmFyIGwscyxjO2lmKG8ubmFtZS52YWx1ZT09PWkpe2xldCBmPW8uc2VsZWN0aW9uU2V0O3QuZm9yRWFjaCh2PT57Y29uc3QgbT1mPT1udWxsP3ZvaWQgMDpmLnNlbGVjdGlvbnMuZmluZChoPT5oLmtpbmQ9PT0iRmllbGQiJiZoLm5hbWUudmFsdWU9PT12KTtmPW09PW51bGw/dm9pZCAwOm0uc2VsZWN0aW9uU2V0fSk7Y29uc3QgZD1mPT1udWxsP3ZvaWQgMDpmLnNlbGVjdGlvbnMuZmluZCh2PT52LmtpbmQ9PT0iRmllbGQiJiZ2Lm5hbWUudmFsdWU9PT1yKTtpZihkKXtmdChkKS5mb3JFYWNoKGg9Pntjb25zdHtvcmlnaW5hbEZpbGVDb250ZW50Ok59PXB0KGUsaCk7ZT1OfSk7Y29uc3R7bGVmdFNwYWNlczp2LGxlZnROZXdMaW5lczptfT10ZShlLChsPWQubG9jKT09bnVsbD92b2lkIDA6bC5zdGFydCk7ZT1lLnN1YnN0cmluZygwLCgocz1kLmxvYyk9PW51bGw/dm9pZCAwOnMuc3RhcnQpLXYtbSkrZS5zdWJzdHJpbmcoKGM9ZC5sb2MpPT1udWxsP3ZvaWQgMDpjLmVuZCxlLmxlbmd0aCl9cmV0dXJuIEx9fX0pfSksZSksdGk9KGUsdCxuKT0+KHQuZm9yRWFjaChpPT57Y29uc3Qgcj1QKGUpO0Mocix7T3BlcmF0aW9uRGVmaW5pdGlvbihhKXt2YXIgbyxsLHMsYyxmO2lmKCgobz1hLm5hbWUpPT1udWxsP3ZvaWQgMDpvLnZhbHVlKT09PW4pe2NvbnN0IGQ9YS5zZWxlY3Rpb25TZXQuc2VsZWN0aW9ucy5maW5kKG09Pm0ua2luZD09PSJGaWVsZCImJm0ubmFtZS52YWx1ZT09PW4pLHY9KGw9ZD09bnVsbD92b2lkIDA6ZC5zZWxlY3Rpb25TZXQpPT1udWxsP3ZvaWQgMDpsLnNlbGVjdGlvbnMuZmluZChtPT5tLmtpbmQ9PT0iRmllbGQiJiZtLm5hbWUudmFsdWU9PT1pKTtpZih2KXtmdCh2KS5mb3JFYWNoKE49Pntjb25zdHtvcmlnaW5hbEZpbGVDb250ZW50Omd9PXB0KGUsTik7ZT1nfSk7Y29uc3R7bGVmdFNwYWNlczptLGxlZnROZXdMaW5lczpofT10ZShlLChzPXYubG9jKT09bnVsbD92b2lkIDA6cy5zdGFydCk7ZT1lLnN1YnN0cmluZygwLCgoYz12LmxvYyk9PW51bGw/dm9pZCAwOmMuc3RhcnQpLW0taCkrZS5zdWJzdHJpbmcoKGY9di5sb2MpPT1udWxsP3ZvaWQgMDpmLmVuZCxlLmxlbmd0aCl9cmV0dXJuIEx9fX0pfSksZSksZnQ9ZT0+e2xldCB0PVtdO3JldHVybiBDKGUse0ZyYWdtZW50U3ByZWFkKG4pe3Q9Wy4uLnQsbi5uYW1lLnZhbHVlXX19KSx0fTtmdW5jdGlvbiB0ZShlLHQpe2xldCBuPTAsaT0wO2Zvcig7ZS5jaGFyQXQodC0xKT09PSIgInx8ZS5jaGFyQXQodC0xKT09PWAKYDspZS5jaGFyQXQodC0xKT09PSIgIiYmbisrLGUuY2hhckF0KHQtMSk9PT1gCmAmJmkrKyx0LS07cmV0dXJue2xlZnRTcGFjZXM6bixsZWZ0TmV3TGluZXM6aX19ZnVuY3Rpb24gbmkoZSx0KXtsZXQgbj0wLGk9MDtmb3IoO2UuY2hhckF0KHQrMSk9PT0iICJ8fGUuY2hhckF0KHQrMSk9PT1gCmA7KWUuY2hhckF0KHQrMSk9PT0iICImJm4rKyxlLmNoYXJBdCh0KzEpPT09YApgJiZpKyssdCsrO3JldHVybntyaWdodFNwYWNlczpuLHJpZ2h0TmV3TGluZXM6aX19ZnVuY3Rpb24gcHQoZSx0KXtjb25zdCBuPVAoZSk7bGV0IGk9IiIscj0iIjtyZXR1cm4gQyhuLHtGcmFnbWVudERlZmluaXRpb24oYSl7dmFyIG8sbCxzLGMsZjtpZihhLm5hbWUudmFsdWU9PT10JiZhLmxvYyl7aT1lLnN1YnN0cigobz1hLmxvYyk9PW51bGw/dm9pZCAwOm8uc3RhcnQsKChsPWEubG9jKT09bnVsbD92b2lkIDA6bC5lbmQpLSgocz1hLmxvYyk9PW51bGw/dm9pZCAwOnMuc3RhcnQpKTtjb25zdHtsZWZ0U3BhY2VzOmQsbGVmdE5ld0xpbmVzOnZ9PXRlKGUsYS5sb2Muc3RhcnQpLHtyaWdodFNwYWNlczptLHJpZ2h0TmV3TGluZXM6aH09bmkoZSxhLmxvYy5lbmQpO3JldHVybiByPWUuc3Vic3RyKDAsKChjPWEubG9jKT09bnVsbD92b2lkIDA6Yy5zdGFydCktKGQrdikpK2Uuc3Vic3RyKCgoZj1hLmxvYyk9PW51bGw/dm9pZCAwOmYuZW5kKSsobStoKSxlLmxlbmd0aC0xKSxMfX19KSx7b3JpZ2luYWxGaWxlQ29udGVudDpyLHJlbW92ZWRGcmFnbWVudDppfX1jb25zdCBpaT0oZSx0LG4saSk9Pntjb25zdCByPVAoZSksYT1kZShbdCwuLi5pXSk7cmV0dXJuIEMocix7T3BlcmF0aW9uRGVmaW5pdGlvbihvKXt2YXIgbCxzLGMsZjtpZigoKGw9bz09bnVsbD92b2lkIDA6by5uYW1lKT09bnVsbD92b2lkIDA6bC52YWx1ZSk9PT10KXtsZXQgZD1bLi4uaV0sdj1vLnNlbGVjdGlvblNldC5zZWxlY3Rpb25zLmZpbmQoQT0+QS5raW5kPT09IkZpZWxkIiYmQS5uYW1lLnZhbHVlPT09dCkuc2VsZWN0aW9uU2V0O2kuZm9yRWFjaChBPT57Y29uc3QgeD12LnNlbGVjdGlvbnMuZmluZChPPT5PLmtpbmQ9PT0iRmllbGQiJiZPLm5hbWUudmFsdWU9PT1BKTt4JiYodj14LnNlbGVjdGlvblNldCxkLnNoaWZ0KCkpfSk7Y29uc3QgbT1rZShbLi4uZCxgLi4uJHthfWBdLFtdKSxoPXYuc2VsZWN0aW9uc1t2LnNlbGVjdGlvbnMubGVuZ3RoLTFdLHtsZWZ0U3BhY2VzOk59PXRlKGUsKHM9aC5sb2MpPT1udWxsP3ZvaWQgMDpzLnN0YXJ0KSxnPWN0KG0sTik7cmV0dXJuIGU9ZS5zdWJzdHJpbmcoMCwoYz1oLmxvYyk9PW51bGw/dm9pZCAwOmMuZW5kKStgCiR7Z31gK2Uuc3Vic3RyaW5nKChmPWgubG9jKT09bnVsbD92b2lkIDA6Zi5lbmQsZS5sZW5ndGgpLEx9fX0pLGV9LHJpPShlLHQsbixpKT0+e2NvbnN0IHI9W24ucG9wKCksLi4uaV0uam9pbihgCiAgYCk7cmV0dXJuYGZyYWdtZW50ICR7ZGUoW2UsLi4ubl0pfSBvbiAke3R9IHsKICAke3J9Cn1gfSxkZT1lPT5lLmpvaW4oIl8iKTtmdW5jdGlvbiBkdChlLHQsbil7bGV0IGk9W10scj1bXTtyZXR1cm4gZS5hcmdzLmZvckVhY2goYT0+e3ZhciBvO2NvbnN0e25ld1BhcmFtZXRlcjpsLG5ld1ZhcmlhYmxlOnN9PShvPWxpKGEsdCxuKSkhPW51bGw/bzp7bmV3UGFyYW1ldGVyOmAke2EubmFtZX06ICQke2EubmFtZX1gLG5ld1ZhcmlhYmxlOmAkJHthLm5hbWV9OiAke210KGEsbil9YH07aT1bLi4uaSxsXSxyPVsuLi5yLHNdfSkse3BhcmFtczppLmxlbmd0aD9gKCR7aS5qb2luKCIsICIpfSlgOiIiLHZhcmlhYmxlczpyLmxlbmd0aD9gKCR7ci5qb2luKCIsICIpfSlgOiIifX1mdW5jdGlvbiBtdChlLHQpe2NvbnN0IG49YWkoZSkucmV2ZXJzZSgpO2xldCBpPSIiO3JldHVybiBuLmZvckVhY2gocj0+e3ZhciBhLG87aWYoci5raW5kPT09Ik5PTl9OVUxMIiYmKGk9YCR7aX0hYCksci5raW5kPT09IkxJU1QiJiYoaT1gWyR7aX1dYCxlLm5hbWU9PT0ib3JkZXJfYnkiKSl7Y29uc3QgbD0oYT1uWzBdLm5hbWUpIT1udWxsP2E6IiIscz1tZSh0LGwpLGM9KG89cz09bnVsbD92b2lkIDA6cy5pbnB1dEZpZWxkcyk9PW51bGw/dm9pZCAwOm8uZmluZChmPT5mLm5hbWU9PT0idXBkYXRlZF9hdCIpO2MmJihpPWAke2l9ID0geyAke2MubmFtZX06IGRlc2MgfWApfXIubmFtZSYmKGk9YCR7ci5uYW1lfWApfSksaX1mdW5jdGlvbiBhaShlKXtsZXQgdD1bXSxuPWUudHlwZTtmb3IoO247KXQ9Wy4uLnQsbl0sbj1uLm9mVHlwZTtyZXR1cm4gdH1mdW5jdGlvbiBvaShlLHQpe3ZhciBuO2NvbnN0IGk9ZS5maW5kKG89Pm8ubmFtZT09PXQpLHI9KG49aT09bnVsbD92b2lkIDA6aS5maWVsZHMpPT1udWxsP3ZvaWQgMDpuLmZpbHRlcihvPT57dmFyIGw7cmV0dXJuIGoobykua2luZD09PSJTQ0FMQVIifHwoKGw9ZS5maW5kKHM9PnMubmFtZT09PW8udHlwZSkpPT1udWxsP3ZvaWQgMDpsLmtpbmQpPT09IlNDQUxBUiJ9KSxhPXI9PW51bGw/dm9pZCAwOnIubWFwKG89Pm8ubmFtZSk7cmV0dXJuIGE/YHJldHVybmluZyB7CiAgICAke2Euam9pbihgCiAgICBgKX0KICB9YDoiIn1mdW5jdGlvbiBzaShlKXtsZXQgdD1lLnR5cGU7Zm9yKDt0Lm9mVHlwZTspdD10Lm9mVHlwZTtyZXR1cm4gdC5uYW1lP3QubmFtZTp0fWZ1bmN0aW9uIGxpKGUsdCxuKXtjb25zdCBpPW10KGUsbik7aWYoZS5uYW1lPT09Il9zZXQiKXJldHVybntuZXdQYXJhbWV0ZXI6YCR7ZS5uYW1lfTogJCR7dCE9IiI/dDoiX3NldCJ9YCxuZXdWYXJpYWJsZTpgJCR7dCE9IiI/dDoiX3NldCJ9OiAke2l9YH07aWYoZS5uYW1lPT09Im9iamVjdCIpcmV0dXJue25ld1BhcmFtZXRlcjpgJHtlLm5hbWV9OiAkJHt0IT0iIj90OiJvYmplY3QifWAsbmV3VmFyaWFibGU6YCQke3QhPSIiP3Q6Im9iamVjdCJ9OiAke2l9YH07aWYoZS5uYW1lPT09Im9iamVjdHMiKXJldHVybntuZXdQYXJhbWV0ZXI6YCR7ZS5uYW1lfTogJCR7dCE9IiI/dDoib2JqZWN0cyJ9YCxuZXdWYXJpYWJsZTpgJCR7dCE9IiI/dDoib2JqZWN0cyJ9OiAke2l9YH19Y29uc3QgY2k9KGUsdCxuKT0+e3ZhciBpO2xldCByPVtdLGE9W10sbz1bXTtyZXR1cm4gdC5mb3JFYWNoKGw9PntsZXQgcz1bXSxjPVtdLGY9W10sZD1bXSx2PVtdLG09W10saD0iIjtsLmZpZWxkcy5mb3JFYWNoKGc9Pnt2YXIgQTtpZihnLm5hbWU9PT0icmV0dXJuaW5nIil7Y29uc3QgeD1zaShnKTtoPW9pKG4seCl9ZWxzZSBpZihnLm5hbWUhPSJjcmVhdGVkX2F0IiYmZy5uYW1lIT0idXBkYXRlZF9hdCIpe2NvbnN0IHg9ZGkoZyxlLnR5cGVzKTtpZigoeD09bnVsbD92b2lkIDA6eC5raW5kKT09PSJTQ0FMQVIiKXtjb25zdCBPPShBPXg9PW51bGw/dm9pZCAwOngubmFtZSk9PW51bGw/dm9pZCAwOkEudG9Mb2NhbGVMb3dlckNhc2UoKTtnLm5hbWU9PT0iaWQiP3M9Wy4uLnMsZy5uYW1lXTpnLm5hbWU9PT0iY3JlYXRlZF9hdCJ8fGcubmFtZT09PSJ1cGRhdGVkX2F0Ij9kPVsuLi5kLGcubmFtZV06Tz09PSJzdHJpbmciP2cubmFtZT09InRpdGxlInx8Zy5uYW1lPT0ibmFtZSI/Yz1bLi4uYyxnLm5hbWVdOmY9Wy4uLmYsZy5uYW1lXTpPIT1udWxsJiZPLmluY2x1ZGVzKCJkYXRlIik/dj1bLi4udixnLm5hbWVdOk8hPW51bGwmJk8uaW5jbHVkZXMoInRpbWUiKT92PVsuLi52LGcubmFtZV06bT1bLi4ubSxnLm5hbWVdfX19KSxhPVsuLi5zLC4uLmMsLi4uZiwuLi52XSxvLnB1c2goYSk7Y29uc3QgTj1gZnJhZ21lbnQgJHtsLnF1ZXJ5TmFtZX1fJHtsLmVudGl0eU5hbWV9IG9uICR7bC5lbnRpdHlOYW1lfSB7CiAgJHsoaD9bLi4uYSxoXTphKS5qb2luKGAKICBgKX0KfWA7cj1bLi4ucixOXX0pLHtmcmFnbWVudFN0cmluZzpyLmpvaW4oYAoKYCksZnJhZ21lbnRzOihpPW9bMF0pIT1udWxsP2k6W119fSxuZT1lPT57Y29uc3QgdD1lLnR5cGVzLG49ZS5xdWVyeVR5cGUsaT1lLm11dGF0aW9uVHlwZSxyPWUuc3Vic2NyaXB0aW9uVHlwZSxhPXQuZmlsdGVyKGM9PmMubmFtZT09PShuPT1udWxsP3ZvaWQgMDpuLm5hbWUpfHxjLm5hbWU9PT0oaT09bnVsbD92b2lkIDA6aS5uYW1lKXx8Yy5uYW1lPT09KHI9PW51bGw/dm9pZCAwOnIubmFtZSkpLm1hcChjPT57dmFyIGY7cmV0dXJue2ZpZWxkczooZj1jLmZpZWxkcykhPW51bGw/ZjpbXSxraW5kOmMua2luZCxuYW1lOmMubmFtZSx0eXBlOmMudHlwZSxhcmdzOmMuYXJnc319KSxvPWEuZmluZChjPT5jLm5hbWU9PT0obj09bnVsbD92b2lkIDA6bi5uYW1lKSksbD1hLmZpbmQoYz0+Yy5uYW1lPT09KGk9PW51bGw/dm9pZCAwOmkubmFtZSkpLHM9YS5maW5kKGM9PmMubmFtZT09PShyPT1udWxsP3ZvaWQgMDpyLm5hbWUpKTtyZXR1cm5bbyxsLHNdfTtmdW5jdGlvbiB1aShlLHQpe2NvbnN0IG49ZS50eXBlcyxbaSxyLGFdPW5lKGUpLG89ZmkoW2kscl0sbikse2ZyYWdtZW50U3RyaW5nOmwsZnJhZ21lbnRzOnN9PWNpKGUsbyxuKSxjPWk/bWkoaSx0LG4pOiIiLGY9cj9oaShyLHQsbik6IiI7cmV0dXJue3F1ZXJ5OnlpKFtjLGYsbF0pLGZyYWdtZW50RmllbGRzOnN9fWZ1bmN0aW9uIGZpKGUsdCxuKXtjb25zdCBpPWUubWFwKHI9Pnt2YXIgYTtsZXQgbz1bXTtpZihyIT1udWxsJiZyLm5hbWUpZm9yKGNvbnN0IGwgb2Ygci5maWVsZHMpe2NvbnN0IHM9bC5uYW1lLGM9KGE9aihsKS5uYW1lKSE9bnVsbD9hOiIiO2xldCBmPXBpKGMsdCk7aWYobiYmIWYuc29tZShkPT5qKGQpLmtpbmQ9PT1uKSl7ci5maWVsZHM9ci5maWVsZHMuZmlsdGVyKGQ9PmQhPT1sKTtjb250aW51ZX1vPVsuLi5vLHtxdWVyeU5hbWU6cyxlbnRpdHlOYW1lOmMsZmllbGRzOmZ9XX1yZXR1cm4gb30pO3JldHVybiBBcnJheS5wcm90b3R5cGUuY29uY2F0LmFwcGx5KFtdLGkpfWZ1bmN0aW9uIHBpKGUsdCl7Y29uc3Qgbj10LmZpbmQoaT0+aS5uYW1lPT09ZSk7cmV0dXJuIG4mJm4uZmllbGRzP24uZmllbGRzOltdfWZ1bmN0aW9uIGooZSl7dmFyIHQ7bGV0IG49KHQ9ZS50eXBlKSE9bnVsbD90OmUub2ZUeXBlO2Zvcig7bi5vZlR5cGU7KW49bi5vZlR5cGU7cmV0dXJuIG4ubmFtZT9uOntuYW1lOmUudHlwZSxraW5kOiIifX1mdW5jdGlvbiBtZShlLHQpe3JldHVybiBlLmZpbmQobj0+bi5uYW1lPT09dCl9ZnVuY3Rpb24gZGkoZSx0KXtjb25zdCBuPWooZSk7aWYobi5raW5kPT09IlNDQUxBUiIpcmV0dXJuIG47aWYobi5raW5kPT0iIil7Y29uc3QgaT1tZSh0LG4ubmFtZSk7aWYoKGk9PW51bGw/dm9pZCAwOmkua2luZCk9PT0iU0NBTEFSIilyZXR1cm4gaX19ZnVuY3Rpb24gbWkoZSx0LG4pe2xldCBpPVtdO3JldHVybiBlLmZpZWxkcy5mb3JFYWNoKHI9Pntjb25zdCBhPWAke3IubmFtZX1fJHtqKHIpLm5hbWV9YCx7cGFyYW1zOm8sdmFyaWFibGVzOmx9PWR0KHIsdCxuKSxzPWBxdWVyeSAke3IubmFtZX0ke2x9IHsKICAke3IubmFtZX0ke299IHsKICAgIC4uLiR7YX0KICB9Cn1gO2k9Wy4uLmksc119KSxpLmpvaW4oYAoKYCl9ZnVuY3Rpb24gaGkoZSx0LG4pe2xldCBpPVtdO3JldHVybiBlLmZpZWxkcy5mb3JFYWNoKHI9Pntjb25zdCBhPWAke3IubmFtZX1fJHtqKHIpLm5hbWV9YDtpPVsuLi5pLHZpKHIsYSx0LG4pXX0pLGkuam9pbihgCgpgKX1mdW5jdGlvbiB2aShlLHQsbixpKXtjb25zdHtwYXJhbXM6cix2YXJpYWJsZXM6YX09ZHQoZSxuLGkpO3JldHVybmBtdXRhdGlvbiAke2UubmFtZX0ke2F9IHsKICAke2UubmFtZX0ke3J9IHsKICAgIC4uLiR7dH0KICB9Cn1gfWZ1bmN0aW9uIHlpKGUpe3JldHVybiBlPWUuZmlsdGVyKHQ9PnQhPSIiKSxgJHtlLmpvaW4oYAoKYCl9YH1jb25zdCBFaT1lPT5lLmFyZ3Muc29tZSh0PT50Lm5hbWU9PT0iaWQiKTtmdW5jdGlvbiBUaShlLHQpe2NvbnN0IG49bmUoZSk7bGV0IGk9W107cmV0dXJuIHQubWFwKHI9Pnt2YXIgYSxvO2NvbnN0IGw9TmkobixlLnR5cGVzLHIsaSk7bC5mb3JFYWNoKG09Pm09PW51bGw/dm9pZCAwOm0uZmllbGRzLmZvckVhY2goaD0+aT1bLi4uaSxoLm5hbWVdKSk7Y29uc3Qgcz1naShsLGUpLGM9KG89KGE9bWUocy50eXBlcyxyKSk9PW51bGw/dm9pZCAwOmEuZmllbGRzKT09bnVsbD92b2lkIDA6by5maWx0ZXIobT0+e2NvbnN0IGg9aihtKTtpZihoLmtpbmQmJmgua2luZCE9IiImJmgua2luZD09PSJTQ0FMQVIiKXJldHVybiEwO2NvbnN0IE49bWUocy50eXBlcyxoLm5hbWUpO3JldHVybihOPT1udWxsP3ZvaWQgMDpOLmtpbmQpPT09IlNDQUxBUiJ9KSxmPWM9PW51bGw/dm9pZCAwOmMubWFwKG09Pih7bmFtZTptLm5hbWUsdHlwZTpqKG0pLm5hbWV9KSkse3F1ZXJ5OmQsZnJhZ21lbnRGaWVsZHM6dn09dWkocyxyKTtyZXR1cm57cXVlcmllczpkLGVudGl0eU5hbWU6cixwcm9wZXJ0aWVzOmYhPW51bGw/ZjpbXSxmcmFnbWVudHM6dn19KX1mdW5jdGlvbiBnaShlLHQpe2NvbnN0IG49SlNPTi5wYXJzZShKU09OLnN0cmluZ2lmeSh0KSk7cmV0dXJuIGUuZm9yRWFjaChpPT57aWYoaSl7Y29uc3Qgcj1uLnR5cGVzLmZpbmQoYT0+YS5uYW1lPT09aS5uYW1lKTtyJiYoci5maWVsZHM9Wy4uLmkuZmllbGRzXSl9fSksbn1mdW5jdGlvbiBOaShlLHQsbixpKXtyZXR1cm4gZS5tYXAocj0+e2lmKHIpe2NvbnN0IGE9R3Qoe30scik7cmV0dXJuIGEuZmllbGRzPWEuZmllbGRzLmZpbHRlcihvPT54aShvLHQsbikmJiFpLmluY2x1ZGVzKG8ubmFtZSkpLGF9cmV0dXJuIHJ9KX1mdW5jdGlvbiB4aShlLHQsbil7cmV0dXJuISEoU2koZSxuKXx8SWkoZSx0LG4pKX1mdW5jdGlvbiBJaShlLHQsbil7dmFyIGk7Y29uc3Qgcj10eXBlb2YgZS50eXBlPT0ic3RyaW5nIj9lLnR5cGU6aihlKS5uYW1lLGE9dC5maW5kKGw9PmwubmFtZT09PXIpO2lmKCFhKXJldHVybiExO2NvbnN0IG89KGk9YS5maWVsZHMpPT1udWxsP3ZvaWQgMDppLmZpbmQobD0+bC5uYW1lPT09InJldHVybmluZyIpO3JldHVybiBvP2oobykubmFtZT09PW46ITF9ZnVuY3Rpb24gU2koZSx0KXt2YXIgbjtsZXQgaT1lLnR5cGU7aWYodHlwZW9mIGkhPSJzdHJpbmciKXtmb3IoO0QoaSkmJmkub2ZUeXBlOylpPWkub2ZUeXBlO2lmKEQoaSkmJigobj1pLm5hbWUpPT1udWxsP3ZvaWQgMDpuLnRvTG93ZXJDYXNlKCkpPT09KHQ9PW51bGw/dm9pZCAwOnQudG9Mb3dlckNhc2UoKSkpcmV0dXJuITB9ZWxzZSBpZih0eXBlb2YgaT09InN0cmluZyImJmk9PT0odD09bnVsbD92b2lkIDA6dC50b0xvd2VyQ2FzZSgpKSlyZXR1cm4hMDtyZXR1cm4hMX1mdW5jdGlvbiBfZShlLHQsbil7dmFyIGkscjtsZXQgYT1lLnR5cGU7aWYobj09PUguREVUQUlMJiZFaShlKSl7aWYodHlwZW9mIGEhPSJzdHJpbmciKXtmb3IoO0QoYSkmJmEub2ZUeXBlOylhPWEub2ZUeXBlO2lmKEQoYSkmJigoaT1hLm5hbWUpPT1udWxsP3ZvaWQgMDppLnRvTG93ZXJDYXNlKCkpPT09KHQ9PW51bGw/dm9pZCAwOnQudG9Mb3dlckNhc2UoKSkpcmV0dXJuITB9ZWxzZSBpZih0eXBlb2YgYT09InN0cmluZyImJmE9PT0odD09bnVsbD92b2lkIDA6dC50b0xvd2VyQ2FzZSgpKSlyZXR1cm4hMH1lbHNlIGlmKG49PT1ILkxJU1QmJihhPT1udWxsP3ZvaWQgMDphLmtpbmQpIT09Ik9CSkVDVCIpe2lmKHR5cGVvZiBhIT0ic3RyaW5nIil7Zm9yKDtEKGEpJiZhLm9mVHlwZTspYT1hLm9mVHlwZTtpZihEKGEpJiYoKHI9YS5uYW1lKT09bnVsbD92b2lkIDA6ci50b0xvd2VyQ2FzZSgpKT09PSh0PT1udWxsP3ZvaWQgMDp0LnRvTG93ZXJDYXNlKCkpKXJldHVybiEwfWVsc2UgaWYodHlwZW9mIGE9PSJzdHJpbmciJiZhPT09KHQ9PW51bGw/dm9pZCAwOnQudG9Mb3dlckNhc2UoKSkpcmV0dXJuITB9cmV0dXJuITF9Y29uc3QgT2k9KGUsdCk9PihlLmZvckVhY2goKG4saSk9Pnt0LmV2ZXJ5KHI9Pnt2YXIgYTtpZigoKGE9ci5uYW1lKT09bnVsbD92b2lkIDA6YS50b0xvd2VyQ2FzZSgpKT09PShuPT1udWxsP3ZvaWQgMDpuLnRvTG93ZXJDYXNlKCkpKXtsZXQgbz1yLnR5cGUsbD0hMTtmb3IoO0QobykmJm8ub2ZUeXBlOykobz09bnVsbD92b2lkIDA6by5raW5kKT09PSJMSVNUIiYmKGw9ITApLG89by5vZlR5cGU7aWYoRChvKSYmKG89PW51bGw/dm9pZCAwOm8ua2luZCk9PT0iT0JKRUNUIilyZXR1cm4gbHx8KGVbaV09by5uYW1lKSwhMX1yZXR1cm4hMH0pfSksZSksQWk9KGUsdCxuKT0+e2xldCBpPSIiO3JldHVybiBlLmZvckVhY2goKHIsYSk9PntpZihhPT09ZS5sZW5ndGgtMSlyZXR1cm4hMTt0LmV2ZXJ5KG89Pnt2YXIgbDtpZigoKGw9by5uYW1lKT09bnVsbD92b2lkIDA6bC50b0xvd2VyQ2FzZSgpKT09PShyPT1udWxsP3ZvaWQgMDpyLnRvTG93ZXJDYXNlKCkpKXtsZXQgcz1vLnR5cGU7Zm9yKDtEKHMpJiZzLm9mVHlwZTspcz1zLm9mVHlwZTtpZihEKHMpJiYocz09bnVsbD92b2lkIDA6cy5raW5kKT09PSJPQkpFQ1QiKXJldHVybiBpPXMubmFtZSwhMX1yZXR1cm4hMH0pfSksbi50eXBlcy5maW5kKHI9Pnt2YXIgYTtyZXR1cm4oKGE9cj09bnVsbD92b2lkIDA6ci5uYW1lKT09bnVsbD92b2lkIDA6YS50b0xvd2VyQ2FzZSgpKT09PShpPT1udWxsP3ZvaWQgMDppLnRvTG93ZXJDYXNlKCkpfSl9LGh0PShlLHQsbik9PntsZXQgaSxyPVkuT0JKRUNUO3JldHVybiBlLmZvckVhY2goYT0+e2xldCBvPSEwO3QuZXZlcnkobD0+e3ZhciBzO2lmKCgocz1sLm5hbWUpPT1udWxsP3ZvaWQgMDpzLnRvTG93ZXJDYXNlKCkpPT09KGE9PW51bGw/dm9pZCAwOmEudG9Mb3dlckNhc2UoKSkpe289ITE7bGV0IGM9bC50eXBlLGY9ITE7Zm9yKDtEKGMpJiZjLm9mVHlwZTspKGM9PW51bGw/dm9pZCAwOmMua2luZCk9PT0iTElTVCImJihmPSEwLHI9WS5BUlJBWSksYz1jLm9mVHlwZTtpZihEKGMpJiYoYz09bnVsbD92b2lkIDA6Yy5raW5kKT09PSJPQkpFQ1QiKXJldHVybiBmfHwocj1ZLk9CSkVDVCksaT1jLm5hbWUsITF9cmV0dXJuITB9KSxvJiZuLnR5cGVzLmZpbHRlcihsPT57dmFyIHM7cmV0dXJuKChzPWw9PW51bGw/dm9pZCAwOmwubmFtZSk9PW51bGw/dm9pZCAwOnMudG9Mb3dlckNhc2UoKSk9PT0oaT09bnVsbD92b2lkIDA6aS50b0xvd2VyQ2FzZSgpKX0pWzBdLmZpZWxkcy5ldmVyeShsPT57dmFyIHM7aWYoKChzPWwubmFtZSk9PW51bGw/dm9pZCAwOnMudG9Mb3dlckNhc2UoKSk9PT0oYT09bnVsbD92b2lkIDA6YS50b0xvd2VyQ2FzZSgpKSl7bGV0IGM9bC50eXBlLGY9ITE7Zm9yKDtEKGMpJiZjLm9mVHlwZTspYy5raW5kPT09IkxJU1QiJiYoZj0hMCxyPVkuQVJSQVkpLGM9Yy5vZlR5cGU7aWYoRChjKSYmKGM9PW51bGw/dm9pZCAwOmMua2luZCk9PT0iT0JKRUNUIilyZXR1cm4gZnx8KHI9WS5PQkpFQ1QpLGk9Yy5uYW1lLCExfXJldHVybiEwfSl9KSx7cmVsYXRpb25zaGlwTmFtZTppLHJlbGF0aW9uc2hpcFR5cGU6cn19O2Z1bmN0aW9uIEQoZSl7cmV0dXJuIm5hbWUiaW4gZSYmIm9mVHlwZSJpbiBlJiYia2luZCJpbiBlfWNvbnN0IGJpPWFzeW5jKGUsdCxuLGkscixhLG89Ui5CRUZPUkUpPT57Y29uc3RbbF09bmUodCkscz1sLmZpZWxkcy5maW5kKG09Pl9lKG0sbixyKSksYz1zPT1udWxsP3ZvaWQgMDpzLm5hbWUsZj1jIT1udWxsP2M6bjtsZXQgZD1lO2NvbnN0IHY9dC50eXBlcy5maW5kKG09Pm0ubmFtZS50b0xvd2VyQ2FzZSgpPT09bi50b0xvd2VyQ2FzZSgpKTtyZXR1cm4gaS5mb3JFYWNoKG09PntsZXQgaD1tLnNwbGl0KCIuIikuc2xpY2UoMSk7aD1PaShoLHYuZmllbGRzKTtsZXR7cmVsYXRpb25zaGlwTmFtZTpOfT1odChoLHYuZmllbGRzLHQpO2NvbnN0IGc9QWkoaCx2LmZpZWxkcyx0KSxBPWhbaC5sZW5ndGgtMV0hPSJpZCImJihnPT1udWxsP3ZvaWQgMDpnLmZpZWxkcy5maW5kKGs9PmsubmFtZT09PSJpZCIpKT9bImlkIl06W10seD1oLnNsaWNlKDAsLTEpLE89dnQoW2YsLi4ueF0sZCkscT1baFtoLmxlbmd0aC0xXV07aWYoUW4oZCxPKSlkPWx0KGQsTyxxLGEsbyxBKTtlbHNle2QrPWAKCiR7cmkoZixOIT1udWxsP046ZixoLEEpfWA7Y29uc3Qgaz1abihkLGYsbix4KTtpZihrPT09IiIpZD1paShkLGYsbix4KTtlbHNle2NvbnN0IFE9ZWkoayx4LGAke2Z9XyR7bn1gKTtkPXV0KGsseCxRLGAke2Z9XyR7bn1gKSxkPWx0KGQsTyxbXSxhLG8sUSl9fX0pLGQ9WW4oUChkKSksZH0sa2k9YXN5bmMoZSx0LG4saSxyLGEpPT57dmFyIG87Y29uc3RbbF09bmUodCkscz1sLmZpZWxkcy5maW5kKGc9Pl9lKGcsbixyKSksYz0obz1zPT1udWxsP3ZvaWQgMDpzLm5hbWUpIT1udWxsP286bixmPXQudHlwZXMuZmluZChnPT5nLm5hbWUudG9Mb3dlckNhc2UoKT09PW4udG9Mb3dlckNhc2UoKSksZD1pLnNwbGl0KCIuIik7bGV0e3JlbGF0aW9uc2hpcE5hbWU6dixyZWxhdGlvbnNoaXBUeXBlOm19PWh0KGQsZi5maWVsZHMsdCk7Y29uc3QgaD12PT09dm9pZCAwP1tjXTptPT09WS5PQkpFQ1Q/W2Msdl06W2MsLi4uZC5zbGljZSgwLC0xKV0sTj12dChoLGUpO3JldHVybiBlPXRpKGUsW2RbZC5sZW5ndGgtMV1dLG4pLGU9dXQoZSxbXSxbZFtkLmxlbmd0aC0xXV0sTiksZX0sdnQ9KGUsdCk9PntpZihlLmxlbmd0aD09MSl0cnl7Y29uc3Qgbj1QKHQpLGk9ZVswXTtsZXQgcj0iIjtyZXR1cm4gQyhuLHtPcGVyYXRpb25EZWZpbml0aW9uKGEpe3ZhciBvLGw7KChvPWEubmFtZSk9PW51bGw/dm9pZCAwOm8udmFsdWUpPT09aSYmKHI9KChsPWEuc2VsZWN0aW9uU2V0LnNlbGVjdGlvbnNbMF0uc2VsZWN0aW9uU2V0KT09bnVsbD92b2lkIDA6bC5zZWxlY3Rpb25zWzBdKS5uYW1lLnZhbHVlKX19KSxyfWNhdGNoKG4pe2NvbnNvbGUuZXJyb3Iobil9cmV0dXJuIGRlKGUpfSx5dD0oZSx0LG4pPT5FLmZhY3RvcnkuY3JlYXRlSW1wb3J0RGVjbGFyYXRpb24odm9pZCAwLHZvaWQgMCxFLmZhY3RvcnkuY3JlYXRlSW1wb3J0Q2xhdXNlKCExLG4hPW51bGw/bjp2b2lkIDAsRS5mYWN0b3J5LmNyZWF0ZU5hbWVkSW1wb3J0cyhlKSksRS5mYWN0b3J5LmNyZWF0ZUlkZW50aWZpZXIodCkpLERpPShlLHQpPT5FLmZhY3RvcnkuY3JlYXRlSW1wb3J0RGVjbGFyYXRpb24odm9pZCAwLHZvaWQgMCxFLmZhY3RvcnkuY3JlYXRlSW1wb3J0Q2xhdXNlKCExLHZvaWQgMCxFLmZhY3RvcnkuY3JlYXRlTmFtZXNwYWNlSW1wb3J0KEUuZmFjdG9yeS5jcmVhdGVJZGVudGlmaWVyKGUpKSksRS5mYWN0b3J5LmNyZWF0ZUlkZW50aWZpZXIodCkpLF9pPShlLHQpPT5FLmZhY3RvcnkuY3JlYXRlSW1wb3J0RGVjbGFyYXRpb24odm9pZCAwLHZvaWQgMCxFLmZhY3RvcnkuY3JlYXRlSW1wb3J0Q2xhdXNlKCExLEUuZmFjdG9yeS5jcmVhdGVJZGVudGlmaWVyKGUpLHZvaWQgMCksRS5mYWN0b3J5LmNyZWF0ZUlkZW50aWZpZXIodCkpLExpPShlLHQpPT5FLmZhY3RvcnkuY3JlYXRlSnN4U2VsZkNsb3NpbmdFbGVtZW50KEUuZmFjdG9yeS5jcmVhdGVJZGVudGlmaWVyKGUpLHZvaWQgMCxFLmZhY3RvcnkuY3JlYXRlSnN4QXR0cmlidXRlcyh0Lm1hcChuPT5FLmZhY3RvcnkuY3JlYXRlSnN4QXR0cmlidXRlKEUuZmFjdG9yeS5jcmVhdGVJZGVudGlmaWVyKG4ubmFtZSksRS5mYWN0b3J5LmNyZWF0ZUpzeEV4cHJlc3Npb24odm9pZCAwLEUuZmFjdG9yeS5jcmVhdGVJZGVudGlmaWVyKG4uaW5pdGlhbGl6ZXIpKSkpKSksRXQ9ZT0+ZS5yZXBsYWNlKC9bJyJdKy9nLCIiKSxCPShlLHQpPT50KGUpP2U6ZS5mb3JFYWNoQ2hpbGQobj0+QihuLHQpKSxUdD0oZSx0LG4pPT50KGUsbik/ZTplLmZvckVhY2hDaGlsZChpPT5UdChpLHQsbikpLE09KGUsdCk9Pntjb25zdCBuPVtdLGk9KHIsYSk9PihhKHIpJiZuLnB1c2gociksci5mb3JFYWNoQ2hpbGQobz0+aShvLGEpKSk7cmV0dXJuIGkoZSx0KSxufSxndD0oZSx0LG4pPT57Y29uc3QgaT1bXSxyPShhLG8sbCk9PihvKGEsbCkmJmkucHVzaChhKSxhLmZvckVhY2hDaGlsZChzPT5yKHMsbyxsKSkpO3JldHVybiByKGUsdCxuKSxpfSxDaT1lPT57Y29uc3QgdD1CKGUsbj0+dS5kZWZhdWx0LmlzSW1wb3J0RGVjbGFyYXRpb24obikmJm4ucG9zPjApO3JldHVybiB0IT09dm9pZCAwP3twb3M6dC5wb3MsZW5kOnQuZW5kfTp7cG9zOjAsZW5kOjB9fSxHPShlLHQ9dS5kZWZhdWx0LlNjcmlwdFRhcmdldC5FU05leHQsbj11LmRlZmF1bHQuU2NyaXB0S2luZC5UU1gsaT0iL3RzLWFzdC12aWV3ZXIudHN4Iik9Pntjb25zdCByPXUuZGVmYXVsdC5jcmVhdGVTb3VyY2VGaWxlKGksZSx0LCEwLG4pO3JldHVybiB3aShpLHIsdCkuZ2V0U291cmNlRmlsZShpKX0sd2k9KGUsdCxuKT0+e2NvbnN0IGk9e3N0cmljdDohMCx0YXJnZXQ6bixhbGxvd0pzOiEwLG1vZHVsZTp1LmRlZmF1bHQuTW9kdWxlS2luZC5FU05leHQsanN4OnUuZGVmYXVsdC5Kc3hFbWl0LlJlYWN0fSxyPXtbZV06dH0sYT17Z2V0U291cmNlRmlsZTpvPT5yW29dLGdldERlZmF1bHRMaWJGaWxlTmFtZTooKT0+Ii9saWIiLHdyaXRlRmlsZTooKT0+e30sZ2V0Q3VycmVudERpcmVjdG9yeTooKT0+Ii8iLGdldERpcmVjdG9yaWVzOigpPT5bXSxmaWxlRXhpc3RzOm89PnJbb10hPW51bGwscmVhZEZpbGU6bz0+cltvXSE9bnVsbD9yW29dLmdldEZ1bGxUZXh0KCk6dm9pZCAwLGdldENhbm9uaWNhbEZpbGVOYW1lOm89Pm8sdXNlQ2FzZVNlbnNpdGl2ZUZpbGVOYW1lczooKT0+ITAsZ2V0TmV3TGluZTooKT0+YApgLGdldEVudmlyb25tZW50VmFyaWFibGU6KCk9PiIifTtyZXR1cm4gdS5kZWZhdWx0LmNyZWF0ZVByb2dyYW0oWy4uLk9iamVjdC5rZXlzKHIpXSxpLGEpfSxGaT1lPT5lLnJlcGxhY2UoL1wvXCpcKiBUSElTX0lTX0FfTkVXTElORSBcKlwqXC8vZywiIiksTGU9YXN5bmMgZT0+e2NvbnN0IHQ9dS5kZWZhdWx0LmNyZWF0ZVByaW50ZXIoKS5wcmludEZpbGUoZSksbj1GaSh0KTtyZXR1cm4gYXdhaXQgUmkobil9LFJpPWFzeW5jKGUsdD0idHlwZXNjcmlwdCIpPT57Y29uc3Qgbj0oYXdhaXQgaW1wb3J0KCJodHRwczovL3VucGtnLmNvbS9wcmV0dGllci9lc20vc3RhbmRhbG9uZS5tanMiKSkuZGVmYXVsdCxpPShhd2FpdCBpbXBvcnQoImh0dHBzOi8vdW5wa2cuY29tL3ByZXR0aWVyL2VzbS9wYXJzZXItdHlwZXNjcmlwdC5tanMiKSkuZGVmYXVsdCxyPShhd2FpdCBpbXBvcnQoImh0dHBzOi8vdW5wa2cuY29tL3ByZXR0aWVyL2VzbS9wYXJzZXItZ3JhcGhxbC5tanMiKSkuZGVmYXVsdDtyZXR1cm4gbi5mb3JtYXQoZSx7cGFyc2VyOnQscGx1Z2luczpbaSxyXSxzZW1pOiExLHRhYldpZHRoOjIsc2luZ2xlUXVvdGU6ITB9KX0sUGk9KHtwb3M6ZSxlbmQ6dH0sbixpKT0+cj0+e2NvbnN0IGE9bz0+by5wb3M9PT1lJiZvLmVuZD09PXQ/aT09PSJiZWZvcmUiP0FycmF5LmlzQXJyYXkobik/Wy4uLm4sb106W24sb106QXJyYXkuaXNBcnJheShuKT9bbywuLi5uXTpbbyxuXTp1LmRlZmF1bHQudmlzaXRFYWNoQ2hpbGQobyxsPT5hKGwpLHIpO3JldHVybiBvPT51LmRlZmF1bHQudmlzaXROb2RlKG8sYSl9LGppPSh7cG9zOmUsZW5kOnR9LG4pPT5pPT57Y29uc3Qgcj1hPT5hLnBvcz09PWUmJmEuZW5kPT09dD9uOnUuZGVmYXVsdC52aXNpdEVhY2hDaGlsZChhLG89PnIobyksaSk7cmV0dXJuIGE9PnUuZGVmYXVsdC52aXNpdE5vZGUoYSxyKX0sQmk9KGUsdCk9Pm49Pntjb25zdCBpPXI9PmUocik/dDp1LmRlZmF1bHQudmlzaXRFYWNoQ2hpbGQocixhPT5pKGEpLG4pO3JldHVybiByPT51LmRlZmF1bHQudmlzaXROb2RlKHIsaSl9LE1pPShlLHQpPT5uPT57Y29uc3QgaT1yPT57aWYoIWUocix0KSlyZXR1cm4gdS5kZWZhdWx0LnZpc2l0RWFjaENoaWxkKHIsYT0+aShhKSxuKX07cmV0dXJuIHI9PnUuZGVmYXVsdC52aXNpdE5vZGUocixpKX0sVmk9KGUsdCxuKT0+aT0+e2NvbnN0IHI9YT0+ZShhLHQpP246dS5kZWZhdWx0LnZpc2l0RWFjaENoaWxkKGEsbz0+cihvKSxpKTtyZXR1cm4gYT0+dS5kZWZhdWx0LnZpc2l0Tm9kZShhLHIpfSwkaT0oe3BvczplLGVuZDp0fSk9Pm49Pntjb25zdCBpPXI9PntpZighKHIucG9zPT09ZSYmci5lbmQ9PT10KSlyZXR1cm4gdS5kZWZhdWx0LnZpc2l0RWFjaENoaWxkKHIsYT0+aShhKSxuKX07cmV0dXJuIHI9PnUuZGVmYXVsdC52aXNpdE5vZGUocixpKX0saGU9KGUsdCxuLGkpPT51LmRlZmF1bHQudHJhbnNmb3JtKGUsW1BpKHQsbixpKV0pLnRyYW5zZm9ybWVkWzBdLFVpPShlLHQpPT51LmRlZmF1bHQudHJhbnNmb3JtKGUsWyRpKHQpXSkudHJhbnNmb3JtZWRbMF0sVj0oZSx0LG4pPT51LmRlZmF1bHQudHJhbnNmb3JtKGUsW2ppKHQsbildKS50cmFuc2Zvcm1lZFswXSxOdD0oZSx0LG4pPT51LmRlZmF1bHQudHJhbnNmb3JtKGUsW0JpKHQsbildKS50cmFuc2Zvcm1lZFswXSxDZT0oZSx0LG4saSk9PnUuZGVmYXVsdC50cmFuc2Zvcm0oZSxbVmkodCxuLGkpXSkudHJhbnNmb3JtZWRbMF0sS2k9KGUsdCxuKT0+dS5kZWZhdWx0LnRyYW5zZm9ybShlLFtNaSh0LG4pXSkudHJhbnNmb3JtZWRbMF0sej1lPT57ZS5wb3M9LTEsZS5lbmQ9LTEsdS5kZWZhdWx0LmZvckVhY2hDaGlsZChlLHopfSwkPWFzeW5jIGU9Pntjb25zdCB0PWF3YWl0IExlKGUpO3JldHVybiBHKHQpfSxKaT0oZSx0KT0+e2NvbnN0IG49WWkoZSx0KTtpZihuKXtjb25zdCBpPUNpKGUpO3JldHVybiBoZShlLGksbil9ZWxzZSByZXR1cm4gZX0sWWk9KGUsdCk9Pntjb25zdCBuPWUuc3RhdGVtZW50cy5maWx0ZXIoYT0+dS5kZWZhdWx0LmlzSW1wb3J0RGVjbGFyYXRpb24oYSkpLGk9dC5zdGF0ZW1lbnRzLmZpbHRlcihhPT51LmRlZmF1bHQuaXNJbXBvcnREZWNsYXJhdGlvbihhKSkscj1HaShuKTtyZXR1cm4gemkoaSxyKX0seHQ9ZT0+e2NvbnN0IHQ9bmV3IFNldCx7aW1wb3J0Q2xhdXNlOm59PWU7cmV0dXJuIG4/KG4ubmFtZSYmdC5hZGQobi5uYW1lLmdldFRleHQoKSksbi5uYW1lZEJpbmRpbmdzJiZ1LmRlZmF1bHQuaXNOYW1lZEltcG9ydHMobi5uYW1lZEJpbmRpbmdzKSYmbi5uYW1lZEJpbmRpbmdzLmVsZW1lbnRzLmZvckVhY2goaT0+dC5hZGQoaS5uYW1lLmdldFRleHQoKSkpLG4ubmFtZWRCaW5kaW5ncyYmdS5kZWZhdWx0LmlzTmFtZXNwYWNlSW1wb3J0KG4ubmFtZWRCaW5kaW5ncykmJnQuYWRkKG4ubmFtZWRCaW5kaW5ncy5uYW1lLmdldFRleHQoKSksQXJyYXkuZnJvbSh0KSk6bnVsbH0sR2k9ZT0+e2NvbnN0IHQ9bmV3IE1hcDtyZXR1cm4gZS5mb3JFYWNoKG49Pntjb25zdCBpPUV0KG4ubW9kdWxlU3BlY2lmaWVyLmdldFRleHQoKSkscj14dChuKTtpZighcilyZXR1cm47Y29uc3QgYT10LmdldChpKTthP3Quc2V0KGksWy4uLmEsLi4ucl0pOnQuc2V0KGkscil9KSx0fSx6aT0oZSx0KT0+e2NvbnN0IG49W107cmV0dXJuIGUuZm9yRWFjaChpPT57dmFyIHI7Y29uc3QgYT1FdChpLm1vZHVsZVNwZWNpZmllci5nZXRUZXh0KCkpLHtpbXBvcnRDbGF1c2U6b309aTtpZighbylyZXR1cm47aWYoIXQuaGFzKGEpKXtuLnB1c2goaSk7cmV0dXJufWNvbnN0IGw9eHQoaSkscz10LmdldChhKTtpZighbHx8IXMpcmV0dXJuO2NvbnN0IGM9bC5maWx0ZXIoZD0+IXMuaW5jbHVkZXMoZCkpO2lmKGMubGVuZ3RoPT09MClyZXR1cm47aWYoYy5sZW5ndGg9PT0xJiYoKHI9by5uYW1lKT09bnVsbD92b2lkIDA6ci5nZXRUZXh0KCkpPT09Y1swXSl7Y29uc3QgZD1faShjWzBdLGkubW9kdWxlU3BlY2lmaWVyLmdldFRleHQoKSk7bi5wdXNoKGQpO3JldHVybn1pZihjLmxlbmd0aD09PTEmJm8ubmFtZWRCaW5kaW5ncyYmdS5kZWZhdWx0LmlzTmFtZXNwYWNlSW1wb3J0KG8ubmFtZWRCaW5kaW5ncykmJm8ubmFtZWRCaW5kaW5ncy5uYW1lLmdldFRleHQoKT09PWNbMF0pe2NvbnN0IGQ9RGkoY1swXSxpLm1vZHVsZVNwZWNpZmllci5nZXRUZXh0KCkpO24ucHVzaChkKTtyZXR1cm59Y29uc3QgZj1YaShpLGMpO2YmJm4ucHVzaChmKX0pLG4ubWFwKGk9Pnt6KGkpfSksbn0scWk9KGUsdCk9PntpZihlLm5hbWVkQmluZGluZ3MmJnUuZGVmYXVsdC5pc05hbWVkSW1wb3J0cyhlLm5hbWVkQmluZGluZ3MpKXtjb25zdCBuPWUubmFtZWRCaW5kaW5ncy5lbGVtZW50cy5maWx0ZXIoaT0+dC5pbmNsdWRlcyhpLm5hbWUuZ2V0VGV4dCgpKSk7cmV0dXJuIG4ubGVuZ3RoPjA/bjpudWxsfXJldHVybiBudWxsfSxYaT0oZSx0KT0+e3ZhciBuO2NvbnN0e2ltcG9ydENsYXVzZTppfT1lO2lmKCFpKXJldHVybiBudWxsO2NvbnN0IHI9cWkoaSx0KTtpZighcilyZXR1cm4gbnVsbDtjb25zdCBhPShuPWkubmFtZSk9PW51bGw/dm9pZCAwOm4uZ2V0VGV4dCgpLG89ZS5tb2R1bGVTcGVjaWZpZXIuZ2V0VGV4dCgpO3JldHVybiBhJiZ0LmluY2x1ZGVzKGEpP3l0KHIsbyxpLm5hbWUpOnl0KHIsbyl9LEl0PShlLHQpPT5LaShlLEhpLHQpLEhpPShlLHQpPT57dmFyIG4saTtyZXR1cm4gdS5kZWZhdWx0LmlzSW1wb3J0RGVjbGFyYXRpb24oZSkmJmUucGFyZW50JiZ1LmRlZmF1bHQuaXNTb3VyY2VGaWxlKGUucGFyZW50KSYmKChpPShuPWUuaW1wb3J0Q2xhdXNlKT09bnVsbD92b2lkIDA6bi5uYW1lKT09bnVsbD92b2lkIDA6aS5nZXRUZXh0KCkpPT09dH0sUWk9KGUsdCk9PnUuZGVmYXVsdC5pc0lkZW50aWZpZXIoZSkmJmUudGV4dD09PXQsV2k9KGUsdCk9PnUuZGVmYXVsdC5pc1N0cmluZ0xpdGVyYWxMaWtlKGUpJiZlLnRleHQ9PT10LHdlPShlLHQsbixpKT0+e2NvbnN0IHI9Wy4uLk0oZSx1LmRlZmF1bHQuaXNJZGVudGlmaWVyKSwuLi5NKGUsdS5kZWZhdWx0LmlzU3RyaW5nTGl0ZXJhbCldLnJlZHVjZSgocyxjKT0+KGMuZ2V0VGV4dCgpLmluZGV4T2YodCkhPT0tMSYmcy5wdXNoKGMuZ2V0VGV4dCgpLnJlcGxhY2VBbGwoLyJ8Jy9nLCIiKSkscyksW10pLGE9Wy4uLm5ldyBTZXQocildLG89YS5tYXAocz0+aT9zLnJlcGxhY2VBbGwoLyd8Ii9nLCIiKS5zcGxpdCgiLiIpOltzLnJlcGxhY2VBbGwoLyd8Ii9nLCIiKV0pLm1hcChzPT5zLm1hcChjPT5jPT09dD9uOmMpKS5tYXAocz0+aT9zLmpvaW4oIi4iKTpzLmpvaW4oIiIpKTtsZXQgbDtpZihvLmZvckVhY2goKHMsYyk9Pntjb25zdCBmPUUuZmFjdG9yeS5jcmVhdGVJZGVudGlmaWVyKHMpO3ooZiksbD1DZShlLFFpLGFbY10sZil9KSxvLmZvckVhY2goKHMsYyk9Pntjb25zdCBmPUUuZmFjdG9yeS5jcmVhdGVTdHJpbmdMaXRlcmFsKHMpO3ooZiksbD1DZShsLFdpLGFbY10sZil9KSwhIWwpcmV0dXJuIHoobCksbH0sWmk9KGUsdCk9Pntjb25zdCBuPW5yKGUsdCk7aWYoIW4pcmV0dXJuIG51bGw7Y29uc3QgaT1PdChlLG4pO2lmKCFpKXJldHVybiBudWxsO2lmKHUuZGVmYXVsdC5pc0pzeFNlbGZDbG9zaW5nRWxlbWVudChpLnBhcmVudCkpcmV0dXJuIGkucGFyZW50LnBvcztpZih1LmRlZmF1bHQuaXNKc3hPcGVuaW5nRWxlbWVudChpLnBhcmVudCkpcmV0dXJuIGkucGFyZW50LnBhcmVudC5wb3N9LGVyPShlLHQpPT57Y29uc3Qgbj1HKGUpLGk9U3QoZSx0KTtpZighaXx8IW4pcmV0dXJuIG51bGw7Y29uc3Qgcj11LmRlZmF1bHQuaXNQYXJlbnRoZXNpemVkRXhwcmVzc2lvbihpKT9pLmV4cHJlc3Npb246aTtyZXR1cm4gaGUobix7cG9zOnIucG9zLGVuZDpyLmVuZH0sW3JdKX0sdHI9KGUsdCxuLGkpPT57Y29uc3Qgcj1HKGUpLGE9U3QoZSx0KTtpZighYXx8IXIpcmV0dXJuIG51bGw7Y29uc3Qgbz13ZShhLG4saSwhMCk7cmV0dXJuIG8/aGUocix7cG9zOmEucG9zLGVuZDphLmVuZH0sW29dKTpudWxsfTtmdW5jdGlvbiBTdChlLHQpe2NvbnN0IG49WmkoZSx0KTtyZXR1cm4gbj9PdChlLG4pOm51bGx9ZnVuY3Rpb24gbnIoZSx0KXtpZih0eXBlb2YgZSE9InN0cmluZyIpcmV0dXJuIG51bGw7Y29uc3Qgbj1lLnNwbGl0KGAKYCk7aWYodC5saW5lTnVtYmVyPjAmJnQubGluZU51bWJlcjxuLmxlbmd0aCl7Y29uc3QgaT10LmxpbmVOdW1iZXItMTtsZXQgcj0wO2ZvcihsZXQgYT0wO2E8aTsrK2Epcis9blthXS5sZW5ndGgrMTtyZXR1cm4gcis9dC5jb2x1bW5OdW1iZXItMSxyKz0xLHJ9cmV0dXJuIG51bGx9ZnVuY3Rpb24gT3QoZSx0KXtjb25zdCBuPUcoZSksaT1yPT57Y29uc3QgYT1yLnBvcztyZXR1cm4gYTw9dCYmdDw9ci5lbmQ/YT09PXQ/cjp1LmRlZmF1bHQuZm9yRWFjaENoaWxkKHIsaSk6bnVsbH07cmV0dXJuIG4/dS5kZWZhdWx0LmZvckVhY2hDaGlsZChuLGkpOm51bGx9Y29uc3QgQXQ9KGUsdCxuLGkpPT57Y29uc3Qgcj13ZSh0LG4saSwhMSk7cmV0dXJuIHImJihlPVYoZSx7cG9zOnQucG9zLGVuZDp0LmVuZH0scikpLGV9O3R5cGVvZiBUZXh0RGVjb2Rlcj09ImZ1bmN0aW9uIiYmbmV3IFRleHREZWNvZGVyLHR5cGVvZiBUZXh0RW5jb2Rlcj09ImZ1bmN0aW9uIiYmbmV3IFRleHRFbmNvZGVyO2NvbnN0IGlyPSJBQkNERUZHSElKS0xNTk9QUVJTVFVWV1hZWmFiY2RlZmdoaWprbG1ub3BxcnN0dXZ3eHl6MDEyMzQ1Njc4OSsvPSIscnI9QXJyYXkucHJvdG90eXBlLnNsaWNlLmNhbGwoaXIpOyhlPT57bGV0IHQ9e307cmV0dXJuIGUuZm9yRWFjaCgobixpKT0+dFtuXT1pKSx0fSkocnIpLFN0cmluZy5mcm9tQ2hhckNvZGUuYmluZChTdHJpbmcpLHR5cGVvZiBVaW50OEFycmF5LmZyb209PSJmdW5jdGlvbiImJlVpbnQ4QXJyYXkuZnJvbS5iaW5kKFVpbnQ4QXJyYXkpO2NvbnN0IGJ0PShlLHQpPT5lLnN0YXJ0c1dpdGgodCk/ZS5zcGxpdCh0KVsxXTplLGt0PShlLHQpPT57aWYodD09PSIuIilyZXR1cm4gaWUoZSwiLi9pbmRleCIpO2lmKHQuc3RhcnRzV2l0aCgiLi8iKSlyZXR1cm4gaWUoZSx0KTtpZih0PT09Ii4uIil7Y29uc3QgYT1lLnN1YnN0cmluZygwLGUubGFzdEluZGV4T2YoIi8iKSk7cmV0dXJuIGllKGEsIi4vaW5kZXgiKX1jb25zdCBuPXQuc3BsaXQoIi8iKS5maWx0ZXIoYT0+YT09PSIuLiIpLGk9dC5zcGxpdCgiLyIpLmZpbHRlcihhPT5hIT09Ii4uIikuam9pbigiLyIpLHI9aWUoZSwiIikuc3BsaXQoIi8iKS5maWx0ZXIoQm9vbGVhbik7cmV0dXJuIG4uZm9yRWFjaCgoKT0+ci5wb3AoKSksaWUoIi8iK3Iuam9pbigiLyIpKyIvIixpKX0saWU9KGUsdCk9Pntjb25zdCBuPWUuZW5kc1dpdGgoIi8iKT9lOmUuc3Vic3RyaW5nKDAsZS5sYXN0SW5kZXhPZigiLyIpKSsiLyI7bGV0IGk9YnQodCwiLi8iKTtyZXR1cm4gaT1idChpLCIvIiksbitpfSxEdD0oZSx0KT0+e2NvbnN0IG49VHQoZSxzcix0KTtyZXR1cm4gbiE9bnVsbD9uOm51bGx9LGFyPWU9Pntjb25zdCB0PWUuYm9keTtyZXR1cm4hdHx8dS5kZWZhdWx0LmlzSnN4T3BlbmluZ0xpa2VFbGVtZW50KHQpfHx1LmRlZmF1bHQuaXNKc3hFbGVtZW50KHQpP251bGw6dS5kZWZhdWx0LmlzQmxvY2sodCk/dC5zdGF0ZW1lbnRzLmZpbHRlcihuPT4hdS5kZWZhdWx0LmlzUmV0dXJuU3RhdGVtZW50KG4pKTpudWxsfSxvcj1lPT57Y29uc3QgdD1lLmJvZHk7aWYoIXQpcmV0dXJuIG51bGw7aWYodS5kZWZhdWx0LmlzSnN4T3BlbmluZ0xpa2VFbGVtZW50KHQpfHx1LmRlZmF1bHQuaXNKc3hFbGVtZW50KHQpKXJldHVybiB0O2lmKHUuZGVmYXVsdC5pc1BhcmVudGhlc2l6ZWRFeHByZXNzaW9uKHQpKXJldHVybiB0LmV4cHJlc3Npb247aWYodS5kZWZhdWx0LmlzQmxvY2sodCkpe2NvbnN0IG49dC5zdGF0ZW1lbnRzLmZpbHRlcihpPT51LmRlZmF1bHQuaXNSZXR1cm5TdGF0ZW1lbnQoaSkpO2lmKG4ubGVuZ3RoPT09MSl7Y29uc3QgaT1uWzBdLmV4cHJlc3Npb247cmV0dXJuIGk/dS5kZWZhdWx0LmlzUGFyZW50aGVzaXplZEV4cHJlc3Npb24oaSk/aS5leHByZXNzaW9uOmk6bnVsbH19cmV0dXJuIG51bGx9LHNyPShlLHQpPT57dmFyIG47cmV0dXJuIHUuZGVmYXVsdC5pc0Fycm93RnVuY3Rpb24oZSkmJmUucGFyZW50JiZ1LmRlZmF1bHQuaXNWYXJpYWJsZURlY2xhcmF0aW9uKGUucGFyZW50KSYmZS5wYXJlbnQubmFtZS5nZXRUZXh0KCk9PT10JiZlLnBhcmVudC5wYXJlbnQmJnUuZGVmYXVsdC5pc1ZhcmlhYmxlRGVjbGFyYXRpb25MaXN0KGUucGFyZW50LnBhcmVudCkmJmUucGFyZW50LnBhcmVudC5wYXJlbnQmJnUuZGVmYXVsdC5pc1ZhcmlhYmxlU3RhdGVtZW50KGUucGFyZW50LnBhcmVudC5wYXJlbnQpJiZlLnBhcmVudC5wYXJlbnQucGFyZW50LnBhcmVudCYmdS5kZWZhdWx0LmlzU291cmNlRmlsZShlLnBhcmVudC5wYXJlbnQucGFyZW50LnBhcmVudCl8fHUuZGVmYXVsdC5pc0Z1bmN0aW9uRGVjbGFyYXRpb24oZSkmJigobj1lLm5hbWUpPT1udWxsP3ZvaWQgMDpuLmdldFRleHQoKSk9PT10JiZlLnBhcmVudCYmdS5kZWZhdWx0LmlzU291cmNlRmlsZShlLnBhcmVudCl9LGxyPWU9PnUuZGVmYXVsdC5pc0Fycm93RnVuY3Rpb24oZSkmJmUucGFyZW50JiZ1LmRlZmF1bHQuaXNWYXJpYWJsZURlY2xhcmF0aW9uKGUucGFyZW50KSYmZS5wYXJlbnQucGFyZW50JiZ1LmRlZmF1bHQuaXNWYXJpYWJsZURlY2xhcmF0aW9uTGlzdChlLnBhcmVudC5wYXJlbnQpJiZlLnBhcmVudC5wYXJlbnQucGFyZW50JiZ1LmRlZmF1bHQuaXNWYXJpYWJsZVN0YXRlbWVudChlLnBhcmVudC5wYXJlbnQucGFyZW50KSYmZS5wYXJlbnQucGFyZW50LnBhcmVudC5wYXJlbnQmJnUuZGVmYXVsdC5pc1NvdXJjZUZpbGUoZS5wYXJlbnQucGFyZW50LnBhcmVudC5wYXJlbnQpfHx1LmRlZmF1bHQuaXNGdW5jdGlvbkRlY2xhcmF0aW9uKGUpJiZlLnBhcmVudCYmdS5kZWZhdWx0LmlzU291cmNlRmlsZShlLnBhcmVudCksY3I9ZT0+X3QoZSl8fEx0KGUpLF90PWU9PmUua2luZD09PXUuZGVmYXVsdC5TeW50YXhLaW5kLlRydWVLZXl3b3JkLEx0PWU9PmUua2luZD09PXUuZGVmYXVsdC5TeW50YXhLaW5kLkZhbHNlS2V5d29yZCxDdD1lPT5lLmtpbmQ9PT11LmRlZmF1bHQuU3ludGF4S2luZC5OdWxsS2V5d29yZCx1cj1lPT5lLmtpbmQ9PT11LmRlZmF1bHQuU3ludGF4S2luZC5TdHJpbmdMaXRlcmFsfHxlLmtpbmQ9PT11LmRlZmF1bHQuU3ludGF4S2luZC5UcnVlS2V5d29yZHx8ZS5raW5kPT09dS5kZWZhdWx0LlN5bnRheEtpbmQuRmFsc2VLZXl3b3JkfHxlLmtpbmQ9PT11LmRlZmF1bHQuU3ludGF4S2luZC5OdWxsS2V5d29yZHx8ZS5raW5kPT09dS5kZWZhdWx0LlN5bnRheEtpbmQuTnVtZXJpY0xpdGVyYWx8fGUua2luZD09PXUuZGVmYXVsdC5TeW50YXhLaW5kLklkZW50aWZpZXImJmUuZ2V0VGV4dCgpPT09InVuZGVmaW5lZCJ8fGUua2luZD09PXUuZGVmYXVsdC5TeW50YXhLaW5kLk5vU3Vic3RpdHV0aW9uVGVtcGxhdGVMaXRlcmFsLGZyPShlLHQpPT57Y29uc3Qgbj1NKGUsZHIpLGk9bmV3IE1hcDtuLmZvckVhY2goYT0+e2NvbnN0IG89dS5kZWZhdWx0LmlzSnN4QXR0cmlidXRlKGEucGFyZW50LnBhcmVudCk/YS5wYXJlbnQucGFyZW50Lm5hbWUuZ2V0VGV4dCgpOmEucGFyZW50Lm5hbWUuZ2V0VGV4dCgpO2kuc2V0KG8sYSl9KTtsZXQgcj10O3JldHVybiBpLmZvckVhY2goKGEsbyk9Pntjb25zdCBsPWd0KHIsbXIsbykscz1wcihhKTshc3x8bC5mb3JFYWNoKGM9Pntjb25zdCBmPXtwb3M6Yy5wb3MsZW5kOmMuZW5kfTt1LmRlZmF1bHQuaXNKc3hBdHRyaWJ1dGUoYy5wYXJlbnQpfHwocj1WKHIsZixzKSl9KX0pLHJ9LHByPWU9PntsZXQgdD1udWxsO3JldHVybiB1LmRlZmF1bHQuaXNTdHJpbmdMaXRlcmFsKGUpJiYodD1FLmZhY3RvcnkuY3JlYXRlTm9TdWJzdGl0dXRpb25UZW1wbGF0ZUxpdGVyYWwoZS50ZXh0KSksdS5kZWZhdWx0LmlzTnVtZXJpY0xpdGVyYWwoZSkmJih0PUUuZmFjdG9yeS5jcmVhdGVOdW1lcmljTGl0ZXJhbChlLnRleHQpKSx1LmRlZmF1bHQuaXNJZGVudGlmaWVyKGUpJiZlLmdldFRleHQoKSE9PSJ1bmRlZmluZWQiJiYodD1FLmZhY3RvcnkuY3JlYXRlSWRlbnRpZmllcihlLmdldFRleHQoKSkpLEN0KGUpJiYodD1FLmZhY3RvcnkuY3JlYXRlTnVsbCgpKSxfdChlKSYmKHQ9RS5mYWN0b3J5LmNyZWF0ZVRydWUoKSksTHQoZSkmJih0PUUuZmFjdG9yeS5jcmVhdGVGYWxzZSgpKSx0fSxkcj1lPT4odS5kZWZhdWx0LmlzTnVtZXJpY0xpdGVyYWwoZSl8fHUuZGVmYXVsdC5pc1N0cmluZ0xpdGVyYWwoZSl8fGNyKGUpfHxDdChlKXx8dS5kZWZhdWx0LmlzSWRlbnRpZmllcihlKSYmZS5nZXRUZXh0KCkhPT0idW5kZWZpbmVkIikmJmUucGFyZW50JiZ1LmRlZmF1bHQuaXNKc3hFeHByZXNzaW9uKGUucGFyZW50KXx8dS5kZWZhdWx0LmlzU3RyaW5nTGl0ZXJhbChlKSYmZS5wYXJlbnQmJnUuZGVmYXVsdC5pc0pzeEF0dHJpYnV0ZShlLnBhcmVudCksbXI9KGUsdCk9PnUuZGVmYXVsdC5pc0lkZW50aWZpZXIoZSkmJmUudGV4dD09PXQsd3Q9ZT0+e2NvbnN0IHQ9TShlLHUuZGVmYXVsdC5pc1RlbXBsYXRlRXhwcmVzc2lvbik7bGV0IG49ZTtyZXR1cm4gdC5mb3JFYWNoKGk9Pntjb25zdCByPVtdO2xldCBhPWkuaGVhZDtpZihpLnRlbXBsYXRlU3BhbnMuZm9yRWFjaCgobyxsKT0+e2lmKHVyKG8uZXhwcmVzc2lvbikpe2xldCBzPXUuZGVmYXVsdC5pc1N0cmluZ0xpdGVyYWwoby5leHByZXNzaW9uKXx8dS5kZWZhdWx0LmlzTm9TdWJzdGl0dXRpb25UZW1wbGF0ZUxpdGVyYWwoby5leHByZXNzaW9uKT9vLmV4cHJlc3Npb24udGV4dCtvLmxpdGVyYWwudGV4dDpvLmV4cHJlc3Npb24uZ2V0VGV4dCgpK28ubGl0ZXJhbC50ZXh0O2NvbnN0IGM9ci5wb3AoKTtpZighYyl7YT1FLmZhY3RvcnkuY3JlYXRlVGVtcGxhdGVIZWFkKGEudGV4dCtzKTtyZXR1cm59cz1jLmxpdGVyYWwudGV4dCtzO2NvbnN0IGY9RS5mYWN0b3J5LmNyZWF0ZVRlbXBsYXRlU3BhbihjLmV4cHJlc3Npb24sbD09PWkudGVtcGxhdGVTcGFucy5sZW5ndGgtMT9FLmZhY3RvcnkuY3JlYXRlVGVtcGxhdGVUYWlsKHMpOkUuZmFjdG9yeS5jcmVhdGVUZW1wbGF0ZU1pZGRsZShzKSk7ci5wdXNoKGYpfWVsc2Ugci5wdXNoKG8pfSksci5sZW5ndGg9PT0wKXtjb25zdCBvPXtwb3M6aS5wYXJlbnQucG9zLGVuZDppLnBhcmVudC5lbmR9O249VihuLG8sRS5mYWN0b3J5LmNyZWF0ZVN0cmluZ0xpdGVyYWwoYS50ZXh0KSk7cmV0dXJufW49VihuLHtwb3M6aS5wb3MsZW5kOmkuZW5kfSxFLmZhY3RvcnkuY3JlYXRlVGVtcGxhdGVFeHByZXNzaW9uKGEscikpfSksbj1ocihuKSxufSxocj1lPT57Y29uc3QgdD1NKGUseXIpO2xldCBuPWU7cmV0dXJuIHQuZm9yRWFjaChpPT57bj1WKG4se3BvczppLnBhcmVudC5wb3MsZW5kOmkucGFyZW50LmVuZH0sRS5mYWN0b3J5LmNyZWF0ZVN0cmluZ0xpdGVyYWwoaS50ZXh0KSl9KSxNKG4sdnIpLmZvckVhY2goaT0+e249VihuLHtwb3M6aS5wYXJlbnQucG9zLGVuZDppLnBhcmVudC5lbmR9LEUuZmFjdG9yeS5jcmVhdGVTdHJpbmdMaXRlcmFsKGkudGV4dCkpfSksbn0sdnI9ZT0+RnQoZSkmJmUucGFyZW50JiZ1LmRlZmF1bHQuaXNKc3hFeHByZXNzaW9uKGUucGFyZW50KSx5cj1lPT5GdChlKSYmZS5wYXJlbnQmJnUuZGVmYXVsdC5pc0JpbmFyeUV4cHJlc3Npb24oZS5wYXJlbnQpLEZ0PWU9PnUuZGVmYXVsdC5pc1N0cmluZ0xpdGVyYWwoZSl8fHUuZGVmYXVsdC5pc05vU3Vic3RpdHV0aW9uVGVtcGxhdGVMaXRlcmFsKGUpLEVyPWFzeW5jKGUsdCxuKT0+e2NvbnN0IGk9RHQodCxuKTtpZighaSlyZXR1cm4gZTtjb25zdCByPWFyKGkpO2lmKCFyKXJldHVybiBlO2NvbnN0IGE9QihlLFJ0KTtpZighYSlyZXR1cm4gZTtjb25zdCBvPXIubWFwKGY9PmYuZ2V0VGV4dCgpKSxsPVsuLi5yLC4uLkFycmF5LmZyb20oYS5zdGF0ZW1lbnRzKS5maWx0ZXIoZj0+IW8uaW5jbHVkZXMoZi5nZXRUZXh0KCkpKV0scz1FLmZhY3RvcnkuY3JlYXRlQmxvY2sobCk7eihzKTtjb25zdCBjPU50KGUsUnQscyk7cmV0dXJuIGF3YWl0ICQoYyl9LFRyPShlLHQpPT57Y29uc3Qgbj10LmZpbHRlcihyPT4hdS5kZWZhdWx0LmlzSnN4VGV4dChyKSkubGVuZ3RoO2xldCBpPUNlKGUsSXIsImNoaWxkcmVuIix0KTtyZXR1cm4gaT1OdChpLFNyLEUuZmFjdG9yeS5jcmVhdGVOdW1lcmljTGl0ZXJhbChuKSksaX0sZ3I9YXN5bmMoZSx0LG4pPT57Y29uc3QgaT1EdCh0LG4pO2lmKCFpKXJldHVybiBudWxsO2NvbnN0IHI9b3IoaSk7aWYoIXIpcmV0dXJuIG51bGw7Y29uc3QgYT1ndChlLHhyLG4pO2lmKGEubGVuZ3RoPT0wKXJldHVybiBudWxsO2xldCBvPWU7cmV0dXJuIGEuZm9yRWFjaChsPT57bGV0IHM9ZnIobCxyKTtpZih1LmRlZmF1bHQuaXNKc3hPcGVuaW5nRWxlbWVudChsKSl7Y29uc3QgYz1BcnJheS5mcm9tKGwucGFyZW50LmNoaWxkcmVuKTtzPVRyKHMsYyl9eihzKSxvPVYobyx7cG9zOmwucG9zLGVuZDpsLmVuZH0scyl9KSxhd2FpdCAkKG8pfSxOcj1hc3luYyhlLHQsbik9PntsZXQgaT1hd2FpdCBFcihlLHQsbik7cmV0dXJuIGk9YXdhaXQgZ3IoaSx0LG4pLGk/KGk9SmkoaSx0KSxpPUl0KGksbiksaT13dChpKSxpKTplfSx4cj0oZSx0KT0+dS5kZWZhdWx0LmlzSnN4T3BlbmluZ0xpa2VFbGVtZW50KGUpJiZlLnRhZ05hbWUudGV4dD09PXQsUnQ9ZT0+dS5kZWZhdWx0LmlzQmxvY2soZSkmJmUucGFyZW50JiZscihlLnBhcmVudCksSXI9KGUsdCk9PnUuZGVmYXVsdC5pc0pzeEV4cHJlc3Npb24oZSkmJmUuZXhwcmVzc2lvbiYmKHUuZGVmYXVsdC5pc0lkZW50aWZpZXIoZS5leHByZXNzaW9uKSYmZS5leHByZXNzaW9uLmdldFRleHQoKT09PXR8fHUuZGVmYXVsdC5pc1Byb3BlcnR5QWNjZXNzRXhwcmVzc2lvbihlLmV4cHJlc3Npb24pJiZlLmV4cHJlc3Npb24ubmFtZS5nZXRUZXh0KCk9PT10KSxTcj1lPT51LmRlZmF1bHQuaXNQcm9wZXJ0eUFjY2Vzc0V4cHJlc3Npb24oZSkmJnUuZGVmYXVsdC5pc1Byb3BlcnR5QWNjZXNzRXhwcmVzc2lvbihlLmV4cHJlc3Npb24pJiZlLm5hbWUuZ2V0VGV4dCgpPT09Imxlbmd0aCImJmUuZXhwcmVzc2lvbi5uYW1lLmdldFRleHQoKT09PSJjaGlsZHJlbiIsT3I9Ii4vbm9kZV9tb2R1bGVzL0BpdGVyaWEtYXBwL2NvbXBvbmVudC10ZW1wbGF0ZXMvc3JjL2NvbXBvbmVudHMvcmVhZG9ubHkiLEFyPSIuL25vZGVfbW9kdWxlcy9AaXRlcmlhLWFwcC9jb21wb25lbnQtdGVtcGxhdGVzL3NyYy9jb21wb25lbnRzL2VudGl0eS9saXN0L0VudGl0eSIsYnI9InRlbXBsYXRlcy9yZWFkb25seSIsa3I9InRlbXBsYXRlcy9saXN0L0VudGl0eSIsRHI9IkVudGl0eSIsRmU9ImZpZWxkIixQdD0iY29sdW1ucyIsX3I9ImhlYWRlck5hbWUiLExyPSJyZW5kZXJDZWxsIixDcj0idmFsdWUiLHZlPSJEZWZhdWx0Rm9ybWF0Iix3cj0iQm9vbGVhbkZvcm1hdCIsRnI9IkRhdGVGb3JtYXQiLFJyPSJEYXRlVGltZUZvcm1hdCIsUHI9IlRpbWVGb3JtYXQiLGp0PWU9PmUucmVwbGFjZSgvXlx3Lyx0PT50LnRvVXBwZXJDYXNlKCkpLnJlcGxhY2UoLyhffFwuKS9nLCIgIiksanI9KGUsdCk9Pnt2YXIgbj1lLmluZGV4T2YodCk7cmV0dXJuIG4hPT0tMSYmZS5zcGxpY2UobiwxKSxlfTthc3luYyBmdW5jdGlvbiBCdChlKXtjb25zdHtpbzp0LGVudGl0eTpuLGZpZWxkOmksZmllbGRzOnIscGFnZTphLHNlbGVjdGVkQ29sdW1uOm8saW5zZXJ0VHlwZTpsfT1lO2xldCBzPWUuYXN0O2NvbnN0IGM9dHlwZW9mIHM7aWYoYz09PSJzdHJpbmciJiYocz1HKHMpKSwkcihzLGAke259LiR7aS5uYW1lfWApfHxpLm5hbWU9PT0iaWQiKXJldHVybiBhd2FpdCB5ZShzLGMpO2xldCBmLGQsdjtpZihhPT09SC5MSVNUKXtjb25zdCBoPWF3YWl0IEJyKHMsbyxuLGkscixsKTtpZighaHx8IWgub2JqZWN0TGl0ZXJhbHx8IWgubGFzdE9iamVjdExpdGVyYWx8fCFoLmZvcm1hdENvbXBvbmVudE5hbWUpcmV0dXJuIGF3YWl0IHllKHMsYyk7Zj1oLm9iamVjdExpdGVyYWwsZD1oLmxhc3RPYmplY3RMaXRlcmFsLHY9aC5mb3JtYXRDb21wb25lbnROYW1lfWVsc2UgcmV0dXJuIGF3YWl0IHllKHMsYyk7cz1oZShzLHtwb3M6ZC5wb3MsZW5kOmQuZW5kfSxbZl0sbD09PVIuQkVGT1JFfHxsPT09Ui5GSVJTVD8iYmVmb3JlIjoiYWZ0ZXIiKSxzPWF3YWl0ICQocyk7Y29uc3QgbT10LmluamVjdE1vZGU9PT0iamFtc3RhY2siP2JyOk9yO3JldHVybiBzPWF3YWl0IHFyKHQscyx2LG0saS5uYW1lKSxhd2FpdCB5ZShzLGMpfWNvbnN0IEJyPWFzeW5jKGUsdCxuLGkscixhKT0+e3ZhciBvLGwscyxjO2xldCBmLGQsdjtpZih0KXtpZihkPUIoZSxoPT5oLmdldFRleHQoKT09PXQuZ2V0VGV4dCgpKSwhZClyZXR1cm47Y29uc3QgbT1NdChkLG4saSxyKTt2PW0ub2JqZWN0TGl0ZXJhbCxmPW0uZm9ybWF0Q29tcG9uZW50TmFtZX1lbHNle2NvbnN0IG09QihlLE49PnUuZGVmYXVsdC5pc1ZhcmlhYmxlRGVjbGFyYXRpb24oTikmJk4ubmFtZS50ZXh0PT09UHQpO2lmKCFtfHwodj0obD0obz1tLmluaXRpYWxpemVyKT09bnVsbD92b2lkIDA6by5lbGVtZW50cyk9PW51bGw/dm9pZCAwOmxbMF0sIXYpKXJldHVybjtjb25zdCBoPU10KHYsbixpLHIpO3Y9aC5vYmplY3RMaXRlcmFsLGY9aC5mb3JtYXRDb21wb25lbnROYW1lLGEmJmE9PT1SLkZJUlNUP2Q9KHM9bS5pbml0aWFsaXplcik9PW51bGw/dm9pZCAwOnMuZWxlbWVudHNbMF06ZD0oYz1tLmluaXRpYWxpemVyKT09bnVsbD92b2lkIDA6Yy5lbGVtZW50cy5zbGljZSgtMSlbMF19cmV0dXJue29iamVjdExpdGVyYWw6dixsYXN0T2JqZWN0TGl0ZXJhbDpkLGZvcm1hdENvbXBvbmVudE5hbWU6Zn19LE1yPWU9PntpZighZSlyZXR1cm4gdmU7c3dpdGNoKGUudG9Mb3dlckNhc2UoKSl7Y2FzZSJzdHJpbmciOmNhc2UibnVtYmVyIjpjYXNlImludCI6Y2FzZSJqc29uYiI6Y2FzZSJ1dWlkIjpyZXR1cm4gdmU7Y2FzZSJib29sZWFuIjpyZXR1cm4gd3I7Y2FzZSJkYXRlIjpyZXR1cm4gRnI7Y2FzZSJkYXRldGltZSI6Y2FzZSJ0aW1lc3RhbXAiOmNhc2UidGltZXN0YW1wdHoiOnJldHVybiBScjtjYXNlInRpbWUiOmNhc2UidGltZXoiOnJldHVybiBQcjtkZWZhdWx0OnJldHVybiB2ZX19LFZyPShlLHQpPT5NKGUsbj0+dC5pbmNsdWRlcyhuLnRleHQpKSwkcj0oZSx0KT0+ISFCKGUsbj0+bi50ZXh0PT09dCkseWU9YXN5bmMoZSx0KT0+dD09PSJzdHJpbmciP2F3YWl0IExlKGUpOmUsTXQ9KGUsdCxuLGkpPT57bGV0IHI7Zm9yKGNvbnN0IGEgb2YgZS5wcm9wZXJ0aWVzKXtjb25zdCBvPWEuaW5pdGlhbGl6ZXI7aS5tYXAobD0+bC5uYW1lKS51bnNoaWZ0KEZlKSxlPVVyKGUsbyx0LG4saSksKHUuZGVmYXVsdC5pc0Fycm93RnVuY3Rpb24obyl8fHUuZGVmYXVsdC5pc0Z1bmN0aW9uRXhwcmVzc2lvbihvKSkmJihyPU1yKG4udHlwZSksZT1KcihlLG8scikpfXJldHVybntvYmplY3RMaXRlcmFsOmUsZm9ybWF0Q29tcG9uZW50TmFtZTpyfX0sVXI9KGUsdCxuLGkscik9Pntjb25zdCBhPWpyKHIubWFwKHM9PnMubmFtZSksImlkIiksbz1hLm1hcChzPT5gJHtufS4ke3N9YCksbD1yLm1hcChzPT5qdChzLm5hbWUpKTtyZXR1cm4gYS51bnNoaWZ0KEZlKSxsLnVuc2hpZnQoX3IpLFZyKHQsWy4uLmEsLi4ubCwuLi5vXSkuZm9yRWFjaChzPT57ZT1LcihlLHMsbixpLm5hbWUse2VudGl0eUZpZWxkczphLGhlYWRlck5hbWVzOmwsbmV3RW50aXR5RmllbGRzOm99KX0pLGV9LEtyPShlLHQsbixpLHIpPT57bGV0IGE7cmV0dXJuIHIuZW50aXR5RmllbGRzLmluY2x1ZGVzKHQudGV4dCk/dC5wYXJlbnQmJnUuZGVmYXVsdC5pc0pzeEF0dHJpYnV0ZSh0LnBhcmVudCkmJnUuZGVmYXVsdC5pc0lkZW50aWZpZXIodCkmJnQucGFyZW50Lm5hbWUuZ2V0VGV4dCgpPT10LmdldFRleHQoKXx8KHUuZGVmYXVsdC5pc1Byb3BlcnR5QXNzaWdubWVudCh0LnBhcmVudCk/YT1gJHtufS4ke2l9YDphPWkpOnIuaGVhZGVyTmFtZXMuaW5jbHVkZXModC50ZXh0KT9hPWp0KGkpOmE9YCR7bn0uJHtpfWAsQXQoZSx0LHQudGV4dCxhKX0sSnI9KGUsdCxuKT0+e3ZhciBpLHI7Y29uc3QgYT0ocj0oaT10LnBhcmVudCk9PW51bGw/dm9pZCAwOmkubmFtZSk9PW51bGw/dm9pZCAwOnIudGV4dDtpZihhJiZhPT09THIpe2NvbnN0IG89dC5wYXJhbWV0ZXJzWzBdLm5hbWUudGV4dCxsPUxpKG4sW3tuYW1lOkNyLGluaXRpYWxpemVyOm99XSk7bGV0IHM7aWYodS5kZWZhdWx0LmlzRnVuY3Rpb25FeHByZXNzaW9uKHQpKXtjb25zdCBjPUIoZSx1LmRlZmF1bHQuaXNSZXR1cm5TdGF0ZW1lbnQpO2lmKCFjKXJldHVybntvYmplY3RMaXRlcmFsOmUsZm9ybWF0Q29tcG9uZW50TmFtZTp2ZX07cz1jLmV4cHJlc3Npb259ZWxzZSBzPXQuYm9keTtlPVYoZSx7cG9zOnMucG9zLGVuZDpzLmVuZH0sbCl9cmV0dXJuIGV9LFlyPWU9PmUuY2hhckF0KDApLnRvVXBwZXJDYXNlKCkrZS5zbGljZSgxKSxHcj1hc3luYyhlLHQsbixpLHIsYSk9PntsZXQgbz1HKHQpO2NvbnN0IGw9VnQobik7bz1hd2FpdCBXcihvLGwsaSxhLEguTElTVCk7Zm9yKGNvbnN0IHMgb2Ygcil7aWYoSHIocy5uYW1lKSljb250aW51ZTtjb25zdCBjPXtpbzplLGFzdDpvLGVudGl0eTpuLGZpZWxkOnMsZmllbGRzOnIscGFnZTpILkxJU1Qsc2VsZWN0ZWRDb2x1bW46dm9pZCAwfTtvPWF3YWl0IEJ0KGMpfXJldHVybiBvPWF3YWl0IFhyKG8pLG89SXQobyxgRm9ybWF0JHtsfUZpZWxkYCksbz1hd2FpdCAkKG8pLG89d3Qobyksbz1hd2FpdCAkKG8pLG99LHpyPWFzeW5jKGUsdCxuLGkpPT57Y29uc3Qgcj1WdCh0KSxhPVtdO2Zvcihjb25zdCBvIG9mIG4pe2NvbnN0IGw9ZS5pbmplY3RNb2RlPT09ImphbXN0YWNrIj9rcjpBcixzPWF3YWl0IGUucmVhZEZpbGUoYCR7bH0ke299LnRzeGApLGM9YXdhaXQgR3IoZSxzLHQsRHIsaSxlLmludHJvc3BlY3Rpb24pLGY9YXdhaXQgTGUoYyksZD1rdChgL3NyYy9wYWdlcy8ke3R9L2AsYC4vJHtyfSR7b30udHN4YCk7YS5wdXNoKHtwYXRoOmUuY3dkK2QsZGF0YTpmfSl9cmV0dXJuIGF9LHFyPWFzeW5jKGUsdCxuLGkscik9Pntjb25zdCBhPWF3YWl0IGUucmVhZEZpbGUoYCR7aX0vJHtufS50c3hgKTtsZXQgbz1hd2FpdCBHKGEpO3ImJihyPVFyKHIpLG89d2UobyxGZSxyLCExKSxvPWF3YWl0ICQobykpO2NvbnN0IGw9YXdhaXQgTnIodCxvLG4pO3JldHVybiBhd2FpdCAkKGwpfSxYcj1hc3luYyBlPT57dmFyIHQsbjtjb25zdCBpPUIoZSxhPT51LmRlZmF1bHQuaXNWYXJpYWJsZURlY2xhcmF0aW9uKGEpJiZhLm5hbWUudGV4dD09PVB0KTtpZighaSlyZXR1cm4gZTtjb25zdCByPShuPSh0PWkuaW5pdGlhbGl6ZXIpPT1udWxsP3ZvaWQgMDp0LmVsZW1lbnRzKT09bnVsbD92b2lkIDA6blswXTtyZXR1cm4gZT1VaShlLHtwb3M6ci5wb3MsZW5kOnIuZW5kfSksZX0sSHI9ZT0+ZT09PSJpZCJ8fGUubWF0Y2goLy4qUGF0aCQvaSkhPT1udWxsLFFyPWU9PntpZihlLmluY2x1ZGVzKCIuIikpe2NvbnN0IHQ9ZS5zcGxpdCgiLiIpLm1hcChpPT5pKyI/Iiksbj10LnBvcCgpO3QucHVzaChuLnJlcGxhY2VBbGwoIj8iLCIiKSksZT10LmpvaW4oIi4iKX1yZXR1cm4gZX0sVnQ9ZT0+ZS5zcGxpdCgiXyIpLm1hcCh0PT5Zcih0KSkuam9pbigiIiksV3I9YXN5bmMoZSx0LG4saSxyKT0+e2NvbnN0IGE9TShlLHM9Pntjb25zdCBjPXMuZ2V0VGV4dCgpO3JldHVybih1LmRlZmF1bHQuaXNTdHJpbmdMaXRlcmFsKHMpfHx1LmRlZmF1bHQuaXNJZGVudGlmaWVyKHMpKSYmYyYmYy50b1VwcGVyQ2FzZSgpLmluY2x1ZGVzKG4udG9VcHBlckNhc2UoKSl9KSxbb109bmUoaSksbD1vLmZpZWxkcy5maW5kKHM9Pl9lKHMsdCxyKSk7cmV0dXJuIGEuZm9yRWFjaChzPT57Y29uc3QgYz1zLnRleHQ7bGV0IGY7Yy50b0xvd2VyQ2FzZSgpPT09bi50b0xvd2VyQ2FzZSgpP2Y9bC5uYW1lOmY9Yy5yZXBsYWNlKG4sdCksZT1BdChlLHMsYyxmKX0pLGF3YWl0ICQoZSl9O2FzeW5jIGZ1bmN0aW9uIFpyKGUsdCxuKXtjb25zdCBpPW4uZW50aXRpZXMscj1UaShlLGkpLGE9bmV3IE1hcCxvPVtdO2Zvcihjb25zdCBsIG9mIHIpe2NvbnN0IHM9a3QoYC9zcmMvcGFnZXMvJHtsLmVudGl0eU5hbWV9L2AsIi4vaW5kZXguZ3JhcGhxbCIpO2lmKGEuc2V0KHMsbC5xdWVyaWVzKSxuLmdlbmVyYXRlUmVhY3Qpe2NvbnN0IGM9WyJMaXN0VmlldyIsIkxpc3RDb250YWluZXIiXSxmPWwuZnJhZ21lbnRzLm1hcChkPT5sLnByb3BlcnRpZXMuZmluZCh2PT52Lm5hbWU9PT1kKSkuZmlsdGVyKGQ9PmQpO28ucHVzaCguLi5hd2FpdCB6cih0LGwuZW50aXR5TmFtZSxjLGYpKX19cmV0dXJue3BhZ2VzOmEsZmlsZXM6b319VGUoe2FkZENvbHVtbjpiaSxyZW1vdmVDb2x1bW46a2ksZ2VuZXJhdGVQYWdlczpacixjbG9uZUVsZW1lbnRJbkFzdDplcixjbG9uZUFuZFJlbmFtZUVsZW1lbnRJbkFzdDp0cixnZW5lcmF0ZUNvbHVtbjpCdH0pfSl9KSgpOwo=";
 const blob = typeof window !== "undefined" && window.Blob && new Blob([atob(encodedJs)], { type: "text/javascript;charset=utf-8" });
 function WorkerWrapper() {
   const objURL = blob && (window.URL || window.webkitURL).createObjectURL(blob);
@@ -53642,11 +53728,15 @@ const formatCode = async (code2, parser2 = "typescript") => {
     singleQuote: true
   });
 };
-const appendTransformer = ({ pos, end }, newNode) => {
+const appendTransformer = ({ pos, end }, newNode, position2) => {
   return (context) => {
     const visit2 = (node) => {
       if (node.pos === pos && node.end === end) {
-        return Array.isArray(newNode) ? [node, ...newNode] : [node, newNode];
+        if (position2 === "before") {
+          return Array.isArray(newNode) ? [...newNode, node] : [newNode, node];
+        } else {
+          return Array.isArray(newNode) ? [node, ...newNode] : [node, newNode];
+        }
       }
       return ts.visitEachChild(node, (child) => visit2(child), context);
     };
@@ -53658,6 +53748,26 @@ const replaceTransformer = ({ pos, end }, newNode) => {
     const visit2 = (node) => {
       if (node.pos === pos && node.end === end)
         return newNode;
+      return ts.visitEachChild(node, (child) => visit2(child), context);
+    };
+    return (node) => ts.visitNode(node, visit2);
+  };
+};
+const conditionalReplaceTransformer = (condition2, newNode) => {
+  return (context) => {
+    const visit2 = (node) => {
+      if (condition2(node))
+        return newNode;
+      return ts.visitEachChild(node, (child) => visit2(child), context);
+    };
+    return (node) => ts.visitNode(node, visit2);
+  };
+};
+const conditionalyWithParamRemoveTransformer = (condition2, identifier) => {
+  return (context) => {
+    const visit2 = (node) => {
+      if (condition2(node, identifier))
+        return;
       return ts.visitEachChild(node, (child) => visit2(child), context);
     };
     return (node) => ts.visitNode(node, visit2);
@@ -53687,8 +53797,8 @@ const removeTransformer = ({
     return (node) => ts.visitNode(node, visit2);
   };
 };
-const appendElementsToAst = (ast, nodePosition, newNodes) => {
-  const result2 = ts.transform(ast, [appendTransformer(nodePosition, newNodes)]);
+const appendElementsToAst = (ast, nodePosition, newNodes, position2) => {
+  const result2 = ts.transform(ast, [appendTransformer(nodePosition, newNodes, position2)]);
   return result2.transformed[0];
 };
 const removeElementFromAst = (ast, nodePosition) => {
@@ -53699,9 +53809,21 @@ const replaceElementsInAst = (ast, nodePosition, newNode) => {
   const result2 = ts.transform(ast, [replaceTransformer(nodePosition, newNode)]);
   return result2.transformed[0];
 };
+const conditionalyReplaceNodeInAst = (ast, condition2, newNode) => {
+  const result2 = ts.transform(ast, [
+    conditionalReplaceTransformer(condition2, newNode)
+  ]);
+  return result2.transformed[0];
+};
 const conditionalyWithParamReplaceNodeInAst = (ast, condition2, identifier, newNode) => {
   const result2 = ts.transform(ast, [
     conditionalyWithParamReplaceTransformer(condition2, identifier, newNode)
+  ]);
+  return result2.transformed[0];
+};
+const conditionalyWithParamRemoveNodeInAst = (ast, condition2, identifier) => {
+  const result2 = ts.transform(ast, [
+    conditionalyWithParamRemoveTransformer(condition2, identifier)
   ]);
   return result2.transformed[0];
 };
@@ -53747,6 +53869,22 @@ const mergePaths = (basePath, relativePath) => {
   path2 = stripPrefix(path2, "/");
   return currFolder + path2;
 };
+const findByCondition = (node, condition2) => {
+  if (condition2(node)) {
+    return node;
+  }
+  return node.forEachChild((child) => {
+    return findByCondition(child, condition2);
+  });
+};
+const findByConditionWithParam = (node, condition2, text2) => {
+  if (condition2(node, text2)) {
+    return node;
+  }
+  return node.forEachChild((child) => {
+    return findByConditionWithParam(child, condition2, text2);
+  });
+};
 const findAllByCondition = (node, condition2) => {
   const nodeOccurences = [];
   const findAll = (node2, condition22) => {
@@ -53766,6 +53904,10 @@ const findAllByConditionWithParam = (node, condition2, identifier) => {
   };
   findAll(node, condition2, identifier);
   return nodeOccurences;
+};
+const findPositionOfFirstImport = (ast) => {
+  const firstImport = findByCondition(ast, (node) => ts.isImportDeclaration(node) && node.pos > 0);
+  return firstImport !== void 0 ? { pos: firstImport.pos, end: firstImport.end } : { pos: 0, end: 0 };
 };
 var version = "15.7.2";
 var versionInfo = Object.freeze({
@@ -56790,7 +56932,7 @@ var GraphQLObjectType = /* @__PURE__ */ function() {
     config2.isTypeOf == null || typeof config2.isTypeOf === "function" || devAssert(0, "".concat(this.name, ' must provide "isTypeOf" as a function, ') + "but got: ".concat(inspect$1(config2.isTypeOf), "."));
   }
   var _proto2 = GraphQLObjectType2.prototype;
-  _proto2.getFields = function getFields() {
+  _proto2.getFields = function getFields2() {
     if (typeof this._fields === "function") {
       this._fields = this._fields();
     }
@@ -56919,7 +57061,7 @@ var GraphQLInterfaceType = /* @__PURE__ */ function() {
     config2.resolveType == null || typeof config2.resolveType === "function" || devAssert(0, "".concat(this.name, ' must provide "resolveType" as a function, ') + "but got: ".concat(inspect$1(config2.resolveType), "."));
   }
   var _proto3 = GraphQLInterfaceType2.prototype;
-  _proto3.getFields = function getFields() {
+  _proto3.getFields = function getFields2() {
     if (typeof this._fields === "function") {
       this._fields = this._fields();
     }
@@ -57135,7 +57277,7 @@ var GraphQLInputObjectType = /* @__PURE__ */ function() {
     typeof config2.name === "string" || devAssert(0, "Must provide name.");
   }
   var _proto6 = GraphQLInputObjectType2.prototype;
-  _proto6.getFields = function getFields() {
+  _proto6.getFields = function getFields2() {
     if (typeof this._fields === "function") {
       this._fields = this._fields();
     }
@@ -62245,6 +62387,303 @@ var PageType = /* @__PURE__ */ ((PageType2) => {
   PageType2[PageType2["DETAIL"] = 1] = "DETAIL";
   return PageType2;
 })(PageType || {});
+var InsertType = /* @__PURE__ */ ((InsertType2) => {
+  InsertType2[InsertType2["BEFORE"] = 0] = "BEFORE";
+  InsertType2[InsertType2["AFTER"] = 1] = "AFTER";
+  InsertType2[InsertType2["FIRST"] = 2] = "FIRST";
+  InsertType2[InsertType2["LAST"] = 3] = "LAST";
+  return InsertType2;
+})(InsertType || {});
+var RelationshipType = /* @__PURE__ */ ((RelationshipType2) => {
+  RelationshipType2[RelationshipType2["OBJECT"] = 0] = "OBJECT";
+  RelationshipType2[RelationshipType2["ARRAY"] = 1] = "ARRAY";
+  return RelationshipType2;
+})(RelationshipType || {});
+const addFieldToFragment = (file, fragmentName, fieldTreeArray, referenceField, insertType, additionalFields) => {
+  try {
+    const ast = parse$6(file);
+    visit(ast, {
+      FragmentDefinition(node) {
+        var _a2, _b;
+        if (node.name.value === fragmentName) {
+          let fragmentFields = node.selectionSet.selections;
+          fieldTreeArray = fieldExistsInFragment(fragmentFields, fieldTreeArray);
+          if (fieldTreeArray.length === 0)
+            return BREAK;
+          const lastSelection = getLastSelection(fragmentFields, referenceField, insertType);
+          additionalFields = additionalFields.filter((field) => !fragmentFields.find((fragmentField) => fragmentField.kind === "Field" && fragmentField.name.value === field));
+          const newFragmentField = createFragmentField(fieldTreeArray, additionalFields);
+          const endPosition = insertType === InsertType.BEFORE || insertType === InsertType.FIRST ? ((_a2 = lastSelection.loc) == null ? void 0 : _a2.start) - 1 : (_b = lastSelection.loc) == null ? void 0 : _b.end;
+          file = file.substring(0, endPosition) + `
+  ${newFragmentField}` + file.substring(endPosition, file.length);
+          return BREAK;
+        }
+      }
+    });
+  } catch (error2) {
+    console.error(error2);
+  }
+  return file;
+};
+const getLastSelection = (fragmentFields, referenceField, insertType) => {
+  switch (insertType) {
+    case InsertType.AFTER:
+    case InsertType.BEFORE:
+      const lastSelection = fragmentFields.filter((fragmentField) => {
+        const name = fragmentField.name.value;
+        return name === (referenceField == null ? void 0 : referenceField.substring(referenceField.length - name.length, referenceField.length));
+      });
+      if (lastSelection.length !== 0)
+        return lastSelection[0];
+      return fragmentFields[fragmentFields.length - 1];
+    case InsertType.FIRST:
+      return fragmentFields[0];
+    case InsertType.LAST:
+      return fragmentFields[fragmentFields.length - 1];
+  }
+};
+const createFragmentField = (fieldsTree, additionalFields) => {
+  let scalarFields = [...additionalFields];
+  if (fieldsTree.length)
+    scalarFields = [fieldsTree.pop(), ...scalarFields];
+  const scalarFieldsString = createScalarFieldsString(scalarFields);
+  fieldsTree = fieldsTree.reverse();
+  let fragmentField = scalarFieldsString;
+  fieldsTree.forEach((field, i2) => {
+    if (i2 === 0)
+      fragmentField = `${field} {
+  ${indentField(fragmentField)}
+}`;
+    else
+      fragmentField = `${field} {
+  ${indentField(fragmentField)}
+}`;
+  });
+  return fragmentField;
+};
+const createScalarFieldsString = (fields8) => {
+  let scalarFields = "";
+  fields8.forEach((field, i2) => {
+    if (i2 === 0)
+      scalarFields = field;
+    else
+      scalarFields = `${scalarFields}
+  ${field}`;
+  });
+  return scalarFields;
+};
+const indentField = (field) => field.replaceAll(/\n  /g, "\n    ").replaceAll(/\n}/g, "\n  }");
+const indentEveryLineByNSpaces = (input, n2) => {
+  const tabs = Math.floor(n2 / 2);
+  for (let i2 = 0; i2 < tabs; i2++) {
+    input = indentField(input);
+  }
+  input = `${Array(n2).fill(" ").join("")}${input}`;
+  return input;
+};
+const fragmentExists = (file, fragmentName) => {
+  const ast = parse$6(file);
+  let exists = false;
+  visit(ast, {
+    FragmentDefinition(node) {
+      if (node.name.value === fragmentName) {
+        exists = true;
+        return BREAK;
+      }
+    }
+  });
+  return exists;
+};
+const fieldExistsInFragment = (fragmentFields, fieldNames) => {
+  const filtredFragmentFields = fragmentFields.map((fragmentField) => {
+    var _a2;
+    return (_a2 = fragmentField == null ? void 0 : fragmentField.name) == null ? void 0 : _a2.value;
+  }).filter((fragmentField) => fragmentField);
+  const filtredFieldNames = fieldNames.filter((field) => !filtredFragmentFields.includes(field));
+  return filtredFieldNames;
+};
+const insertFragmentSpreadIntoFragment = (file, queryName, entityName, fieldTree) => {
+  const ast = parse$6(file);
+  const fragmentSpreadName = buildFragmentNameFromFieldsTree([
+    queryName,
+    ...fieldTree
+  ]);
+  const fragmentName = `${queryName}_${entityName}`;
+  visit(ast, {
+    FragmentDefinition(node) {
+      var _a2, _b, _c;
+      if (node.name.value === fragmentName) {
+        let modifiedFieldTree = [...fieldTree];
+        let selectionSet = node.selectionSet;
+        for (const field of fieldTree) {
+          const actualSelection = selectionSet.selections.find((selection) => selection.kind === "Field" && selection.name.value === field);
+          if (actualSelection && actualSelection.selectionSet) {
+            selectionSet = actualSelection.selectionSet;
+            modifiedFieldTree.shift();
+          } else
+            break;
+        }
+        if (fieldTree.length === modifiedFieldTree.length) {
+          file = "";
+          return BREAK;
+        }
+        const nestedField = selectionSet.selections[selectionSet.selections.length - 1];
+        const fragmentParentTree = createFragmentField([...modifiedFieldTree, `...${fragmentSpreadName}`], []);
+        const { leftSpaces } = countWhitespacesAndNewLinesToLeft(file, (_a2 = nestedField.loc) == null ? void 0 : _a2.start);
+        const indentedfragmentParentTree = indentEveryLineByNSpaces(fragmentParentTree, leftSpaces);
+        file = file.substring(0, (_b = nestedField.loc) == null ? void 0 : _b.end) + `
+${indentedfragmentParentTree}` + file.substring((_c = nestedField.loc) == null ? void 0 : _c.end, file.length);
+        return BREAK;
+      }
+    }
+  });
+  return file;
+};
+const getScalarFieldsFromFragment = (file, fieldTree, fragmentName) => {
+  const ast = parse$6(file);
+  let scalarFields = [];
+  visit(ast, {
+    FragmentDefinition(node) {
+      if (node.name.value === fragmentName) {
+        let selectionSet = node.selectionSet;
+        fieldTree.forEach((field) => {
+          const actualSelection = selectionSet == null ? void 0 : selectionSet.selections.find((selection) => selection.kind === "Field" && selection.name.value === field);
+          selectionSet = actualSelection == null ? void 0 : actualSelection.selectionSet;
+        });
+        selectionSet == null ? void 0 : selectionSet.selections.forEach((field) => {
+          if (field.kind === "Field" && !field.selectionSet)
+            scalarFields = [...scalarFields, field.name.value];
+        });
+        return BREAK;
+      }
+    }
+  });
+  return scalarFields;
+};
+const removeFieldsFromFragment = (file, fieldTree, fieldsToDelete, fragmentName) => {
+  fieldsToDelete.forEach((field) => {
+    const ast = parse$6(file);
+    visit(ast, {
+      FragmentDefinition(node) {
+        var _a2, _b, _c;
+        if (node.name.value === fragmentName) {
+          let selectionSet = node.selectionSet;
+          fieldTree.forEach((field2) => {
+            const actualSelection = selectionSet == null ? void 0 : selectionSet.selections.find((selection) => selection.kind === "Field" && selection.name.value === field2);
+            selectionSet = actualSelection == null ? void 0 : actualSelection.selectionSet;
+          });
+          const nodeToBeDeleted = selectionSet == null ? void 0 : selectionSet.selections.find((selection) => selection.kind === "Field" && selection.name.value === field);
+          if (nodeToBeDeleted) {
+            const fragmentsToBeDeleted = getAllFragmentSpreadsFromField(nodeToBeDeleted);
+            fragmentsToBeDeleted.forEach((fragment) => {
+              const { originalFileContent } = removeFragment(file, fragment);
+              file = originalFileContent;
+            });
+            const { leftSpaces, leftNewLines } = countWhitespacesAndNewLinesToLeft(file, (_a2 = nodeToBeDeleted.loc) == null ? void 0 : _a2.start);
+            file = file.substring(0, ((_b = nodeToBeDeleted.loc) == null ? void 0 : _b.start) - leftSpaces - leftNewLines) + file.substring((_c = nodeToBeDeleted.loc) == null ? void 0 : _c.end, file.length);
+          }
+          return BREAK;
+        }
+      }
+    });
+  });
+  return file;
+};
+const getAllFragmentSpreadsFromField = (fieldNode) => {
+  let fragmentSpreadNames = [];
+  visit(fieldNode, {
+    FragmentSpread(node) {
+      fragmentSpreadNames = [...fragmentSpreadNames, node.name.value];
+    }
+  });
+  return fragmentSpreadNames;
+};
+function countWhitespacesAndNewLinesToLeft(file, pos) {
+  let spaces = 0;
+  let newLines = 0;
+  while (file.charAt(pos - 1) === " " || file.charAt(pos - 1) === "\n") {
+    if (file.charAt(pos - 1) === " ")
+      spaces++;
+    if (file.charAt(pos - 1) === "\n")
+      newLines++;
+    pos--;
+  }
+  return { leftSpaces: spaces, leftNewLines: newLines };
+}
+function countWhitespacesAndNewLinesToRight(file, pos) {
+  let spaces = 0;
+  let newLines = 0;
+  while (file.charAt(pos + 1) === " " || file.charAt(pos + 1) === "\n") {
+    if (file.charAt(pos + 1) === " ")
+      spaces++;
+    if (file.charAt(pos + 1) === "\n")
+      newLines++;
+    pos++;
+  }
+  return { rightSpaces: spaces, rightNewLines: newLines };
+}
+function removeFragment(file, fragmentName) {
+  const ast = parse$6(file);
+  let removedFragment = "";
+  let originalFileContent = "";
+  visit(ast, {
+    FragmentDefinition(node) {
+      var _a2, _b, _c, _d, _e;
+      if (node.name.value === fragmentName && node.loc) {
+        removedFragment = file.substr((_a2 = node.loc) == null ? void 0 : _a2.start, ((_b = node.loc) == null ? void 0 : _b.end) - ((_c = node.loc) == null ? void 0 : _c.start));
+        const { leftSpaces, leftNewLines } = countWhitespacesAndNewLinesToLeft(file, node.loc.start);
+        const { rightSpaces, rightNewLines } = countWhitespacesAndNewLinesToRight(file, node.loc.end);
+        originalFileContent = file.substr(0, ((_d = node.loc) == null ? void 0 : _d.start) - (leftSpaces + leftNewLines)) + file.substr(((_e = node.loc) == null ? void 0 : _e.end) + (rightSpaces + rightNewLines), file.length - 1);
+        return BREAK;
+      }
+    }
+  });
+  return { originalFileContent, removedFragment };
+}
+const buildFieldTreeInQuery = (file, queryName, entityName, fieldTree) => {
+  const ast = parse$6(file);
+  const fragmentName = buildFragmentNameFromFieldsTree([
+    queryName,
+    ...fieldTree
+  ]);
+  visit(ast, {
+    OperationDefinition(node) {
+      var _a2, _b, _c, _d;
+      if (((_a2 = node == null ? void 0 : node.name) == null ? void 0 : _a2.value) === queryName) {
+        let modifiedFieldTree = [...fieldTree];
+        const queryField = node.selectionSet.selections.find((selection) => selection.kind === "Field" && selection.name.value === queryName);
+        let selectionSet = queryField.selectionSet;
+        fieldTree.forEach((field) => {
+          const fieldExists2 = selectionSet.selections.find((selection) => selection.kind === "Field" && selection.name.value === field);
+          if (fieldExists2) {
+            selectionSet = fieldExists2.selectionSet;
+            modifiedFieldTree.shift();
+          }
+        });
+        const fragmentParentTree = createFragmentField([...modifiedFieldTree, `...${fragmentName}`], []);
+        const lastSelection = selectionSet.selections[selectionSet.selections.length - 1];
+        const { leftSpaces } = countWhitespacesAndNewLinesToLeft(file, (_b = lastSelection.loc) == null ? void 0 : _b.start);
+        const indentedfragmentParentTree = indentEveryLineByNSpaces(fragmentParentTree, leftSpaces);
+        file = file.substring(0, (_c = lastSelection.loc) == null ? void 0 : _c.end) + `
+${indentedfragmentParentTree}` + file.substring((_d = lastSelection.loc) == null ? void 0 : _d.end, file.length);
+        return BREAK;
+      }
+    }
+  });
+  return file;
+};
+const buildFragmentFromFieldsTree = (queryName, entityName, fieldTree, additionalFields) => {
+  const scalarFields = [fieldTree.pop(), ...additionalFields];
+  const scalarFieldsString = scalarFields.join("\n  ");
+  const fragmentName = buildFragmentNameFromFieldsTree([
+    queryName,
+    ...fieldTree
+  ]);
+  return `fragment ${fragmentName} on ${entityName} {
+  ${scalarFieldsString}
+}`;
+};
+const buildFragmentNameFromFieldsTree = (fieldTree) => fieldTree.join("_");
 const changeGraphQLEndpoint = async (envFile, endpointEnvName, newEndpointURL, secretEnvName, newSecret) => {
   const variables = envFile.split("\n");
   let urlExists = false;
@@ -62269,6 +62708,166 @@ const changeGraphQLEndpoint = async (envFile, endpointEnvName, newEndpointURL, s
   const modifiedEnvFile = modifiedVariables.join("\n");
   return modifiedEnvFile;
 };
+function buildParametersAndVariablesString(field, name, types) {
+  let queryParams = [];
+  let variables = [];
+  field.args.forEach((arg) => {
+    var _a2;
+    const { newParameter, newVariable } = (_a2 = changeInputFieldsNames(arg, name, types)) != null ? _a2 : {
+      newParameter: `${arg.name}: $${arg.name}`,
+      newVariable: `$${arg.name}: ${buildVariableString(arg, types)}`
+    };
+    queryParams = [...queryParams, newParameter];
+    variables = [...variables, newVariable];
+  });
+  return {
+    params: queryParams.length ? `(${queryParams.join(", ")})` : "",
+    variables: variables.length ? `(${variables.join(", ")})` : ""
+  };
+}
+function buildVariableString(arg, types) {
+  const typeArray = getOfTypeArray(arg).reverse();
+  let variableString = "";
+  typeArray.forEach((type2) => {
+    var _a2, _b;
+    if (type2.kind === "NON_NULL")
+      variableString = `${variableString}!`;
+    if (type2.kind === "LIST") {
+      variableString = `[${variableString}]`;
+      if (arg.name === "order_by") {
+        const orderTypeName = (_a2 = typeArray[0].name) != null ? _a2 : "";
+        const order_by = getEntity(types, orderTypeName);
+        const hasUpdated_at = (_b = order_by == null ? void 0 : order_by.inputFields) == null ? void 0 : _b.find((field) => field.name === "updated_at");
+        if (hasUpdated_at)
+          variableString = `${variableString} = { ${hasUpdated_at.name}: desc }`;
+      }
+    }
+    if (type2.name)
+      variableString = `${type2.name}`;
+  });
+  return variableString;
+}
+function getOfTypeArray(arg) {
+  let ofTypeArray = [];
+  let actualType = arg.type;
+  while (actualType) {
+    ofTypeArray = [...ofTypeArray, actualType];
+    actualType = actualType.ofType;
+  }
+  return ofTypeArray;
+}
+function buildReturningString(types, returningType) {
+  var _a2;
+  const type2 = types.find((type22) => type22.name === returningType);
+  const scalarFields = (_a2 = type2 == null ? void 0 : type2.fields) == null ? void 0 : _a2.filter((field) => {
+    var _a3;
+    return getNestedOfType(field).kind === "SCALAR" || ((_a3 = types.find((type22) => type22.name === field.type)) == null ? void 0 : _a3.kind) === "SCALAR";
+  });
+  const returningFields = scalarFields == null ? void 0 : scalarFields.map((field) => field.name);
+  if (returningFields)
+    return `returning {
+    ${returningFields.join("\n    ")}
+  }`;
+  return "";
+}
+function getReturningType(field) {
+  let actualType = field.type;
+  while (actualType.ofType) {
+    actualType = actualType.ofType;
+  }
+  if (actualType.name)
+    return actualType.name;
+  return actualType;
+}
+function changeInputFieldsNames(arg, entityName, types) {
+  const variableTypeString = buildVariableString(arg, types);
+  if (arg.name === "_set")
+    return {
+      newParameter: `${arg.name}: $${entityName != "" ? entityName : "_set"}`,
+      newVariable: `$${entityName != "" ? entityName : "_set"}: ${variableTypeString}`
+    };
+  else if (arg.name === "object")
+    return {
+      newParameter: `${arg.name}: $${entityName != "" ? entityName : "object"}`,
+      newVariable: `$${entityName != "" ? entityName : "object"}: ${variableTypeString}`
+    };
+  else if (arg.name === "objects")
+    return {
+      newParameter: `${arg.name}: $${entityName != "" ? entityName : "objects"}`,
+      newVariable: `$${entityName != "" ? entityName : "objects"}: ${variableTypeString}`
+    };
+}
+const buildFragments = (introspection, entities, types) => {
+  var _a2;
+  let fragmentsStrings = [];
+  let fragmentFields = [];
+  let fragmentFieldsList = [];
+  entities.forEach((entity) => {
+    let fragmentFieldIds = [];
+    let fragmentFieldNameTitle = [];
+    let fragmentFieldOtherStrings = [];
+    let fragmentFieldCreatedUpdateAt = [];
+    let fragmentFieldOtherDateTimes = [];
+    let fragmentFieldOther = [];
+    let returningString = "";
+    entity.fields.forEach((field) => {
+      var _a3;
+      if (field.name === "returning") {
+        const returningType = getReturningType(field);
+        returningString = buildReturningString(types, returningType);
+      } else if (field.name != "created_at" && field.name != "updated_at") {
+        const fieldType = getFieldType(field, introspection.types);
+        if ((fieldType == null ? void 0 : fieldType.kind) === "SCALAR") {
+          const typeLowercase = (_a3 = fieldType == null ? void 0 : fieldType.name) == null ? void 0 : _a3.toLocaleLowerCase();
+          if (field.name === "id") {
+            fragmentFieldIds = [...fragmentFieldIds, field.name];
+          } else if (field.name === "created_at" || field.name === "updated_at") {
+            fragmentFieldCreatedUpdateAt = [
+              ...fragmentFieldCreatedUpdateAt,
+              field.name
+            ];
+          } else if (typeLowercase === "string") {
+            if (field.name == "title" || field.name == "name") {
+              fragmentFieldNameTitle = [...fragmentFieldNameTitle, field.name];
+            } else {
+              fragmentFieldOtherStrings = [
+                ...fragmentFieldOtherStrings,
+                field.name
+              ];
+            }
+          } else if (typeLowercase == null ? void 0 : typeLowercase.includes("date")) {
+            fragmentFieldOtherDateTimes = [
+              ...fragmentFieldOtherDateTimes,
+              field.name
+            ];
+          } else if (typeLowercase == null ? void 0 : typeLowercase.includes("time")) {
+            fragmentFieldOtherDateTimes = [
+              ...fragmentFieldOtherDateTimes,
+              field.name
+            ];
+          } else {
+            fragmentFieldOther = [...fragmentFieldOther, field.name];
+          }
+        }
+      }
+    });
+    fragmentFields = [
+      ...fragmentFieldIds,
+      ...fragmentFieldNameTitle,
+      ...fragmentFieldOtherStrings,
+      ...fragmentFieldOtherDateTimes
+    ];
+    fragmentFieldsList.push(fragmentFields);
+    const newFragmentString = `fragment ${entity.queryName}_${entity.entityName} on ${entity.entityName} {
+  ${(returningString ? [...fragmentFields, returningString] : fragmentFields).join("\n  ")}
+}`;
+    fragmentsStrings = [...fragmentsStrings, newFragmentString];
+  });
+  return {
+    fragmentString: fragmentsStrings.join("\n\n"),
+    fragments: (_a2 = fragmentFieldsList[0]) != null ? _a2 : []
+  };
+};
 const getRoots = (introspection) => {
   const types = introspection.types;
   const query2 = introspection.queryType;
@@ -62289,6 +62888,49 @@ const getRoots = (introspection) => {
   const subscriptionRoot = roots.find((root2) => root2.name === (subscription == null ? void 0 : subscription.name));
   return [queryRoot, mutationRoot, subscriptionRoot];
 };
+function generateGraphqlQueries(introspection, name) {
+  const types = introspection.types;
+  const [queryRoot, mutationRoot, subscriptionRoot] = getRoots(introspection);
+  const entities = getEntities([queryRoot, mutationRoot], types);
+  const { fragmentString, fragments } = buildFragments(introspection, entities, types);
+  const selectQuery = queryRoot ? buildSelectQuery(queryRoot, name, types) : "";
+  const mutationQuery = mutationRoot ? buildMutationQuery(mutationRoot, name, types) : "";
+  const queries = [selectQuery, mutationQuery, fragmentString];
+  const finalQuery = buildGraphqlQuery(queries);
+  return {
+    query: finalQuery,
+    fragmentFields: fragments
+  };
+}
+function getEntities(roots, types, filterOnlyFields) {
+  const entities = roots.map((root2) => {
+    var _a2;
+    let rootEntities = [];
+    if (root2 == null ? void 0 : root2.name) {
+      for (const field of root2.fields) {
+        const queryName = field.name;
+        const entityName = (_a2 = getNestedOfType(field).name) != null ? _a2 : "";
+        let entityFields = getEntityFields(entityName, types);
+        if (filterOnlyFields && !entityFields.some((field2) => getNestedOfType(field2).kind === filterOnlyFields)) {
+          root2.fields = root2.fields.filter((fieldToBeDelete) => fieldToBeDelete !== field);
+          continue;
+        }
+        rootEntities = [
+          ...rootEntities,
+          { queryName, entityName, fields: entityFields }
+        ];
+      }
+    }
+    return rootEntities;
+  });
+  return Array.prototype.concat.apply([], entities);
+}
+function getEntityFields(entityName, types) {
+  const entity = types.find((type2) => type2.name === entityName);
+  if (entity && entity.fields)
+    return entity.fields;
+  return [];
+}
 function getNestedOfType(field) {
   var _a2;
   let actualType = (_a2 = field.type) != null ? _a2 : field.ofType;
@@ -62299,11 +62941,147 @@ function getNestedOfType(field) {
   else
     return { name: field.type, kind: "" };
 }
+function getEntity(types, entityName) {
+  return types.find((type2) => type2.name === entityName);
+}
+function getFieldType(field, types) {
+  const fieldType = getNestedOfType(field);
+  if (fieldType.kind === "SCALAR")
+    return fieldType;
+  if (fieldType.kind == "") {
+    const nestedFieldType = getEntity(types, fieldType.name);
+    if ((nestedFieldType == null ? void 0 : nestedFieldType.kind) === "SCALAR")
+      return nestedFieldType;
+  }
+}
+function buildSelectQuery(queryRoot, name, types) {
+  let selectQueries = [];
+  queryRoot.fields.forEach((query2) => {
+    const fragmentName = `${query2.name}_${getNestedOfType(query2).name}`;
+    const { params, variables } = buildParametersAndVariablesString(query2, name, types);
+    const newSelectQuery = `query ${query2.name}${variables} {
+  ${query2.name}${params} {
+    ...${fragmentName}
+  }
+}`;
+    selectQueries = [...selectQueries, newSelectQuery];
+  });
+  return selectQueries.join("\n\n");
+}
+function buildMutationQuery(mutationRoot, name, types) {
+  let mutationQueries = [];
+  mutationRoot.fields.forEach((field) => {
+    const fragmentName = `${field.name}_${getNestedOfType(field).name}`;
+    mutationQueries = [
+      ...mutationQueries,
+      buildMutationString(field, fragmentName, name, types)
+    ];
+  });
+  return mutationQueries.join("\n\n");
+}
+function buildMutationString(field, fragmentName, name, types) {
+  const { params, variables } = buildParametersAndVariablesString(field, name, types);
+  return `mutation ${field.name}${variables} {
+  ${field.name}${params} {
+    ...${fragmentName}
+  }
+}`;
+}
+function buildGraphqlQuery(queries) {
+  queries = queries.filter((query2) => query2 != "");
+  return `${queries.join("\n\n")}`;
+}
 const isByPkQuery = (field) => field.args.some((arg) => arg.name === "id");
 const isAggregateField = (field) => {
   var _a2, _b, _c;
   return ((_a2 = field.type) == null ? void 0 : _a2.kind) === "NON_NULL" && ((_c = (_b = field.type) == null ? void 0 : _b.ofType) == null ? void 0 : _c.kind) === "OBJECT";
 };
+function generateGraphqlFile(introspection, names) {
+  const roots = getRoots(introspection);
+  let usedQueryNames = [];
+  const generatedQueries = names.map((name) => {
+    var _a2, _b;
+    const modifiedRoots = filterRootQueries(roots, introspection.types, name, usedQueryNames);
+    modifiedRoots.forEach((modifiedRoot) => modifiedRoot == null ? void 0 : modifiedRoot.fields.forEach((field) => usedQueryNames = [...usedQueryNames, field.name]));
+    const modifiedIntrospection = replaceRootFields(modifiedRoots, introspection);
+    const entityFields = (_b = (_a2 = getEntity(modifiedIntrospection.types, name)) == null ? void 0 : _a2.fields) == null ? void 0 : _b.filter((field) => {
+      const fieldType = getNestedOfType(field);
+      if (fieldType.kind && fieldType.kind != "" && fieldType.kind === "SCALAR")
+        return true;
+      const nestedFieldType = getEntity(modifiedIntrospection.types, fieldType.name);
+      if ((nestedFieldType == null ? void 0 : nestedFieldType.kind) === "SCALAR")
+        return true;
+      return false;
+    });
+    const queryFragmentFields = entityFields == null ? void 0 : entityFields.map((field) => {
+      return { name: field.name, type: getNestedOfType(field).name };
+    });
+    const { query: query2, fragmentFields } = generateGraphqlQueries(modifiedIntrospection, name);
+    return {
+      queries: query2,
+      entityName: name,
+      properties: queryFragmentFields != null ? queryFragmentFields : [],
+      fragments: fragmentFields
+    };
+  });
+  return generatedQueries;
+}
+function replaceRootFields(roots, introspection) {
+  const modifiedIntrospection = JSON.parse(JSON.stringify(introspection));
+  roots.forEach((root2) => {
+    if (root2) {
+      const modifiedType = modifiedIntrospection.types.find((type2) => type2.name === root2.name);
+      if (modifiedType)
+        modifiedType.fields = [...root2.fields];
+    }
+  });
+  return modifiedIntrospection;
+}
+function filterRootQueries(roots, types, entityName, usedQueryNames) {
+  const modifiedRoots = roots.map((root2) => {
+    if (root2) {
+      const modifiedRoot = __spreadValues2({}, root2);
+      modifiedRoot.fields = modifiedRoot.fields.filter((field) => isReturningEntity(field, types, entityName) && !usedQueryNames.includes(field.name));
+      return modifiedRoot;
+    }
+    return root2;
+  });
+  return modifiedRoots;
+}
+function isReturningEntity(field, allTypes, entityName) {
+  const ofType = isOfType(field, entityName) || isMutationType(field, allTypes, entityName);
+  if (ofType)
+    return true;
+  return false;
+}
+function isMutationType(field, allTypes, entityName) {
+  var _a2;
+  const fieldName = typeof field.type === "string" ? field.type : getNestedOfType(field).name;
+  const type2 = allTypes.find((type22) => type22.name === fieldName);
+  if (!type2)
+    return false;
+  const returning = (_a2 = type2.fields) == null ? void 0 : _a2.find((field2) => field2.name === "returning");
+  if (!returning)
+    return false;
+  const nestedOfType = getNestedOfType(returning);
+  if (nestedOfType.name === entityName)
+    return true;
+  else
+    return false;
+}
+function isOfType(field, entityName) {
+  var _a2;
+  let actualType = field.type;
+  if (typeof actualType !== "string") {
+    while (isInstanceOfType(actualType) && actualType.ofType)
+      actualType = actualType.ofType;
+    if (isInstanceOfType(actualType) && ((_a2 = actualType.name) == null ? void 0 : _a2.toLowerCase()) === (entityName == null ? void 0 : entityName.toLowerCase()))
+      return true;
+  } else if (typeof actualType === "string" && actualType === (entityName == null ? void 0 : entityName.toLowerCase())) {
+    return true;
+  }
+  return false;
+}
 function isOfTypePage(field, entityName, pageType) {
   var _a2, _b;
   let actualType = field.type;
@@ -62328,6 +63106,111 @@ function isOfTypePage(field, entityName, pageType) {
   }
   return false;
 }
+const correctTypeNames = (typeNames, fields8) => {
+  typeNames.forEach((typeName, index2) => {
+    fields8.every((field) => {
+      var _a2;
+      if (((_a2 = field.name) == null ? void 0 : _a2.toLowerCase()) === (typeName == null ? void 0 : typeName.toLowerCase())) {
+        let actualType = field.type;
+        let arrayType = false;
+        while (isInstanceOfType(actualType) && actualType.ofType) {
+          if ((actualType == null ? void 0 : actualType.kind) === "LIST")
+            arrayType = true;
+          actualType = actualType.ofType;
+        }
+        if (isInstanceOfType(actualType) && (actualType == null ? void 0 : actualType.kind) === "OBJECT") {
+          if (!arrayType)
+            typeNames[index2] = actualType.name;
+          return false;
+        }
+      }
+      return true;
+    });
+  });
+  return typeNames;
+};
+const lastFieldParent = (typeNames, fields8, introspection) => {
+  let actualTypeName = "";
+  typeNames.forEach((typeName, index2) => {
+    if (index2 === typeNames.length - 1)
+      return false;
+    fields8.every((field) => {
+      var _a2;
+      if (((_a2 = field.name) == null ? void 0 : _a2.toLowerCase()) === (typeName == null ? void 0 : typeName.toLowerCase())) {
+        let actualType = field.type;
+        while (isInstanceOfType(actualType) && actualType.ofType)
+          actualType = actualType.ofType;
+        if (isInstanceOfType(actualType) && (actualType == null ? void 0 : actualType.kind) === "OBJECT") {
+          actualTypeName = actualType.name;
+          return false;
+        }
+      }
+      return true;
+    });
+  });
+  const parent = introspection.types.find((type2) => {
+    var _a2;
+    return ((_a2 = type2 == null ? void 0 : type2.name) == null ? void 0 : _a2.toLowerCase()) === (actualTypeName == null ? void 0 : actualTypeName.toLowerCase());
+  });
+  return parent;
+};
+const findRelationshipType = (typeNames, fields8, introspection) => {
+  let relationshipName = void 0;
+  let relationshipType = RelationshipType.OBJECT;
+  typeNames.forEach((typeName) => {
+    let fieldOutsideOfTable = true;
+    fields8.every((field) => {
+      var _a2;
+      if (((_a2 = field.name) == null ? void 0 : _a2.toLowerCase()) === (typeName == null ? void 0 : typeName.toLowerCase())) {
+        fieldOutsideOfTable = false;
+        let actualType = field.type;
+        let arrayType = false;
+        while (isInstanceOfType(actualType) && actualType.ofType) {
+          if ((actualType == null ? void 0 : actualType.kind) === "LIST") {
+            arrayType = true;
+            relationshipType = RelationshipType.ARRAY;
+          }
+          actualType = actualType.ofType;
+        }
+        if (isInstanceOfType(actualType) && (actualType == null ? void 0 : actualType.kind) === "OBJECT") {
+          if (!arrayType)
+            relationshipType = RelationshipType.OBJECT;
+          relationshipName = actualType.name;
+          return false;
+        }
+      }
+      return true;
+    });
+    if (fieldOutsideOfTable) {
+      const outsideQueryWithFields = introspection.types.filter((type2) => {
+        var _a2;
+        return ((_a2 = type2 == null ? void 0 : type2.name) == null ? void 0 : _a2.toLowerCase()) === (relationshipName == null ? void 0 : relationshipName.toLowerCase());
+      })[0];
+      outsideQueryWithFields == null ? void 0 : outsideQueryWithFields.fields.every((field) => {
+        var _a2;
+        if (((_a2 = field.name) == null ? void 0 : _a2.toLowerCase()) === (typeName == null ? void 0 : typeName.toLowerCase())) {
+          let actualType = field.type;
+          let arrayType = false;
+          while (isInstanceOfType(actualType) && actualType.ofType) {
+            if (actualType.kind === "LIST") {
+              arrayType = true;
+              relationshipType = RelationshipType.ARRAY;
+            }
+            actualType = actualType.ofType;
+          }
+          if (isInstanceOfType(actualType) && (actualType == null ? void 0 : actualType.kind) === "OBJECT") {
+            if (!arrayType)
+              relationshipType = RelationshipType.OBJECT;
+            relationshipName = actualType.name;
+            return false;
+          }
+        }
+        return true;
+      });
+    }
+  });
+  return { relationshipName, relationshipType };
+};
 function isInstanceOfType(object) {
   return "name" in object && "ofType" in object && "kind" in object;
 }
@@ -62382,7 +63265,7 @@ async function fetchHasuraMetadata(body2, workbench2) {
   });
   return response;
 }
-const capitalize = (text2) => {
+const capitalize$1 = (text2) => {
   return text2.charAt(0).toUpperCase() + text2.slice(1);
 };
 const lowerFirstLetter = (text2) => {
@@ -62390,7 +63273,7 @@ const lowerFirstLetter = (text2) => {
 };
 const capitalizeFirstLetters = (name) => {
   return name.split("_").map((element2) => {
-    return capitalize(element2);
+    return capitalize$1(element2);
   }).join("");
 };
 const runSQLQuery = (sqlQuery) => {
@@ -62430,7 +63313,7 @@ const createTable$1 = (table) => {
     EXECUTE PROCEDURE "${table.schema}"."set_current_timestamp_updated_at"();
     `);
 };
-const addColumn = (props) => {
+const addColumn$1 = (props) => {
   let nullable = props.nullable ? " NULL" : " NOT NULL";
   let unique = props.unique ? " UNIQUE" : "";
   let defaultValue = props.defaultValue === "" ? " " : " default '" + props.defaultValue + "' ";
@@ -62664,7 +63547,7 @@ function createColumn(columnProps, migration, workbench2) {
   let promise2 = fetchHasuraQuery(getColumnNames({ name: columnProps.tableName, schema: columnProps.schema }), "get_columns", false, workbench2).then(handleErrors);
   promise2 = promise2.then((res2) => {
     columnNames = getColumns(res2, columnProps.columnName);
-    return fetchHasuraQuery(addColumn(columnProps), "add_column_" + columnProps.columnName, migration, workbench2).then(handleErrors);
+    return fetchHasuraQuery(addColumn$1(columnProps), "add_column_" + columnProps.columnName, migration, workbench2).then(handleErrors);
   }).catch((error2) => {
     return Promise.reject(error2);
   });
@@ -63115,6 +63998,191 @@ const filterIntrospection = (introspection, entityName) => {
   }
 };
 const entityExists = (types, entityName) => types.some((type2) => type2.name === entityName);
+const addColumn = async (graphQLFile, introspection, entityName, fieldTrees, pageType, referenceField, insertType = InsertType.BEFORE) => {
+  const [queryRoot] = getRoots(introspection);
+  const field = queryRoot.fields.find((field2) => isOfTypePage(field2, entityName, pageType));
+  const fieldName = field == null ? void 0 : field.name;
+  const queryName = fieldName != null ? fieldName : entityName;
+  let modifiedGraphQLFile = graphQLFile;
+  const queryWithFields = introspection.types.find((type2) => type2.name.toLowerCase() === entityName.toLowerCase());
+  fieldTrees.forEach((tree) => {
+    const fieldTreeArray = tree.split(".");
+    let typeNames = fieldTreeArray.slice(1);
+    typeNames = correctTypeNames(typeNames, queryWithFields.fields);
+    let { relationshipName } = findRelationshipType(typeNames, queryWithFields.fields, introspection);
+    const lastParent = lastFieldParent(typeNames, queryWithFields.fields, introspection);
+    const idField = typeNames[typeNames.length - 1] != "id" ? lastParent == null ? void 0 : lastParent.fields.find((field2) => field2.name === "id") : void 0;
+    const additionalFields = idField ? ["id"] : [];
+    const typeNamesSlice = typeNames.slice(0, -1);
+    const newFragmentName = getFragmentName$1([queryName, ...typeNamesSlice], modifiedGraphQLFile);
+    const insertedField = [typeNames[typeNames.length - 1]];
+    if (fragmentExists(modifiedGraphQLFile, newFragmentName)) {
+      modifiedGraphQLFile = addFieldToFragment(modifiedGraphQLFile, newFragmentName, insertedField, referenceField, insertType, additionalFields);
+    } else {
+      modifiedGraphQLFile += `
+
+${buildFragmentFromFieldsTree(queryName, relationshipName != null ? relationshipName : queryName, typeNames, additionalFields)}`;
+      const modifiedFile = insertFragmentSpreadIntoFragment(modifiedGraphQLFile, queryName, entityName, typeNamesSlice);
+      if (modifiedFile === "")
+        modifiedGraphQLFile = buildFieldTreeInQuery(modifiedGraphQLFile, queryName, entityName, typeNamesSlice);
+      else {
+        const scalarFieldsToBeMoved = getScalarFieldsFromFragment(modifiedFile, typeNamesSlice, `${queryName}_${entityName}`);
+        modifiedGraphQLFile = removeFieldsFromFragment(modifiedFile, typeNamesSlice, scalarFieldsToBeMoved, `${queryName}_${entityName}`);
+        modifiedGraphQLFile = addFieldToFragment(modifiedGraphQLFile, newFragmentName, [], referenceField, insertType, scalarFieldsToBeMoved);
+      }
+    }
+  });
+  modifiedGraphQLFile = print(parse$6(modifiedGraphQLFile));
+  return modifiedGraphQLFile;
+};
+const getFragmentName$1 = (fieldTree, graphqlFile) => {
+  if (fieldTree.length == 1) {
+    try {
+      const ast = parse$6(graphqlFile);
+      const entityName = fieldTree[0];
+      let fragmentSpreadName = "";
+      visit(ast, {
+        OperationDefinition(node) {
+          var _a2, _b;
+          if (((_a2 = node.name) == null ? void 0 : _a2.value) === entityName) {
+            const field = node.selectionSet.selections[0];
+            const fragmentSpread = (_b = field.selectionSet) == null ? void 0 : _b.selections[0];
+            fragmentSpreadName = fragmentSpread.name.value;
+          }
+        }
+      });
+      return fragmentSpreadName;
+    } catch (err2) {
+      console.error(err2);
+    }
+  }
+  return buildFragmentNameFromFieldsTree(fieldTree);
+};
+const createMixedImport = (namedImports, moduleSpecifier, defaultImport) => factory.createImportDeclaration(void 0, void 0, factory.createImportClause(false, defaultImport != null ? defaultImport : void 0, factory.createNamedImports(namedImports)), factory.createIdentifier(moduleSpecifier));
+const createNameSpaceImport = (namespace, module2) => {
+  return factory.createImportDeclaration(void 0, void 0, factory.createImportClause(false, void 0, factory.createNamespaceImport(factory.createIdentifier(namespace))), factory.createIdentifier(module2));
+};
+const createDefaultImport = (identifier, module2) => factory.createImportDeclaration(void 0, void 0, factory.createImportClause(false, factory.createIdentifier(identifier), void 0), factory.createIdentifier(module2));
+const createJsxSelfClosingElement = (name, atributes) => factory.createJsxSelfClosingElement(factory.createIdentifier(name), void 0, factory.createJsxAttributes(atributes.map((atribute) => factory.createJsxAttribute(factory.createIdentifier(atribute.name), factory.createJsxExpression(void 0, factory.createIdentifier(atribute.initializer))))));
+const stripQuotes = (str2) => str2.replace(/['"]+/g, "");
+const mergeImports = (parentAst, childAst) => {
+  const importsArray = getMergeImports(parentAst, childAst);
+  if (importsArray) {
+    const importPosition = findPositionOfFirstImport(parentAst);
+    const finalAst = appendElementsToAst(parentAst, importPosition, importsArray);
+    return finalAst;
+  } else {
+    return parentAst;
+  }
+};
+const getMergeImports = (parentAst, childAst) => {
+  const parentAstImports = parentAst.statements.filter((s) => ts.isImportDeclaration(s));
+  const childAstImports = childAst.statements.filter((s) => ts.isImportDeclaration(s));
+  const importMap = createImportMap(parentAstImports);
+  const importsArray = getNewImportsArray(childAstImports, importMap);
+  return importsArray;
+};
+const getImportIdentifiers = (importDeclaration) => {
+  const identifiers = /* @__PURE__ */ new Set();
+  const { importClause } = importDeclaration;
+  if (!importClause)
+    return null;
+  if (importClause.name)
+    identifiers.add(importClause.name.getText());
+  if (importClause.namedBindings && ts.isNamedImports(importClause.namedBindings)) {
+    importClause.namedBindings.elements.forEach((e) => identifiers.add(e.name.getText()));
+  }
+  if (importClause.namedBindings && ts.isNamespaceImport(importClause.namedBindings)) {
+    identifiers.add(importClause.namedBindings.name.getText());
+  }
+  return Array.from(identifiers);
+};
+const createImportMap = (importDeclarations) => {
+  const importMap = /* @__PURE__ */ new Map();
+  importDeclarations.forEach((iD) => {
+    const moduleSpecifier = stripQuotes(iD.moduleSpecifier.getText());
+    const importIdentifiers = getImportIdentifiers(iD);
+    if (!importIdentifiers)
+      return;
+    const currEntry = importMap.get(moduleSpecifier);
+    if (currEntry) {
+      importMap.set(moduleSpecifier, [...currEntry, ...importIdentifiers]);
+    } else {
+      importMap.set(moduleSpecifier, importIdentifiers);
+    }
+  });
+  return importMap;
+};
+const getNewImportsArray = (childImports, importMap) => {
+  const newImports = [];
+  childImports.forEach((importDeclaration) => {
+    var _a2;
+    const moduleSpecifier = stripQuotes(importDeclaration.moduleSpecifier.getText());
+    const { importClause } = importDeclaration;
+    if (!importClause)
+      return;
+    if (!importMap.has(moduleSpecifier)) {
+      newImports.push(importDeclaration);
+      return;
+    }
+    const importIdentifiers = getImportIdentifiers(importDeclaration);
+    const currIdentifiers = importMap.get(moduleSpecifier);
+    if (!importIdentifiers || !currIdentifiers)
+      return;
+    const uniqueIdentifiers = importIdentifiers.filter((iI) => !currIdentifiers.includes(iI));
+    if (uniqueIdentifiers.length === 0)
+      return;
+    if (uniqueIdentifiers.length === 1 && ((_a2 = importClause.name) == null ? void 0 : _a2.getText()) === uniqueIdentifiers[0]) {
+      const newImport2 = createDefaultImport(uniqueIdentifiers[0], importDeclaration.moduleSpecifier.getText());
+      newImports.push(newImport2);
+      return;
+    }
+    if (uniqueIdentifiers.length === 1 && importClause.namedBindings && ts.isNamespaceImport(importClause.namedBindings) && importClause.namedBindings.name.getText() === uniqueIdentifiers[0]) {
+      const newImport2 = createNameSpaceImport(uniqueIdentifiers[0], importDeclaration.moduleSpecifier.getText());
+      newImports.push(newImport2);
+      return;
+    }
+    const newImport = stripNonUniqueIdentifiersFromImport(importDeclaration, uniqueIdentifiers);
+    if (newImport)
+      newImports.push(newImport);
+  });
+  newImports.map((value2) => {
+    stripRanges(value2);
+  });
+  return newImports;
+};
+const getFilteredNamedImports = (importClause, uniqueIdentifiers) => {
+  if (importClause.namedBindings && ts.isNamedImports(importClause.namedBindings)) {
+    const uniqueNamedImports = importClause.namedBindings.elements.filter((namedImport) => uniqueIdentifiers.includes(namedImport.name.getText()));
+    return uniqueNamedImports.length > 0 ? uniqueNamedImports : null;
+  }
+  return null;
+};
+const stripNonUniqueIdentifiersFromImport = (importDeclaration, uniqueIdentifiers) => {
+  var _a2;
+  const { importClause } = importDeclaration;
+  if (!importClause)
+    return null;
+  const filteredNamedImports = getFilteredNamedImports(importClause, uniqueIdentifiers);
+  if (!filteredNamedImports)
+    return null;
+  const defaultImport = (_a2 = importClause.name) == null ? void 0 : _a2.getText();
+  const moduleSpecifier = importDeclaration.moduleSpecifier.getText();
+  if (defaultImport && uniqueIdentifiers.includes(defaultImport)) {
+    const finalImport2 = createMixedImport(filteredNamedImports, moduleSpecifier, importClause.name);
+    return finalImport2;
+  }
+  const finalImport = createMixedImport(filteredNamedImports, moduleSpecifier);
+  return finalImport;
+};
+const removeUnusedDefaultImport = (ast, importName) => {
+  const newAst = conditionalyWithParamRemoveNodeInAst(ast, isDefaultImport, importName);
+  return newAst;
+};
+const isDefaultImport = (node, text2) => {
+  var _a2, _b;
+  return ts.isImportDeclaration(node) && node.parent && ts.isSourceFile(node.parent) && ((_b = (_a2 = node.importClause) == null ? void 0 : _a2.name) == null ? void 0 : _b.getText()) === text2;
+};
 const findFields = (node, fieldNames) => {
   var _a2;
   if (!node)
@@ -63132,7 +64200,7 @@ const fieldExists = (ast, fieldName) => {
 const isStringLiteralOrIdentifier = (node, param) => (ts.isStringLiteral(node) || ts.isIdentifier(node)) && node.text.includes(param);
 const isIdentifierWithName = (node, param) => ts.isIdentifier(node) && node.text === param;
 const isStringLiteralWithNameLike = (node, param) => ts.isStringLiteralLike(node) && node.text === param;
-const renameFields = (node, oldField, newField) => {
+const renameFields = (node, oldField, newField, split) => {
   const found = [
     ...findAllByCondition(node, ts.isIdentifier),
     ...findAllByCondition(node, ts.isStringLiteral)
@@ -63143,13 +64211,23 @@ const renameFields = (node, oldField, newField) => {
     return arr;
   }, []);
   const foundOccurencesUnique = [...new Set(foundOccurences)];
-  const foundOccurencesSplited = foundOccurencesUnique.map((el2) => el2.replaceAll(/'|"/g, "").split("."));
+  let foundOccurencesSplited = foundOccurencesUnique.map((el2) => {
+    if (split) {
+      return el2.replaceAll(/'|"/g, "").split(".");
+    }
+    return [el2.replaceAll(/'|"/g, "")];
+  });
   const occurencesReplaceOldField = foundOccurencesSplited.map((el2) => el2.map((subEl) => {
     if (subEl === oldField)
       return newField;
     return subEl;
   }));
-  const finalNewFields = occurencesReplaceOldField.map((el2) => el2.join("."));
+  const finalNewFields = occurencesReplaceOldField.map((el2) => {
+    if (split) {
+      return el2.join(".");
+    }
+    return el2.join("");
+  });
   let finalAst;
   finalNewFields.forEach((el2, i2) => {
     const newIdentifier = factory.createIdentifier(el2);
@@ -63192,7 +64270,7 @@ const cloneAndRenameElementInAst = (code2, source, oldField, newField) => {
   const node = astFindSource(code2, source);
   if (!node || !ast)
     return null;
-  const finalNode = renameFields(node, oldField, newField);
+  const finalNode = renameFields(node, oldField, newField, true);
   if (!finalNode)
     return null;
   const alteredAst = appendElementsToAst(ast, { pos: node.pos, end: node.end }, [finalNode]);
@@ -63249,6 +64327,16 @@ const removeElementInAst = (code2, source) => {
   const alteredAst = removeElementFromAst(ast, { pos, end });
   return alteredAst;
 };
+const renameAndReplaceElementInAst = (ast, node, oldText, newText) => {
+  const finalNode = renameFields(node, oldText, newText, false);
+  if (!finalNode)
+    return ast;
+  ast = replaceElementsInAst(ast, {
+    pos: node.pos,
+    end: node.end
+  }, finalNode);
+  return ast;
+};
 function parseLocaleJSON(localeSourceCode, languageLocale = "en") {
   const localeAst = createAst(localeSourceCode, ts.ScriptTarget.ESNext, ts.ScriptKind.JSON);
   if (localeAst) {
@@ -63275,7 +64363,7 @@ function parseLocaleAST(ast, languageLocale = "en") {
   });
   return localeMessages;
 }
-const reorderElementsInAst = (code2, data) => {
+const reorderElementsInAst = async (code2, data) => {
   const ast = createAst(code2);
   if (!ast)
     return null;
@@ -63288,7 +64376,557 @@ const reorderElementsInAst = (code2, data) => {
       end: data.elementsPosEnd[data.chained_changes[key]].end
     }, tmpNode);
   });
-  return regenerateAst(alteredAst);
+  return await regenerateAst(alteredAst);
+};
+const findColumn = (code2, source) => {
+  const node = astFindSource(code2, source);
+  let parent = node;
+  while (parent && !ts.isObjectLiteralExpression(parent)) {
+    parent = parent.parent;
+  }
+  return parent;
+};
+const getReactComponentNode = (ast, componentName) => {
+  const reactComponent = findByConditionWithParam(ast, isNamedReactComponentFunction, componentName);
+  return reactComponent != null ? reactComponent : null;
+};
+const getComponentBodyFromReactComponent = (componentFunction) => {
+  const body2 = componentFunction.body;
+  if (!body2)
+    return null;
+  if (ts.isJsxOpeningLikeElement(body2) || ts.isJsxElement(body2))
+    return null;
+  if (ts.isBlock(body2)) {
+    const componentBodyStatements = body2.statements.filter((s) => !ts.isReturnStatement(s));
+    return componentBodyStatements;
+  }
+  return null;
+};
+const getReturnedJsxFromReactComponent = (componentFunction) => {
+  const body2 = componentFunction.body;
+  if (!body2)
+    return null;
+  if (ts.isJsxOpeningLikeElement(body2) || ts.isJsxElement(body2))
+    return body2;
+  if (ts.isParenthesizedExpression(body2))
+    return body2.expression;
+  if (ts.isBlock(body2)) {
+    const returnStatement = body2.statements.filter((s) => ts.isReturnStatement(s));
+    if (returnStatement.length === 1) {
+      const node = returnStatement[0].expression;
+      if (!node)
+        return null;
+      if (ts.isParenthesizedExpression(node))
+        return node.expression;
+      else
+        return node;
+    }
+  }
+  return null;
+};
+const isNamedReactComponentFunction = (node, name) => {
+  var _a2;
+  return ts.isArrowFunction(node) && node.parent && ts.isVariableDeclaration(node.parent) && node.parent.name.getText() === name && node.parent.parent && ts.isVariableDeclarationList(node.parent.parent) && node.parent.parent.parent && ts.isVariableStatement(node.parent.parent.parent) && node.parent.parent.parent.parent && ts.isSourceFile(node.parent.parent.parent.parent) || ts.isFunctionDeclaration(node) && ((_a2 = node.name) == null ? void 0 : _a2.getText()) === name && node.parent && ts.isSourceFile(node.parent);
+};
+const isReactComponentFunction = (node) => ts.isArrowFunction(node) && node.parent && ts.isVariableDeclaration(node.parent) && node.parent.parent && ts.isVariableDeclarationList(node.parent.parent) && node.parent.parent.parent && ts.isVariableStatement(node.parent.parent.parent) && node.parent.parent.parent.parent && ts.isSourceFile(node.parent.parent.parent.parent) || ts.isFunctionDeclaration(node) && node.parent && ts.isSourceFile(node.parent);
+const isBooleanLiteral = (node) => isTrueKeyword(node) || isFalseKeyword(node);
+const isTrueKeyword = (node) => node.kind === ts.SyntaxKind.TrueKeyword;
+const isFalseKeyword = (node) => node.kind === ts.SyntaxKind.FalseKeyword;
+const isNullKeyword = (node) => node.kind === ts.SyntaxKind.NullKeyword;
+const isPrimitiveProp$1 = (node) => node.kind === ts.SyntaxKind.StringLiteral || node.kind === ts.SyntaxKind.TrueKeyword || node.kind === ts.SyntaxKind.FalseKeyword || node.kind === ts.SyntaxKind.NullKeyword || node.kind === ts.SyntaxKind.NumericLiteral || node.kind === ts.SyntaxKind.Identifier && node.getText() === "undefined" || node.kind === ts.SyntaxKind.NoSubstitutionTemplateLiteral;
+const copyPrimitiveProps = (parentJsx, childJsx) => {
+  const nodes = findAllByCondition(parentJsx, isPrimitivePropOnParent);
+  const primitivePropsMap = /* @__PURE__ */ new Map();
+  nodes.forEach((n2) => {
+    const propName = ts.isJsxAttribute(n2.parent.parent) ? n2.parent.parent.name.getText() : n2.parent.name.getText();
+    primitivePropsMap.set(propName, n2);
+  });
+  let finalChildJsx = childJsx;
+  primitivePropsMap.forEach((node, key) => {
+    const propOccurences = findAllByConditionWithParam(finalChildJsx, isPrimitiveProp, key);
+    const newNode = createNewNodeForPrimitiveProp(node);
+    if (!newNode)
+      return;
+    propOccurences.forEach((pO) => {
+      const nodePosition = { pos: pO.pos, end: pO.end };
+      if (!ts.isJsxAttribute(pO.parent))
+        finalChildJsx = replaceElementsInAst(finalChildJsx, nodePosition, newNode);
+    });
+  });
+  return finalChildJsx;
+};
+const createNewNodeForPrimitiveProp = (node) => {
+  let newNode = null;
+  if (ts.isStringLiteral(node)) {
+    newNode = factory.createNoSubstitutionTemplateLiteral(node.text);
+  }
+  if (ts.isNumericLiteral(node)) {
+    newNode = factory.createNumericLiteral(node.text);
+  }
+  if (ts.isIdentifier(node) && node.getText() !== "undefined") {
+    newNode = factory.createIdentifier(node.getText());
+  }
+  if (isNullKeyword(node))
+    newNode = factory.createNull();
+  if (isTrueKeyword(node))
+    newNode = factory.createTrue();
+  if (isFalseKeyword(node))
+    newNode = factory.createFalse();
+  return newNode;
+};
+const isPrimitivePropOnParent = (node) => (ts.isNumericLiteral(node) || ts.isStringLiteral(node) || isBooleanLiteral(node) || isNullKeyword(node) || ts.isIdentifier(node) && node.getText() !== "undefined") && node.parent && ts.isJsxExpression(node.parent) || ts.isStringLiteral(node) && node.parent && ts.isJsxAttribute(node.parent);
+const isPrimitiveProp = (node, text2) => ts.isIdentifier(node) && node.text === text2;
+const flattenStringLiterals = (node) => {
+  const templateExpressions = findAllByCondition(node, ts.isTemplateExpression);
+  let finalNode = node;
+  templateExpressions.forEach((tE) => {
+    const newTemplateSpans = [];
+    let newTemplateHead = tE.head;
+    tE.templateSpans.forEach((tS, i2) => {
+      if (isPrimitiveProp$1(tS.expression)) {
+        let newText = ts.isStringLiteral(tS.expression) || ts.isNoSubstitutionTemplateLiteral(tS.expression) ? tS.expression.text + tS.literal.text : tS.expression.getText() + tS.literal.text;
+        const lastTemplateSpan = newTemplateSpans.pop();
+        if (!lastTemplateSpan) {
+          newTemplateHead = factory.createTemplateHead(newTemplateHead.text + newText);
+          return;
+        }
+        newText = lastTemplateSpan.literal.text + newText;
+        const newTemplateSpan = factory.createTemplateSpan(lastTemplateSpan.expression, i2 === tE.templateSpans.length - 1 ? factory.createTemplateTail(newText) : factory.createTemplateMiddle(newText));
+        newTemplateSpans.push(newTemplateSpan);
+      } else
+        newTemplateSpans.push(tS);
+    });
+    if (newTemplateSpans.length === 0) {
+      const nodePos = { pos: tE.parent.pos, end: tE.parent.end };
+      finalNode = replaceElementsInAst(finalNode, nodePos, factory.createStringLiteral(newTemplateHead.text));
+      return;
+    }
+    finalNode = replaceElementsInAst(finalNode, { pos: tE.pos, end: tE.end }, factory.createTemplateExpression(newTemplateHead, newTemplateSpans));
+  });
+  finalNode = stripUnnecessaryLiterals(finalNode);
+  return finalNode;
+};
+const stripUnnecessaryLiterals = (node) => {
+  const binaryNodes = findAllByCondition(node, isUnnecessaryBinaryExpression);
+  let finalNode = node;
+  binaryNodes.forEach((bN) => {
+    finalNode = replaceElementsInAst(finalNode, { pos: bN.parent.pos, end: bN.parent.end }, factory.createStringLiteral(bN.text));
+  });
+  const stringNodes = findAllByCondition(finalNode, isStringLiteralInJsxExpression);
+  stringNodes.forEach((sN) => {
+    finalNode = replaceElementsInAst(finalNode, { pos: sN.parent.pos, end: sN.parent.end }, factory.createStringLiteral(sN.text));
+  });
+  return finalNode;
+};
+const isStringLiteralInJsxExpression = (node) => isString$1(node) && node.parent && ts.isJsxExpression(node.parent);
+const isUnnecessaryBinaryExpression = (node) => isString$1(node) && node.parent && ts.isBinaryExpression(node.parent);
+const isString$1 = (node) => ts.isStringLiteral(node) || ts.isNoSubstitutionTemplateLiteral(node);
+const mergeReactComponentBody = async (parentAst, childAst, componentName) => {
+  const childReactComponent = getReactComponentNode(childAst, componentName);
+  if (!childReactComponent)
+    return parentAst;
+  const componentBodyStatements = getComponentBodyFromReactComponent(childReactComponent);
+  if (!componentBodyStatements)
+    return parentAst;
+  const block2 = findByCondition(parentAst, isBlockInsideReactComponentFunction);
+  if (!block2)
+    return parentAst;
+  const newBlockNames = componentBodyStatements.map((statement) => statement.getText());
+  const newBlock = [
+    ...componentBodyStatements,
+    ...Array.from(block2.statements).filter((statement) => !newBlockNames.includes(statement.getText()))
+  ];
+  const newNode = factory.createBlock(newBlock);
+  stripRanges(newNode);
+  const finalSourceFile = conditionalyReplaceNodeInAst(parentAst, isBlockInsideReactComponentFunction, newNode);
+  return await regenerateAst(finalSourceFile);
+};
+const copyJsxChildren = (node, copyJsx) => {
+  const numberOfNodes = copyJsx.filter((n2) => !ts.isJsxText(n2)).length;
+  let finalNode = conditionalyWithParamReplaceNodeInAst(node, isJsxExpressionWithIdentifierInside, "children", copyJsx);
+  finalNode = conditionalyReplaceNodeInAst(finalNode, isPropertyAccessExpressionWithChildrenLengthInside, factory.createNumericLiteral(numberOfNodes));
+  return finalNode;
+};
+const mergeReturnedJsx = async (parentAst, childAst, componentName) => {
+  const reactComponent = getReactComponentNode(childAst, componentName);
+  if (!reactComponent)
+    return null;
+  const returnedJsx = getReturnedJsxFromReactComponent(reactComponent);
+  if (!returnedJsx)
+    return null;
+  const nodeOccurences = findAllByConditionWithParam(parentAst, isJsxOpeningLikeElementWithName, componentName);
+  if (nodeOccurences.length == 0)
+    return null;
+  let finalAst = parentAst;
+  nodeOccurences.forEach((nO) => {
+    let newNode = copyPrimitiveProps(nO, returnedJsx);
+    if (ts.isJsxOpeningElement(nO)) {
+      const copyJsx = Array.from(nO.parent.children);
+      newNode = copyJsxChildren(newNode, copyJsx);
+    }
+    stripRanges(newNode);
+    finalAst = replaceElementsInAst(finalAst, { pos: nO.pos, end: nO.end }, newNode);
+  });
+  return await regenerateAst(finalAst);
+};
+const inlineReactComponent = async (parentAst, childAst, componentName) => {
+  let sourceFile = await mergeReactComponentBody(parentAst, childAst, componentName);
+  sourceFile = await mergeReturnedJsx(sourceFile, childAst, componentName);
+  if (!sourceFile)
+    return parentAst;
+  sourceFile = mergeImports(sourceFile, childAst);
+  sourceFile = removeUnusedDefaultImport(sourceFile, componentName);
+  sourceFile = flattenStringLiterals(sourceFile);
+  return sourceFile;
+};
+const isJsxOpeningLikeElementWithName = (node, text2) => ts.isJsxOpeningLikeElement(node) && node.tagName.text === text2;
+const isBlockInsideReactComponentFunction = (node) => ts.isBlock(node) && node.parent && isReactComponentFunction(node.parent);
+const isJsxExpressionWithIdentifierInside = (node, text2) => ts.isJsxExpression(node) && node.expression && (ts.isIdentifier(node.expression) && node.expression.getText() === text2 || ts.isPropertyAccessExpression(node.expression) && node.expression.name.getText() === text2);
+const isPropertyAccessExpressionWithChildrenLengthInside = (node) => ts.isPropertyAccessExpression(node) && ts.isPropertyAccessExpression(node.expression) && node.name.getText() === "length" && node.expression.name.getText() === "children";
+const TEMPLATE_PATH = "./node_modules/@iteria-app/component-templates/src/components/readonly";
+const ENTITY_PATH = "./node_modules/@iteria-app/component-templates/src/components/entity/list/Entity";
+const TEMPLATE_PATH_JAMSTACK = "templates/readonly";
+const ENTITY_PATH_JAMSTACK = "templates/list/Entity";
+const ENTITY = "Entity";
+const FIELD = "field";
+const COLUMNS = "columns";
+const HEADER_NAME = "headerName";
+const RENDER_CELL = "renderCell";
+const VALUE = "value";
+const DEFAULT_FORMAT = "DefaultFormat";
+const BOOLEAN_FORMAT = "BooleanFormat";
+const DATE_FORMAT = "DateFormat";
+const DATE_TIME_FORMAT = "DateTimeFormat";
+const TIME_FORMAT = "TimeFormat";
+const stringPrettyCapitalize = (inputString) => inputString.replace(/^\w/, (c2) => c2.toUpperCase()).replace(/(_|\.)/g, " ");
+const removeElementFromArray = (array, element2) => {
+  var index2 = array.indexOf(element2);
+  if (index2 !== -1) {
+    array.splice(index2, 1);
+  }
+  return array;
+};
+async function generateColumn(columnInfo) {
+  const { io, entity, field, fields: fields8, page, selectedColumn, insertType } = columnInfo;
+  let ast = columnInfo.ast;
+  const astType = typeof ast;
+  if (astType === "string") {
+    ast = createAst(ast);
+  }
+  if (checkIfExist(ast, `${entity}.${field.name}`) || field.name === "id") {
+    return await returnValue(ast, astType);
+  }
+  let objectLiteral;
+  let lastObjectLiteral;
+  let formatComponentName;
+  if (page === PageType.LIST) {
+    const newColumn = await addColumnToList(ast, selectedColumn, entity, field, fields8, insertType);
+    if (!newColumn || !newColumn.objectLiteral || !newColumn.lastObjectLiteral || !newColumn.formatComponentName)
+      return await returnValue(ast, astType);
+    objectLiteral = newColumn.objectLiteral;
+    lastObjectLiteral = newColumn.lastObjectLiteral;
+    formatComponentName = newColumn.formatComponentName;
+  } else {
+    return await returnValue(ast, astType);
+  }
+  ast = appendElementsToAst(ast, {
+    pos: lastObjectLiteral.pos,
+    end: lastObjectLiteral.end
+  }, [objectLiteral], insertType === InsertType.BEFORE || insertType === InsertType.FIRST ? "before" : "after");
+  ast = await regenerateAst(ast);
+  const templatePath = io.injectMode === "jamstack" ? TEMPLATE_PATH_JAMSTACK : TEMPLATE_PATH;
+  ast = await addFormatting(io, ast, formatComponentName, templatePath, field.name);
+  return await returnValue(ast, astType);
+}
+const addColumnToList = async (ast, selectedColumn, entity, field, fields8, insertType) => {
+  var _a2, _b, _c, _d;
+  let formatComponentName;
+  let lastObjectLiteral;
+  let objectLiteral;
+  if (!selectedColumn) {
+    const columnsNode = findByCondition(ast, (node) => {
+      return ts.isVariableDeclaration(node) && node.name.text === COLUMNS;
+    });
+    if (!columnsNode)
+      return void 0;
+    objectLiteral = (_b = (_a2 = columnsNode.initializer) == null ? void 0 : _a2.elements) == null ? void 0 : _b[0];
+    if (!objectLiteral)
+      return void 0;
+    const newColumn = renameColumn(objectLiteral, entity, field, fields8);
+    objectLiteral = newColumn.objectLiteral;
+    formatComponentName = newColumn.formatComponentName;
+    if (insertType && insertType === InsertType.FIRST) {
+      lastObjectLiteral = (_c = columnsNode.initializer) == null ? void 0 : _c.elements[0];
+    } else {
+      lastObjectLiteral = (_d = columnsNode.initializer) == null ? void 0 : _d.elements.slice(-1)[0];
+    }
+  } else {
+    lastObjectLiteral = findByCondition(ast, (node) => node.getText() === selectedColumn.getText());
+    if (!lastObjectLiteral)
+      return void 0;
+    const newColumn = renameColumn(lastObjectLiteral, entity, field, fields8);
+    objectLiteral = newColumn.objectLiteral;
+    formatComponentName = newColumn.formatComponentName;
+  }
+  return {
+    objectLiteral,
+    lastObjectLiteral,
+    formatComponentName
+  };
+};
+const getFormatComponent = (type2) => {
+  if (!type2)
+    return DEFAULT_FORMAT;
+  switch (type2.toLowerCase()) {
+    case "string":
+    case "number":
+    case "int":
+    case "jsonb":
+    case "uuid":
+      return DEFAULT_FORMAT;
+    case "boolean":
+      return BOOLEAN_FORMAT;
+    case "date":
+      return DATE_FORMAT;
+    case "datetime":
+    case "timestamp":
+    case "timestamptz":
+      return DATE_TIME_FORMAT;
+    case "time":
+    case "timez":
+      return TIME_FORMAT;
+    default:
+      return DEFAULT_FORMAT;
+  }
+};
+const nodeIncludes = (ast, fields8) => {
+  const found = findAllByCondition(ast, (node) => {
+    return fields8.includes(node.text);
+  });
+  return found;
+};
+const checkIfExist = (ast, field) => {
+  const found = findByCondition(ast, (node) => node.text === field);
+  return found ? true : false;
+};
+const returnValue = async (ast, astType) => astType === "string" ? await printFormattedSourceFile(ast) : ast;
+const renameColumn = (objectLiteral, entity, field, fields8) => {
+  let formatComponentName = void 0;
+  for (const objectProperty of objectLiteral.properties) {
+    const initializer = objectProperty.initializer;
+    const entityFields = fields8.map((field2) => field2.name);
+    entityFields.unshift(FIELD);
+    objectLiteral = replaceNames(objectLiteral, initializer, entity, field, fields8);
+    if (ts.isArrowFunction(initializer) || ts.isFunctionExpression(initializer)) {
+      formatComponentName = getFormatComponent(field.type);
+      objectLiteral = handleRenderCell(objectLiteral, initializer, formatComponentName);
+    }
+  }
+  return {
+    objectLiteral,
+    formatComponentName
+  };
+};
+const replaceNames = (objectLiteral, initializer, entity, field, fields8) => {
+  const entityFields = removeElementFromArray(fields8.map((field2) => field2.name), "id");
+  const newEntityFields = entityFields.map((field2) => {
+    return `${entity}.${field2}`;
+  });
+  const headerNames = fields8.map((field2) => {
+    return stringPrettyCapitalize(field2.name);
+  });
+  entityFields.unshift(FIELD);
+  headerNames.unshift(HEADER_NAME);
+  const foundReplace = nodeIncludes(initializer, [...entityFields, ...headerNames, ...newEntityFields]);
+  foundReplace.forEach((found) => {
+    objectLiteral = handleReplaceName(objectLiteral, found, entity, field.name, {
+      entityFields,
+      headerNames,
+      newEntityFields
+    });
+  });
+  return objectLiteral;
+};
+const handleReplaceName = (objectLiteral, found, entity, fieldName, arrays) => {
+  let newName;
+  if (arrays.entityFields.includes(found.text)) {
+    if (!(found.parent && ts.isJsxAttribute(found.parent) && ts.isIdentifier(found) && found.parent.name.getText() == found.getText())) {
+      if (ts.isPropertyAssignment(found.parent)) {
+        newName = `${entity}.${fieldName}`;
+      } else {
+        newName = fieldName;
+      }
+    }
+  } else if (arrays.headerNames.includes(found.text)) {
+    newName = stringPrettyCapitalize(fieldName);
+  } else {
+    newName = `${entity}.${fieldName}`;
+  }
+  return renameAndReplaceElementInAst(objectLiteral, found, found.text, newName);
+};
+const handleRenderCell = (objectLiteral, initializer, formatComponentName) => {
+  var _a2, _b;
+  const propertyName = (_b = (_a2 = initializer.parent) == null ? void 0 : _a2.name) == null ? void 0 : _b.text;
+  if (propertyName && propertyName === RENDER_CELL) {
+    const atributeName = initializer.parameters[0].name.text;
+    const newElement = createJsxSelfClosingElement(formatComponentName, [
+      {
+        name: VALUE,
+        initializer: atributeName
+      }
+    ]);
+    let elementToReplace;
+    if (ts.isFunctionExpression(initializer)) {
+      const returnStatement = findByCondition(objectLiteral, ts.isReturnStatement);
+      if (!returnStatement)
+        return {
+          objectLiteral,
+          formatComponentName: DEFAULT_FORMAT
+        };
+      elementToReplace = returnStatement.expression;
+    } else {
+      elementToReplace = initializer.body;
+    }
+    objectLiteral = replaceElementsInAst(objectLiteral, {
+      pos: elementToReplace.pos,
+      end: elementToReplace.end
+    }, newElement);
+  }
+  return objectLiteral;
+};
+const capitalize = (name) => {
+  return name.charAt(0).toUpperCase() + name.slice(1);
+};
+const updateAst = async (io, code2, entity, findString, fields8, introspection) => {
+  let alteredAst = createAst(code2);
+  const entityName = getEntityName(entity);
+  alteredAst = await renameEntityInCode(alteredAst, entityName, findString, introspection, PageType.LIST);
+  for (const field of fields8) {
+    if (isHidden(field.name))
+      continue;
+    const columnInfo = {
+      io,
+      ast: alteredAst,
+      entity,
+      field,
+      fields: fields8,
+      page: PageType.LIST,
+      selectedColumn: void 0
+    };
+    alteredAst = await generateColumn(columnInfo);
+  }
+  alteredAst = await removeFirst(alteredAst);
+  alteredAst = removeUnusedDefaultImport(alteredAst, `Format${entityName}Field`);
+  alteredAst = await regenerateAst(alteredAst);
+  alteredAst = flattenStringLiterals(alteredAst);
+  alteredAst = await regenerateAst(alteredAst);
+  return alteredAst;
+};
+const generateTsxFiles = async (io, entity, components, fields8) => {
+  const entityName = getEntityName(entity);
+  const files = [];
+  for (const component of components) {
+    const entityPath = io.injectMode === "jamstack" ? ENTITY_PATH_JAMSTACK : ENTITY_PATH;
+    const dataTableTemplate = await io.readFile(`${entityPath}${component}.tsx`);
+    const ast = await updateAst(io, dataTableTemplate, entity, ENTITY, fields8, io.introspection);
+    const sourceCode = await printFormattedSourceFile(ast);
+    const sourceCodePath = findRelativePath(`/src/pages/${entity}/`, `./${entityName}${component}.tsx`);
+    files.push({ path: io.cwd + sourceCodePath, data: sourceCode });
+  }
+  return files;
+};
+const addFormatting = async (io, ast, component, path2, field) => {
+  const code2 = await io.readFile(`${path2}/${component}.tsx`);
+  let childAst = await createAst(code2);
+  if (field) {
+    field = addOptionalChaining(field);
+    childAst = renameFields(childAst, FIELD, field, false);
+    childAst = await regenerateAst(childAst);
+  }
+  const inlineReact = await inlineReactComponent(ast, childAst, component);
+  return await regenerateAst(inlineReact);
+};
+const removeFirst = async (ast) => {
+  var _a2, _b;
+  const node = findByCondition(ast, (node2) => {
+    return ts.isVariableDeclaration(node2) && node2.name.text === COLUMNS;
+  });
+  if (!node)
+    return ast;
+  const objectLiteral = (_b = (_a2 = node.initializer) == null ? void 0 : _a2.elements) == null ? void 0 : _b[0];
+  ast = removeElementFromAst(ast, {
+    pos: objectLiteral.pos,
+    end: objectLiteral.end
+  });
+  return ast;
+};
+const isHidden = (fieldName) => {
+  if (fieldName === "id" || fieldName.match(/.*Path$/i) !== null)
+    return true;
+  return false;
+};
+const addOptionalChaining = (field) => {
+  if (field.includes(".")) {
+    const newFields = field.split(".").map((newField) => {
+      return newField + "?";
+    });
+    const lastField = newFields.pop();
+    newFields.push(lastField.replaceAll("?", ""));
+    field = newFields.join(".");
+  }
+  return field;
+};
+const getEntityName = (entity) => {
+  return entity.split("_").map((string) => capitalize(string)).join("");
+};
+const renameEntityInCode = async (ast, entityName, findString, introspection, pageType) => {
+  const nodes = findAllByCondition(ast, (node) => {
+    const text2 = node.getText();
+    return (ts.isStringLiteral(node) || ts.isIdentifier(node)) && text2 && text2.toUpperCase().includes(findString.toUpperCase());
+  });
+  const [queryRoot] = getRoots(introspection);
+  const field = queryRoot.fields.find((field2) => isOfTypePage(field2, entityName, pageType));
+  nodes.forEach((node) => {
+    const oldText = node.text;
+    let newText;
+    if (oldText.toLowerCase() === findString.toLowerCase()) {
+      newText = field.name;
+    } else {
+      newText = oldText.replace(findString, entityName);
+    }
+    ast = renameAndReplaceElementInAst(ast, node, oldText, newText);
+  });
+  return await regenerateAst(ast);
+};
+async function generatePages(introspection, io, options2) {
+  const entities = options2.entities;
+  const graphqlFiles = generateGraphqlFile(introspection, entities);
+  const pages = /* @__PURE__ */ new Map();
+  const files = [];
+  for (const graphqlFile of graphqlFiles) {
+    const path2 = findRelativePath(`/src/pages/${graphqlFile.entityName}/`, "./index.graphql");
+    pages.set(path2, graphqlFile.queries);
+    if (options2.generateReact) {
+      const components = ["ListView", "ListContainer"];
+      const fields8 = graphqlFile.fragments.map((field) => {
+        const newField = graphqlFile.properties.find((value2) => value2.name === field);
+        return newField;
+      }).filter((field) => field);
+      files.push(...await generateTsxFiles(io, graphqlFile.entityName, components, fields8));
+    }
+  }
+  return {
+    pages,
+    files
+  };
+}
+const removeColumnFromAst = (code2, source) => {
+  const node = findColumn(code2, source);
+  if (!node)
+    return createAst(code2);
+  const ast = createAst(code2);
+  const alteredAst = removeElementFromAst(ast, { pos: node.pos, end: node.end });
+  return alteredAst;
 };
 var commonjsGlobal = typeof globalThis !== "undefined" ? globalThis : typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : {};
 function getAugmentedNamespace(n2) {
@@ -63943,6 +65581,7 @@ const isColumnTitle = (el2) => el2.classList.contains("MuiDataGrid-columnHeaderT
 const getSourceOfTable = (el2, contentWindow) => {
   let currElement = el2;
   while (currElement.parentElement) {
+    console.log(currElement.classList);
     if (currElement.classList.contains("MuiDataGrid-root")) {
       return getSourceFromElement(currElement);
     }
@@ -64079,6 +65718,12 @@ const getDataFromChild = (id, rendererInterface) => {
     if ((_a2 = data.value) == null ? void 0 : _a2.source)
       return data.value;
   }
+};
+const getColumnTitle = (el2) => {
+  while (el2 && !isColumnTitle(el2)) {
+    el2 = el2.parentElement;
+  }
+  return el2;
 };
 /*! @license DOMPurify 2.3.6 | (c) Cure53 and other contributors | Released under the Apache license 2.0 and Mozilla Public License 2.0 | github.com/cure53/DOMPurify/blob/2.3.6/LICENSE */
 function _toConsumableArray(arr) {
@@ -64940,7 +66585,7 @@ const forceSaveLocaleElement = (target, inspectedElement, event2, workbench2, on
   const localeSourceUrl = LANGS_PATH + `/${langLocale}.json`;
   let data;
   workbench2.readFile(localeSourceUrl).then((originalLocaleStringJSON) => {
-    var _a3, _b2;
+    var _a3, _b2, _c;
     const originalMessages = parseLocaleJSON(originalLocaleStringJSON);
     let newValue = "";
     const spanNode = findSpanNode(target);
@@ -64948,7 +66593,7 @@ const forceSaveLocaleElement = (target, inspectedElement, event2, workbench2, on
       newValue = purify.sanitize(spanNode.innerHTML);
     }
     newValue = escapeSpecialChars(newValue);
-    const messageId = ((_b2 = (_a3 = inspectedElement == null ? void 0 : inspectedElement.props) == null ? void 0 : _a3.data) == null ? void 0 : _b2.id) || Object.values(spanNode == null ? void 0 : spanNode.attributes).find((att) => att.name === "data-message-id").value;
+    const messageId = ((_b2 = (_a3 = inspectedElement == null ? void 0 : inspectedElement.props) == null ? void 0 : _a3.data) == null ? void 0 : _b2.id) || ((_c = Object.values(spanNode == null ? void 0 : spanNode.attributes).find((att) => (att == null ? void 0 : att.name) === "data-message-id")) == null ? void 0 : _c.value);
     const found = originalMessages.find((message) => message.id === messageId);
     if (newValue === (found == null ? void 0 : found.value))
       return;
@@ -66635,10 +68280,10 @@ var rangyCore = { exports: {} };
           }
           iterateSubtree(iterator, assertNodeNotReadOnly);
           iterator.reset();
-          var returnValue = remover(iterator);
+          var returnValue2 = remover(iterator);
           iterator.detach();
           boundaryUpdater(this, sc, so, sc, so);
-          return returnValue;
+          return returnValue2;
         };
       }
       function createPrototypeRange(constructor, boundaryUpdater) {
@@ -67908,10 +69553,10 @@ var rangyCore = { exports: {} };
           }
         }
       };
-      selProto.eachRange = function(func, returnValue) {
+      selProto.eachRange = function(func, returnValue2) {
         for (var i2 = 0, len = this._ranges.length; i2 < len; ++i2) {
           if (func(this.getRangeAt(i2))) {
-            return returnValue;
+            return returnValue2;
           }
         }
       };
@@ -71170,7 +72815,7 @@ var rangyTextrange = { exports: {} };
         var tagName = el2.tagName.toLowerCase();
         return display2 == "block" && tableCssDisplayBlock && defaultDisplayValueForTag.hasOwnProperty(tagName) ? defaultDisplayValueForTag[tagName] : display2;
       }
-      function isHidden(node) {
+      function isHidden2(node) {
         var ancestors = getAncestorsAndSelf(node);
         for (var i2 = 0, len = ancestors.length; i2 < len; ++i2) {
           if (ancestors[i2].nodeType == 1 && getComputedDisplay(ancestors[i2]) == "none") {
@@ -71256,14 +72901,14 @@ var rangyTextrange = { exports: {} };
         if (!ancestor) {
           return true;
         }
-        if (isHidden(node)) {
+        if (isHidden2(node)) {
           return true;
         }
         return false;
       }
       function isCollapsedNode(node) {
         var type2 = node.nodeType;
-        return type2 == 7 || type2 == 8 || isHidden(node) || /^(script|style)$/i.test(node.nodeName) || isVisibilityHiddenTextNode(node) || isCollapsedWhitespaceNode(node);
+        return type2 == 7 || type2 == 8 || isHidden2(node) || /^(script|style)$/i.test(node.nodeName) || isVisibilityHiddenTextNode(node) || isCollapsedWhitespaceNode(node);
       }
       function isIgnoredNode(node, win) {
         var type2 = node.nodeType;
@@ -71987,7 +73632,7 @@ var rangyTextrange = { exports: {} };
         var it = createCharacterIterator(initialPos, backward, initialPos.session.getRangeBoundaryPosition(searchScopeRange, backward), findOptions.characterOptions);
         var text2 = "", chars = [], pos, currentChar, matchStartIndex, matchEndIndex;
         var result2, insideRegexMatch;
-        var returnValue = null;
+        var returnValue2 = null;
         function handleMatch(startIndex, endIndex) {
           var startPos = chars[startIndex].previousVisible();
           var endPos = chars[endIndex - 1];
@@ -72017,7 +73662,7 @@ var rangyTextrange = { exports: {} };
               matchEndIndex = matchStartIndex + result2[0].length;
               if (insideRegexMatch) {
                 if (!backward && matchEndIndex < text2.length || backward && matchStartIndex > 0) {
-                  returnValue = handleMatch(matchStartIndex, matchEndIndex);
+                  returnValue2 = handleMatch(matchStartIndex, matchEndIndex);
                   break;
                 }
               } else {
@@ -72025,26 +73670,26 @@ var rangyTextrange = { exports: {} };
               }
             }
           } else if ((matchStartIndex = text2.indexOf(searchTerm)) != -1) {
-            returnValue = handleMatch(matchStartIndex, matchStartIndex + searchTerm.length);
+            returnValue2 = handleMatch(matchStartIndex, matchStartIndex + searchTerm.length);
             break;
           }
         }
         if (insideRegexMatch) {
-          returnValue = handleMatch(matchStartIndex, matchEndIndex);
+          returnValue2 = handleMatch(matchStartIndex, matchEndIndex);
         }
         it.dispose();
-        return returnValue;
+        return returnValue2;
       }
       function createEntryPointFunction(func) {
         return function() {
           var sessionRunning = !!currentSession;
           var session = getSession();
           var args2 = [session].concat(util2.toArray(arguments));
-          var returnValue = func.apply(this, args2);
+          var returnValue2 = func.apply(this, args2);
           if (!sessionRunning) {
             endSession();
           }
-          return returnValue;
+          return returnValue2;
         };
       }
       function createRangeBoundaryMover(isStart, collapse) {
@@ -75918,6 +77563,106 @@ const listenToVsCodeEvent = (payload, fileTree, window2) => {
   vscodeFileSystemListener(payload, fileTree, window2);
   vscodeFileSearchListener(payload, fileTree, window2);
 };
+const LIST_VIEW = "ListView";
+const addField = async (props) => {
+  const { workbench: workbench2, page, entityName, columnToAdd, selectedColumn, insertType, source } = props;
+  const generatedDirectory = await workbench2.readDirectory(workbench2.cwd + `/src/pages/${entityName}`);
+  const newField = columnToAdd.split(".").slice(1).join(".");
+  const entity = columnToAdd.split(".")[0];
+  const fields8 = getFields(workbench2, entityName);
+  const tmp2 = fields8.find((field2) => field2.name == newField);
+  const field = {
+    name: newField,
+    type: tmp2 == null ? void 0 : tmp2.type
+  };
+  const columnInfo = {
+    io: workbench2,
+    ast: void 0,
+    entity,
+    field,
+    fields: fields8,
+    page,
+    selectedColumn,
+    insertType
+  };
+  if (page === PageType.LIST) {
+    const found = generatedDirectory.filter((file) => file.fileName.includes(LIST_VIEW));
+    if (source && source.fileName.includes(LIST_VIEW)) {
+      const code22 = await workbench2.readFile(source.fileName);
+      const encoded = encodeEmptyLines$1(code22);
+      columnInfo.ast = encoded;
+      const generatedCode = await generateColumn(columnInfo);
+      return {
+        path: source.fileName,
+        generatedCode
+      };
+    } else if (found) {
+      const tsxPath = found[0].filePath;
+      const code22 = await workbench2.readFile(tsxPath);
+      const encoded = encodeEmptyLines$1(code22);
+      columnInfo.ast = encoded;
+      const generatedCode = await generateColumn(columnInfo);
+      return {
+        path: tsxPath,
+        generatedCode
+      };
+    }
+  }
+  const fileName = source.fileName;
+  const code2 = await workbench2.readFile(fileName);
+  const node = astFindSource(code2, source);
+  const foundFields = findFields(node, fields8.map((field2) => field2.name));
+  if ((foundFields == null ? void 0 : foundFields.length) !== 1)
+    return;
+  const clonedAndRenamedFieldsFile = await cloneAndRenameElement(code2, source, foundFields[0], newField);
+  if (clonedAndRenamedFieldsFile)
+    return {
+      path: source.fileName,
+      generatedCode: clonedAndRenamedFieldsFile
+    };
+};
+const getFields = (workbench2, entityName) => {
+  var _a2, _b;
+  const fieldNames = [entityName];
+  const fields8 = (_b = (_a2 = workbench2.introspection.types.find((type2) => type2.name === entityName)) == null ? void 0 : _a2.fields) == null ? void 0 : _b.map((field) => {
+    return {
+      name: field.name,
+      type: getNestedOfType(field).name
+    };
+  });
+  for (let index2 = 0; index2 < fields8.length; index2++) {
+    const tmp2 = workbench2.introspection.types.find((type2) => type2.name === fields8[index2].type);
+    if (fieldNames.includes(tmp2.name)) {
+      fields8.splice(index2, 1);
+      index2--;
+      continue;
+    }
+    if (tmp2.kind !== "SCALAR")
+      fieldNames.push(tmp2.name);
+    if (tmp2.fields) {
+      fields8.push(...tmp2.fields.map((field) => {
+        return {
+          name: `${fields8[index2].name}.${field.name}`,
+          type: getNestedOfType(field).name
+        };
+      }));
+      fields8.splice(index2, 1);
+      index2--;
+    }
+  }
+  return fields8;
+};
+const removeFieldFromTable = async (workbench2, source) => {
+  if (source && source.fileName.includes(LIST_VIEW)) {
+    const code2 = await workbench2.readFile(source.fileName);
+    const encoded = encodeEmptyLines$1(code2);
+    const alteredAst = removeColumnFromAst(encoded, source);
+    if (!alteredAst)
+      return console.error("Unable to remove Element from AST");
+    const newCode = await printFormattedSourceFile$1(alteredAst);
+    await workbench2.writeFile(source.fileName, newCode);
+  }
+};
 const executeCommit = async (fetchUrl, accessToken, branchName, repositoryUrl, commitMessage, allChangedFiles) => {
   const repo = repositoryUrl.split("/");
   const headOid = await fetchHeadOid(fetchUrl, accessToken, branchName, repo[1], repo[0]);
@@ -76111,8 +77856,8 @@ function hasLocalStorage() {
 }
 storage.hasLocalStorage = hasLocalStorage;
 var uri$1 = {};
-var __assign$3 = commonjsGlobal && commonjsGlobal.__assign || function() {
-  __assign$3 = Object.assign || function(t) {
+var __assign$2 = commonjsGlobal && commonjsGlobal.__assign || function() {
+  __assign$2 = Object.assign || function(t) {
     for (var s, i2 = 1, n2 = arguments.length; i2 < n2; i2++) {
       s = arguments[i2];
       for (var p2 in s)
@@ -76121,7 +77866,7 @@ var __assign$3 = commonjsGlobal && commonjsGlobal.__assign || function() {
     }
     return t;
   };
-  return __assign$3.apply(this, arguments);
+  return __assign$2.apply(this, arguments);
 };
 Object.defineProperty(uri$1, "__esModule", { value: true });
 var URI_REGEX = new RegExp([
@@ -76158,10 +77903,10 @@ function safeParse(uriString) {
   }
 }
 function addQueryParams(uri2, query2) {
-  return __assign$3(__assign$3({}, uri2), { query: __assign$3(__assign$3({}, uri2.query), query2) });
+  return __assign$2(__assign$2({}, uri2), { query: __assign$2(__assign$2({}, uri2.query), query2) });
 }
 function setPath(uri2, path2) {
-  return __assign$3(__assign$3({}, uri2), { path: path2 });
+  return __assign$2(__assign$2({}, uri2), { path: path2 });
 }
 function queryToString(query2) {
   return Object.keys(query2).map(function(k2) {
@@ -76254,8 +77999,8 @@ function findMissingAuthServices(results2) {
   return missingServices;
 }
 helpers.findMissingAuthServices = findMissingAuthServices;
-var __assign$2 = commonjsGlobal && commonjsGlobal.__assign || function() {
-  __assign$2 = Object.assign || function(t) {
+var __assign$1 = commonjsGlobal && commonjsGlobal.__assign || function() {
+  __assign$1 = Object.assign || function(t) {
     for (var s, i2 = 1, n2 = arguments.length; i2 < n2; i2++) {
       s = arguments[i2];
       for (var p2 in s)
@@ -76264,7 +78009,7 @@ var __assign$2 = commonjsGlobal && commonjsGlobal.__assign || function() {
     }
     return t;
   };
-  return __assign$2.apply(this, arguments);
+  return __assign$1.apply(this, arguments);
 };
 var __awaiter = commonjsGlobal && commonjsGlobal.__awaiter || function(thisArg, _arguments, P, generator) {
   function adopt(value2) {
@@ -76820,7 +78565,7 @@ var NetlifyGraphAuth = function() {
               return [4, pkce_1.default.codeChallengeOfVerifier(verifier)];
             case 1:
               challenge = _a2.sent();
-              query2 = __assign$2({ service, app_id: this.siteId, response_type: "code", redirect_origin: this._redirectOrigin, redirect_path: this._redirectPath, communication_mode: this._communicationMode, code_challenge: challenge.challenge, code_challenge_method: challenge.method, state: stateParam }, scopes ? { scopes: scopes.join(",") } : {});
+              query2 = __assign$1({ service, app_id: this.siteId, response_type: "code", redirect_origin: this._redirectOrigin, redirect_path: this._redirectPath, communication_mode: this._communicationMode, code_challenge: challenge.challenge, code_challenge_method: challenge.method, state: stateParam }, scopes ? { scopes: scopes.join(",") } : {});
               if (useTestFlow) {
                 query2.test = "true";
               }
@@ -77092,7 +78837,7 @@ var NetlifyGraphAuth = function() {
                   serviceEnum: serviceInfo.service,
                   foreignUserIds: []
                 };
-                acc[serviceKey] = __assign$2(__assign$2({}, loggedInInfo), { usedTestFlow: serviceInfo.usedTestFlow, foreignUserIds: __spreadArray([
+                acc[serviceKey] = __assign$1(__assign$1({}, loggedInInfo), { usedTestFlow: serviceInfo.usedTestFlow, foreignUserIds: __spreadArray([
                   serviceInfo.foreignUserId
                 ], loggedInInfo.foreignUserIds, true) });
                 return acc;
@@ -77396,34 +79141,55 @@ const addElementHighlight = async (window2, injectMode, features) => {
     }
   });
   el2.addEventListener("clone", async (e) => {
-    var _a2, _b;
     const type2 = e.detail.type;
+    const element2 = e.detail.payload.element;
     if (type2 === "CLONE_ELEMENT") {
-      const element2 = e.detail.payload.element;
       handleIconClick(window2, element2, CLONE_ELEMENT);
     } else if (type2 === "CLONE_COLUMN") {
       const selectedFields2 = e.detail.payload.fields instanceof Array ? e.detail.payload.fields : [e.detail.payload.fields];
-      cloneColumn(selectedFields2);
+      const insertType = getInsertType(e.detail.payload.insertType);
+      const page = getPageTypeFromUrl();
+      const source = page === PageType.LIST ? getSourceFromElement(getColumnTitle(element2)) : getSourceFromElement(element2);
+      const entityName = getEntityNameFromUrl();
+      const code2 = (source == null ? void 0 : source.fileName) ? await workbench.readFile(source.fileName) : void 0;
+      const selectedColumn = code2 ? findColumn(code2, source) : void 0;
+      for (let selectedField of selectedFields2) {
+        const columnInfo = {
+          workbench,
+          source,
+          page,
+          entityName,
+          columnToAdd: selectedField,
+          selectedColumn,
+          insertType
+        };
+        const generatedFile = await addField(columnInfo);
+        await workbench.writeFile(generatedFile.path, generatedFile.generatedCode);
+      }
+      cloneColumn(selectedFields2, insertType, element2);
     } else if (type2 === "CLONE_AND_RENAME_ELEMENT") {
-      const element2 = e.detail.payload.element;
       const source = getSourceFromElement(element2);
+      const insertType = getInsertType(e.detail.payload.insertType);
       if (!source)
         return console.error("Source not found", el2);
       const selectedFields2 = e.detail.payload.fields;
-      const { fileName } = source;
-      const code2 = await workbench.readFile(fileName);
       const __typename = e.detail.payload.__typename;
-      const fields8 = (_b = (_a2 = workbench.introspection.types.find((type22) => type22.name === __typename)) == null ? void 0 : _a2.fields) == null ? void 0 : _b.map((field) => field.name);
-      const node = astFindSource(code2, source);
-      const foundFields = findFields(node, fields8);
-      const newField = selectedFields2.split(".").slice(1).join(".");
-      if ((foundFields == null ? void 0 : foundFields.length) !== 1)
-        return;
       const payloadArr = Array.isArray(selectedFields2) ? selectedFields2 : [selectedFields2];
-      payloadArr.forEach((field) => cloneColumn(field, __typename));
-      const clonedAndRenamedFieldsFile = await cloneAndRenameElement(code2, source, foundFields[0], newField);
-      if (clonedAndRenamedFieldsFile)
-        workbench.writeFile(fileName, clonedAndRenamedFieldsFile);
+      payloadArr.forEach((field) => cloneColumn(field, insertType, void 0, __typename));
+      const page = getPageTypeFromUrl();
+      const code2 = await workbench.readFile(source.fileName);
+      const selectedColumn = findColumn(code2, source);
+      const columnInfo = {
+        workbench,
+        source,
+        page,
+        entityName: __typename,
+        columnToAdd: selectedFields2,
+        selectedColumn,
+        insertType
+      };
+      const generatedFile = await addField(columnInfo);
+      await workbench.writeFile(generatedFile.path, generatedFile.generatedCode);
     }
   });
   el2.addEventListener("showsource", (e) => {
@@ -77548,15 +79314,33 @@ const getPageTypeFromUrl = () => {
   } else
     return PageType.LIST;
 };
-const cloneColumn = async (selectedFields2, entity) => {
+const cloneColumn = async (selectedFields2, insertType, el2, entity) => {
   var _a2;
   const entityFromUrl = (_a2 = entity != null ? entity : getEntityNameFromUrl()) != null ? _a2 : selectedFields2[0].split(".")[0];
   const entityName = entityExists(workbench.introspection.types, entityFromUrl) ? entityFromUrl : findTypenameValue();
   let source = {};
   source.columnToAdd = selectedFields2;
+  source.referenceField = el2 ? getFieldNameFromElement(el2) : void 0;
   source.entityName = entityName;
   source.page = getPageTypeFromUrl();
+  source.insertType = insertType;
   frontendActions.elementHighlightClick(CLONE_ELEMENT, source);
+};
+const getInsertType = (insertType) => {
+  if (!insertType)
+    return InsertType.AFTER;
+  switch (insertType) {
+    case "before":
+      return InsertType.BEFORE;
+    case "after":
+      return InsertType.AFTER;
+    case "first":
+      return InsertType.FIRST;
+    case "last":
+      return InsertType.LAST;
+    default:
+      return InsertType.AFTER;
+  }
 };
 const getAllTranslations = async (path2, io) => {
   if (path2) {
@@ -77610,6 +79394,7 @@ const handleRemoveTableColumn = async (window2, el2, type2) => {
     throw new Error("__REACT_DEVTOOLS_GLOBAL_HOOK__ not available on window object");
   const entityName = getEntityNameFromUrl();
   const source = getSourceOfTable(el2);
+  console.log("test", source);
   if (!source)
     return console.error("Source not found", el2);
   source.colIndex = getColIndex(el2);
@@ -77617,6 +79402,7 @@ const handleRemoveTableColumn = async (window2, el2, type2) => {
   source.page = PageType.LIST;
   source.entityName = entityName;
   source.columnToDelete = getFieldNameFromElement(el2);
+  await removeFieldFromTable(workbench, getSourceFromElement(getColumnTitle(el2)));
   if (!source)
     return console.error("Source not found", el2);
   frontendActions.elementHighlightClick(type2, source);
@@ -77669,6 +79455,7 @@ const handleGeneratePageClick = async (window2, type2, event2) => {
       const source = {};
       source.fieldToGenerate = e.selectedFields;
       source.typeOfField = e.selectedFields.type;
+      source.generateReact = e.generateReact;
       source.intro = introDeepCopy;
       frontendActions.elementHighlightClick(type2, source);
       hide();
@@ -84045,7 +85832,7 @@ const addFrontendListeners = (messagingService2, injectMode, features) => {
   });
   messagingService2.addEventListener(CLONE_ELEMENT, async (source) => {
     var _a2;
-    const { fileName, columnToAdd, entityName, clonedColumnIndex, page } = source;
+    const { fileName, columnToAdd, entityName, referenceField, page, insertType } = source;
     if (columnToAdd) {
       const cwd = (_a2 = workbench == null ? void 0 : workbench.cwd) != null ? _a2 : guessCurrentWorkingDirectory();
       let pathToGraphqlFile = cwd + `/src/pages/${entityName}/index.graphql`;
@@ -84053,7 +85840,7 @@ const addFrontendListeners = (messagingService2, injectMode, features) => {
         pathToGraphqlFile = pathToGraphqlFile.substring(1, pathToGraphqlFile.length);
       }
       const graphQLFile = await workbench.readFile(pathToGraphqlFile);
-      const modifiedGraphQLFile = await iteriaGeneratorWorker.addColumn(graphQLFile, introspectionDeepCopy(workbench.introspection), entityName, columnToAdd, page, clonedColumnIndex);
+      const modifiedGraphQLFile = await addColumn(graphQLFile, introspectionDeepCopy(workbench.introspection), entityName, columnToAdd, page, referenceField, insertType);
       workbench.writeFile(pathToGraphqlFile, modifiedGraphQLFile).then(() => delay(2e3)).then(() => {
         window.postMessage({
           type: "SHOW_USER_FEEDBACK",
@@ -84136,7 +85923,11 @@ const addFrontendListeners = (messagingService2, injectMode, features) => {
       if ((cwd == null ? void 0 : cwd.charAt(0)) !== "/" && pathToGraphqlFile.charAt(0) === "/")
         pathToGraphqlFile = pathToGraphqlFile.substring(1, pathToGraphqlFile.length);
       const graphQLFile = await workbench.readFile(pathToGraphqlFile);
-      const modifiedGraphQLFile = await iteriaGeneratorWorker.removeColumn(graphQLFile, introspectionDeepCopy(workbench.introspection), entityName, columnToDelete, page, colIndex);
+      let fieldToDelete = columnToDelete;
+      if (fieldToDelete.split(".")[0] === entityName) {
+        fieldToDelete = fieldToDelete.split(".").slice(1).join(".");
+      }
+      const modifiedGraphQLFile = await iteriaGeneratorWorker.removeColumn(graphQLFile, introspectionDeepCopy(workbench.introspection), entityName, fieldToDelete, page, colIndex);
       await workbench.writeFile(pathToGraphqlFile, modifiedGraphQLFile).then(() => {
         window.postMessage({
           type: "SHOW_USER_FEEDBACK",
@@ -84196,12 +85987,16 @@ const addFrontendListeners = (messagingService2, injectMode, features) => {
       const fieldType = queryRoot.fields.find((field) => field.name === selectedField);
       return getNestedOfType(fieldType).name;
     }).filter(Boolean);
-    iteriaGeneratorWorker.generatePages(introspectionDeepCopy(intro), {
-      entities: fieldTypes
-    }).then((generatedPages) => {
-      generatedPages.forEach((val, key) => {
+    generatePages(intro, workbench, {
+      entities: fieldTypes,
+      generateReact: source.generateReact
+    }).then(async (generatedPages) => {
+      generatedPages.pages.forEach((val, key) => {
         const relativePath = key.split("/src")[1] ? "/src" + key.split("/src")[1] : key;
         workbench.writeFile(cwd + relativePath, val);
+      });
+      delay(2e3).then(() => {
+        workbench.writeFiles(generatedPages.files);
       });
       delay(2e3).then(() => {
         window.postMessage({
@@ -90636,8 +92431,8 @@ process$1.umask = function() {
   return 0;
 };
 var dist = {};
-var __assign$1 = function() {
-  __assign$1 = Object.assign || function __assign2(t) {
+var __assign = function() {
+  __assign = Object.assign || function __assign2(t) {
     for (var s, i2 = 1, n2 = arguments.length; i2 < n2; i2++) {
       s = arguments[i2];
       for (var p2 in s)
@@ -90646,7 +92441,7 @@ var __assign$1 = function() {
     }
     return t;
   };
-  return __assign$1.apply(this, arguments);
+  return __assign.apply(this, arguments);
 };
 var SUPPORTED_LOCALE$1 = {
   tr: {
@@ -90731,7 +92526,7 @@ function pascalCase$1(input, options2) {
   if (options2 === void 0) {
     options2 = {};
   }
-  return noCase$1(input, __assign$1({ delimiter: "", transform: pascalCaseTransform }, options2));
+  return noCase$1(input, __assign({ delimiter: "", transform: pascalCaseTransform }, options2));
 }
 function camelCaseTransform(input, index2) {
   if (index2 === 0)
@@ -90747,34 +92542,8 @@ function camelCase$1(input, options2) {
   if (options2 === void 0) {
     options2 = {};
   }
-  return pascalCase$1(input, __assign$1({ transform: camelCaseTransform }, options2));
+  return pascalCase$1(input, __assign({ transform: camelCaseTransform }, options2));
 }
-/*! *****************************************************************************
-Copyright (c) Microsoft Corporation.
-
-Permission to use, copy, modify, and/or distribute this software for any
-purpose with or without fee is hereby granted.
-
-THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
-REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
-AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
-INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
-LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
-OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
-PERFORMANCE OF THIS SOFTWARE.
-***************************************************************************** */
-var __assign = function() {
-  __assign = Object.assign || function __assign2(t) {
-    for (var s, i2 = 1, n2 = arguments.length; i2 < n2; i2++) {
-      s = arguments[i2];
-      for (var p2 in s)
-        if (Object.prototype.hasOwnProperty.call(s, p2))
-          t[p2] = s[p2];
-    }
-    return t;
-  };
-  return __assign.apply(this, arguments);
-};
 function upperCaseFirst$1(input) {
   return input.charAt(0).toUpperCase() + input.substr(1);
 }
@@ -90842,7 +92611,7 @@ function dotCase$1(input, options2) {
   if (options2 === void 0) {
     options2 = {};
   }
-  return noCase$1(input, __assign$1({ delimiter: "." }, options2));
+  return noCase$1(input, __assign({ delimiter: "." }, options2));
 }
 function headerCase$1(input, options2) {
   if (options2 === void 0) {
@@ -90854,7 +92623,7 @@ function paramCase$1(input, options2) {
   if (options2 === void 0) {
     options2 = {};
   }
-  return dotCase$1(input, __assign$1({ delimiter: "-" }, options2));
+  return dotCase$1(input, __assign({ delimiter: "-" }, options2));
 }
 function pathCase$1(input, options2) {
   if (options2 === void 0) {
@@ -96124,6 +97893,10 @@ class DevWorkbench {
         if (path2.includes(".env"))
           await this.parseEnvs();
         frontendActions.transpileSingleFile(path2, data, this.transpiledFiles, this.env);
+        if (path2.includes(".tsx")) {
+          files = this.transformFsTreeToObject(this.getRoot());
+          notifyVSCodeFrontend(path2, data);
+        }
       }
     });
     messagingService2.addEventListener(GET_PROJECT_FROM_ARCHIVE, async ({ url }) => {
@@ -96167,7 +97940,9 @@ class DevWorkbench {
     await this.writeFiles(filesToWrite);
   }
   async readFile(path2, encoding) {
-    return await this.fs.readFile(path2, encoding, this.injectMode);
+    const content2 = await this.fs.readFile(path2, encoding, this.injectMode);
+    if (!(content2 instanceof VSCodeFSTransferableError))
+      return content2;
   }
   async readDirectory(path2, extensions, exclude, include, depth2) {
     return await this.fs.readDirectory(path2, extensions, exclude, include, depth2, this.injectMode);
@@ -99644,4 +101419,4 @@ var index = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty(
   frontendActions,
   devServer
 }, Symbol.toStringTag, { value: "Module" }));
-export { isRequiredInputField as $, GraphQLSchema as A, objectValues$1 as B, GraphQLDirective as C, isScalarType as D, isInterfaceType as E, GraphQLInterfaceType as F, GraphQLObjectType as G, isUnionType as H, GraphQLUnionType as I, GraphQLEnumType as J, Kind as K, GraphQLInputObjectType as L, isListType as M, GraphQLList as N, isNonNullType as O, GraphQLNonNull as P, isSource as Q, Source as R, SYMBOL_ASYNC_ITERATOR as S, TypeInfo as T, Lexer as U, TokenKind as V, isPunctuatorTokenKind as W, dedentBlockStringValue$1 as X, getBlockStringIndentation$1 as Y, isRequiredArgument as Z, isSpecifiedScalarType as _, printIntrospectionSchema as a, assertValidSchema as a$, print as a0, isNamedType as a1, astFromValue as a2, keyMap as a3, version as a4, versionInfo as a5, GraphQLScalarType as a6, specifiedScalarTypes as a7, GraphQLInt as a8, GraphQLFloat as a9, isOutputType as aA, isLeafType as aB, isCompositeType as aC, isAbstractType as aD, isWrappingType as aE, isNullableType as aF, isSpecifiedDirective as aG, assertSchema as aH, assertDirective as aI, assertType as aJ, assertScalarType as aK, assertObjectType as aL, assertInterfaceType as aM, assertUnionType as aN, assertEnumType as aO, assertInputObjectType as aP, assertListType as aQ, assertNonNullType as aR, assertInputType as aS, assertOutputType as aT, assertLeafType as aU, assertCompositeType as aV, assertAbstractType as aW, assertWrappingType as aX, assertNullableType as aY, assertNamedType as aZ, getNullableType as a_, GraphQLString as aa, GraphQLBoolean as ab, GraphQLID as ac, specifiedDirectives as ad, GraphQLIncludeDirective as ae, GraphQLSkipDirective as af, GraphQLDeprecatedDirective as ag, GraphQLSpecifiedByDirective as ah, TypeKind as ai, DEFAULT_DEPRECATION_REASON as aj, introspectionTypes as ak, __Schema as al, __Directive as am, __DirectiveLocation as an, __Type as ao, __Field as ap, __InputValue as aq, __EnumValue as ar, __TypeKind as as, SchemaMetaFieldDef as at, TypeMetaFieldDef as au, TypeNameMetaFieldDef as av, isSchema as aw, isDirective as ax, isType as ay, isInputType as az, buildASTSchema as b, printType as b$, Token as b0, Location as b1, getLocation as b2, printLocation as b3, printSourceLocation as b4, parseValue as b5, parseType as b6, visitInParallel as b7, getVisitFn as b8, BREAK as b9, PossibleFragmentSpreadsRule as bA, ProvidedRequiredArgumentsRule as bB, ScalarLeafsRule as bC, SingleFieldSubscriptionsRule as bD, UniqueArgumentNamesRule as bE, UniqueDirectivesPerLocationRule as bF, UniqueFragmentNamesRule as bG, UniqueInputFieldNamesRule as bH, UniqueOperationNamesRule as bI, UniqueVariableNamesRule as bJ, ValuesOfCorrectTypeRule as bK, VariablesAreInputTypesRule as bL, VariablesInAllowedPositionRule as bM, LoneSchemaDefinitionRule as bN, UniqueOperationTypesRule as bO, UniqueTypeNamesRule as bP, UniqueEnumValueNamesRule as bQ, UniqueFieldDefinitionNamesRule as bR, UniqueDirectiveNamesRule as bS, PossibleTypeExtensionsRule as bT, syntaxError$1 as bU, printError as bV, getIntrospectionQuery as bW, buildClientSchema as bX, buildSchema as bY, getDescription as bZ, printSchema as b_, DirectiveLocation as ba, isDefinitionNode as bb, isExecutableDefinitionNode as bc, isSelectionNode as bd, isValueNode as be, isTypeNode as bf, isTypeSystemDefinitionNode as bg, isTypeDefinitionNode as bh, isTypeSystemExtensionNode as bi, isTypeExtensionNode as bj, getDirectiveValues as bk, ValidationContext as bl, specifiedRules as bm, ExecutableDefinitionsRule as bn, FieldsOnCorrectTypeRule as bo, FragmentsOnCompositeTypesRule as bp, KnownArgumentNamesRule as bq, KnownDirectivesRule as br, KnownFragmentNamesRule as bs, KnownTypeNamesRule as bt, LoneAnonymousOperationRule as bu, NoFragmentCyclesRule as bv, NoUndefinedVariablesRule as bw, NoUnusedFragmentsRule as bx, NoUnusedVariablesRule as by, OverlappingFieldsCanBeMergedRule as bz, isObjectType as c, typeFromAST as c0, valueFromAST as c1, valueFromASTUntyped as c2, coerceInputValue as c3, concatAST as c4, isEqualType as c5, isTypeSubTypeOf as c6, doTypesOverlap as c7, assertValidName as c8, isValidNameError as c9, commonjsGlobal as ca, pathBrowserify as cb, __assign as cc, getAugmentedNamespace as cd, printSchemaWithDirectives as ce, pascalCase as cf, getBaseType as cg, getRootTypes as ch, DetailedError as ci, removeNonNullWrapper as cj, resolveExternalModuleAndFn as ck, isObjectLike$8 as cl, getVariableValues as cm, safeArrayFrom as cn, index as co, getNamedType as d, extendSchema as e, visitWithTypeInfo as f, getCachedDocumentNodeFromSchema as g, isIntrospectionType as h, isEnumType as i, validateSchema as j, validate as k, getArgumentValues as l, locatedError as m, pathToArray as n, oldVisit as o, parse$6 as p, inspect$1 as q, removeFederation as r, GraphQLError as s, addPath as t, invariant as u, visit as v, isInputObjectType as w, devAssert as x, keyValMap as y, naturalCompare as z };
+export { isRequiredInputField as $, GraphQLSchema as A, objectValues$1 as B, GraphQLDirective as C, isScalarType as D, isInterfaceType as E, GraphQLInterfaceType as F, GraphQLObjectType as G, isUnionType as H, GraphQLUnionType as I, GraphQLEnumType as J, Kind as K, GraphQLInputObjectType as L, isListType as M, GraphQLList as N, isNonNullType as O, GraphQLNonNull as P, isSource as Q, Source as R, SYMBOL_ASYNC_ITERATOR as S, TypeInfo as T, Lexer as U, TokenKind as V, isPunctuatorTokenKind as W, dedentBlockStringValue$1 as X, getBlockStringIndentation$1 as Y, isRequiredArgument as Z, isSpecifiedScalarType as _, printIntrospectionSchema as a, assertValidSchema as a$, print as a0, isNamedType as a1, astFromValue as a2, keyMap as a3, version as a4, versionInfo as a5, GraphQLScalarType as a6, specifiedScalarTypes as a7, GraphQLInt as a8, GraphQLFloat as a9, isOutputType as aA, isLeafType as aB, isCompositeType as aC, isAbstractType as aD, isWrappingType as aE, isNullableType as aF, isSpecifiedDirective as aG, assertSchema as aH, assertDirective as aI, assertType as aJ, assertScalarType as aK, assertObjectType as aL, assertInterfaceType as aM, assertUnionType as aN, assertEnumType as aO, assertInputObjectType as aP, assertListType as aQ, assertNonNullType as aR, assertInputType as aS, assertOutputType as aT, assertLeafType as aU, assertCompositeType as aV, assertAbstractType as aW, assertWrappingType as aX, assertNullableType as aY, assertNamedType as aZ, getNullableType as a_, GraphQLString as aa, GraphQLBoolean as ab, GraphQLID as ac, specifiedDirectives as ad, GraphQLIncludeDirective as ae, GraphQLSkipDirective as af, GraphQLDeprecatedDirective as ag, GraphQLSpecifiedByDirective as ah, TypeKind as ai, DEFAULT_DEPRECATION_REASON as aj, introspectionTypes as ak, __Schema as al, __Directive as am, __DirectiveLocation as an, __Type as ao, __Field as ap, __InputValue as aq, __EnumValue as ar, __TypeKind as as, SchemaMetaFieldDef as at, TypeMetaFieldDef as au, TypeNameMetaFieldDef as av, isSchema as aw, isDirective as ax, isType as ay, isInputType as az, buildASTSchema as b, printType as b$, Token as b0, Location as b1, getLocation as b2, printLocation as b3, printSourceLocation as b4, parseValue as b5, parseType as b6, visitInParallel as b7, getVisitFn as b8, BREAK as b9, PossibleFragmentSpreadsRule as bA, ProvidedRequiredArgumentsRule as bB, ScalarLeafsRule as bC, SingleFieldSubscriptionsRule as bD, UniqueArgumentNamesRule as bE, UniqueDirectivesPerLocationRule as bF, UniqueFragmentNamesRule as bG, UniqueInputFieldNamesRule as bH, UniqueOperationNamesRule as bI, UniqueVariableNamesRule as bJ, ValuesOfCorrectTypeRule as bK, VariablesAreInputTypesRule as bL, VariablesInAllowedPositionRule as bM, LoneSchemaDefinitionRule as bN, UniqueOperationTypesRule as bO, UniqueTypeNamesRule as bP, UniqueEnumValueNamesRule as bQ, UniqueFieldDefinitionNamesRule as bR, UniqueDirectiveNamesRule as bS, PossibleTypeExtensionsRule as bT, syntaxError$1 as bU, printError as bV, getIntrospectionQuery as bW, buildClientSchema as bX, buildSchema as bY, getDescription as bZ, printSchema as b_, DirectiveLocation as ba, isDefinitionNode as bb, isExecutableDefinitionNode as bc, isSelectionNode as bd, isValueNode as be, isTypeNode as bf, isTypeSystemDefinitionNode as bg, isTypeDefinitionNode as bh, isTypeSystemExtensionNode as bi, isTypeExtensionNode as bj, getDirectiveValues as bk, ValidationContext as bl, specifiedRules as bm, ExecutableDefinitionsRule as bn, FieldsOnCorrectTypeRule as bo, FragmentsOnCompositeTypesRule as bp, KnownArgumentNamesRule as bq, KnownDirectivesRule as br, KnownFragmentNamesRule as bs, KnownTypeNamesRule as bt, LoneAnonymousOperationRule as bu, NoFragmentCyclesRule as bv, NoUndefinedVariablesRule as bw, NoUnusedFragmentsRule as bx, NoUnusedVariablesRule as by, OverlappingFieldsCanBeMergedRule as bz, isObjectType as c, typeFromAST as c0, valueFromAST as c1, valueFromASTUntyped as c2, coerceInputValue as c3, concatAST as c4, isEqualType as c5, isTypeSubTypeOf as c6, doTypesOverlap as c7, assertValidName as c8, isValidNameError as c9, commonjsGlobal as ca, pathBrowserify as cb, getAugmentedNamespace as cc, printSchemaWithDirectives as cd, pascalCase as ce, getBaseType as cf, getRootTypes as cg, DetailedError as ch, removeNonNullWrapper as ci, resolveExternalModuleAndFn as cj, isObjectLike$8 as ck, getVariableValues as cl, safeArrayFrom as cm, index as cn, getNamedType as d, extendSchema as e, visitWithTypeInfo as f, getCachedDocumentNodeFromSchema as g, isIntrospectionType as h, isEnumType as i, validateSchema as j, validate as k, getArgumentValues as l, locatedError as m, pathToArray as n, oldVisit as o, parse$6 as p, inspect$1 as q, removeFederation as r, GraphQLError as s, addPath as t, invariant as u, visit as v, isInputObjectType as w, devAssert as x, keyValMap as y, naturalCompare as z };
