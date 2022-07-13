@@ -77192,7 +77192,7 @@ const getFields = (workbench2, entityName) => {
   return fields8;
 };
 const removeFieldFromTable = async (workbench2, source) => {
-  if (source && source.fileName.includes(LIST_VIEW)) {
+  if (source && source.fileName && source.fileName.includes(LIST_VIEW)) {
     const code2 = await workbench2.readFile(source.fileName);
     const encoded = encodeEmptyLines$1(code2);
     const alteredAst = removeColumnFromAst(encoded, source);
@@ -85529,7 +85529,7 @@ const addFrontendListeners = (messagingService2, injectMode, features) => {
         const relativePath = key.split("/src")[1] ? "/src" + key.split("/src")[1] : key;
         workbench.writeFile(cwd + relativePath, val);
       });
-      delay(2e3).then(() => {
+      delay(4e3).then(() => {
         workbench.writeFiles(generatedPages.files);
       });
       delay(2e3).then(() => {
