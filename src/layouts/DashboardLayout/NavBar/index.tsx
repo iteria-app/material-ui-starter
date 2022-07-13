@@ -1,6 +1,6 @@
 import React from 'react'
 import { Box, Drawer, Typography, styled, List } from '@mui/material'
-import { Users, Home } from 'react-feather'
+import { Users, Home, Code } from 'react-feather'
 import { MenuItems, calculateMenuItems } from '@iteria-app/component-templates'
 import * as graphqlGen from '../../../generated/graphql'
 import Logo from '../../../components/Logo'
@@ -57,7 +57,7 @@ const NavBar = ({ open, drawerWidth }: NavBarProps): JSX.Element => {
                 label: 'menu.dashboard',
                 title: 'Dashboard',
               },
-              ...calculateMenuItems(graphqlGen, Users),
+              ...calculateMenuItems(graphqlGen, Users, Code),
             ]}
           />
         </List>
