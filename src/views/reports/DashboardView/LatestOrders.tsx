@@ -89,7 +89,6 @@ const LatestOrders: React.FC<any> = ({ className, ...rest }) => {
   return (
     <Card {...rest}>
       <CardHeader title="Latest Orders" />
-      <Divider />
       <PerfectScrollbar>
         <Box minWidth={800}>
           <Table>
@@ -110,12 +109,12 @@ const LatestOrders: React.FC<any> = ({ className, ...rest }) => {
             <TableBody>
               {orders.map((order) => (
                 <TableRow hover key={order.id}>
-                  <TableCell>{order.ref}</TableCell>
-                  <TableCell>{order.customer.name}</TableCell>
-                  <TableCell>
+                  <TableCell sx={{padding: '12px!important'}}>{order.ref}</TableCell>
+                  <TableCell sx={{padding: '12px!important'}}>{order.customer.name}</TableCell>
+                  <TableCell sx={{padding: '12px!important'}}>
                     {moment(order.createdAt).format('DD/MM/YYYY')}
                   </TableCell>
-                  <TableCell>
+                  <TableCell sx={{padding: '12px!important'}}>
                     <Chip color="primary" label={order.status} size="small" />
                   </TableCell>
                 </TableRow>
