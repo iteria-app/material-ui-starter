@@ -78688,8 +78688,9 @@ const addElementHighlight = async (window2, injectMode, features) => {
       const entityName = getEntityNameFromUrl();
       const code2 = (source == null ? void 0 : source.fileName) ? await workbench.readFile(source.fileName) : void 0;
       const selectedColumn = code2 ? findColumn(code2, source) : void 0;
-      for (let selectedField of selectedFields2) {
-        if (code2 && selectedColumn) {
+      console.log("test", source, entityName, code2, selectedColumn, selectedFields2);
+      if (code2 && selectedColumn) {
+        for (let selectedField of selectedFields2) {
           const columnInfo = {
             workbench,
             source,
