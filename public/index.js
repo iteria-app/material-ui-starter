@@ -62870,7 +62870,7 @@ async function fetchHasuraMetadata(body2, workbench2) {
   });
   return response;
 }
-const capitalize$1 = (text2) => {
+const capitalize$2 = (text2) => {
   return text2.charAt(0).toUpperCase() + text2.slice(1);
 };
 const lowerFirstLetter = (text2) => {
@@ -62878,7 +62878,7 @@ const lowerFirstLetter = (text2) => {
 };
 const capitalizeFirstLetters = (name) => {
   return name.split("_").map((element2) => {
-    return capitalize$1(element2);
+    return capitalize$2(element2);
   }).join("");
 };
 const runSQLQuery = (sqlQuery) => {
@@ -63590,6 +63590,14 @@ function generateSQLData(introspection, tablesInfo, constraints) {
     });
   });
   return sqlData;
+}
+const capitalize$1 = (string) => {
+  return string[0].toUpperCase() + string.slice(1);
+};
+function upperLetterInWord(queryName) {
+  let arr = queryName.split("_");
+  arr = arr.map((item) => capitalize$1(item));
+  return arr.join("_");
 }
 const filterIntrospection = (introspection, entityName) => {
   const introspectionInstance = JSON.parse(JSON.stringify(introspection));
@@ -64430,14 +64438,21 @@ const renameEntityInCode = async (ast, entityName, findString, introspection, pa
     return (ts.isStringLiteral(node) || ts.isIdentifier(node)) && text2 && text2.toUpperCase().includes(findString.toUpperCase());
   });
   const [queryRoot] = getRoots(introspection);
-  const field = queryRoot.fields.find((field2) => isOfTypePage(field2, entityName, pageType));
+  let field = queryRoot.fields.find((field2) => isOfTypePage(field2, entityName, pageType));
+  if (!field) {
+    field = queryRoot.fields.find((field2) => (field2 == null ? void 0 : field2.name.replace(/_/g, "").toLocaleLowerCase()) === entityName.toLocaleLowerCase());
+  }
   nodes.forEach((node) => {
     const oldText = node.text;
     let newText;
     if (oldText.toLowerCase() === findString.toLowerCase()) {
       newText = field.name;
     } else {
-      newText = oldText.replace(findString, entityName);
+      if (oldText.toLowerCase() === `use${findString}Query`.toLowerCase()) {
+        newText = oldText.replace(findString, upperLetterInWord(field.name));
+      } else {
+        newText = oldText.replace(findString, entityName);
+      }
     }
     ast = renameAndReplaceElementInAst(ast, node, oldText, newText);
   });
