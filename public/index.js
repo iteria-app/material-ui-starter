@@ -77188,7 +77188,7 @@ const getFields = (workbench2, entityName) => {
   return fields8;
 };
 const removeFieldFromTable = async (workbench2, source) => {
-  if (source && source.fileName.includes(LIST_VIEW)) {
+  if (source && source.fileName && source.fileName.includes(LIST_VIEW)) {
     const code2 = await workbench2.readFile(source.fileName);
     const encoded = encodeEmptyLines$1(code2);
     const alteredAst = removeColumnFromAst(encoded, source);
