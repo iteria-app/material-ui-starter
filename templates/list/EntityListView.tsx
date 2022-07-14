@@ -54,13 +54,7 @@ export interface IEntityTableProps {
 }
 
 const EntityListView: React.FC<IEntityTableProps> = (
-  props: IEntityTableProps
-) => {
-  const navigate = useNavigate()
-  const [siblingCount, setSiblingCount] = useState(1)
-  const [hideNextButton, setHideNextButton] = useState(false)
-
-  const {
+  { 
     onChangePage,
     onPageSize,
     setCountToRows,
@@ -71,12 +65,16 @@ const EntityListView: React.FC<IEntityTableProps> = (
     onSort,
     loading,
     error,
-  } = props
+    data
+  }) => {
+  const navigate = useNavigate()
+  const [siblingCount, setSiblingCount] = useState(1)
+  const [hideNextButton, setHideNextButton] = useState(false)
 
   useEffect(() => {
-    if (!props?.data?.fetching) {
+    if (!data?.fetching) {
       controlNextButton({
-        data: props?.data?.Entity ?? [],
+        data: data?.Entity ?? [],
         countRows: countRows,
         hideNextButton: hideNextButton,
         setCountToRows: setCountToRows,
@@ -85,22 +83,22 @@ const EntityListView: React.FC<IEntityTableProps> = (
         pageSize: pageSize,
       })
       controlSiblings(
-        props?.data?.Entity ?? [],
+        data?.Entity ?? [],
         pageSize,
         page,
         setSiblingCount
       )
     }
-  }, [props?.data?.Entity])
+  }, [data?.Entity])
 
   const columns: GridColDef[] = [
-    {
-      field: 'field',
+    { 
+      field: 'FIELD', 
       renderHeader: () => (
         <Translate
           entityName={'Entity'}
-          fieldName={'field'}
-          defaultMessage={'headerName'}
+          fieldName={'FIELD'}
+          defaultMessage={'HEADER_NAME'}
         />
       ),
       width: 150,
@@ -121,7 +119,7 @@ const EntityListView: React.FC<IEntityTableProps> = (
 
   const handleFilter = useCallback(
     (filter) => {
-      onFilter(filterDataGrid(filter, columns))
+      onFilter?.(filterDataGrid(filter, columns))
       onChangePage(1)
     },
     [onFilter, handlePage]
@@ -141,7 +139,7 @@ const EntityListView: React.FC<IEntityTableProps> = (
 
   return (
     <DataGrid
-      rows={props?.data?.Entity ?? []}
+      rows={data?.Entity ?? []}
       columns={columns}
       loading={loading}
       hideFooterPagination

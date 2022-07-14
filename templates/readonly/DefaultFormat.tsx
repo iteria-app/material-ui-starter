@@ -1,3 +1,3 @@
 export const DefaultFormat = ({ value }) => {
-  return value.row.field
+  return value.row.FIELD
 }

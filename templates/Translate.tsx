@@ -6,6 +6,7 @@ interface TranslateProps {
   fieldName?: string
   defaultMessage?: string
   values?: Record<string, React.ReactNode>
+  children?: JSX.Element
 }
 
 const Translate: React.FC<TranslateProps> = ({
@@ -13,6 +14,7 @@ const Translate: React.FC<TranslateProps> = ({
   fieldName,
   defaultMessage,
   values,
+  children,
 }) => {
   let dataField = fieldName
   let dataEntity = entityName
@@ -42,7 +44,9 @@ const Translate: React.FC<TranslateProps> = ({
         (fieldName ? `${fieldName} (${entityName})` : entityName)
       }
       values={values}
-    />
+    >
+      {children}
+    </FormattedMessage>
   )
 }
 

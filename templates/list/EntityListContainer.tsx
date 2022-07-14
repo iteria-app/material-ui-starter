@@ -1,7 +1,7 @@
 import React from 'react'
 import { useEntityQuery } from '../../generated/graphql'
 import EntityListView from './EntityListView'
-import { useFilter, useLocale, ErrorBoundary, QueryBoundary } from '@iteria-app/component-templates'
+import { ErrorBoundary, QueryBoundary, useFilter, useLocale } from '@iteria-app/component-templates'
 import { IntlProvider } from 'react-intl'
 import { messages } from '../../locale'
 
@@ -25,7 +25,7 @@ const EntityListContainer: React.FC = () => {
         <IntlProvider 
           locale={locale}
           messages={messagesObject} 
-          onError={() => {}}
+          onError={() => console.debug}
         >
           <EntityListView
             data={data?.data}
