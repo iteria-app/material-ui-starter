@@ -53274,7 +53274,6 @@ const showLoadingSnackbar = (message) => {
 };
 const CLONE_ELEMENT = "CLONE_ELEMENT";
 const CLONE_AND_RENAME_ELEMENT = "CLONE_AND_RENAME_ELEMENT";
-const TRANSLATE_ELEMENT = "TRANSLATE_ELEMENT";
 const NAVIGATE_TO_SOURCE_CODE = "NAVIGATE_TO_SOURCE_CODE";
 const REMOVE_ELEMENT = "REMOVE_ELEMENT";
 const GENERATE_PAGE = "GENERATE_PAGE";
@@ -78707,7 +78706,6 @@ const addElementHighlight = async (window2, injectMode, features) => {
   el2.addEventListener("translate", (e) => {
     var _a2;
     const editingElement = (_a2 = e == null ? void 0 : e.detail) == null ? void 0 : _a2.editingElement;
-    handleIconClick(window2, editingElement, TRANSLATE_ELEMENT);
     ElementEditable.editingElement(editingElement);
   });
   el2.addEventListener("confirmaction", (e) => {
