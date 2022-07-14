@@ -11228,7 +11228,7 @@ function create_if_block$g(ctx) {
       div3 = element("div");
       t3 = space();
       style = element("style");
-      style.textContent = ".overlay {\r\n      position: fixed;\r\n      background: #44444488;\r\n      z-index: 9999;\r\n    }\r\n    .overlay-1 {\r\n      top: var(--offset-top);\r\n      left: var(--offset-left);\r\n      width: calc(var(--offset-right) - var(--offset-left));\r\n      height: calc(var(--local-top));\r\n    }\r\n    .overlay-2 {\r\n      top: calc(var(--local-top) + var(--offset-top));\r\n      left: calc(var(--offset-left) + var(--local-right));\r\n      width: calc(var(--offset-right) - var(--local-right));\r\n      height: calc(var(--local-bottom) - var(--local-top));\r\n    }\r\n    .overlay-3 {\r\n      top: calc(var(--offset-top) + var(--local-bottom));\r\n      left: var(--offset-left);\r\n      width: calc(var(--offset-right) - var(--offset-left));\r\n      height: calc(\r\n        var(--offset-bottom) - var(--offset-top) - var(--local-top) -\r\n          var(--local-height)\r\n      );\r\n    }\r\n    .overlay-4 {\r\n      top: calc(var(--local-top) + var(--offset-top));\r\n      left: var(--offset-left);\r\n      width: var(--local-left);\r\n      height: calc(var(--local-bottom) - var(--local-top));\r\n    }";
+      style.textContent = ".overlay {\n      position: fixed;\n      background: #44444488;\n      z-index: 9999;\n    }\n    .overlay-1 {\n      top: var(--offset-top);\n      left: var(--offset-left);\n      width: calc(var(--offset-right) - var(--offset-left));\n      height: calc(var(--local-top));\n    }\n    .overlay-2 {\n      top: calc(var(--local-top) + var(--offset-top));\n      left: calc(var(--offset-left) + var(--local-right));\n      width: calc(var(--offset-right) - var(--local-right));\n      height: calc(var(--local-bottom) - var(--local-top));\n    }\n    .overlay-3 {\n      top: calc(var(--offset-top) + var(--local-bottom));\n      left: var(--offset-left);\n      width: calc(var(--offset-right) - var(--offset-left));\n      height: calc(\n        var(--offset-bottom) - var(--offset-top) - var(--local-top) -\n          var(--local-height)\n      );\n    }\n    .overlay-4 {\n      top: calc(var(--local-top) + var(--offset-top));\n      left: var(--offset-left);\n      width: var(--local-left);\n      height: calc(var(--local-bottom) - var(--local-top));\n    }";
       attr(div0, "class", "overlay overlay-1");
       attr(div1, "class", "overlay overlay-2");
       attr(div2, "class", "overlay overlay-3");
@@ -12000,6 +12000,52 @@ function instance$y($$self, $$props, $$invalidate) {
   let { alignX = "" } = $$props;
   const all_tip_notes = [
     {
+      id: "drag_and_drop_relations",
+      title: "Move Tool",
+      text: "You can use this tool to swap and move the highlighted element in the grid",
+      icon: icons$1["drag_move"],
+      display: true,
+      actions: [
+        {
+          id: "cancelaction",
+          title: "Cancel",
+          text: "You can use this tool to cancel moving elements",
+          icon: icons$1["clear"],
+          display: true
+        },
+        {
+          id: "confirmaction",
+          title: "Save",
+          text: "You can use this tool to confirm new order of swaped elements",
+          icon: icons$1["check"],
+          display: true
+        }
+      ]
+    },
+    {
+      id: "drag_and_drop_grid",
+      title: "Move Tool",
+      text: "You can use this tool to swap and move the highlighted element in the grid",
+      icon: icons$1["drag_move"],
+      display: true,
+      actions: [
+        {
+          id: "cancelaction",
+          title: "Cancel",
+          text: "You can use this tool to cancel moving elements",
+          icon: icons$1["clear"],
+          display: true
+        },
+        {
+          id: "confirmaction",
+          title: "Save",
+          text: "You can use this tool to confirm new order of swaped elements",
+          icon: icons$1["check"],
+          display: true
+        }
+      ]
+    },
+    {
       id: "clone",
       title: "Clone Tool",
       text: "You can use this tool to clone the highlighted element",
@@ -12674,7 +12720,7 @@ function create_fragment$A(ctx) {
         if_block2.c();
       t3 = space();
       style = element("style");
-      style.textContent = ".tippy-wrapper {\r\n      position: fixed;\r\n      top: max(\r\n        0px,\r\n        calc(\r\n          var(--offset-top) + var(--position-top) - var(--tippy-height) + 2px\r\n        )\r\n      );\r\n      left: max(\r\n        calc(\r\n          var(--offset-left) +\r\n            calc(\r\n              calc(\r\n                  var(--position-right) + var(--position-left) -\r\n                    var(--tippy-width)\r\n                ) / 2\r\n            )\r\n        ),\r\n        calc(var(--offset-left) + var(--position-right) - var(--tippy-width))\r\n      );\r\n      z-index: 10000;\r\n      transform: translateX(-2px);\r\n      padding-top: 0;\r\n      padding-bottom: var(--tippy-arrow-height);\r\n      font-family: sans-serif;\r\n    }\r\n    .tippy-wrapper.bottom {\r\n      top: calc(var(--offset-top) + var(--position-bottom) - 3rem);\r\n    }\r\n    .tippy {\r\n      display: flex;\r\n      justify-content: center;\r\n      align-items: center;\r\n      background: #181818;\r\n      color: white;\r\n      padding: 0 0.2rem;\r\n      width: max-content;\r\n      height: 2rem;\r\n      border-radius: 4px;\r\n      gap: 0.2rem;\r\n    }\r\n    .tippy .actions {\r\n      display: flex;\r\n      justify-content: center;\r\n      align-items: center;\r\n      gap: 0.2rem;\r\n    }\r\n    .tippy .action {\r\n      width: 100%;\r\n      border-radius: 2px;\r\n      overflow: hidden;\r\n      display: flex;\r\n    }\r\n    .tippy .action .button {\r\n      width: 100%;\r\n      height: 100%;\r\n      padding: 0.2rem;\r\n      user-select: none;\r\n      cursor: pointer;\r\n      display: flex;\r\n      justify-content: center;\r\n      align-items: center;\r\n    }\r\n    .tippy .action:hover {\r\n      background: #ffffff22;\r\n    }\r\n    .tippy .action .material-icons {\r\n      font-size: 1rem;\r\n    }\r\n    .tippy .action .material-icons :global(svg) {\r\n      width: 1.1rem;\r\n    }\r\n    .icon {\r\n      color: white;\r\n    }\r\n    .tippy .action.disabled {\r\n      opacity: 0.6;\r\n    }\r\n    .tippy .action.disabled .button {\r\n      pointer-events: none;\r\n    }\r\n    .tippy .tippy-wrapper .arrow {\r\n      position: absolute;\r\n      width: var(--tippy-arrow-width);\r\n      height: var(--tippy-arrow-height);\r\n      background: #333;\r\n      top: 2rem;\r\n      left: 50%;\r\n      transform: translateX(-50%);\r\n      clip-path: polygon(0 0, 100% 0, 50% 100%, 0 0);\r\n      cursor: pointer;\r\n    }\r\n    .tippy-wrapper.left .arrow {\r\n      left: 10%;\r\n      transform: unset;\r\n    }\r\n    .tippy-wrapper.right {\r\n      left: calc(\r\n        var(--offset-left) + var(--position-right) - var(--tippy-width) + 2px\r\n      );\r\n    }\r\n    .tippy-wrapper.right .arrow {\r\n      left: 90%;\r\n      transform: translateX(-100%);\r\n    }\r\n    .tippy-wrapper.bottom {\r\n      top: calc(\r\n        var(--offset-top) + var(--position-bottom) - var(--tippy-arrow-height)\r\n      );\r\n      padding-bottom: 0;\r\n      padding-top: var(--tippy-arrow-height);\r\n    }\r\n    .tippy-wrapper.bottom .arrow {\r\n      top: 0.5px;\r\n      clip-path: polygon(50% 0, 100% 100%, 0 100%, 50% 0);\r\n    }\r\n    .tippy-wrapper.transform {\r\n      top: max(0px, calc(var(--offset-top) + var(--position-top) + 2px));\r\n    }\r\n    .tippy-wrapper.left {\r\n      transform: translateX(2px);\r\n      left: calc(var(--offset-left) + var(--position-left));\r\n    }\r\n    .tippy-wrapper.center {\r\n      transform: translateX(-50%);\r\n      left: calc(\r\n        var(--offset-left) + var(--position-left) +\r\n          calc(calc(var(--position-right) - var(--position-left)) / 2)\r\n      );\r\n    }\r\n    .tippy .text {\r\n      min-width: max-content;\r\n      margin-right: 0.2rem;\r\n    }\r\n\r\n    .tippy-wrapper.transition {\r\n      transition: left 200ms, top 200ms;\r\n    }\r\n\r\n    .tippy-wrapper.fadein {\r\n      animation: tippy-fadein 400ms;\r\n    }\r\n\r\n    .tippy svg {\r\n      margin-top: 4px;\r\n    }\r\n\r\n    @keyframes tippy-fadein {\r\n      from {\r\n        opacity: 0;\r\n      }\r\n      top {\r\n        opacity: 1;\r\n      }\r\n    }";
+      style.textContent = ".tippy-wrapper {\n      position: fixed;\n      top: max(\n        0px,\n        calc(\n          var(--offset-top) + var(--position-top) - var(--tippy-height) + 2px\n        )\n      );\n      left: max(\n        calc(\n          var(--offset-left) +\n            calc(\n              calc(\n                  var(--position-right) + var(--position-left) -\n                    var(--tippy-width)\n                ) / 2\n            )\n        ),\n        calc(var(--offset-left) + var(--position-right) - var(--tippy-width))\n      );\n      z-index: 10000;\n      transform: translateX(-2px);\n      padding-top: 0;\n      padding-bottom: var(--tippy-arrow-height);\n      font-family: sans-serif;\n    }\n    .tippy-wrapper.bottom {\n      top: calc(var(--offset-top) + var(--position-bottom) - 3rem);\n    }\n    .tippy {\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      background: #181818;\n      color: white;\n      padding: 0 0.2rem;\n      width: max-content;\n      height: 2rem;\n      border-radius: 4px;\n      gap: 0.2rem;\n    }\n    .tippy .actions {\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      gap: 0.2rem;\n    }\n    .tippy .action {\n      width: 100%;\n      border-radius: 2px;\n      overflow: hidden;\n      display: flex;\n    }\n    .tippy .action .button {\n      width: 100%;\n      height: 100%;\n      padding: 0.2rem;\n      user-select: none;\n      cursor: pointer;\n      display: flex;\n      justify-content: center;\n      align-items: center;\n    }\n    .tippy .action:hover {\n      background: #ffffff22;\n    }\n    .tippy .action .material-icons {\n      font-size: 1rem;\n    }\n    .tippy .action .material-icons :global(svg) {\n      width: 1.1rem;\n    }\n    .icon {\n      color: white;\n    }\n    .tippy .action.disabled {\n      opacity: 0.6;\n    }\n    .tippy .action.disabled .button {\n      pointer-events: none;\n    }\n    .tippy .tippy-wrapper .arrow {\n      position: absolute;\n      width: var(--tippy-arrow-width);\n      height: var(--tippy-arrow-height);\n      background: #333;\n      top: 2rem;\n      left: 50%;\n      transform: translateX(-50%);\n      clip-path: polygon(0 0, 100% 0, 50% 100%, 0 0);\n      cursor: pointer;\n    }\n    .tippy-wrapper.left .arrow {\n      left: 10%;\n      transform: unset;\n    }\n    .tippy-wrapper.right {\n      left: calc(\n        var(--offset-left) + var(--position-right) - var(--tippy-width) + 2px\n      );\n    }\n    .tippy-wrapper.right .arrow {\n      left: 90%;\n      transform: translateX(-100%);\n    }\n    .tippy-wrapper.bottom {\n      top: calc(\n        var(--offset-top) + var(--position-bottom) - var(--tippy-arrow-height)\n      );\n      padding-bottom: 0;\n      padding-top: var(--tippy-arrow-height);\n    }\n    .tippy-wrapper.bottom .arrow {\n      top: 0.5px;\n      clip-path: polygon(50% 0, 100% 100%, 0 100%, 50% 0);\n    }\n    .tippy-wrapper.transform {\n      top: max(0px, calc(var(--offset-top) + var(--position-top) + 2px));\n    }\n    .tippy-wrapper.left {\n      transform: translateX(2px);\n      left: calc(var(--offset-left) + var(--position-left));\n    }\n    .tippy-wrapper.center {\n      transform: translateX(-50%);\n      left: calc(\n        var(--offset-left) + var(--position-left) +\n          calc(calc(var(--position-right) - var(--position-left)) / 2)\n      );\n    }\n    .tippy .text {\n      min-width: max-content;\n      margin-right: 0.2rem;\n    }\n\n    .tippy-wrapper.transition {\n      transition: left 200ms, top 200ms;\n    }\n\n    .tippy-wrapper.fadein {\n      animation: tippy-fadein 400ms;\n    }\n\n    .tippy svg {\n      margin-top: 4px;\n    }\n\n    @keyframes tippy-fadein {\n      from {\n        opacity: 0;\n      }\n      top {\n        opacity: 1;\n      }\n    }";
       attr(div0, "class", "arrow iteria-ignore");
       attr(div1, "class", "actions");
       attr(div2, "class", "tippy iteria-ignore");
@@ -12824,6 +12870,12 @@ function instance$x($$self, $$props, $$invalidate) {
   }
   const actions = [
     {
+      id: "drag_and_drop_grid",
+      title: "Move item",
+      icon: icons$1["drag_move"],
+      defaultDisplay: true
+    },
+    {
       id: "clone",
       title: "Clone",
       icon: icons$1["content_copy"],
@@ -12849,6 +12901,12 @@ function instance$x($$self, $$props, $$invalidate) {
     }
   ];
   const activeModeActions = [
+    {
+      id: "drag_and_drop_relations",
+      title: "Move relations",
+      icon: icons$1["drag_move"],
+      defaultDisplay: true
+    },
     {
       id: "cancelaction",
       title: "Cancel",
@@ -13165,7 +13223,7 @@ function create_if_block$d(ctx) {
       create_component(widgettippy.$$.fragment);
       t0 = space();
       style = element("style");
-      style.textContent = ".frame-wrapper {\r\n      position: absolute;\r\n      width: 0;\r\n      height: 0;\r\n      top: 0;\r\n      left: 0;\r\n    }\r\n    .frame {\r\n      z-index: 10000;\r\n      position: fixed;\r\n      width: 20px;\r\n      height: 20px;\r\n      background: var(--frame-color);\r\n      animation: frame-fadein 300ms;\r\n    }\r\n    .frame-wrapper.fallback-color .frame {\r\n      background: var(--frame-fallback-color);\r\n    }\r\n    .frame-top.dashed,\r\n    .frame-bottom.dashed {\r\n      background: repeating-linear-gradient(\r\n        to right,\r\n        transparent,\r\n        transparent 10px,\r\n        var(--frame-color) 10px,\r\n        var(--frame-color) 20px\r\n      );\r\n    }\r\n    .frame-left.dashed,\r\n    .frame-right.dashed {\r\n      background: repeating-linear-gradient(\r\n        to bottom,\r\n        transparent,\r\n        transparent 10px,\r\n        var(--frame-color) 10px,\r\n        var(--frame-color) 20px\r\n      );\r\n    }\r\n    .frame-wrapper.fallback-color .frame-top.dashed,\r\n    .frame-wrapper.fallback-color .frame-bottom.dashed {\r\n      background: repeating-linear-gradient(\r\n        to right,\r\n        transparent,\r\n        transparent 10px,\r\n        var(--frame-fallback-color) 10px,\r\n        var(--frame-fallback-color) 20px\r\n      );\r\n    }\r\n    .frame-wrapper.fallback-color .frame-left.dashed,\r\n    .frame-wrapper.fallback-color .frame-right.dashed {\r\n      background: repeating-linear-gradient(\r\n        to bottom,\r\n        transparent,\r\n        transparent 10px,\r\n        var(--frame-fallback-color) 10px,\r\n        var(--frame-fallback-color) 20px\r\n      );\r\n    }\r\n    .frame-top {\r\n      top: max(\r\n        0px,\r\n        calc(var(--offset-top) + var(--position-top) - var(--frame-half-width))\r\n      );\r\n    }\r\n    .frame-bottom {\r\n      top: calc(\r\n        var(--offset-top) + var(--position-bottom) - var(--frame-half-width)\r\n      );\r\n    }\r\n    .frame-left {\r\n      left: max(\r\n        0px,\r\n        calc(\r\n          var(--offset-left) + var(--position-left) - var(--frame-half-width)\r\n        )\r\n      );\r\n    }\r\n    .frame-right {\r\n      left: calc(\r\n        var(--offset-left) + var(--position-right) - var(--frame-half-width)\r\n      );\r\n    }\r\n    .frame-top,\r\n    .frame-bottom {\r\n      left: calc(\r\n        var(--offset-left) + var(--position-left) - var(--frame-half-width)\r\n      );\r\n      width: calc(\r\n        var(--position-right) - var(--position-left) + var(--frame-width)\r\n      );\r\n      height: var(--frame-width);\r\n    }\r\n    .frame-left,\r\n    .frame-right {\r\n      display: inline-block;\r\n      top: calc(var(--offset-top) + var(--position-top));\r\n      width: var(--frame-width);\r\n      height: calc(\r\n        var(--position-bottom) - var(--position-top) - var(--frame-half-width)\r\n      );\r\n    }\r\n    @keyframes frame-fadein {\r\n      from {\r\n        opacity: 0;\r\n      }\r\n      top {\r\n        opacity: 1;\r\n      }\r\n    }";
+      style.textContent = ".frame-wrapper {\n      position: absolute;\n      width: 0;\n      height: 0;\n      top: 0;\n      left: 0;\n    }\n    .frame {\n      z-index: 10000;\n      position: fixed;\n      width: 20px;\n      height: 20px;\n      background: var(--frame-color);\n      animation: frame-fadein 300ms;\n    }\n    .frame-wrapper.fallback-color .frame {\n      background: var(--frame-fallback-color);\n    }\n    .frame-top.dashed,\n    .frame-bottom.dashed {\n      background: repeating-linear-gradient(\n        to right,\n        transparent,\n        transparent 10px,\n        var(--frame-color) 10px,\n        var(--frame-color) 20px\n      );\n    }\n    .frame-left.dashed,\n    .frame-right.dashed {\n      background: repeating-linear-gradient(\n        to bottom,\n        transparent,\n        transparent 10px,\n        var(--frame-color) 10px,\n        var(--frame-color) 20px\n      );\n    }\n    .frame-wrapper.fallback-color .frame-top.dashed,\n    .frame-wrapper.fallback-color .frame-bottom.dashed {\n      background: repeating-linear-gradient(\n        to right,\n        transparent,\n        transparent 10px,\n        var(--frame-fallback-color) 10px,\n        var(--frame-fallback-color) 20px\n      );\n    }\n    .frame-wrapper.fallback-color .frame-left.dashed,\n    .frame-wrapper.fallback-color .frame-right.dashed {\n      background: repeating-linear-gradient(\n        to bottom,\n        transparent,\n        transparent 10px,\n        var(--frame-fallback-color) 10px,\n        var(--frame-fallback-color) 20px\n      );\n    }\n    .frame-top {\n      top: max(\n        0px,\n        calc(var(--offset-top) + var(--position-top) - var(--frame-half-width))\n      );\n    }\n    .frame-bottom {\n      top: calc(\n        var(--offset-top) + var(--position-bottom) - var(--frame-half-width)\n      );\n    }\n    .frame-left {\n      left: max(\n        0px,\n        calc(\n          var(--offset-left) + var(--position-left) - var(--frame-half-width)\n        )\n      );\n    }\n    .frame-right {\n      left: calc(\n        var(--offset-left) + var(--position-right) - var(--frame-half-width)\n      );\n    }\n    .frame-top,\n    .frame-bottom {\n      left: calc(\n        var(--offset-left) + var(--position-left) - var(--frame-half-width)\n      );\n      width: calc(\n        var(--position-right) - var(--position-left) + var(--frame-width)\n      );\n      height: var(--frame-width);\n    }\n    .frame-left,\n    .frame-right {\n      display: inline-block;\n      top: calc(var(--offset-top) + var(--position-top));\n      width: var(--frame-width);\n      height: calc(\n        var(--position-bottom) - var(--position-top) - var(--frame-half-width)\n      );\n    }\n    @keyframes frame-fadein {\n      from {\n        opacity: 0;\n      }\n      top {\n        opacity: 1;\n      }\n    }";
     },
     m(target, anchor) {
       mount_component(widgettippy, target, anchor);
@@ -14166,7 +14224,7 @@ function instance_1$1($$self, $$props, $$invalidate) {
   let { x: x2 = "center" } = $$props;
   let { y: y2 = "center" } = $$props;
   let { width = 400 } = $$props;
-  let { height = 538 } = $$props;
+  let { height = 500 } = $$props;
   let { classes = "" } = $$props;
   let { closeless = false } = $$props;
   let { hidden: hidden2 } = $$props;
@@ -34550,10 +34608,10 @@ function create_fragment$w(ctx) {
       g15 = svg_element("g");
       g16 = svg_element("g");
       g17 = svg_element("g");
-      attr(path0, "d", "M45.432,35.049c-0.008,0-0.017,0-0.025,0c-2.809,0-5.451,1.095-7.446,3.085c-2.017,2.012-3.128,4.691-3.128,7.543\r\n				v159.365c0,5.844,4.773,10.61,10.641,10.625c24.738,0.059,66.184,5.215,94.776,35.136V84.023c0-1.981-0.506-3.842-1.461-5.382\r\n				C115.322,40.849,70.226,35.107,45.432,35.049z");
-      attr(path1, "d", "M262.167,205.042V45.676c0-2.852-1.111-5.531-3.128-7.543c-1.995-1.99-4.639-3.085-7.445-3.085c-0.009,0-0.018,0-0.026,0\r\n				c-24.793,0.059-69.889,5.801-93.357,43.593c-0.955,1.54-1.46,3.401-1.46,5.382v166.779\r\n				c28.592-29.921,70.038-35.077,94.776-35.136C257.394,215.651,262.167,210.885,262.167,205.042z");
-      attr(path2, "d", "M286.373,71.801h-7.706v133.241c0,14.921-12.157,27.088-27.101,27.125c-20.983,0.05-55.581,4.153-80.084,27.344\r\n				c42.378-10.376,87.052-3.631,112.512,2.171c3.179,0.724,6.464-0.024,9.011-2.054c2.538-2.025,3.994-5.052,3.994-8.301V82.427\r\n				C297,76.568,292.232,71.801,286.373,71.801z");
-      attr(path3, "d", "M18.332,205.042V71.801h-7.706C4.768,71.801,0,76.568,0,82.427v168.897c0,3.25,1.456,6.276,3.994,8.301\r\n				c2.545,2.029,5.827,2.78,9.011,2.054c25.46-5.803,70.135-12.547,112.511-2.171c-24.502-23.19-59.1-27.292-80.083-27.342\r\n				C30.49,232.13,18.332,219.963,18.332,205.042z");
+      attr(path0, "d", "M45.432,35.049c-0.008,0-0.017,0-0.025,0c-2.809,0-5.451,1.095-7.446,3.085c-2.017,2.012-3.128,4.691-3.128,7.543\n				v159.365c0,5.844,4.773,10.61,10.641,10.625c24.738,0.059,66.184,5.215,94.776,35.136V84.023c0-1.981-0.506-3.842-1.461-5.382\n				C115.322,40.849,70.226,35.107,45.432,35.049z");
+      attr(path1, "d", "M262.167,205.042V45.676c0-2.852-1.111-5.531-3.128-7.543c-1.995-1.99-4.639-3.085-7.445-3.085c-0.009,0-0.018,0-0.026,0\n				c-24.793,0.059-69.889,5.801-93.357,43.593c-0.955,1.54-1.46,3.401-1.46,5.382v166.779\n				c28.592-29.921,70.038-35.077,94.776-35.136C257.394,215.651,262.167,210.885,262.167,205.042z");
+      attr(path2, "d", "M286.373,71.801h-7.706v133.241c0,14.921-12.157,27.088-27.101,27.125c-20.983,0.05-55.581,4.153-80.084,27.344\n				c42.378-10.376,87.052-3.631,112.512,2.171c3.179,0.724,6.464-0.024,9.011-2.054c2.538-2.025,3.994-5.052,3.994-8.301V82.427\n				C297,76.568,292.232,71.801,286.373,71.801z");
+      attr(path3, "d", "M18.332,205.042V71.801h-7.706C4.768,71.801,0,76.568,0,82.427v168.897c0,3.25,1.456,6.276,3.994,8.301\n				c2.545,2.029,5.827,2.78,9.011,2.054c25.46-5.803,70.135-12.547,112.511-2.171c-24.502-23.19-59.1-27.292-80.083-27.342\n				C30.49,232.13,18.332,219.963,18.332,205.042z");
       attr(svg2, "version", "1.1");
       attr(svg2, "id", "Layer_1");
       attr(svg2, "xmlns", "http://www.w3.org/2000/svg");
@@ -34876,7 +34934,7 @@ function create_fragment$u(ctx) {
       t2 = text$1(t2_value);
       t3 = space();
       style = element("style");
-      style.textContent = ".widget-field-translation {\r\n      padding: 2rem;\r\n      display: flex;\r\n      justify-content: center;\r\n      gap: 0.5rem;\r\n    }\r\n\r\n    .widget-field-translation button {\r\n      background: #f0f0f0;\r\n      border: none;\r\n      outline: none;\r\n      cursor: pointer;\r\n    }";
+      style.textContent = ".widget-field-translation {\n      padding: 2rem;\n      display: flex;\n      justify-content: center;\n      gap: 0.5rem;\n    }\n\n    .widget-field-translation button {\n      background: #f0f0f0;\n      border: none;\n      outline: none;\n      cursor: pointer;\n    }";
       attr(div2, "class", "widget-field-translation");
     },
     m(target, anchor) {
@@ -35023,7 +35081,7 @@ function create_if_block_1$7(ctx) {
       t2 = space();
       fast_tab1 = element("fast-tab");
       create_component(openbookicon.$$.fragment);
-      t3 = text$1("\r\n          Translated Message");
+      t3 = text$1("\n          Translated Message");
       t4 = space();
       fast_tab_panel0 = element("fast-tab-panel");
       t5 = space();
@@ -35164,7 +35222,7 @@ function create_fragment$t(ctx) {
       t4 = text$1(t4_value);
       t5 = space();
       style = element("style");
-      style.textContent = ".widget-field .icon:not(.material-icons) {\r\n      font-family: monospace;\r\n      font-size: 0.8rem;\r\n    }\r\n    .widget-field .icon {\r\n      margin-right: 0.5rem;\r\n      font-size: 0.95rem;\r\n    }\r\n    .widget-field .expression-wrapper {\r\n      width: calc(100% - 0.5rem) !important;\r\n      min-height: 40px;\r\n    }\r\n    .widget-field .expression-wrapper.hidden {\r\n      position: absolute;\r\n      z-index: -200;\r\n      opacity: 0;\r\n      pointer-events: none;\r\n    }";
+      style.textContent = ".widget-field .icon:not(.material-icons) {\n      font-family: monospace;\n      font-size: 0.8rem;\n    }\n    .widget-field .icon {\n      margin-right: 0.5rem;\n      font-size: 0.95rem;\n    }\n    .widget-field .expression-wrapper {\n      width: calc(100% - 0.5rem) !important;\n      min-height: 40px;\n    }\n    .widget-field .expression-wrapper.hidden {\n      position: absolute;\n      z-index: -200;\n      opacity: 0;\n      pointer-events: none;\n    }";
       attr(div0, "class", "expression-wrapper");
       set_style(div0, "max-width", ctx[8] - 8 + "px");
       toggle_class(div0, "hidden", !ctx[7]);
@@ -35538,7 +35596,7 @@ function create_fragment$s(ctx) {
         if_block.c();
       t1 = space();
       style = element("style");
-      style.textContent = ".widget-fields.fields {\r\n      --theme-bg: #222;\r\n      --theme-color: #f0f0f0;\r\n      background: var(--theme-bg);\r\n      color: var(--theme-color);\r\n      height: 100%;\r\n    }\r\n\r\n    .widget-fields .popup {\r\n      position: fixed;\r\n      top: 50%;\r\n      left: 50%;\r\n      transform: translate(-50%, -50%);\r\n      padding: 0;\r\n      z-index: 10000;\r\n      width: 500px;\r\n      min-width: max-content;\r\n      padding: 0.3rem;\r\n      padding-bottom: 0;\r\n      background: #f5f5f5;\r\n      color: black;\r\n      box-shadow: 0 0 0.5rem #777;\r\n    }";
+      style.textContent = ".widget-fields.fields {\n      --theme-bg: #222;\n      --theme-color: #f0f0f0;\n      background: var(--theme-bg);\n      color: var(--theme-color);\n      height: 100%;\n    }\n\n    .widget-fields .popup {\n      position: fixed;\n      top: 50%;\n      left: 50%;\n      transform: translate(-50%, -50%);\n      padding: 0;\n      z-index: 10000;\n      width: 500px;\n      min-width: max-content;\n      padding: 0.3rem;\n      padding-bottom: 0;\n      background: #f5f5f5;\n      color: black;\n      box-shadow: 0 0 0.5rem #777;\n    }";
       set_custom_element_data(fast_accordion, "expand-mode", "single");
       set_custom_element_data(fast_design_system_provider, "use-defaults", "");
       attr(div2, "class", "widget-fields fields");
@@ -36036,7 +36094,7 @@ function create_if_block_1$6(ctx) {
       }
       t0 = space();
       style = element("style");
-      style.textContent = ".fast-tree-item {\r\n      --neutral-fill-stealth-selected: var(\r\n        --selected-color,\r\n        var(--theme-color)\r\n      );\r\n      --neutral-fill-stealth-hover: var(--hover-color, var(--theme-color));\r\n    }\r\n    fast-tree-item > span {\r\n      pointer-events: none;\r\n    }";
+      style.textContent = ".fast-tree-item {\n      --neutral-fill-stealth-selected: var(\n        --selected-color,\n        var(--theme-color)\n      );\n      --neutral-fill-stealth-hover: var(--hover-color, var(--theme-color));\n    }\n    fast-tree-item > span {\n      pointer-events: none;\n    }";
     },
     m(target, anchor) {
       for (let i2 = 0; i2 < each_blocks.length; i2 += 1) {
@@ -37030,7 +37088,7 @@ var CgExtensionAdd = {
   c: '<path d="M16 4H18V6H20V8H18V10H16V8H14V6H16V4Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M12 12V6H4V20H18V12H12ZM6 8H10V12H6V8ZM10 14V18H6V14H10ZM16 14V18H12V14H16Z" fill="currentColor"></path>'
 };
 function add_css$a(target) {
-  append_styles(target, "svelte-16q8pkb", "table.svelte-16q8pkb.svelte-16q8pkb{position:fixed;top:0;left:0;background-color:#181818}.gql-input.svelte-16q8pkb.svelte-16q8pkb{padding:0.5rem 0;position:fixed;bottom:0;width:100%;background-color:#000}.gql-create-button.svelte-16q8pkb.svelte-16q8pkb{background:rgba(255, 255, 255, .2);border:1px solid #FFF;color:#FFF;margin:0 0.5rem;transition:0.3s}.gql-create-button.svelte-16q8pkb.svelte-16q8pkb:hover{color:#000;background:#FFF}.gql-create-button.svelte-16q8pkb .container.svelte-16q8pkb{display:flex;align-items:center;justify-content:center}.field-container.svelte-16q8pkb.svelte-16q8pkb{margin-top:2.8rem;height:400px;overflow:auto}.input-fields.svelte-16q8pkb.svelte-16q8pkb::-webkit-scrollbar{z-index:1000}.input-fields.svelte-16q8pkb.svelte-16q8pkb{height:100%;overflow:hidden}");
+  append_styles(target, "svelte-w6zhyn", "table.svelte-w6zhyn.svelte-w6zhyn{position:fixed;top:0;left:0;z-index:2;background-color:#181818}.gql-input.svelte-w6zhyn.svelte-w6zhyn{padding:0.5rem 0;position:fixed;bottom:0;width:100%;background-color:#000}.gql-create-button.svelte-w6zhyn.svelte-w6zhyn{background:rgba(255, 255, 255, .2);border:1px solid #FFF;color:#FFF;margin:0 0.5rem;transition:0.3s}.gql-create-button.svelte-w6zhyn.svelte-w6zhyn:hover{color:#000;background:#FFF}.gql-create-button.svelte-w6zhyn .container.svelte-w6zhyn{display:flex;align-items:center;justify-content:center}.field-container.svelte-w6zhyn.svelte-w6zhyn{margin-top:2.8rem;margin-bottom:2.6rem}.input-fields.svelte-w6zhyn.svelte-w6zhyn::-webkit-scrollbar{width:0;background:transparent}.input-fields.svelte-w6zhyn.svelte-w6zhyn{height:100%;overflow:scroll;-ms-overflow-style:none;scrollbar-width:none}");
 }
 function create_else_block$3(ctx) {
   let fast_switch;
@@ -37216,17 +37274,17 @@ function create_if_block_1$5(ctx) {
       fast_button0 = element("fast-button");
       div0 = element("div");
       create_component(icon0.$$.fragment);
-      t0 = text$1("\r\n            Create table");
+      t0 = text$1("\n            Create table");
       t1 = space();
       fast_button1 = element("fast-button");
       div1 = element("div");
       create_component(icon1.$$.fragment);
-      t2 = text$1("\r\n          Reload schema");
-      attr(div0, "class", "container svelte-16q8pkb");
-      set_custom_element_data(fast_button0, "class", "gql-create-button svelte-16q8pkb");
-      attr(div1, "class", "container svelte-16q8pkb");
-      set_custom_element_data(fast_button1, "class", "gql-create-button svelte-16q8pkb");
-      attr(p2, "class", "gql-input svelte-16q8pkb");
+      t2 = text$1("\n          Reload schema");
+      attr(div0, "class", "container svelte-w6zhyn");
+      set_custom_element_data(fast_button0, "class", "gql-create-button svelte-w6zhyn");
+      attr(div1, "class", "container svelte-w6zhyn");
+      set_custom_element_data(fast_button1, "class", "gql-create-button svelte-w6zhyn");
+      attr(p2, "class", "gql-input svelte-w6zhyn");
     },
     m(target, anchor) {
       insert(target, p2, anchor);
@@ -37305,17 +37363,17 @@ function create_if_block$8(ctx) {
       fast_button0 = element("fast-button");
       div0 = element("div");
       create_component(icon0.$$.fragment);
-      t0 = text$1("\r\n            Add new column");
+      t0 = text$1("\n            Add new column");
       t1 = space();
       fast_button1 = element("fast-button");
       div1 = element("div");
       create_component(icon1.$$.fragment);
-      t2 = text$1("\r\n          Reload schema");
-      attr(div0, "class", "container svelte-16q8pkb");
-      set_custom_element_data(fast_button0, "class", "gql-create-button svelte-16q8pkb");
-      attr(div1, "class", "container svelte-16q8pkb");
-      set_custom_element_data(fast_button1, "class", "gql-create-button svelte-16q8pkb");
-      attr(p2, "class", "gql-input svelte-16q8pkb");
+      t2 = text$1("\n          Reload schema");
+      attr(div0, "class", "container svelte-w6zhyn");
+      set_custom_element_data(fast_button0, "class", "gql-create-button svelte-w6zhyn");
+      attr(div1, "class", "container svelte-w6zhyn");
+      set_custom_element_data(fast_button1, "class", "gql-create-button svelte-w6zhyn");
+      attr(p2, "class", "gql-input svelte-w6zhyn");
     },
     m(target, anchor) {
       insert(target, p2, anchor);
@@ -37427,10 +37485,10 @@ function create_fragment$o(ctx) {
         if_block4.c();
       set_style(td2, "text-align", "end");
       attr(table, "width", "100%");
-      attr(table, "class", "svelte-16q8pkb");
-      attr(div2, "class", "field-container svelte-16q8pkb");
+      attr(table, "class", "svelte-w6zhyn");
+      attr(div2, "class", "field-container svelte-w6zhyn");
       set_custom_element_data(fast_design_system_provider, "use-defaults", "");
-      set_custom_element_data(fast_design_system_provider, "class", "input-fields svelte-16q8pkb");
+      set_custom_element_data(fast_design_system_provider, "class", "input-fields svelte-w6zhyn");
     },
     m(target, anchor) {
       insert(target, fast_design_system_provider, anchor);
@@ -43509,7 +43567,7 @@ var AiOutlineDownload = {
   c: '<path d="M505.7 661a8 8 0 0 0 12.6 0l112-141.7c4.1-5.2.4-12.9-6.3-12.9h-74.1V168c0-4.4-3.6-8-8-8h-60c-4.4 0-8 3.6-8 8v338.3H400c-6.7 0-10.4 7.7-6.3 12.9l112 141.8zM878 626h-60c-4.4 0-8 3.6-8 8v154H214V634c0-4.4-3.6-8-8-8h-60c-4.4 0-8 3.6-8 8v198c0 17.7 14.3 32 32 32h684c17.7 0 32-14.3 32-32V634c0-4.4-3.6-8-8-8z"></path>'
 };
 function add_css$9(target) {
-  append_styles(target, "svelte-jt2bkg", ".fab-container.svelte-jt2bkg>li.svelte-jt2bkg{transition:transform 300ms ease-in-out}.fab-container.svelte-jt2bkg>li.svelte-jt2bkg:hover{transform:translate(10px, 0)}.save-icon.svelte-jt2bkg.svelte-jt2bkg:hover{color:#B8860B}.commit-icon.svelte-jt2bkg.svelte-jt2bkg:hover{color:#e53935}.column-icon.svelte-jt2bkg.svelte-jt2bkg:hover{color:#43a047}.translate-icon.svelte-jt2bkg.svelte-jt2bkg:hover{color:#4183c4}.tippy-icon.svelte-jt2bkg.svelte-jt2bkg:hover{color:#fb8c00}.generate-icon.svelte-jt2bkg.svelte-jt2bkg:hover{color:#3f51b5}.graphql-icon.svelte-jt2bkg.svelte-jt2bkg:hover{color:#e10098}.viewERD-icon.svelte-jt2bkg.svelte-jt2bkg:hover{color:#008080}.theme-icon.svelte-jt2bkg.svelte-jt2bkg:hover{color:#FF7F50}.fab-icon-label.svelte-jt2bkg.svelte-jt2bkg{padding-top:4px;color:#000 !important}.fab-download-icon-label.svelte-jt2bkg.svelte-jt2bkg{padding-top:5px}.fab-icon-container.svelte-jt2bkg.svelte-jt2bkg{width:48px;margin:2px;background-image:linear-gradient(\r\n      rgb(255, 255, 255),\r\n      rgb(244, 245, 247)\r\n    ) !important;box-shadow:rgb(67 90 111 / 14%) 0px 0px 0px 1px inset,\r\n      rgb(67 90 111 / 6%) 0px -1px 1px 0px inset;border-top-right-radius:8px;border-bottom-right-radius:8px;align-items:center;justify-content:center;height:52px;display:flex;cursor:pointer;transition:transform 0.3s;font-size:10px;flex-direction:column;text-align:center}.fab-container.svelte-jt2bkg.svelte-jt2bkg{z-index:10000000000;display:none;list-style-type:none;justify-content:space-evenly;align-items:center;opacity:0;transition:all 0.2s ease-in-out;flex-direction:column;left:-2px;position:absolute;bottom:5rem}.main-container.svelte-jt2bkg.svelte-jt2bkg{line-height:1.15;-webkit-text-size-adjust:100%;font-family:-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica,\r\n      Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;position:fixed;bottom:0px;left:0px;box-sizing:border-box;transform:translate(0px, 0px);display:flex;flex-direction:column-reverse;z-index:1000000000}.icon-container.svelte-jt2bkg.svelte-jt2bkg{line-height:1.15;-webkit-text-size-adjust:100%;font-family:-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica,\r\n      Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;box-sizing:border-box;padding-bottom:32px;position:relative;transition:transform 240ms cubic-bezier(0, 0, 0.2, 1) 0s;display:flex}.icon-container.svelte-jt2bkg:hover+.fab-container.svelte-jt2bkg,.fab-container.svelte-jt2bkg.svelte-jt2bkg:hover{display:flex;opacity:1;transition:all 0.3s ease-in-out}.svg-wrapper.svelte-jt2bkg.svelte-jt2bkg{-webkit-text-size-adjust:100%;text-transform:none;-webkit-font-smoothing:antialiased;font-weight:400;user-select:none;cursor:pointer;white-space:nowrap;font-family:'SF UI Text', -apple-system, BlinkMacSystemFont, 'Segoe UI',\r\n      Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji',\r\n      'Segoe UI Emoji', 'Segoe UI Symbol';color:rgb(66, 90, 112);font-size:16px;line-height:20px;letter-spacing:-0.05px;box-sizing:border-box;align-items:center;-webkit-box-align:center;justify-content:center;-webkit-box-pack:center;display:flex;flex-direction:row;-webkit-box-orient:horizontal;-webkit-box-direction:normal}.main-button.svelte-jt2bkg.svelte-jt2bkg{-webkit-text-size-adjust:100%;margin:0;overflow:visible;text-transform:none;-webkit-font-smoothing:antialiased;appearance:none;box-sizing:border-box;position:relative;width:48px;font-weight:400;display:inline-flex;align-items:center;-webkit-box-align:center;justify-content:center;-webkit-box-pack:center;text-decoration:none;vertical-align:middle;border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;outline:none;user-select:none;cursor:pointer;white-space:nowrap;font-family:'SF UI Text', -apple-system, BlinkMacSystemFont, 'Segoe UI',\r\n      Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji',\r\n      'Segoe UI Emoji', 'Segoe UI Symbol';border-bottom-left-radius:0px;border-bottom-right-radius:8px;border-top-left-radius:0px;border-top-right-radius:8px;color:rgb(66, 90, 112);height:48px;min-width:32px;font-size:16px;line-height:20px;padding-left:4px;padding-right:4px;background-color:white;background-image:linear-gradient(\r\n      rgb(255, 255, 255),\r\n      rgb(244, 245, 247)\r\n    ) !important;box-shadow:rgba(67, 90, 111, 0.14) 0px 0px 0px 1px inset,\r\n      rgba(67, 90, 111, 0.06) 0px -1px 1px 0px inset;padding-bottom:4px;padding-top:4px;transition:all 240ms ease 210ms;letter-spacing:-0.05px;transform:translateX(0px)}.svg-hamburger.svelte-jt2bkg.svelte-jt2bkg{-webkit-text-size-adjust:100%;text-transform:none;-webkit-font-smoothing:antialiased;font-weight:400;user-select:none;cursor:pointer;white-space:nowrap;font-family:'SF UI Text', -apple-system, BlinkMacSystemFont, 'Segoe UI',\r\n      Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji',\r\n      'Segoe UI Emoji', 'Segoe UI Symbol';color:rgb(66, 90, 112);font-size:16px;line-height:20px;letter-spacing:-0.05px;-webkit-box-direction:normal;fill:rgb(100, 111, 115);box-sizing:border-box;position:relative;left:2px;top:3px;width:16px;height:16px}.iteria-logo.svelte-jt2bkg.svelte-jt2bkg{-webkit-text-size-adjust:100%;text-transform:none;-webkit-font-smoothing:antialiased;font-weight:400;user-select:none;cursor:pointer;white-space:nowrap;font-family:'SF UI Text', -apple-system, BlinkMacSystemFont, 'Segoe UI',\r\n      Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji',\r\n      'Segoe UI Emoji', 'Segoe UI Symbol';color:rgb(66, 90, 112);font-size:16px;line-height:20px;letter-spacing:-0.05px;-webkit-box-direction:normal;-webkit-user-drag:none;border-style:none;box-sizing:border-box;height:20px;width:20px}");
+  append_styles(target, "svelte-jt2bkg", ".fab-container.svelte-jt2bkg>li.svelte-jt2bkg{transition:transform 300ms ease-in-out}.fab-container.svelte-jt2bkg>li.svelte-jt2bkg:hover{transform:translate(10px, 0)}.save-icon.svelte-jt2bkg.svelte-jt2bkg:hover{color:#B8860B}.commit-icon.svelte-jt2bkg.svelte-jt2bkg:hover{color:#e53935}.column-icon.svelte-jt2bkg.svelte-jt2bkg:hover{color:#43a047}.translate-icon.svelte-jt2bkg.svelte-jt2bkg:hover{color:#4183c4}.tippy-icon.svelte-jt2bkg.svelte-jt2bkg:hover{color:#fb8c00}.generate-icon.svelte-jt2bkg.svelte-jt2bkg:hover{color:#3f51b5}.graphql-icon.svelte-jt2bkg.svelte-jt2bkg:hover{color:#e10098}.viewERD-icon.svelte-jt2bkg.svelte-jt2bkg:hover{color:#008080}.theme-icon.svelte-jt2bkg.svelte-jt2bkg:hover{color:#FF7F50}.fab-icon-label.svelte-jt2bkg.svelte-jt2bkg{padding-top:4px;color:#000 !important}.fab-download-icon-label.svelte-jt2bkg.svelte-jt2bkg{padding-top:5px}.fab-icon-container.svelte-jt2bkg.svelte-jt2bkg{width:48px;margin:2px;background-image:linear-gradient(\n      rgb(255, 255, 255),\n      rgb(244, 245, 247)\n    ) !important;box-shadow:rgb(67 90 111 / 14%) 0px 0px 0px 1px inset,\n      rgb(67 90 111 / 6%) 0px -1px 1px 0px inset;border-top-right-radius:8px;border-bottom-right-radius:8px;align-items:center;justify-content:center;height:52px;display:flex;cursor:pointer;transition:transform 0.3s;font-size:10px;flex-direction:column;text-align:center}.fab-container.svelte-jt2bkg.svelte-jt2bkg{z-index:10000000000;display:none;list-style-type:none;justify-content:space-evenly;align-items:center;opacity:0;transition:all 0.2s ease-in-out;flex-direction:column;left:-2px;position:absolute;bottom:5rem}.main-container.svelte-jt2bkg.svelte-jt2bkg{line-height:1.15;-webkit-text-size-adjust:100%;font-family:-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica,\n      Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;position:fixed;bottom:0px;left:0px;box-sizing:border-box;transform:translate(0px, 0px);display:flex;flex-direction:column-reverse;z-index:1000000000}.icon-container.svelte-jt2bkg.svelte-jt2bkg{line-height:1.15;-webkit-text-size-adjust:100%;font-family:-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica,\n      Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;box-sizing:border-box;padding-bottom:32px;position:relative;transition:transform 240ms cubic-bezier(0, 0, 0.2, 1) 0s;display:flex}.icon-container.svelte-jt2bkg:hover+.fab-container.svelte-jt2bkg,.fab-container.svelte-jt2bkg.svelte-jt2bkg:hover{display:flex;opacity:1;transition:all 0.3s ease-in-out}.svg-wrapper.svelte-jt2bkg.svelte-jt2bkg{-webkit-text-size-adjust:100%;text-transform:none;-webkit-font-smoothing:antialiased;font-weight:400;user-select:none;cursor:pointer;white-space:nowrap;font-family:'SF UI Text', -apple-system, BlinkMacSystemFont, 'Segoe UI',\n      Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji',\n      'Segoe UI Emoji', 'Segoe UI Symbol';color:rgb(66, 90, 112);font-size:16px;line-height:20px;letter-spacing:-0.05px;box-sizing:border-box;align-items:center;-webkit-box-align:center;justify-content:center;-webkit-box-pack:center;display:flex;flex-direction:row;-webkit-box-orient:horizontal;-webkit-box-direction:normal}.main-button.svelte-jt2bkg.svelte-jt2bkg{-webkit-text-size-adjust:100%;margin:0;overflow:visible;text-transform:none;-webkit-font-smoothing:antialiased;appearance:none;box-sizing:border-box;position:relative;width:48px;font-weight:400;display:inline-flex;align-items:center;-webkit-box-align:center;justify-content:center;-webkit-box-pack:center;text-decoration:none;vertical-align:middle;border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;outline:none;user-select:none;cursor:pointer;white-space:nowrap;font-family:'SF UI Text', -apple-system, BlinkMacSystemFont, 'Segoe UI',\n      Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji',\n      'Segoe UI Emoji', 'Segoe UI Symbol';border-bottom-left-radius:0px;border-bottom-right-radius:8px;border-top-left-radius:0px;border-top-right-radius:8px;color:rgb(66, 90, 112);height:48px;min-width:32px;font-size:16px;line-height:20px;padding-left:4px;padding-right:4px;background-color:white;background-image:linear-gradient(\n      rgb(255, 255, 255),\n      rgb(244, 245, 247)\n    ) !important;box-shadow:rgba(67, 90, 111, 0.14) 0px 0px 0px 1px inset,\n      rgba(67, 90, 111, 0.06) 0px -1px 1px 0px inset;padding-bottom:4px;padding-top:4px;transition:all 240ms ease 210ms;letter-spacing:-0.05px;transform:translateX(0px)}.svg-hamburger.svelte-jt2bkg.svelte-jt2bkg{-webkit-text-size-adjust:100%;text-transform:none;-webkit-font-smoothing:antialiased;font-weight:400;user-select:none;cursor:pointer;white-space:nowrap;font-family:'SF UI Text', -apple-system, BlinkMacSystemFont, 'Segoe UI',\n      Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji',\n      'Segoe UI Emoji', 'Segoe UI Symbol';color:rgb(66, 90, 112);font-size:16px;line-height:20px;letter-spacing:-0.05px;-webkit-box-direction:normal;fill:rgb(100, 111, 115);box-sizing:border-box;position:relative;left:2px;top:3px;width:16px;height:16px}.iteria-logo.svelte-jt2bkg.svelte-jt2bkg{-webkit-text-size-adjust:100%;text-transform:none;-webkit-font-smoothing:antialiased;font-weight:400;user-select:none;cursor:pointer;white-space:nowrap;font-family:'SF UI Text', -apple-system, BlinkMacSystemFont, 'Segoe UI',\n      Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji',\n      'Segoe UI Emoji', 'Segoe UI Symbol';color:rgb(66, 90, 112);font-size:16px;line-height:20px;letter-spacing:-0.05px;-webkit-box-direction:normal;-webkit-user-drag:none;border-style:none;box-sizing:border-box;height:20px;width:20px}");
 }
 function create_if_block$6(ctx) {
   var _a2, _b, _c, _d, _e, _f, _g, _h, _i, _j;
@@ -44716,7 +44774,7 @@ class TranslationSheetDialog extends SvelteComponent {
   }
 }
 function add_css$8(target) {
-  append_styles(target, "svelte-6cdfbb", ".ok-button.svelte-6cdfbb{position:fixed;top:0;right:0;z-index:2\r\n  }.input-fields.svelte-6cdfbb{height:100%;width:100%;-ms-overflow-style:none;scrollbar-width:none}.input-fields.svelte-6cdfbb::-webkit-scrollbar{width:0;background:transparent}.switch.svelte-6cdfbb{margin-top:0.5rem;margin-bottom:0.5rem;margin-left:1.5rem}.column-container.svelte-6cdfbb{width:100%;background-color:#181818}");
+  append_styles(target, "svelte-6cdfbb", ".ok-button.svelte-6cdfbb{position:fixed;top:0;right:0;z-index:2\n  }.input-fields.svelte-6cdfbb{height:100%;width:100%;-ms-overflow-style:none;scrollbar-width:none}.input-fields.svelte-6cdfbb::-webkit-scrollbar{width:0;background:transparent}.switch.svelte-6cdfbb{margin-top:0.5rem;margin-bottom:0.5rem;margin-left:1.5rem}.column-container.svelte-6cdfbb{width:100%;background-color:#181818}");
 }
 function create_if_block$5(ctx) {
   let fast_tabs;
@@ -52031,12 +52089,11 @@ function instance$1($$self, $$props, $$invalidate) {
     $$invalidate(20, displayViewERD = params);
   }
   function onMouseOver(e) {
-    if (wysiwygMode !== "editing")
-      dispatch2("hover", {
-        hoverElement,
-        inspect: e.detail,
-        dialogWidgetFields
-      });
+    dispatch2("hover", {
+      hoverElement,
+      inspect: e.detail,
+      dialogWidgetFields
+    });
   }
   function onModeChange(e) {
     $$invalidate(32, activeAction = void 0);
@@ -62324,42 +62381,18 @@ function concatAST(documents) {
     definitions
   };
 }
-var PageType = /* @__PURE__ */ ((PageType2) => {
+var PageType$1 = /* @__PURE__ */ ((PageType2) => {
   PageType2[PageType2["LIST"] = 0] = "LIST";
   PageType2[PageType2["DETAIL"] = 1] = "DETAIL";
   return PageType2;
-})(PageType || {});
-var InsertType = /* @__PURE__ */ ((InsertType2) => {
+})(PageType$1 || {});
+var InsertType$1 = /* @__PURE__ */ ((InsertType2) => {
   InsertType2[InsertType2["BEFORE"] = 0] = "BEFORE";
   InsertType2[InsertType2["AFTER"] = 1] = "AFTER";
   InsertType2[InsertType2["FIRST"] = 2] = "FIRST";
   InsertType2[InsertType2["LAST"] = 3] = "LAST";
   return InsertType2;
-})(InsertType || {});
-const changeGraphQLEndpoint = async (envFile, endpointEnvName, newEndpointURL, secretEnvName, newSecret) => {
-  const variables = envFile.split("\n");
-  let urlExists = false;
-  let secretExists = false;
-  const modifiedVariables = variables.map((variable) => {
-    const variableValueStart = variable == null ? void 0 : variable.indexOf("=");
-    const variableName = variable.substring(0, variableValueStart).replace(" ", "");
-    if (variableName === endpointEnvName) {
-      urlExists = true;
-      return `${variableName} = "${newEndpointURL}"`;
-    }
-    if (variableName === secretEnvName) {
-      secretExists = true;
-      return `${variableName} = "${newSecret}"`;
-    }
-    return variable;
-  });
-  if (!secretExists)
-    modifiedVariables.unshift(`${secretEnvName} = "${newSecret}"`);
-  if (!urlExists)
-    modifiedVariables.unshift(`${endpointEnvName} = "${newEndpointURL}"`);
-  const modifiedEnvFile = modifiedVariables.join("\n");
-  return modifiedEnvFile;
-};
+})(InsertType$1 || {});
 function buildParametersAndVariablesString(field, name, types) {
   let queryParams = [];
   let variables = [];
@@ -62413,7 +62446,7 @@ function buildReturningString(types, returningType) {
   const type2 = types.find((type22) => type22.name === returningType);
   const scalarFields = (_a2 = type2 == null ? void 0 : type2.fields) == null ? void 0 : _a2.filter((field) => {
     var _a3;
-    return getNestedOfType(field).kind === "SCALAR" || ((_a3 = types.find((type22) => type22.name === field.type)) == null ? void 0 : _a3.kind) === "SCALAR";
+    return getNestedOfType$1(field).kind === "SCALAR" || ((_a3 = types.find((type22) => type22.name === field.type)) == null ? void 0 : _a3.kind) === "SCALAR";
   });
   const returningFields = scalarFields == null ? void 0 : scalarFields.map((field) => field.name);
   if (returningFields)
@@ -62520,7 +62553,7 @@ const buildFragments = (introspection, entities, types) => {
     fragments: (_a2 = fragmentFieldsList[0]) != null ? _a2 : []
   };
 };
-const getRoots = (introspection) => {
+const getRoots$1 = (introspection) => {
   const types = introspection.types;
   const query2 = introspection.queryType;
   const mutation = introspection.mutationType;
@@ -62542,7 +62575,7 @@ const getRoots = (introspection) => {
 };
 function generateGraphqlQueries(introspection, name) {
   const types = introspection.types;
-  const [queryRoot, mutationRoot, subscriptionRoot] = getRoots(introspection);
+  const [queryRoot, mutationRoot, subscriptionRoot] = getRoots$1(introspection);
   const entities = getEntities([queryRoot, mutationRoot], types);
   const { fragmentString, fragments } = buildFragments(introspection, entities, types);
   const selectQuery = queryRoot ? buildSelectQuery(queryRoot, name, types) : "";
@@ -62561,9 +62594,9 @@ function getEntities(roots, types, filterOnlyFields) {
     if (root2 == null ? void 0 : root2.name) {
       for (const field of root2.fields) {
         const queryName = field.name;
-        const entityName = (_a2 = getNestedOfType(field).name) != null ? _a2 : "";
+        const entityName = (_a2 = getNestedOfType$1(field).name) != null ? _a2 : "";
         let entityFields = getEntityFields(entityName, types);
-        if (filterOnlyFields && !entityFields.some((field2) => getNestedOfType(field2).kind === filterOnlyFields)) {
+        if (filterOnlyFields && !entityFields.some((field2) => getNestedOfType$1(field2).kind === filterOnlyFields)) {
           root2.fields = root2.fields.filter((fieldToBeDelete) => fieldToBeDelete !== field);
           continue;
         }
@@ -62583,7 +62616,7 @@ function getEntityFields(entityName, types) {
     return entity.fields;
   return [];
 }
-function getNestedOfType(field) {
+function getNestedOfType$1(field) {
   var _a2;
   let actualType = (_a2 = field.type) != null ? _a2 : field.ofType;
   while (actualType.ofType)
@@ -62597,7 +62630,7 @@ function getEntity(types, entityName) {
   return types.find((type2) => type2.name === entityName);
 }
 function getFieldType(field, types) {
-  const fieldType = getNestedOfType(field);
+  const fieldType = getNestedOfType$1(field);
   if (fieldType.kind === "SCALAR")
     return fieldType;
   if (fieldType.kind == "") {
@@ -62609,7 +62642,7 @@ function getFieldType(field, types) {
 function buildSelectQuery(queryRoot, name, types) {
   let selectQueries = [];
   queryRoot.fields.forEach((query2) => {
-    const fragmentName = `${query2.name}_${getNestedOfType(query2).name}`;
+    const fragmentName = `${query2.name}_${getNestedOfType$1(query2).name}`;
     const { params, variables } = buildParametersAndVariablesString(query2, name, types);
     const newSelectQuery = `query ${query2.name}${variables} {
   ${query2.name}${params} {
@@ -62623,7 +62656,7 @@ function buildSelectQuery(queryRoot, name, types) {
 function buildMutationQuery(mutationRoot, name, types) {
   let mutationQueries = [];
   mutationRoot.fields.forEach((field) => {
-    const fragmentName = `${field.name}_${getNestedOfType(field).name}`;
+    const fragmentName = `${field.name}_${getNestedOfType$1(field).name}`;
     mutationQueries = [
       ...mutationQueries,
       buildMutationString(field, fragmentName, name, types)
@@ -62643,13 +62676,9 @@ function buildGraphqlQuery(queries) {
   queries = queries.filter((query2) => query2 != "");
   return `${queries.join("\n\n")}`;
 }
-const isByPkQuery = (field) => field.args.some((arg) => arg.name === "id");
-const isAggregateField = (field) => {
-  var _a2, _b, _c;
-  return ((_a2 = field.type) == null ? void 0 : _a2.kind) === "NON_NULL" && ((_c = (_b = field.type) == null ? void 0 : _b.ofType) == null ? void 0 : _c.kind) === "OBJECT";
-};
+const isByPkQuery$1 = (field) => field.args.some((arg) => arg.name === "id");
 function generateGraphqlFile(introspection, names) {
-  const roots = getRoots(introspection);
+  const roots = getRoots$1(introspection);
   let usedQueryNames = [];
   const generatedQueries = names.map((name) => {
     var _a2, _b;
@@ -62657,7 +62686,7 @@ function generateGraphqlFile(introspection, names) {
     modifiedRoots.forEach((modifiedRoot) => modifiedRoot == null ? void 0 : modifiedRoot.fields.forEach((field) => usedQueryNames = [...usedQueryNames, field.name]));
     const modifiedIntrospection = replaceRootFields(modifiedRoots, introspection);
     const entityFields = (_b = (_a2 = getEntity(modifiedIntrospection.types, name)) == null ? void 0 : _a2.fields) == null ? void 0 : _b.filter((field) => {
-      const fieldType = getNestedOfType(field);
+      const fieldType = getNestedOfType$1(field);
       if (fieldType.kind && fieldType.kind != "" && fieldType.kind === "SCALAR")
         return true;
       const nestedFieldType = getEntity(modifiedIntrospection.types, fieldType.name);
@@ -62666,7 +62695,7 @@ function generateGraphqlFile(introspection, names) {
       return false;
     });
     const queryFragmentFields = entityFields == null ? void 0 : entityFields.map((field) => {
-      return { name: field.name, type: getNestedOfType(field).name };
+      return { name: field.name, type: getNestedOfType$1(field).name };
     });
     const { query: query2, fragmentFields } = generateGraphqlQueries(modifiedIntrospection, name);
     return {
@@ -62708,14 +62737,14 @@ function isReturningEntity(field, allTypes, entityName) {
 }
 function isMutationType(field, allTypes, entityName) {
   var _a2;
-  const fieldName = typeof field.type === "string" ? field.type : getNestedOfType(field).name;
+  const fieldName = typeof field.type === "string" ? field.type : getNestedOfType$1(field).name;
   const type2 = allTypes.find((type22) => type22.name === fieldName);
   if (!type2)
     return false;
   const returning = (_a2 = type2.fields) == null ? void 0 : _a2.find((field2) => field2.name === "returning");
   if (!returning)
     return false;
-  const nestedOfType = getNestedOfType(returning);
+  const nestedOfType = getNestedOfType$1(returning);
   if (nestedOfType.name === entityName)
     return true;
   else
@@ -62725,15 +62754,1266 @@ function isOfType(field, entityName) {
   var _a2;
   let actualType = field.type;
   if (typeof actualType !== "string") {
-    while (isInstanceOfType(actualType) && actualType.ofType)
+    while (isInstanceOfType$1(actualType) && actualType.ofType)
       actualType = actualType.ofType;
-    if (isInstanceOfType(actualType) && ((_a2 = actualType.name) == null ? void 0 : _a2.toLowerCase()) === (entityName == null ? void 0 : entityName.toLowerCase()))
+    if (isInstanceOfType$1(actualType) && ((_a2 = actualType.name) == null ? void 0 : _a2.toLowerCase()) === (entityName == null ? void 0 : entityName.toLowerCase()))
       return true;
   } else if (typeof actualType === "string" && actualType === (entityName == null ? void 0 : entityName.toLowerCase())) {
     return true;
   }
   return false;
 }
+function isOfTypePage$1(field, entityName, pageType) {
+  var _a2, _b;
+  let actualType = field.type;
+  if (pageType === PageType$1.DETAIL && isByPkQuery$1(field)) {
+    if (typeof actualType !== "string") {
+      while (isInstanceOfType$1(actualType) && actualType.ofType)
+        actualType = actualType.ofType;
+      if (isInstanceOfType$1(actualType) && ((_a2 = actualType.name) == null ? void 0 : _a2.toLowerCase()) === (entityName == null ? void 0 : entityName.toLowerCase()))
+        return true;
+    } else if (typeof actualType === "string" && actualType === (entityName == null ? void 0 : entityName.toLowerCase())) {
+      return true;
+    }
+  } else if (pageType === PageType$1.LIST && (actualType == null ? void 0 : actualType.kind) !== "OBJECT") {
+    if (typeof actualType !== "string") {
+      while (isInstanceOfType$1(actualType) && actualType.ofType)
+        actualType = actualType.ofType;
+      if (isInstanceOfType$1(actualType) && ((_b = actualType.name) == null ? void 0 : _b.toLowerCase()) === (entityName == null ? void 0 : entityName.toLowerCase()))
+        return true;
+    } else if (typeof actualType === "string" && actualType === (entityName == null ? void 0 : entityName.toLowerCase())) {
+      return true;
+    }
+  }
+  return false;
+}
+function isInstanceOfType$1(object) {
+  return "name" in object && "ofType" in object && "kind" in object;
+}
+const capitalize$2 = (string) => {
+  return string[0].toUpperCase() + string.slice(1);
+};
+function upperLetterInWord(queryName) {
+  let arr = queryName.split("_");
+  arr = arr.map((item) => capitalize$2(item));
+  return arr.join("_");
+}
+const createMixedImport = (namedImports, moduleSpecifier, defaultImport) => factory.createImportDeclaration(void 0, void 0, factory.createImportClause(false, defaultImport != null ? defaultImport : void 0, factory.createNamedImports(namedImports)), factory.createIdentifier(moduleSpecifier));
+const createNameSpaceImport = (namespace, module2) => {
+  return factory.createImportDeclaration(void 0, void 0, factory.createImportClause(false, void 0, factory.createNamespaceImport(factory.createIdentifier(namespace))), factory.createIdentifier(module2));
+};
+const createDefaultImport = (identifier, module2) => factory.createImportDeclaration(void 0, void 0, factory.createImportClause(false, factory.createIdentifier(identifier), void 0), factory.createIdentifier(module2));
+const createJsxSelfClosingElement = (name, atributes) => factory.createJsxSelfClosingElement(factory.createIdentifier(name), void 0, factory.createJsxAttributes(atributes.map((atribute) => factory.createJsxAttribute(factory.createIdentifier(atribute.name), factory.createJsxExpression(void 0, factory.createIdentifier(atribute.initializer))))));
+const stripQuotes = (str2) => str2.replace(/['"]+/g, "");
+const mergeImports = (parentAst, childAst) => {
+  const importsArray = getMergeImports(parentAst, childAst);
+  if (importsArray) {
+    const importPosition = findPositionOfFirstImport(parentAst);
+    const finalAst = appendElementsToAst(parentAst, importPosition, importsArray);
+    return finalAst;
+  } else {
+    return parentAst;
+  }
+};
+const getMergeImports = (parentAst, childAst) => {
+  const parentAstImports = parentAst.statements.filter((s) => ts.isImportDeclaration(s));
+  const childAstImports = childAst.statements.filter((s) => ts.isImportDeclaration(s));
+  const importMap = createImportMap(parentAstImports);
+  const importsArray = getNewImportsArray(childAstImports, importMap);
+  return importsArray;
+};
+const getImportIdentifiers = (importDeclaration) => {
+  const identifiers = /* @__PURE__ */ new Set();
+  const { importClause } = importDeclaration;
+  if (!importClause)
+    return null;
+  if (importClause.name)
+    identifiers.add(importClause.name.getText());
+  if (importClause.namedBindings && ts.isNamedImports(importClause.namedBindings)) {
+    importClause.namedBindings.elements.forEach((e) => identifiers.add(e.name.getText()));
+  }
+  if (importClause.namedBindings && ts.isNamespaceImport(importClause.namedBindings)) {
+    identifiers.add(importClause.namedBindings.name.getText());
+  }
+  return Array.from(identifiers);
+};
+const createImportMap = (importDeclarations) => {
+  const importMap = /* @__PURE__ */ new Map();
+  importDeclarations.forEach((iD) => {
+    const moduleSpecifier = stripQuotes(iD.moduleSpecifier.getText());
+    const importIdentifiers = getImportIdentifiers(iD);
+    if (!importIdentifiers)
+      return;
+    const currEntry = importMap.get(moduleSpecifier);
+    if (currEntry) {
+      importMap.set(moduleSpecifier, [...currEntry, ...importIdentifiers]);
+    } else {
+      importMap.set(moduleSpecifier, importIdentifiers);
+    }
+  });
+  return importMap;
+};
+const getNewImportsArray = (childImports, importMap) => {
+  const newImports = [];
+  childImports.forEach((importDeclaration) => {
+    var _a2;
+    const moduleSpecifier = stripQuotes(importDeclaration.moduleSpecifier.getText());
+    const { importClause } = importDeclaration;
+    if (!importClause)
+      return;
+    if (!importMap.has(moduleSpecifier)) {
+      newImports.push(importDeclaration);
+      return;
+    }
+    const importIdentifiers = getImportIdentifiers(importDeclaration);
+    const currIdentifiers = importMap.get(moduleSpecifier);
+    if (!importIdentifiers || !currIdentifiers)
+      return;
+    const uniqueIdentifiers = importIdentifiers.filter((iI) => !currIdentifiers.includes(iI));
+    if (uniqueIdentifiers.length === 0)
+      return;
+    if (uniqueIdentifiers.length === 1 && ((_a2 = importClause.name) == null ? void 0 : _a2.getText()) === uniqueIdentifiers[0]) {
+      const newImport2 = createDefaultImport(uniqueIdentifiers[0], importDeclaration.moduleSpecifier.getText());
+      newImports.push(newImport2);
+      return;
+    }
+    if (uniqueIdentifiers.length === 1 && importClause.namedBindings && ts.isNamespaceImport(importClause.namedBindings) && importClause.namedBindings.name.getText() === uniqueIdentifiers[0]) {
+      const newImport2 = createNameSpaceImport(uniqueIdentifiers[0], importDeclaration.moduleSpecifier.getText());
+      newImports.push(newImport2);
+      return;
+    }
+    const newImport = stripNonUniqueIdentifiersFromImport(importDeclaration, uniqueIdentifiers);
+    if (newImport)
+      newImports.push(newImport);
+  });
+  newImports.map((value2) => {
+    stripRanges(value2);
+  });
+  return newImports;
+};
+const getFilteredNamedImports = (importClause, uniqueIdentifiers) => {
+  if (importClause.namedBindings && ts.isNamedImports(importClause.namedBindings)) {
+    const uniqueNamedImports = importClause.namedBindings.elements.filter((namedImport) => uniqueIdentifiers.includes(namedImport.name.getText()));
+    return uniqueNamedImports.length > 0 ? uniqueNamedImports : null;
+  }
+  return null;
+};
+const stripNonUniqueIdentifiersFromImport = (importDeclaration, uniqueIdentifiers) => {
+  var _a2;
+  const { importClause } = importDeclaration;
+  if (!importClause)
+    return null;
+  const filteredNamedImports = getFilteredNamedImports(importClause, uniqueIdentifiers);
+  if (!filteredNamedImports)
+    return null;
+  const defaultImport = (_a2 = importClause.name) == null ? void 0 : _a2.getText();
+  const moduleSpecifier = importDeclaration.moduleSpecifier.getText();
+  if (defaultImport && uniqueIdentifiers.includes(defaultImport)) {
+    const finalImport2 = createMixedImport(filteredNamedImports, moduleSpecifier, importClause.name);
+    return finalImport2;
+  }
+  const finalImport = createMixedImport(filteredNamedImports, moduleSpecifier);
+  return finalImport;
+};
+const removeUnusedDefaultImport = (ast, importName) => {
+  const newAst = conditionalyWithParamRemoveNodeInAst(ast, isDefaultImport, importName);
+  return newAst;
+};
+const isDefaultImport = (node, text2) => {
+  var _a2, _b;
+  return ts.isImportDeclaration(node) && node.parent && ts.isSourceFile(node.parent) && ((_b = (_a2 = node.importClause) == null ? void 0 : _a2.name) == null ? void 0 : _b.getText()) === text2;
+};
+const findFields = (node, fieldNames) => {
+  var _a2;
+  if (!node)
+    return [];
+  const foundFields = (_a2 = fieldNames == null ? void 0 : fieldNames.map((name) => {
+    if (fieldExists(node, name))
+      return name;
+  })) == null ? void 0 : _a2.filter(Boolean);
+  return foundFields;
+};
+const fieldExists = (ast, fieldName) => {
+  const nodeOccurences = findAllByConditionWithParam(ast, isStringLiteralOrIdentifier, fieldName);
+  return nodeOccurences.length !== 0;
+};
+const isStringLiteralOrIdentifier = (node, param) => (ts.isStringLiteral(node) || ts.isIdentifier(node)) && node.text.includes(param);
+const isIdentifierWithName = (node, param) => ts.isIdentifier(node) && node.text === param;
+const isStringLiteralWithNameLike = (node, param) => ts.isStringLiteralLike(node) && node.text === param;
+const renameFields = (node, oldField, newField, split) => {
+  const found = [
+    ...findAllByCondition(node, ts.isIdentifier),
+    ...findAllByCondition(node, ts.isStringLiteral)
+  ];
+  const foundOccurences = found.reduce((arr, el2) => {
+    if (el2.getText().indexOf(oldField) !== -1)
+      arr.push(el2.getText().replaceAll(/"|'/g, ""));
+    return arr;
+  }, []);
+  const foundOccurencesUnique = [...new Set(foundOccurences)];
+  let foundOccurencesSplited = foundOccurencesUnique.map((el2) => {
+    if (split) {
+      return el2.replaceAll(/'|"/g, "").split(".");
+    }
+    return [el2.replaceAll(/'|"/g, "")];
+  });
+  const occurencesReplaceOldField = foundOccurencesSplited.map((el2) => el2.map((subEl) => {
+    if (subEl === oldField)
+      return newField;
+    return subEl;
+  }));
+  const finalNewFields = occurencesReplaceOldField.map((el2) => {
+    if (split) {
+      return el2.join(".");
+    }
+    return el2.join("");
+  });
+  let finalAst;
+  finalNewFields.forEach((el2, i2) => {
+    const newIdentifier = factory.createIdentifier(el2);
+    stripRanges(newIdentifier);
+    finalAst = conditionalyWithParamReplaceNodeInAst(node, isIdentifierWithName, foundOccurencesUnique[i2], newIdentifier);
+  });
+  finalNewFields.forEach((el2, i2) => {
+    const newStringLiteral = factory.createStringLiteral(el2);
+    stripRanges(newStringLiteral);
+    finalAst = conditionalyWithParamReplaceNodeInAst(finalAst, isStringLiteralWithNameLike, foundOccurencesUnique[i2], newStringLiteral);
+  });
+  if (!finalAst)
+    return;
+  stripRanges(finalAst);
+  return finalAst;
+};
+const codeStart = (code2, source) => {
+  const identifierStart = startOfJsxIdentifier(code2, source);
+  if (!identifierStart)
+    return null;
+  const identifierNode = astFindStart(code2, identifierStart);
+  if (!identifierNode)
+    return null;
+  if (ts.isJsxSelfClosingElement(identifierNode.parent))
+    return identifierNode.parent.pos;
+  if (ts.isJsxOpeningElement(identifierNode.parent))
+    return identifierNode.parent.parent.pos;
+};
+const cloneElementInAst = (code2, source) => {
+  const ast = createAst(code2);
+  const node = astFindSource(code2, source);
+  if (!node || !ast)
+    return null;
+  const finalNode = ts.isParenthesizedExpression(node) ? node.expression : node;
+  const alteredAst = appendElementsToAst(ast, { pos: finalNode.pos, end: finalNode.end }, [finalNode]);
+  return alteredAst;
+};
+const cloneAndRenameElementInAst = (code2, source, oldField, newField) => {
+  const ast = createAst(code2);
+  const node = astFindSource(code2, source);
+  if (!node || !ast)
+    return null;
+  const finalNode = renameFields(node, oldField, newField, true);
+  if (!finalNode)
+    return null;
+  const alteredAst = appendElementsToAst(ast, { pos: node.pos, end: node.end }, [finalNode]);
+  return alteredAst;
+};
+function astFindSource(code2, source) {
+  const start = codeStart(code2, source);
+  if (start) {
+    const found = astFindStart(code2, start);
+    return found;
+  }
+  return null;
+}
+function startOfJsxIdentifier(code2, source) {
+  if (typeof code2 != "string")
+    return null;
+  const sourceLines = code2.split("\n");
+  if (source.lineNumber > 0 && source.lineNumber < sourceLines.length) {
+    const lineIndex = source.lineNumber - 1;
+    let start = 0;
+    for (let i2 = 0; i2 < lineIndex; ++i2) {
+      const line = sourceLines[i2];
+      start += line.length + 1;
+    }
+    start += source.columnNumber - 1;
+    start += 1;
+    return start;
+  }
+  return null;
+}
+function astFindStart(code2, start) {
+  const ast = createAst(code2);
+  const callback = (node) => {
+    const nodeStart = node.pos;
+    if (nodeStart <= start && start <= node.end) {
+      if (nodeStart === start) {
+        return node;
+      }
+      return ts.forEachChild(node, callback);
+    }
+    return null;
+  };
+  if (ast) {
+    const found = ts.forEachChild(ast, callback);
+    return found;
+  }
+  return null;
+}
+const removeElementInAst = (code2, source) => {
+  const ast = createAst(code2);
+  const { pos, end } = astFindSource(code2, source);
+  if (!pos || !end || !ast)
+    return null;
+  const alteredAst = removeElementFromAst(ast, { pos, end });
+  return alteredAst;
+};
+const renameAndReplaceElementInAst = (ast, node, oldText, newText) => {
+  const finalNode = renameFields(node, oldText, newText, false);
+  if (!finalNode)
+    return ast;
+  ast = replaceElementsInAst(ast, {
+    pos: node.pos,
+    end: node.end
+  }, finalNode);
+  return ast;
+};
+function parseLocaleJSON(localeSourceCode, languageLocale = "en") {
+  const localeAst = createAst(localeSourceCode, ts.ScriptTarget.ESNext, ts.ScriptKind.JSON);
+  if (localeAst) {
+    return parseLocaleAST(localeAst, languageLocale);
+  }
+}
+function parseLocaleAST(ast, languageLocale = "en") {
+  let localeMessages = [];
+  ast == null ? void 0 : ast.forEachChild((child) => {
+    var _a2, _b;
+    (_b = (_a2 = child == null ? void 0 : child.expression) == null ? void 0 : _a2.properties) == null ? void 0 : _b.forEach((property2) => {
+      var _a3, _b2, _c;
+      let locale = {
+        id: property2.name.text,
+        value: (_a3 = property2.initializer) == null ? void 0 : _a3.text,
+        locale: languageLocale,
+        position: {
+          pos: (_b2 = property2.initializer) == null ? void 0 : _b2.pos,
+          end: (_c = property2.initializer) == null ? void 0 : _c.end
+        }
+      };
+      localeMessages = [...localeMessages, locale];
+    });
+  });
+  return localeMessages;
+}
+const reorderElementsInAst = async (code2, data) => {
+  const ast = createAst(code2);
+  if (!ast)
+    return null;
+  let alteredAst = ast;
+  Object.keys(data.chained_changes).forEach((key) => {
+    let tmpNode = astFindStart(code2, data.elementsPosEnd[key].pos);
+    stripRanges(tmpNode);
+    alteredAst = replaceElementsInAst(alteredAst, {
+      pos: data.elementsPosEnd[data.chained_changes[key]].pos,
+      end: data.elementsPosEnd[data.chained_changes[key]].end
+    }, tmpNode);
+  });
+  return await regenerateAst(alteredAst);
+};
+const findColumn = (code2, source) => {
+  const node = astFindSource(code2, source);
+  let parent = node;
+  while (parent && !ts.isObjectLiteralExpression(parent)) {
+    parent = parent.parent;
+  }
+  return parent;
+};
+const getReactComponentNode = (ast, componentName) => {
+  const reactComponent = findByConditionWithParam(ast, isNamedReactComponentFunction, componentName);
+  return reactComponent != null ? reactComponent : null;
+};
+const getComponentBodyFromReactComponent = (componentFunction) => {
+  const body2 = componentFunction.body;
+  if (!body2)
+    return null;
+  if (ts.isJsxOpeningLikeElement(body2) || ts.isJsxElement(body2))
+    return null;
+  if (ts.isBlock(body2)) {
+    const componentBodyStatements = body2.statements.filter((s) => !ts.isReturnStatement(s));
+    return componentBodyStatements;
+  }
+  return null;
+};
+const getReturnedJsxFromReactComponent = (componentFunction) => {
+  const body2 = componentFunction.body;
+  if (!body2)
+    return null;
+  if (ts.isJsxOpeningLikeElement(body2) || ts.isJsxElement(body2))
+    return body2;
+  if (ts.isParenthesizedExpression(body2))
+    return body2.expression;
+  if (ts.isBlock(body2)) {
+    const returnStatement = body2.statements.filter((s) => ts.isReturnStatement(s));
+    if (returnStatement.length === 1) {
+      const node = returnStatement[0].expression;
+      if (!node)
+        return null;
+      if (ts.isParenthesizedExpression(node))
+        return node.expression;
+      else
+        return node;
+    }
+  }
+  return null;
+};
+const isNamedReactComponentFunction = (node, name) => {
+  var _a2;
+  return ts.isArrowFunction(node) && node.parent && ts.isVariableDeclaration(node.parent) && node.parent.name.getText() === name && node.parent.parent && ts.isVariableDeclarationList(node.parent.parent) && node.parent.parent.parent && ts.isVariableStatement(node.parent.parent.parent) && node.parent.parent.parent.parent && ts.isSourceFile(node.parent.parent.parent.parent) || ts.isFunctionDeclaration(node) && ((_a2 = node.name) == null ? void 0 : _a2.getText()) === name && node.parent && ts.isSourceFile(node.parent);
+};
+const isReactComponentFunction = (node) => ts.isArrowFunction(node) && node.parent && ts.isVariableDeclaration(node.parent) && node.parent.parent && ts.isVariableDeclarationList(node.parent.parent) && node.parent.parent.parent && ts.isVariableStatement(node.parent.parent.parent) && node.parent.parent.parent.parent && ts.isSourceFile(node.parent.parent.parent.parent) || ts.isFunctionDeclaration(node) && node.parent && ts.isSourceFile(node.parent);
+const isBooleanLiteral = (node) => isTrueKeyword(node) || isFalseKeyword(node);
+const isTrueKeyword = (node) => node.kind === ts.SyntaxKind.TrueKeyword;
+const isFalseKeyword = (node) => node.kind === ts.SyntaxKind.FalseKeyword;
+const isNullKeyword = (node) => node.kind === ts.SyntaxKind.NullKeyword;
+const isPrimitiveProp$1 = (node) => node.kind === ts.SyntaxKind.StringLiteral || node.kind === ts.SyntaxKind.TrueKeyword || node.kind === ts.SyntaxKind.FalseKeyword || node.kind === ts.SyntaxKind.NullKeyword || node.kind === ts.SyntaxKind.NumericLiteral || node.kind === ts.SyntaxKind.Identifier && node.getText() === "undefined" || node.kind === ts.SyntaxKind.NoSubstitutionTemplateLiteral;
+const copyPrimitiveProps = (parentJsx, childJsx) => {
+  const nodes = findAllByCondition(parentJsx, isPrimitivePropOnParent);
+  const primitivePropsMap = /* @__PURE__ */ new Map();
+  nodes.forEach((n2) => {
+    const propName = ts.isJsxAttribute(n2.parent.parent) ? n2.parent.parent.name.getText() : n2.parent.name.getText();
+    primitivePropsMap.set(propName, n2);
+  });
+  let finalChildJsx = childJsx;
+  primitivePropsMap.forEach((node, key) => {
+    const propOccurences = findAllByConditionWithParam(finalChildJsx, isPrimitiveProp, key);
+    const newNode = createNewNodeForPrimitiveProp(node);
+    if (!newNode)
+      return;
+    propOccurences.forEach((pO) => {
+      const nodePosition = { pos: pO.pos, end: pO.end };
+      if (!ts.isJsxAttribute(pO.parent))
+        finalChildJsx = replaceElementsInAst(finalChildJsx, nodePosition, newNode);
+    });
+  });
+  return finalChildJsx;
+};
+const createNewNodeForPrimitiveProp = (node) => {
+  let newNode = null;
+  if (ts.isStringLiteral(node)) {
+    newNode = factory.createNoSubstitutionTemplateLiteral(node.text);
+  }
+  if (ts.isNumericLiteral(node)) {
+    newNode = factory.createNumericLiteral(node.text);
+  }
+  if (ts.isIdentifier(node) && node.getText() !== "undefined") {
+    newNode = factory.createIdentifier(node.getText());
+  }
+  if (isNullKeyword(node))
+    newNode = factory.createNull();
+  if (isTrueKeyword(node))
+    newNode = factory.createTrue();
+  if (isFalseKeyword(node))
+    newNode = factory.createFalse();
+  return newNode;
+};
+const isPrimitivePropOnParent = (node) => (ts.isNumericLiteral(node) || ts.isStringLiteral(node) || isBooleanLiteral(node) || isNullKeyword(node) || ts.isIdentifier(node) && node.getText() !== "undefined") && node.parent && ts.isJsxExpression(node.parent) || ts.isStringLiteral(node) && node.parent && ts.isJsxAttribute(node.parent);
+const isPrimitiveProp = (node, text2) => ts.isIdentifier(node) && node.text === text2;
+const flattenStringLiterals = (node) => {
+  const templateExpressions = findAllByCondition(node, ts.isTemplateExpression);
+  let finalNode = node;
+  templateExpressions.forEach((tE) => {
+    const newTemplateSpans = [];
+    let newTemplateHead = tE.head;
+    tE.templateSpans.forEach((tS, i2) => {
+      if (isPrimitiveProp$1(tS.expression)) {
+        let newText = ts.isStringLiteral(tS.expression) || ts.isNoSubstitutionTemplateLiteral(tS.expression) ? tS.expression.text + tS.literal.text : tS.expression.getText() + tS.literal.text;
+        const lastTemplateSpan = newTemplateSpans.pop();
+        if (!lastTemplateSpan) {
+          newTemplateHead = factory.createTemplateHead(newTemplateHead.text + newText);
+          return;
+        }
+        newText = lastTemplateSpan.literal.text + newText;
+        const newTemplateSpan = factory.createTemplateSpan(lastTemplateSpan.expression, i2 === tE.templateSpans.length - 1 ? factory.createTemplateTail(newText) : factory.createTemplateMiddle(newText));
+        newTemplateSpans.push(newTemplateSpan);
+      } else
+        newTemplateSpans.push(tS);
+    });
+    if (newTemplateSpans.length === 0) {
+      const nodePos = { pos: tE.parent.pos, end: tE.parent.end };
+      finalNode = replaceElementsInAst(finalNode, nodePos, factory.createStringLiteral(newTemplateHead.text));
+      return;
+    }
+    finalNode = replaceElementsInAst(finalNode, { pos: tE.pos, end: tE.end }, factory.createTemplateExpression(newTemplateHead, newTemplateSpans));
+  });
+  finalNode = stripUnnecessaryLiterals(finalNode);
+  return finalNode;
+};
+const stripUnnecessaryLiterals = (node) => {
+  const binaryNodes = findAllByCondition(node, isUnnecessaryBinaryExpression);
+  let finalNode = node;
+  binaryNodes.forEach((bN) => {
+    finalNode = replaceElementsInAst(finalNode, { pos: bN.parent.pos, end: bN.parent.end }, factory.createStringLiteral(bN.text));
+  });
+  const stringNodes = findAllByCondition(finalNode, isStringLiteralInJsxExpression);
+  stringNodes.forEach((sN) => {
+    finalNode = replaceElementsInAst(finalNode, { pos: sN.parent.pos, end: sN.parent.end }, factory.createStringLiteral(sN.text));
+  });
+  return finalNode;
+};
+const isStringLiteralInJsxExpression = (node) => isString$1(node) && node.parent && ts.isJsxExpression(node.parent);
+const isUnnecessaryBinaryExpression = (node) => isString$1(node) && node.parent && ts.isBinaryExpression(node.parent);
+const isString$1 = (node) => ts.isStringLiteral(node) || ts.isNoSubstitutionTemplateLiteral(node);
+const mergeReactComponentBody = async (parentAst, childAst, componentName) => {
+  const childReactComponent = getReactComponentNode(childAst, componentName);
+  if (!childReactComponent)
+    return parentAst;
+  const componentBodyStatements = getComponentBodyFromReactComponent(childReactComponent);
+  if (!componentBodyStatements)
+    return parentAst;
+  const block2 = findByCondition(parentAst, isBlockInsideReactComponentFunction);
+  if (!block2)
+    return parentAst;
+  const newBlockNames = componentBodyStatements.map((statement) => statement.getText());
+  const newBlock = [
+    ...componentBodyStatements,
+    ...Array.from(block2.statements).filter((statement) => !newBlockNames.includes(statement.getText()))
+  ];
+  const newNode = factory.createBlock(newBlock);
+  stripRanges(newNode);
+  const finalSourceFile = conditionalyReplaceNodeInAst(parentAst, isBlockInsideReactComponentFunction, newNode);
+  return await regenerateAst(finalSourceFile);
+};
+const copyJsxChildren = (node, copyJsx) => {
+  const numberOfNodes = copyJsx.filter((n2) => !ts.isJsxText(n2)).length;
+  let finalNode = conditionalyWithParamReplaceNodeInAst(node, isJsxExpressionWithIdentifierInside, "children", copyJsx);
+  finalNode = conditionalyReplaceNodeInAst(finalNode, isPropertyAccessExpressionWithChildrenLengthInside, factory.createNumericLiteral(numberOfNodes));
+  return finalNode;
+};
+const mergeReturnedJsx = async (parentAst, childAst, componentName) => {
+  const reactComponent = getReactComponentNode(childAst, componentName);
+  if (!reactComponent)
+    return null;
+  const returnedJsx = getReturnedJsxFromReactComponent(reactComponent);
+  if (!returnedJsx)
+    return null;
+  const nodeOccurences = findAllByConditionWithParam(parentAst, isJsxOpeningLikeElementWithName, componentName);
+  if (nodeOccurences.length == 0)
+    return null;
+  let finalAst = parentAst;
+  nodeOccurences.forEach((nO) => {
+    let newNode = copyPrimitiveProps(nO, returnedJsx);
+    if (ts.isJsxOpeningElement(nO)) {
+      const copyJsx = Array.from(nO.parent.children);
+      newNode = copyJsxChildren(newNode, copyJsx);
+    }
+    stripRanges(newNode);
+    finalAst = replaceElementsInAst(finalAst, { pos: nO.pos, end: nO.end }, newNode);
+  });
+  return await regenerateAst(finalAst);
+};
+const inlineReactComponent = async (parentAst, childAst, componentName) => {
+  let sourceFile = await mergeReactComponentBody(parentAst, childAst, componentName);
+  sourceFile = await mergeReturnedJsx(sourceFile, childAst, componentName);
+  if (!sourceFile)
+    return parentAst;
+  sourceFile = mergeImports(sourceFile, childAst);
+  sourceFile = removeUnusedDefaultImport(sourceFile, componentName);
+  sourceFile = flattenStringLiterals(sourceFile);
+  return sourceFile;
+};
+const isJsxOpeningLikeElementWithName = (node, text2) => ts.isJsxOpeningLikeElement(node) && node.tagName.text === text2;
+const isBlockInsideReactComponentFunction = (node) => ts.isBlock(node) && node.parent && isReactComponentFunction(node.parent);
+const isJsxExpressionWithIdentifierInside = (node, text2) => ts.isJsxExpression(node) && node.expression && (ts.isIdentifier(node.expression) && node.expression.getText() === text2 || ts.isPropertyAccessExpression(node.expression) && node.expression.name.getText() === text2);
+const isPropertyAccessExpressionWithChildrenLengthInside = (node) => ts.isPropertyAccessExpression(node) && ts.isPropertyAccessExpression(node.expression) && node.name.getText() === "length" && node.expression.name.getText() === "children";
+const TEMPLATE_PATH = "./node_modules/@iteria-app/component-templates/src/components/readonly";
+const ENTITY_PATH = "./node_modules/@iteria-app/component-templates/src/components/entity/list/Entity";
+const TEMPLATE_PATH_JAMSTACK = "templates/readonly";
+const ENTITY_PATH_JAMSTACK = "templates/list/Entity";
+const ENTITY = "Entity";
+const FIELD = "field";
+const COLUMNS = "columns";
+const HEADER_NAME = "headerName";
+const RENDER_CELL = "renderCell";
+const VALUE = "value";
+const DEFAULT_FORMAT = "DefaultFormat";
+const BOOLEAN_FORMAT = "BooleanFormat";
+const DATE_FORMAT = "DateFormat";
+const DATE_TIME_FORMAT = "DateTimeFormat";
+const TIME_FORMAT = "TimeFormat";
+const stringPrettyCapitalize = (inputString) => inputString.replace(/^\w/, (c2) => c2.toUpperCase()).replace(/(_|\.)/g, " ");
+const removeElementFromArray = (array, element2) => {
+  var index2 = array.indexOf(element2);
+  if (index2 !== -1) {
+    array.splice(index2, 1);
+  }
+  return array;
+};
+async function generateColumn(columnInfo2) {
+  const { io, entity, field, fields: fields8, page, selectedColumn, insertType } = columnInfo2;
+  let ast = columnInfo2.ast;
+  const astType = typeof ast;
+  if (astType === "string") {
+    ast = createAst(ast);
+  }
+  if (checkIfExist(ast, `${entity}.${field.name}`) || field.name === "id") {
+    return await returnValue(ast, astType);
+  }
+  let objectLiteral;
+  let lastObjectLiteral;
+  let formatComponentName;
+  if (page === PageType$1.LIST) {
+    const newColumn = await addColumnToList(ast, selectedColumn, entity, field, fields8, insertType);
+    if (!newColumn || !newColumn.objectLiteral || !newColumn.lastObjectLiteral || !newColumn.formatComponentName)
+      return await returnValue(ast, astType);
+    objectLiteral = newColumn.objectLiteral;
+    lastObjectLiteral = newColumn.lastObjectLiteral;
+    formatComponentName = newColumn.formatComponentName;
+  } else {
+    return await returnValue(ast, astType);
+  }
+  ast = appendElementsToAst(ast, {
+    pos: lastObjectLiteral.pos,
+    end: lastObjectLiteral.end
+  }, [objectLiteral], insertType === InsertType$1.BEFORE || insertType === InsertType$1.FIRST ? "before" : "after");
+  ast = await regenerateAst(ast);
+  const templatePath = io.injectMode === "jamstack" ? TEMPLATE_PATH_JAMSTACK : TEMPLATE_PATH;
+  ast = await addFormatting(io, ast, formatComponentName, templatePath, field.name);
+  return await returnValue(ast, astType);
+}
+const addColumnToList = async (ast, selectedColumn, entity, field, fields8, insertType) => {
+  var _a2, _b, _c, _d;
+  let formatComponentName;
+  let lastObjectLiteral;
+  let objectLiteral;
+  if (!selectedColumn) {
+    const columnsNode = findByCondition(ast, (node) => {
+      return ts.isVariableDeclaration(node) && node.name.text === COLUMNS;
+    });
+    if (!columnsNode)
+      return void 0;
+    objectLiteral = (_b = (_a2 = columnsNode.initializer) == null ? void 0 : _a2.elements) == null ? void 0 : _b[0];
+    if (!objectLiteral)
+      return void 0;
+    const newColumn = renameColumn(objectLiteral, entity, field, fields8);
+    objectLiteral = newColumn.objectLiteral;
+    formatComponentName = newColumn.formatComponentName;
+    if (insertType && insertType === InsertType$1.FIRST) {
+      lastObjectLiteral = (_c = columnsNode.initializer) == null ? void 0 : _c.elements[0];
+    } else {
+      lastObjectLiteral = (_d = columnsNode.initializer) == null ? void 0 : _d.elements.slice(-1)[0];
+    }
+  } else {
+    lastObjectLiteral = findByCondition(ast, (node) => node.getText() === selectedColumn.getText());
+    if (!lastObjectLiteral)
+      return void 0;
+    const newColumn = renameColumn(lastObjectLiteral, entity, field, fields8);
+    objectLiteral = newColumn.objectLiteral;
+    formatComponentName = newColumn.formatComponentName;
+  }
+  return {
+    objectLiteral,
+    lastObjectLiteral,
+    formatComponentName
+  };
+};
+const getFormatComponent = (type2) => {
+  if (!type2)
+    return DEFAULT_FORMAT;
+  switch (type2.toLowerCase()) {
+    case "string":
+    case "number":
+    case "int":
+    case "jsonb":
+    case "uuid":
+      return DEFAULT_FORMAT;
+    case "boolean":
+      return BOOLEAN_FORMAT;
+    case "date":
+      return DATE_FORMAT;
+    case "datetime":
+    case "timestamp":
+    case "timestamptz":
+      return DATE_TIME_FORMAT;
+    case "time":
+    case "timez":
+      return TIME_FORMAT;
+    default:
+      return DEFAULT_FORMAT;
+  }
+};
+const nodeIncludes = (ast, fields8) => {
+  const found = findAllByCondition(ast, (node) => {
+    return fields8.includes(node.text);
+  });
+  return found;
+};
+const checkIfExist = (ast, field) => {
+  const found = findByCondition(ast, (node) => node.text === field);
+  return found ? true : false;
+};
+const returnValue = async (ast, astType) => astType === "string" ? await printFormattedSourceFile(ast) : ast;
+const renameColumn = (objectLiteral, entity, field, fields8) => {
+  let formatComponentName = void 0;
+  for (const objectProperty of objectLiteral.properties) {
+    const initializer = objectProperty.initializer;
+    const entityFields = fields8.map((field2) => field2.name);
+    entityFields.unshift(FIELD);
+    objectLiteral = replaceNames(objectLiteral, initializer, entity, field, fields8);
+    if (ts.isArrowFunction(initializer) || ts.isFunctionExpression(initializer)) {
+      formatComponentName = getFormatComponent(field.type);
+      objectLiteral = handleRenderCell(objectLiteral, initializer, formatComponentName);
+    }
+  }
+  return {
+    objectLiteral,
+    formatComponentName
+  };
+};
+const replaceNames = (objectLiteral, initializer, entity, field, fields8) => {
+  const entityFields = removeElementFromArray(fields8.map((field2) => field2.name), "id");
+  const newEntityFields = entityFields.map((field2) => {
+    return `${entity}.${field2}`;
+  });
+  const headerNames = fields8.map((field2) => {
+    return stringPrettyCapitalize(field2.name);
+  });
+  entityFields.unshift(FIELD);
+  headerNames.unshift(HEADER_NAME);
+  const foundReplace = nodeIncludes(initializer, [...entityFields, ...headerNames, ...newEntityFields]);
+  foundReplace.forEach((found) => {
+    objectLiteral = handleReplaceName(objectLiteral, found, entity, field.name, {
+      entityFields,
+      headerNames,
+      newEntityFields
+    });
+  });
+  return objectLiteral;
+};
+const handleReplaceName = (objectLiteral, found, entity, fieldName, arrays) => {
+  let newName;
+  if (arrays.entityFields.includes(found.text)) {
+    if (!(found.parent && ts.isJsxAttribute(found.parent) && ts.isIdentifier(found) && found.parent.name.getText() == found.getText())) {
+      if (ts.isPropertyAssignment(found.parent)) {
+        newName = `${entity}.${fieldName}`;
+      } else {
+        newName = fieldName;
+      }
+    }
+  } else if (arrays.headerNames.includes(found.text)) {
+    newName = stringPrettyCapitalize(fieldName);
+  } else {
+    newName = `${entity}.${fieldName}`;
+  }
+  return renameAndReplaceElementInAst(objectLiteral, found, found.text, newName);
+};
+const handleRenderCell = (objectLiteral, initializer, formatComponentName) => {
+  var _a2, _b;
+  const propertyName = (_b = (_a2 = initializer.parent) == null ? void 0 : _a2.name) == null ? void 0 : _b.text;
+  if (propertyName && propertyName === RENDER_CELL) {
+    const atributeName = initializer.parameters[0].name.text;
+    const newElement = createJsxSelfClosingElement(formatComponentName, [
+      {
+        name: VALUE,
+        initializer: atributeName
+      }
+    ]);
+    let elementToReplace;
+    if (ts.isFunctionExpression(initializer)) {
+      const returnStatement = findByCondition(objectLiteral, ts.isReturnStatement);
+      if (!returnStatement)
+        return {
+          objectLiteral,
+          formatComponentName: DEFAULT_FORMAT
+        };
+      elementToReplace = returnStatement.expression;
+    } else {
+      elementToReplace = initializer.body;
+    }
+    objectLiteral = replaceElementsInAst(objectLiteral, {
+      pos: elementToReplace.pos,
+      end: elementToReplace.end
+    }, newElement);
+  }
+  return objectLiteral;
+};
+const capitalize$1 = (name) => {
+  return name.charAt(0).toUpperCase() + name.slice(1);
+};
+const updateAst = async (io, code2, entity, findString, fields8, introspection) => {
+  let alteredAst = createAst(code2);
+  const entityName = getEntityName(entity);
+  alteredAst = await renameEntityInCode(alteredAst, entityName, findString, introspection, PageType$1.LIST);
+  for (const field of fields8) {
+    if (isHidden(field.name))
+      continue;
+    const columnInfo2 = {
+      io,
+      ast: alteredAst,
+      entity,
+      field,
+      fields: fields8,
+      page: PageType$1.LIST,
+      selectedColumn: void 0
+    };
+    alteredAst = await generateColumn(columnInfo2);
+  }
+  alteredAst = await removeFirst(alteredAst);
+  alteredAst = removeUnusedDefaultImport(alteredAst, `Format${entityName}Field`);
+  alteredAst = await regenerateAst(alteredAst);
+  alteredAst = flattenStringLiterals(alteredAst);
+  alteredAst = await regenerateAst(alteredAst);
+  return alteredAst;
+};
+const generateTsxFiles = async (io, entity, components, fields8) => {
+  const entityName = getEntityName(entity);
+  const files = [];
+  for (const component of components) {
+    const entityPath = io.injectMode === "jamstack" ? ENTITY_PATH_JAMSTACK : ENTITY_PATH;
+    const dataTableTemplate = await io.readFile(`${entityPath}${component}.tsx`);
+    const ast = await updateAst(io, dataTableTemplate, entity, ENTITY, fields8, io.introspection);
+    const sourceCode = await printFormattedSourceFile(ast);
+    const sourceCodePath = findRelativePath(`/src/pages/${entity}/`, `./${entityName}${component}.tsx`);
+    files.push({ path: io.cwd + sourceCodePath, data: sourceCode });
+  }
+  return files;
+};
+const addFormatting = async (io, ast, component, path2, field) => {
+  const code2 = await io.readFile(`${path2}/${component}.tsx`);
+  let childAst = await createAst(code2);
+  if (field) {
+    field = addOptionalChaining(field);
+    childAst = renameFields(childAst, FIELD, field, false);
+    childAst = await regenerateAst(childAst);
+  }
+  const inlineReact = await inlineReactComponent(ast, childAst, component);
+  return await regenerateAst(inlineReact);
+};
+const removeFirst = async (ast) => {
+  var _a2, _b;
+  const node = findByCondition(ast, (node2) => {
+    return ts.isVariableDeclaration(node2) && node2.name.text === COLUMNS;
+  });
+  if (!node)
+    return ast;
+  const objectLiteral = (_b = (_a2 = node.initializer) == null ? void 0 : _a2.elements) == null ? void 0 : _b[0];
+  ast = removeElementFromAst(ast, {
+    pos: objectLiteral.pos,
+    end: objectLiteral.end
+  });
+  return ast;
+};
+const isHidden = (fieldName) => {
+  if (fieldName === "id" || fieldName.match(/.*Path$/i) !== null)
+    return true;
+  return false;
+};
+const addOptionalChaining = (field) => {
+  if (field.includes(".")) {
+    const newFields = field.split(".").map((newField) => {
+      return newField + "?";
+    });
+    const lastField = newFields.pop();
+    newFields.push(lastField.replaceAll("?", ""));
+    field = newFields.join(".");
+  }
+  return field;
+};
+const getEntityName = (entity) => {
+  return entity.split("_").map((string) => capitalize$1(string)).join("");
+};
+const renameEntityInCode = async (ast, entityName, findString, introspection, pageType) => {
+  const nodes = findAllByCondition(ast, (node) => {
+    const text2 = node.getText();
+    return (ts.isStringLiteral(node) || ts.isIdentifier(node)) && text2 && text2.toUpperCase().includes(findString.toUpperCase());
+  });
+  const [queryRoot] = getRoots$1(introspection);
+  let field = queryRoot.fields.find((field2) => isOfTypePage$1(field2, entityName, pageType));
+  if (!field) {
+    field = queryRoot.fields.find((field2) => {
+      var _a2;
+      return ((_a2 = field2 == null ? void 0 : field2.name) == null ? void 0 : _a2.replace(/_/g, "").toLocaleLowerCase()) === entityName.toLocaleLowerCase();
+    });
+  }
+  nodes.forEach((node) => {
+    const oldText = node.text;
+    let newText;
+    if (oldText.toLowerCase() === findString.toLowerCase()) {
+      newText = field.name;
+    } else {
+      if (oldText.toLowerCase() === `use${findString}Query`.toLowerCase()) {
+        newText = oldText.replace(findString, upperLetterInWord(field.name));
+      } else {
+        newText = oldText.replace(findString, entityName);
+      }
+    }
+    ast = renameAndReplaceElementInAst(ast, node, oldText, newText);
+  });
+  return await regenerateAst(ast);
+};
+async function generatePages(introspection, io, options2) {
+  const entities = options2.entities;
+  const graphqlFiles = generateGraphqlFile(introspection, entities);
+  const pages = /* @__PURE__ */ new Map();
+  const files = [];
+  for (const graphqlFile of graphqlFiles) {
+    const path2 = findRelativePath(`/src/pages/${graphqlFile.entityName}/`, "./index.graphql");
+    pages.set(path2, graphqlFile.queries);
+    if (options2.generateReact) {
+      const components = ["ListView", "ListContainer"];
+      const fields8 = graphqlFile.fragments.map((field) => {
+        const newField = graphqlFile.properties.find((value2) => value2.name === field);
+        return newField;
+      }).filter((field) => field);
+      files.push(...await generateTsxFiles(io, graphqlFile.entityName, components, fields8));
+    }
+  }
+  return {
+    pages,
+    files
+  };
+}
+const removeColumnFromAst = (code2, source) => {
+  const node = findColumn(code2, source);
+  if (!node)
+    return createAst(code2);
+  const ast = createAst(code2);
+  const alteredAst = removeElementFromAst(ast, { pos: node.pos, end: node.end });
+  return alteredAst;
+};
+var commonjsGlobal = typeof globalThis !== "undefined" ? globalThis : typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : {};
+function getAugmentedNamespace(n2) {
+  if (n2.__esModule)
+    return n2;
+  var a = Object.defineProperty({}, "__esModule", { value: true });
+  Object.keys(n2).forEach(function(k2) {
+    var d = Object.getOwnPropertyDescriptor(n2, k2);
+    Object.defineProperty(a, k2, d.get ? d : {
+      enumerable: true,
+      get: function() {
+        return n2[k2];
+      }
+    });
+  });
+  return a;
+}
+function commonjsRequire(path2) {
+  throw new Error('Could not dynamically require "' + path2 + '". Please configure the dynamicRequireTargets or/and ignoreDynamicRequires option of @rollup/plugin-commonjs appropriately for this require call to work.');
+}
+var lib = {};
+Object.defineProperty(lib, "__esModule", {
+  value: true
+});
+var _typeof$1 = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function(obj2) {
+  return typeof obj2;
+} : function(obj2) {
+  return obj2 && typeof Symbol === "function" && obj2.constructor === Symbol && obj2 !== Symbol.prototype ? "symbol" : typeof obj2;
+};
+var isBrowser = typeof window !== "undefined" && typeof window.document !== "undefined";
+var isWebWorker = (typeof self === "undefined" ? "undefined" : _typeof$1(self)) === "object" && self.constructor && self.constructor.name === "DedicatedWorkerGlobalScope";
+var isNode = typeof process !== "undefined" && process.versions != null && process.versions.node != null;
+var isJsDom = function isJsDom2() {
+  return typeof window !== "undefined" && window.name === "nodejs" || navigator.userAgent.includes("Node.js") || navigator.userAgent.includes("jsdom");
+};
+var isBrowser_1 = lib.isBrowser = isBrowser;
+lib.isWebWorker = isWebWorker;
+var isNode_1 = lib.isNode = isNode;
+lib.isJsDom = isJsDom;
+const getCWDFromDevtools = () => {
+  var _a2, _b, _c, _d;
+  const rendererInterfaces = (_b = (_a2 = window.__REACT_DEVTOOLS_GLOBAL_HOOK__) == null ? void 0 : _a2.reactDevtoolsAgent) == null ? void 0 : _b._rendererInterfaces;
+  if (!rendererInterfaces)
+    return;
+  for (const rendererInterface of Object.values(rendererInterfaces)) {
+    for (let i2 = 1; i2 < 300; i2++) {
+      const path2 = rendererInterface.getPathForElement(i2);
+      const data = rendererInterface.inspectElement(`iteria-response${i2}`, i2, path2);
+      const fileName = (_d = (_c = data.value) == null ? void 0 : _c.source) == null ? void 0 : _d.fileName;
+      if (fileName)
+        return fileName;
+    }
+  }
+};
+const transformPathToPosix = (path2) => path2.replaceAll("\\", "/");
+const guessCurrentWorkingDirectory = () => {
+  let cwd;
+  if ({}.VITE_CWD) {
+    return transformPathToPosix({}.VITE_CWD);
+  }
+  if (isBrowser_1)
+    cwd = getCWDFromDevtools();
+  else if (isNode_1 && typeof process != "undefined" && process.cwd) {
+    cwd = process.cwd();
+  } else {
+    throw new Error("Unsuported environment. Supported environments: Browser, NodeJS");
+  }
+  if (!cwd) {
+    console.error("Unable to find current working directory.");
+    return null;
+  }
+  cwd = transformPathToPosix(cwd);
+  const index2 = cwd.lastIndexOf("/src");
+  return cwd.slice(0, index2 + 1);
+};
+const worker = new WorkerWrapper();
+const iteriaGeneratorWorker = wrap$3(worker);
+const cloneElement = async (code2, source) => {
+  const encoded = encodeEmptyLines$1(code2);
+  const alteredAst = await cloneElementInAst(encoded, source);
+  if (!alteredAst)
+    return console.error("Unable to clone Element in AST");
+  const newCode = await printFormattedSourceFile$1(alteredAst);
+  return newCode;
+};
+const cloneAndRenameElement = async (code2, source, oldField, newField) => {
+  const encoded = encodeEmptyLines$1(code2);
+  const alteredAst = await cloneAndRenameElementInAst(encoded, source, oldField, newField);
+  if (!alteredAst)
+    return console.error("Unable to clone Element in AST");
+  const newCode = await printFormattedSourceFile$1(alteredAst);
+  return newCode;
+};
+const removeElement = async (code2, source) => {
+  const encoded = encodeEmptyLines$1(code2);
+  const alteredAst = removeElementInAst(encoded, source);
+  if (!alteredAst)
+    return console.error("Unable to remove Element from AST");
+  const newCode = await printFormattedSourceFile$1(alteredAst);
+  return newCode;
+};
+const isUserFeedbackError = (type2) => type2 === "GENERATE_PAGE_ERROR" || type2 === "CLONE_FIELD_ERROR" || type2 === "CLONE_ELEMENT_ERROR" || type2 === "REMOVE_ELEMENT_ERROR" || type2 === "NAVIGATE_TO_SOURCE_CODE_ERROR" || type2 === "CHANGE_GRAPHQL_ENDPOINT_ERROR" || type2 === "GRAPHQL_CODEGEN_ERROR" || type2 === "LOAD_INTROSPECTION_ERROR" || type2 === "REORDER_ELEMENT_ERROR" || type2 === "TRANSLATE_ELEMENT_ERROR" || type2 === "CHANGE_THEME_ERROR" || type2 === "CREATE_TABLE_ERROR" || type2 === "ADD_COLUMN_ERROR" || type2 === "LOCAL_MESSAGE_TRANSLATE_ERROR" || type2 === "LOAD_INTROSPECTION_ERROR" || type2 === "COMMIT_ALL_CHANGES_ERROR" || type2 === "BUNDLER_ERROR" || type2 === "TRANSPILER_ERROR" || type2 === "LOGIN_ERROR" || type2 === "UPDATE_DATABASE_ERROR";
+const isUserFeedbackSuccess = (type2) => type2 === "GENERATE_PAGE_SUCCESS" || type2 === "CLONE_FIELD_SUCCESS" || type2 === "CLONE_ELEMENT_SUCCESS" || type2 === "REMOVE_ELEMENT_SUCCESS" || type2 === "CHANGE_GRAPHQL_ENDPOINT_SUCESS" || type2 === "REORDER_ELEMENT_SUCESS" || type2 === "CHANGE_THEME_SUCESS" || type2 === "CREATE_TABLE_SUCCESS" || type2 === "ADD_COLUMN_SUCCESS" || type2 === "LOCAL_MESSAGE_TRANSLATE_SUCESS" || type2 === "LOAD_INTROSPECTION_SUCCESS" || type2 === "COMMIT_ALL_CHANGES_SUCCESS" || type2 === "LOGIN_SUCCESS" || type2 === "UPDATE_DATABASE_SUCCESS";
+const isUserFeedbackInfo = (type2) => type2 === "GENERATE_PAGE_INFO" || type2 === "CLONE_FIELD_INFO" || type2 === "REORDER_ELEMENT_INFO" || type2 === "CREATE_TABLE_INFO" || type2 === "ADD_COLUMN_INFO" || type2 === "LOCAL_MESSAGE_TRANSLATE_INFO" || type2 === "ERD_VIEW_INFO" || type2 === "COMMIT_ALL_CHANGES_INFO" || type2 === "COMMIT_NOTHING_TO_CHANGE_INFO" || type2 === "UPDATE_DATABASE_INFO";
+const showUserFeedback = (feedback) => {
+  if (isUserFeedbackSuccess(feedback.type))
+    showSuccess(feedback);
+  if (isUserFeedbackError(feedback.type))
+    showError(feedback);
+  if (isUserFeedbackInfo(feedback.type))
+    showInfo(feedback);
+};
+const showSuccess = (feedback) => {
+  switch (feedback.type) {
+    case "GENERATE_PAGE_SUCCESS":
+      const entities = feedback.payload.entity;
+      if (entities.length > 1)
+        return showSuccessSnackbar(`New pages successfully generated.`);
+      else
+        return showSuccessSnackbar(`New page generated at /app/${entities[0]}.`);
+    case "CLONE_FIELD_SUCCESS":
+      showSuccessSnackbar("Fields added successfully.");
+      break;
+    case "CLONE_ELEMENT_SUCCESS":
+      showSuccessSnackbar("Element cloned successfully.");
+      break;
+    case "REMOVE_ELEMENT_SUCCESS":
+      showSuccessSnackbar("Element removed successfully.");
+      break;
+    case "CHANGE_GRAPHQL_ENDPOINT_SUCESS":
+      showSuccessSnackbar("GraphQL endpoint changed successfully.");
+      break;
+    case "LOAD_INTROSPECTION_SUCCESS":
+      showSuccessSnackbar("Introspection schema loaded successfully.");
+      break;
+    case "REORDER_ELEMENT_SUCCESS":
+      showSuccessSnackbar("Element was moved successfully.");
+    case "CHANGE_THEME_SUCESS":
+      showSuccessSnackbar("Theme changed successfully.");
+      break;
+    case "CREATE_TABLE_SUCCESS":
+      showSuccessSnackbar("Table created successfully.");
+      break;
+    case "ADD_COLUMN_SUCCESS":
+      showSuccessSnackbar("New Column added successfully.");
+      break;
+    case "LOCAL_MESSAGE_TRANSLATE_SUCESS":
+      showSuccessSnackbar("Element was successfully translated.");
+      break;
+    case "COMMIT_ALL_CHANGES_SUCCESS":
+      showSuccessSnackbar("Changes were successfully committed.");
+      break;
+    case "LOGIN_SUCCESS":
+      const login = feedback.payload.login;
+      const provider = feedback.payload.provider;
+      showSuccessSnackbar(`Successfully logged ${login ? "in to" : "out from"} ${provider}.`);
+      break;
+    case "UPDATE_DATABASE_SUCCESS":
+      showSuccessSnackbar("Database updated successfully.");
+      break;
+    default:
+      throw new Error(`Unhandled succes type: ${feedback.type}`);
+  }
+};
+const showError = (feedback) => {
+  switch (feedback.type) {
+    case "GENERATE_PAGE_ERROR":
+      showErrorSnackbar("Error while generating page. Check console for error and stacktrace.");
+      break;
+    case "CLONE_FIELD_ERROR":
+      showErrorSnackbar("Error while adding fields. Check console for error and stacktrace.");
+      break;
+    case "CLONE_ELEMENT_ERROR":
+      showErrorSnackbar("Error while cloning element. Check console for error and stacktrace.");
+      break;
+    case "REMOVE_ELEMENT_ERROR":
+      showErrorSnackbar("Error while removing element. Check console for error and stacktrace.");
+      break;
+    case "NAVIGATE_TO_SOURCE_CODE_ERROR":
+      showErrorSnackbar("Error while navigating to code. Check console for error and stacktrace.");
+      break;
+    case "CHANGE_GRAPHQL_ENDPOINT_ERROR":
+      showErrorSnackbar("Error while changing GraphQL endpoint. Check console for error and stacktrace.");
+      break;
+    case "GRAPHQL_CODEGEN_ERROR":
+      showErrorSnackbar("Error while generatig graphQL types. Check console for error and stacktrace.");
+      break;
+    case "LOCAL_MESSAGE_TRANSLATE_ERROR":
+      showErrorSnackbar("Error while saving translation.");
+      break;
+    case "LOAD_INTROSPECTION_ERROR":
+      showErrorSnackbar("Error while loading Introspection schema. Check console for error and stacktrace.");
+      break;
+    case "CHANGE_THEME_ERROR":
+      showErrorSnackbar("Error while changing theme. Check console for error and stacktrace.");
+    case "CREATE_TABLE_ERROR":
+      showErrorSnackbar("Error while creating table. Check console for error and stacktrace.");
+      break;
+    case "ADD_COLUMN_ERROR":
+      showErrorSnackbar("Error while adding new column. Check console for error and stacktrace.");
+      break;
+    case "TRANSLATE_ELEMENT_ERROR":
+      showErrorSnackbar("Error while translating element. Check console for error and stacktrace.");
+      break;
+    case "REORDER_ELEMENT_ERROR":
+      showErrorSnackbar("Error while moving element. Check console for error and stacktrace.");
+      break;
+    case "COMMIT_ALL_CHANGES_ERROR":
+      showErrorSnackbar("Error while committing changes. Check console for error and stacktrace.");
+      break;
+    case "BUNDLER_ERROR":
+      showErrorSnackbar("Error while bundling files. Check console for error and stacktrace.");
+      break;
+    case "TRANSPILER_ERROR":
+      showErrorSnackbar("Error while transpiling files. Check console for error and stacktrace.");
+      break;
+    case "LOGIN_ERROR":
+      const login = feedback.payload.login;
+      const provider = feedback.payload.provider;
+      showErrorSnackbar(`Error while logging ${login ? "in to" : "out from"} ${provider}. Check console for error and stacktrace.`);
+      break;
+    case "UPDATE_DATABASE_ERROR":
+      showErrorSnackbar("Error while updating database. Check console for error and stacktrace.");
+      break;
+    default:
+      throw new Error(`Unhandled error type: ${feedback.type}`);
+  }
+};
+const showInfo = (feedback) => {
+  switch (feedback.type) {
+    case "GENERATE_PAGE_INFO":
+      const entities = feedback.payload.entity;
+      if (entities.length > 1)
+        return showLoadingSnackbar(`Generating new pages.`);
+      else
+        return showLoadingSnackbar(`Generating new page at /app/${entities[0]}.`);
+    case "CLONE_FIELD_INFO":
+      showLoadingSnackbar("Adding fields.");
+      break;
+    case "REORDER_ELEMENT_INFO":
+      showInfoSnackbar("Moving element to position.");
+    case "CREATE_TABLE_INFO":
+      showLoadingSnackbar("Creating table.");
+      break;
+    case "ADD_COLUMN_INFO":
+      showLoadingSnackbar("Adding new column.");
+      break;
+    case "LOCAL_MESSAGE_TRANSLATE_INFO":
+      showInfoSnackbar("Translating element.");
+      break;
+    case "ERD_VIEW_INFO":
+      showLoadingSnackbar("Loading Entity-Relationship Diagram.");
+      break;
+    case "COMMIT_ALL_CHANGES_INFO":
+      showLoadingSnackbar("Committing changes to repository.");
+      break;
+    case "COMMIT_NOTHING_TO_CHANGE_INFO":
+      showWarningSnackbar("Nothing to commit!");
+      break;
+    case "UPDATE_DATABASE_INFO":
+      showLoadingSnackbar("Updating database.");
+      break;
+    default:
+      throw new Error(`Unhandled info type: ${feedback.type}`);
+  }
+};
+var PageType = /* @__PURE__ */ ((PageType2) => {
+  PageType2[PageType2["LIST"] = 0] = "LIST";
+  PageType2[PageType2["DETAIL"] = 1] = "DETAIL";
+  return PageType2;
+})(PageType || {});
+var InsertType = /* @__PURE__ */ ((InsertType2) => {
+  InsertType2[InsertType2["BEFORE"] = 0] = "BEFORE";
+  InsertType2[InsertType2["AFTER"] = 1] = "AFTER";
+  InsertType2[InsertType2["FIRST"] = 2] = "FIRST";
+  InsertType2[InsertType2["LAST"] = 3] = "LAST";
+  return InsertType2;
+})(InsertType || {});
+const changeGraphQLEndpoint = async (envFile, endpointEnvName, newEndpointURL, secretEnvName, newSecret) => {
+  const variables = envFile.split("\n");
+  let urlExists = false;
+  let secretExists = false;
+  const modifiedVariables = variables.map((variable) => {
+    const variableValueStart = variable == null ? void 0 : variable.indexOf("=");
+    const variableName = variable.substring(0, variableValueStart).replace(" ", "");
+    if (variableName === endpointEnvName) {
+      urlExists = true;
+      return `${variableName} = "${newEndpointURL}"`;
+    }
+    if (variableName === secretEnvName) {
+      secretExists = true;
+      return `${variableName} = "${newSecret}"`;
+    }
+    return variable;
+  });
+  if (!secretExists)
+    modifiedVariables.unshift(`${secretEnvName} = "${newSecret}"`);
+  if (!urlExists)
+    modifiedVariables.unshift(`${endpointEnvName} = "${newEndpointURL}"`);
+  const modifiedEnvFile = modifiedVariables.join("\n");
+  return modifiedEnvFile;
+};
+const getRoots = (introspection) => {
+  const types = introspection.types;
+  const query2 = introspection.queryType;
+  const mutation = introspection.mutationType;
+  const subscription = introspection.subscriptionType;
+  const roots = types.filter((type2) => type2.name === (query2 == null ? void 0 : query2.name) || type2.name === (mutation == null ? void 0 : mutation.name) || type2.name === (subscription == null ? void 0 : subscription.name)).map((filteredType) => {
+    var _a2;
+    return {
+      fields: (_a2 = filteredType.fields) != null ? _a2 : [],
+      kind: filteredType.kind,
+      name: filteredType.name,
+      type: filteredType.type,
+      args: filteredType.args
+    };
+  });
+  const queryRoot = roots.find((root2) => root2.name === (query2 == null ? void 0 : query2.name));
+  const mutationRoot = roots.find((root2) => root2.name === (mutation == null ? void 0 : mutation.name));
+  const subscriptionRoot = roots.find((root2) => root2.name === (subscription == null ? void 0 : subscription.name));
+  return [queryRoot, mutationRoot, subscriptionRoot];
+};
+function getNestedOfType(field) {
+  var _a2;
+  let actualType = (_a2 = field.type) != null ? _a2 : field.ofType;
+  while (actualType.ofType)
+    actualType = actualType.ofType;
+  if (actualType.name)
+    return actualType;
+  else
+    return { name: field.type, kind: "" };
+}
+const isByPkQuery = (field) => field.args.some((arg) => arg.name === "id");
+const isAggregateField = (field) => {
+  var _a2, _b, _c;
+  return ((_a2 = field.type) == null ? void 0 : _a2.kind) === "NON_NULL" && ((_c = (_b = field.type) == null ? void 0 : _b.ofType) == null ? void 0 : _c.kind) === "OBJECT";
+};
 function isOfTypePage(field, entityName, pageType) {
   var _a2, _b;
   let actualType = field.type;
@@ -62812,7 +64092,7 @@ async function fetchHasuraMetadata(body2, workbench2) {
   });
   return response;
 }
-const capitalize$2 = (text2) => {
+const capitalize = (text2) => {
   return text2.charAt(0).toUpperCase() + text2.slice(1);
 };
 const lowerFirstLetter = (text2) => {
@@ -62820,7 +64100,7 @@ const lowerFirstLetter = (text2) => {
 };
 const capitalizeFirstLetters = (name) => {
   return name.split("_").map((element2) => {
-    return capitalize$2(element2);
+    return capitalize(element2);
   }).join("");
 };
 const runSQLQuery = (sqlQuery) => {
@@ -63533,14 +64813,6 @@ function generateSQLData(introspection, tablesInfo, constraints) {
   });
   return sqlData;
 }
-const capitalize$1 = (string) => {
-  return string[0].toUpperCase() + string.slice(1);
-};
-function upperLetterInWord(queryName) {
-  let arr = queryName.split("_");
-  arr = arr.map((item) => capitalize$1(item));
-  return arr.join("_");
-}
 const filterIntrospection = (introspection, entityName) => {
   const introspectionInstance = JSON.parse(JSON.stringify(introspection));
   const queryRoot = introspectionInstance.types.find((type2) => {
@@ -63553,1149 +64825,6 @@ const filterIntrospection = (introspection, entityName) => {
   }
 };
 const entityExists = (types, entityName) => types.some((type2) => type2.name === entityName);
-const createMixedImport = (namedImports, moduleSpecifier, defaultImport) => factory.createImportDeclaration(void 0, void 0, factory.createImportClause(false, defaultImport != null ? defaultImport : void 0, factory.createNamedImports(namedImports)), factory.createIdentifier(moduleSpecifier));
-const createNameSpaceImport = (namespace, module2) => {
-  return factory.createImportDeclaration(void 0, void 0, factory.createImportClause(false, void 0, factory.createNamespaceImport(factory.createIdentifier(namespace))), factory.createIdentifier(module2));
-};
-const createDefaultImport = (identifier, module2) => factory.createImportDeclaration(void 0, void 0, factory.createImportClause(false, factory.createIdentifier(identifier), void 0), factory.createIdentifier(module2));
-const createJsxSelfClosingElement = (name, atributes) => factory.createJsxSelfClosingElement(factory.createIdentifier(name), void 0, factory.createJsxAttributes(atributes.map((atribute) => factory.createJsxAttribute(factory.createIdentifier(atribute.name), factory.createJsxExpression(void 0, factory.createIdentifier(atribute.initializer))))));
-const stripQuotes = (str2) => str2.replace(/['"]+/g, "");
-const mergeImports = (parentAst, childAst) => {
-  const importsArray = getMergeImports(parentAst, childAst);
-  if (importsArray) {
-    const importPosition = findPositionOfFirstImport(parentAst);
-    const finalAst = appendElementsToAst(parentAst, importPosition, importsArray);
-    return finalAst;
-  } else {
-    return parentAst;
-  }
-};
-const getMergeImports = (parentAst, childAst) => {
-  const parentAstImports = parentAst.statements.filter((s) => ts.isImportDeclaration(s));
-  const childAstImports = childAst.statements.filter((s) => ts.isImportDeclaration(s));
-  const importMap = createImportMap(parentAstImports);
-  const importsArray = getNewImportsArray(childAstImports, importMap);
-  return importsArray;
-};
-const getImportIdentifiers = (importDeclaration) => {
-  const identifiers = /* @__PURE__ */ new Set();
-  const { importClause } = importDeclaration;
-  if (!importClause)
-    return null;
-  if (importClause.name)
-    identifiers.add(importClause.name.getText());
-  if (importClause.namedBindings && ts.isNamedImports(importClause.namedBindings)) {
-    importClause.namedBindings.elements.forEach((e) => identifiers.add(e.name.getText()));
-  }
-  if (importClause.namedBindings && ts.isNamespaceImport(importClause.namedBindings)) {
-    identifiers.add(importClause.namedBindings.name.getText());
-  }
-  return Array.from(identifiers);
-};
-const createImportMap = (importDeclarations) => {
-  const importMap = /* @__PURE__ */ new Map();
-  importDeclarations.forEach((iD) => {
-    const moduleSpecifier = stripQuotes(iD.moduleSpecifier.getText());
-    const importIdentifiers = getImportIdentifiers(iD);
-    if (!importIdentifiers)
-      return;
-    const currEntry = importMap.get(moduleSpecifier);
-    if (currEntry) {
-      importMap.set(moduleSpecifier, [...currEntry, ...importIdentifiers]);
-    } else {
-      importMap.set(moduleSpecifier, importIdentifiers);
-    }
-  });
-  return importMap;
-};
-const getNewImportsArray = (childImports, importMap) => {
-  const newImports = [];
-  childImports.forEach((importDeclaration) => {
-    var _a2;
-    const moduleSpecifier = stripQuotes(importDeclaration.moduleSpecifier.getText());
-    const { importClause } = importDeclaration;
-    if (!importClause)
-      return;
-    if (!importMap.has(moduleSpecifier)) {
-      newImports.push(importDeclaration);
-      return;
-    }
-    const importIdentifiers = getImportIdentifiers(importDeclaration);
-    const currIdentifiers = importMap.get(moduleSpecifier);
-    if (!importIdentifiers || !currIdentifiers)
-      return;
-    const uniqueIdentifiers = importIdentifiers.filter((iI) => !currIdentifiers.includes(iI));
-    if (uniqueIdentifiers.length === 0)
-      return;
-    if (uniqueIdentifiers.length === 1 && ((_a2 = importClause.name) == null ? void 0 : _a2.getText()) === uniqueIdentifiers[0]) {
-      const newImport2 = createDefaultImport(uniqueIdentifiers[0], importDeclaration.moduleSpecifier.getText());
-      newImports.push(newImport2);
-      return;
-    }
-    if (uniqueIdentifiers.length === 1 && importClause.namedBindings && ts.isNamespaceImport(importClause.namedBindings) && importClause.namedBindings.name.getText() === uniqueIdentifiers[0]) {
-      const newImport2 = createNameSpaceImport(uniqueIdentifiers[0], importDeclaration.moduleSpecifier.getText());
-      newImports.push(newImport2);
-      return;
-    }
-    const newImport = stripNonUniqueIdentifiersFromImport(importDeclaration, uniqueIdentifiers);
-    if (newImport)
-      newImports.push(newImport);
-  });
-  newImports.map((value2) => {
-    stripRanges(value2);
-  });
-  return newImports;
-};
-const getFilteredNamedImports = (importClause, uniqueIdentifiers) => {
-  if (importClause.namedBindings && ts.isNamedImports(importClause.namedBindings)) {
-    const uniqueNamedImports = importClause.namedBindings.elements.filter((namedImport) => uniqueIdentifiers.includes(namedImport.name.getText()));
-    return uniqueNamedImports.length > 0 ? uniqueNamedImports : null;
-  }
-  return null;
-};
-const stripNonUniqueIdentifiersFromImport = (importDeclaration, uniqueIdentifiers) => {
-  var _a2;
-  const { importClause } = importDeclaration;
-  if (!importClause)
-    return null;
-  const filteredNamedImports = getFilteredNamedImports(importClause, uniqueIdentifiers);
-  if (!filteredNamedImports)
-    return null;
-  const defaultImport = (_a2 = importClause.name) == null ? void 0 : _a2.getText();
-  const moduleSpecifier = importDeclaration.moduleSpecifier.getText();
-  if (defaultImport && uniqueIdentifiers.includes(defaultImport)) {
-    const finalImport2 = createMixedImport(filteredNamedImports, moduleSpecifier, importClause.name);
-    return finalImport2;
-  }
-  const finalImport = createMixedImport(filteredNamedImports, moduleSpecifier);
-  return finalImport;
-};
-const removeUnusedDefaultImport = (ast, importName) => {
-  const newAst = conditionalyWithParamRemoveNodeInAst(ast, isDefaultImport, importName);
-  return newAst;
-};
-const isDefaultImport = (node, text2) => {
-  var _a2, _b;
-  return ts.isImportDeclaration(node) && node.parent && ts.isSourceFile(node.parent) && ((_b = (_a2 = node.importClause) == null ? void 0 : _a2.name) == null ? void 0 : _b.getText()) === text2;
-};
-const findFields = (node, fieldNames) => {
-  var _a2;
-  if (!node)
-    return [];
-  const foundFields = (_a2 = fieldNames == null ? void 0 : fieldNames.map((name) => {
-    if (fieldExists(node, name))
-      return name;
-  })) == null ? void 0 : _a2.filter(Boolean);
-  return foundFields;
-};
-const fieldExists = (ast, fieldName) => {
-  const nodeOccurences = findAllByConditionWithParam(ast, isStringLiteralOrIdentifier, fieldName);
-  return nodeOccurences.length !== 0;
-};
-const isStringLiteralOrIdentifier = (node, param) => (ts.isStringLiteral(node) || ts.isIdentifier(node)) && node.text.includes(param);
-const isIdentifierWithName = (node, param) => ts.isIdentifier(node) && node.text === param;
-const isStringLiteralWithNameLike = (node, param) => ts.isStringLiteralLike(node) && node.text === param;
-const renameFields = (node, oldField, newField, split) => {
-  const found = [
-    ...findAllByCondition(node, ts.isIdentifier),
-    ...findAllByCondition(node, ts.isStringLiteral)
-  ];
-  const foundOccurences = found.reduce((arr, el2) => {
-    if (el2.getText().indexOf(oldField) !== -1)
-      arr.push(el2.getText().replaceAll(/"|'/g, ""));
-    return arr;
-  }, []);
-  const foundOccurencesUnique = [...new Set(foundOccurences)];
-  let foundOccurencesSplited = foundOccurencesUnique.map((el2) => {
-    if (split) {
-      return el2.replaceAll(/'|"/g, "").split(".");
-    }
-    return [el2.replaceAll(/'|"/g, "")];
-  });
-  const occurencesReplaceOldField = foundOccurencesSplited.map((el2) => el2.map((subEl) => {
-    if (subEl === oldField)
-      return newField;
-    return subEl;
-  }));
-  const finalNewFields = occurencesReplaceOldField.map((el2) => {
-    if (split) {
-      return el2.join(".");
-    }
-    return el2.join("");
-  });
-  let finalAst;
-  finalNewFields.forEach((el2, i2) => {
-    const newIdentifier = factory.createIdentifier(el2);
-    stripRanges(newIdentifier);
-    finalAst = conditionalyWithParamReplaceNodeInAst(node, isIdentifierWithName, foundOccurencesUnique[i2], newIdentifier);
-  });
-  finalNewFields.forEach((el2, i2) => {
-    const newStringLiteral = factory.createStringLiteral(el2);
-    stripRanges(newStringLiteral);
-    finalAst = conditionalyWithParamReplaceNodeInAst(finalAst, isStringLiteralWithNameLike, foundOccurencesUnique[i2], newStringLiteral);
-  });
-  if (!finalAst)
-    return;
-  stripRanges(finalAst);
-  return finalAst;
-};
-const codeStart = (code2, source) => {
-  const identifierStart = startOfJsxIdentifier(code2, source);
-  if (!identifierStart)
-    return null;
-  const identifierNode = astFindStart(code2, identifierStart);
-  if (!identifierNode)
-    return null;
-  if (ts.isJsxSelfClosingElement(identifierNode.parent))
-    return identifierNode.parent.pos;
-  if (ts.isJsxOpeningElement(identifierNode.parent))
-    return identifierNode.parent.parent.pos;
-};
-const cloneElementInAst = (code2, source) => {
-  const ast = createAst(code2);
-  const node = astFindSource(code2, source);
-  if (!node || !ast)
-    return null;
-  const finalNode = ts.isParenthesizedExpression(node) ? node.expression : node;
-  const alteredAst = appendElementsToAst(ast, { pos: finalNode.pos, end: finalNode.end }, [finalNode]);
-  return alteredAst;
-};
-const cloneAndRenameElementInAst = (code2, source, oldField, newField) => {
-  const ast = createAst(code2);
-  const node = astFindSource(code2, source);
-  if (!node || !ast)
-    return null;
-  const finalNode = renameFields(node, oldField, newField, true);
-  if (!finalNode)
-    return null;
-  const alteredAst = appendElementsToAst(ast, { pos: node.pos, end: node.end }, [finalNode]);
-  return alteredAst;
-};
-function astFindSource(code2, source) {
-  const start = codeStart(code2, source);
-  if (start) {
-    const found = astFindStart(code2, start);
-    return found;
-  }
-  return null;
-}
-function startOfJsxIdentifier(code2, source) {
-  if (typeof code2 != "string")
-    return null;
-  const sourceLines = code2.split("\n");
-  if (source.lineNumber > 0 && source.lineNumber < sourceLines.length) {
-    const lineIndex = source.lineNumber - 1;
-    let start = 0;
-    for (let i2 = 0; i2 < lineIndex; ++i2) {
-      const line = sourceLines[i2];
-      start += line.length + 1;
-    }
-    start += source.columnNumber - 1;
-    start += 1;
-    return start;
-  }
-  return null;
-}
-function astFindStart(code2, start) {
-  const ast = createAst(code2);
-  const callback = (node) => {
-    const nodeStart = node.pos;
-    if (nodeStart <= start && start <= node.end) {
-      if (nodeStart === start) {
-        return node;
-      }
-      return ts.forEachChild(node, callback);
-    }
-    return null;
-  };
-  if (ast) {
-    const found = ts.forEachChild(ast, callback);
-    return found;
-  }
-  return null;
-}
-const removeElementInAst = (code2, source) => {
-  const ast = createAst(code2);
-  const { pos, end } = astFindSource(code2, source);
-  if (!pos || !end || !ast)
-    return null;
-  const alteredAst = removeElementFromAst(ast, { pos, end });
-  return alteredAst;
-};
-const renameAndReplaceElementInAst = (ast, node, oldText, newText) => {
-  const finalNode = renameFields(node, oldText, newText, false);
-  if (!finalNode)
-    return ast;
-  ast = replaceElementsInAst(ast, {
-    pos: node.pos,
-    end: node.end
-  }, finalNode);
-  return ast;
-};
-function parseLocaleJSON(localeSourceCode, languageLocale = "en") {
-  const localeAst = createAst(localeSourceCode, ts.ScriptTarget.ESNext, ts.ScriptKind.JSON);
-  if (localeAst) {
-    return parseLocaleAST(localeAst, languageLocale);
-  }
-}
-function parseLocaleAST(ast, languageLocale = "en") {
-  let localeMessages = [];
-  ast == null ? void 0 : ast.forEachChild((child) => {
-    var _a2, _b;
-    (_b = (_a2 = child == null ? void 0 : child.expression) == null ? void 0 : _a2.properties) == null ? void 0 : _b.forEach((property2) => {
-      var _a3, _b2, _c;
-      let locale = {
-        id: property2.name.text,
-        value: (_a3 = property2.initializer) == null ? void 0 : _a3.text,
-        locale: languageLocale,
-        position: {
-          pos: (_b2 = property2.initializer) == null ? void 0 : _b2.pos,
-          end: (_c = property2.initializer) == null ? void 0 : _c.end
-        }
-      };
-      localeMessages = [...localeMessages, locale];
-    });
-  });
-  return localeMessages;
-}
-const reorderElementsInAst = async (code2, data) => {
-  const ast = createAst(code2);
-  if (!ast)
-    return null;
-  let alteredAst = ast;
-  Object.keys(data.chained_changes).forEach((key) => {
-    let tmpNode = astFindStart(code2, data.elementsPosEnd[key].pos);
-    stripRanges(tmpNode);
-    alteredAst = replaceElementsInAst(alteredAst, {
-      pos: data.elementsPosEnd[data.chained_changes[key]].pos,
-      end: data.elementsPosEnd[data.chained_changes[key]].end
-    }, tmpNode);
-  });
-  return await regenerateAst(alteredAst);
-};
-const findColumn = (code2, source) => {
-  const node = astFindSource(code2, source);
-  let parent = node;
-  while (parent && !ts.isObjectLiteralExpression(parent)) {
-    parent = parent.parent;
-  }
-  return parent;
-};
-const getReactComponentNode = (ast, componentName) => {
-  const reactComponent = findByConditionWithParam(ast, isNamedReactComponentFunction, componentName);
-  return reactComponent != null ? reactComponent : null;
-};
-const getComponentBodyFromReactComponent = (componentFunction) => {
-  const body2 = componentFunction.body;
-  if (!body2)
-    return null;
-  if (ts.isJsxOpeningLikeElement(body2) || ts.isJsxElement(body2))
-    return null;
-  if (ts.isBlock(body2)) {
-    const componentBodyStatements = body2.statements.filter((s) => !ts.isReturnStatement(s));
-    return componentBodyStatements;
-  }
-  return null;
-};
-const getReturnedJsxFromReactComponent = (componentFunction) => {
-  const body2 = componentFunction.body;
-  if (!body2)
-    return null;
-  if (ts.isJsxOpeningLikeElement(body2) || ts.isJsxElement(body2))
-    return body2;
-  if (ts.isParenthesizedExpression(body2))
-    return body2.expression;
-  if (ts.isBlock(body2)) {
-    const returnStatement = body2.statements.filter((s) => ts.isReturnStatement(s));
-    if (returnStatement.length === 1) {
-      const node = returnStatement[0].expression;
-      if (!node)
-        return null;
-      if (ts.isParenthesizedExpression(node))
-        return node.expression;
-      else
-        return node;
-    }
-  }
-  return null;
-};
-const isNamedReactComponentFunction = (node, name) => {
-  var _a2;
-  return ts.isArrowFunction(node) && node.parent && ts.isVariableDeclaration(node.parent) && node.parent.name.getText() === name && node.parent.parent && ts.isVariableDeclarationList(node.parent.parent) && node.parent.parent.parent && ts.isVariableStatement(node.parent.parent.parent) && node.parent.parent.parent.parent && ts.isSourceFile(node.parent.parent.parent.parent) || ts.isFunctionDeclaration(node) && ((_a2 = node.name) == null ? void 0 : _a2.getText()) === name && node.parent && ts.isSourceFile(node.parent);
-};
-const isReactComponentFunction = (node) => ts.isArrowFunction(node) && node.parent && ts.isVariableDeclaration(node.parent) && node.parent.parent && ts.isVariableDeclarationList(node.parent.parent) && node.parent.parent.parent && ts.isVariableStatement(node.parent.parent.parent) && node.parent.parent.parent.parent && ts.isSourceFile(node.parent.parent.parent.parent) || ts.isFunctionDeclaration(node) && node.parent && ts.isSourceFile(node.parent);
-const isBooleanLiteral = (node) => isTrueKeyword(node) || isFalseKeyword(node);
-const isTrueKeyword = (node) => node.kind === ts.SyntaxKind.TrueKeyword;
-const isFalseKeyword = (node) => node.kind === ts.SyntaxKind.FalseKeyword;
-const isNullKeyword = (node) => node.kind === ts.SyntaxKind.NullKeyword;
-const isPrimitiveProp$1 = (node) => node.kind === ts.SyntaxKind.StringLiteral || node.kind === ts.SyntaxKind.TrueKeyword || node.kind === ts.SyntaxKind.FalseKeyword || node.kind === ts.SyntaxKind.NullKeyword || node.kind === ts.SyntaxKind.NumericLiteral || node.kind === ts.SyntaxKind.Identifier && node.getText() === "undefined" || node.kind === ts.SyntaxKind.NoSubstitutionTemplateLiteral;
-const copyPrimitiveProps = (parentJsx, childJsx) => {
-  const nodes = findAllByCondition(parentJsx, isPrimitivePropOnParent);
-  const primitivePropsMap = /* @__PURE__ */ new Map();
-  nodes.forEach((n2) => {
-    const propName = ts.isJsxAttribute(n2.parent.parent) ? n2.parent.parent.name.getText() : n2.parent.name.getText();
-    primitivePropsMap.set(propName, n2);
-  });
-  let finalChildJsx = childJsx;
-  primitivePropsMap.forEach((node, key) => {
-    const propOccurences = findAllByConditionWithParam(finalChildJsx, isPrimitiveProp, key);
-    const newNode = createNewNodeForPrimitiveProp(node);
-    if (!newNode)
-      return;
-    propOccurences.forEach((pO) => {
-      const nodePosition = { pos: pO.pos, end: pO.end };
-      if (!ts.isJsxAttribute(pO.parent))
-        finalChildJsx = replaceElementsInAst(finalChildJsx, nodePosition, newNode);
-    });
-  });
-  return finalChildJsx;
-};
-const createNewNodeForPrimitiveProp = (node) => {
-  let newNode = null;
-  if (ts.isStringLiteral(node)) {
-    newNode = factory.createNoSubstitutionTemplateLiteral(node.text);
-  }
-  if (ts.isNumericLiteral(node)) {
-    newNode = factory.createNumericLiteral(node.text);
-  }
-  if (ts.isIdentifier(node) && node.getText() !== "undefined") {
-    newNode = factory.createIdentifier(node.getText());
-  }
-  if (isNullKeyword(node))
-    newNode = factory.createNull();
-  if (isTrueKeyword(node))
-    newNode = factory.createTrue();
-  if (isFalseKeyword(node))
-    newNode = factory.createFalse();
-  return newNode;
-};
-const isPrimitivePropOnParent = (node) => (ts.isNumericLiteral(node) || ts.isStringLiteral(node) || isBooleanLiteral(node) || isNullKeyword(node) || ts.isIdentifier(node) && node.getText() !== "undefined") && node.parent && ts.isJsxExpression(node.parent) || ts.isStringLiteral(node) && node.parent && ts.isJsxAttribute(node.parent);
-const isPrimitiveProp = (node, text2) => ts.isIdentifier(node) && node.text === text2;
-const flattenStringLiterals = (node) => {
-  const templateExpressions = findAllByCondition(node, ts.isTemplateExpression);
-  let finalNode = node;
-  templateExpressions.forEach((tE) => {
-    const newTemplateSpans = [];
-    let newTemplateHead = tE.head;
-    tE.templateSpans.forEach((tS, i2) => {
-      if (isPrimitiveProp$1(tS.expression)) {
-        let newText = ts.isStringLiteral(tS.expression) || ts.isNoSubstitutionTemplateLiteral(tS.expression) ? tS.expression.text + tS.literal.text : tS.expression.getText() + tS.literal.text;
-        const lastTemplateSpan = newTemplateSpans.pop();
-        if (!lastTemplateSpan) {
-          newTemplateHead = factory.createTemplateHead(newTemplateHead.text + newText);
-          return;
-        }
-        newText = lastTemplateSpan.literal.text + newText;
-        const newTemplateSpan = factory.createTemplateSpan(lastTemplateSpan.expression, i2 === tE.templateSpans.length - 1 ? factory.createTemplateTail(newText) : factory.createTemplateMiddle(newText));
-        newTemplateSpans.push(newTemplateSpan);
-      } else
-        newTemplateSpans.push(tS);
-    });
-    if (newTemplateSpans.length === 0) {
-      const nodePos = { pos: tE.parent.pos, end: tE.parent.end };
-      finalNode = replaceElementsInAst(finalNode, nodePos, factory.createStringLiteral(newTemplateHead.text));
-      return;
-    }
-    finalNode = replaceElementsInAst(finalNode, { pos: tE.pos, end: tE.end }, factory.createTemplateExpression(newTemplateHead, newTemplateSpans));
-  });
-  finalNode = stripUnnecessaryLiterals(finalNode);
-  return finalNode;
-};
-const stripUnnecessaryLiterals = (node) => {
-  const binaryNodes = findAllByCondition(node, isUnnecessaryBinaryExpression);
-  let finalNode = node;
-  binaryNodes.forEach((bN) => {
-    finalNode = replaceElementsInAst(finalNode, { pos: bN.parent.pos, end: bN.parent.end }, factory.createStringLiteral(bN.text));
-  });
-  const stringNodes = findAllByCondition(finalNode, isStringLiteralInJsxExpression);
-  stringNodes.forEach((sN) => {
-    finalNode = replaceElementsInAst(finalNode, { pos: sN.parent.pos, end: sN.parent.end }, factory.createStringLiteral(sN.text));
-  });
-  return finalNode;
-};
-const isStringLiteralInJsxExpression = (node) => isString$1(node) && node.parent && ts.isJsxExpression(node.parent);
-const isUnnecessaryBinaryExpression = (node) => isString$1(node) && node.parent && ts.isBinaryExpression(node.parent);
-const isString$1 = (node) => ts.isStringLiteral(node) || ts.isNoSubstitutionTemplateLiteral(node);
-const mergeReactComponentBody = async (parentAst, childAst, componentName) => {
-  const childReactComponent = getReactComponentNode(childAst, componentName);
-  if (!childReactComponent)
-    return parentAst;
-  const componentBodyStatements = getComponentBodyFromReactComponent(childReactComponent);
-  if (!componentBodyStatements)
-    return parentAst;
-  const block2 = findByCondition(parentAst, isBlockInsideReactComponentFunction);
-  if (!block2)
-    return parentAst;
-  const newBlockNames = componentBodyStatements.map((statement) => statement.getText());
-  const newBlock = [
-    ...componentBodyStatements,
-    ...Array.from(block2.statements).filter((statement) => !newBlockNames.includes(statement.getText()))
-  ];
-  const newNode = factory.createBlock(newBlock);
-  stripRanges(newNode);
-  const finalSourceFile = conditionalyReplaceNodeInAst(parentAst, isBlockInsideReactComponentFunction, newNode);
-  return await regenerateAst(finalSourceFile);
-};
-const copyJsxChildren = (node, copyJsx) => {
-  const numberOfNodes = copyJsx.filter((n2) => !ts.isJsxText(n2)).length;
-  let finalNode = conditionalyWithParamReplaceNodeInAst(node, isJsxExpressionWithIdentifierInside, "children", copyJsx);
-  finalNode = conditionalyReplaceNodeInAst(finalNode, isPropertyAccessExpressionWithChildrenLengthInside, factory.createNumericLiteral(numberOfNodes));
-  return finalNode;
-};
-const mergeReturnedJsx = async (parentAst, childAst, componentName) => {
-  const reactComponent = getReactComponentNode(childAst, componentName);
-  if (!reactComponent)
-    return null;
-  const returnedJsx = getReturnedJsxFromReactComponent(reactComponent);
-  if (!returnedJsx)
-    return null;
-  const nodeOccurences = findAllByConditionWithParam(parentAst, isJsxOpeningLikeElementWithName, componentName);
-  if (nodeOccurences.length == 0)
-    return null;
-  let finalAst = parentAst;
-  nodeOccurences.forEach((nO) => {
-    let newNode = copyPrimitiveProps(nO, returnedJsx);
-    if (ts.isJsxOpeningElement(nO)) {
-      const copyJsx = Array.from(nO.parent.children);
-      newNode = copyJsxChildren(newNode, copyJsx);
-    }
-    stripRanges(newNode);
-    finalAst = replaceElementsInAst(finalAst, { pos: nO.pos, end: nO.end }, newNode);
-  });
-  return await regenerateAst(finalAst);
-};
-const inlineReactComponent = async (parentAst, childAst, componentName) => {
-  let sourceFile = await mergeReactComponentBody(parentAst, childAst, componentName);
-  sourceFile = await mergeReturnedJsx(sourceFile, childAst, componentName);
-  if (!sourceFile)
-    return parentAst;
-  sourceFile = mergeImports(sourceFile, childAst);
-  sourceFile = removeUnusedDefaultImport(sourceFile, componentName);
-  sourceFile = flattenStringLiterals(sourceFile);
-  return sourceFile;
-};
-const isJsxOpeningLikeElementWithName = (node, text2) => ts.isJsxOpeningLikeElement(node) && node.tagName.text === text2;
-const isBlockInsideReactComponentFunction = (node) => ts.isBlock(node) && node.parent && isReactComponentFunction(node.parent);
-const isJsxExpressionWithIdentifierInside = (node, text2) => ts.isJsxExpression(node) && node.expression && (ts.isIdentifier(node.expression) && node.expression.getText() === text2 || ts.isPropertyAccessExpression(node.expression) && node.expression.name.getText() === text2);
-const isPropertyAccessExpressionWithChildrenLengthInside = (node) => ts.isPropertyAccessExpression(node) && ts.isPropertyAccessExpression(node.expression) && node.name.getText() === "length" && node.expression.name.getText() === "children";
-const TEMPLATE_PATH = "./node_modules/@iteria-app/component-templates/src/components/readonly";
-const ENTITY_PATH = "./node_modules/@iteria-app/component-templates/src/components/entity/list/Entity";
-const TEMPLATE_PATH_JAMSTACK = "templates/readonly";
-const ENTITY_PATH_JAMSTACK = "templates/list/Entity";
-const ENTITY = "Entity";
-const FIELD = "field";
-const COLUMNS = "columns";
-const HEADER_NAME = "headerName";
-const RENDER_CELL = "renderCell";
-const VALUE = "value";
-const DEFAULT_FORMAT = "DefaultFormat";
-const BOOLEAN_FORMAT = "BooleanFormat";
-const DATE_FORMAT = "DateFormat";
-const DATE_TIME_FORMAT = "DateTimeFormat";
-const TIME_FORMAT = "TimeFormat";
-const stringPrettyCapitalize = (inputString) => inputString.replace(/^\w/, (c2) => c2.toUpperCase()).replace(/(_|\.)/g, " ");
-const removeElementFromArray = (array, element2) => {
-  var index2 = array.indexOf(element2);
-  if (index2 !== -1) {
-    array.splice(index2, 1);
-  }
-  return array;
-};
-async function generateColumn(columnInfo2) {
-  const { io, entity, field, fields: fields8, page, selectedColumn, insertType } = columnInfo2;
-  let ast = columnInfo2.ast;
-  const astType = typeof ast;
-  if (astType === "string") {
-    ast = createAst(ast);
-  }
-  if (checkIfExist(ast, `${entity}.${field.name}`) || field.name === "id") {
-    return await returnValue(ast, astType);
-  }
-  let objectLiteral;
-  let lastObjectLiteral;
-  let formatComponentName;
-  if (page === PageType.LIST) {
-    const newColumn = await addColumnToList(ast, selectedColumn, entity, field, fields8, insertType);
-    if (!newColumn || !newColumn.objectLiteral || !newColumn.lastObjectLiteral || !newColumn.formatComponentName)
-      return await returnValue(ast, astType);
-    objectLiteral = newColumn.objectLiteral;
-    lastObjectLiteral = newColumn.lastObjectLiteral;
-    formatComponentName = newColumn.formatComponentName;
-  } else {
-    return await returnValue(ast, astType);
-  }
-  ast = appendElementsToAst(ast, {
-    pos: lastObjectLiteral.pos,
-    end: lastObjectLiteral.end
-  }, [objectLiteral], insertType === InsertType.BEFORE || insertType === InsertType.FIRST ? "before" : "after");
-  ast = await regenerateAst(ast);
-  const templatePath = io.injectMode === "jamstack" ? TEMPLATE_PATH_JAMSTACK : TEMPLATE_PATH;
-  ast = await addFormatting(io, ast, formatComponentName, templatePath, field.name);
-  return await returnValue(ast, astType);
-}
-const addColumnToList = async (ast, selectedColumn, entity, field, fields8, insertType) => {
-  var _a2, _b, _c, _d;
-  let formatComponentName;
-  let lastObjectLiteral;
-  let objectLiteral;
-  if (!selectedColumn) {
-    const columnsNode = findByCondition(ast, (node) => {
-      return ts.isVariableDeclaration(node) && node.name.text === COLUMNS;
-    });
-    if (!columnsNode)
-      return void 0;
-    objectLiteral = (_b = (_a2 = columnsNode.initializer) == null ? void 0 : _a2.elements) == null ? void 0 : _b[0];
-    if (!objectLiteral)
-      return void 0;
-    const newColumn = renameColumn(objectLiteral, entity, field, fields8);
-    objectLiteral = newColumn.objectLiteral;
-    formatComponentName = newColumn.formatComponentName;
-    if (insertType && insertType === InsertType.FIRST) {
-      lastObjectLiteral = (_c = columnsNode.initializer) == null ? void 0 : _c.elements[0];
-    } else {
-      lastObjectLiteral = (_d = columnsNode.initializer) == null ? void 0 : _d.elements.slice(-1)[0];
-    }
-  } else {
-    lastObjectLiteral = findByCondition(ast, (node) => node.getText() === selectedColumn.getText());
-    if (!lastObjectLiteral)
-      return void 0;
-    const newColumn = renameColumn(lastObjectLiteral, entity, field, fields8);
-    objectLiteral = newColumn.objectLiteral;
-    formatComponentName = newColumn.formatComponentName;
-  }
-  return {
-    objectLiteral,
-    lastObjectLiteral,
-    formatComponentName
-  };
-};
-const getFormatComponent = (type2) => {
-  if (!type2)
-    return DEFAULT_FORMAT;
-  switch (type2.toLowerCase()) {
-    case "string":
-    case "number":
-    case "int":
-    case "jsonb":
-    case "uuid":
-      return DEFAULT_FORMAT;
-    case "boolean":
-      return BOOLEAN_FORMAT;
-    case "date":
-      return DATE_FORMAT;
-    case "datetime":
-    case "timestamp":
-    case "timestamptz":
-      return DATE_TIME_FORMAT;
-    case "time":
-    case "timez":
-      return TIME_FORMAT;
-    default:
-      return DEFAULT_FORMAT;
-  }
-};
-const nodeIncludes = (ast, fields8) => {
-  const found = findAllByCondition(ast, (node) => {
-    return fields8.includes(node.text);
-  });
-  return found;
-};
-const checkIfExist = (ast, field) => {
-  const found = findByCondition(ast, (node) => node.text === field);
-  return found ? true : false;
-};
-const returnValue = async (ast, astType) => astType === "string" ? await printFormattedSourceFile(ast) : ast;
-const renameColumn = (objectLiteral, entity, field, fields8) => {
-  let formatComponentName = void 0;
-  for (const objectProperty of objectLiteral.properties) {
-    const initializer = objectProperty.initializer;
-    const entityFields = fields8.map((field2) => field2.name);
-    entityFields.unshift(FIELD);
-    objectLiteral = replaceNames(objectLiteral, initializer, entity, field, fields8);
-    if (ts.isArrowFunction(initializer) || ts.isFunctionExpression(initializer)) {
-      formatComponentName = getFormatComponent(field.type);
-      objectLiteral = handleRenderCell(objectLiteral, initializer, formatComponentName);
-    }
-  }
-  return {
-    objectLiteral,
-    formatComponentName
-  };
-};
-const replaceNames = (objectLiteral, initializer, entity, field, fields8) => {
-  const entityFields = removeElementFromArray(fields8.map((field2) => field2.name), "id");
-  const newEntityFields = entityFields.map((field2) => {
-    return `${entity}.${field2}`;
-  });
-  const headerNames = fields8.map((field2) => {
-    return stringPrettyCapitalize(field2.name);
-  });
-  entityFields.unshift(FIELD);
-  headerNames.unshift(HEADER_NAME);
-  const foundReplace = nodeIncludes(initializer, [...entityFields, ...headerNames, ...newEntityFields]);
-  foundReplace.forEach((found) => {
-    objectLiteral = handleReplaceName(objectLiteral, found, entity, field.name, {
-      entityFields,
-      headerNames,
-      newEntityFields
-    });
-  });
-  return objectLiteral;
-};
-const handleReplaceName = (objectLiteral, found, entity, fieldName, arrays) => {
-  let newName;
-  if (arrays.entityFields.includes(found.text)) {
-    if (!(found.parent && ts.isJsxAttribute(found.parent) && ts.isIdentifier(found) && found.parent.name.getText() == found.getText())) {
-      if (ts.isPropertyAssignment(found.parent)) {
-        newName = `${entity}.${fieldName}`;
-      } else {
-        newName = fieldName;
-      }
-    }
-  } else if (arrays.headerNames.includes(found.text)) {
-    newName = stringPrettyCapitalize(fieldName);
-  } else {
-    newName = `${entity}.${fieldName}`;
-  }
-  return renameAndReplaceElementInAst(objectLiteral, found, found.text, newName);
-};
-const handleRenderCell = (objectLiteral, initializer, formatComponentName) => {
-  var _a2, _b;
-  const propertyName = (_b = (_a2 = initializer.parent) == null ? void 0 : _a2.name) == null ? void 0 : _b.text;
-  if (propertyName && propertyName === RENDER_CELL) {
-    const atributeName = initializer.parameters[0].name.text;
-    const newElement = createJsxSelfClosingElement(formatComponentName, [
-      {
-        name: VALUE,
-        initializer: atributeName
-      }
-    ]);
-    let elementToReplace;
-    if (ts.isFunctionExpression(initializer)) {
-      const returnStatement = findByCondition(objectLiteral, ts.isReturnStatement);
-      if (!returnStatement)
-        return {
-          objectLiteral,
-          formatComponentName: DEFAULT_FORMAT
-        };
-      elementToReplace = returnStatement.expression;
-    } else {
-      elementToReplace = initializer.body;
-    }
-    objectLiteral = replaceElementsInAst(objectLiteral, {
-      pos: elementToReplace.pos,
-      end: elementToReplace.end
-    }, newElement);
-  }
-  return objectLiteral;
-};
-const capitalize = (name) => {
-  return name.charAt(0).toUpperCase() + name.slice(1);
-};
-const updateAst = async (io, code2, entity, findString, fields8, introspection) => {
-  let alteredAst = createAst(code2);
-  const entityName = getEntityName(entity);
-  alteredAst = await renameEntityInCode(alteredAst, entityName, findString, introspection, PageType.LIST);
-  for (const field of fields8) {
-    if (isHidden(field.name))
-      continue;
-    const columnInfo2 = {
-      io,
-      ast: alteredAst,
-      entity,
-      field,
-      fields: fields8,
-      page: PageType.LIST,
-      selectedColumn: void 0
-    };
-    alteredAst = await generateColumn(columnInfo2);
-  }
-  alteredAst = await removeFirst(alteredAst);
-  alteredAst = removeUnusedDefaultImport(alteredAst, `Format${entityName}Field`);
-  alteredAst = await regenerateAst(alteredAst);
-  alteredAst = flattenStringLiterals(alteredAst);
-  alteredAst = await regenerateAst(alteredAst);
-  return alteredAst;
-};
-const generateTsxFiles = async (io, entity, components, fields8) => {
-  const entityName = getEntityName(entity);
-  const files = [];
-  for (const component of components) {
-    const entityPath = io.injectMode === "jamstack" ? ENTITY_PATH_JAMSTACK : ENTITY_PATH;
-    const dataTableTemplate = await io.readFile(`${entityPath}${component}.tsx`);
-    const ast = await updateAst(io, dataTableTemplate, entity, ENTITY, fields8, io.introspection);
-    const sourceCode = await printFormattedSourceFile(ast);
-    const sourceCodePath = findRelativePath(`/src/pages/${entity}/`, `./${entityName}${component}.tsx`);
-    files.push({ path: io.cwd + sourceCodePath, data: sourceCode });
-  }
-  return files;
-};
-const addFormatting = async (io, ast, component, path2, field) => {
-  const code2 = await io.readFile(`${path2}/${component}.tsx`);
-  let childAst = await createAst(code2);
-  if (field) {
-    field = addOptionalChaining(field);
-    childAst = renameFields(childAst, FIELD, field, false);
-    childAst = await regenerateAst(childAst);
-  }
-  const inlineReact = await inlineReactComponent(ast, childAst, component);
-  return await regenerateAst(inlineReact);
-};
-const removeFirst = async (ast) => {
-  var _a2, _b;
-  const node = findByCondition(ast, (node2) => {
-    return ts.isVariableDeclaration(node2) && node2.name.text === COLUMNS;
-  });
-  if (!node)
-    return ast;
-  const objectLiteral = (_b = (_a2 = node.initializer) == null ? void 0 : _a2.elements) == null ? void 0 : _b[0];
-  ast = removeElementFromAst(ast, {
-    pos: objectLiteral.pos,
-    end: objectLiteral.end
-  });
-  return ast;
-};
-const isHidden = (fieldName) => {
-  if (fieldName === "id" || fieldName.match(/.*Path$/i) !== null)
-    return true;
-  return false;
-};
-const addOptionalChaining = (field) => {
-  if (field.includes(".")) {
-    const newFields = field.split(".").map((newField) => {
-      return newField + "?";
-    });
-    const lastField = newFields.pop();
-    newFields.push(lastField.replaceAll("?", ""));
-    field = newFields.join(".");
-  }
-  return field;
-};
-const getEntityName = (entity) => {
-  return entity.split("_").map((string) => capitalize(string)).join("");
-};
-const renameEntityInCode = async (ast, entityName, findString, introspection, pageType) => {
-  const nodes = findAllByCondition(ast, (node) => {
-    const text2 = node.getText();
-    return (ts.isStringLiteral(node) || ts.isIdentifier(node)) && text2 && text2.toUpperCase().includes(findString.toUpperCase());
-  });
-  const [queryRoot] = getRoots(introspection);
-  let field = queryRoot.fields.find((field2) => isOfTypePage(field2, entityName, pageType));
-  if (!field) {
-    field = queryRoot.fields.find((field2) => {
-      var _a2;
-      return ((_a2 = field2 == null ? void 0 : field2.name) == null ? void 0 : _a2.replace(/_/g, "").toLocaleLowerCase()) === entityName.toLocaleLowerCase();
-    });
-  }
-  nodes.forEach((node) => {
-    const oldText = node.text;
-    let newText;
-    if (oldText.toLowerCase() === findString.toLowerCase()) {
-      newText = field.name;
-    } else {
-      if (oldText.toLowerCase() === `use${findString}Query`.toLowerCase()) {
-        newText = oldText.replace(findString, upperLetterInWord(field.name));
-      } else {
-        newText = oldText.replace(findString, entityName);
-      }
-    }
-    ast = renameAndReplaceElementInAst(ast, node, oldText, newText);
-  });
-  return await regenerateAst(ast);
-};
-async function generatePages(introspection, io, options2) {
-  const entities = options2.entities;
-  const graphqlFiles = generateGraphqlFile(introspection, entities);
-  const pages = /* @__PURE__ */ new Map();
-  const files = [];
-  for (const graphqlFile of graphqlFiles) {
-    const path2 = findRelativePath(`/src/pages/${graphqlFile.entityName}/`, "./index.graphql");
-    pages.set(path2, graphqlFile.queries);
-    if (options2.generateReact) {
-      const components = ["ListView", "ListContainer"];
-      const fields8 = graphqlFile.fragments.map((field) => {
-        const newField = graphqlFile.properties.find((value2) => value2.name === field);
-        return newField;
-      }).filter((field) => field);
-      files.push(...await generateTsxFiles(io, graphqlFile.entityName, components, fields8));
-    }
-  }
-  return {
-    pages,
-    files
-  };
-}
-const removeColumnFromAst = (code2, source) => {
-  const node = findColumn(code2, source);
-  if (!node)
-    return createAst(code2);
-  const ast = createAst(code2);
-  const alteredAst = removeElementFromAst(ast, { pos: node.pos, end: node.end });
-  return alteredAst;
-};
-var commonjsGlobal = typeof globalThis !== "undefined" ? globalThis : typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : {};
-function getAugmentedNamespace(n2) {
-  if (n2.__esModule)
-    return n2;
-  var a = Object.defineProperty({}, "__esModule", { value: true });
-  Object.keys(n2).forEach(function(k2) {
-    var d = Object.getOwnPropertyDescriptor(n2, k2);
-    Object.defineProperty(a, k2, d.get ? d : {
-      enumerable: true,
-      get: function() {
-        return n2[k2];
-      }
-    });
-  });
-  return a;
-}
-function commonjsRequire(path2) {
-  throw new Error('Could not dynamically require "' + path2 + '". Please configure the dynamicRequireTargets or/and ignoreDynamicRequires option of @rollup/plugin-commonjs appropriately for this require call to work.');
-}
-var lib = {};
-Object.defineProperty(lib, "__esModule", {
-  value: true
-});
-var _typeof$1 = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function(obj2) {
-  return typeof obj2;
-} : function(obj2) {
-  return obj2 && typeof Symbol === "function" && obj2.constructor === Symbol && obj2 !== Symbol.prototype ? "symbol" : typeof obj2;
-};
-var isBrowser = typeof window !== "undefined" && typeof window.document !== "undefined";
-var isWebWorker = (typeof self === "undefined" ? "undefined" : _typeof$1(self)) === "object" && self.constructor && self.constructor.name === "DedicatedWorkerGlobalScope";
-var isNode = typeof process !== "undefined" && process.versions != null && process.versions.node != null;
-var isJsDom = function isJsDom2() {
-  return typeof window !== "undefined" && window.name === "nodejs" || navigator.userAgent.includes("Node.js") || navigator.userAgent.includes("jsdom");
-};
-var isBrowser_1 = lib.isBrowser = isBrowser;
-lib.isWebWorker = isWebWorker;
-var isNode_1 = lib.isNode = isNode;
-lib.isJsDom = isJsDom;
-const getCWDFromDevtools = () => {
-  var _a2, _b, _c, _d;
-  const rendererInterfaces = (_b = (_a2 = window.__REACT_DEVTOOLS_GLOBAL_HOOK__) == null ? void 0 : _a2.reactDevtoolsAgent) == null ? void 0 : _b._rendererInterfaces;
-  if (!rendererInterfaces)
-    return;
-  for (const rendererInterface of Object.values(rendererInterfaces)) {
-    for (let i2 = 1; i2 < 300; i2++) {
-      const path2 = rendererInterface.getPathForElement(i2);
-      const data = rendererInterface.inspectElement(`iteria-response${i2}`, i2, path2);
-      const fileName = (_d = (_c = data.value) == null ? void 0 : _c.source) == null ? void 0 : _d.fileName;
-      if (fileName)
-        return fileName;
-    }
-  }
-};
-const transformPathToPosix = (path2) => path2.replaceAll("\\", "/");
-const guessCurrentWorkingDirectory = () => {
-  let cwd;
-  if ({}.VITE_CWD) {
-    return transformPathToPosix({}.VITE_CWD);
-  }
-  if (isBrowser_1)
-    cwd = getCWDFromDevtools();
-  else if (isNode_1 && typeof process != "undefined" && process.cwd) {
-    cwd = process.cwd();
-  } else {
-    throw new Error("Unsuported environment. Supported environments: Browser, NodeJS");
-  }
-  if (!cwd) {
-    console.error("Unable to find current working directory.");
-    return null;
-  }
-  cwd = transformPathToPosix(cwd);
-  const index2 = cwd.lastIndexOf("/src");
-  return cwd.slice(0, index2 + 1);
-};
-const worker = new WorkerWrapper();
-const iteriaGeneratorWorker = wrap$3(worker);
-const cloneElement = async (code2, source) => {
-  const encoded = encodeEmptyLines$1(code2);
-  const alteredAst = await cloneElementInAst(encoded, source);
-  if (!alteredAst)
-    return console.error("Unable to clone Element in AST");
-  const newCode = await printFormattedSourceFile$1(alteredAst);
-  return newCode;
-};
-const cloneAndRenameElement = async (code2, source, oldField, newField) => {
-  const encoded = encodeEmptyLines$1(code2);
-  const alteredAst = await cloneAndRenameElementInAst(encoded, source, oldField, newField);
-  if (!alteredAst)
-    return console.error("Unable to clone Element in AST");
-  const newCode = await printFormattedSourceFile$1(alteredAst);
-  return newCode;
-};
-const removeElement = async (code2, source) => {
-  const encoded = encodeEmptyLines$1(code2);
-  const alteredAst = removeElementInAst(encoded, source);
-  if (!alteredAst)
-    return console.error("Unable to remove Element from AST");
-  const newCode = await printFormattedSourceFile$1(alteredAst);
-  return newCode;
-};
-const isUserFeedbackError = (type2) => type2 === "GENERATE_PAGE_ERROR" || type2 === "CLONE_FIELD_ERROR" || type2 === "CLONE_ELEMENT_ERROR" || type2 === "REMOVE_ELEMENT_ERROR" || type2 === "NAVIGATE_TO_SOURCE_CODE_ERROR" || type2 === "CHANGE_GRAPHQL_ENDPOINT_ERROR" || type2 === "GRAPHQL_CODEGEN_ERROR" || type2 === "LOAD_INTROSPECTION_ERROR" || type2 === "REORDER_ELEMENT_ERROR" || type2 === "TRANSLATE_ELEMENT_ERROR" || type2 === "CHANGE_THEME_ERROR" || type2 === "CREATE_TABLE_ERROR" || type2 === "ADD_COLUMN_ERROR" || type2 === "LOCAL_MESSAGE_TRANSLATE_ERROR" || type2 === "LOAD_INTROSPECTION_ERROR" || type2 === "COMMIT_ALL_CHANGES_ERROR" || type2 === "BUNDLER_ERROR" || type2 === "TRANSPILER_ERROR" || type2 === "LOGIN_ERROR" || type2 === "UPDATE_DATABASE_ERROR";
-const isUserFeedbackSuccess = (type2) => type2 === "GENERATE_PAGE_SUCCESS" || type2 === "CLONE_FIELD_SUCCESS" || type2 === "CLONE_ELEMENT_SUCCESS" || type2 === "REMOVE_ELEMENT_SUCCESS" || type2 === "CHANGE_GRAPHQL_ENDPOINT_SUCESS" || type2 === "REORDER_ELEMENT_SUCESS" || type2 === "CHANGE_THEME_SUCESS" || type2 === "CREATE_TABLE_SUCCESS" || type2 === "ADD_COLUMN_SUCCESS" || type2 === "LOCAL_MESSAGE_TRANSLATE_SUCESS" || type2 === "LOAD_INTROSPECTION_SUCCESS" || type2 === "COMMIT_ALL_CHANGES_SUCCESS" || type2 === "LOGIN_SUCCESS" || type2 === "UPDATE_DATABASE_SUCCESS";
-const isUserFeedbackInfo = (type2) => type2 === "GENERATE_PAGE_INFO" || type2 === "CLONE_FIELD_INFO" || type2 === "REORDER_ELEMENT_INFO" || type2 === "CREATE_TABLE_INFO" || type2 === "ADD_COLUMN_INFO" || type2 === "LOCAL_MESSAGE_TRANSLATE_INFO" || type2 === "ERD_VIEW_INFO" || type2 === "COMMIT_ALL_CHANGES_INFO" || type2 === "COMMIT_NOTHING_TO_CHANGE_INFO" || type2 === "UPDATE_DATABASE_INFO";
-const showUserFeedback = (feedback) => {
-  if (isUserFeedbackSuccess(feedback.type))
-    showSuccess(feedback);
-  if (isUserFeedbackError(feedback.type))
-    showError(feedback);
-  if (isUserFeedbackInfo(feedback.type))
-    showInfo(feedback);
-};
-const showSuccess = (feedback) => {
-  switch (feedback.type) {
-    case "GENERATE_PAGE_SUCCESS":
-      const entities = feedback.payload.entity;
-      if (entities.length > 1)
-        return showSuccessSnackbar(`New pages successfully generated.`);
-      else
-        return showSuccessSnackbar(`New page generated at /app/${entities[0]}.`);
-    case "CLONE_FIELD_SUCCESS":
-      showSuccessSnackbar("Fields added successfully.");
-      break;
-    case "CLONE_ELEMENT_SUCCESS":
-      showSuccessSnackbar("Element cloned successfully.");
-      break;
-    case "REMOVE_ELEMENT_SUCCESS":
-      showSuccessSnackbar("Element removed successfully.");
-      break;
-    case "CHANGE_GRAPHQL_ENDPOINT_SUCESS":
-      showSuccessSnackbar("GraphQL endpoint changed successfully.");
-      break;
-    case "LOAD_INTROSPECTION_SUCCESS":
-      showSuccessSnackbar("Introspection schema loaded successfully.");
-      break;
-    case "REORDER_ELEMENT_SUCCESS":
-      showSuccessSnackbar("Element was moved successfully.");
-    case "CHANGE_THEME_SUCESS":
-      showSuccessSnackbar("Theme changed successfully.");
-      break;
-    case "CREATE_TABLE_SUCCESS":
-      showSuccessSnackbar("Table created successfully.");
-      break;
-    case "ADD_COLUMN_SUCCESS":
-      showSuccessSnackbar("New Column added successfully.");
-      break;
-    case "LOCAL_MESSAGE_TRANSLATE_SUCESS":
-      showSuccessSnackbar("Element was successfully translated.");
-      break;
-    case "COMMIT_ALL_CHANGES_SUCCESS":
-      showSuccessSnackbar("Changes were successfully committed.");
-      break;
-    case "LOGIN_SUCCESS":
-      const login = feedback.payload.login;
-      const provider = feedback.payload.provider;
-      showSuccessSnackbar(`Successfully logged ${login ? "in to" : "out from"} ${provider}.`);
-      break;
-    case "UPDATE_DATABASE_SUCCESS":
-      showSuccessSnackbar("Database updated successfully.");
-      break;
-    default:
-      throw new Error(`Unhandled succes type: ${feedback.type}`);
-  }
-};
-const showError = (feedback) => {
-  switch (feedback.type) {
-    case "GENERATE_PAGE_ERROR":
-      showErrorSnackbar("Error while generating page. Check console for error and stacktrace.");
-      break;
-    case "CLONE_FIELD_ERROR":
-      showErrorSnackbar("Error while adding fields. Check console for error and stacktrace.");
-      break;
-    case "CLONE_ELEMENT_ERROR":
-      showErrorSnackbar("Error while cloning element. Check console for error and stacktrace.");
-      break;
-    case "REMOVE_ELEMENT_ERROR":
-      showErrorSnackbar("Error while removing element. Check console for error and stacktrace.");
-      break;
-    case "NAVIGATE_TO_SOURCE_CODE_ERROR":
-      showErrorSnackbar("Error while navigating to code. Check console for error and stacktrace.");
-    case "CHANGE_GRAPHQL_ENDPOINT_ERROR":
-      showErrorSnackbar("Error while changing GraphQL endpoint. Check console for error and stacktrace.");
-      break;
-    case "GRAPHQL_CODEGEN_ERROR":
-      showErrorSnackbar("Error while generatig graphQL types. Check console for error and stacktrace.");
-    case "LOCAL_MESSAGE_TRANSLATE_ERROR":
-      showErrorSnackbar("Error with saving translation");
-      break;
-    case "LOAD_INTROSPECTION_ERROR":
-      showErrorSnackbar("Error while loading Introspection schema. Check console for error and stacktrace.");
-      break;
-    case "CHANGE_THEME_ERROR":
-      showErrorSnackbar("Error while changing theme. Check console for error and stacktrace.");
-    case "CREATE_TABLE_ERROR":
-      showErrorSnackbar("Error while creating table. Check console for error and stacktrace.");
-      break;
-    case "ADD_COLUMN_ERROR":
-      showErrorSnackbar("Error while adding new column. Check console for error and stacktrace.");
-      break;
-    case "TRANSLATE_ELEMENT_ERROR":
-      showErrorSnackbar("Error while translating element. Check console for error and stacktrace.");
-      break;
-    case "REORDER_ELEMENT_ERROR":
-      showErrorSnackbar("Error while moving element. Check console for error and stacktrace.");
-      break;
-    case "COMMIT_ALL_CHANGES_ERROR":
-      showErrorSnackbar("Error while committing changes. Check console for error and stacktrace.");
-      break;
-    case "BUNDLER_ERROR":
-      showErrorSnackbar("Error while bundling files. Check console for error and stacktrace.");
-      break;
-    case "TRANSPILER_ERROR":
-      showErrorSnackbar("Error while transpiling files. Check console for error and stacktrace.");
-      break;
-    case "LOGIN_ERROR":
-      const login = feedback.payload.login;
-      const provider = feedback.payload.provider;
-      showErrorSnackbar(`Error while logging ${login ? "in to" : "out from"} ${provider}. Check console for error and stacktrace.`);
-      break;
-    case "UPDATE_DATABASE_ERROR":
-      showErrorSnackbar("Error while updating database. Check console for error and stacktrace.");
-      break;
-    default:
-      throw new Error(`Unhandled error type: ${feedback.type}`);
-  }
-};
-const showInfo = (feedback) => {
-  switch (feedback.type) {
-    case "GENERATE_PAGE_INFO":
-      const entities = feedback.payload.entity;
-      if (entities.length > 1)
-        return showLoadingSnackbar(`Generating new pages.`);
-      else
-        return showLoadingSnackbar(`Generating new page at /app/${entities[0]}.`);
-    case "CLONE_FIELD_INFO":
-      showLoadingSnackbar("Adding fields.");
-      break;
-    case "REORDER_ELEMENT_INFO":
-      showInfoSnackbar("Moving element to position.");
-    case "CREATE_TABLE_INFO":
-      showLoadingSnackbar("Creating table.");
-      break;
-    case "ADD_COLUMN_INFO":
-      showLoadingSnackbar("Adding new column.");
-      break;
-    case "LOCAL_MESSAGE_TRANSLATE_INFO":
-      showInfoSnackbar("Translating element.");
-      break;
-    case "ERD_VIEW_INFO":
-      showLoadingSnackbar("Loading Entity-Relationship Diagram.");
-      break;
-    case "COMMIT_ALL_CHANGES_INFO":
-      showLoadingSnackbar("Committing changes to repository.");
-      break;
-    case "COMMIT_NOTHING_TO_CHANGE_INFO":
-      showWarningSnackbar("Nothing to commit!");
-      break;
-    case "UPDATE_DATABASE_INFO":
-      showLoadingSnackbar("Updating database.");
-      break;
-    default:
-      throw new Error(`Unhandled info type: ${feedback.type}`);
-  }
-};
 const delay = (ms) => new Promise((resolve5) => setTimeout(resolve5, ms));
 const reorderElement = async (code2, data) => {
   const encoded = encodeEmptyLines$1(code2);
@@ -64718,8 +64847,8 @@ const reorderFields = async (introspection, io, data) => {
   if ((cwd == null ? void 0 : cwd.charAt(0)) !== "/" && pathToGraphqlFile.charAt(0) === "/")
     pathToGraphqlFile = pathToGraphqlFile.substring(1, pathToGraphqlFile.length);
   let graphqlFile = (_a2 = await io.readFile(pathToGraphqlFile)) != null ? _a2 : "";
-  const [queryRoot] = getRoots(introspection);
-  const field = queryRoot.fields.find((field2) => isOfTypePage(field2, data.entityName, 1));
+  const [queryRoot] = getRoots$1(introspection);
+  const field = queryRoot.fields.find((field2) => isOfTypePage$1(field2, data.entityName, 1));
   const fieldName = field == null ? void 0 : field.name;
   const queryName = fieldName != null ? fieldName : data.entityName;
   let file = graphqlFile;
@@ -64952,8 +65081,8 @@ const reorderColumns = async (introspection, io, data) => {
   if ((cwd == null ? void 0 : cwd.charAt(0)) !== "/" && pathToGraphqlFile.charAt(0) === "/")
     pathToGraphqlFile = pathToGraphqlFile.substring(1, pathToGraphqlFile.length);
   let graphqlFile = (_a2 = await io.readFile(pathToGraphqlFile)) != null ? _a2 : "";
-  const [queryRoot] = getRoots(introspection);
-  const field = queryRoot.fields.find((field2) => isOfTypePage(field2, data.entityName, 0));
+  const [queryRoot] = getRoots$1(introspection);
+  const field = queryRoot.fields.find((field2) => isOfTypePage$1(field2, data.entityName, 0));
   const queryName = (_b = field == null ? void 0 : field.name) != null ? _b : data.entityName;
   const fragmentName = getFragmentName(queryName, data.relationName, graphqlFile);
   let file = graphqlFile;
@@ -65002,8 +65131,8 @@ const reorderRelations = async (introspection, io, data) => {
   if ((cwd == null ? void 0 : cwd.charAt(0)) !== "/" && pathToGraphqlFile.charAt(0) === "/")
     pathToGraphqlFile = pathToGraphqlFile.substring(1, pathToGraphqlFile.length);
   let graphqlFile = (_a2 = await io.readFile(pathToGraphqlFile)) != null ? _a2 : "";
-  const [queryRoot] = getRoots(introspection);
-  const field = queryRoot.fields.find((field2) => isOfTypePage(field2, data.entityName, 0));
+  const [queryRoot] = getRoots$1(introspection);
+  const field = queryRoot.fields.find((field2) => isOfTypePage$1(field2, data.entityName, 0));
   const queryName = (_b = field == null ? void 0 : field.name) != null ? _b : data.entityName;
   let file = graphqlFile;
   file = reorderRelationsInQueryDefinition(graphqlFile, queryName, data.chained_changes);
@@ -66074,7 +66203,6 @@ const findSpanNode = (el2) => {
 };
 const forceSaveLocaleElement = (target, inspectedElement, event2, workbench2, onShowUserFeedback) => {
   var _a2, _b;
-  console.log("test", target, inspectedElement, event2, onShowUserFeedback);
   const cwd = (_a2 = guessCurrentWorkingDirectory()) != null ? _a2 : workbench2 == null ? void 0 : workbench2.cwd;
   const LANGS_PATH = workbench2.injectMode === "devServer" ? cwd + "/src/compiled-lang" : "/src/compiled-lang";
   const langLocale = (_b = window.localStorage.getItem("langLocale")) != null ? _b : navigator.language.split("-")[0];
@@ -78515,6 +78643,778 @@ class OneGraphAuth {
     });
   }
 }
+const __schema = {
+  queryType: {
+    name: "query_root"
+  },
+  mutationType: null,
+  subscriptionType: null,
+  types: [
+    {
+      kind: "SCALAR",
+      name: "Boolean",
+      description: null,
+      fields: null,
+      inputFields: null,
+      interfaces: null,
+      enumValues: null,
+      possibleTypes: null
+    },
+    {
+      kind: "SCALAR",
+      name: "Int",
+      description: null,
+      fields: null,
+      inputFields: null,
+      interfaces: null,
+      enumValues: null,
+      possibleTypes: null
+    },
+    {
+      kind: "SCALAR",
+      name: "String",
+      description: null,
+      fields: null,
+      inputFields: null,
+      interfaces: null,
+      enumValues: null,
+      possibleTypes: null
+    },
+    {
+      kind: "OBJECT",
+      name: "__Directive",
+      description: null,
+      fields: [
+        {
+          name: "args",
+          description: null,
+          args: [],
+          type: {
+            kind: "OBJECT",
+            name: "__InputValue",
+            ofType: null
+          },
+          isDeprecated: false,
+          deprecationReason: null
+        },
+        {
+          name: "description",
+          description: null,
+          args: [],
+          type: {
+            kind: "NON_NULL",
+            name: null,
+            ofType: {
+              kind: "SCALAR",
+              name: "String",
+              ofType: null
+            }
+          },
+          isDeprecated: false,
+          deprecationReason: null
+        },
+        {
+          name: "isRepeatable",
+          description: null,
+          args: [],
+          type: {
+            kind: "NON_NULL",
+            name: null,
+            ofType: {
+              kind: "SCALAR",
+              name: "String",
+              ofType: null
+            }
+          },
+          isDeprecated: false,
+          deprecationReason: null
+        },
+        {
+          name: "locations",
+          description: null,
+          args: [],
+          type: {
+            kind: "NON_NULL",
+            name: null,
+            ofType: {
+              kind: "SCALAR",
+              name: "String",
+              ofType: null
+            }
+          },
+          isDeprecated: false,
+          deprecationReason: null
+        },
+        {
+          name: "name",
+          description: null,
+          args: [],
+          type: {
+            kind: "NON_NULL",
+            name: null,
+            ofType: {
+              kind: "SCALAR",
+              name: "String",
+              ofType: null
+            }
+          },
+          isDeprecated: false,
+          deprecationReason: null
+        }
+      ],
+      inputFields: null,
+      interfaces: [],
+      enumValues: null,
+      possibleTypes: null
+    },
+    {
+      kind: "OBJECT",
+      name: "__EnumValue",
+      description: null,
+      fields: [
+        {
+          name: "deprecationReason",
+          description: null,
+          args: [],
+          type: {
+            kind: "NON_NULL",
+            name: null,
+            ofType: {
+              kind: "SCALAR",
+              name: "String",
+              ofType: null
+            }
+          },
+          isDeprecated: false,
+          deprecationReason: null
+        },
+        {
+          name: "description",
+          description: null,
+          args: [],
+          type: {
+            kind: "NON_NULL",
+            name: null,
+            ofType: {
+              kind: "SCALAR",
+              name: "String",
+              ofType: null
+            }
+          },
+          isDeprecated: false,
+          deprecationReason: null
+        },
+        {
+          name: "isDeprecated",
+          description: null,
+          args: [],
+          type: {
+            kind: "NON_NULL",
+            name: null,
+            ofType: {
+              kind: "SCALAR",
+              name: "String",
+              ofType: null
+            }
+          },
+          isDeprecated: false,
+          deprecationReason: null
+        },
+        {
+          name: "name",
+          description: null,
+          args: [],
+          type: {
+            kind: "NON_NULL",
+            name: null,
+            ofType: {
+              kind: "SCALAR",
+              name: "String",
+              ofType: null
+            }
+          },
+          isDeprecated: false,
+          deprecationReason: null
+        }
+      ],
+      inputFields: null,
+      interfaces: [],
+      enumValues: null,
+      possibleTypes: null
+    },
+    {
+      kind: "OBJECT",
+      name: "__Field",
+      description: null,
+      fields: [
+        {
+          name: "args",
+          description: null,
+          args: [],
+          type: {
+            kind: "OBJECT",
+            name: "__InputValue",
+            ofType: null
+          },
+          isDeprecated: false,
+          deprecationReason: null
+        },
+        {
+          name: "deprecationReason",
+          description: null,
+          args: [],
+          type: {
+            kind: "NON_NULL",
+            name: null,
+            ofType: {
+              kind: "SCALAR",
+              name: "String",
+              ofType: null
+            }
+          },
+          isDeprecated: false,
+          deprecationReason: null
+        },
+        {
+          name: "description",
+          description: null,
+          args: [],
+          type: {
+            kind: "NON_NULL",
+            name: null,
+            ofType: {
+              kind: "SCALAR",
+              name: "String",
+              ofType: null
+            }
+          },
+          isDeprecated: false,
+          deprecationReason: null
+        },
+        {
+          name: "isDeprecated",
+          description: null,
+          args: [],
+          type: {
+            kind: "NON_NULL",
+            name: null,
+            ofType: {
+              kind: "SCALAR",
+              name: "String",
+              ofType: null
+            }
+          },
+          isDeprecated: false,
+          deprecationReason: null
+        },
+        {
+          name: "name",
+          description: null,
+          args: [],
+          type: {
+            kind: "NON_NULL",
+            name: null,
+            ofType: {
+              kind: "SCALAR",
+              name: "String",
+              ofType: null
+            }
+          },
+          isDeprecated: false,
+          deprecationReason: null
+        },
+        {
+          name: "type",
+          description: null,
+          args: [],
+          type: {
+            kind: "OBJECT",
+            name: "__Type",
+            ofType: null
+          },
+          isDeprecated: false,
+          deprecationReason: null
+        }
+      ],
+      inputFields: null,
+      interfaces: [],
+      enumValues: null,
+      possibleTypes: null
+    },
+    {
+      kind: "OBJECT",
+      name: "__InputValue",
+      description: null,
+      fields: [
+        {
+          name: "defaultValue",
+          description: null,
+          args: [],
+          type: {
+            kind: "NON_NULL",
+            name: null,
+            ofType: {
+              kind: "SCALAR",
+              name: "String",
+              ofType: null
+            }
+          },
+          isDeprecated: false,
+          deprecationReason: null
+        },
+        {
+          name: "description",
+          description: null,
+          args: [],
+          type: {
+            kind: "NON_NULL",
+            name: null,
+            ofType: {
+              kind: "SCALAR",
+              name: "String",
+              ofType: null
+            }
+          },
+          isDeprecated: false,
+          deprecationReason: null
+        },
+        {
+          name: "name",
+          description: null,
+          args: [],
+          type: {
+            kind: "NON_NULL",
+            name: null,
+            ofType: {
+              kind: "SCALAR",
+              name: "String",
+              ofType: null
+            }
+          },
+          isDeprecated: false,
+          deprecationReason: null
+        },
+        {
+          name: "type",
+          description: null,
+          args: [],
+          type: {
+            kind: "OBJECT",
+            name: "__Type",
+            ofType: null
+          },
+          isDeprecated: false,
+          deprecationReason: null
+        }
+      ],
+      inputFields: null,
+      interfaces: [],
+      enumValues: null,
+      possibleTypes: null
+    },
+    {
+      kind: "OBJECT",
+      name: "__Schema",
+      description: null,
+      fields: [
+        {
+          name: "description",
+          description: null,
+          args: [],
+          type: {
+            kind: "NON_NULL",
+            name: null,
+            ofType: {
+              kind: "SCALAR",
+              name: "String",
+              ofType: null
+            }
+          },
+          isDeprecated: false,
+          deprecationReason: null
+        },
+        {
+          name: "directives",
+          description: null,
+          args: [],
+          type: {
+            kind: "OBJECT",
+            name: "__Directive",
+            ofType: null
+          },
+          isDeprecated: false,
+          deprecationReason: null
+        },
+        {
+          name: "mutationType",
+          description: null,
+          args: [],
+          type: {
+            kind: "OBJECT",
+            name: "__Type",
+            ofType: null
+          },
+          isDeprecated: false,
+          deprecationReason: null
+        },
+        {
+          name: "queryType",
+          description: null,
+          args: [],
+          type: {
+            kind: "OBJECT",
+            name: "__Type",
+            ofType: null
+          },
+          isDeprecated: false,
+          deprecationReason: null
+        },
+        {
+          name: "subscriptionType",
+          description: null,
+          args: [],
+          type: {
+            kind: "OBJECT",
+            name: "__Type",
+            ofType: null
+          },
+          isDeprecated: false,
+          deprecationReason: null
+        },
+        {
+          name: "types",
+          description: null,
+          args: [],
+          type: {
+            kind: "OBJECT",
+            name: "__Type",
+            ofType: null
+          },
+          isDeprecated: false,
+          deprecationReason: null
+        }
+      ],
+      inputFields: null,
+      interfaces: [],
+      enumValues: null,
+      possibleTypes: null
+    },
+    {
+      kind: "OBJECT",
+      name: "__Type",
+      description: null,
+      fields: [
+        {
+          name: "description",
+          description: null,
+          args: [],
+          type: {
+            kind: "NON_NULL",
+            name: null,
+            ofType: {
+              kind: "SCALAR",
+              name: "String",
+              ofType: null
+            }
+          },
+          isDeprecated: false,
+          deprecationReason: null
+        },
+        {
+          name: "enumValues",
+          description: null,
+          args: [
+            {
+              name: "includeDeprecated",
+              description: null,
+              type: {
+                kind: "SCALAR",
+                name: "Boolean",
+                ofType: null
+              },
+              defaultValue: "false"
+            }
+          ],
+          type: {
+            kind: "OBJECT",
+            name: "__EnumValue",
+            ofType: null
+          },
+          isDeprecated: false,
+          deprecationReason: null
+        },
+        {
+          name: "fields",
+          description: null,
+          args: [
+            {
+              name: "includeDeprecated",
+              description: null,
+              type: {
+                kind: "SCALAR",
+                name: "Boolean",
+                ofType: null
+              },
+              defaultValue: "false"
+            }
+          ],
+          type: {
+            kind: "OBJECT",
+            name: "__Field",
+            ofType: null
+          },
+          isDeprecated: false,
+          deprecationReason: null
+        },
+        {
+          name: "inputFields",
+          description: null,
+          args: [],
+          type: {
+            kind: "OBJECT",
+            name: "__InputValue",
+            ofType: null
+          },
+          isDeprecated: false,
+          deprecationReason: null
+        },
+        {
+          name: "interfaces",
+          description: null,
+          args: [],
+          type: {
+            kind: "OBJECT",
+            name: "__Type",
+            ofType: null
+          },
+          isDeprecated: false,
+          deprecationReason: null
+        },
+        {
+          name: "kind",
+          description: null,
+          args: [],
+          type: {
+            kind: "NON_NULL",
+            name: null,
+            ofType: {
+              kind: "ENUM",
+              name: "__TypeKind",
+              ofType: null
+            }
+          },
+          isDeprecated: false,
+          deprecationReason: null
+        },
+        {
+          name: "name",
+          description: null,
+          args: [],
+          type: {
+            kind: "NON_NULL",
+            name: null,
+            ofType: {
+              kind: "SCALAR",
+              name: "String",
+              ofType: null
+            }
+          },
+          isDeprecated: false,
+          deprecationReason: null
+        },
+        {
+          name: "ofType",
+          description: null,
+          args: [],
+          type: {
+            kind: "OBJECT",
+            name: "__Type",
+            ofType: null
+          },
+          isDeprecated: false,
+          deprecationReason: null
+        },
+        {
+          name: "possibleTypes",
+          description: null,
+          args: [],
+          type: {
+            kind: "OBJECT",
+            name: "__Type",
+            ofType: null
+          },
+          isDeprecated: false,
+          deprecationReason: null
+        }
+      ],
+      inputFields: null,
+      interfaces: [],
+      enumValues: null,
+      possibleTypes: null
+    },
+    {
+      kind: "ENUM",
+      name: "__TypeKind",
+      description: null,
+      fields: null,
+      inputFields: null,
+      interfaces: null,
+      enumValues: [
+        {
+          name: "ENUM",
+          description: null,
+          isDeprecated: false,
+          deprecationReason: null
+        },
+        {
+          name: "INPUT_OBJECT",
+          description: null,
+          isDeprecated: false,
+          deprecationReason: null
+        },
+        {
+          name: "INTERFACE",
+          description: null,
+          isDeprecated: false,
+          deprecationReason: null
+        },
+        {
+          name: "LIST",
+          description: null,
+          isDeprecated: false,
+          deprecationReason: null
+        },
+        {
+          name: "NON_NULL",
+          description: null,
+          isDeprecated: false,
+          deprecationReason: null
+        },
+        {
+          name: "OBJECT",
+          description: null,
+          isDeprecated: false,
+          deprecationReason: null
+        },
+        {
+          name: "SCALAR",
+          description: null,
+          isDeprecated: false,
+          deprecationReason: null
+        },
+        {
+          name: "UNION",
+          description: null,
+          isDeprecated: false,
+          deprecationReason: null
+        }
+      ],
+      possibleTypes: null
+    },
+    {
+      kind: "OBJECT",
+      name: "query_root",
+      description: null,
+      fields: [],
+      inputFields: null,
+      interfaces: [],
+      enumValues: null,
+      possibleTypes: null
+    }
+  ],
+  directives: [
+    {
+      name: "include",
+      description: "whether this query should be included",
+      locations: [
+        "FIELD",
+        "FRAGMENT_SPREAD",
+        "INLINE_FRAGMENT"
+      ],
+      args: [
+        {
+          name: "if",
+          description: null,
+          type: {
+            kind: "NON_NULL",
+            name: null,
+            ofType: {
+              kind: "SCALAR",
+              name: "Boolean",
+              ofType: null
+            }
+          },
+          defaultValue: null
+        }
+      ]
+    },
+    {
+      name: "skip",
+      description: "whether this query should be skipped",
+      locations: [
+        "FIELD",
+        "FRAGMENT_SPREAD",
+        "INLINE_FRAGMENT"
+      ],
+      args: [
+        {
+          name: "if",
+          description: null,
+          type: {
+            kind: "NON_NULL",
+            name: null,
+            ofType: {
+              kind: "SCALAR",
+              name: "Boolean",
+              ofType: null
+            }
+          },
+          defaultValue: null
+        }
+      ]
+    },
+    {
+      name: "cached",
+      description: "whether this query should be cached (Hasura Cloud only)",
+      locations: [
+        "QUERY"
+      ],
+      args: [
+        {
+          name: "ttl",
+          description: "measured in seconds",
+          type: {
+            kind: "NON_NULL",
+            name: null,
+            ofType: {
+              kind: "SCALAR",
+              name: "Int",
+              ofType: null
+            }
+          },
+          defaultValue: "60"
+        },
+        {
+          name: "refresh",
+          description: "refresh the cache entry",
+          type: {
+            kind: "NON_NULL",
+            name: null,
+            ofType: {
+              kind: "SCALAR",
+              name: "Boolean",
+              ofType: null
+            }
+          },
+          defaultValue: "false"
+        }
+      ]
+    }
+  ]
+};
+var dummyIntrospection = {
+  __schema
+};
 const ElementEditable = (() => {
   const editable = new Editable();
   let editingElement = void 0;
@@ -78555,7 +79455,6 @@ const ElementEditable = (() => {
         return;
       editingElement = el2;
       buttonElement = findClosestBtn(editingElement);
-      console.log("test", buttonElement);
       editingElement.focus();
       editable.add(editingElement);
       if (buttonElement) {
@@ -78584,7 +79483,6 @@ const ElementEditable = (() => {
       if (prevContent !== void 0) {
         editingElement.innerHTML = prevContent;
       }
-      save3();
     }
   };
 })();
@@ -78792,14 +79690,21 @@ const addElementHighlight = async (window2, injectMode, features) => {
 let oneAuth;
 const loadIntrospection = async (options2 = { viewMessage: true }) => {
   try {
-    const schema2 = await fetchGraphqlIntrospectionSchema(workbench.graphQLEndpoint, workbench.graphQLSecret);
+    const introspection = await fetchGraphqlIntrospectionSchema(workbench.graphQLEndpoint, workbench.graphQLSecret);
     if (options2.viewMessage) {
-      window.postMessage({
-        type: "SHOW_USER_FEEDBACK",
-        payload: { type: "LOAD_INTROSPECTION_SUCCESS" }
-      });
+      if (introspection) {
+        window.postMessage({
+          type: "SHOW_USER_FEEDBACK",
+          payload: { type: "LOAD_INTROSPECTION_SUCCESS" }
+        });
+      } else {
+        window.postMessage({
+          type: "SHOW_USER_FEEDBACK",
+          payload: { type: "LOAD_INTROSPECTION_ERROR" }
+        });
+      }
     }
-    return schema2;
+    return introspection != null ? introspection : dummyIntrospection.__schema;
   } catch (err2) {
     window.postMessage({
       type: "SHOW_USER_FEEDBACK",
@@ -85487,7 +86392,6 @@ const addFrontendListeners = (messagingService2, injectMode, features) => {
     const newSecret = source.newSecret;
     const envFile = await workbench.readEnvFileContent();
     workbench.setGraphQLEndpoint(newEndpointURL, newSecret);
-    loadNewIntrospection();
     if (!envFile)
       return window.postMessage({
         type: "SHOW_USER_FEEDBACK",
@@ -85505,31 +86409,30 @@ const addFrontendListeners = (messagingService2, injectMode, features) => {
       });
     await workbench.writeEnvFileContent(modifiedEnvFile).then(async () => {
       var _a2, _b, _c;
-      const codegen2 = await workbench.generateGraphql(void 0, void 0);
-      if ((_a2 = codegen2 == null ? void 0 : codegen2.generated) == null ? void 0 : _a2.errors) {
-        const files = workbench.transformFsTreeToObject(workbench.getRoot());
-        const generatedFiles = micromatch_1(Object.keys(files), [`/src/pages/**/*.graphql`, `!/src/pages/index.graphql`]).map((filePath) => {
-          return { path: filePath.substring(0, filePath.lastIndexOf("/")) };
-        });
-        await workbench.deleteFiles(generatedFiles);
-        const regenerated = await workbench.generateGraphql(void 0, void 0);
-        if ((_b = regenerated == null ? void 0 : regenerated.generated) == null ? void 0 : _b.errors) {
-          console.error((_c = regenerated.generated) == null ? void 0 : _c.errors);
-          return window.postMessage({
-            type: "SHOW_USER_FEEDBACK",
-            payload: {
-              type: `GRAPHQL_CODEGEN_ERROR`
-            }
-          });
-        }
-      }
-    }).then(() => {
-      window.postMessage({
-        type: "SHOW_USER_FEEDBACK",
-        payload: {
-          type: `CHANGE_GRAPHQL_ENDPOINT_SUCESS`
-        }
+      const files = workbench.transformFsTreeToObject(workbench.getRoot());
+      const generatedFiles = micromatch_1(Object.keys(files), [`/src/pages/**/*.graphql`, `!/src/pages/index.graphql`]).map((filePath) => {
+        return { path: filePath.substring(0, filePath.lastIndexOf("/")) };
       });
+      await workbench.deleteFiles(generatedFiles);
+      workbench.introspection = await loadIntrospection();
+      const generated = await workbench.generateGraphql(void 0, void 0);
+      if ((_a2 = generated == null ? void 0 : generated.generated) == null ? void 0 : _a2.errors) {
+        if ((_b = generated == null ? void 0 : generated.generated) == null ? void 0 : _b.errors)
+          console.error((_c = generated.generated) == null ? void 0 : _c.errors);
+        return window.postMessage({
+          type: "SHOW_USER_FEEDBACK",
+          payload: {
+            type: `GRAPHQL_CODEGEN_ERROR`
+          }
+        });
+      } else {
+        return window.postMessage({
+          type: "SHOW_USER_FEEDBACK",
+          payload: {
+            type: `CHANGE_GRAPHQL_ENDPOINT_SUCESS`
+          }
+        });
+      }
     });
   });
   messagingService2.addEventListener(CHANGE_THEME, async (source) => {
@@ -96745,7 +97648,7 @@ async function generateTypes({
     const pluginMapIntrospection = {
       introspection: introspectionPlugin
     };
-    if (generatedSchema !== "") {
+    if (generatedSchema && generatedSchema !== "") {
       runConfigurations.push({
         filename: (_a2 = options2[0]) == null ? void 0 : _a2.filename,
         plugins: pluginsGraphQL,
@@ -96769,34 +97672,14 @@ async function generateTypes({
     }
     return output;
   } catch (e) {
+    console.error(e);
     return e;
   }
 }
-async function fetchGraphqlSchema(schema2, secret) {
-  try {
-    const headers = { "Content-Type": "application/json" };
-    if (secret) {
-      headers["x-hasura-admin-secret"] = secret;
-    }
-    const response = await fetch(`${schema2}`, {
-      method: "POST",
-      headers,
-      body: JSON.stringify({
-        variables: {},
-        query: getIntrospectionQuery()
-      })
-    });
-    const { data } = await response.json();
-    const buildSchema2 = buildClientSchema(data);
-    const generatedSchema = printSchema(buildSchema2);
-    return generatedSchema;
-  } catch (e) {
-    console.error(e);
-    frontendActions.transpileError(e);
-  }
-}
-async function generateGraphqlTypesFile(graphqlEndpoint, graphqlSecret, config2, documents) {
-  const generatedSchema = await fetchGraphqlSchema(graphqlEndpoint, graphqlSecret) || "";
+async function generateGraphqlTypesFile(config2, documents) {
+  var _a2;
+  const clientSchema = buildClientSchema({ __schema: (_a2 = workbench.introspection) != null ? _a2 : dummyIntrospection.__schema });
+  const generatedSchema = printSchema(clientSchema);
   const result2 = await generateTypes({
     config: config2,
     generatedSchema,
@@ -96840,12 +97723,11 @@ async function graphqlCodegen({
   data,
   path: path2
 }) {
-  var _a2;
   const editedDocumentData = data != null ? data : "";
   const editedDocumentPath = path2 != null ? path2 : "";
   const documents = findGraphQlFiles(files, editedDocumentData, editedDocumentPath);
   const config2 = await workbench2.readFile(CONFIG_PATH);
-  const generated = (_a2 = await generateGraphqlTypesFile(workbench2.graphQLEndpoint, workbench2.graphQLSecret, config2, documents)) != null ? _a2 : {};
+  const generated = await generateGraphqlTypesFile(config2, documents);
   const generatedFilePaths = await getGeneratesFileNameFromConfig(workbench2);
   return { generatedFilePaths, generated };
 }
@@ -97366,7 +98248,6 @@ class DevWorkbench {
     this.fetchfs = new WriterFetchFS(defaultFSPort);
   }
   async generateGraphql(path2, data) {
-    var _a2;
     const files = this.transformFsTreeToObject(this.getRoot());
     const codegen2 = await graphqlCodegen({
       workbench,
@@ -97374,9 +98255,15 @@ class DevWorkbench {
       data,
       path: path2
     });
-    if ((_a2 = codegen2 == null ? void 0 : codegen2.generated) == null ? void 0 : _a2.errors)
-      return codegen2;
     const { generated, generatedFilePaths } = codegen2;
+    if (!generated)
+      return {
+        generated: {
+          errors: "Unable to generate introspection and graphQL types."
+        }
+      };
+    if (generated == null ? void 0 : generated.errors)
+      return codegen2;
     let filesToWrite = [];
     if ((generatedFilePaths == null ? void 0 : generatedFilePaths.introspection) && (generated == null ? void 0 : generated.introspection))
       filesToWrite = [
