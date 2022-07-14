@@ -55,6 +55,7 @@ export const TextField: React.FC<IFieldProps> = ({
     ...(entityField.type === 'number' ? { step: '.01' } : {}),
     required: entityField.required,
     error: !value && entityField.required,
+    disabled: entityField.disabled,
   }
 
   const even = index ? index % 2 == 0 : false

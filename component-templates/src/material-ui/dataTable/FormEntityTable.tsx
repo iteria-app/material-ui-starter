@@ -35,6 +35,7 @@ import {
 } from './../entityForm/DragDropModelForm'
 import { GlbModelDownloadTableCell } from './GlbModelDownloadTableCell'
 import { FormikProps, FormikValues } from 'formik'
+import { Entity } from '@iteria-app/component-templates-api'
 
 interface IFormEntityTableProps {
   name?: string
@@ -241,25 +242,43 @@ export const FormEntityTable: React.FC<IFormEntityTableProps> = ({
                   })}
                 </TableBody>
                 <TableFooter>
-                  <EntityListDialog
-                    entityField={entityField}
-                    setRowClickDisabled={setRowClickDisabled}
-                    onClickRow={(entity) => {
-                      if (!rowClickDisabled.valueOf()) {
-                        setRowClickDisabled(true)
-                        if (entity.__typename) {
-                          const newItem = {
-                            ...fillFlatEntityFieldValueObject(
-                              generateEntityFieldValueObject(entityField, 0),
-                              entity
-                            ),
+                  {!isPath(entityField?.entityFields?.fields) &&
+                    isChildObject(entityField?.entityFields) && (
+                      <EntityListDialog
+                        entityField={entityField}
+                        setRowClickDisabled={setRowClickDisabled}
+                        onClickRow={(entity) => {
+                          if (!rowClickDisabled.valueOf()) {
+                            setRowClickDisabled(true)
+                            if (entity.__typename) {
+                              const newItem = {
+                                ...fillFlatEntityFieldValueObject(
+                                  generateEntityFieldValueObject(
+                                    entityField,
+                                    0
+                                  ),
+                                  entity
+                                ),
+                              }
+                              arrayHelpers.push(newItem)
+                            }
                           }
-                          arrayHelpers.push(newItem)
-                        }
-                      }
-                    }}
-                  >
-                    {!isPath(entityField?.entityFields?.fields) && (
+                        }}
+                      >
+                        <Button
+                          style={{
+                            margin: '12px',
+                            float: 'left',
+                          }}
+                          variant="contained"
+                          color="primary"
+                        >
+                          <Translate entityName={'Add element'} />
+                        </Button>
+                      </EntityListDialog>
+                    )}
+                  {!isPath(entityField?.entityFields?.fields) &&
+                    !isChildObject(entityField?.entityFields) && (
                       <Button
                         style={{
                           margin: '12px',
@@ -267,11 +286,15 @@ export const FormEntityTable: React.FC<IFormEntityTableProps> = ({
                         }}
                         variant="contained"
                         color="primary"
+                        onClick={() => {
+                          arrayHelpers.push(
+                            generateEntityFieldValueObject(entityField, 0)
+                          )
+                        }}
                       >
-                        <Translate entityName={'Add'} />
+                        <Translate entityName={'Add new element'} />
                       </Button>
                     )}
-                  </EntityListDialog>
                 </TableFooter>
               </Table>
             </TableContainer>
@@ -280,4 +303,10 @@ export const FormEntityTable: React.FC<IFormEntityTableProps> = ({
       }}
     ></FieldArray>
   )
+}
+
+const isChildObject = (entityFields?: Entity) => {
+  return entityFields?.fields.some((field) => {
+    if (field.type === 'object') return true
+  })
 }

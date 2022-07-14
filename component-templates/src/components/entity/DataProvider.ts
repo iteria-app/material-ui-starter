@@ -186,6 +186,22 @@ export class GraphqlcodegenDataProvider {
       entityFields.name = entityName
     }
 
+    const setDisabledNestedObjects = (
+      entityFields: Entity,
+      disabled: boolean
+    ) => {
+      entityFields.fields.map((field) => {
+        field.disabled = disabled
+        if (field.type === 'object' && field?.entityFields) {
+          setDisabledNestedObjects(field.entityFields, true)
+        }
+        if (field.type === 'array' && field?.entityFields)
+          setDisabledNestedObjects(field.entityFields, disabled)
+      })
+    }
+
+    setDisabledNestedObjects(entityFields, false)
+
     const detailPageQueryName =
       this.detailPageQueryName(entityName) ?? entityName
 

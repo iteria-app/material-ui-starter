@@ -28,6 +28,7 @@ export const CheckboxField: React.FC<ICheckboxFieldProps> = ({
 }: ICheckboxFieldProps): JSX.Element => {
   const inputProps = {
     checked: value,
+    disabled: entityField.disabled,
   }
 
   const even = index ? index % 2 == 0 : false

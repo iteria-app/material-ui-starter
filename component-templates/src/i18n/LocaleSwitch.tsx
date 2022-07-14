@@ -14,12 +14,17 @@ export const LocaleSwitch: React.FC<{ locales }> = ({
     setLocale(locale)
   }
 
+  const browserLocale = locale.split('-')[0]
+  const defaultLocale = Object.keys(locales).includes(browserLocale)
+    ? browserLocale
+    : 'en'
+
   return (
     <FormControl variant="standard">
       <Select
         className="MuiSelect-root"
         labelId="select-locale"
-        value={locale.split('-')[0]}
+        value={defaultLocale}
         onChange={getEventValue}
       >
         {Object.keys(locales).map(function (locale) {
