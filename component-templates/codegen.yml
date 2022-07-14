@@ -1,0 +1,13 @@
+overwrite: true
+schema:
+  - '${VITE_HASURA_GRAPHQL_ENDPOINT}'
+documents:
+  - './src/**/*.ts'
+  - './src/**/*.tsx'
+  - 'src/**/*.graphql'
+generates:
+  src/graphql/generated.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-urql
