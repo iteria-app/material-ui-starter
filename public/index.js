@@ -11228,7 +11228,7 @@ function create_if_block$g(ctx) {
       div3 = element("div");
       t3 = space();
       style = element("style");
-      style.textContent = ".overlay {\n      position: fixed;\n      background: #44444488;\n      z-index: 9999;\n    }\n    .overlay-1 {\n      top: var(--offset-top);\n      left: var(--offset-left);\n      width: calc(var(--offset-right) - var(--offset-left));\n      height: calc(var(--local-top));\n    }\n    .overlay-2 {\n      top: calc(var(--local-top) + var(--offset-top));\n      left: calc(var(--offset-left) + var(--local-right));\n      width: calc(var(--offset-right) - var(--local-right));\n      height: calc(var(--local-bottom) - var(--local-top));\n    }\n    .overlay-3 {\n      top: calc(var(--offset-top) + var(--local-bottom));\n      left: var(--offset-left);\n      width: calc(var(--offset-right) - var(--offset-left));\n      height: calc(\n        var(--offset-bottom) - var(--offset-top) - var(--local-top) -\n          var(--local-height)\n      );\n    }\n    .overlay-4 {\n      top: calc(var(--local-top) + var(--offset-top));\n      left: var(--offset-left);\n      width: var(--local-left);\n      height: calc(var(--local-bottom) - var(--local-top));\n    }";
+      style.textContent = ".overlay {\r\n      position: fixed;\r\n      background: #44444488;\r\n      z-index: 9999;\r\n    }\r\n    .overlay-1 {\r\n      top: var(--offset-top);\r\n      left: var(--offset-left);\r\n      width: calc(var(--offset-right) - var(--offset-left));\r\n      height: calc(var(--local-top));\r\n    }\r\n    .overlay-2 {\r\n      top: calc(var(--local-top) + var(--offset-top));\r\n      left: calc(var(--offset-left) + var(--local-right));\r\n      width: calc(var(--offset-right) - var(--local-right));\r\n      height: calc(var(--local-bottom) - var(--local-top));\r\n    }\r\n    .overlay-3 {\r\n      top: calc(var(--offset-top) + var(--local-bottom));\r\n      left: var(--offset-left);\r\n      width: calc(var(--offset-right) - var(--offset-left));\r\n      height: calc(\r\n        var(--offset-bottom) - var(--offset-top) - var(--local-top) -\r\n          var(--local-height)\r\n      );\r\n    }\r\n    .overlay-4 {\r\n      top: calc(var(--local-top) + var(--offset-top));\r\n      left: var(--offset-left);\r\n      width: var(--local-left);\r\n      height: calc(var(--local-bottom) - var(--local-top));\r\n    }";
       attr(div0, "class", "overlay overlay-1");
       attr(div1, "class", "overlay overlay-2");
       attr(div2, "class", "overlay overlay-3");
@@ -12000,52 +12000,6 @@ function instance$y($$self, $$props, $$invalidate) {
   let { alignX = "" } = $$props;
   const all_tip_notes = [
     {
-      id: "drag_and_drop_relations",
-      title: "Move Tool",
-      text: "You can use this tool to swap and move the highlighted element in the grid",
-      icon: icons$1["drag_move"],
-      display: true,
-      actions: [
-        {
-          id: "cancelaction",
-          title: "Cancel",
-          text: "You can use this tool to cancel moving elements",
-          icon: icons$1["clear"],
-          display: true
-        },
-        {
-          id: "confirmaction",
-          title: "Save",
-          text: "You can use this tool to confirm new order of swaped elements",
-          icon: icons$1["check"],
-          display: true
-        }
-      ]
-    },
-    {
-      id: "drag_and_drop_grid",
-      title: "Move Tool",
-      text: "You can use this tool to swap and move the highlighted element in the grid",
-      icon: icons$1["drag_move"],
-      display: true,
-      actions: [
-        {
-          id: "cancelaction",
-          title: "Cancel",
-          text: "You can use this tool to cancel moving elements",
-          icon: icons$1["clear"],
-          display: true
-        },
-        {
-          id: "confirmaction",
-          title: "Save",
-          text: "You can use this tool to confirm new order of swaped elements",
-          icon: icons$1["check"],
-          display: true
-        }
-      ]
-    },
-    {
       id: "clone",
       title: "Clone Tool",
       text: "You can use this tool to clone the highlighted element",
@@ -12720,7 +12674,7 @@ function create_fragment$A(ctx) {
         if_block2.c();
       t3 = space();
       style = element("style");
-      style.textContent = ".tippy-wrapper {\n      position: fixed;\n      top: max(\n        0px,\n        calc(\n          var(--offset-top) + var(--position-top) - var(--tippy-height) + 2px\n        )\n      );\n      left: max(\n        calc(\n          var(--offset-left) +\n            calc(\n              calc(\n                  var(--position-right) + var(--position-left) -\n                    var(--tippy-width)\n                ) / 2\n            )\n        ),\n        calc(var(--offset-left) + var(--position-right) - var(--tippy-width))\n      );\n      z-index: 10000;\n      transform: translateX(-2px);\n      padding-top: 0;\n      padding-bottom: var(--tippy-arrow-height);\n      font-family: sans-serif;\n    }\n    .tippy-wrapper.bottom {\n      top: calc(var(--offset-top) + var(--position-bottom) - 3rem);\n    }\n    .tippy {\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      background: #181818;\n      color: white;\n      padding: 0 0.2rem;\n      width: max-content;\n      height: 2rem;\n      border-radius: 4px;\n      gap: 0.2rem;\n    }\n    .tippy .actions {\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      gap: 0.2rem;\n    }\n    .tippy .action {\n      width: 100%;\n      border-radius: 2px;\n      overflow: hidden;\n      display: flex;\n    }\n    .tippy .action .button {\n      width: 100%;\n      height: 100%;\n      padding: 0.2rem;\n      user-select: none;\n      cursor: pointer;\n      display: flex;\n      justify-content: center;\n      align-items: center;\n    }\n    .tippy .action:hover {\n      background: #ffffff22;\n    }\n    .tippy .action .material-icons {\n      font-size: 1rem;\n    }\n    .tippy .action .material-icons :global(svg) {\n      width: 1.1rem;\n    }\n    .icon {\n      color: white;\n    }\n    .tippy .action.disabled {\n      opacity: 0.6;\n    }\n    .tippy .action.disabled .button {\n      pointer-events: none;\n    }\n    .tippy .tippy-wrapper .arrow {\n      position: absolute;\n      width: var(--tippy-arrow-width);\n      height: var(--tippy-arrow-height);\n      background: #333;\n      top: 2rem;\n      left: 50%;\n      transform: translateX(-50%);\n      clip-path: polygon(0 0, 100% 0, 50% 100%, 0 0);\n      cursor: pointer;\n    }\n    .tippy-wrapper.left .arrow {\n      left: 10%;\n      transform: unset;\n    }\n    .tippy-wrapper.right {\n      left: calc(\n        var(--offset-left) + var(--position-right) - var(--tippy-width) + 2px\n      );\n    }\n    .tippy-wrapper.right .arrow {\n      left: 90%;\n      transform: translateX(-100%);\n    }\n    .tippy-wrapper.bottom {\n      top: calc(\n        var(--offset-top) + var(--position-bottom) - var(--tippy-arrow-height)\n      );\n      padding-bottom: 0;\n      padding-top: var(--tippy-arrow-height);\n    }\n    .tippy-wrapper.bottom .arrow {\n      top: 0.5px;\n      clip-path: polygon(50% 0, 100% 100%, 0 100%, 50% 0);\n    }\n    .tippy-wrapper.transform {\n      top: max(0px, calc(var(--offset-top) + var(--position-top) + 2px));\n    }\n    .tippy-wrapper.left {\n      transform: translateX(2px);\n      left: calc(var(--offset-left) + var(--position-left));\n    }\n    .tippy-wrapper.center {\n      transform: translateX(-50%);\n      left: calc(\n        var(--offset-left) + var(--position-left) +\n          calc(calc(var(--position-right) - var(--position-left)) / 2)\n      );\n    }\n    .tippy .text {\n      min-width: max-content;\n      margin-right: 0.2rem;\n    }\n\n    .tippy-wrapper.transition {\n      transition: left 200ms, top 200ms;\n    }\n\n    .tippy-wrapper.fadein {\n      animation: tippy-fadein 400ms;\n    }\n\n    .tippy svg {\n      margin-top: 4px;\n    }\n\n    @keyframes tippy-fadein {\n      from {\n        opacity: 0;\n      }\n      top {\n        opacity: 1;\n      }\n    }";
+      style.textContent = ".tippy-wrapper {\r\n      position: fixed;\r\n      top: max(\r\n        0px,\r\n        calc(\r\n          var(--offset-top) + var(--position-top) - var(--tippy-height) + 2px\r\n        )\r\n      );\r\n      left: max(\r\n        calc(\r\n          var(--offset-left) +\r\n            calc(\r\n              calc(\r\n                  var(--position-right) + var(--position-left) -\r\n                    var(--tippy-width)\r\n                ) / 2\r\n            )\r\n        ),\r\n        calc(var(--offset-left) + var(--position-right) - var(--tippy-width))\r\n      );\r\n      z-index: 10000;\r\n      transform: translateX(-2px);\r\n      padding-top: 0;\r\n      padding-bottom: var(--tippy-arrow-height);\r\n      font-family: sans-serif;\r\n    }\r\n    .tippy-wrapper.bottom {\r\n      top: calc(var(--offset-top) + var(--position-bottom) - 3rem);\r\n    }\r\n    .tippy {\r\n      display: flex;\r\n      justify-content: center;\r\n      align-items: center;\r\n      background: #181818;\r\n      color: white;\r\n      padding: 0 0.2rem;\r\n      width: max-content;\r\n      height: 2rem;\r\n      border-radius: 4px;\r\n      gap: 0.2rem;\r\n    }\r\n    .tippy .actions {\r\n      display: flex;\r\n      justify-content: center;\r\n      align-items: center;\r\n      gap: 0.2rem;\r\n    }\r\n    .tippy .action {\r\n      width: 100%;\r\n      border-radius: 2px;\r\n      overflow: hidden;\r\n      display: flex;\r\n    }\r\n    .tippy .action .button {\r\n      width: 100%;\r\n      height: 100%;\r\n      padding: 0.2rem;\r\n      user-select: none;\r\n      cursor: pointer;\r\n      display: flex;\r\n      justify-content: center;\r\n      align-items: center;\r\n    }\r\n    .tippy .action:hover {\r\n      background: #ffffff22;\r\n    }\r\n    .tippy .action .material-icons {\r\n      font-size: 1rem;\r\n    }\r\n    .tippy .action .material-icons :global(svg) {\r\n      width: 1.1rem;\r\n    }\r\n    .icon {\r\n      color: white;\r\n    }\r\n    .tippy .action.disabled {\r\n      opacity: 0.6;\r\n    }\r\n    .tippy .action.disabled .button {\r\n      pointer-events: none;\r\n    }\r\n    .tippy .tippy-wrapper .arrow {\r\n      position: absolute;\r\n      width: var(--tippy-arrow-width);\r\n      height: var(--tippy-arrow-height);\r\n      background: #333;\r\n      top: 2rem;\r\n      left: 50%;\r\n      transform: translateX(-50%);\r\n      clip-path: polygon(0 0, 100% 0, 50% 100%, 0 0);\r\n      cursor: pointer;\r\n    }\r\n    .tippy-wrapper.left .arrow {\r\n      left: 10%;\r\n      transform: unset;\r\n    }\r\n    .tippy-wrapper.right {\r\n      left: calc(\r\n        var(--offset-left) + var(--position-right) - var(--tippy-width) + 2px\r\n      );\r\n    }\r\n    .tippy-wrapper.right .arrow {\r\n      left: 90%;\r\n      transform: translateX(-100%);\r\n    }\r\n    .tippy-wrapper.bottom {\r\n      top: calc(\r\n        var(--offset-top) + var(--position-bottom) - var(--tippy-arrow-height)\r\n      );\r\n      padding-bottom: 0;\r\n      padding-top: var(--tippy-arrow-height);\r\n    }\r\n    .tippy-wrapper.bottom .arrow {\r\n      top: 0.5px;\r\n      clip-path: polygon(50% 0, 100% 100%, 0 100%, 50% 0);\r\n    }\r\n    .tippy-wrapper.transform {\r\n      top: max(0px, calc(var(--offset-top) + var(--position-top) + 2px));\r\n    }\r\n    .tippy-wrapper.left {\r\n      transform: translateX(2px);\r\n      left: calc(var(--offset-left) + var(--position-left));\r\n    }\r\n    .tippy-wrapper.center {\r\n      transform: translateX(-50%);\r\n      left: calc(\r\n        var(--offset-left) + var(--position-left) +\r\n          calc(calc(var(--position-right) - var(--position-left)) / 2)\r\n      );\r\n    }\r\n    .tippy .text {\r\n      min-width: max-content;\r\n      margin-right: 0.2rem;\r\n    }\r\n\r\n    .tippy-wrapper.transition {\r\n      transition: left 200ms, top 200ms;\r\n    }\r\n\r\n    .tippy-wrapper.fadein {\r\n      animation: tippy-fadein 400ms;\r\n    }\r\n\r\n    .tippy svg {\r\n      margin-top: 4px;\r\n    }\r\n\r\n    @keyframes tippy-fadein {\r\n      from {\r\n        opacity: 0;\r\n      }\r\n      top {\r\n        opacity: 1;\r\n      }\r\n    }";
       attr(div0, "class", "arrow iteria-ignore");
       attr(div1, "class", "actions");
       attr(div2, "class", "tippy iteria-ignore");
@@ -12870,12 +12824,6 @@ function instance$x($$self, $$props, $$invalidate) {
   }
   const actions = [
     {
-      id: "drag_and_drop_grid",
-      title: "Move item",
-      icon: icons$1["drag_move"],
-      defaultDisplay: true
-    },
-    {
       id: "clone",
       title: "Clone",
       icon: icons$1["content_copy"],
@@ -12901,12 +12849,6 @@ function instance$x($$self, $$props, $$invalidate) {
     }
   ];
   const activeModeActions = [
-    {
-      id: "drag_and_drop_relations",
-      title: "Move relations",
-      icon: icons$1["drag_move"],
-      defaultDisplay: true
-    },
     {
       id: "cancelaction",
       title: "Cancel",
@@ -13223,7 +13165,7 @@ function create_if_block$d(ctx) {
       create_component(widgettippy.$$.fragment);
       t0 = space();
       style = element("style");
-      style.textContent = ".frame-wrapper {\n      position: absolute;\n      width: 0;\n      height: 0;\n      top: 0;\n      left: 0;\n    }\n    .frame {\n      z-index: 10000;\n      position: fixed;\n      width: 20px;\n      height: 20px;\n      background: var(--frame-color);\n      animation: frame-fadein 300ms;\n    }\n    .frame-wrapper.fallback-color .frame {\n      background: var(--frame-fallback-color);\n    }\n    .frame-top.dashed,\n    .frame-bottom.dashed {\n      background: repeating-linear-gradient(\n        to right,\n        transparent,\n        transparent 10px,\n        var(--frame-color) 10px,\n        var(--frame-color) 20px\n      );\n    }\n    .frame-left.dashed,\n    .frame-right.dashed {\n      background: repeating-linear-gradient(\n        to bottom,\n        transparent,\n        transparent 10px,\n        var(--frame-color) 10px,\n        var(--frame-color) 20px\n      );\n    }\n    .frame-wrapper.fallback-color .frame-top.dashed,\n    .frame-wrapper.fallback-color .frame-bottom.dashed {\n      background: repeating-linear-gradient(\n        to right,\n        transparent,\n        transparent 10px,\n        var(--frame-fallback-color) 10px,\n        var(--frame-fallback-color) 20px\n      );\n    }\n    .frame-wrapper.fallback-color .frame-left.dashed,\n    .frame-wrapper.fallback-color .frame-right.dashed {\n      background: repeating-linear-gradient(\n        to bottom,\n        transparent,\n        transparent 10px,\n        var(--frame-fallback-color) 10px,\n        var(--frame-fallback-color) 20px\n      );\n    }\n    .frame-top {\n      top: max(\n        0px,\n        calc(var(--offset-top) + var(--position-top) - var(--frame-half-width))\n      );\n    }\n    .frame-bottom {\n      top: calc(\n        var(--offset-top) + var(--position-bottom) - var(--frame-half-width)\n      );\n    }\n    .frame-left {\n      left: max(\n        0px,\n        calc(\n          var(--offset-left) + var(--position-left) - var(--frame-half-width)\n        )\n      );\n    }\n    .frame-right {\n      left: calc(\n        var(--offset-left) + var(--position-right) - var(--frame-half-width)\n      );\n    }\n    .frame-top,\n    .frame-bottom {\n      left: calc(\n        var(--offset-left) + var(--position-left) - var(--frame-half-width)\n      );\n      width: calc(\n        var(--position-right) - var(--position-left) + var(--frame-width)\n      );\n      height: var(--frame-width);\n    }\n    .frame-left,\n    .frame-right {\n      display: inline-block;\n      top: calc(var(--offset-top) + var(--position-top));\n      width: var(--frame-width);\n      height: calc(\n        var(--position-bottom) - var(--position-top) - var(--frame-half-width)\n      );\n    }\n    @keyframes frame-fadein {\n      from {\n        opacity: 0;\n      }\n      top {\n        opacity: 1;\n      }\n    }";
+      style.textContent = ".frame-wrapper {\r\n      position: absolute;\r\n      width: 0;\r\n      height: 0;\r\n      top: 0;\r\n      left: 0;\r\n    }\r\n    .frame {\r\n      z-index: 10000;\r\n      position: fixed;\r\n      width: 20px;\r\n      height: 20px;\r\n      background: var(--frame-color);\r\n      animation: frame-fadein 300ms;\r\n    }\r\n    .frame-wrapper.fallback-color .frame {\r\n      background: var(--frame-fallback-color);\r\n    }\r\n    .frame-top.dashed,\r\n    .frame-bottom.dashed {\r\n      background: repeating-linear-gradient(\r\n        to right,\r\n        transparent,\r\n        transparent 10px,\r\n        var(--frame-color) 10px,\r\n        var(--frame-color) 20px\r\n      );\r\n    }\r\n    .frame-left.dashed,\r\n    .frame-right.dashed {\r\n      background: repeating-linear-gradient(\r\n        to bottom,\r\n        transparent,\r\n        transparent 10px,\r\n        var(--frame-color) 10px,\r\n        var(--frame-color) 20px\r\n      );\r\n    }\r\n    .frame-wrapper.fallback-color .frame-top.dashed,\r\n    .frame-wrapper.fallback-color .frame-bottom.dashed {\r\n      background: repeating-linear-gradient(\r\n        to right,\r\n        transparent,\r\n        transparent 10px,\r\n        var(--frame-fallback-color) 10px,\r\n        var(--frame-fallback-color) 20px\r\n      );\r\n    }\r\n    .frame-wrapper.fallback-color .frame-left.dashed,\r\n    .frame-wrapper.fallback-color .frame-right.dashed {\r\n      background: repeating-linear-gradient(\r\n        to bottom,\r\n        transparent,\r\n        transparent 10px,\r\n        var(--frame-fallback-color) 10px,\r\n        var(--frame-fallback-color) 20px\r\n      );\r\n    }\r\n    .frame-top {\r\n      top: max(\r\n        0px,\r\n        calc(var(--offset-top) + var(--position-top) - var(--frame-half-width))\r\n      );\r\n    }\r\n    .frame-bottom {\r\n      top: calc(\r\n        var(--offset-top) + var(--position-bottom) - var(--frame-half-width)\r\n      );\r\n    }\r\n    .frame-left {\r\n      left: max(\r\n        0px,\r\n        calc(\r\n          var(--offset-left) + var(--position-left) - var(--frame-half-width)\r\n        )\r\n      );\r\n    }\r\n    .frame-right {\r\n      left: calc(\r\n        var(--offset-left) + var(--position-right) - var(--frame-half-width)\r\n      );\r\n    }\r\n    .frame-top,\r\n    .frame-bottom {\r\n      left: calc(\r\n        var(--offset-left) + var(--position-left) - var(--frame-half-width)\r\n      );\r\n      width: calc(\r\n        var(--position-right) - var(--position-left) + var(--frame-width)\r\n      );\r\n      height: var(--frame-width);\r\n    }\r\n    .frame-left,\r\n    .frame-right {\r\n      display: inline-block;\r\n      top: calc(var(--offset-top) + var(--position-top));\r\n      width: var(--frame-width);\r\n      height: calc(\r\n        var(--position-bottom) - var(--position-top) - var(--frame-half-width)\r\n      );\r\n    }\r\n    @keyframes frame-fadein {\r\n      from {\r\n        opacity: 0;\r\n      }\r\n      top {\r\n        opacity: 1;\r\n      }\r\n    }";
     },
     m(target, anchor) {
       mount_component(widgettippy, target, anchor);
@@ -14224,7 +14166,7 @@ function instance_1$1($$self, $$props, $$invalidate) {
   let { x: x2 = "center" } = $$props;
   let { y: y2 = "center" } = $$props;
   let { width = 400 } = $$props;
-  let { height = 500 } = $$props;
+  let { height = 538 } = $$props;
   let { classes = "" } = $$props;
   let { closeless = false } = $$props;
   let { hidden: hidden2 } = $$props;
@@ -34608,10 +34550,10 @@ function create_fragment$w(ctx) {
       g15 = svg_element("g");
       g16 = svg_element("g");
       g17 = svg_element("g");
-      attr(path0, "d", "M45.432,35.049c-0.008,0-0.017,0-0.025,0c-2.809,0-5.451,1.095-7.446,3.085c-2.017,2.012-3.128,4.691-3.128,7.543\n				v159.365c0,5.844,4.773,10.61,10.641,10.625c24.738,0.059,66.184,5.215,94.776,35.136V84.023c0-1.981-0.506-3.842-1.461-5.382\n				C115.322,40.849,70.226,35.107,45.432,35.049z");
-      attr(path1, "d", "M262.167,205.042V45.676c0-2.852-1.111-5.531-3.128-7.543c-1.995-1.99-4.639-3.085-7.445-3.085c-0.009,0-0.018,0-0.026,0\n				c-24.793,0.059-69.889,5.801-93.357,43.593c-0.955,1.54-1.46,3.401-1.46,5.382v166.779\n				c28.592-29.921,70.038-35.077,94.776-35.136C257.394,215.651,262.167,210.885,262.167,205.042z");
-      attr(path2, "d", "M286.373,71.801h-7.706v133.241c0,14.921-12.157,27.088-27.101,27.125c-20.983,0.05-55.581,4.153-80.084,27.344\n				c42.378-10.376,87.052-3.631,112.512,2.171c3.179,0.724,6.464-0.024,9.011-2.054c2.538-2.025,3.994-5.052,3.994-8.301V82.427\n				C297,76.568,292.232,71.801,286.373,71.801z");
-      attr(path3, "d", "M18.332,205.042V71.801h-7.706C4.768,71.801,0,76.568,0,82.427v168.897c0,3.25,1.456,6.276,3.994,8.301\n				c2.545,2.029,5.827,2.78,9.011,2.054c25.46-5.803,70.135-12.547,112.511-2.171c-24.502-23.19-59.1-27.292-80.083-27.342\n				C30.49,232.13,18.332,219.963,18.332,205.042z");
+      attr(path0, "d", "M45.432,35.049c-0.008,0-0.017,0-0.025,0c-2.809,0-5.451,1.095-7.446,3.085c-2.017,2.012-3.128,4.691-3.128,7.543\r\n				v159.365c0,5.844,4.773,10.61,10.641,10.625c24.738,0.059,66.184,5.215,94.776,35.136V84.023c0-1.981-0.506-3.842-1.461-5.382\r\n				C115.322,40.849,70.226,35.107,45.432,35.049z");
+      attr(path1, "d", "M262.167,205.042V45.676c0-2.852-1.111-5.531-3.128-7.543c-1.995-1.99-4.639-3.085-7.445-3.085c-0.009,0-0.018,0-0.026,0\r\n				c-24.793,0.059-69.889,5.801-93.357,43.593c-0.955,1.54-1.46,3.401-1.46,5.382v166.779\r\n				c28.592-29.921,70.038-35.077,94.776-35.136C257.394,215.651,262.167,210.885,262.167,205.042z");
+      attr(path2, "d", "M286.373,71.801h-7.706v133.241c0,14.921-12.157,27.088-27.101,27.125c-20.983,0.05-55.581,4.153-80.084,27.344\r\n				c42.378-10.376,87.052-3.631,112.512,2.171c3.179,0.724,6.464-0.024,9.011-2.054c2.538-2.025,3.994-5.052,3.994-8.301V82.427\r\n				C297,76.568,292.232,71.801,286.373,71.801z");
+      attr(path3, "d", "M18.332,205.042V71.801h-7.706C4.768,71.801,0,76.568,0,82.427v168.897c0,3.25,1.456,6.276,3.994,8.301\r\n				c2.545,2.029,5.827,2.78,9.011,2.054c25.46-5.803,70.135-12.547,112.511-2.171c-24.502-23.19-59.1-27.292-80.083-27.342\r\n				C30.49,232.13,18.332,219.963,18.332,205.042z");
       attr(svg2, "version", "1.1");
       attr(svg2, "id", "Layer_1");
       attr(svg2, "xmlns", "http://www.w3.org/2000/svg");
@@ -34934,7 +34876,7 @@ function create_fragment$u(ctx) {
       t2 = text$1(t2_value);
       t3 = space();
       style = element("style");
-      style.textContent = ".widget-field-translation {\n      padding: 2rem;\n      display: flex;\n      justify-content: center;\n      gap: 0.5rem;\n    }\n\n    .widget-field-translation button {\n      background: #f0f0f0;\n      border: none;\n      outline: none;\n      cursor: pointer;\n    }";
+      style.textContent = ".widget-field-translation {\r\n      padding: 2rem;\r\n      display: flex;\r\n      justify-content: center;\r\n      gap: 0.5rem;\r\n    }\r\n\r\n    .widget-field-translation button {\r\n      background: #f0f0f0;\r\n      border: none;\r\n      outline: none;\r\n      cursor: pointer;\r\n    }";
       attr(div2, "class", "widget-field-translation");
     },
     m(target, anchor) {
@@ -35081,7 +35023,7 @@ function create_if_block_1$7(ctx) {
       t2 = space();
       fast_tab1 = element("fast-tab");
       create_component(openbookicon.$$.fragment);
-      t3 = text$1("\n          Translated Message");
+      t3 = text$1("\r\n          Translated Message");
       t4 = space();
       fast_tab_panel0 = element("fast-tab-panel");
       t5 = space();
@@ -35222,7 +35164,7 @@ function create_fragment$t(ctx) {
       t4 = text$1(t4_value);
       t5 = space();
       style = element("style");
-      style.textContent = ".widget-field .icon:not(.material-icons) {\n      font-family: monospace;\n      font-size: 0.8rem;\n    }\n    .widget-field .icon {\n      margin-right: 0.5rem;\n      font-size: 0.95rem;\n    }\n    .widget-field .expression-wrapper {\n      width: calc(100% - 0.5rem) !important;\n      min-height: 40px;\n    }\n    .widget-field .expression-wrapper.hidden {\n      position: absolute;\n      z-index: -200;\n      opacity: 0;\n      pointer-events: none;\n    }";
+      style.textContent = ".widget-field .icon:not(.material-icons) {\r\n      font-family: monospace;\r\n      font-size: 0.8rem;\r\n    }\r\n    .widget-field .icon {\r\n      margin-right: 0.5rem;\r\n      font-size: 0.95rem;\r\n    }\r\n    .widget-field .expression-wrapper {\r\n      width: calc(100% - 0.5rem) !important;\r\n      min-height: 40px;\r\n    }\r\n    .widget-field .expression-wrapper.hidden {\r\n      position: absolute;\r\n      z-index: -200;\r\n      opacity: 0;\r\n      pointer-events: none;\r\n    }";
       attr(div0, "class", "expression-wrapper");
       set_style(div0, "max-width", ctx[8] - 8 + "px");
       toggle_class(div0, "hidden", !ctx[7]);
@@ -35596,7 +35538,7 @@ function create_fragment$s(ctx) {
         if_block.c();
       t1 = space();
       style = element("style");
-      style.textContent = ".widget-fields.fields {\n      --theme-bg: #222;\n      --theme-color: #f0f0f0;\n      background: var(--theme-bg);\n      color: var(--theme-color);\n      height: 100%;\n    }\n\n    .widget-fields .popup {\n      position: fixed;\n      top: 50%;\n      left: 50%;\n      transform: translate(-50%, -50%);\n      padding: 0;\n      z-index: 10000;\n      width: 500px;\n      min-width: max-content;\n      padding: 0.3rem;\n      padding-bottom: 0;\n      background: #f5f5f5;\n      color: black;\n      box-shadow: 0 0 0.5rem #777;\n    }";
+      style.textContent = ".widget-fields.fields {\r\n      --theme-bg: #222;\r\n      --theme-color: #f0f0f0;\r\n      background: var(--theme-bg);\r\n      color: var(--theme-color);\r\n      height: 100%;\r\n    }\r\n\r\n    .widget-fields .popup {\r\n      position: fixed;\r\n      top: 50%;\r\n      left: 50%;\r\n      transform: translate(-50%, -50%);\r\n      padding: 0;\r\n      z-index: 10000;\r\n      width: 500px;\r\n      min-width: max-content;\r\n      padding: 0.3rem;\r\n      padding-bottom: 0;\r\n      background: #f5f5f5;\r\n      color: black;\r\n      box-shadow: 0 0 0.5rem #777;\r\n    }";
       set_custom_element_data(fast_accordion, "expand-mode", "single");
       set_custom_element_data(fast_design_system_provider, "use-defaults", "");
       attr(div2, "class", "widget-fields fields");
@@ -36094,7 +36036,7 @@ function create_if_block_1$6(ctx) {
       }
       t0 = space();
       style = element("style");
-      style.textContent = ".fast-tree-item {\n      --neutral-fill-stealth-selected: var(\n        --selected-color,\n        var(--theme-color)\n      );\n      --neutral-fill-stealth-hover: var(--hover-color, var(--theme-color));\n    }\n    fast-tree-item > span {\n      pointer-events: none;\n    }";
+      style.textContent = ".fast-tree-item {\r\n      --neutral-fill-stealth-selected: var(\r\n        --selected-color,\r\n        var(--theme-color)\r\n      );\r\n      --neutral-fill-stealth-hover: var(--hover-color, var(--theme-color));\r\n    }\r\n    fast-tree-item > span {\r\n      pointer-events: none;\r\n    }";
     },
     m(target, anchor) {
       for (let i2 = 0; i2 < each_blocks.length; i2 += 1) {
@@ -37088,7 +37030,7 @@ var CgExtensionAdd = {
   c: '<path d="M16 4H18V6H20V8H18V10H16V8H14V6H16V4Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M12 12V6H4V20H18V12H12ZM6 8H10V12H6V8ZM10 14V18H6V14H10ZM16 14V18H12V14H16Z" fill="currentColor"></path>'
 };
 function add_css$a(target) {
-  append_styles(target, "svelte-w6zhyn", "table.svelte-w6zhyn.svelte-w6zhyn{position:fixed;top:0;left:0;z-index:2;background-color:#181818}.gql-input.svelte-w6zhyn.svelte-w6zhyn{padding:0.5rem 0;position:fixed;bottom:0;width:100%;background-color:#000}.gql-create-button.svelte-w6zhyn.svelte-w6zhyn{background:rgba(255, 255, 255, .2);border:1px solid #FFF;color:#FFF;margin:0 0.5rem;transition:0.3s}.gql-create-button.svelte-w6zhyn.svelte-w6zhyn:hover{color:#000;background:#FFF}.gql-create-button.svelte-w6zhyn .container.svelte-w6zhyn{display:flex;align-items:center;justify-content:center}.field-container.svelte-w6zhyn.svelte-w6zhyn{margin-top:2.8rem;margin-bottom:2.6rem}.input-fields.svelte-w6zhyn.svelte-w6zhyn::-webkit-scrollbar{width:0;background:transparent}.input-fields.svelte-w6zhyn.svelte-w6zhyn{height:100%;overflow:scroll;-ms-overflow-style:none;scrollbar-width:none}");
+  append_styles(target, "svelte-16q8pkb", "table.svelte-16q8pkb.svelte-16q8pkb{position:fixed;top:0;left:0;background-color:#181818}.gql-input.svelte-16q8pkb.svelte-16q8pkb{padding:0.5rem 0;position:fixed;bottom:0;width:100%;background-color:#000}.gql-create-button.svelte-16q8pkb.svelte-16q8pkb{background:rgba(255, 255, 255, .2);border:1px solid #FFF;color:#FFF;margin:0 0.5rem;transition:0.3s}.gql-create-button.svelte-16q8pkb.svelte-16q8pkb:hover{color:#000;background:#FFF}.gql-create-button.svelte-16q8pkb .container.svelte-16q8pkb{display:flex;align-items:center;justify-content:center}.field-container.svelte-16q8pkb.svelte-16q8pkb{margin-top:2.8rem;height:400px;overflow:auto}.input-fields.svelte-16q8pkb.svelte-16q8pkb::-webkit-scrollbar{z-index:1000}.input-fields.svelte-16q8pkb.svelte-16q8pkb{height:100%;overflow:hidden}");
 }
 function create_else_block$3(ctx) {
   let fast_switch;
@@ -37274,17 +37216,17 @@ function create_if_block_1$5(ctx) {
       fast_button0 = element("fast-button");
       div0 = element("div");
       create_component(icon0.$$.fragment);
-      t0 = text$1("\n            Create table");
+      t0 = text$1("\r\n            Create table");
       t1 = space();
       fast_button1 = element("fast-button");
       div1 = element("div");
       create_component(icon1.$$.fragment);
-      t2 = text$1("\n          Reload schema");
-      attr(div0, "class", "container svelte-w6zhyn");
-      set_custom_element_data(fast_button0, "class", "gql-create-button svelte-w6zhyn");
-      attr(div1, "class", "container svelte-w6zhyn");
-      set_custom_element_data(fast_button1, "class", "gql-create-button svelte-w6zhyn");
-      attr(p2, "class", "gql-input svelte-w6zhyn");
+      t2 = text$1("\r\n          Reload schema");
+      attr(div0, "class", "container svelte-16q8pkb");
+      set_custom_element_data(fast_button0, "class", "gql-create-button svelte-16q8pkb");
+      attr(div1, "class", "container svelte-16q8pkb");
+      set_custom_element_data(fast_button1, "class", "gql-create-button svelte-16q8pkb");
+      attr(p2, "class", "gql-input svelte-16q8pkb");
     },
     m(target, anchor) {
       insert(target, p2, anchor);
@@ -37363,17 +37305,17 @@ function create_if_block$8(ctx) {
       fast_button0 = element("fast-button");
       div0 = element("div");
       create_component(icon0.$$.fragment);
-      t0 = text$1("\n            Add new column");
+      t0 = text$1("\r\n            Add new column");
       t1 = space();
       fast_button1 = element("fast-button");
       div1 = element("div");
       create_component(icon1.$$.fragment);
-      t2 = text$1("\n          Reload schema");
-      attr(div0, "class", "container svelte-w6zhyn");
-      set_custom_element_data(fast_button0, "class", "gql-create-button svelte-w6zhyn");
-      attr(div1, "class", "container svelte-w6zhyn");
-      set_custom_element_data(fast_button1, "class", "gql-create-button svelte-w6zhyn");
-      attr(p2, "class", "gql-input svelte-w6zhyn");
+      t2 = text$1("\r\n          Reload schema");
+      attr(div0, "class", "container svelte-16q8pkb");
+      set_custom_element_data(fast_button0, "class", "gql-create-button svelte-16q8pkb");
+      attr(div1, "class", "container svelte-16q8pkb");
+      set_custom_element_data(fast_button1, "class", "gql-create-button svelte-16q8pkb");
+      attr(p2, "class", "gql-input svelte-16q8pkb");
     },
     m(target, anchor) {
       insert(target, p2, anchor);
@@ -37485,10 +37427,10 @@ function create_fragment$o(ctx) {
         if_block4.c();
       set_style(td2, "text-align", "end");
       attr(table, "width", "100%");
-      attr(table, "class", "svelte-w6zhyn");
-      attr(div2, "class", "field-container svelte-w6zhyn");
+      attr(table, "class", "svelte-16q8pkb");
+      attr(div2, "class", "field-container svelte-16q8pkb");
       set_custom_element_data(fast_design_system_provider, "use-defaults", "");
-      set_custom_element_data(fast_design_system_provider, "class", "input-fields svelte-w6zhyn");
+      set_custom_element_data(fast_design_system_provider, "class", "input-fields svelte-16q8pkb");
     },
     m(target, anchor) {
       insert(target, fast_design_system_provider, anchor);
@@ -43567,7 +43509,7 @@ var AiOutlineDownload = {
   c: '<path d="M505.7 661a8 8 0 0 0 12.6 0l112-141.7c4.1-5.2.4-12.9-6.3-12.9h-74.1V168c0-4.4-3.6-8-8-8h-60c-4.4 0-8 3.6-8 8v338.3H400c-6.7 0-10.4 7.7-6.3 12.9l112 141.8zM878 626h-60c-4.4 0-8 3.6-8 8v154H214V634c0-4.4-3.6-8-8-8h-60c-4.4 0-8 3.6-8 8v198c0 17.7 14.3 32 32 32h684c17.7 0 32-14.3 32-32V634c0-4.4-3.6-8-8-8z"></path>'
 };
 function add_css$9(target) {
-  append_styles(target, "svelte-jt2bkg", ".fab-container.svelte-jt2bkg>li.svelte-jt2bkg{transition:transform 300ms ease-in-out}.fab-container.svelte-jt2bkg>li.svelte-jt2bkg:hover{transform:translate(10px, 0)}.save-icon.svelte-jt2bkg.svelte-jt2bkg:hover{color:#B8860B}.commit-icon.svelte-jt2bkg.svelte-jt2bkg:hover{color:#e53935}.column-icon.svelte-jt2bkg.svelte-jt2bkg:hover{color:#43a047}.translate-icon.svelte-jt2bkg.svelte-jt2bkg:hover{color:#4183c4}.tippy-icon.svelte-jt2bkg.svelte-jt2bkg:hover{color:#fb8c00}.generate-icon.svelte-jt2bkg.svelte-jt2bkg:hover{color:#3f51b5}.graphql-icon.svelte-jt2bkg.svelte-jt2bkg:hover{color:#e10098}.viewERD-icon.svelte-jt2bkg.svelte-jt2bkg:hover{color:#008080}.theme-icon.svelte-jt2bkg.svelte-jt2bkg:hover{color:#FF7F50}.fab-icon-label.svelte-jt2bkg.svelte-jt2bkg{padding-top:4px;color:#000 !important}.fab-download-icon-label.svelte-jt2bkg.svelte-jt2bkg{padding-top:5px}.fab-icon-container.svelte-jt2bkg.svelte-jt2bkg{width:48px;margin:2px;background-image:linear-gradient(\n      rgb(255, 255, 255),\n      rgb(244, 245, 247)\n    ) !important;box-shadow:rgb(67 90 111 / 14%) 0px 0px 0px 1px inset,\n      rgb(67 90 111 / 6%) 0px -1px 1px 0px inset;border-top-right-radius:8px;border-bottom-right-radius:8px;align-items:center;justify-content:center;height:52px;display:flex;cursor:pointer;transition:transform 0.3s;font-size:10px;flex-direction:column;text-align:center}.fab-container.svelte-jt2bkg.svelte-jt2bkg{z-index:10000000000;display:none;list-style-type:none;justify-content:space-evenly;align-items:center;opacity:0;transition:all 0.2s ease-in-out;flex-direction:column;left:-2px;position:absolute;bottom:5rem}.main-container.svelte-jt2bkg.svelte-jt2bkg{line-height:1.15;-webkit-text-size-adjust:100%;font-family:-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica,\n      Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;position:fixed;bottom:0px;left:0px;box-sizing:border-box;transform:translate(0px, 0px);display:flex;flex-direction:column-reverse;z-index:1000000000}.icon-container.svelte-jt2bkg.svelte-jt2bkg{line-height:1.15;-webkit-text-size-adjust:100%;font-family:-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica,\n      Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;box-sizing:border-box;padding-bottom:32px;position:relative;transition:transform 240ms cubic-bezier(0, 0, 0.2, 1) 0s;display:flex}.icon-container.svelte-jt2bkg:hover+.fab-container.svelte-jt2bkg,.fab-container.svelte-jt2bkg.svelte-jt2bkg:hover{display:flex;opacity:1;transition:all 0.3s ease-in-out}.svg-wrapper.svelte-jt2bkg.svelte-jt2bkg{-webkit-text-size-adjust:100%;text-transform:none;-webkit-font-smoothing:antialiased;font-weight:400;user-select:none;cursor:pointer;white-space:nowrap;font-family:'SF UI Text', -apple-system, BlinkMacSystemFont, 'Segoe UI',\n      Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji',\n      'Segoe UI Emoji', 'Segoe UI Symbol';color:rgb(66, 90, 112);font-size:16px;line-height:20px;letter-spacing:-0.05px;box-sizing:border-box;align-items:center;-webkit-box-align:center;justify-content:center;-webkit-box-pack:center;display:flex;flex-direction:row;-webkit-box-orient:horizontal;-webkit-box-direction:normal}.main-button.svelte-jt2bkg.svelte-jt2bkg{-webkit-text-size-adjust:100%;margin:0;overflow:visible;text-transform:none;-webkit-font-smoothing:antialiased;appearance:none;box-sizing:border-box;position:relative;width:48px;font-weight:400;display:inline-flex;align-items:center;-webkit-box-align:center;justify-content:center;-webkit-box-pack:center;text-decoration:none;vertical-align:middle;border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;outline:none;user-select:none;cursor:pointer;white-space:nowrap;font-family:'SF UI Text', -apple-system, BlinkMacSystemFont, 'Segoe UI',\n      Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji',\n      'Segoe UI Emoji', 'Segoe UI Symbol';border-bottom-left-radius:0px;border-bottom-right-radius:8px;border-top-left-radius:0px;border-top-right-radius:8px;color:rgb(66, 90, 112);height:48px;min-width:32px;font-size:16px;line-height:20px;padding-left:4px;padding-right:4px;background-color:white;background-image:linear-gradient(\n      rgb(255, 255, 255),\n      rgb(244, 245, 247)\n    ) !important;box-shadow:rgba(67, 90, 111, 0.14) 0px 0px 0px 1px inset,\n      rgba(67, 90, 111, 0.06) 0px -1px 1px 0px inset;padding-bottom:4px;padding-top:4px;transition:all 240ms ease 210ms;letter-spacing:-0.05px;transform:translateX(0px)}.svg-hamburger.svelte-jt2bkg.svelte-jt2bkg{-webkit-text-size-adjust:100%;text-transform:none;-webkit-font-smoothing:antialiased;font-weight:400;user-select:none;cursor:pointer;white-space:nowrap;font-family:'SF UI Text', -apple-system, BlinkMacSystemFont, 'Segoe UI',\n      Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji',\n      'Segoe UI Emoji', 'Segoe UI Symbol';color:rgb(66, 90, 112);font-size:16px;line-height:20px;letter-spacing:-0.05px;-webkit-box-direction:normal;fill:rgb(100, 111, 115);box-sizing:border-box;position:relative;left:2px;top:3px;width:16px;height:16px}.iteria-logo.svelte-jt2bkg.svelte-jt2bkg{-webkit-text-size-adjust:100%;text-transform:none;-webkit-font-smoothing:antialiased;font-weight:400;user-select:none;cursor:pointer;white-space:nowrap;font-family:'SF UI Text', -apple-system, BlinkMacSystemFont, 'Segoe UI',\n      Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji',\n      'Segoe UI Emoji', 'Segoe UI Symbol';color:rgb(66, 90, 112);font-size:16px;line-height:20px;letter-spacing:-0.05px;-webkit-box-direction:normal;-webkit-user-drag:none;border-style:none;box-sizing:border-box;height:20px;width:20px}");
+  append_styles(target, "svelte-jt2bkg", ".fab-container.svelte-jt2bkg>li.svelte-jt2bkg{transition:transform 300ms ease-in-out}.fab-container.svelte-jt2bkg>li.svelte-jt2bkg:hover{transform:translate(10px, 0)}.save-icon.svelte-jt2bkg.svelte-jt2bkg:hover{color:#B8860B}.commit-icon.svelte-jt2bkg.svelte-jt2bkg:hover{color:#e53935}.column-icon.svelte-jt2bkg.svelte-jt2bkg:hover{color:#43a047}.translate-icon.svelte-jt2bkg.svelte-jt2bkg:hover{color:#4183c4}.tippy-icon.svelte-jt2bkg.svelte-jt2bkg:hover{color:#fb8c00}.generate-icon.svelte-jt2bkg.svelte-jt2bkg:hover{color:#3f51b5}.graphql-icon.svelte-jt2bkg.svelte-jt2bkg:hover{color:#e10098}.viewERD-icon.svelte-jt2bkg.svelte-jt2bkg:hover{color:#008080}.theme-icon.svelte-jt2bkg.svelte-jt2bkg:hover{color:#FF7F50}.fab-icon-label.svelte-jt2bkg.svelte-jt2bkg{padding-top:4px;color:#000 !important}.fab-download-icon-label.svelte-jt2bkg.svelte-jt2bkg{padding-top:5px}.fab-icon-container.svelte-jt2bkg.svelte-jt2bkg{width:48px;margin:2px;background-image:linear-gradient(\r\n      rgb(255, 255, 255),\r\n      rgb(244, 245, 247)\r\n    ) !important;box-shadow:rgb(67 90 111 / 14%) 0px 0px 0px 1px inset,\r\n      rgb(67 90 111 / 6%) 0px -1px 1px 0px inset;border-top-right-radius:8px;border-bottom-right-radius:8px;align-items:center;justify-content:center;height:52px;display:flex;cursor:pointer;transition:transform 0.3s;font-size:10px;flex-direction:column;text-align:center}.fab-container.svelte-jt2bkg.svelte-jt2bkg{z-index:10000000000;display:none;list-style-type:none;justify-content:space-evenly;align-items:center;opacity:0;transition:all 0.2s ease-in-out;flex-direction:column;left:-2px;position:absolute;bottom:5rem}.main-container.svelte-jt2bkg.svelte-jt2bkg{line-height:1.15;-webkit-text-size-adjust:100%;font-family:-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica,\r\n      Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;position:fixed;bottom:0px;left:0px;box-sizing:border-box;transform:translate(0px, 0px);display:flex;flex-direction:column-reverse;z-index:1000000000}.icon-container.svelte-jt2bkg.svelte-jt2bkg{line-height:1.15;-webkit-text-size-adjust:100%;font-family:-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica,\r\n      Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;box-sizing:border-box;padding-bottom:32px;position:relative;transition:transform 240ms cubic-bezier(0, 0, 0.2, 1) 0s;display:flex}.icon-container.svelte-jt2bkg:hover+.fab-container.svelte-jt2bkg,.fab-container.svelte-jt2bkg.svelte-jt2bkg:hover{display:flex;opacity:1;transition:all 0.3s ease-in-out}.svg-wrapper.svelte-jt2bkg.svelte-jt2bkg{-webkit-text-size-adjust:100%;text-transform:none;-webkit-font-smoothing:antialiased;font-weight:400;user-select:none;cursor:pointer;white-space:nowrap;font-family:'SF UI Text', -apple-system, BlinkMacSystemFont, 'Segoe UI',\r\n      Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji',\r\n      'Segoe UI Emoji', 'Segoe UI Symbol';color:rgb(66, 90, 112);font-size:16px;line-height:20px;letter-spacing:-0.05px;box-sizing:border-box;align-items:center;-webkit-box-align:center;justify-content:center;-webkit-box-pack:center;display:flex;flex-direction:row;-webkit-box-orient:horizontal;-webkit-box-direction:normal}.main-button.svelte-jt2bkg.svelte-jt2bkg{-webkit-text-size-adjust:100%;margin:0;overflow:visible;text-transform:none;-webkit-font-smoothing:antialiased;appearance:none;box-sizing:border-box;position:relative;width:48px;font-weight:400;display:inline-flex;align-items:center;-webkit-box-align:center;justify-content:center;-webkit-box-pack:center;text-decoration:none;vertical-align:middle;border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;outline:none;user-select:none;cursor:pointer;white-space:nowrap;font-family:'SF UI Text', -apple-system, BlinkMacSystemFont, 'Segoe UI',\r\n      Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji',\r\n      'Segoe UI Emoji', 'Segoe UI Symbol';border-bottom-left-radius:0px;border-bottom-right-radius:8px;border-top-left-radius:0px;border-top-right-radius:8px;color:rgb(66, 90, 112);height:48px;min-width:32px;font-size:16px;line-height:20px;padding-left:4px;padding-right:4px;background-color:white;background-image:linear-gradient(\r\n      rgb(255, 255, 255),\r\n      rgb(244, 245, 247)\r\n    ) !important;box-shadow:rgba(67, 90, 111, 0.14) 0px 0px 0px 1px inset,\r\n      rgba(67, 90, 111, 0.06) 0px -1px 1px 0px inset;padding-bottom:4px;padding-top:4px;transition:all 240ms ease 210ms;letter-spacing:-0.05px;transform:translateX(0px)}.svg-hamburger.svelte-jt2bkg.svelte-jt2bkg{-webkit-text-size-adjust:100%;text-transform:none;-webkit-font-smoothing:antialiased;font-weight:400;user-select:none;cursor:pointer;white-space:nowrap;font-family:'SF UI Text', -apple-system, BlinkMacSystemFont, 'Segoe UI',\r\n      Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji',\r\n      'Segoe UI Emoji', 'Segoe UI Symbol';color:rgb(66, 90, 112);font-size:16px;line-height:20px;letter-spacing:-0.05px;-webkit-box-direction:normal;fill:rgb(100, 111, 115);box-sizing:border-box;position:relative;left:2px;top:3px;width:16px;height:16px}.iteria-logo.svelte-jt2bkg.svelte-jt2bkg{-webkit-text-size-adjust:100%;text-transform:none;-webkit-font-smoothing:antialiased;font-weight:400;user-select:none;cursor:pointer;white-space:nowrap;font-family:'SF UI Text', -apple-system, BlinkMacSystemFont, 'Segoe UI',\r\n      Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji',\r\n      'Segoe UI Emoji', 'Segoe UI Symbol';color:rgb(66, 90, 112);font-size:16px;line-height:20px;letter-spacing:-0.05px;-webkit-box-direction:normal;-webkit-user-drag:none;border-style:none;box-sizing:border-box;height:20px;width:20px}");
 }
 function create_if_block$6(ctx) {
   var _a2, _b, _c, _d, _e, _f, _g, _h, _i, _j;
@@ -44774,7 +44716,7 @@ class TranslationSheetDialog extends SvelteComponent {
   }
 }
 function add_css$8(target) {
-  append_styles(target, "svelte-6cdfbb", ".ok-button.svelte-6cdfbb{position:fixed;top:0;right:0;z-index:2\n  }.input-fields.svelte-6cdfbb{height:100%;width:100%;-ms-overflow-style:none;scrollbar-width:none}.input-fields.svelte-6cdfbb::-webkit-scrollbar{width:0;background:transparent}.switch.svelte-6cdfbb{margin-top:0.5rem;margin-bottom:0.5rem;margin-left:1.5rem}.column-container.svelte-6cdfbb{width:100%;background-color:#181818}");
+  append_styles(target, "svelte-6cdfbb", ".ok-button.svelte-6cdfbb{position:fixed;top:0;right:0;z-index:2\r\n  }.input-fields.svelte-6cdfbb{height:100%;width:100%;-ms-overflow-style:none;scrollbar-width:none}.input-fields.svelte-6cdfbb::-webkit-scrollbar{width:0;background:transparent}.switch.svelte-6cdfbb{margin-top:0.5rem;margin-bottom:0.5rem;margin-left:1.5rem}.column-container.svelte-6cdfbb{width:100%;background-color:#181818}");
 }
 function create_if_block$5(ctx) {
   let fast_tabs;
@@ -52089,11 +52031,12 @@ function instance$1($$self, $$props, $$invalidate) {
     $$invalidate(20, displayViewERD = params);
   }
   function onMouseOver(e) {
-    dispatch2("hover", {
-      hoverElement,
-      inspect: e.detail,
-      dialogWidgetFields
-    });
+    if (wysiwygMode !== "editing")
+      dispatch2("hover", {
+        hoverElement,
+        inspect: e.detail,
+        dialogWidgetFields
+      });
   }
   function onModeChange(e) {
     $$invalidate(32, activeAction = void 0);
@@ -62870,7 +62813,7 @@ async function fetchHasuraMetadata(body2, workbench2) {
   });
   return response;
 }
-const capitalize$1 = (text2) => {
+const capitalize$2 = (text2) => {
   return text2.charAt(0).toUpperCase() + text2.slice(1);
 };
 const lowerFirstLetter = (text2) => {
@@ -62878,7 +62821,7 @@ const lowerFirstLetter = (text2) => {
 };
 const capitalizeFirstLetters = (name) => {
   return name.split("_").map((element2) => {
-    return capitalize$1(element2);
+    return capitalize$2(element2);
   }).join("");
 };
 const runSQLQuery = (sqlQuery) => {
@@ -63591,6 +63534,14 @@ function generateSQLData(introspection, tablesInfo, constraints) {
   });
   return sqlData;
 }
+const capitalize$1 = (string) => {
+  return string[0].toUpperCase() + string.slice(1);
+};
+function upperLetterInWord(queryName) {
+  let arr = queryName.split("_");
+  arr = arr.map((item) => capitalize$1(item));
+  return arr.join("_");
+}
 const filterIntrospection = (introspection, entityName) => {
   const introspectionInstance = JSON.parse(JSON.stringify(introspection));
   const queryRoot = introspectionInstance.types.find((type2) => {
@@ -64151,9 +64102,9 @@ const removeElementFromArray = (array, element2) => {
   }
   return array;
 };
-async function generateColumn(columnInfo) {
-  const { io, entity, field, fields: fields8, page, selectedColumn, insertType } = columnInfo;
-  let ast = columnInfo.ast;
+async function generateColumn(columnInfo2) {
+  const { io, entity, field, fields: fields8, page, selectedColumn, insertType } = columnInfo2;
+  let ast = columnInfo2.ast;
   const astType = typeof ast;
   if (astType === "string") {
     ast = createAst(ast);
@@ -64349,7 +64300,7 @@ const updateAst = async (io, code2, entity, findString, fields8, introspection) 
   for (const field of fields8) {
     if (isHidden(field.name))
       continue;
-    const columnInfo = {
+    const columnInfo2 = {
       io,
       ast: alteredAst,
       entity,
@@ -64358,7 +64309,7 @@ const updateAst = async (io, code2, entity, findString, fields8, introspection) 
       page: PageType.LIST,
       selectedColumn: void 0
     };
-    alteredAst = await generateColumn(columnInfo);
+    alteredAst = await generateColumn(columnInfo2);
   }
   alteredAst = await removeFirst(alteredAst);
   alteredAst = removeUnusedDefaultImport(alteredAst, `Format${entityName}Field`);
@@ -64430,14 +64381,24 @@ const renameEntityInCode = async (ast, entityName, findString, introspection, pa
     return (ts.isStringLiteral(node) || ts.isIdentifier(node)) && text2 && text2.toUpperCase().includes(findString.toUpperCase());
   });
   const [queryRoot] = getRoots(introspection);
-  const field = queryRoot.fields.find((field2) => isOfTypePage(field2, entityName, pageType));
+  let field = queryRoot.fields.find((field2) => isOfTypePage(field2, entityName, pageType));
+  if (!field) {
+    field = queryRoot.fields.find((field2) => {
+      var _a2;
+      return ((_a2 = field2 == null ? void 0 : field2.name) == null ? void 0 : _a2.replace(/_/g, "").toLocaleLowerCase()) === entityName.toLocaleLowerCase();
+    });
+  }
   nodes.forEach((node) => {
     const oldText = node.text;
     let newText;
     if (oldText.toLowerCase() === findString.toLowerCase()) {
       newText = field.name;
     } else {
-      newText = oldText.replace(findString, entityName);
+      if (oldText.toLowerCase() === `use${findString}Query`.toLowerCase()) {
+        newText = oldText.replace(findString, upperLetterInWord(field.name));
+      } else {
+        newText = oldText.replace(findString, entityName);
+      }
     }
     ast = renameAndReplaceElementInAst(ast, node, oldText, newText);
   });
@@ -66114,6 +66075,7 @@ const findSpanNode = (el2) => {
 };
 const forceSaveLocaleElement = (target, inspectedElement, event2, workbench2, onShowUserFeedback) => {
   var _a2, _b;
+  console.log("test", target, inspectedElement, event2, onShowUserFeedback);
   const cwd = (_a2 = guessCurrentWorkingDirectory()) != null ? _a2 : workbench2 == null ? void 0 : workbench2.cwd;
   const LANGS_PATH = workbench2.injectMode === "devServer" ? cwd + "/src/compiled-lang" : "/src/compiled-lang";
   const langLocale = (_b = window.localStorage.getItem("langLocale")) != null ? _b : navigator.language.split("-")[0];
@@ -77110,7 +77072,7 @@ const addField = async (props) => {
     name: newField,
     type: tmp2 == null ? void 0 : tmp2.type
   };
-  const columnInfo = {
+  const columnInfo2 = {
     io: workbench2,
     ast: void 0,
     entity,
@@ -77121,40 +77083,44 @@ const addField = async (props) => {
     insertType
   };
   if (page === PageType.LIST) {
-    const found = generatedDirectory.filter((file) => file.fileName.includes(LIST_VIEW));
+    const found = generatedDirectory.find((file) => file.fileName.includes(LIST_VIEW));
     if (source && source.fileName.includes(LIST_VIEW)) {
-      const code22 = await workbench2.readFile(source.fileName);
-      const encoded = encodeEmptyLines$1(code22);
-      columnInfo.ast = encoded;
-      const generatedCode = await generateColumn(columnInfo);
+      const code2 = await workbench2.readFile(source.fileName);
+      const encoded = encodeEmptyLines$1(code2);
+      columnInfo2.ast = encoded;
+      const generatedCode = await generateColumn(columnInfo2);
       return {
         path: source.fileName,
         generatedCode
       };
-    } else if (found) {
-      const tsxPath = found[0].filePath;
-      const code22 = await workbench2.readFile(tsxPath);
-      const encoded = encodeEmptyLines$1(code22);
-      columnInfo.ast = encoded;
-      const generatedCode = await generateColumn(columnInfo);
+    }
+    if (!source && found) {
+      const tsxPath = found.filePath;
+      const code2 = await workbench2.readFile(tsxPath);
+      const encoded = encodeEmptyLines$1(code2);
+      columnInfo2.ast = encoded;
+      const generatedCode = await generateColumn(columnInfo2);
       return {
         path: tsxPath,
         generatedCode
       };
     }
   }
-  const fileName = source.fileName;
-  const code2 = await workbench2.readFile(fileName);
-  const node = astFindSource(code2, source);
-  const foundFields = findFields(node, fields8.map((field2) => field2.name));
-  if ((foundFields == null ? void 0 : foundFields.length) !== 1)
-    return;
-  const clonedAndRenamedFieldsFile = await cloneAndRenameElement(code2, source, foundFields[0], newField);
-  if (clonedAndRenamedFieldsFile)
-    return {
-      path: source.fileName,
-      generatedCode: clonedAndRenamedFieldsFile
-    };
+  if (source) {
+    const fileName = source.fileName;
+    const code2 = await workbench2.readFile(fileName);
+    const node = astFindSource(code2, source);
+    const foundFields = findFields(node, fields8.map((field2) => field2.name));
+    if ((foundFields == null ? void 0 : foundFields.length) !== 1)
+      return;
+    const clonedAndRenamedFieldsFile = await cloneAndRenameElement(code2, source, foundFields[0], newField);
+    if (clonedAndRenamedFieldsFile)
+      return {
+        path: source.fileName,
+        generatedCode: clonedAndRenamedFieldsFile
+      };
+  }
+  return void 0;
 };
 const getFields = (workbench2, entityName) => {
   var _a2, _b;
@@ -78590,6 +78556,7 @@ const ElementEditable = (() => {
         return;
       editingElement = el2;
       buttonElement = findClosestBtn(editingElement);
+      console.log("test", buttonElement);
       editingElement.focus();
       editable.add(editingElement);
       if (buttonElement) {
@@ -78598,11 +78565,10 @@ const ElementEditable = (() => {
         } else {
           buttonElement.setAttribute("style", "pointer-events: none");
         }
-        setEndOfContenteditable(editingElement, editingElement, editingElement.innerHTML.length / 2);
       } else {
-        setEndOfContenteditable(editingElement, editingElement);
         editingElement.setAttribute("style", "display: block; outline: 0");
       }
+      setEndOfContenteditable(editingElement, editingElement);
       editable.add(editingElement);
       if (prevContent === void 0) {
         prevContent = el2.innerHTML;
@@ -78688,10 +78654,9 @@ const addElementHighlight = async (window2, injectMode, features) => {
       const entityName = getEntityNameFromUrl();
       const code2 = (source == null ? void 0 : source.fileName) ? await workbench.readFile(source.fileName) : void 0;
       const selectedColumn = code2 ? findColumn(code2, source) : void 0;
-      console.log("test", source, entityName, code2, selectedColumn, selectedFields2);
       if (code2 && selectedColumn) {
         for (let selectedField of selectedFields2) {
-          const columnInfo = {
+          const columnInfo2 = {
             workbench,
             source,
             page,
@@ -78700,9 +78665,12 @@ const addElementHighlight = async (window2, injectMode, features) => {
             selectedColumn,
             insertType
           };
-          const generatedFile = await addField(columnInfo);
-          await workbench.writeFile(generatedFile.path, generatedFile.generatedCode);
+          const generatedFile2 = await addField(columnInfo2);
+          await workbench.writeFile(generatedFile2.path, generatedFile2.generatedCode);
         }
+        const generatedFile = await addField(columnInfo);
+        if (generatedFile)
+          workbench.writeFile(generatedFile.path, generatedFile.generatedCode);
       }
       cloneColumn(selectedFields2, insertType, element2);
     } else if (type2 === "CLONE_AND_RENAME_ELEMENT") {
@@ -78717,7 +78685,7 @@ const addElementHighlight = async (window2, injectMode, features) => {
       const page = getPageTypeFromUrl();
       const code2 = await workbench.readFile(source.fileName);
       const selectedColumn = findColumn(code2, source);
-      const columnInfo = {
+      const columnInfo2 = {
         workbench,
         source,
         page,
@@ -78726,8 +78694,9 @@ const addElementHighlight = async (window2, injectMode, features) => {
         selectedColumn,
         insertType
       };
-      const generatedFile = await addField(columnInfo);
-      await workbench.writeFile(generatedFile.path, generatedFile.generatedCode);
+      const generatedFile = await addField(columnInfo2);
+      if (generatedFile)
+        await workbench.writeFile(generatedFile.path, generatedFile.generatedCode);
     }
   });
   el2.addEventListener("showsource", (e) => {
@@ -78744,8 +78713,6 @@ const addElementHighlight = async (window2, injectMode, features) => {
   el2.addEventListener("confirmaction", (e) => {
     if (e.detail.actionType === "translate") {
       ElementEditable.saveChanges();
-    } else if (e.detail.actionType === "drag_and_drop_grid" || e.detail.actionType === "drag_and_drop_relations") {
-      handleReorderElements(window2, e.detail.payload, REORDER_ELEMENT);
     }
   });
   el2.addEventListener("cancelaction", (e) => {
@@ -79211,45 +79178,6 @@ async function loadNewIntrospection(el2) {
       el2.introspection = introspectionDeepCopy(introspection);
   }
 }
-const handleReorderElements = async (window2, payload, type2) => {
-  if (!window2.__REACT_DEVTOOLS_GLOBAL_HOOK__)
-    throw new Error("__REACT_DEVTOOLS_GLOBAL_HOOK__ not available on window object");
-  let data = {
-    fileName: void 0,
-    elementsPosEnd: {},
-    chained_changes: {},
-    hasFields: payload.hasFields,
-    hasRoutes: payload.hasRoutes,
-    hasColumns: payload.hasColumns,
-    hasRelations: payload.hasRelations,
-    relationName: payload.relationName,
-    entityName: getEntityNameFromUrl()
-  };
-  if (payload.hasFields || payload.hasRoutes || payload.hasColumns || payload.hasRelations) {
-    let allNames = Array(payload.elements.length + 1);
-    payload.elements.forEach((element2) => {
-      allNames[element2.prevIndex] = element2.fieldName;
-    });
-    payload.elements.forEach((item) => data.chained_changes[allNames[item.prevIndex]] = allNames[item.newIndex]);
-  } else {
-    payload.elements.forEach((item) => data.chained_changes[item.prevIndex] = item.newIndex);
-  }
-  if (!payload.hasFields && !payload.hasRoutes && !payload.hasColumns && !payload.hasRelations) {
-    payload.elements.forEach((item) => {
-      const source = getSourceFromElement(item.element);
-      if (!source) {
-        window2.postMessage({
-          type: "SHOW_USER_FEEDBACK",
-          payload: { type: `${type2}_ERROR` }
-        });
-        console.error("Source not found", item.element);
-      }
-      data.elementsPosEnd[item.prevIndex] = source;
-      data.fileName = source.fileName;
-    });
-  }
-  frontendActions.elementHighlightClick(type2, data);
-};
 var FileSaver_min = { exports: {} };
 (function(module2, exports2) {
   (function(a, b) {
@@ -85526,7 +85454,7 @@ const addFrontendListeners = (messagingService2, injectMode, features) => {
         const relativePath = key.split("/src")[1] ? "/src" + key.split("/src")[1] : key;
         workbench.writeFile(cwd + relativePath, val);
       });
-      delay(2e3).then(() => {
+      delay(4e3).then(() => {
         workbench.writeFiles(generatedPages.files);
       });
       delay(2e3).then(() => {
