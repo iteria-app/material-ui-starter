@@ -1,4 +1,4 @@
-onst localeDirectory = import.meta.globEager('./compiled-lang/*.json')
+const localeDirectory = import.meta.globEager('./compiled-lang/*.json')
 
 const gatherLocales = Object.keys(localeDirectory).reduce(
   (gatherLocales, file) => {
