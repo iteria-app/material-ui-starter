@@ -53331,7 +53331,6 @@ const showLoadingSnackbar = (message) => {
 };
 const CLONE_ELEMENT = "CLONE_ELEMENT";
 const CLONE_AND_RENAME_ELEMENT = "CLONE_AND_RENAME_ELEMENT";
-const TRANSLATE_ELEMENT = "TRANSLATE_ELEMENT";
 const NAVIGATE_TO_SOURCE_CODE = "NAVIGATE_TO_SOURCE_CODE";
 const REMOVE_ELEMENT = "REMOVE_ELEMENT";
 const GENERATE_PAGE = "GENERATE_PAGE";
@@ -62706,6 +62705,9 @@ const isAggregateField = (field) => {
   var _a2, _b, _c;
   return ((_a2 = field.type) == null ? void 0 : _a2.kind) === "NON_NULL" && ((_c = (_b = field.type) == null ? void 0 : _b.ofType) == null ? void 0 : _c.kind) === "OBJECT";
 };
+const isByPkMutation = (field) => field.args.some((arg) => arg.name === "object" || arg.name === "pk_columns");
+const isInsertMutation = (field) => field.args.some((arg) => arg.name === "on_conflict");
+const isUpdateMutation = (field) => field.args.some((arg) => arg.name === "_set");
 function generateGraphqlFile(introspection, names) {
   const roots = getRoots(introspection);
   let usedQueryNames = [];
@@ -62792,25 +62794,29 @@ function isOfType(field, entityName) {
   }
   return false;
 }
+const prettyName = (text2) => {
+  if (!text2)
+    return void 0;
+  return text2.replace(/_/g, "").toLowerCase();
+};
 function isOfTypePage(field, entityName, pageType) {
-  var _a2, _b;
   let actualType = field.type;
   if (pageType === PageType.DETAIL && isByPkQuery(field)) {
     if (typeof actualType !== "string") {
       while (isInstanceOfType(actualType) && actualType.ofType)
         actualType = actualType.ofType;
-      if (isInstanceOfType(actualType) && ((_a2 = actualType.name) == null ? void 0 : _a2.toLowerCase()) === (entityName == null ? void 0 : entityName.toLowerCase()))
+      if (isInstanceOfType(actualType) && prettyName(actualType.name) === prettyName(entityName))
         return true;
-    } else if (typeof actualType === "string" && actualType === (entityName == null ? void 0 : entityName.toLowerCase())) {
+    } else if (typeof actualType === "string" && actualType.replace(/_/g, "") === prettyName(entityName)) {
       return true;
     }
   } else if (pageType === PageType.LIST && (actualType == null ? void 0 : actualType.kind) !== "OBJECT") {
     if (typeof actualType !== "string") {
       while (isInstanceOfType(actualType) && actualType.ofType)
         actualType = actualType.ofType;
-      if (isInstanceOfType(actualType) && ((_b = actualType.name) == null ? void 0 : _b.toLowerCase()) === (entityName == null ? void 0 : entityName.toLowerCase()))
+      if (isInstanceOfType(actualType) && prettyName(actualType.name) === prettyName(entityName))
         return true;
-    } else if (typeof actualType === "string" && actualType === (entityName == null ? void 0 : entityName.toLowerCase())) {
+    } else if (typeof actualType === "string" && actualType.replace(/_/g, "") === prettyName(entityName)) {
       return true;
     }
   }
@@ -62819,6 +62825,22 @@ function isOfTypePage(field, entityName, pageType) {
 function isInstanceOfType(object) {
   return "name" in object && "ofType" in object && "kind" in object;
 }
+const findMutationQuery = (field, entityName) => {
+  entityName = `${entityName}_mutation_response`;
+  let actualType = field.type;
+  if (!isByPkMutation(field) && (isInsertMutation(field) || isUpdateMutation(field))) {
+    if (typeof actualType !== "string") {
+      while (isInstanceOfType(actualType) && actualType.ofType)
+        actualType = actualType.ofType;
+      if (isInstanceOfType(actualType) && prettyName(actualType.name) === prettyName(entityName))
+        return true;
+    } else if (typeof actualType === "string" && actualType.replace(/_/g, "") === prettyName(entityName)) {
+      return true;
+    }
+    return false;
+  }
+  return false;
+};
 async function fetchGraphqlIntrospectionSchema(schema2, secret) {
   try {
     const headers = { "Content-Type": "application/json" };
@@ -62870,15 +62892,15 @@ async function fetchHasuraMetadata(body2, workbench2) {
   });
   return response;
 }
-const capitalize$2 = (text2) => {
+const capitalize$1 = (text2) => {
   return text2.charAt(0).toUpperCase() + text2.slice(1);
 };
-const lowerFirstLetter = (text2) => {
+const lowerFirstLetter$1 = (text2) => {
   return text2.charAt(0).toLowerCase() + text2.slice(1);
 };
 const capitalizeFirstLetters = (name) => {
   return name.split("_").map((element2) => {
-    return capitalize$2(element2);
+    return capitalize$1(element2);
   }).join("");
 };
 const runSQLQuery = (sqlQuery) => {
@@ -62930,7 +62952,7 @@ const changeColumnName = (table, columnNames) => {
     return capitalizeFirstLetters(element2);
   });
   let newTableName = capitalizeFirstLetters(table.name);
-  let customName = lowerFirstLetter(newTableName);
+  let customName = lowerFirstLetter$1(newTableName);
   let query2 = {
     type: "pg_set_table_customization",
     args: {
@@ -62943,13 +62965,13 @@ const changeColumnName = (table, columnNames) => {
     }
   };
   newColumnNames.forEach((element2, index2) => {
-    query2.args.configuration.custom_column_names[columnNames[index2]] = lowerFirstLetter(element2);
+    query2.args.configuration.custom_column_names[columnNames[index2]] = lowerFirstLetter$1(element2);
   });
   return query2;
 };
 const trackTable = (table) => {
   let newTableName = capitalizeFirstLetters(table.name);
-  let customName = lowerFirstLetter(newTableName);
+  let customName = lowerFirstLetter$1(newTableName);
   return {
     type: "pg_track_table",
     args: {
@@ -62963,7 +62985,7 @@ const trackTable = (table) => {
 };
 const returnCutomRootFields = (tableName) => {
   let newTableName = capitalizeFirstLetters(tableName);
-  let customName = lowerFirstLetter(newTableName);
+  let customName = lowerFirstLetter$1(newTableName);
   let byPK = capitalizeFirstLetters(tableName).slice(0, -1);
   return {
     select: customName,
@@ -62988,7 +63010,7 @@ const createObjectRelationship = (props) => {
   return {
     type: "pg_create_object_relationship",
     args: {
-      name: lowerFirstLetter(capitalizeFirstLetters(props.foreignKey.referenceTable)).slice(0, -1),
+      name: lowerFirstLetter$1(capitalizeFirstLetters(props.foreignKey.referenceTable)).slice(0, -1),
       source: "default",
       table: {
         name: props.tableName,
@@ -63004,7 +63026,7 @@ const createArrayRelationship = (props) => {
   return {
     type: "pg_create_array_relationship",
     args: {
-      name: lowerFirstLetter(capitalizeFirstLetters(props.tableName)),
+      name: lowerFirstLetter$1(capitalizeFirstLetters(props.tableName)),
       source: "default",
       table: {
         name: props.foreignKey.referenceTable,
@@ -63183,6 +63205,17 @@ function resolveForeignKey(columnProps, workbench2, errorType, showSuccessSnackB
     dropAndCreatePermissions(columnProps, workbench2, showSuccessSnackBar);
   }
 }
+const capitalize = (string) => {
+  return string[0].toUpperCase() + string.slice(1);
+};
+function upperLetterInWord(queryName) {
+  let arr = queryName.split("_");
+  arr = arr.map((item) => capitalize(item));
+  return arr.join("_");
+}
+const lowerFirstLetter = (text2) => {
+  return text2.charAt(0).toLowerCase() + text2.slice(1);
+};
 const TABLE_SCHEMA = 1;
 const TABLE_NAME = 2;
 const COLUMN_NAME = 3;
@@ -63591,14 +63624,6 @@ function generateSQLData(introspection, tablesInfo, constraints) {
   });
   return sqlData;
 }
-const capitalize$1 = (string) => {
-  return string[0].toUpperCase() + string.slice(1);
-};
-function upperLetterInWord(queryName) {
-  let arr = queryName.split("_");
-  arr = arr.map((item) => capitalize$1(item));
-  return arr.join("_");
-}
 const filterIntrospection = (introspection, entityName) => {
   const introspectionInstance = JSON.parse(JSON.stringify(introspection));
   const queryRoot = introspectionInstance.types.find((type2) => {
@@ -63616,7 +63641,10 @@ const createNameSpaceImport = (namespace, module2) => {
   return factory.createImportDeclaration(void 0, void 0, factory.createImportClause(false, void 0, factory.createNamespaceImport(factory.createIdentifier(namespace))), factory.createIdentifier(module2));
 };
 const createDefaultImport = (identifier, module2) => factory.createImportDeclaration(void 0, void 0, factory.createImportClause(false, factory.createIdentifier(identifier), void 0), factory.createIdentifier(module2));
-const createJsxSelfClosingElement = (name, atributes) => factory.createJsxSelfClosingElement(factory.createIdentifier(name), void 0, factory.createJsxAttributes(atributes.map((atribute) => factory.createJsxAttribute(factory.createIdentifier(atribute.name), factory.createJsxExpression(void 0, factory.createIdentifier(atribute.initializer))))));
+const createJsxSelfClosingElement = (name, atributes) => factory.createJsxSelfClosingElement(factory.createIdentifier(name), void 0, factory.createJsxAttributes(atributes.map((atribute) => {
+  const node = atribute.type === "string" ? factory.createStringLiteral(atribute.initializer) : factory.createIdentifier(atribute.initializer);
+  return factory.createJsxAttribute(factory.createIdentifier(atribute.name), factory.createJsxExpression(void 0, node));
+})));
 const stripQuotes = (str2) => str2.replace(/['"]+/g, "");
 const mergeImports = (parentAst, childAst) => {
   const importsArray = getMergeImports(parentAst, childAst);
@@ -63931,14 +63959,56 @@ const reorderElementsInAst = async (code2, data) => {
   });
   return await regenerateAst(alteredAst);
 };
-const findColumn = (code2, source) => {
-  const node = astFindSource(code2, source);
-  let parent = node;
-  while (parent && !ts.isObjectLiteralExpression(parent)) {
-    parent = parent.parent;
+const findColumn = (code2, source, page) => {
+  var _a2;
+  let node = astFindSource(code2, source);
+  if (!node)
+    return void 0;
+  if (page === PageType.LIST) {
+    while (node && !ts.isObjectLiteralExpression(node)) {
+      node = node.parent;
+    }
+    return node;
   }
-  return parent;
+  if (page === PageType.DETAIL) {
+    while (node && !(node.parent && ts.isJsxElement(node.parent) && ((_a2 = node.parent.openingElement) == null ? void 0 : _a2.tagName.getText().includes("FormCard")))) {
+      node = node.parent;
+    }
+    return node;
+  }
 };
+const READONLY_TEMPLATE_PATH = "./node_modules/@iteria-app/component-templates/src/components/readonly";
+const WRITABLE_TEMPLATE_PATH = "./node_modules/@iteria-app/component-templates/src/components/writable";
+const ENTITY_PATH = "./node_modules/@iteria-app/component-templates/src/components/entity";
+const READONLY_TEMPLATE_PATH_JAMSTACK = "templates/readonly";
+const WRITABLE_TEMPLATE_PATH_JAMSTACK = "templates/writable";
+const ENTITY_PATH_JAMSTACK = "templates";
+const ENTITY = "Entity";
+const ENTITY_BY_ID = "EntityById";
+const ENTITY_INSERT = "InsertEntity";
+const ENTITY_UPDATE = "UpdateEntity";
+const FIELD = "FIELD";
+const COLUMNS = "columns";
+const HEADER_NAME = "HEADER_NAME";
+const RENDER_CELL = "renderCell";
+const VALUE = "value";
+const LABEL = "label";
+const DEFAULT_FORMAT = "DefaultFormat";
+const BOOLEAN_FORMAT = "BooleanFormat";
+const DATE_FORMAT = "DateFormat";
+const DATE_TIME_FORMAT = "DateTimeFormat";
+const TIME_FORMAT = "TimeFormat";
+const DETAIL_NAME = "Form";
+const LIST = "list";
+const DETAIL = "detail";
+const FORM_CARD = "FormCard";
+const COMPONENTS = [
+  "ListView",
+  "FormView",
+  "FormCard",
+  "ListContainer",
+  "FormContainer"
+];
 const getReactComponentNode = (ast, componentName) => {
   const reactComponent = findByConditionWithParam(ast, isNamedReactComponentFunction, componentName);
   return reactComponent != null ? reactComponent : null;
@@ -64002,7 +64072,7 @@ const copyPrimitiveProps = (parentJsx, childJsx) => {
       return;
     propOccurences.forEach((pO) => {
       const nodePosition = { pos: pO.pos, end: pO.end };
-      if (!ts.isJsxAttribute(pO.parent))
+      if (replaceProp(pO))
         finalChildJsx = replaceElementsInAst(finalChildJsx, nodePosition, newNode);
     });
   });
@@ -64029,6 +64099,15 @@ const createNewNodeForPrimitiveProp = (node) => {
 };
 const isPrimitivePropOnParent = (node) => (ts.isNumericLiteral(node) || ts.isStringLiteral(node) || isBooleanLiteral(node) || isNullKeyword(node) || ts.isIdentifier(node) && node.getText() !== "undefined") && node.parent && ts.isJsxExpression(node.parent) || ts.isStringLiteral(node) && node.parent && ts.isJsxAttribute(node.parent);
 const isPrimitiveProp = (node, text2) => ts.isIdentifier(node) && node.text === text2;
+const replaceProp = (node) => (ts.isPropertyAccessExpression(node.parent) && isLeftPropertyAccesExpression(node) || !ts.isPropertyAccessExpression(node.parent)) && !ts.isJsxAttribute(node.parent);
+const isLeftPropertyAccesExpression = (node) => {
+  let expression2 = node.parent;
+  while (ts.isPropertyAccessExpression(expression2.expression)) {
+    expression2 = expression2.expression;
+  }
+  expression2 = expression2.expression;
+  return expression2.getText() === node.getText();
+};
 const flattenStringLiterals = (node) => {
   const templateExpressions = findAllByCondition(node, ts.isTemplateExpression);
   let finalNode = node;
@@ -64069,11 +64148,18 @@ const stripUnnecessaryLiterals = (node) => {
   stringNodes.forEach((sN) => {
     finalNode = replaceElementsInAst(finalNode, { pos: sN.parent.pos, end: sN.parent.end }, factory.createStringLiteral(sN.text));
   });
+  const jsxText = findAllByCondition(finalNode, isJsxText);
+  jsxText.forEach((jT) => {
+    finalNode = replaceElementsInAst(finalNode, { pos: jT.pos, end: jT.end }, factory.createJsxText(jT.text.replaceAll('"', "")));
+  });
   return finalNode;
 };
 const isStringLiteralInJsxExpression = (node) => isString$1(node) && node.parent && ts.isJsxExpression(node.parent);
-const isUnnecessaryBinaryExpression = (node) => isString$1(node) && node.parent && ts.isBinaryExpression(node.parent);
+const isUnnecessaryBinaryExpression = (node) => node.parent && ts.isBinaryExpression(node.parent) && isString$1(node.parent.left) && isString$1(node.parent.right) && node.parent.right.text === node.text;
 const isString$1 = (node) => ts.isStringLiteral(node) || ts.isNoSubstitutionTemplateLiteral(node);
+const isJsxText = (node) => {
+  return ts.isJsxText(node) && node.getText().includes('"');
+};
 const mergeReactComponentBody = async (parentAst, childAst, componentName) => {
   const childReactComponent = getReactComponentNode(childAst, componentName);
   if (!childReactComponent)
@@ -64136,21 +64222,6 @@ const isJsxOpeningLikeElementWithName = (node, text2) => ts.isJsxOpeningLikeElem
 const isBlockInsideReactComponentFunction = (node) => ts.isBlock(node) && node.parent && isReactComponentFunction(node.parent);
 const isJsxExpressionWithIdentifierInside = (node, text2) => ts.isJsxExpression(node) && node.expression && (ts.isIdentifier(node.expression) && node.expression.getText() === text2 || ts.isPropertyAccessExpression(node.expression) && node.expression.name.getText() === text2);
 const isPropertyAccessExpressionWithChildrenLengthInside = (node) => ts.isPropertyAccessExpression(node) && ts.isPropertyAccessExpression(node.expression) && node.name.getText() === "length" && node.expression.name.getText() === "children";
-const TEMPLATE_PATH = "./node_modules/@iteria-app/component-templates/src/components/readonly";
-const ENTITY_PATH = "./node_modules/@iteria-app/component-templates/src/components/entity/list/Entity";
-const TEMPLATE_PATH_JAMSTACK = "templates/readonly";
-const ENTITY_PATH_JAMSTACK = "templates/list/Entity";
-const ENTITY = "Entity";
-const FIELD = "field";
-const COLUMNS = "columns";
-const HEADER_NAME = "headerName";
-const RENDER_CELL = "renderCell";
-const VALUE = "value";
-const DEFAULT_FORMAT = "DefaultFormat";
-const BOOLEAN_FORMAT = "BooleanFormat";
-const DATE_FORMAT = "DateFormat";
-const DATE_TIME_FORMAT = "DateTimeFormat";
-const TIME_FORMAT = "TimeFormat";
 const stringPrettyCapitalize = (inputString) => inputString.replace(/^\w/, (c2) => c2.toUpperCase()).replace(/(_|\.)/g, " ");
 const removeElementFromArray = (array, element2) => {
   var index2 = array.indexOf(element2);
@@ -64160,7 +64231,7 @@ const removeElementFromArray = (array, element2) => {
   return array;
 };
 async function generateColumn(columnInfo) {
-  const { io, entity, field, fields: fields8, page, selectedColumn, insertType } = columnInfo;
+  const { io, entity, field, fields: fields8, page, selectedColumn, insertType, selectedColumnName } = columnInfo;
   let ast = columnInfo.ast;
   const astType = typeof ast;
   if (astType === "string") {
@@ -64173,7 +64244,14 @@ async function generateColumn(columnInfo) {
   let lastObjectLiteral;
   let formatComponentName;
   if (page === PageType.LIST) {
-    const newColumn = await addColumnToList(ast, selectedColumn, entity, field, fields8, insertType);
+    const newColumn = addColumnToList(ast, selectedColumn, entity, field, fields8, insertType);
+    if (!newColumn || !newColumn.objectLiteral || !newColumn.lastObjectLiteral || !newColumn.formatComponentName)
+      return await returnValue(ast, astType);
+    objectLiteral = newColumn.objectLiteral;
+    lastObjectLiteral = newColumn.lastObjectLiteral;
+    formatComponentName = newColumn.formatComponentName;
+  } else if (page === PageType.DETAIL) {
+    const newColumn = await addColumnToDetail(ast, selectedColumn, entity, field, selectedColumnName);
     if (!newColumn || !newColumn.objectLiteral || !newColumn.lastObjectLiteral || !newColumn.formatComponentName)
       return await returnValue(ast, astType);
     objectLiteral = newColumn.objectLiteral;
@@ -64187,11 +64265,113 @@ async function generateColumn(columnInfo) {
     end: lastObjectLiteral.end
   }, [objectLiteral], insertType === InsertType.BEFORE || insertType === InsertType.FIRST ? "before" : "after");
   ast = await regenerateAst(ast);
-  const templatePath = io.injectMode === "jamstack" ? TEMPLATE_PATH_JAMSTACK : TEMPLATE_PATH;
+  const templatePath = page == PageType.LIST ? io.injectMode === "jamstack" ? READONLY_TEMPLATE_PATH_JAMSTACK : READONLY_TEMPLATE_PATH : io.injectMode === "jamstack" ? WRITABLE_TEMPLATE_PATH_JAMSTACK : WRITABLE_TEMPLATE_PATH;
   ast = await addFormatting(io, ast, formatComponentName, templatePath, field.name);
+  ast = flattenStringLiterals(ast);
+  ast = await regenerateAst(ast);
+  ast = await renameEntityInCode(ast, getEntityName(entity), [ENTITY], io.introspection);
   return await returnValue(ast, astType);
 }
-const addColumnToList = async (ast, selectedColumn, entity, field, fields8, insertType) => {
+const addColumnToDetail = async (ast, selectedColumn, entity, field, selectedColumnName) => {
+  var _a2;
+  const entityName = getEntityName(entity);
+  const formatComponentName = getFormatComponent(field.type);
+  let cardTemplate = void 0;
+  let lastObject;
+  const cardNode = findAllByCondition(ast, (node) => {
+    return ts.isJsxElement(node) && node.openingElement.tagName.text === `${entityName}${FORM_CARD}`;
+  });
+  if (!selectedColumn) {
+    if (cardNode.length === 0)
+      return void 0;
+    const newColumn = createNewCard(cardNode, field, entity, entityName);
+    cardTemplate = newColumn.card;
+    lastObject = newColumn.lastObject;
+  } else {
+    const referenceColumn = findEntityName(selectedColumnName, entityName);
+    const newEntityName = findEntityName(field.name, entityName);
+    if (referenceColumn !== newEntityName) {
+      const newColumn = createNewCard(cardNode, field, entity, entityName);
+      cardTemplate = newColumn.card;
+      lastObject = newColumn.lastObject;
+    }
+  }
+  const fieldName = field.name.includes(".") ? field.name.split(".").slice(1).join(".") : field.name;
+  let newElement = createJsxSelfClosingElement(formatComponentName, [
+    {
+      name: VALUE,
+      initializer: field.name,
+      type: "string"
+    },
+    {
+      name: LABEL,
+      initializer: stringPrettyCapitalize(fieldName),
+      type: "string"
+    }
+  ]);
+  if (cardTemplate && ((_a2 = cardTemplate.children) == null ? void 0 : _a2[1])) {
+    newElement = replaceElementsInAst(cardTemplate, {
+      pos: cardTemplate.children[1].pos,
+      end: cardTemplate.children[1].end
+    }, newElement);
+    lastObject = cardNode[cardNode.length - 1];
+  } else if (!lastObject && selectedColumn) {
+    lastObject = selectedColumn;
+  }
+  return {
+    objectLiteral: newElement,
+    lastObjectLiteral: lastObject,
+    formatComponentName
+  };
+};
+const findEntityCard = (cardNode, field, entityName) => {
+  entityName = findEntityName(field.name, entityName);
+  const list = [entityName, stringPrettyCapitalize(entityName)];
+  for (const card of cardNode) {
+    const found = nodeIncludes(card, list);
+    if (found.length > 0)
+      return card;
+  }
+  return void 0;
+};
+const createCardTemplate = (template2, field, entityName) => {
+  const newEntityName = findEntityName(field.name, entityName);
+  const oldNames = [entityName, stringPrettyCapitalize(entityName)];
+  const newNames = [newEntityName, stringPrettyCapitalize(newEntityName)];
+  const foundReplace = nodeIncludes(template2, oldNames);
+  foundReplace.forEach((found) => {
+    const index2 = oldNames.findIndex((value2) => value2 === found.text);
+    const newText = index2 >= 0 && index2 < newNames.length ? newNames[index2] : newEntityName;
+    template2 = renameAndReplaceElementInAst(template2, found, found.text, newText);
+  });
+  const children2 = template2.children.slice(2);
+  children2.forEach((child) => {
+    template2 = removeElementFromAst(template2, {
+      pos: child.pos,
+      end: child.end
+    });
+  });
+  return template2;
+};
+const createNewCard = (cardNode, field, entity, entityName) => {
+  let card;
+  let lastObject;
+  const finalCard = findEntityCard(cardNode, field, entity);
+  if (!finalCard) {
+    card = createCardTemplate(cardNode[0], field, entity);
+  } else {
+    const cardChilds = findAllByCondition(finalCard, (node) => (ts.isJsxElement(node) || ts.isJsxSelfClosingElement(node)) && node.parent && ts.isJsxElement(node.parent) && node.parent.openingElement.tagName.text === `${entityName}${FORM_CARD}`);
+    lastObject = cardChilds[cardChilds.length - 1];
+  }
+  return {
+    card,
+    lastObject
+  };
+};
+const findEntityName = (field, entityName) => {
+  return field.includes(".") ? field.split(".").shift() : entityName;
+};
+const addColumnToList = (ast, selectedColumn, entity, field, fields8, insertType) => {
   var _a2, _b, _c, _d;
   let formatComponentName;
   let lastObjectLiteral;
@@ -64347,13 +64527,12 @@ const handleRenderCell = (objectLiteral, initializer, formatComponentName) => {
   }
   return objectLiteral;
 };
-const capitalize = (name) => {
-  return name.charAt(0).toUpperCase() + name.slice(1);
-};
-const updateAst = async (io, code2, entity, findString, fields8, introspection) => {
+const updateAst = async (io, code2, entity, findString, fields8, component, introspection) => {
   let alteredAst = createAst(code2);
   const entityName = getEntityName(entity);
-  alteredAst = await renameEntityInCode(alteredAst, entityName, findString, introspection, PageType.LIST);
+  const pageType = component === DETAIL ? PageType.DETAIL : PageType.LIST;
+  const findStrings = component === DETAIL ? [`${findString}ById`, `Insert${findString}`, `Update${findString}`, findString] : [findString];
+  alteredAst = await renameEntityInCode(alteredAst, entityName, findStrings, introspection);
   for (const field of fields8) {
     if (isHidden(field.name))
       continue;
@@ -64363,12 +64542,13 @@ const updateAst = async (io, code2, entity, findString, fields8, introspection) 
       entity,
       field,
       fields: fields8,
-      page: PageType.LIST,
-      selectedColumn: void 0
+      page: pageType,
+      selectedColumn: void 0,
+      selectedColumnName: void 0
     };
     alteredAst = await generateColumn(columnInfo);
   }
-  alteredAst = await removeFirst(alteredAst);
+  alteredAst = await removeFirst(alteredAst, entityName);
   alteredAst = removeUnusedDefaultImport(alteredAst, `Format${entityName}Field`);
   alteredAst = await regenerateAst(alteredAst);
   alteredAst = flattenStringLiterals(alteredAst);
@@ -64379,10 +64559,11 @@ const generateTsxFiles = async (io, entity, components, fields8) => {
   const entityName = getEntityName(entity);
   const files = [];
   for (const component of components) {
+    const componentPath = component.includes(DETAIL_NAME) ? DETAIL : LIST;
     const entityPath = io.injectMode === "jamstack" ? ENTITY_PATH_JAMSTACK : ENTITY_PATH;
-    const dataTableTemplate = await io.readFile(`${entityPath}${component}.tsx`);
-    const ast = await updateAst(io, dataTableTemplate, entity, ENTITY, fields8, io.introspection);
-    const sourceCode = await printFormattedSourceFile(ast);
+    const dataTableTemplate = await io.readFile(`${entityPath}/${componentPath}/Entity${component}.tsx`);
+    const ast = await updateAst(io, dataTableTemplate, entity, ENTITY, fields8, componentPath, io.introspection);
+    const sourceCode = (await printFormattedSourceFile(ast)).replace(/;/g, "");
     const sourceCodePath = findRelativePath(`/src/pages/${entity}/`, `./${entityName}${component}.tsx`);
     files.push({ path: io.cwd + sourceCodePath, data: sourceCode });
   }
@@ -64393,23 +64574,34 @@ const addFormatting = async (io, ast, component, path2, field) => {
   let childAst = await createAst(code2);
   if (field) {
     field = addOptionalChaining(field);
-    childAst = renameFields(childAst, FIELD, field, false);
-    childAst = await regenerateAst(childAst);
+    const alteredChildAst = renameFields(childAst, FIELD, field, false);
+    if (alteredChildAst)
+      childAst = await regenerateAst(alteredChildAst);
   }
   const inlineReact = await inlineReactComponent(ast, childAst, component);
   return await regenerateAst(inlineReact);
 };
-const removeFirst = async (ast) => {
+const removeFirst = async (ast, entityName) => {
   var _a2, _b;
-  const node = findByCondition(ast, (node2) => {
+  let node = findByCondition(ast, (node2) => {
     return ts.isVariableDeclaration(node2) && node2.name.text === COLUMNS;
+  });
+  if (node) {
+    const objectLiteral = (_b = (_a2 = node.initializer) == null ? void 0 : _a2.elements) == null ? void 0 : _b[0];
+    ast = removeElementFromAst(ast, {
+      pos: objectLiteral.pos,
+      end: objectLiteral.end
+    });
+    ast = await regenerateAst(ast);
+  }
+  node = findByCondition(ast, (node2) => {
+    return (ts.isJsxSelfClosingElement(node2) || ts.isJsxElement(node2)) && node2.parent && ts.isJsxElement(node2.parent) && node2.parent.openingElement.tagName.text === `${entityName}${FORM_CARD}`;
   });
   if (!node)
     return ast;
-  const objectLiteral = (_b = (_a2 = node.initializer) == null ? void 0 : _a2.elements) == null ? void 0 : _b[0];
   ast = removeElementFromAst(ast, {
-    pos: objectLiteral.pos,
-    end: objectLiteral.end
+    pos: node.pos,
+    end: node.end
   });
   return ast;
 };
@@ -64432,31 +64624,52 @@ const addOptionalChaining = (field) => {
 const getEntityName = (entity) => {
   return entity.split("_").map((string) => capitalize(string)).join("");
 };
-const renameEntityInCode = async (ast, entityName, findString, introspection, pageType) => {
-  const nodes = findAllByCondition(ast, (node) => {
-    const text2 = node.getText();
-    return (ts.isStringLiteral(node) || ts.isIdentifier(node)) && text2 && text2.toUpperCase().includes(findString.toUpperCase());
-  });
-  const [queryRoot] = getRoots(introspection);
-  let field = queryRoot.fields.find((field2) => isOfTypePage(field2, entityName, pageType));
-  if (!field) {
-    field = queryRoot.fields.find((field2) => (field2 == null ? void 0 : field2.name.replace(/_/g, "").toLocaleLowerCase()) === entityName.toLocaleLowerCase());
+const renameEntityInCode = async (ast, entityName, findStrings, introspection) => {
+  for (const findString of findStrings) {
+    const nodes = findAllByCondition(ast, (node) => {
+      const text2 = node.getText();
+      return (ts.isStringLiteral(node) || ts.isIdentifier(node)) && text2 && text2.toUpperCase().includes(findString.toUpperCase());
+    });
+    const [queryRoot, mutationRoot] = getRoots(introspection);
+    const field = queryRoot.fields.filter((field2) => isOfTypePage(field2, entityName, PageType.LIST) || isOfTypePage(field2, entityName, PageType.DETAIL));
+    const mutation = mutationRoot.fields.filter((field2) => findMutationQuery(field2, entityName));
+    const insertMutation = mutation.find((m) => isInsertMutation(m));
+    const updateMutation = mutation.find((m) => isUpdateMutation(m));
+    const selectQuery = field.find((m) => !isByPkQuery(m));
+    const selectByPkQuery = field.find((m) => isByPkQuery(m));
+    nodes.forEach((node) => {
+      const oldText = node.text;
+      const newText = handleNewName(oldText, findString, [selectQuery == null ? void 0 : selectQuery.name, selectByPkQuery == null ? void 0 : selectByPkQuery.name, insertMutation == null ? void 0 : insertMutation.name, updateMutation == null ? void 0 : updateMutation.name]);
+      ast = renameAndReplaceElementInAst(ast, node, oldText, newText);
+    });
+    ast = await regenerateAst(ast);
   }
-  nodes.forEach((node) => {
-    const oldText = node.text;
-    let newText;
-    if (oldText.toLowerCase() === findString.toLowerCase()) {
-      newText = field.name;
-    } else {
-      if (oldText.toLowerCase() === `use${findString}Query`.toLowerCase()) {
-        newText = oldText.replace(findString, upperLetterInWord(field.name));
-      } else {
-        newText = oldText.replace(findString, entityName);
+  return ast;
+};
+const handleNewName = (oldText, findString, queries) => {
+  const lowercasedFindString = findString.toLowerCase();
+  const lowercasedOldText = oldText.toLowerCase();
+  const [selectQuery, selectByPkQuery, insertMutation, updateMutation] = queries;
+  switch (lowercasedFindString) {
+    case lowercasedOldText:
+      switch (lowercasedFindString) {
+        case ENTITY_BY_ID.toLowerCase():
+          return selectByPkQuery;
+        case ENTITY.toLowerCase():
+          return selectQuery;
       }
-    }
-    ast = renameAndReplaceElementInAst(ast, node, oldText, newText);
-  });
-  return await regenerateAst(ast);
+    case ENTITY_INSERT.toLowerCase():
+      return oldText.replace(findString, upperLetterInWord(insertMutation));
+    case ENTITY_UPDATE.toLowerCase():
+      return oldText.replace(findString, upperLetterInWord(updateMutation));
+    case ENTITY_BY_ID.toLowerCase():
+      return oldText.replace(findString, upperLetterInWord(selectByPkQuery));
+    default:
+      if (lowercasedOldText === `use${ENTITY}Query`.toLowerCase()) {
+        return oldText.replace(findString, upperLetterInWord(selectQuery));
+      }
+      return oldText.replace(findString, upperLetterInWord(selectQuery).replace(/_/g, ""));
+  }
 };
 async function generatePages(introspection, io, options2) {
   const entities = options2.entities;
@@ -64467,12 +64680,11 @@ async function generatePages(introspection, io, options2) {
     const path2 = findRelativePath(`/src/pages/${graphqlFile.entityName}/`, "./index.graphql");
     pages.set(path2, graphqlFile.queries);
     if (options2.generateReact) {
-      const components = ["ListView", "ListContainer"];
       const fields8 = graphqlFile.fragments.map((field) => {
         const newField = graphqlFile.properties.find((value2) => value2.name === field);
         return newField;
       }).filter((field) => field);
-      files.push(...await generateTsxFiles(io, graphqlFile.entityName, components, fields8));
+      files.push(...await generateTsxFiles(io, graphqlFile.entityName, COMPONENTS, fields8));
     }
   }
   return {
@@ -64480,8 +64692,8 @@ async function generatePages(introspection, io, options2) {
     files
   };
 }
-const removeColumnFromAst = (code2, source) => {
-  const node = findColumn(code2, source);
+const removeColumnFromAst = (code2, source, page) => {
+  const node = findColumn(code2, source, page);
   if (!node)
     return createAst(code2);
   const ast = createAst(code2);
@@ -65174,7 +65386,7 @@ const isFormInput = (el2) => {
   return el2.classList.contains("MuiTextField-root") || el2.classList.contains("MuiInput-input") || el2.classList.contains("MuiInputBase-input");
 };
 const getInputElement = (el2) => {
-  if (el2.tagName === "INPUT")
+  if (el2.tagName === "INPUT" || el2.tagName === "TEXTAREA")
     return el2;
   const childElements = [...el2.children];
   for (const element2 of childElements) {
@@ -77114,8 +77326,9 @@ const listenToVsCodeEvent = (payload, fileTree, window2) => {
   vscodeFileSearchListener(payload, fileTree, window2);
 };
 const LIST_VIEW = "ListView";
+const FORM_VIEW = "FormView";
 const addField = async (props) => {
-  const { workbench: workbench2, page, entityName, columnToAdd, selectedColumn, insertType, source } = props;
+  const { workbench: workbench2, page, entityName, columnToAdd, selectedColumn, insertType, source, selectedColumnName } = props;
   const generatedDirectory = await workbench2.readDirectory(workbench2.cwd + `/src/pages/${entityName}`);
   const newField = columnToAdd.split(".").slice(1).join(".");
   const entity = columnToAdd.split(".")[0];
@@ -77133,11 +77346,13 @@ const addField = async (props) => {
     fields: fields8,
     page,
     selectedColumn,
+    selectedColumnName,
     insertType
   };
-  if (page === PageType.LIST) {
-    const found = generatedDirectory.find((file) => file.fileName.includes(LIST_VIEW));
-    if (source && source.fileName.includes(LIST_VIEW)) {
+  if (page === PageType.LIST || page === PageType.DETAIL) {
+    const findSourceFile = page === PageType.LIST ? LIST_VIEW : FORM_VIEW;
+    const found = generatedDirectory.find((file) => file.fileName.includes(findSourceFile));
+    if (source && (source.fileName.includes(LIST_VIEW) || source.fileName.includes(FORM_VIEW))) {
       const code2 = await workbench2.readFile(source.fileName);
       const encoded = encodeEmptyLines$1(code2);
       columnInfo.ast = encoded;
@@ -77206,11 +77421,11 @@ const getFields = (workbench2, entityName) => {
   }
   return fields8;
 };
-const removeFieldFromTable = async (workbench2, source) => {
+const removeFieldFromTable = async (workbench2, source, page) => {
   if (source && source.fileName && source.fileName.includes(LIST_VIEW)) {
     const code2 = await workbench2.readFile(source.fileName);
     const encoded = encodeEmptyLines$1(code2);
-    const alteredAst = removeColumnFromAst(encoded, source);
+    const alteredAst = removeColumnFromAst(encoded, source, page);
     if (!alteredAst)
       return console.error("Unable to remove Element from AST");
     const newCode = await printFormattedSourceFile$1(alteredAst);
@@ -78617,11 +78832,10 @@ const ElementEditable = (() => {
         } else {
           buttonElement.setAttribute("style", "pointer-events: none");
         }
-        setEndOfContenteditable(editingElement, editingElement, editingElement.innerHTML.length / 2);
       } else {
-        setEndOfContenteditable(editingElement, editingElement);
         editingElement.setAttribute("style", "display: block; outline: 0");
       }
+      setEndOfContenteditable(editingElement, editingElement);
       editable.add(editingElement);
       if (prevContent === void 0) {
         prevContent = el2.innerHTML;
@@ -78638,7 +78852,6 @@ const ElementEditable = (() => {
       if (prevContent !== void 0) {
         editingElement.innerHTML = prevContent;
       }
-      save3();
     }
   };
 })();
@@ -78706,7 +78919,7 @@ const addElementHighlight = async (window2, injectMode, features) => {
       const source = page === PageType.LIST ? getSourceFromElement(getColumnTitle(element2)) : getSourceFromElement(element2);
       const entityName = getEntityNameFromUrl();
       const code2 = (source == null ? void 0 : source.fileName) ? await workbench.readFile(source.fileName) : void 0;
-      const selectedColumn = code2 ? findColumn(code2, source) : void 0;
+      const selectedColumn = code2 ? findColumn(code2, source, page) : void 0;
       for (let selectedField of selectedFields2) {
         const columnInfo = {
           workbench,
@@ -78715,11 +78928,12 @@ const addElementHighlight = async (window2, injectMode, features) => {
           entityName,
           columnToAdd: selectedField,
           selectedColumn,
+          selectedColumnName: selectedField,
           insertType
         };
         const generatedFile = await addField(columnInfo);
-        if (generatedFile)
-          workbench.writeFile(generatedFile.path, generatedFile.generatedCode);
+        if (generatedFile && generatedFile.path && generatedFile.generatedCode)
+          await workbench.writeFile(generatedFile.path, generatedFile.generatedCode);
       }
       cloneColumn(selectedFields2, insertType, element2);
     } else if (type2 === "CLONE_AND_RENAME_ELEMENT") {
@@ -78733,19 +78947,22 @@ const addElementHighlight = async (window2, injectMode, features) => {
       payloadArr.forEach((field) => cloneColumn(field, insertType, void 0, __typename));
       const page = getPageTypeFromUrl();
       const code2 = await workbench.readFile(source.fileName);
-      const selectedColumn = findColumn(code2, source);
-      const columnInfo = {
-        workbench,
-        source,
-        page,
-        entityName: __typename,
-        columnToAdd: selectedFields2,
-        selectedColumn,
-        insertType
-      };
-      const generatedFile = await addField(columnInfo);
-      if (generatedFile)
-        await workbench.writeFile(generatedFile.path, generatedFile.generatedCode);
+      const selectedColumn = findColumn(code2, source, page);
+      for (let selectedField of payloadArr) {
+        const columnInfo = {
+          workbench,
+          source,
+          page,
+          entityName: __typename,
+          columnToAdd: selectedFields2,
+          selectedColumn,
+          selectedColumnName: selectedField,
+          insertType
+        };
+        const generatedFile = await addField(columnInfo);
+        if (generatedFile && generatedFile.path && generatedFile.generatedCode)
+          await workbench.writeFile(generatedFile.path, generatedFile.generatedCode);
+      }
     }
   });
   el2.addEventListener("showsource", (e) => {
@@ -78756,14 +78973,11 @@ const addElementHighlight = async (window2, injectMode, features) => {
   el2.addEventListener("translate", (e) => {
     var _a2;
     const editingElement = (_a2 = e == null ? void 0 : e.detail) == null ? void 0 : _a2.editingElement;
-    handleIconClick(window2, editingElement, TRANSLATE_ELEMENT);
     ElementEditable.editingElement(editingElement);
   });
   el2.addEventListener("confirmaction", (e) => {
     if (e.detail.actionType === "translate") {
       ElementEditable.saveChanges();
-    } else if (e.detail.actionType === "drag_and_drop_grid" || e.detail.actionType === "drag_and_drop_relations") {
-      handleReorderElements(window2, e.detail.payload, REORDER_ELEMENT);
     }
   });
   el2.addEventListener("cancelaction", (e) => {
@@ -78956,7 +79170,7 @@ const handleRemoveTableColumn = async (window2, el2, type2) => {
   source.page = PageType.LIST;
   source.entityName = entityName;
   source.columnToDelete = getFieldNameFromElement(el2);
-  await removeFieldFromTable(workbench, source);
+  await removeFieldFromTable(workbench, source, source.page);
   frontendActions.elementHighlightClick(type2, source);
 };
 const handleRemoveFormColumn = async (contentWindow, el2, type2) => {
@@ -79229,45 +79443,6 @@ async function loadNewIntrospection(el2) {
       el2.introspection = introspectionDeepCopy(introspection);
   }
 }
-const handleReorderElements = async (window2, payload, type2) => {
-  if (!window2.__REACT_DEVTOOLS_GLOBAL_HOOK__)
-    throw new Error("__REACT_DEVTOOLS_GLOBAL_HOOK__ not available on window object");
-  let data = {
-    fileName: void 0,
-    elementsPosEnd: {},
-    chained_changes: {},
-    hasFields: payload.hasFields,
-    hasRoutes: payload.hasRoutes,
-    hasColumns: payload.hasColumns,
-    hasRelations: payload.hasRelations,
-    relationName: payload.relationName,
-    entityName: getEntityNameFromUrl()
-  };
-  if (payload.hasFields || payload.hasRoutes || payload.hasColumns || payload.hasRelations) {
-    let allNames = Array(payload.elements.length + 1);
-    payload.elements.forEach((element2) => {
-      allNames[element2.prevIndex] = element2.fieldName;
-    });
-    payload.elements.forEach((item) => data.chained_changes[allNames[item.prevIndex]] = allNames[item.newIndex]);
-  } else {
-    payload.elements.forEach((item) => data.chained_changes[item.prevIndex] = item.newIndex);
-  }
-  if (!payload.hasFields && !payload.hasRoutes && !payload.hasColumns && !payload.hasRelations) {
-    payload.elements.forEach((item) => {
-      const source = getSourceFromElement(item.element);
-      if (!source) {
-        window2.postMessage({
-          type: "SHOW_USER_FEEDBACK",
-          payload: { type: `${type2}_ERROR` }
-        });
-        console.error("Source not found", item.element);
-      }
-      data.elementsPosEnd[item.prevIndex] = source;
-      data.fileName = source.fileName;
-    });
-  }
-  frontendActions.elementHighlightClick(type2, data);
-};
 var FileSaver_min = { exports: {} };
 (function(module2, exports2) {
   (function(a, b) {
@@ -85463,7 +85638,7 @@ const addFrontendListeners = (messagingService2, injectMode, features) => {
   });
   messagingService2.addEventListener(REMOVE_ELEMENT, async (source) => {
     var _a2;
-    const { colIndex, page, entityName, columnToDelete } = source;
+    const { colIndex, page, entityName, columnToDelete, fileName } = source;
     if (columnToDelete) {
       const cwd = (_a2 = workbench == null ? void 0 : workbench.cwd) != null ? _a2 : guessCurrentWorkingDirectory();
       let pathToGraphqlFile = cwd + `/src/pages/${entityName}/index.graphql`;
@@ -85476,14 +85651,16 @@ const addFrontendListeners = (messagingService2, injectMode, features) => {
       }
       const modifiedGraphQLFile = await iteriaGeneratorWorker.removeColumn(graphQLFile, introspectionDeepCopy(workbench.introspection), entityName, fieldToDelete, page, colIndex);
       await workbench.writeFile(pathToGraphqlFile, modifiedGraphQLFile).then(() => {
-        window.postMessage({
-          type: "SHOW_USER_FEEDBACK",
-          payload: {
-            type: `REMOVE_ELEMENT_SUCCESS`
-          }
-        });
+        if (!fileName.includes("Form"))
+          window.postMessage({
+            type: "SHOW_USER_FEEDBACK",
+            payload: {
+              type: `REMOVE_ELEMENT_SUCCESS`
+            }
+          });
       });
-      return;
+      if (!fileName.includes("Form"))
+        return;
     }
     if (!source.fileName)
       return console.error("Source not found");
@@ -98209,7 +98386,7 @@ const absoluteToRelativePath = (absolutePath, currentPath) => {
 const replaceDependencyImports = (i2) => {
   var _a2, _b, _c;
   const defaultImport = `const ${(_c = (_a2 = i2.getDefaultImport()) == null ? void 0 : _a2.print()) != null ? _c : (_b = i2.getNamespaceImport()) == null ? void 0 : _b.print()} = requireDefault('${i2.getModuleSpecifierValue()}')`;
-  const namedImports = `const { ${i2.getNamedImports().map((imp) => imp.print().replaceAll(/as/g, ":")).join(",")} } = require('${i2.getModuleSpecifierValue()}')`;
+  const namedImports = `const { ${i2.getNamedImports().map((imp) => imp.print().replaceAll(/ as /g, ":")).join(",")} } = require('${i2.getModuleSpecifierValue()}')`;
   if (i2.getNamedImports().length && i2.getDefaultImport()) {
     i2.replaceWithText(defaultImport + "\n" + namedImports);
   } else if (i2.getDefaultImport() || i2.getNamespaceImport()) {
