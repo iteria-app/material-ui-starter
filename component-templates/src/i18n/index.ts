@@ -1,5 +1,0 @@
-export * from './I18nProvider'
-export * from './LocaleContext'
-export * from './LocaleControl'
-export * from './LocaleSwitch'
-export { default as Translate } from './Translate'
