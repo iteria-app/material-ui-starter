@@ -3,11 +3,11 @@ import sk from './compiled-lang/sk.json'
 
 const localeDirectory = {
   './compiled-lang/en.json': {
-    default: en,
+    default: en
   },
   './compiled-lang/sk.json': {
-    default: sk,
-  },
+    default: sk
+  }
 }
 
 const gatherLocales = Object.keys(localeDirectory).reduce(
@@ -23,7 +23,7 @@ const gatherLocales = Object.keys(localeDirectory).reduce(
 )
 
 export const locales = {
-  ...gatherLocales,
+  ...gatherLocales
 }
 
 export const messages = (locale) => {
