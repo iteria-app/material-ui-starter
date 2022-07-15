@@ -1,4 +1,3 @@
-// const localeDirectory_ = import.meta.globEager('./compiled-lang/*.json')
 import en from './compiled-lang/en.json'
 import sk from './compiled-lang/sk.json'
 
@@ -27,9 +26,13 @@ export const locales = {
   ...gatherLocales,
 }
 
-export const messages = (locale: string): Record<string, string> => {
+export const messages = (locale) => {
   const path = Object.keys(localeDirectory).find((element) =>
-    element.toLowerCase().endsWith(locale.split('-')[0] + '.json')
+    element.endsWith(locale.split('-')[0] + '.json')
   )
-  return localeDirectory[path].default ?? ''
+  const defaultPath = Object.keys(localeDirectory).find((element) =>
+    element.endsWith('en.json')
+  )
+
+  return localeDirectory[path]?.default ?? localeDirectory[defaultPath]?.default
 }
