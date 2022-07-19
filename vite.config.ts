@@ -4,16 +4,7 @@ import iteriaLowcode from '@iteria-app/vite-plugin-lowcode'
 import path from 'path'
 
 export default ({ command, mode }) => {
-  process.env = {
-    ...process.env,
-    ...loadEnv(mode, process.cwd()),
-    VITE_CWD: process.cwd(),
-    VITE_MODE: mode,
-    VITE_BRANCH: process.env.BRANCH,
-    VITE_REPOSITORY_URL: process.env.REPOSITORY_URL,
-    VITE_SITE_ID: process.env.SITE_ID,
-  }
-
+  const env = loadEnv(mode, '.')
   return defineConfig({
     optimizeDeps: {
       exclude: ['@iteria-app/wysiwyg'],
@@ -31,8 +22,10 @@ export default ({ command, mode }) => {
       iteriaLowcode({
         command,
         mode,
-        graphQLEndpoint: process.env.VITE_HASURA_GRAPHQL_ENDPOINT,
+        graphQLEndpoint: env.VITE_HASURA_GRAPHQL_ENDPOINT,
+        graphQLSecret: env.VITE_HASURA_GRAPHQL_SECRET,
         cwd: process.cwd(),
+        injectLowcode: true,
         features: {
           tippy: true,
           generator: true,
@@ -42,7 +35,8 @@ export default ({ command, mode }) => {
           graphQLEndpoint: true,
           floatingButton: true,
         },
-        whitelistedEnvs: ['VITE_HASURA_GRAPHQL_ENDPOINT', 'VITE_BRANCH', 'VITE_REPOSITORY_URL', 'VITE_SITE_ID', 'VITE_NETLIFY']
+        version: "1.4.9",
+        whitelistedEnvs: ['VITE_HASURA_GRAPHQL_ENDPOINT', 'VITE_HASURA_GRAPHQL_SECRET', 'VITE_BRANCH', 'VITE_REPOSITORY_URL', 'VITE_SITE_ID', 'VITE_NETLIFY']
       }),
     ],
   })
