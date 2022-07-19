@@ -9,7 +9,7 @@ import {
   Typography,
   colors,
 } from '@mui/material'
-import { Translate } from '@iteria-app/component-templates'
+import { Translate } from '/dist/component-templates.es.js'
 import { ArrowDownward, Money } from '@mui/icons-material'
 import { theme } from '../../../theme'
 const Budget: React.FC<any> = ({ className, ...rest }) => {

@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react'
-import { Translate } from '@iteria-app/component-templates'
+import { Translate } from '/dist/component-templates.es.js'
 import FormatEntityField from './FormatEntityField'
 import { useNavigate } from 'react-router-dom'
 import {
@@ -20,7 +20,7 @@ import {
   filterDataGrid,
   sortQueryFromGridData,
   IFilterState,
-} from '@iteria-app/component-templates'
+} from '/dist/component-templates.es.js'
 import { Add } from '@mui/icons-material'
 
 export interface IFilterQuery {

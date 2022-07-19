@@ -8,7 +8,7 @@ import {
   LocaleContextProvider,
   ErrorBoundary,
   ThemeContextProvider,
-} from '@iteria-app/component-templates'
+} from '/dist/component-templates.es.js'
 
 ReactDOM.render(
   <ErrorBoundary>

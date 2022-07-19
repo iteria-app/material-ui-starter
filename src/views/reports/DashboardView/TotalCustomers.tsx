@@ -10,7 +10,7 @@ import {
   colors,
 } from '@mui/material'
 import { ArrowUpward, People } from '@mui/icons-material'
-import { Translate } from '@iteria-app/component-templates'
+import { Translate } from '/dist/component-templates.es.js'
 import { theme } from '../../../theme'
 const TotalCustomers: React.FC<any> = ({ className, ...rest }) => {
   return (
