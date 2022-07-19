@@ -1,7 +1,7 @@
 import React from 'react'
 import { useEntityQuery } from '../../generated/graphql'
 import EntityListView from './EntityListView'
-import { useFilter, useLocale, ErrorBoundary, QueryBoundary } from '/component-templates/component-templates.es.js'
+import { useFilter, useLocale, ErrorBoundary, QueryBoundary } from '@iteria-app/component-templates'
 import { IntlProvider } from 'react-intl'
 import { messages } from '../../locale'
 

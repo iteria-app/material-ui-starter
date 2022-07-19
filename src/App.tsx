@@ -7,7 +7,7 @@ import {
   useLocale,
   DataContext,
   GraphqlcodegenDataProvider
-} from '/component-templates/component-templates.es.js'
+} from '@iteria-app/component-templates'
 import '../src/mixins/chartjs'
 import { theme } from './theme'
 import routes from './routes'

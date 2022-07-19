@@ -6,7 +6,7 @@ import NotFoundView from '../src/views/errors/NotFoundView'
 import RegisterView from '../src/views/auth/RegisterView'
 import DashboardView from '../src/views/reports/DashboardView'
 
-import { generatePagesRoutes } from '/component-templates/component-templates.es.js'
+import { generatePagesRoutes } from '@iteria-app/component-templates'
 import * as generatedGraphql from './generated/graphql'
 
 const filebasedRouting = import.meta.globEager('./pages/**/*Container.tsx')

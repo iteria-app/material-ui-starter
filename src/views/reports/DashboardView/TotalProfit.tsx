@@ -9,7 +9,7 @@ import {
   colors,
 } from '@mui/material'
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney'
-import { Translate } from '/component-templates/component-templates.es.js'
+import { Translate } from '@iteria-app/component-templates'
 import { theme } from '../../../theme'
 
 const TotalProfit: React.FC<any> = ({ className, ...rest }) => {

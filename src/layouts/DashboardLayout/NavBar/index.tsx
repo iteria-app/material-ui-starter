@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box, Drawer, Typography, styled, List } from '@mui/material'
 import { Users, Home, Code } from 'react-feather'
-import { MenuItems, calculateMenuItems } from '/component-templates/component-templates.es.js'
+import { MenuItems, calculateMenuItems } from '@iteria-app/component-templates'
 import * as graphqlGen from '../../../generated/graphql'
 import Logo from '../../../components/Logo'
 

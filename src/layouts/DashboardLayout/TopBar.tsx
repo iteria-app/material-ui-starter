@@ -17,7 +17,7 @@ import Logo from '../../components/Logo'
 import {
   LocaleSwitch,
   getEntityNameFromUrl,
-} from '/component-templates/component-templates.es.js'
+} from '@iteria-app/component-templates'
 import { locales } from '../../locale'
 
 const drawerWidth = 256
