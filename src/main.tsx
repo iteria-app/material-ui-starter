@@ -8,7 +8,7 @@ import {
   LocaleContextProvider,
   ErrorBoundary,
   ThemeContextProvider,
-} from '/dist/component-templates.es.js'
+} from '/component-templates/component-templates.es.js'
 
 ReactDOM.render(
   <ErrorBoundary>

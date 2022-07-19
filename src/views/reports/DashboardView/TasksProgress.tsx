@@ -11,7 +11,7 @@ import {
   colors,
 } from '@mui/material'
 import { InsertChart } from '@mui/icons-material'
-import { Translate } from '/dist/component-templates.es.js'
+import { Translate } from '/component-templates/component-templates.es.js'
 import { theme } from '../../../theme'
 
 const TasksProgress: React.FC<any> = ({ className, ...rest }) => {

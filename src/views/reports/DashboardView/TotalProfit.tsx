@@ -9,7 +9,7 @@ import {
   colors,
 } from '@mui/material'
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney'
-import { Translate } from '/dist/component-templates.es.js'
+import { Translate } from '/component-templates/component-templates.es.js'
 import { theme } from '../../../theme'
 
 const TotalProfit: React.FC<any> = ({ className, ...rest }) => {
