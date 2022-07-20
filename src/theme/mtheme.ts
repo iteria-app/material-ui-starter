@@ -140,7 +140,7 @@ const components: Components<Theme> = {
       input: {
         borderRadius: 23,
         padding: '10px 35px 10px 20px!important',
-        background: '#f5f3f2',
+        background: '#F2F3F4',
       },
       notchedOutline: {
         border: 'none',
@@ -164,7 +164,7 @@ const components: Components<Theme> = {
         border: 'none',
       },
       columnHeaders: {
-        background: '#f5f3f2',
+        background: '#F2F3F4',
         border: 'none',
         fontWeight: 550,
         fontSize: '14px',
@@ -181,7 +181,7 @@ const components: Components<Theme> = {
   MuiTableHead: {
     styleOverrides: {
       root: {
-        background: '#f5f3f2',
+        background: '#F2F3F4',
         border: 'none',
         fontWeight: 550,
         fontSize: '14px',
@@ -292,17 +292,6 @@ const components: Components<Theme> = {
       root: {
         color: 'default',
         margin: '0 5px',
-      },
-    },
-  },
-  MuiSelect: {
-    styleOverrides: {
-      // @ts-ignore
-      root: {
-        margin: '0 15px',
-        ':before': {
-          visibility: 'hidden',
-        },
       },
     },
   },
