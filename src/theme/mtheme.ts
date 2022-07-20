@@ -216,7 +216,7 @@ const components: Components<Theme> = {
   MuiLinearProgress: {
     styleOverrides: {
       root: {
-        marginTop: '-14px',
+        marginTop: '42px',
         borderRadius: '8px',
       },
     },
@@ -249,15 +249,16 @@ const components: Components<Theme> = {
     styleOverrides: {
       root: {
         padding: '0',
+        margin: '10px 0'
       },
     },
   },
   MuiListItemButton: {
     styleOverrides: {
       root: {
-        margin: '5px 0',
-        padding: '8px 16px',
-        borderRadius: '12px',
+        margin: '0',
+        padding: '10px 16px',
+        borderRadius: '20px',
         ':hover': {
           background: 'rgba(0, 0, 0, 0.2)',
         },

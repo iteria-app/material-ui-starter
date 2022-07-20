@@ -36,6 +36,7 @@ export default ({ command, mode }) => {
           floatingButton: true,
         },
         version: "1.4.6",
+        version: "1.4.8",
         whitelistedEnvs: ['VITE_HASURA_GRAPHQL_ENDPOINT', 'VITE_HASURA_GRAPHQL_SECRET', 'VITE_BRANCH', 'VITE_REPOSITORY_URL', 'VITE_SITE_ID', 'VITE_NETLIFY']
       }),
     ],
