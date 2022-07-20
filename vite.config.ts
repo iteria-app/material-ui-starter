@@ -25,7 +25,7 @@ export default ({ command, mode }) => {
         graphQLEndpoint: env.VITE_HASURA_GRAPHQL_ENDPOINT,
         graphQLSecret: env.VITE_HASURA_GRAPHQL_SECRET,
         cwd: process.cwd(),
-        injectLowcode: true,
+        injectLowcode: false,
         features: {
           tippy: true,
           generator: true,
