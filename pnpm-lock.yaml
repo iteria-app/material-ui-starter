@@ -725,8 +725,8 @@ packages:
       '@babel/helper-validator-identifier': 7.16.7
       to-fast-properties: 2.0.0
 
-  /@date-io/core/2.11.0:
-    resolution: {integrity: sha512-DvPBnNoeuLaoSJZaxgpu54qzRhRKjSYVyQjhznTFrllKuDpm0sDFjHo6lvNLCM/cfMx2gb2PM2zY2kc9C8nmuw==}
+  /@date-io/core/2.15.0:
+    resolution: {integrity: sha512-3CRvQUEK7aF87NUOwcTtmJ2Rc1kN0D4jFQUfRoanuAnE4o5HzHx4E2YenjaKjSPWeZYiWG6ZhDomx5hp1AaCJA==}
     dev: false
 
   /@date-io/core/2.15.0:
@@ -752,7 +752,7 @@ packages:
       dayjs:
         optional: true
     dependencies:
-      '@date-io/core': 2.11.0
+      '@date-io/core': 2.15.0
     dev: false
 
   /@date-io/luxon/2.11.1:
@@ -763,7 +763,7 @@ packages:
       luxon:
         optional: true
     dependencies:
-      '@date-io/core': 2.11.0
+      '@date-io/core': 2.15.0
     dev: false
 
   /@date-io/moment/2.11.0_moment@2.29.1:
@@ -774,7 +774,7 @@ packages:
       moment:
         optional: true
     dependencies:
-      '@date-io/core': 2.11.0
+      '@date-io/core': 2.15.0
       moment: 2.29.1
     dev: false
 
