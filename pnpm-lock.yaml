@@ -8,7 +8,7 @@ specifiers:
   '@graphql-codegen/typescript': ^2.2.2
   '@graphql-codegen/typescript-operations': ^2.1.5
   '@graphql-codegen/typescript-urql': ^3.2.0
-  '@iteria-app/component-templates': 1.3.2
+  '@iteria-app/component-templates': 1.3.4
   '@iteria-app/vite-plugin-lowcode': 0.2.1
   '@mui/icons-material': ^5.2.5
   '@mui/lab': ^5.0.0-alpha.64
@@ -51,7 +51,7 @@ specifiers:
 dependencies:
   '@emotion/react': 11.9.0_wchdyfjsjs7jbjx7r7guc3etfq
   '@emotion/styled': 11.8.1_qqzyodsgsghzz6vpxsrxbwelfm
-  '@iteria-app/component-templates': 1.3.2_6yblogtuqdyivo7jlmlbr5fwmq
+  '@iteria-app/component-templates': 1.3.4_6yblogtuqdyivo7jlmlbr5fwmq
   '@mui/icons-material': 5.2.5_6rr654k5lhpvvj3q2brhhgvcpm
   '@mui/lab': 5.0.0-alpha.64_36tcmsjkij34qtj6ig5vagcjo4
   '@mui/material': 5.2.8_fxlt5dwjgsvn7y7rd6a4ypuxxu
@@ -1432,8 +1432,8 @@ packages:
     resolution: {integrity: sha512-DzxIW8SRCLCZ/daD3mmWHw/R5HFtoxvrvGLNdodEF911Vce/v4ESmxzyHDD+hixfSR9vCfryeMk54Z4Fozs6tg==}
     dev: false
 
-  /@iteria-app/component-templates/1.3.2_6yblogtuqdyivo7jlmlbr5fwmq:
-    resolution: {integrity: sha512-MCmzge0iiIwiEFC5N67Jsig144v/9RmbvKZFiDvlI30MlGhgCu3wUTJjcrPWLtqpxRT8k/CD/US7ukybghxdkA==}
+  /@iteria-app/component-templates/1.3.4_6yblogtuqdyivo7jlmlbr5fwmq:
+    resolution: {integrity: sha512-oAg+xWH5n2s+k5qi2Mi5Tgeuk+wgG3K0Dk4oD3CeoDfQ2lhRyZWiLMYhziMqm0LvcBHInjUM0r4VqBfLGTSlDQ==}
     peerDependencies:
       '@mui/icons-material': ^5.2.5
       '@mui/material': ^5.2.7
@@ -1445,7 +1445,7 @@ packages:
       uuid: ^8.3.2
     dependencies:
       '@iteria-app/component-templates-api': 1.0.1
-      '@iteria-app/graphql-lowcode': 0.3.5_vlp7r6zwp23g6gz7ptadfgeidm
+      '@iteria-app/graphql-lowcode': 0.3.7_vlp7r6zwp23g6gz7ptadfgeidm
       '@iteria-app/s3-graphql-client': 0.0.4_77h5kg6422vos5a7c32osaaxh4
       '@mui/icons-material': 5.2.5_6rr654k5lhpvvj3q2brhhgvcpm
       '@mui/material': 5.2.8_fxlt5dwjgsvn7y7rd6a4ypuxxu
@@ -1468,8 +1468,8 @@ packages:
       - typescript
     dev: false
 
-  /@iteria-app/graphql-lowcode/0.3.5_vlp7r6zwp23g6gz7ptadfgeidm:
-    resolution: {integrity: sha512-AzuJxbpAyoRFCYvrKilywSew1RRnZ1sfluh1lqf0PCbK4VoqTBFf/2ozmTiMWQAZaqN/GE2od2QsHOkxbcTGTA==}
+  /@iteria-app/graphql-lowcode/0.3.7_vlp7r6zwp23g6gz7ptadfgeidm:
+    resolution: {integrity: sha512-YRdXDK8g3Lf6IT+1mml4GIUKPNNYJD2OCNLJ+XeGTxkrSDwlQ8VP7UydocSMymFvenng4zuK8TUrmPzmdQ2iYw==}
     peerDependencies:
       '@iteria-app/component-templates-api': latest
       graphql: 15.7.2
