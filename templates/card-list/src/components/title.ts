@@ -6,7 +6,9 @@ export const getCardTitle = (fields: { [key: string]: any }) => {
   )
 
   if (cardTitle) return fields[cardTitle]
-  const stringField = fields.find((field) => field.type === 'String')
+  const stringField = Object.values(fields)?.find(
+    (field) => typeof field === 'string'
+  )
   if (stringField) return stringField
   else return 'Card Title'
 }
