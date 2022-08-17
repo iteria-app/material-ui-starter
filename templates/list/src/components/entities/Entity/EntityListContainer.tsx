@@ -63,7 +63,7 @@ const EntityListContainer: React.FC<EntityListContainerProps> = ({ View }) => {
 
   return (
     <ErrorBoundary>
-      <QueryBoundary queryResponse={result}>
+      <QueryBoundary queryResponse={data}>
         <IntlProvider
           locale={locale}
           messages={messagesObject}
