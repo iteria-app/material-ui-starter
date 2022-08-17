@@ -14,7 +14,6 @@ import { getCardTitle } from '../../title'
 import { FormatEntityField } from '../../fields/typography/FormatEntityField'
 import { EntityFragment } from '../../../generated/graphql'
 import MoreVertIcon from '@mui/icons-material/MoreVert'
-import { getCardPrice } from '../../price'
 
 export interface IPropsEntityCardItem {
   data: EntityFragment // TODO entity: EntityFragment
@@ -63,7 +62,6 @@ const EntityCardItem: React.FC<IPropsEntityCardItem> = ({ data }) => {
         />
         <CardContent>
           {columns.slice(1).map((column) => column)}
-          {getCardPrice(data) ?? <></>}
         </CardContent>
       </Card>
     </Box>
