@@ -12,6 +12,14 @@ a {
 #root {
   height: 100%;
   width: 100%;
+  overflow: auto;
+}
+
+.MuiAppBar-root {
+  backdrop-filter: blur(20px);
+  background-color: rgba(255, 255, 255, 0.72)!important;
+  box-shadow: inset 0px -1px 1px #e7ebf0!important;
+  z-index: 1000!important;
 }
 
 body {
