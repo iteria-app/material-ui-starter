@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {
   Badge,
   Box,
@@ -23,11 +23,13 @@ const EntityCardItem: React.FC<IPropsEntityCardItem> = ({ data }) => {
   const navigate = useNavigate()
 
   const columns = [
-    <Box key={0}>
+    <Box key={'FIELD'}>
       {/* TODO <FormatEntityField value={product.name} */}
       <FormatEntityField value={data?.FIELD} type="string" />
     </Box>,
   ]
+
+
 
   // TODO styled component
   return (
@@ -60,9 +62,7 @@ const EntityCardItem: React.FC<IPropsEntityCardItem> = ({ data }) => {
           alt={getCardTitle(data)}
           sx={{ minWidth: '200px' }}
         />
-        <CardContent>
-          {columns.slice(1).map((column) => column)}
-        </CardContent>
+        <CardContent>{columns.slice(1).map((column) => column)}</CardContent>
       </Card>
     </Box>
   )

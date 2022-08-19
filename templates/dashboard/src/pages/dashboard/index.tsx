@@ -1,9 +1,15 @@
 import React from 'react'
+import EntityDashboardCards from '../../components/entities/Entity/EntityDashboardCards'
+import EntityDashboardContainer from '../../components/entities/Entity/EntityDashboardContainer'
 
-const DashboarPage: React.FC = () => {
+const DashboardPage: React.FC = () => {
   return (
-    <span>TODO</span>
+    <EntityDashboardContainer
+      View={({ data }) => (
+        <EntityDashboardCards data={data} loading={data?.fetching} />
+      )}
+    />
   )
 }
 
-export default DashboarPage
+export default DashboardPage

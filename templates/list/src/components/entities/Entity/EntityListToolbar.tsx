@@ -1,17 +1,59 @@
-import { Translate } from '@iteria-app/component-templates'
-import { Button, Grid, TextField, useTheme } from '@mui/material'
-import React from 'react'
-
+import React, { useEffect, useState } from 'react'
+import { Button, Grid, TextField } from '@mui/material'
+import { FilterProps, Translate } from '@iteria-app/component-templates'
+import introspection from '../../../generated/introspect.json'
 interface ToolbarProps {
-  searchText: string
-  setSearchText: any
+  filterProps: FilterProps
 }
 
 export const EntityListToolbar = ({
-  searchText,
-  setSearchText,
+  filterProps,
 }: ToolbarProps): JSX.Element => {
-  const theme = useTheme()
+  const [searchText, setSearchText] = useState('')
+  const introspectionOfData = introspection?.__schema?.types?.find(
+    (type) => type?.name === 'Entity'
+  )?.fields
+
+  const generateSearchQuery = (
+    fieldNames: string[],
+    searchText: string
+  ) => {
+    if (fieldNames.length > 1) {
+      return {
+        [fieldNames[0]]: generateSearchQuery(fieldNames.splice(1), searchText),
+      }
+    } else {
+      return {
+        [fieldNames[0]]: {
+          _ilike: `%${searchText}%`,
+        },
+      }
+    }
+  }
+
+  useEffect(() => {
+    const delayDebounceFn = setTimeout(() => {
+      let search: any[] | null = null
+      if (searchText) {
+        introspectionOfData?.forEach((field) => {
+          if (
+            field?.type?.name === 'String' ||
+            field?.type?.ofType?.name === 'String'
+          ) {
+            if (!search) search = []
+            search.push(
+              generateSearchQuery(field?.name?.split('.'), searchText)
+            )
+          }
+        })
+      }
+      filterProps.onFilter(search ? { _or: search } : {})
+      filterProps.onChangePage(1)
+      filterProps.onPageSize(10)
+    }, 300)
+    return () => clearTimeout(delayDebounceFn)
+  }, [searchText])
+
   return (
     <Grid
       container
@@ -20,7 +62,6 @@ export const EntityListToolbar = ({
       style={{ padding: '16px 16px 0' }}
     >
       <Translate entityName={'Search...'}>
-        {/* @ts-ignore*/}
         {(value) => (
           <TextField
             variant="outlined"
@@ -28,13 +69,12 @@ export const EntityListToolbar = ({
             onChange={(event: { target: { value: string } }) => {
               setSearchText(event.target.value)
             }}
-            placeholder={value}
+            placeholder={value.toString()}
             sx={{
               width: '100%',
               '& .MuiOutlinedInput-input': {
                 fontWeight: 400,
                 fontSize: '14px',
-                background: theme.palette.background.paper,
               },
             }}
           />

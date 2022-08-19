@@ -1,6 +1,6 @@
 import React from 'react'
 import { useCallback, useEffect, useState } from 'react'
-import { Translate } from '@iteria-app/component-templates'
+import { FilterProps, Translate } from '@iteria-app/component-templates'
 import FormatEntityField from './FormatEntityField'
 import {
   DataGrid,
@@ -20,61 +20,67 @@ import {
   sortQueryFromGridData,
   IFilterState,
 } from '@iteria-app/component-templates'
+import { EntityListToolbar } from './EntityDataTableToolbar'
 import introspection from '../../../generated/introspect.json'
-import { EntityListToolbar } from './EntityListToolbar'
 
 export interface IFilterQuery {
   limit: number
   offset: number
-  order_by: GridSortModel
+  orderBy: GridSortModel
 }
 
 export interface EntityTableProps {
-  onClickRow?: (
-    params: GridRowParams,
-    event?: MuiEvent<React.SyntheticEvent>
-  ) => void
-  onChangeFilter?: (state: Partial<IFilterState>) => void
   data: any
-  filter?: IFilterQuery
-  onChangePage: (state: number) => void
-  onPageSize: (state: number) => void
-  onSort: (state: object) => void
-  onFilter: (state: object | undefined) => void
-  offset: number
-  page: number
-  pageSize: number
-  countRows: number
-  setCountToRows: (state: number) => void
+  filterProps: FilterProps
+  onClickRow?: (state: number) => void
   onDeleteRow?: (value: any) => void
-  onClickCreate?: () => void
   loading: boolean
   error: any
-  topBar: boolean
 }
 
+const tableColumnTypes = [
+  {
+    graphQl: 'Int',
+    dataGrid: 'number',
+  },
+  {
+    graphQl: 'BigInteger',
+    dataGrid: 'number',
+  },
+  {
+    graphQl: 'time',
+    dataGrid: 'dateTime',
+  },
+  {
+    graphQl: 'timestamp',
+    dataGrid: 'dateTime',
+  },
+]
+
 const EntityDataTableView: React.FC<EntityTableProps> = ({
+  data,
+  filterProps,
   onClickRow,
-  onChangePage,
-  onPageSize,
-  setCountToRows,
-  countRows,
-  pageSize,
-  page,
-  onFilter,
-  onSort,
+  onDeleteRow,
   loading,
   error,
-  data,
-  topBar,
 }) => {
   const [siblingCount, setSiblingCount] = useState(1)
   const [hideNextButton, setHideNextButton] = useState(false)
-  const [searchText, setSearchText] = useState('')
-
   const introspectionOfData = introspection?.__schema?.types?.find(
     (type) => type?.name === 'Entity'
   )?.fields
+
+  const {
+    page,
+    pageSize,
+    countRows,
+    onSort,
+    onChangePage,
+    onPageSize,
+    onFilter,
+    setCountToRows,
+  } = filterProps
 
   useEffect(() => {
     if (!data?.fetching) {
@@ -91,25 +97,6 @@ const EntityDataTableView: React.FC<EntityTableProps> = ({
     }
   }, [data?.Entity])
 
-  const tableColumnTypes = [
-    {
-      graphQl: 'Int',
-      dataGrid: 'number',
-    },
-    {
-      graphQl: 'BigInteger',
-      dataGrid: 'number',
-    },
-    {
-      graphQl: 'time',
-      dataGrid: 'dateTime',
-    },
-    {
-      graphQl: 'timestamp',
-      dataGrid: 'dateTime',
-    },
-  ]
-
   const getColumnGraphQlType = (fieldName: string) => {
     const field = introspectionOfData?.find(
       (field) => field?.name === fieldName
@@ -125,7 +112,7 @@ const EntityDataTableView: React.FC<EntityTableProps> = ({
     )
   }
 
-  const columns: GridColDef[] = [
+  const columns = [
     {
       field: 'FIELD',
       type: getColumnType('FIELD'),
@@ -166,51 +153,9 @@ const EntityDataTableView: React.FC<EntityTableProps> = ({
     onSort(sortQueryFromGridData(sort))
   }
 
-  const generateSearchQuery = (
-    fieldNames: string[],
-    searchText: string
-  ): any => {
-    if (fieldNames.length > 1) {
-      return {
-        [fieldNames[0]]: generateSearchQuery(fieldNames.splice(1), searchText),
-      }
-    } else {
-      return {
-        [fieldNames[0]]: {
-          _ilike: `%${searchText}%`,
-        },
-      }
-    }
-  }
-
-  useEffect(() => {
-    const delayDebounceFn = setTimeout(() => {
-      let search: any[] | null = null
-      if (searchText) {
-        introspectionOfData?.forEach((field) => {
-          if (
-            field?.type?.name === 'String' ||
-            field?.type?.ofType?.name === 'String'
-          ) {
-            if (!search) search = []
-            search.push(
-              generateSearchQuery(field?.name?.split('.'), searchText)
-            )
-          }
-        })
-      }
-      onFilter(search ? { _or: search } : {})
-      onChangePage(1)
-    }, 300)
-    return () => clearTimeout(delayDebounceFn)
-  }, [searchText])
-
   return (
     <Card>
-      <EntityListToolbar
-        searchText={searchText}
-        setSearchText={setSearchText}
-      />
+      <EntityListToolbar filterProps={filterProps} />
       <DataGrid
         rows={data?.Entity ?? []}
         columns={columns}

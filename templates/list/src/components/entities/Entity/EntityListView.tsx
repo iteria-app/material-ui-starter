@@ -1,5 +1,5 @@
 import React from 'react'
-import { Divider, Grid } from '@mui/material'
+import { Grid } from '@mui/material'
 import EntityListItem from './EntityListItem'
 
 export interface EntityListProps {
@@ -21,8 +21,7 @@ const EntityListView: React.FC<EntityListProps> = ({
     >
       {data?.Entity.map((entity) => (
         <>
-          <EntityListItem data={entity} />
-          <Divider />
+          <EntityListItem key={entity?.id} data={entity} />
         </>
       ))}
     </Grid>
