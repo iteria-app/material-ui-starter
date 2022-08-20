@@ -1,6 +1,6 @@
 import { Checkbox as CheckboxInput } from '@mui/material'
 import React from 'react'
-import { FastField as FormikField } from 'formik'
+import { Field as FormikField } from 'formik'
 
 export const BooleanFormat = ({ value, relationshipName, index }) => {
   return (

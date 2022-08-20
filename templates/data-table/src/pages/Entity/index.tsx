@@ -1,20 +1,18 @@
 import React from 'react'
 import EntityDataTableView from '../../components/entities/Entity/EntityDataTableView'
-import EntityListContainer from '../../components/entities/Entity/EntityListContainer'
-import { useNavigate } from 'react-router-dom'
+import EntityDataTableContainer from '../../components/entities/Entity/EntityDataTableContainer'
 
 const EntityManyPage: React.FC = () => {
   return (
-    <EntityListContainer
+    <EntityDataTableContainer
       View={({ data, onClickRow, filterProps }) => {
         return (
           <EntityDataTableView
             data={data}
+            filterProps={filterProps}
+            onClickRow={onClickRow}
             loading={data?.loading}
             error={data?.error}
-            topBar
-            onClickRow={onClickRow}
-            {...filterProps}
           />
         )
       }}
