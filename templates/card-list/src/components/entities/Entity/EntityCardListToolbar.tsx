@@ -6,7 +6,7 @@ interface ToolbarProps {
   filterProps: FilterProps
 }
 
-export const EntityListToolbar = ({
+export const EntityCardListToolbar = ({
   filterProps,
 }: ToolbarProps): JSX.Element => {
   const [searchText, setSearchText] = useState('')

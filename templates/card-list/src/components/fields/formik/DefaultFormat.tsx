@@ -1,6 +1,6 @@
 import React from 'react'
 import { Input } from '@mui/material'
-import { FastField as FormikField } from 'formik'
+import { Field as FormikField } from 'formik'
 
 export const DefaultFormat = ({ value, relationshipName, index }) => {
   return (

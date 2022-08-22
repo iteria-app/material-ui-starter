@@ -9,9 +9,7 @@ import {
   IconButton,
 } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
-import { getImagePath } from '../../image'
-import { getCardTitle } from '../../title'
-import { FormatEntityField } from '../../fields/typography/FormatEntityField'
+import { FormatEntityField } from '../../fields/box/FormatEntityField'
 import { EntityFragment } from '../../../generated/graphql'
 import MoreVertIcon from '@mui/icons-material/MoreVert'
 
@@ -48,19 +46,12 @@ const EntityCardItem: React.FC<IPropsEntityCardItem> = ({ data }) => {
         }}
       >
         <CardHeader
-          title={getCardTitle(data)}
+          title="TITLE"
           action={
             <IconButton aria-label="settings">
               <MoreVertIcon />
             </IconButton>
           }
-        />
-        <CardMedia
-          component="img"
-          image={getImagePath(data) ?? '/static/placeholder.png'}
-          height="250px"
-          alt={getCardTitle(data)}
-          sx={{ minWidth: '200px' }}
         />
         <CardContent>{columns.slice(1).map((column) => column)}</CardContent>
       </Card>

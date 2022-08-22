@@ -49,7 +49,6 @@ export const EntityListToolbar = ({
       }
       filterProps.onFilter(search ? { _or: search } : {})
       filterProps.onChangePage(1)
-      filterProps.onPageSize(10)
     }, 300)
     return () => clearTimeout(delayDebounceFn)
   }, [searchText])

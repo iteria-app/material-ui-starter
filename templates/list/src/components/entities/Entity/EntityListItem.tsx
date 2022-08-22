@@ -24,7 +24,7 @@ const EntityListItem: React.FC<EntityListItem> = ({ data }) => {
   const navigate = useNavigate()
   const columns = [
     <>
-      <FormatEntityField value={data?.FIELD} />
+      <FormatEntityField key={'FIELD'} value={data?.FIELD} />
     </>,
   ]
   return (

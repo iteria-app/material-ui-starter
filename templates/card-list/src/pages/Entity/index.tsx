@@ -1,10 +1,10 @@
 import React from 'react'
 import EntityCardListView from '../../components/entities/Entity/EntityCardListView'
-import EntityListContainer from '../../components/entities/Entity/EntityListContainer'
+import EntityCardListContainer from '../../components/entities/Entity/EntityCardListContainer'
 
 const EntityManyPage: React.FC = () => {
   return (
-    <EntityListContainer
+    <EntityCardListContainer
       View={({ data }) => (
         <EntityCardListView data={data} loading={data?.loading} />
       )}

@@ -1,6 +1,6 @@
 import React from 'react'
 import { TextField } from '@mui/material'
-import { FastField as FormikField } from 'formik'
+import { Field as FormikField } from 'formik'
 import { DatePicker, LocalizationProvider } from '@mui/lab'
 import AdapterDateFns from '@date-io/date-fns'
 import { saveDate } from '@iteria-app/component-templates'

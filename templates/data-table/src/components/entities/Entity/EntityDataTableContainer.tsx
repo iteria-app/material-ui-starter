@@ -12,7 +12,7 @@ import { useNavigate } from 'react-router-dom'
 
 interface IViewProps {
   data: any
-  onChangePage: (state: number) => void
+  onClickRow: (state: number) => void
   filterProps: any
 }
 
