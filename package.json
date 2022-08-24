@@ -13,7 +13,7 @@
     "@date-io/date-fns": "2.15.0",
     "@emotion/react": "^11.5.0",
     "@emotion/styled": "^11.3.0",
-    "@iteria-app/component-templates": "1.3.9",
+    "@iteria-app/component-templates": "1.4.0",
     "@iteria-app/graphql-lowcode": "0.4.0",
     "@mui/icons-material": "^5.2.5",
     "@mui/lab": "^5.0.0-alpha.64",

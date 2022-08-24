@@ -9,7 +9,7 @@ specifiers:
   '@graphql-codegen/typescript': ^2.2.2
   '@graphql-codegen/typescript-operations': ^2.1.5
   '@graphql-codegen/typescript-urql': ^3.2.0
-  '@iteria-app/component-templates': 1.3.9
+  '@iteria-app/component-templates': 1.4.0
   '@iteria-app/graphql-lowcode': 0.4.0
   '@iteria-app/vite-plugin-lowcode': 0.2.1
   '@mui/icons-material': ^5.2.5
@@ -54,7 +54,7 @@ dependencies:
   '@date-io/date-fns': 2.15.0
   '@emotion/react': 11.9.0_b08e3c15324cbe90a6ff8fcd416c932c
   '@emotion/styled': 11.8.1_8433870e46918f9cfaafbca370d88b2b
-  '@iteria-app/component-templates': 1.3.9_f602b71a7480f08abbe95b1618f4b664
+  '@iteria-app/component-templates': 1.4.0_f602b71a7480f08abbe95b1618f4b664
   '@iteria-app/graphql-lowcode': 0.4.0_graphql@15.8.0+typescript@4.5.4
   '@mui/icons-material': 5.2.5_f463eef15d59df5aa770d062739aa27b
   '@mui/lab': 5.0.0-alpha.64_dfa626492a4277c84d3e41bb50184977
@@ -991,6 +991,9 @@ packages:
       '@graphql-tools/url-loader': 7.7.0_graphql@15.8.0
       '@graphql-tools/utils': 8.6.1_graphql@15.8.0
       ansi-escapes: 4.3.2
+      chalk: 4.1.2
+      change-case-all: 1.0.14
+      chokidar: 3.5.2
       common-tags: 1.8.2
       cosmiconfig: 7.0.1
       debounce: 1.2.1
@@ -1000,9 +1003,6 @@ packages:
       globby: 11.1.0
       graphql: 15.8.0
       graphql-config: 4.1.0_graphql@15.8.0+typescript@4.5.4
-      chalk: 4.1.2
-      change-case-all: 1.0.14
-      chokidar: 3.5.2
       inquirer: 8.2.0
       is-glob: 4.0.3
       json-to-pretty-yaml: 1.2.2
@@ -1056,9 +1056,9 @@ packages:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
     dependencies:
       '@graphql-tools/utils': 8.6.1_graphql@15.8.0
+      change-case-all: 1.0.14
       common-tags: 1.8.2
       graphql: 15.8.0
-      change-case-all: 1.0.14
       import-from: 4.0.0
       lodash: 4.17.21
       tslib: 2.3.1
@@ -1099,9 +1099,9 @@ packages:
       '@graphql-codegen/plugin-helpers': 2.3.2_graphql@15.8.0
       '@graphql-codegen/visitor-plugin-common': 2.5.2_graphql@15.8.0
       auto-bind: 4.0.0
+      change-case-all: 1.0.14
       graphql: 15.8.0
       graphql-tag: 2.12.6_graphql@15.8.0
-      change-case-all: 1.0.14
       tslib: 2.3.1
     transitivePeerDependencies:
       - supports-color
@@ -1132,10 +1132,10 @@ packages:
       '@graphql-tools/relay-operation-optimizer': 6.4.1_graphql@15.8.0
       '@graphql-tools/utils': 8.6.1_graphql@15.8.0
       auto-bind: 4.0.0
+      change-case-all: 1.0.14
       dependency-graph: 0.11.0
       graphql: 15.8.0
       graphql-tag: 2.12.6_graphql@15.8.0
-      change-case-all: 1.0.14
       parse-filepath: 1.0.2
       tslib: 2.3.1
     transitivePeerDependencies:
@@ -1318,13 +1318,13 @@ packages:
       '@types/js-yaml': 4.0.5
       '@types/json-stable-stringify': 1.0.33
       '@types/jsonwebtoken': 8.5.6
+      chalk: 4.1.2
       debug: 4.3.3
       dotenv: 10.0.0
       graphql: 15.8.0
       graphql-request: 3.7.0_graphql@15.8.0
       http-proxy-agent: 5.0.0
       https-proxy-agent: 5.0.0
-      chalk: 4.1.2
       isomorphic-fetch: 3.0.0
       js-yaml: 4.1.0
       json-stable-stringify: 1.0.1
@@ -1435,8 +1435,8 @@ packages:
     resolution: {integrity: sha512-DzxIW8SRCLCZ/daD3mmWHw/R5HFtoxvrvGLNdodEF911Vce/v4ESmxzyHDD+hixfSR9vCfryeMk54Z4Fozs6tg==}
     dev: false
 
-  /@iteria-app/component-templates/1.3.9_f602b71a7480f08abbe95b1618f4b664:
-    resolution: {integrity: sha512-bqoOMBG12r0BeNFd9cKdr4++gNgttKbZwJdtbBB8BjxkaPx1wyAfVHP4enlHI0OMiKxRWbaqPMnhnP1F6Mo1MQ==}
+  /@iteria-app/component-templates/1.4.0_f602b71a7480f08abbe95b1618f4b664:
+    resolution: {integrity: sha512-DjXfDMsaMsYXSS4iQVNIidbpBnXSX6zmEelUDVWjmXq8XcLw0X2USi7mFLE80DNLqt/lwzEBccPsxlAu4DbwDA==}
     peerDependencies:
       '@mui/icons-material': ^5.2.5
       '@mui/material': ^5.2.7
@@ -2517,8 +2517,8 @@ packages:
   /chartjs-color/2.4.1:
     resolution: {integrity: sha512-haqOg1+Yebys/Ts/9bLo/BqUcONQOdr/hoEr2LLTRl6C5LXctUdHxsCYfvQVg5JIxITrfCNUDr4ntqmQk9+/0w==}
     dependencies:
-      color-convert: 1.9.3
       chartjs-color-string: 0.6.0
+      color-convert: 1.9.3
     dev: false
 
   /chokidar/3.5.2:
@@ -2648,8 +2648,8 @@ packages:
     engines: {node: '>=10.0.0'}
     hasBin: true
     dependencies:
-      date-fns: 2.28.0
       chalk: 4.1.2
+      date-fns: 2.28.0
       lodash: 4.17.21
       rxjs: 6.6.7
       spawn-command: 0.0.2-1
@@ -3603,11 +3603,11 @@ packages:
     engines: {node: '>=8.0.0'}
     dependencies:
       ansi-escapes: 4.3.2
+      chalk: 4.1.2
       cli-cursor: 3.1.0
       cli-width: 3.0.0
       external-editor: 3.1.0
       figures: 3.2.0
-      chalk: 4.1.2
       lodash: 4.17.21
       mute-stream: 0.0.8
       ora: 5.4.1
@@ -3945,10 +3945,10 @@ packages:
     peerDependencies:
       listr: ^0.14.2
     dependencies:
+      chalk: 1.1.3
       cli-truncate: 0.2.1
       elegant-spinner: 1.0.1
       figures: 1.7.0
-      chalk: 1.1.3
       indent-string: 3.2.0
       listr: 0.14.3
       log-symbols: 1.0.2
@@ -3960,10 +3960,10 @@ packages:
     resolution: {integrity: sha512-04PDPqSlsqIOaaaGZ+41vq5FejI9auqTInicFRndCBgE3bXG8D6W1I+mWhk+1nqbHmyhla/6BUrd5OSiHwKRXw==}
     engines: {node: '>=4'}
     dependencies:
+      chalk: 2.4.2
       cli-cursor: 2.1.0
       date-fns: 1.30.1
       figures: 2.0.0
-      chalk: 2.4.2
     dev: true
 
   /listr/0.14.3:
@@ -4305,9 +4305,9 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       bl: 4.1.0
+      chalk: 4.1.2
       cli-cursor: 3.1.0
       cli-spinners: 2.6.1
-      chalk: 4.1.2
       is-interactive: 1.0.0
       is-unicode-supported: 0.1.0
       log-symbols: 4.1.0
@@ -4733,11 +4733,11 @@ packages:
       '@babel/traverse': 7.18.2
       '@babel/types': 7.18.2
       babel-preset-fbjs: 3.4.0_@babel+core@7.18.2
+      chalk: 4.1.2
       fb-watchman: 2.0.1
       fbjs: 3.0.2
       glob: 7.2.0
       graphql: 15.8.0
-      chalk: 4.1.2
       immutable: 3.7.6
       invariant: 2.2.4
       nullthrows: 1.1.1
