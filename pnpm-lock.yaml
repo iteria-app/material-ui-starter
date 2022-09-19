@@ -1,4 +1,4 @@
-lockfileVersion: 5.3
+lockfileVersion: 5.4
 
 specifiers:
   '@date-io/date-fns': 2.15.0
@@ -9,8 +9,8 @@ specifiers:
   '@graphql-codegen/typescript': ^2.2.2
   '@graphql-codegen/typescript-operations': ^2.1.5
   '@graphql-codegen/typescript-urql': ^3.2.0
-  '@iteria-app/component-templates': 1.3.9
-  '@iteria-app/graphql-lowcode': 0.4.0
+  '@iteria-app/component-templates': 1.4.2
+  '@iteria-app/graphql-lowcode': 0.4.1
   '@iteria-app/vite-plugin-lowcode': 0.2.1
   '@mui/icons-material': ^5.2.5
   '@mui/lab': ^5.0.0-alpha.64
@@ -52,15 +52,15 @@ specifiers:
 
 dependencies:
   '@date-io/date-fns': 2.15.0
-  '@emotion/react': 11.9.0_b08e3c15324cbe90a6ff8fcd416c932c
-  '@emotion/styled': 11.8.1_8433870e46918f9cfaafbca370d88b2b
-  '@iteria-app/component-templates': 1.3.9_f602b71a7480f08abbe95b1618f4b664
-  '@iteria-app/graphql-lowcode': 0.4.0_graphql@15.8.0+typescript@4.5.4
-  '@mui/icons-material': 5.2.5_f463eef15d59df5aa770d062739aa27b
-  '@mui/lab': 5.0.0-alpha.64_dfa626492a4277c84d3e41bb50184977
-  '@mui/material': 5.2.8_2dd73e8ec934aadfe3f11f81cc3e97bd
-  '@mui/styles': 5.2.3_b08e3c15324cbe90a6ff8fcd416c932c
-  '@mui/x-data-grid': 5.2.2_@mui+material@5.2.8+react@17.0.2
+  '@emotion/react': 11.9.0_wchdyfjsjs7jbjx7r7guc3etfq
+  '@emotion/styled': 11.8.1_qqzyodsgsghzz6vpxsrxbwelfm
+  '@iteria-app/component-templates': 1.4.2_6yblogtuqdyivo7jlmlbr5fwmq
+  '@iteria-app/graphql-lowcode': 0.4.1_rt7ttqjigf4c7o74hk6ylwb7i4
+  '@mui/icons-material': 5.2.5_6rr654k5lhpvvj3q2brhhgvcpm
+  '@mui/lab': 5.0.0-alpha.64_36tcmsjkij34qtj6ig5vagcjo4
+  '@mui/material': 5.2.8_fxlt5dwjgsvn7y7rd6a4ypuxxu
+  '@mui/styles': 5.2.3_wchdyfjsjs7jbjx7r7guc3etfq
+  '@mui/x-data-grid': 5.2.2_srglyvixx2q62joouz45ayqax4
   chart.js: 2.9.4
   clsx: 1.1.1
   dotenv: 16.0.1
@@ -75,24 +75,24 @@ dependencies:
   path-browserify: 1.0.1
   prop-types: 15.8.1
   react: 17.0.2
-  react-chartjs-2: 2.11.2_f236ea5690127753093b714bf94225a6
+  react-chartjs-2: 2.11.2_6i3ouvuqcj3vgcj3off7sqrfuy
   react-dom: 17.0.2_react@17.0.2
   react-feather: 2.0.9_react@17.0.2
   react-helmet: 6.1.0_react@17.0.2
-  react-intl: 5.24.2_react@17.0.2+typescript@4.5.4
-  react-perfect-scrollbar: 1.5.8_react-dom@17.0.2+react@17.0.2
+  react-intl: 5.24.2_ifew474sc7vwozjahvdckfpwgi
+  react-perfect-scrollbar: 1.5.8_sfoxds7t5ydpegc3knd667wn6m
   react-router: 6.2.1_react@17.0.2
-  react-router-dom: 6.0.0-beta.8_7ff1ce7a6cb3b6853db516393b81cb00
-  urql: 2.1.3_graphql@15.8.0+react@17.0.2
+  react-router-dom: 6.0.0-beta.8_p7y446tmwo3ikpnvcy4txaolaa
+  urql: 2.1.3_77h5kg6422vos5a7c32osaaxh4
   uuid: 8.3.2
   yup: 0.29.3
 
 devDependencies:
-  '@graphql-codegen/cli': 2.3.1_graphql@15.8.0+typescript@4.5.4
+  '@graphql-codegen/cli': 2.3.1_rt7ttqjigf4c7o74hk6ylwb7i4
   '@graphql-codegen/introspection': 2.1.1_graphql@15.8.0
   '@graphql-codegen/typescript': 2.4.2_graphql@15.8.0
   '@graphql-codegen/typescript-operations': 2.2.2_graphql@15.8.0
-  '@graphql-codegen/typescript-urql': 3.4.2_da67d404f3066ae1f4f52fef03e657e4
+  '@graphql-codegen/typescript-urql': 3.4.2_3jt5ibhtazvod5hvf7xqhzsx4q
   '@iteria-app/vite-plugin-lowcode': 0.2.1_vite@2.8.6
   '@types/react': 17.0.38
   '@types/react-dom': 17.0.11
@@ -817,7 +817,7 @@ packages:
     resolution: {integrity: sha512-igX9a37DR2ZPGYtV6suZ6whr8pTFtyHL3K/oLUotxpSVO2ASaprmAe2Dkq7tBo7CRY7MMDrAa9nuQP9/YG8FxQ==}
     dev: false
 
-  /@emotion/react/11.9.0_b08e3c15324cbe90a6ff8fcd416c932c:
+  /@emotion/react/11.9.0_wchdyfjsjs7jbjx7r7guc3etfq:
     resolution: {integrity: sha512-lBVSF5d0ceKtfKCDQJveNAtkC7ayxpVlgOohLgXqRwqWr9bOf4TZAFFyIcNngnV6xK6X4x2ZeXq7vliHkoVkxQ==}
     peerDependencies:
       '@babel/core': ^7.0.0
@@ -854,7 +854,7 @@ packages:
     resolution: {integrity: sha512-u0AX4aSo25sMAygCuQTzS+HsImZFuS8llY8O7b9MDRzbJM0kVJlAz6KNDqcG7pOuQZJmj/8X/rAW+66kMnMW+g==}
     dev: false
 
-  /@emotion/styled/11.8.1_8433870e46918f9cfaafbca370d88b2b:
+  /@emotion/styled/11.8.1_qqzyodsgsghzz6vpxsrxbwelfm:
     resolution: {integrity: sha512-OghEVAYBZMpEquHZwuelXcRjRJQOVayvbmNR0zr174NHdmMgrNkLC6TljKC5h9lZLkN5WGrdUcrKlOJ4phhoTQ==}
     peerDependencies:
       '@babel/core': ^7.0.0
@@ -870,7 +870,7 @@ packages:
       '@babel/runtime': 7.16.7
       '@emotion/babel-plugin': 11.9.2
       '@emotion/is-prop-valid': 1.1.2
-      '@emotion/react': 11.9.0_b08e3c15324cbe90a6ff8fcd416c932c
+      '@emotion/react': 11.9.0_wchdyfjsjs7jbjx7r7guc3etfq
       '@emotion/serialize': 1.0.3
       '@emotion/utils': 1.1.0
       '@types/react': 17.0.38
@@ -889,7 +889,7 @@ packages:
     resolution: {integrity: sha512-6U71C2Wp7r5XtFtQzYrW5iKFT67OixrSxjI4MptCHzdSVlgabczzqLe0ZSgnub/5Kp4hSbpDB1tMytZY9pwxxA==}
     dev: false
 
-  /@endemolshinegroup/cosmiconfig-typescript-loader/3.0.2_71a2f61964e37a4d68dab6dadd2a99a0:
+  /@endemolshinegroup/cosmiconfig-typescript-loader/3.0.2_ogrpmgle4n5e22g2w3nn2kuzua:
     resolution: {integrity: sha512-QRVtqJuS1mcT56oHpVegkKBlgtWjXw/gHNWO3eL9oyB5Sc7HBoc2OLG/nYpVfT/Jejvo3NUrD0Udk7XgoyDKkA==}
     engines: {node: '>=10.0.0'}
     peerDependencies:
@@ -972,7 +972,7 @@ packages:
       typescript: 4.5.4
     dev: false
 
-  /@graphql-codegen/cli/2.3.1_graphql@15.8.0+typescript@4.5.4:
+  /@graphql-codegen/cli/2.3.1_rt7ttqjigf4c7o74hk6ylwb7i4:
     resolution: {integrity: sha512-xMSvYqFtnRXOp/sVJSyqiFTm70X8ouLXiq5o/R/D3yQtA6NNudAC+Q4oxg9/LZKnRDL6pehwdC8CNnQk0Tf7Sw==}
     hasBin: true
     peerDependencies:
@@ -991,6 +991,9 @@ packages:
       '@graphql-tools/url-loader': 7.7.0_graphql@15.8.0
       '@graphql-tools/utils': 8.6.1_graphql@15.8.0
       ansi-escapes: 4.3.2
+      chalk: 4.1.2
+      change-case-all: 1.0.14
+      chokidar: 3.5.2
       common-tags: 1.8.2
       cosmiconfig: 7.0.1
       debounce: 1.2.1
@@ -999,10 +1002,7 @@ packages:
       glob: 7.2.0
       globby: 11.1.0
       graphql: 15.8.0
-      graphql-config: 4.1.0_graphql@15.8.0+typescript@4.5.4
-      chalk: 4.1.2
-      change-case-all: 1.0.14
-      chokidar: 3.5.2
+      graphql-config: 4.1.0_rt7ttqjigf4c7o74hk6ylwb7i4
       inquirer: 8.2.0
       is-glob: 4.0.3
       json-to-pretty-yaml: 1.2.2
@@ -1026,6 +1026,7 @@ packages:
       - typescript
       - utf-8-validate
       - zen-observable
+      - zenObservable
     dev: true
 
   /@graphql-codegen/core/2.4.0_graphql@15.8.0:
@@ -1056,9 +1057,9 @@ packages:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
     dependencies:
       '@graphql-tools/utils': 8.6.1_graphql@15.8.0
+      change-case-all: 1.0.14
       common-tags: 1.8.2
       graphql: 15.8.0
-      change-case-all: 1.0.14
       import-from: 4.0.0
       lodash: 4.17.21
       tslib: 2.3.1
@@ -1090,7 +1091,7 @@ packages:
       - supports-color
     dev: true
 
-  /@graphql-codegen/typescript-urql/3.4.2_da67d404f3066ae1f4f52fef03e657e4:
+  /@graphql-codegen/typescript-urql/3.4.2_3jt5ibhtazvod5hvf7xqhzsx4q:
     resolution: {integrity: sha512-MYpxOs7S/AMTMBATSqKGuijB5MK7hTNXJGyd8uXhjlJvYG1lgi+M1fWJuTOzsijn56uISh0OUgrZJcv7rVkT6w==}
     peerDependencies:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
@@ -1099,9 +1100,9 @@ packages:
       '@graphql-codegen/plugin-helpers': 2.3.2_graphql@15.8.0
       '@graphql-codegen/visitor-plugin-common': 2.5.2_graphql@15.8.0
       auto-bind: 4.0.0
+      change-case-all: 1.0.14
       graphql: 15.8.0
       graphql-tag: 2.12.6_graphql@15.8.0
-      change-case-all: 1.0.14
       tslib: 2.3.1
     transitivePeerDependencies:
       - supports-color
@@ -1132,10 +1133,10 @@ packages:
       '@graphql-tools/relay-operation-optimizer': 6.4.1_graphql@15.8.0
       '@graphql-tools/utils': 8.6.1_graphql@15.8.0
       auto-bind: 4.0.0
+      change-case-all: 1.0.14
       dependency-graph: 0.11.0
       graphql: 15.8.0
       graphql-tag: 2.12.6_graphql@15.8.0
-      change-case-all: 1.0.14
       parse-filepath: 1.0.2
       tslib: 2.3.1
     transitivePeerDependencies:
@@ -1318,13 +1319,13 @@ packages:
       '@types/js-yaml': 4.0.5
       '@types/json-stable-stringify': 1.0.33
       '@types/jsonwebtoken': 8.5.6
+      chalk: 4.1.2
       debug: 4.3.3
       dotenv: 10.0.0
       graphql: 15.8.0
       graphql-request: 3.7.0_graphql@15.8.0
       http-proxy-agent: 5.0.0
       https-proxy-agent: 5.0.0
-      chalk: 4.1.2
       isomorphic-fetch: 3.0.0
       js-yaml: 4.1.0
       json-stable-stringify: 1.0.1
@@ -1435,8 +1436,8 @@ packages:
     resolution: {integrity: sha512-DzxIW8SRCLCZ/daD3mmWHw/R5HFtoxvrvGLNdodEF911Vce/v4ESmxzyHDD+hixfSR9vCfryeMk54Z4Fozs6tg==}
     dev: false
 
-  /@iteria-app/component-templates/1.3.9_f602b71a7480f08abbe95b1618f4b664:
-    resolution: {integrity: sha512-bqoOMBG12r0BeNFd9cKdr4++gNgttKbZwJdtbBB8BjxkaPx1wyAfVHP4enlHI0OMiKxRWbaqPMnhnP1F6Mo1MQ==}
+  /@iteria-app/component-templates/1.4.2_6yblogtuqdyivo7jlmlbr5fwmq:
+    resolution: {integrity: sha512-3HL9nwZxI/Rv64LiMVVSByYF9dQt8TswciPJ+adZLaMbOKNJcfFgXW5iZrUvq9ZFMuAOSlAAPPpEhdZinKTg2w==}
     peerDependencies:
       '@mui/icons-material': ^5.2.5
       '@mui/material': ^5.2.7
@@ -1448,31 +1449,44 @@ packages:
       uuid: ^8.3.2
     dependencies:
       '@iteria-app/component-templates-api': 1.0.1
-      '@iteria-app/graphql-lowcode': 0.4.0_aadff8fb367eb66f1b3f7cc03298881b
-      '@iteria-app/s3-graphql-client': 0.0.4_graphql@15.8.0+react@17.0.2
-      '@mui/icons-material': 5.2.5_f463eef15d59df5aa770d062739aa27b
-      '@mui/material': 5.2.8_2dd73e8ec934aadfe3f11f81cc3e97bd
+      '@iteria-app/graphql-lowcode': 0.4.1_vlp7r6zwp23g6gz7ptadfgeidm
+      '@iteria-app/s3-graphql-client': 0.0.4_77h5kg6422vos5a7c32osaaxh4
+      '@mui/icons-material': 5.2.5_6rr654k5lhpvvj3q2brhhgvcpm
+      '@mui/material': 5.2.8_fxlt5dwjgsvn7y7rd6a4ypuxxu
       '@types/react': 18.0.15
       '@uppy/aws-s3-multipart': 2.3.0_@uppy+core@2.2.0
       '@uppy/core': 2.2.0
       '@uppy/drag-drop': 2.1.0_@uppy+core@2.2.0
-      '@uppy/react': 2.2.0_@uppy+core@2.2.0+react@17.0.2
+      '@uppy/react': 2.2.0_ei2cv6j54b5zwiq2a3bs355dfu
       '@uppy/status-bar': 2.2.0_@uppy+core@2.2.0
       date-fns: 2.28.0
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
       react-router: 6.2.1_react@17.0.2
-      react-router-dom: 6.0.0-beta.8_7ff1ce7a6cb3b6853db516393b81cb00
+      react-router-dom: 6.0.0-beta.8_p7y446tmwo3ikpnvcy4txaolaa
       toastify-js: 1.11.2
-      urql: 2.1.3_graphql@15.8.0+react@17.0.2
+      urql: 2.1.3_77h5kg6422vos5a7c32osaaxh4
       uuid: 8.3.2
     transitivePeerDependencies:
       - graphql
       - typescript
     dev: false
 
-  /@iteria-app/graphql-lowcode/0.4.0_aadff8fb367eb66f1b3f7cc03298881b:
-    resolution: {integrity: sha512-8/m5uRvXkRYWYjgwK/XGhFVuEmWJbm0XpCsSySQZwBulqhT5uyjSEj5VwIjci8DyNenrHxoNdPq1achhh/03Nw==}
+  /@iteria-app/graphql-lowcode/0.4.1_rt7ttqjigf4c7o74hk6ylwb7i4:
+    resolution: {integrity: sha512-bO6Ajumex6UrToiIYtWE6YrsU3p41kIXSh9E3ZtlbvB2nW4swsDm+W1gV1pZdT9NYIL+A5o3utTJhCXOAfJR8A==}
+    peerDependencies:
+      '@iteria-app/component-templates-api': latest
+      graphql: 15.7.2
+      typescript: 4.5.4
+    dependencies:
+      graphql: 15.8.0
+      pluralize: 8.0.0
+      typescript: 4.5.4
+      uuid: 8.3.2
+    dev: false
+
+  /@iteria-app/graphql-lowcode/0.4.1_vlp7r6zwp23g6gz7ptadfgeidm:
+    resolution: {integrity: sha512-bO6Ajumex6UrToiIYtWE6YrsU3p41kIXSh9E3ZtlbvB2nW4swsDm+W1gV1pZdT9NYIL+A5o3utTJhCXOAfJR8A==}
     peerDependencies:
       '@iteria-app/component-templates-api': latest
       graphql: 15.7.2
@@ -1480,29 +1494,18 @@ packages:
     dependencies:
       '@iteria-app/component-templates-api': 1.0.1
       graphql: 15.8.0
+      pluralize: 8.0.0
       typescript: 4.5.4
       uuid: 8.3.2
     dev: false
 
-  /@iteria-app/graphql-lowcode/0.4.0_graphql@15.8.0+typescript@4.5.4:
-    resolution: {integrity: sha512-8/m5uRvXkRYWYjgwK/XGhFVuEmWJbm0XpCsSySQZwBulqhT5uyjSEj5VwIjci8DyNenrHxoNdPq1achhh/03Nw==}
-    peerDependencies:
-      '@iteria-app/component-templates-api': latest
-      graphql: 15.7.2
-      typescript: 4.5.4
-    dependencies:
-      graphql: 15.8.0
-      typescript: 4.5.4
-      uuid: 8.3.2
-    dev: false
-
-  /@iteria-app/s3-graphql-client/0.0.4_graphql@15.8.0+react@17.0.2:
+  /@iteria-app/s3-graphql-client/0.0.4_77h5kg6422vos5a7c32osaaxh4:
     resolution: {integrity: sha512-qckZ3TaeiSeD1rm8QaEOtu5bXSnKoQ4S/zdh/6OExIQiIPqQSjugsbMkHsrA27EvqAjgRoVxBpNuvInC+7OByg==}
     dependencies:
       '@uppy/aws-s3-multipart': 2.3.0_@uppy+core@2.2.0
       '@uppy/core': 2.2.0
       graphql-tag: 2.12.6_graphql@15.8.0
-      urql: 2.1.3_graphql@15.8.0+react@17.0.2
+      urql: 2.1.3_77h5kg6422vos5a7c32osaaxh4
     transitivePeerDependencies:
       - graphql
       - react
@@ -1554,7 +1557,7 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.13
     dev: true
 
-  /@mui/base/5.0.0-alpha.64_b3482aaf5744fc7c2aeb7941b0e0a78f:
+  /@mui/base/5.0.0-alpha.64_wnecvl2xit6hykxlpfa3byfhr4:
     resolution: {integrity: sha512-lqUFbAyYPl3uDaTxGWIUWx9Zin5APv5Rrn/oUcnm/71Isd5dJ94zoGHCTdNy2sxhDRcXRshsdC2dfdwIWxhkZA==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
@@ -1577,7 +1580,7 @@ packages:
       react-is: 17.0.2
     dev: false
 
-  /@mui/icons-material/5.2.5_f463eef15d59df5aa770d062739aa27b:
+  /@mui/icons-material/5.2.5_6rr654k5lhpvvj3q2brhhgvcpm:
     resolution: {integrity: sha512-uQiUz+l0xy+2jExyKyU19MkMAR2F7bQFcsQ5hdqAtsB14Jw2zlmIAD55mV6f0NxKCut7Rx6cA3ZpfzlzAfoK8Q==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
@@ -1589,12 +1592,12 @@ packages:
         optional: true
     dependencies:
       '@babel/runtime': 7.16.7
-      '@mui/material': 5.2.8_2dd73e8ec934aadfe3f11f81cc3e97bd
+      '@mui/material': 5.2.8_fxlt5dwjgsvn7y7rd6a4ypuxxu
       '@types/react': 17.0.38
       react: 17.0.2
     dev: false
 
-  /@mui/lab/5.0.0-alpha.64_dfa626492a4277c84d3e41bb50184977:
+  /@mui/lab/5.0.0-alpha.64_36tcmsjkij34qtj6ig5vagcjo4:
     resolution: {integrity: sha512-YqTWT4TBHSGyV3dS4/TQctpKh0s4CDgWNrA2UnEnXFAfXmFET2Zm6W06fJ1VZDmJfyCVD8Wq0WsiwVZj4ay+Uw==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
@@ -1623,9 +1626,9 @@ packages:
       '@date-io/dayjs': 2.11.0
       '@date-io/luxon': 2.11.1
       '@date-io/moment': 2.11.0_moment@2.29.1
-      '@mui/base': 5.0.0-alpha.64_b3482aaf5744fc7c2aeb7941b0e0a78f
-      '@mui/material': 5.2.8_2dd73e8ec934aadfe3f11f81cc3e97bd
-      '@mui/system': 5.2.8_f3aab52c3ef2a8b04deddc27074e9937
+      '@mui/base': 5.0.0-alpha.64_wnecvl2xit6hykxlpfa3byfhr4
+      '@mui/material': 5.2.8_fxlt5dwjgsvn7y7rd6a4ypuxxu
+      '@mui/system': 5.2.8_6ovlklb66kulatpn3qtqotuzg4
       '@mui/utils': 5.2.3_react@17.0.2
       '@types/react': 17.0.38
       clsx: 1.1.1
@@ -1634,14 +1637,14 @@ packages:
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
       react-is: 17.0.2
-      react-transition-group: 4.4.2_react-dom@17.0.2+react@17.0.2
+      react-transition-group: 4.4.2_sfoxds7t5ydpegc3knd667wn6m
       rifm: 0.12.1_react@17.0.2
     transitivePeerDependencies:
       - '@emotion/react'
       - '@emotion/styled'
     dev: false
 
-  /@mui/material/5.2.8_2dd73e8ec934aadfe3f11f81cc3e97bd:
+  /@mui/material/5.2.8_fxlt5dwjgsvn7y7rd6a4ypuxxu:
     resolution: {integrity: sha512-GYNYoTDw3C07D1rkB9pTS3xMH3gL0p3kb27SVMrMqP3AWrFxfrS73OnsonJh6Uy/F22pYX6rJxiFOhPq5+i4Eg==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
@@ -1659,10 +1662,10 @@ packages:
         optional: true
     dependencies:
       '@babel/runtime': 7.16.7
-      '@emotion/react': 11.9.0_b08e3c15324cbe90a6ff8fcd416c932c
-      '@emotion/styled': 11.8.1_8433870e46918f9cfaafbca370d88b2b
-      '@mui/base': 5.0.0-alpha.64_b3482aaf5744fc7c2aeb7941b0e0a78f
-      '@mui/system': 5.2.8_f3aab52c3ef2a8b04deddc27074e9937
+      '@emotion/react': 11.9.0_wchdyfjsjs7jbjx7r7guc3etfq
+      '@emotion/styled': 11.8.1_qqzyodsgsghzz6vpxsrxbwelfm
+      '@mui/base': 5.0.0-alpha.64_wnecvl2xit6hykxlpfa3byfhr4
+      '@mui/system': 5.2.8_6ovlklb66kulatpn3qtqotuzg4
       '@mui/types': 7.1.0_@types+react@17.0.38
       '@mui/utils': 5.2.3_react@17.0.2
       '@types/react': 17.0.38
@@ -1674,10 +1677,10 @@ packages:
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
       react-is: 17.0.2
-      react-transition-group: 4.4.2_react-dom@17.0.2+react@17.0.2
+      react-transition-group: 4.4.2_sfoxds7t5ydpegc3knd667wn6m
     dev: false
 
-  /@mui/private-theming/5.2.3_b08e3c15324cbe90a6ff8fcd416c932c:
+  /@mui/private-theming/5.2.3_wchdyfjsjs7jbjx7r7guc3etfq:
     resolution: {integrity: sha512-Lc1Cmu8lSsYZiXADi9PBb17Ho82ZbseHQujUFAcp6bCJ5x/d+87JYCIpCBMagPu/isRlFCwbziuXPmz7WOzJPQ==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
@@ -1694,7 +1697,7 @@ packages:
       react: 17.0.2
     dev: false
 
-  /@mui/styled-engine/5.2.6_09a0c9559c3e7c8c898f158921333fde:
+  /@mui/styled-engine/5.2.6_bgqmsvm4hz6izcmpcwescmz73y:
     resolution: {integrity: sha512-bqAhli8eGS6v2qxivy2/4K0Ag8o//jsu1G2G6QcieFiT6y7oIF/nd/6Tvw6OSm3roOTifVQWNKwkt1yFWhGS+w==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
@@ -1709,13 +1712,13 @@ packages:
     dependencies:
       '@babel/runtime': 7.16.7
       '@emotion/cache': 11.7.1
-      '@emotion/react': 11.9.0_b08e3c15324cbe90a6ff8fcd416c932c
-      '@emotion/styled': 11.8.1_8433870e46918f9cfaafbca370d88b2b
+      '@emotion/react': 11.9.0_wchdyfjsjs7jbjx7r7guc3etfq
+      '@emotion/styled': 11.8.1_qqzyodsgsghzz6vpxsrxbwelfm
       prop-types: 15.8.1
       react: 17.0.2
     dev: false
 
-  /@mui/styles/5.2.3_b08e3c15324cbe90a6ff8fcd416c932c:
+  /@mui/styles/5.2.3_wchdyfjsjs7jbjx7r7guc3etfq:
     resolution: {integrity: sha512-Art4qjlEI9H2h34mLL8s+CE9nWZWZbuJLbNpievaIM6DGuayz3DYkJHcH5mXJYFPhTNoe9IQYbpyKofjE0YVag==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
@@ -1727,7 +1730,7 @@ packages:
     dependencies:
       '@babel/runtime': 7.16.7
       '@emotion/hash': 0.8.0
-      '@mui/private-theming': 5.2.3_b08e3c15324cbe90a6ff8fcd416c932c
+      '@mui/private-theming': 5.2.3_wchdyfjsjs7jbjx7r7guc3etfq
       '@mui/types': 7.1.0_@types+react@17.0.38
       '@mui/utils': 5.2.3_react@17.0.2
       '@types/react': 17.0.38
@@ -1746,7 +1749,7 @@ packages:
       react: 17.0.2
     dev: false
 
-  /@mui/system/5.2.8_f3aab52c3ef2a8b04deddc27074e9937:
+  /@mui/system/5.2.8_6ovlklb66kulatpn3qtqotuzg4:
     resolution: {integrity: sha512-tje1HRubQUk+cDJBG5F83X1j0XzVe+qhellKxByrJVOEEDHoSpbc8UW+NCLSuBBHvOikxihuv3SS4VOWOo2/BQ==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
@@ -1763,10 +1766,10 @@ packages:
         optional: true
     dependencies:
       '@babel/runtime': 7.16.7
-      '@emotion/react': 11.9.0_b08e3c15324cbe90a6ff8fcd416c932c
-      '@emotion/styled': 11.8.1_8433870e46918f9cfaafbca370d88b2b
-      '@mui/private-theming': 5.2.3_b08e3c15324cbe90a6ff8fcd416c932c
-      '@mui/styled-engine': 5.2.6_09a0c9559c3e7c8c898f158921333fde
+      '@emotion/react': 11.9.0_wchdyfjsjs7jbjx7r7guc3etfq
+      '@emotion/styled': 11.8.1_qqzyodsgsghzz6vpxsrxbwelfm
+      '@mui/private-theming': 5.2.3_wchdyfjsjs7jbjx7r7guc3etfq
+      '@mui/styled-engine': 5.2.6_bgqmsvm4hz6izcmpcwescmz73y
       '@mui/types': 7.1.0_@types+react@17.0.38
       '@mui/utils': 5.2.3_react@17.0.2
       '@types/react': 17.0.38
@@ -1801,7 +1804,7 @@ packages:
       react-is: 17.0.2
     dev: false
 
-  /@mui/x-data-grid/5.2.2_@mui+material@5.2.8+react@17.0.2:
+  /@mui/x-data-grid/5.2.2_srglyvixx2q62joouz45ayqax4:
     resolution: {integrity: sha512-FI/fwsMMATUdEHwiGGkBdiw/p3G6+iUlkoklBzzsB6MY0Mb+Voj+s/waoFM3uyNJ+h4jof8NTS/Gs8IfDiyciA==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
@@ -1809,7 +1812,7 @@ packages:
       '@mui/system': ^5.2.6
       react: ^17.0.2
     dependencies:
-      '@mui/material': 5.2.8_2dd73e8ec934aadfe3f11f81cc3e97bd
+      '@mui/material': 5.2.8_fxlt5dwjgsvn7y7rd6a4ypuxxu
       '@mui/utils': 5.2.3_react@17.0.2
       clsx: 1.1.1
       prop-types: 15.8.1
@@ -1870,8 +1873,10 @@ packages:
       zen-observable:
         optional: true
     dependencies:
-      any-observable: 0.3.0
+      any-observable: 0.3.0_rxjs@6.6.7
       rxjs: 6.6.7
+    transitivePeerDependencies:
+      - zenObservable
     dev: true
 
   /@sindresorhus/is/0.14.0:
@@ -2087,7 +2092,7 @@ packages:
       preact: 10.7.2
     dev: false
 
-  /@uppy/react/2.2.0_@uppy+core@2.2.0+react@17.0.2:
+  /@uppy/react/2.2.0_ei2cv6j54b5zwiq2a3bs355dfu:
     resolution: {integrity: sha512-r9t7wAmseRx8nqxKqSpskhQI7WGaGqKcvH1rjOpArIrEGfjwMzBPT9Ro26tqaQ7lDdpueLKq/QqH4H6E/bdWzQ==}
     peerDependencies:
       '@uppy/core': ^2.2.0
@@ -2224,9 +2229,19 @@ packages:
       color-convert: 2.0.1
     dev: true
 
-  /any-observable/0.3.0:
+  /any-observable/0.3.0_rxjs@6.6.7:
     resolution: {integrity: sha512-/FQM1EDkTsf63Ub2C6O7GuYFDsSXUwsaZDurV0np41ocwq0jthUAYCmhBX9f+KwlaCgIuWyr/4WlUQUBfKfZog==}
     engines: {node: '>=6'}
+    peerDependencies:
+      rxjs: '*'
+      zenObservable: '*'
+    peerDependenciesMeta:
+      rxjs:
+        optional: true
+      zenObservable:
+        optional: true
+    dependencies:
+      rxjs: 6.6.7
     dev: true
 
   /anymatch/3.1.2:
@@ -2517,8 +2532,8 @@ packages:
   /chartjs-color/2.4.1:
     resolution: {integrity: sha512-haqOg1+Yebys/Ts/9bLo/BqUcONQOdr/hoEr2LLTRl6C5LXctUdHxsCYfvQVg5JIxITrfCNUDr4ntqmQk9+/0w==}
     dependencies:
-      color-convert: 1.9.3
       chartjs-color-string: 0.6.0
+      color-convert: 1.9.3
     dev: false
 
   /chokidar/3.5.2:
@@ -2648,8 +2663,8 @@ packages:
     engines: {node: '>=10.0.0'}
     hasBin: true
     dependencies:
-      date-fns: 2.28.0
       chalk: 4.1.2
+      date-fns: 2.28.0
       lodash: 4.17.21
       rxjs: 6.6.7
       spawn-command: 0.0.2-1
@@ -3402,13 +3417,13 @@ packages:
       url-parse-lax: 3.0.0
     dev: true
 
-  /graphql-config/4.1.0_graphql@15.8.0+typescript@4.5.4:
+  /graphql-config/4.1.0_rt7ttqjigf4c7o74hk6ylwb7i4:
     resolution: {integrity: sha512-Myqay6pmdcmX3KqoH+bMbeKZ1cTODpHS2CxF1ZzNnfTE+YUpGTcp01bOw6LpzamRb0T/WTYtGFbZeXGo9Hab2Q==}
     engines: {node: '>= 10.0.0'}
     peerDependencies:
       graphql: ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
     dependencies:
-      '@endemolshinegroup/cosmiconfig-typescript-loader': 3.0.2_71a2f61964e37a4d68dab6dadd2a99a0
+      '@endemolshinegroup/cosmiconfig-typescript-loader': 3.0.2_ogrpmgle4n5e22g2w3nn2kuzua
       '@graphql-tools/graphql-file-loader': 7.3.3_graphql@15.8.0
       '@graphql-tools/json-file-loader': 7.3.3_graphql@15.8.0
       '@graphql-tools/load': 7.5.1_graphql@15.8.0
@@ -3468,7 +3483,6 @@ packages:
   /graphql/15.8.0:
     resolution: {integrity: sha512-5gghUc24tP9HRznNpV2+FIoq3xKkj5dTQqf4v0CpdPbFVwFkWoxOM+o+2OC9ZSvjEMTjfmG9QT+gcvggTwW1zw==}
     engines: {node: '>= 10.x'}
-    dev: false
 
   /has-ansi/2.0.0:
     resolution: {integrity: sha1-NPUEnOHs3ysGSa8+8k5F7TVBbZE=}
@@ -3603,11 +3617,11 @@ packages:
     engines: {node: '>=8.0.0'}
     dependencies:
       ansi-escapes: 4.3.2
+      chalk: 4.1.2
       cli-cursor: 3.1.0
       cli-width: 3.0.0
       external-editor: 3.1.0
       figures: 3.2.0
-      chalk: 4.1.2
       lodash: 4.17.21
       mute-stream: 0.0.8
       ora: 5.4.1
@@ -3945,10 +3959,10 @@ packages:
     peerDependencies:
       listr: ^0.14.2
     dependencies:
+      chalk: 1.1.3
       cli-truncate: 0.2.1
       elegant-spinner: 1.0.1
       figures: 1.7.0
-      chalk: 1.1.3
       indent-string: 3.2.0
       listr: 0.14.3
       log-symbols: 1.0.2
@@ -3960,10 +3974,10 @@ packages:
     resolution: {integrity: sha512-04PDPqSlsqIOaaaGZ+41vq5FejI9auqTInicFRndCBgE3bXG8D6W1I+mWhk+1nqbHmyhla/6BUrd5OSiHwKRXw==}
     engines: {node: '>=4'}
     dependencies:
+      chalk: 2.4.2
       cli-cursor: 2.1.0
       date-fns: 1.30.1
       figures: 2.0.0
-      chalk: 2.4.2
     dev: true
 
   /listr/0.14.3:
@@ -3981,6 +3995,7 @@ packages:
       rxjs: 6.6.7
     transitivePeerDependencies:
       - zen-observable
+      - zenObservable
     dev: true
 
   /locate-path/5.0.0:
@@ -4305,9 +4320,9 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       bl: 4.1.0
+      chalk: 4.1.2
       cli-cursor: 3.1.0
       cli-spinners: 2.6.1
-      chalk: 4.1.2
       is-interactive: 1.0.0
       is-unicode-supported: 0.1.0
       log-symbols: 4.1.0
@@ -4466,6 +4481,11 @@ packages:
     engines: {node: '>=8.6'}
     dev: true
 
+  /pluralize/8.0.0:
+    resolution: {integrity: sha512-Nc3IT5yHzflTfbjgqWcCPpo7DaKy4FnpB0l/zCAW0Tc7jxAiuqSxHasntB3D7887LSrA93kDJ9IXovxJYxyLCA==}
+    engines: {node: '>=4'}
+    dev: false
+
   /postcss/8.4.14:
     resolution: {integrity: sha512-E398TUmfAYFPBSdzgeieK2Y1+1cpdxJx8yXbK/m57nRhKSmk1GB2tO4lbLBtlkfPQTDKfe4Xqv1ASWPpayPEig==}
     engines: {node: ^10 || ^12 || >=14}
@@ -4523,7 +4543,7 @@ packages:
       strip-json-comments: 2.0.1
     dev: true
 
-  /react-chartjs-2/2.11.2_f236ea5690127753093b714bf94225a6:
+  /react-chartjs-2/2.11.2_6i3ouvuqcj3vgcj3off7sqrfuy:
     resolution: {integrity: sha512-hcPS9vmRJeAALPPf0uo02BiD8BDm0HNmneJYTZVR74UKprXOpql+Jy1rVuj93rKw0Jfx77mkcRfXPxTe5K83uw==}
     peerDependencies:
       chart.js: ^2.3
@@ -4577,7 +4597,7 @@ packages:
       react-side-effect: 2.1.1_react@17.0.2
     dev: false
 
-  /react-intl/5.24.2_react@17.0.2+typescript@4.5.4:
+  /react-intl/5.24.2_ifew474sc7vwozjahvdckfpwgi:
     resolution: {integrity: sha512-nYdqH+CWNV187/GPrjC1/SJdadz9zi7d5Gsz6c899K+sWGLFH4v9+cnEWUp5PuEcGr6DxtNA+EepWRpYp8FeUg==}
     peerDependencies:
       react: ^16.3.0 || 17
@@ -4608,7 +4628,7 @@ packages:
     resolution: {integrity: sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==}
     dev: false
 
-  /react-perfect-scrollbar/1.5.8_react-dom@17.0.2+react@17.0.2:
+  /react-perfect-scrollbar/1.5.8_sfoxds7t5ydpegc3knd667wn6m:
     resolution: {integrity: sha512-bQ46m70gp/HJtiBOF3gRzBISSZn8FFGNxznTdmTG8AAwpxG1bJCyn7shrgjEvGSQ5FJEafVEiosY+ccER11OSA==}
     peerDependencies:
       react: '>=16.3.3'
@@ -4625,7 +4645,7 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /react-router-dom/6.0.0-beta.8_7ff1ce7a6cb3b6853db516393b81cb00:
+  /react-router-dom/6.0.0-beta.8_p7y446tmwo3ikpnvcy4txaolaa:
     resolution: {integrity: sha512-WyiIc6EakJDCo6rUmb7VjCtOpEvm8+4V8CiJdmFPud0lppeNf37TNhTnDQszDbP2y29wBUGb94BOFU2X93uILA==}
     peerDependencies:
       history: '>=5'
@@ -4665,7 +4685,7 @@ packages:
       react: 17.0.2
     dev: false
 
-  /react-transition-group/4.4.2_react-dom@17.0.2+react@17.0.2:
+  /react-transition-group/4.4.2_sfoxds7t5ydpegc3knd667wn6m:
     resolution: {integrity: sha512-/RNYfRAMlZwDSr6z4zNKV6xu53/e2BuaBbGhbyYIXTrmgu/bGHzmqOs7mJSJBHy9Ud+ApHx3QjrkKSp1pxvlFg==}
     peerDependencies:
       react: '>=16.6.0'
@@ -4733,11 +4753,11 @@ packages:
       '@babel/traverse': 7.18.2
       '@babel/types': 7.18.2
       babel-preset-fbjs: 3.4.0_@babel+core@7.18.2
+      chalk: 4.1.2
       fb-watchman: 2.0.1
       fbjs: 3.0.2
       glob: 7.2.0
       graphql: 15.8.0
-      chalk: 4.1.2
       immutable: 3.7.6
       invariant: 2.2.4
       nullthrows: 1.1.1
@@ -5210,7 +5230,6 @@ packages:
     resolution: {integrity: sha512-VgYs2A2QIRuGphtzFV7aQJduJ2gyfTljngLzjpfW9FoYZF6xuw1W0vW9ghCKLfcWrCFxK81CSGRAvS1pn4fIUg==}
     engines: {node: '>=4.2.0'}
     hasBin: true
-    dev: true
 
   /ua-parser-js/0.7.31:
     resolution: {integrity: sha512-qLK/Xe9E2uzmYI3qLeOmI0tEOt+TBBQyUIAh4aAgU05FVYzeZrKUdkAZfBNVGRaHVgV0TDkdEngJSw/SyQchkQ==}
@@ -5252,7 +5271,7 @@ packages:
       prepend-http: 2.0.0
     dev: true
 
-  /urql/2.1.3_graphql@15.8.0+react@17.0.2:
+  /urql/2.1.3_77h5kg6422vos5a7c32osaaxh4:
     resolution: {integrity: sha512-S6GaKM7NJLed25L2qdZxaWFjWggXQHrneEVEe47+ZTQWxmfyV05STMl6DhtnZqb6n1wdT/KUljHkggz0kiE3NA==}
     peerDependencies:
       graphql: ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0

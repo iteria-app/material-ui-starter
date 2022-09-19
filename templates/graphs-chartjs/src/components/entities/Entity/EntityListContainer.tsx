@@ -38,7 +38,7 @@ const EntityListContainer: React.FC<EntityListContainerProps> = ({ View }) => {
           onError={() => console.debug}
         >
           <View
-            data={data}
+            data={data?.data?.Entity}
             error={data?.error}
             loading={data?.fetching}
             onClickRow={(row) => {

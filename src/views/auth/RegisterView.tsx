@@ -12,24 +12,27 @@ import {
   TextField,
   Typography,
 } from '@mui/material'
-import { makeStyles } from '@mui/styles'
+import { styled } from '@mui/material'
 import Page from '../../components/Page'
 
-const useStyles = makeStyles((theme: any) => ({
-  root: {
+const PREFIX = 'StyledPage'
+const classes = {
+  root: `${PREFIX}-root`,
+}
+const StyledPage = styled(Page)(({ theme }) => ({
+  [`&.${classes.root}`]: {
     backgroundColor: theme.palette.background.dark,
     height: '100%',
     paddingBottom: theme.spacing(3),
-    paddingTop: theme.spacing(3)
-  }
-}));
+    paddingTop: theme.spacing(3),
+  },
+}))
 
 const RegisterView = () => {
-  const classes = useStyles();
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   return (
-    <Page className={classes.root} title="Register">
+    <StyledPage className={classes.root} title="Register">
       <Box
         display="flex"
         flexDirection="column"
@@ -43,7 +46,7 @@ const RegisterView = () => {
               firstName: '',
               lastName: '',
               password: '',
-              policy: false
+              policy: false,
             }}
             validationSchema={Yup.object().shape({
               email: Yup.string()
@@ -53,16 +56,12 @@ const RegisterView = () => {
               firstName: Yup.string()
                 .max(255)
                 .required('First name is required'),
-              lastName: Yup.string()
-                .max(255)
-                .required('Last name is required'),
-              password: Yup.string()
-                .max(255)
-                .required('password is required'),
-              policy: Yup.boolean().oneOf([true], 'This field must be checked')
+              lastName: Yup.string().max(255).required('Last name is required'),
+              password: Yup.string().max(255).required('password is required'),
+              policy: Yup.boolean().oneOf([true], 'This field must be checked'),
             })}
             onSubmit={() => {
-              navigate('/app/dashboard', { replace: true });
+              navigate('/app/dashboard', { replace: true })
             }}
           >
             {({
@@ -72,7 +71,7 @@ const RegisterView = () => {
               handleSubmit,
               isSubmitting,
               touched,
-              values
+              values,
             }) => (
               <form onSubmit={handleSubmit}>
                 <Box mb={3}>
@@ -182,8 +181,8 @@ const RegisterView = () => {
           </Formik>
         </Container>
       </Box>
-    </Page>
-  );
-};
+    </StyledPage>
+  )
+}
 
-export default RegisterView;
+export default RegisterView

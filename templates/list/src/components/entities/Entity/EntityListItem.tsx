@@ -6,17 +6,21 @@ import {
   ListItemAvatar,
   ListItemButton,
   ListItemText,
+  Typography,
   useTheme,
 } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 import React from 'react'
-import FormatEntityField from './FormatEntityField'
-import { getImagePath } from '../../image'
-import { stringAvatar } from '../../avatar'
-import { getName } from '../../name'
+import { FormatEntityField } from '@iteria-app-mui/common/src/components/fields/typography/FormatEntityField'
+import {
+  getImagePath,
+  getName,
+  stringAvatar,
+} from '@iteria-app/component-templates'
+import { EntityFragment } from '../../../generated/graphql'
 
 interface EntityListItem {
-  data: any
+  data: EntityFragment
 }
 
 const EntityListItem: React.FC<EntityListItem> = ({ data }) => {
@@ -24,7 +28,7 @@ const EntityListItem: React.FC<EntityListItem> = ({ data }) => {
   const navigate = useNavigate()
   const columns = [
     <>
-      <FormatEntityField key={'FIELD'} value={data?.FIELD} />
+      <FormatEntityField key={'FIELD'} type={'string'} value={data?.FIELD} />
     </>,
   ]
   return (
@@ -44,16 +48,15 @@ const EntityListItem: React.FC<EntityListItem> = ({ data }) => {
               container
               columnGap={'16px'}
               sx={{
-                fontWeight: 400,
-                '& .dot:last-of-type': {
+                '& .dotSeparator:last-of-type': {
                   display: 'none',
                 },
               }}
             >
-              {columns.slice(1).map((column) => (
+              {columns.slice(1).map((item) => (
                 <>
-                  {column}
-                  <span className="dot"> ● </span>
+                  {item}
+                  <Typography className={'dotSeparator'}> ● </Typography>
                 </>
               ))}
             </Grid>

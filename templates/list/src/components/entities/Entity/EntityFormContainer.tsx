@@ -22,7 +22,7 @@ import { messages } from '../../../locale'
 import * as generatedGraphql from '../../../generated/graphql'
 
 interface IViewProps {
-  data: any
+  data: generatedGraphql.EntityQuery
   onSubmit: (values: FormikValues) => void
   onCopy: (values: FormikValues) => void
 }
@@ -42,7 +42,7 @@ const EntityFormContainer: React.FC<EntityFormContainerProps> = ({ View }) => {
 
   let data
   if (!(id === 'create')) {
-    ;[data] = useEntityByIdQuery({
+    [data] = useEntityByIdQuery({
       variables: { id },
     })
   }
@@ -83,7 +83,7 @@ const EntityFormContainer: React.FC<EntityFormContainerProps> = ({ View }) => {
           messages={messagesObject}
           onError={() => console.debug}
         >
-          <View data={data?.data} onSubmit={handleSubmit} onCopy={handleCopy} />
+          <View data={data?.data} onSubmit={handleSubmit} onCopy={handleCopy}/>
         </IntlProvider>
       </QueryBoundary>
     </ErrorBoundary>

@@ -7,9 +7,9 @@ const Page: React.FC<any> = forwardRef<any>(
   ({ children, title = '', ...rest }, ref) => {
     return (
       <div ref={ref} {...rest}>
-        <Helmet>
+        {/* <Helmet> */}
         <title>{title}</title>
-        </Helmet>
+        {/* </Helmet> */}
         {children}
       </div>
     )

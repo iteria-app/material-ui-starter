@@ -1,34 +1,48 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Box, Container, Typography } from '@mui/material'
-import { makeStyles } from '@mui/styles'
+import { styled } from '@mui/material'
 import Page from '../../components/Page'
+import NavBar from '../../layouts/DashboardLayout/NavBar'
+import TopBar from '../../layouts/DashboardLayout/TopBar'
 
-const useStyles = makeStyles((theme: any) => ({
-  root: {
+const PREFIX = 'StyledNotFound'
+const classes = {
+  root: `${PREFIX}-root`,
+  image: `${PREFIX}-image`,
+  box: `${PREFIX}-box`,
+}
+const StyledNotFound = styled(Page)(({ theme }) => ({
+  [`&.${classes.root}`]: {
     backgroundColor: theme.palette.background.dark,
     height: '100%',
     paddingBottom: theme.spacing(3),
-    paddingTop: theme.spacing(3)
+    paddingTop: theme.spacing(3),
   },
-  image: {
+  [`& .${classes.image}`]: {
     marginTop: 50,
     display: 'inline-block',
     maxWidth: '100%',
-    width: 560
-  }
-}));
+    width: 560,
+  },
+  [`& .${classes.box}`]: {
+    display: 'flex',
+    flexDirection: 'column',
+    height: '100%',
+    justifyContent: 'center',
+  },
+}))
 
 const NotFoundView = () => {
-  const classes = useStyles();
+  const [isMobileNavOpen, setMobileNavOpen] = useState(false)
 
   return (
-    <Page className={classes.root} title="404">
-      <Box
-        display="flex"
-        flexDirection="column"
-        height="100%"
-        justifyContent="center"
-      >
+    <StyledNotFound className={classes.root} title="404">
+      <TopBar className="" onMobileNavOpen={() => setMobileNavOpen(true)} />
+      <NavBar
+        onMobileClose={() => setMobileNavOpen(false)}
+        openMobile={isMobileNavOpen}
+      />
+      <Box className={classes.box}>
         <Container maxWidth="md">
           <Typography align="center" color="textPrimary" variant="h1">
             404: The page you are looking for isn’t here
@@ -46,8 +60,8 @@ const NotFoundView = () => {
           </Box>
         </Container>
       </Box>
-    </Page>
-  );
-};
+    </StyledNotFound>
+  )
+}
 
-export default NotFoundView;
+export default NotFoundView

@@ -19,7 +19,7 @@ import { getUpsertQuery } from '@iteria-app/graphql-lowcode'
 import * as generatedGraphql from '../../../generated/graphql'
 
 interface IViewProps {
-  data: any
+  data: generatedGraphql.EntityQuery
   onSubmit: (values: FormikValues) => void
   onCopy: (values: FormikValues) => void
 }
@@ -32,14 +32,15 @@ const EntityFormContainer: React.FC<EntityFormContainerProps> = ({ View }) => {
   const { id } = useParams()
   const navigate = useNavigate()
 
+
   const [insertedData, insertMutation] = useInsertEntityMutation()
 
-  const [data] =
-    id === 'create'
-      ? [{ fetching: false, error: null, data: {} }]
-      : useEntityByIdQuery({
-          variables: { id },
-        })
+  let data
+  if (!(id === 'create')) {
+    [data] = useEntityByIdQuery({
+      variables: { id },
+    })
+  }
 
   const handleSubmit = (values: FormikValues) => {
     insertMutation(getUpsertQuery(values, generatedGraphql)).then(
@@ -72,7 +73,7 @@ const EntityFormContainer: React.FC<EntityFormContainerProps> = ({ View }) => {
   return (
     <ErrorBoundary>
       <QueryBoundary queryResponse={data}>
-        <View data={data?.data} onSubmit={handleSubmit} onCopy={handleCopy} />
+          <View data={data?.data} onSubmit={handleSubmit} onCopy={handleCopy}/>
       </QueryBoundary>
     </ErrorBoundary>
   )

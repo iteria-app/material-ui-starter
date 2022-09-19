@@ -8,8 +8,6 @@ const EntityManyPage: React.FC = () => {
       View={({ data }) => (
         <EntityListView
           data={data}
-          loading={data?.loading}
-          error={data?.error}
         />
       )}
     />

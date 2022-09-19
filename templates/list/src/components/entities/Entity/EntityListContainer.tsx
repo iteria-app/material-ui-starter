@@ -1,13 +1,14 @@
 import React from 'react'
-import { useEntityQuery } from '../../../generated/graphql'
+import { EntitiesQuery, useEntityQuery } from '../../../generated/graphql'
+import introspection from '../../../generated/introspect.json'
 import {
   ErrorBoundary,
   QueryBoundary,
   useFilter,
-  useLocale,
+  InfiniteScrolling,
+  Toolbar,
+  CreateButton
 } from '@iteria-app/component-templates'
-import { IntlProvider } from 'react-intl'
-import { messages } from '../../../locale'
 import {
   Grid,
   ListItem,
@@ -17,13 +18,9 @@ import {
   Skeleton,
   useTheme,
 } from '@mui/material'
-import { InfiniteScrolling } from '../InfiniteScrolling'
-import { EntityListToolbar } from './EntityListToolbar'
 
 interface ViewProps {
-  data: any
-  error: any
-  loading: boolean
+  data: EntitiesQuery | null
 }
 
 interface EntityListContainerProps {
@@ -31,10 +28,11 @@ interface EntityListContainerProps {
 }
 
 const EntityListContainer: React.FC<EntityListContainerProps> = ({ View }) => {
-  const locale = useLocale()
-  const messagesObject = messages(locale)
   const filterProps = useFilter()
   const theme = useTheme()
+  const entityIntrospection = introspection?.__schema?.types?.find(
+    (type) => type?.name === 'Entity'
+  )?.fields
 
   const [data] = useEntityQuery({
     variables: {
@@ -48,55 +46,51 @@ const EntityListContainer: React.FC<EntityListContainerProps> = ({ View }) => {
   return (
     <ErrorBoundary>
       <QueryBoundary queryResponse={data}>
-        <IntlProvider
-          locale={locale}
-          messages={messagesObject}
-          onError={() => console.debug}
+        <Toolbar filterProps={filterProps} introspection={entityIntrospection}>
+          <CreateButton entityName="Entity" />
+        </Toolbar>
+        <InfiniteScrolling
+          filterProps={filterProps}
+          data={data}
+          loadingSkeleton={
+            <Grid container direction={'row'}>
+              {[...Array(6)].map((_, index) => (
+                <ListItem
+                  key={index}
+                  disablePadding
+                  sx={{
+                    background: theme.palette.background.paper,
+                    borderRadius: '20px',
+                  }}
+                >
+                  <ListItemButton>
+                    <ListItemAvatar>
+                      <Skeleton variant="circular" width={40} height={40} />
+                    </ListItemAvatar>
+                    <ListItemText
+                      primary={
+                        <Skeleton
+                          variant="text"
+                          width={150}
+                          sx={{ fontSize: '1rem' }}
+                        />
+                      }
+                      secondary={
+                        <Skeleton
+                          variant="text"
+                          width={400}
+                          sx={{ fontSize: '1rem' }}
+                        />
+                      }
+                    />
+                  </ListItemButton>
+                </ListItem>
+              ))}
+            </Grid>
+          }
         >
-          <EntityListToolbar filterProps={filterProps} />
-          <InfiniteScrolling
-            filterProps={filterProps}
-            data={data}
-            loadingSkeleton={
-              <Grid container direction={'row'}>
-                {[...Array(6)].map((_, index) => (
-                  <ListItem
-                    key={index}
-                    disablePadding
-                    sx={{
-                      background: theme.palette.background.paper,
-                      borderRadius: '20px',
-                    }}
-                  >
-                    <ListItemButton>
-                      <ListItemAvatar>
-                        <Skeleton variant="circular" width={40} height={40} />
-                      </ListItemAvatar>
-                      <ListItemText
-                        primary={
-                          <Skeleton
-                            variant="text"
-                            width={150}
-                            sx={{ fontSize: '1rem' }}
-                          />
-                        }
-                        secondary={
-                          <Skeleton
-                            variant="text"
-                            width={400}
-                            sx={{ fontSize: '1rem' }}
-                          />
-                        }
-                      />
-                    </ListItemButton>
-                  </ListItem>
-                ))}
-              </Grid>
-            }
-          >
-            <View data={data?.data} error={data?.error} loading={false} />
-          </InfiniteScrolling>
-        </IntlProvider>
+          <View data={data?.data?.Entity} />
+        </InfiniteScrolling>
       </QueryBoundary>
     </ErrorBoundary>
   )

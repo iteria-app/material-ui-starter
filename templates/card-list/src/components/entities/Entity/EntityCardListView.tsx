@@ -1,23 +1,22 @@
 import React from 'react'
 import { Grid } from '@mui/material'
-import EntityCardItem from './EntityCardItem'
+import EntityCardListItem from './EntityCardListItem'
 import { EntitiesQuery } from '../../../generated/graphql'
 
 export interface EntityCardListProps {
   data: EntitiesQuery
-  loading: boolean
 }
 
-const EntityCardListView: React.FC<EntityCardListProps> = ({ data, loading }) => {
+const EntityCardListView: React.FC<EntityCardListProps> = ({ data }) => {
   return (
     <Grid
       container
       width={'100%'}
       sx={{ overflow: 'hidden', marginTop: '20px' }}
     >
-      {data?.Entity?.map(
+      {data?.map(
         (entity) => (
-          <EntityCardItem data={entity} key={entity.id} />
+          <EntityCardListItem data={entity} key={entity.id} />
         )
       )}
     </Grid>

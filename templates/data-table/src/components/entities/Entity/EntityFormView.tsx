@@ -1,5 +1,5 @@
 import React from 'react'
-import { Formik, Field as FormikField, FormikValues } from 'formik'
+import { Formik, FormikValues } from 'formik'
 import { useNavigate } from 'react-router-dom'
 import {
   Box,
@@ -7,23 +7,13 @@ import {
   CardActions,
   CardContent,
   Grid,
-  Input,
-  InputLabel,
-  TableCell,
-  TableRow,
 } from '@mui/material'
 import { ArrowBack, FileCopy, Save } from '@mui/icons-material'
-import {
-  createEmptyObject,
-  Translate,
-  lowerFirstLetter,
-} from '@iteria-app/component-templates'
+import { createEmptyObject, Translate } from '@iteria-app/component-templates'
 import { LoadingButton } from '@mui/lab'
-import FormCard from '../FormCard'
-
+import { FormatEntityField } from '@iteria-app-mui/common/src/components/fields/formik/FormatEntityField'
 import * as generatedGraphql from '../../../generated/graphql'
 import introspection from '../../../generated/introspect.json'
-import FormatEntityField from '@iteria-app/component-templates/src/components/entity/list/FormatEntityField'
 
 const SMALL_CARD = 6
 const BIG_CARD = 12
@@ -31,7 +21,7 @@ let saveLoading = false
 let copyLoading = false
 
 interface Props {
-  data?: any
+  data?: generatedGraphql.EntityQuery
   onSubmit: (values: FormikValues) => void
   onCopy?: (values: any) => void
   saveButtonDisabled?: boolean
@@ -74,46 +64,7 @@ const EntityFormView: React.FC<Props> = ({
                         : SMALL_CARD
                     }
                   >
-                    <FormCard title={'Entity'}>
-                      <TableRow
-                        key={'rowname'}
-                        sx={{
-                          'td, th': {
-                            border: 'none',
-                            whiteSpace: 'break-spaces',
-                          },
-                          '& .MuiTableCell-root:first-of-type': {
-                            borderTopLeftRadius: '8px',
-                            borderBottomLeftRadius: '8px',
-                          },
-
-                          '& .MuiTableCell-root:last-child': {
-                            borderTopRightRadius: '8px',
-                            borderBottomRightRadius: '8px',
-                          },
-                        }}
-                      >
-                        <TableCell
-                          sx={{ width: '50%', padding: '14.5px 14px' }}
-                        >
-                          <InputLabel>HEADER_NAME</InputLabel>
-                        </TableCell>
-                        <TableCell
-                          sx={{
-                            fontWeight: 400,
-                            fontSize: '14px',
-                            width: '50%',
-                            textAlign: 'left',
-                            padding: '8px 16px',
-                          }}
-                        >
-                          <FormatEntityField
-                            relationshipName={undefined}
-                            setFieldValue={formikProps.setFieldValue}
-                          />
-                        </TableCell>
-                      </TableRow>
-                    </FormCard>
+                    <FormatEntityField relationshipName={'FIELD'}/>
                   </Grid>
                 </Grid>
                 <CardActions>

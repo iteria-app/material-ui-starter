@@ -6,7 +6,7 @@ const EntityManyPage: React.FC = () => {
   return (
     <EntityCardListContainer
       View={({ data }) => (
-        <EntityCardListView data={data} loading={data?.loading} />
+        <EntityCardListView data={data} />
       )}
     />
   )

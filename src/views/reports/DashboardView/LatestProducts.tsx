@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import PropTypes from 'prop-types'
 import { v4 as uuid } from 'uuid'
 import moment from 'moment'
 import {
@@ -49,11 +48,11 @@ const data = [
   },
 ]
 
-const LatestProducts: React.FC<any> = ({ className, ...rest }) => {
+export const LatestProducts = () => {
   const [products] = useState(data)
 
   return (
-    <Card sx={{ height: '100%' }} {...rest}>
+    <Card sx={{ height: '100%' }}>
       <CardHeader
         subtitle={`${products.length} in total`}
         title="Latest Products"
@@ -94,9 +93,3 @@ const LatestProducts: React.FC<any> = ({ className, ...rest }) => {
     </Card>
   )
 }
-
-LatestProducts.propTypes = {
-  className: PropTypes.string,
-}
-
-export default LatestProducts

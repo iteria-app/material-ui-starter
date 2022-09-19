@@ -1,14 +1,13 @@
 import React from 'react'
 import { useFormikContext } from 'formik'
-import {
-  Translate,
-  createEmptyObject,
-  createNewElement,
-} from '@iteria-app/component-templates'
+import { Translate, createNewElement } from '@iteria-app/component-templates'
 import { DataGrid } from '@mui/x-data-grid'
 import Button from '@mui/material/Button'
 import * as generatedGraphql from '../../../generated/graphql'
 import introspection from '../../../generated/introspect.json'
+import { FormCard } from '@iteria-app-mui/common/src/components/entities/FormCard'
+import { FormatEntityField } from '@iteria-app-mui/common/src/components/fields/formik/FormatEntityField'
+
 interface IProps {
   relationshipName: string
   entityName: string
@@ -30,6 +29,7 @@ const EntityFormTable: React.FC<IProps> = ({ relationshipName }) => {
       width: 150,
       renderCell: (params) => (
         <FormatEntityField
+          type={'string'}
           index={params.api.getRowIndex(params.row.id)}
           setFieldValue={setFieldValue}
         />
@@ -38,8 +38,9 @@ const EntityFormTable: React.FC<IProps> = ({ relationshipName }) => {
   ]
 
   return (
-    <DataGrid
-      rows={values?.[`${relationshipName}`] ?? []}
+    <FormCard title={relationshipName ?? 'Entity'}>
+      <DataGrid
+      rows={values?.[relationshipName] ?? []}
       columns={columns}
       hideFooterPagination
       autoHeight={true}
@@ -68,6 +69,7 @@ const EntityFormTable: React.FC<IProps> = ({ relationshipName }) => {
         ),
       }}
     />
+    </FormCard>
   )
 }
 

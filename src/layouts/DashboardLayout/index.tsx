@@ -3,6 +3,7 @@ import { Outlet } from 'react-router-dom'
 import { Box, styled, useTheme } from '@mui/material'
 import NavBar from './NavBar'
 import TopBar from './TopBar'
+import { ErrorBoundary } from '@iteria-app/component-templates'
 
 const drawerWidth = 256
 
@@ -10,12 +11,12 @@ const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })<{
   open?: boolean
 }>(({ theme, open }) => ({
   flexGrow: 1,
-  padding: theme.spacing(3),
+  height: '100vh',
+  padding: '64px 24px 0px 24px',
   transition: theme.transitions.create('margin', {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen,
   }),
-  marginTop: '48px',
   marginLeft: `-${drawerWidth}px`,
   ...(open && {
     transition: theme.transitions.create('margin', {
@@ -35,7 +36,9 @@ const DashboardLayout = (): JSX.Element => {
       <TopBar open={open} onOpen={() => setOpen(!open)} />
       <NavBar open={open} drawerWidth={drawerWidth} />
       <Main open={open}>
-        <Outlet />
+        <ErrorBoundary>
+          <Outlet />
+        </ErrorBoundary>
       </Main>
     </Box>
   )
