@@ -1,21 +1,17 @@
 import React from 'react'
-import { useEntityQuery } from '../../../generated/graphql'
 import {
   ErrorBoundary,
   QueryBoundary,
   useFilter,
-  useLocale,
+  InfiniteScrolling,
+  Toolbar,
+  CreateButton
 } from '@iteria-app/component-templates'
 import { Box, Grid, Skeleton } from '@mui/material'
-import { EntityCardListToolbar } from './EntityCardListToolbar'
-import { InfiniteScrolling } from '../InfiniteScrolling'
-import { messages } from '../../../locale'
-import { IntlProvider } from 'react-intl'
-
+import {  EntityFragment, useEntityQuery } from "../../../generated/graphql"
+import introspection from '../../../generated/introspect.json'
 interface ViewProps {
-  data: any
-  error: any
-  loading: boolean
+  data: EntityFragment[]
 }
 
 interface EntityListContainerProps {
@@ -26,8 +22,9 @@ const EntityCardListContainer: React.FC<EntityListContainerProps> = ({
   View,
 }) => {
   const filterProps = useFilter()
-  const locale = useLocale()
-  const messagesObject = messages(locale)
+  const entityIntrospection = introspection?.__schema?.types?.find(
+    (type) => type?.name === 'Entity'
+  )?.fields
   const [data] = useEntityQuery({
     variables: {
       where: filterProps.filter,
@@ -40,37 +37,33 @@ const EntityCardListContainer: React.FC<EntityListContainerProps> = ({
   return (
     <ErrorBoundary>
       <QueryBoundary queryResponse={data}>
-        <IntlProvider
-          locale={locale}
-          messages={messagesObject}
-          onError={() => console.debug}
-        >
-          <EntityCardListToolbar filterProps={filterProps} />
-          <InfiniteScrolling
-            filterProps={filterProps}
-            data={data}
-            loadingSkeleton={
-              <Grid container>
-                {[...Array(6)].map((_, index) => (
-                  <Box key={index} p={'5px'} m={'5px'} maxWidth={'200px'}>
-                    <Skeleton
-                      variant="rectangular"
-                      animation="pulse"
-                      width={200}
-                      height={150}
-                    />
-                    <Box marginTop={'5px'}>
-                      <Skeleton variant="text" animation="pulse" />
-                      <Skeleton variant="text" animation="pulse" width={100} />
-                    </Box>
+        <Toolbar filterProps={filterProps} introspection={entityIntrospection}>
+          <CreateButton entityName="Entity" />
+        </Toolbar>
+        <InfiniteScrolling
+          filterProps={filterProps}
+          data={data}
+          loadingSkeleton={
+            <Grid container>
+              {[...Array(6)].map((_, index) => (
+                <Box key={index} p={'5px'} m={'5px'} maxWidth={'200px'}>
+                  <Skeleton
+                    variant="rectangular"
+                    animation="pulse"
+                    width={200}
+                    height={150}
+                  />
+                  <Box marginTop={'5px'}>
+                    <Skeleton variant="text" animation="pulse" />
+                    <Skeleton variant="text" animation="pulse" width={100} />
                   </Box>
-                ))}
-              </Grid>
-            }
-          >
-            <View data={data?.data} error={data?.error} loading={false} />
-          </InfiniteScrolling>
-        </IntlProvider>
+                </Box>
+              ))}
+            </Grid>
+          }
+        >
+          <View data={data?.data?.Entity} />
+        </InfiniteScrolling>
       </QueryBoundary>
     </ErrorBoundary>
   )

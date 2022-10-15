@@ -1,16 +1,7 @@
-import React from 'react'
-import { useCallback, useEffect, useState } from 'react'
-import { FilterProps, Translate } from '@iteria-app/component-templates'
-import FormatEntityField from './FormatEntityField'
-import {
-  DataGrid,
-  GridCellParams,
-  GridColDef,
-  GridRowParams,
-  GridSortModel,
-  MuiEvent,
-} from '@mui/x-data-grid'
-import { Card, Grid, LinearProgress } from '@mui/material'
+import { useFormikContext } from 'formik'
+import React, { useCallback, useEffect, useState } from 'react'
+import { DataGrid, GridCellParams, GridSortModel } from '@mui/x-data-grid'
+import { Button, Card, Grid, LinearProgress } from '@mui/material'
 import {
   TablePagination,
   SelectPerPage,
@@ -18,10 +9,17 @@ import {
   controlSiblings,
   filterDataGrid,
   sortQueryFromGridData,
-  IFilterState,
+  FilterProps,
+  Translate,
+  Toolbar,
+  CreateButton,
+  useFilter,
+  createNewElement,
+  getSingularName,
 } from '@iteria-app/component-templates'
-import { EntityListToolbar } from './EntityDataTableToolbar'
+import { FormatEntityField } from '@iteria-app-mui/common/src/components/fields/typography/FormatEntityField'
 import introspection from '../../../generated/introspect.json'
+import * as generatedGraphql from '../../../generated/graphql'
 
 export interface IFilterQuery {
   limit: number
@@ -30,12 +28,13 @@ export interface IFilterQuery {
 }
 
 export interface EntityTableProps {
-  data: any
-  filterProps: FilterProps
+  data: generatedGraphql.EntitiesQuery
+  filterProps?: FilterProps
   onClickRow?: (state: number) => void
   onDeleteRow?: (value: any) => void
   loading: boolean
-  error: any
+  error: generatedGraphql.IError | null
+  relationshipName?: string
 }
 
 const tableColumnTypes = [
@@ -59,15 +58,20 @@ const tableColumnTypes = [
 
 const EntityDataTableView: React.FC<EntityTableProps> = ({
   data,
-  filterProps,
+  filterProps: filterPropsProp,
   onClickRow,
   onDeleteRow,
   loading,
   error,
+  relationshipName,
 }) => {
+  let formikContext
+  const filterProps = filterPropsProp ?? useFilter()
   const [siblingCount, setSiblingCount] = useState(1)
   const [hideNextButton, setHideNextButton] = useState(false)
-  const introspectionOfData = introspection?.__schema?.types?.find(
+  if (!filterPropsProp) formikContext = useFormikContext()
+  const setFieldValue = formikContext?.setFieldValue
+  const entityIntrospection = introspection?.__schema?.types?.find(
     (type) => type?.name === 'Entity'
   )?.fields
 
@@ -83,9 +87,9 @@ const EntityDataTableView: React.FC<EntityTableProps> = ({
   } = filterProps
 
   useEffect(() => {
-    if (!data?.fetching) {
+    if (!loading) {
       controlNextButton({
-        data: data?.Entity ?? [],
+        data: data ?? [],
         countRows: countRows,
         hideNextButton: hideNextButton,
         setCountToRows: setCountToRows,
@@ -93,12 +97,12 @@ const EntityDataTableView: React.FC<EntityTableProps> = ({
         page: page,
         pageSize: pageSize,
       })
-      controlSiblings(data?.Entity ?? [], pageSize, page, setSiblingCount)
+      controlSiblings(data ?? [], pageSize, page, setSiblingCount)
     }
-  }, [data?.Entity])
+  }, [data])
 
   const getColumnGraphQlType = (fieldName: string) => {
-    const field = introspectionOfData?.find(
+    const field = entityIntrospection?.find(
       (field) => field?.name === fieldName
     )
     return field?.type?.ofType?.name ?? field?.type?.name
@@ -112,6 +116,12 @@ const EntityDataTableView: React.FC<EntityTableProps> = ({
     )
   }
 
+  const getRelationshipField = (fieldName: string) => {
+    return fieldName.includes('.')
+      ? fieldName.split('.').slice(1).join('.')
+      : fieldName
+  }
+
   const columns = [
     {
       field: 'FIELD',
@@ -119,15 +129,24 @@ const EntityDataTableView: React.FC<EntityTableProps> = ({
       renderHeader: () => (
         <Translate
           entityName={'Entity'}
-          fieldName={'FIELD'}
+          fieldName={getRelationshipField('FIELD')}
           defaultMessage={'HEADER_NAME'}
         />
       ),
       minWidth: 150,
       flex: 2,
-      renderCell: (params: GridCellParams) => (
-        <FormatEntityField value={params.row.FIELD} />
-      ),
+      renderCell: (params: GridCellParams) => {
+        const index = params?.api?.getRowIndex(params.row.id)
+        return (
+          <FormatEntityField
+            value={params?.row?.FIELD}
+            relationshipName={relationshipName}
+            type={'string'}
+            index={index}
+            setFieldValue={setFieldValue}
+          />
+        )
+      },
       columnType: getColumnGraphQlType('FIELD'),
     },
   ]
@@ -155,9 +174,13 @@ const EntityDataTableView: React.FC<EntityTableProps> = ({
 
   return (
     <Card>
-      <EntityListToolbar filterProps={filterProps} />
+      {filterPropsProp && (
+        <Toolbar filterProps={filterProps} introspection={entityIntrospection}>
+          <CreateButton entityName="Entity" />
+        </Toolbar>
+      )}
       <DataGrid
-        rows={data?.Entity ?? []}
+        rows={data ?? []}
         columns={columns}
         loading={loading}
         hideFooterPagination
@@ -172,21 +195,50 @@ const EntityDataTableView: React.FC<EntityTableProps> = ({
         }}
         components={{
           LoadingOverlay: LinearProgress,
-          Footer: () => (
-            <Grid container>
-              <TablePagination
-                countRows={countRows}
-                page={page}
-                handlePage={handlePage}
-                siblingCount={siblingCount}
-                hideNextButton={hideNextButton}
-              />
-              <SelectPerPage
-                pageSize={pageSize}
-                handlePageSize={handlePageSize}
-              />
-            </Grid>
-          ),
+          Footer: filterPropsProp
+            ? () => (
+                <Grid container>
+                  <TablePagination
+                    countRows={countRows}
+                    page={page}
+                    handlePage={handlePage}
+                    siblingCount={siblingCount}
+                    hideNextButton={hideNextButton}
+                  />
+                  <SelectPerPage
+                    pageSize={pageSize}
+                    handlePageSize={handlePageSize}
+                  />
+                </Grid>
+              )
+            : () => (
+                <Button
+                  style={{
+                    margin: '12px',
+                    float: 'left',
+                  }}
+                  variant="contained"
+                  color="secondary"
+                  onClick={() => {
+                    formikContext.setValues(
+                      createNewElement(
+                        generatedGraphql,
+                        introspection,
+                        relationshipName ?? '',
+                        formikContext.values
+                      )
+                    )
+                  }}
+                >
+                  <Translate
+                    entityName={getSingularName(relationshipName)}
+                    fieldName={'new'}
+                    defaultMessage={`Add new ${getSingularName(
+                      relationshipName ?? 'element'
+                    )}`}
+                  />
+                </Button>
+              ),
         }}
       />
     </Card>

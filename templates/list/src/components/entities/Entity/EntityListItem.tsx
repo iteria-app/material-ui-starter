@@ -1,3 +1,4 @@
+import React from 'react'
 import {
   Avatar,
   Checkbox,
@@ -6,25 +7,45 @@ import {
   ListItemAvatar,
   ListItemButton,
   ListItemText,
+  Typography,
   useTheme,
 } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
-import React from 'react'
-import FormatEntityField from './FormatEntityField'
-import { getImagePath } from '../../image'
-import { stringAvatar } from '../../avatar'
-import { getName } from '../../name'
+import { FormatEntityField } from '@iteria-app-mui/common/src/components/fields/typography/FormatEntityField'
+import {
+  getImagePath,
+  getName,
+  stringAvatar,
+} from '@iteria-app/component-templates'
+import { EntityFragment } from '../../../generated/graphql'
+import { useFormikContext } from 'formik'
 
 interface EntityListItem {
-  data: any
+  data: EntityFragment
+  relationshipName?: string
+  index?: number
 }
 
-const EntityListItem: React.FC<EntityListItem> = ({ data }) => {
+const EntityListItem: React.FC<EntityListItem> = ({
+  data,
+  relationshipName,
+  index,
+}) => {
   const theme = useTheme()
   const navigate = useNavigate()
+  let formikContext
+  if (relationshipName) formikContext = useFormikContext()
+  const setFieldValue = formikContext?.setFieldValue
   const columns = [
     <>
-      <FormatEntityField key={'FIELD'} value={data?.FIELD} />
+      <FormatEntityField
+        key={'FIELD'}
+        type={'string'}
+        value={data?.FIELD}
+        relationshipName={relationshipName}
+        setFieldValue={setFieldValue}
+        index={index}
+      />
     </>,
   ]
   return (
@@ -33,7 +54,9 @@ const EntityListItem: React.FC<EntityListItem> = ({ data }) => {
       disablePadding
       sx={{ background: theme.palette.background.paper, borderRadius: '20px' }}
     >
-      <ListItemButton onClick={() => navigate(data?.id.toString())}>
+      <ListItemButton
+        onClick={() => !relationshipName && navigate(data?.id.toString())}
+      >
         <ListItemAvatar>
           <Avatar src={getImagePath(data)} {...stringAvatar(getName(data))} />
         </ListItemAvatar>
@@ -44,16 +67,15 @@ const EntityListItem: React.FC<EntityListItem> = ({ data }) => {
               container
               columnGap={'16px'}
               sx={{
-                fontWeight: 400,
-                '& .dot:last-of-type': {
+                '& .dotSeparator:last-of-type': {
                   display: 'none',
                 },
               }}
             >
-              {columns.slice(1).map((column) => (
+              {columns.slice(1).map((item) => (
                 <>
-                  {column}
-                  <span className="dot"> ● </span>
+                  {item}
+                  <Typography className={'dotSeparator'}> ● </Typography>
                 </>
               ))}
             </Grid>
