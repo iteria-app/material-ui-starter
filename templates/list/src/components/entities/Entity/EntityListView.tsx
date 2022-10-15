@@ -1,27 +1,28 @@
 import React from 'react'
 import { Grid } from '@mui/material'
 import EntityListItem from './EntityListItem'
+import { EntityFragment } from '../../../generated/graphql'
 
 export interface EntityListProps {
-  data: any
-  loading: boolean
-  error: any
+  data?: EntityFragment[]
+  relationshipName?: string
 }
 
-const EntityListView: React.FC<EntityListProps> = ({
-  data,
-  loading,
-  error,
-}) => {
+const EntityListView: React.FC<EntityListProps> = ({ data, relationshipName }) => {
   return (
     <Grid
       container
       width={'100%'}
       sx={{ overflow: 'hidden', marginTop: '20px' }}
     >
-      {data?.Entity.map((entity) => (
+      {data?.map((entity, index) => (
         <>
-          <EntityListItem key={entity?.id} data={entity} />
+          <EntityListItem
+            data={entity}
+            key={entity.id}
+            relationshipName={relationshipName}
+            index={index}
+          />
         </>
       ))}
     </Grid>
