@@ -1,16 +1,15 @@
 import React from 'react'
-import { Field as FormikField } from 'formik'
 import EntityListView from '../Entity/EntityListView'
 import { FormCard } from '@iteria-app-mui/common/src/components/entities/FormCard'
+import { EntityFragment } from '../../../generated/graphql'
 
-export const ArrayFormat = ({ value, relationshipName, index }) => {
-  return (
-    <FormCard title={'FIELD'}>
-      <FormikField name={'FIELD'}>
-        {({ field }: any) => {
-          return <EntityListView data={field?.value} />
-        }}
-      </FormikField>
-    </FormCard>
-  )
+interface ArrayFormatProps {
+  value: EntityFragment[]
+  length: number
 }
+
+export const ArrayFormat = ({ value, length }: ArrayFormatProps) => (
+  <FormCard title={'FIELD'} length={length}>
+    <EntityListView data={value} relationshipName={'FIELD'} />
+  </FormCard>
+)

@@ -10,7 +10,11 @@ type Props = {
   value?: string
   index?: number
   relationshipName?: string
-  setFieldValue?: (field: string, value: any, shouldValidate?: boolean | undefined) => void
+  setFieldValue?: (
+    field: string,
+    value: any,
+    shouldValidate?: boolean | undefined
+  ) => void
 }
 
 export const FormatEntityField = (props: Props) => {

@@ -41,7 +41,7 @@ const EntityDashboardList = ({ data }: { data: any[] }) => {
               </ListItemAvatar>
               <ListItemText
                 primary={getCardTitle(item) ?? item[Object.keys(item)?.[1]]}
-                secondary={getUpdatedTimeString(item)}
+                secondary={getUpdatedTimeString(item.updated_at ?? item.updatedAt)}
               />
               <IconButton edge="end" size="small">
                 <MoreVert />

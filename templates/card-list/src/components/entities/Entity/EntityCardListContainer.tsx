@@ -1,5 +1,4 @@
 import React from 'react'
-import { EntitiesQuery, useEntityQuery } from '../../../generated/graphql'
 import {
   ErrorBoundary,
   QueryBoundary,
@@ -9,9 +8,10 @@ import {
   CreateButton
 } from '@iteria-app/component-templates'
 import { Box, Grid, Skeleton } from '@mui/material'
+import {  EntityFragment, useEntityQuery } from "../../../generated/graphql"
 import introspection from '../../../generated/introspect.json'
 interface ViewProps {
-  data: EntitiesQuery
+  data: EntityFragment[]
 }
 
 interface EntityListContainerProps {

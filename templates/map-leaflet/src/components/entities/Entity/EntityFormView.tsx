@@ -11,7 +11,11 @@ import {
 import { ArrowBack, FileCopy, Save } from '@mui/icons-material'
 import { createEmptyObject, Translate } from '@iteria-app/component-templates'
 import { LoadingButton } from '@mui/lab'
+<<<<<<<< HEAD:templates/list/src/components/entities/Entity/EntityFormView.tsx
 import { FormatEntityField } from '@iteria-app-mui/common/src/components/fields/formik/FormatEntityField'
+========
+import { FormatEntityField } from '@iteria-app-mui/common/src/components/fields/form/FormatEntityField'
+>>>>>>>> 84ab31719375fa9545fc41fa60ed8292c2d157cd:templates/map-leaflet/src/components/entities/Entity/EntityFormView.tsx
 import * as generatedGraphql from '../../../generated/graphql'
 import introspection from '../../../generated/introspect.json'
 

@@ -80,7 +80,7 @@ const EntityListLeaflet: React.FC<EntityListProps> = ({
                             key={e?.id}
                             data={e?.data}
                             onEachFeature={(_, layer) => {
-                              layer.on({ click: () => navigate(entity?.id) })
+                              layer.on({ click: () => navigate(e?.id) })
                             }}
                           />
                         )

@@ -7,11 +7,14 @@ import {
   DialogContent,
 } from '@mui/material'
 import React from 'react'
+import { stringPrettyCapitalize, Translate } from "@iteria-app/component-templates"
 
 interface Props {
+  children: React.ReactNode
   Container: any
   View: any
   onClickRow?: (entity: any) => void
+  title?: string
 }
 
 export const LookupDialog: React.FC<Props> = ({
@@ -19,6 +22,7 @@ export const LookupDialog: React.FC<Props> = ({
   Container,
   View,
   onClickRow,
+  title,
 }) => {
   const [open, setOpen] = React.useState(false)
 
@@ -42,7 +46,11 @@ export const LookupDialog: React.FC<Props> = ({
         <DialogTitle>
           <Grid container>
             <Grid item xs>
-              Text
+              <Translate
+                entityName={title ?? 'default'}
+                fieldName={'lookup.title'}
+                defaultMessage={stringPrettyCapitalize(title) ?? 'Lookup dialog'}
+              />
             </Grid>
             <Grid item>
               <IconButton aria-label="close" onClick={handleClose}>

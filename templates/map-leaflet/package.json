@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@iteria-app-mui/common": "workspace: *",
+    "@iteria-app-mui/data-table": "workspace: *",
     "@iteria-app/component-templates": "workspace: *",
     "@mui/icons-material": "^5.2.5",
     "@mui/lab": "^5.0.0-alpha.61",

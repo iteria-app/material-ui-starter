@@ -1,6 +1,11 @@
 import React from 'react'
 import EntityDashboardList from '../Entity/EntityDashboardList'
+import { EntityFragment } from '../../../generated/graphql'
 
-export const ArrayFormat = ({ value, relationshipName, index }) => {
-  return <EntityDashboardList data={value} />
+interface ArrayFormatProps {
+  value: EntityFragment[]
 }
+
+export const ArrayFormat = ({ value }: ArrayFormatProps) => (
+  <EntityDashboardList data={value} relationshipName={'FIELD'} />
+)

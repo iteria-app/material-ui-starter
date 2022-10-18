@@ -14,11 +14,11 @@ import {
   Toolbar,
   CreateButton,
   useFilter,
-  createNewElement
+  createNewElement,
+  getSingularName,
 } from '@iteria-app/component-templates'
 import { FormatEntityField } from '@iteria-app-mui/common/src/components/fields/typography/FormatEntityField'
 import introspection from '../../../generated/introspect.json'
-import { EntitiesQuery, IError } from '../../../generated/graphql'
 import * as generatedGraphql from '../../../generated/graphql'
 
 export interface IFilterQuery {
@@ -28,12 +28,12 @@ export interface IFilterQuery {
 }
 
 export interface EntityTableProps {
-  data: EntitiesQuery
+  data: generatedGraphql.EntitiesQuery
   filterProps?: FilterProps
   onClickRow?: (state: number) => void
   onDeleteRow?: (value: any) => void
   loading: boolean
-  error: IError | null
+  error: generatedGraphql.IError | null
   relationshipName?: string
 }
 
@@ -63,13 +63,14 @@ const EntityDataTableView: React.FC<EntityTableProps> = ({
   onDeleteRow,
   loading,
   error,
-  relationshipName
+  relationshipName,
 }) => {
   let formikContext
   const filterProps = filterPropsProp ?? useFilter()
   const [siblingCount, setSiblingCount] = useState(1)
   const [hideNextButton, setHideNextButton] = useState(false)
   if (!filterPropsProp) formikContext = useFormikContext()
+  const setFieldValue = formikContext?.setFieldValue
   const entityIntrospection = introspection?.__schema?.types?.find(
     (type) => type?.name === 'Entity'
   )?.fields
@@ -134,9 +135,18 @@ const EntityDataTableView: React.FC<EntityTableProps> = ({
       ),
       minWidth: 150,
       flex: 2,
-      renderCell: (params: GridCellParams) => (
-        <FormatEntityField value={params?.row?.FIELD} type={'string'} index={params.api.getRowIndex(params.row.id)} setFieldValue={formikContext?.setFieldValue}/>
-      ),
+      renderCell: (params: GridCellParams) => {
+        const index = params?.api?.getRowIndex(params.row.id)
+        return (
+          <FormatEntityField
+            value={params?.row?.FIELD}
+            relationshipName={relationshipName}
+            type={'string'}
+            index={index}
+            setFieldValue={setFieldValue}
+          />
+        )
+      },
       columnType: getColumnGraphQlType('FIELD'),
     },
   ]
@@ -181,7 +191,7 @@ const EntityDataTableView: React.FC<EntityTableProps> = ({
         onSortModelChange={handleSort}
         onFilterModelChange={handleFilter}
         onRowClick={(event) => {
-          if (onClickRow) onClickRow(event.row?.id)
+          if (onClickRow) onClickRow(event.row)
         }}
         components={{
           LoadingOverlay: LinearProgress,
@@ -214,13 +224,19 @@ const EntityDataTableView: React.FC<EntityTableProps> = ({
                       createNewElement(
                         generatedGraphql,
                         introspection,
-                        relationshipName ?? "",
+                        relationshipName ?? '',
                         formikContext.values
                       )
                     )
                   }}
                 >
-                  <Translate entityName={'Add new element'} />
+                  <Translate
+                    entityName={getSingularName(relationshipName)}
+                    fieldName={'new'}
+                    defaultMessage={`Add new ${getSingularName(
+                      relationshipName ?? 'element'
+                    )}`}
+                  />
                 </Button>
               ),
         }}

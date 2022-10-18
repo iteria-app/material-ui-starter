@@ -1,6 +1,11 @@
 import React from 'react'
 import EntityDashboardBarGraph from '../Entity/EntityDashboardBarGraph'
+import { EntityFragment } from '../../../generated/graphql'
 
-export const ObjectFormat = ({ value, relationshipName, index }) => {
-  return <EntityDashboardBarGraph data={value} />
+interface ObjectFormatProps {
+  value: EntityFragment
 }
+
+export const ObjectFormat = ({ value }: ObjectFormatProps) => (
+  <EntityDashboardBarGraph data={value} relationshipName={'FIELD'} />
+)

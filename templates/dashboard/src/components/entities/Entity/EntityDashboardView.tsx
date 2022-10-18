@@ -2,7 +2,7 @@ import React from 'react'
 import { Box } from '@mui/material'
 import { EntitiesQuery } from '../../../generated/graphql'
 import { FormatEntityField } from '@iteria-app-mui/common/src/components/fields/typography/FormatEntityField'
-import { Masonry } from '@mui/lab'
+import Masonry from '@mui/lab/Masonry'
 
 export interface EntityDashboardViewProps {
   data: EntitiesQuery

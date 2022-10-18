@@ -1,22 +1,16 @@
 import React from 'react'
-import { Button, InputLabel, TableCell, TableRow } from '@mui/material'
-import { LookupDialog } from '../LookupDialog'
-import { FormatEntityField } from '@iteria-app-mui/common/src/components/fields/formik/FormatEntityField'
-import { Search } from '@mui/icons-material'
-import EntityDataTableContainer from '@iteria-app-mui/data-table/src/components/entities/Entity/EntityDataTableContainer'
-import EntityDataTableView from '@iteria-app-mui/data-table/src/components/entities/Entity/EntityDataTableView'
-import { useFormikContext } from 'formik'
-import { FormCard } from '../FormCard'
+import { InputLabel, TableCell, TableRow } from '@mui/material'
+import { Formik, useFormikContext } from 'formik' // Formik import required for react generator
+import { FormatEntityField } from '@iteria-app-mui/common/src/components/fields/form/FormatEntityField'
 
 interface IProps {
-  relationshipName?: string,
+  relationshipName?: string
   index?: number
 }
 
 const EntityForm: React.FC<IProps> = ({ relationshipName }) => {
   const { setFieldValue } = useFormikContext()
-
-  const fields = [
+  const columns = [
     <TableRow
       key={'FIELD'}
       sx={{
@@ -35,10 +29,8 @@ const EntityForm: React.FC<IProps> = ({ relationshipName }) => {
         },
       }}
     >
-    <TableCell
-      sx={{ width: '50%', padding: '14.5px 14px' }}
-    >
-      <InputLabel>HEADER_NAME</InputLabel>
+      <TableCell sx={{ width: '50%', padding: '14.5px 14px' }}>
+        <InputLabel>HEADER_NAME</InputLabel>
       </TableCell>
       <TableCell
         sx={{
@@ -49,39 +41,17 @@ const EntityForm: React.FC<IProps> = ({ relationshipName }) => {
           padding: '8px 16px',
         }}
       >
-        <FormatEntityField type={'string'} setFieldValue={setFieldValue} />
+        <FormatEntityField
+          type={'string'}
+          setFieldValue={setFieldValue}
+          relationshipName={relationshipName}
+          index={undefined}
+        />
       </TableCell>
-    </TableRow>
+    </TableRow>,
   ]
 
-  return (
-    <FormCard title={relationshipName ?? 'Entity'}>
-      {fields.map((field) => field)}
-      <TableRow>
-        <TableCell>
-          {
-            relationshipName &&
-            <LookupDialog
-              Container={EntityDataTableContainer}
-              View={EntityDataTableView}
-              onClickRow={(row) => {
-                setFieldValue(relationshipName, row, false)
-              }}
-            >
-              <Button
-                color="secondary"
-                variant="contained"
-                startIcon={<Search />}
-                style={{ margin: '16px' }}
-              >
-                Lookup
-              </Button>
-            </LookupDialog>
-          }
-        </TableCell>
-      </TableRow>
-    </FormCard>
-  )
+  return <>{columns.map((field) => field)}</>
 }
 
 export default EntityForm

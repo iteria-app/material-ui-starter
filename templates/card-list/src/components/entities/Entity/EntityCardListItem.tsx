@@ -12,20 +12,34 @@ import { FormatEntityField } from '@iteria-app-mui/common/src/components/fields/
 import { EntityFragment } from '../../../generated/graphql'
 import MoreVertIcon from '@mui/icons-material/MoreVert'
 import { getCardTitle, getImagePath } from '@iteria-app/component-templates'
+import { useFormikContext } from "formik"
 
 export interface IPropsEntityCardItem {
   data: EntityFragment
+  relationshipName?: string
+  index?: number
 }
 
-const EntityCardListItem: React.FC<IPropsEntityCardItem> = ({ data }) => {
+const EntityCardListItem: React.FC<IPropsEntityCardItem> = ({
+  data,
+  relationshipName,
+  index,
+}) => {
   const navigate = useNavigate()
-
+  let formikContext
+  if (relationshipName) formikContext = useFormikContext()
+  const setFieldValue = formikContext?.setFieldValue
   const columns = [
     <Box
       key={'FIELD'}
-      sx={{ display: 'flex', justifyContent: 'space-between' }}
+      sx={{ display: 'flex', justifyContent: 'space-between', marginTop: '5px' }}
     >
-      <FormatEntityField value={data?.FIELD} type={'string'} />
+      <FormatEntityField
+        value={data?.FIELD}
+        type={'string'}
+        relationshipName={relationshipName}
+        index={index}
+      />
     </Box>,
   ]
   const primary = getCardTitle(data)
@@ -37,7 +51,7 @@ const EntityCardListItem: React.FC<IPropsEntityCardItem> = ({ data }) => {
       sx={{
         cursor: 'pointer',
       }}
-      onClick={() => navigate(data?.id.toString())}
+      onClick={() => !relationshipName && navigate(data?.id.toString())}
     >
       <Card
         sx={{
@@ -45,7 +59,7 @@ const EntityCardListItem: React.FC<IPropsEntityCardItem> = ({ data }) => {
         }}
       >
         <CardHeader
-          title={getCardTitle(data)}
+          title={primary}
           action={
             <IconButton aria-label="settings">
               <MoreVertIcon />
@@ -60,7 +74,7 @@ const EntityCardListItem: React.FC<IPropsEntityCardItem> = ({ data }) => {
           sx={{ minWidth: '200px' }}
         />
         <CardContent>
-          {Object.values(columns).filter((v) => data?.[v?.key] !== primary)}
+          {Object.values(columns).filter((v) => data?.[v?.key?.toString().split('.')?.pop()] !== primary)}
         </CardContent>
       </Card>
     </Box>

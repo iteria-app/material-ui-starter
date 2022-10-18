@@ -1,5 +1,5 @@
 import React from 'react'
-import { FormatEntityField } from '@iteria-app-mui/common/src/components/fields/formik/FormatEntityField'
+import { FormatEntityField } from '@iteria-app-mui/common/src/components/fields/form/FormatEntityField'
 import { EntityFragment } from '../../../generated/graphql'
 import {Box} from "@mui/material"
 

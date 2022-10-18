@@ -1,8 +1,4 @@
-import {
-  Table,
-  TableBody,
-  Typography,
-} from '@mui/material'
+import { Grid, Table, TableBody, Typography } from '@mui/material'
 import {
   stringPrettyCapitalize,
   Translate,
@@ -12,11 +8,12 @@ import React, { ReactNode } from 'react'
 interface Props {
   title: string
   children: ReactNode
+  length?: number
 }
 
-export const FormCard: React.FC<Props> = ({ title, children }) => {
+export const FormCard: React.FC<Props> = ({ title, children, length }) => {
   return (
-    <>
+    <Grid item md={length ?? 6 > 7 ? 12 : 6}>
       <Typography sx={{ marginY: '12px', textTransform: 'uppercase' }}>
         <Translate
           entityName={title}
@@ -34,6 +31,6 @@ export const FormCard: React.FC<Props> = ({ title, children }) => {
           {children}
         </TableBody>
       </Table>
-    </>
+    </Grid>
   )
 }

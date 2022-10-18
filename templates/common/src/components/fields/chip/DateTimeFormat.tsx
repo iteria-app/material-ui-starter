@@ -2,12 +2,16 @@ import { Chip } from '@mui/material'
 import React from 'react'
 import { useIntl } from 'react-intl'
 
-export const DateTimeFormat = ({ value }) => {
+export const DateTimeFormat = ({ value }: { value: string }) => {
   const intl = useIntl()
   return (
-    <Chip
-      label={value ? `${intl.formatDate(value)} ${intl.formatTime(value)}` : ''}
-      size="small"
-    />
+    <>
+      {value && (
+        <Chip
+          label={`${intl.formatDate(value)} ${intl.formatTime(value)}`}
+          size="small"
+        />
+      )}
+    </>
   )
 }

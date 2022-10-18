@@ -1,5 +1,5 @@
 import React from 'react'
-import { EntitiesQuery, useEntityQuery } from '../../../generated/graphql'
+import { EntityFragment, useEntityQuery } from '../../../generated/graphql'
 import introspection from '../../../generated/introspect.json'
 import {
   ErrorBoundary,
@@ -20,7 +20,7 @@ import {
 } from '@mui/material'
 
 interface ViewProps {
-  data: EntitiesQuery | null
+  data: EntityFragment[] | null
 }
 
 interface EntityListContainerProps {

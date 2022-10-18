@@ -2,7 +2,7 @@ import React from 'react'
 import {
   EntitiesQuery,
   IError,
-  useEntityQuery,
+  useEntityQuery
 } from '../../../generated/graphql'
 import {
   ErrorBoundary,
@@ -16,7 +16,7 @@ interface IViewProps {
   data: EntitiesQuery
   error: IError | null
   loading: boolean
-  onClickRow: (state: number) => void
+  onClickRow: (state: any) => void
   filterProps: FilterProps
 }
 
@@ -50,8 +50,8 @@ const EntityListContainer: React.FC<IEnitityListContainerProps> = ({
           data={data?.data?.Entity}
           error={data?.error}
           loading={data?.fetching}
-          onClickRow={(id) => {
-            navigate(id?.toString())
+          onClickRow={(row) => {
+            navigate(row?.id?.toString())
           }}
           filterProps={filterProps}
         />

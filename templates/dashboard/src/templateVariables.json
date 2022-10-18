@@ -1,0 +1,89 @@
+{
+  "enitities": [
+    {
+      "id": "entities",
+      "name": "Entities",
+      "required": true,
+      "minValues": 1
+    }
+  ],
+  "components": [
+    {
+      "name": "graph",
+      "fields": [
+        {
+          "id": "y",
+          "name": "y",
+          "validTypes": ["number", "date", "dateTime"],
+          "required": true,
+          "operation": "get"
+        },
+        {
+          "id": "size",
+          "name": "Size",
+          "operation": "get",
+          "validTypes": ["number"],
+          "required": false,
+          "aggregation": true,
+          "aggregationDefault": "sum"
+        },
+        {
+          "id": "color",
+          "name": "Color",
+          "operation": "get",
+          "validTypes": ["number", "string", "date"],
+          "required": false,
+          "aggregation": true,
+          "aggregationDefault": {
+            "number": "sum",
+            "string": "csvDistinct",
+            "date": "csvDistinct"
+          }
+        },
+        {
+          "id": "series",
+          "name": "Series",
+          "validTypes": ["number", "string", "date"],
+          "required": false,
+          "operation": "get"
+        }
+      ],
+      "props": []
+    },
+    {
+      "name": "list",
+      "fields": [
+        {
+          "id": "avatar",
+          "name": "Avatar",
+          "validTypes": ["string"],
+          "required": false
+        },
+        {
+          "id": "lisItemTitle",
+          "name": "List Item Title",
+          "validTypes": ["string", "number", "date", "dateTime"],
+          "required": false
+        },
+        {
+          "id": "otherFields",
+          "name": "Other",
+          "validTypes": ["string", "number", "date", "dateTime", "geometry"],
+          "required": false
+        }
+      ],
+      "props": [
+        {
+          "name": "separator",
+          "type": "boolean",
+          "default": true
+        }
+      ]
+    },
+    {
+      "name": "card aggregate",
+      "fields": [],
+      "props": []
+    }
+  ]
+}

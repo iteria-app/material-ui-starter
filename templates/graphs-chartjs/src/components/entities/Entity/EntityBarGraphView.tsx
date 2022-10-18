@@ -74,14 +74,11 @@ const options = {
 
 export interface EntityBarGraphProps {
   data: any
-  loading: boolean
-  error: any
+  relationshipName?: string
 }
 
 const EntityBarGraph: React.FC<EntityBarGraphProps> = ({
   data,
-  loading,
-  error,
 }) => {
   const graphData = getChartData(data, themeColors)
 
@@ -98,9 +95,7 @@ const EntityBarGraph: React.FC<EntityBarGraphProps> = ({
       <Divider />
       <CardContent>
         <Box height={400} position="relative">
-          {loading ? (
-            'loading...'
-          ) : graphData ? (
+          {graphData ? (
             <Bar data={graphData} options={options} />
           ) : (
             <Typography>No data to display.</Typography>

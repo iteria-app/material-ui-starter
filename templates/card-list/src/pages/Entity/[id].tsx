@@ -1,6 +1,6 @@
 import React from 'react'
-import EntityFormView from '../../components/entities/Entity/EntityFormView'
-import EntityFormContainer from '../../components/entities/Entity/EntityFormContainer'
+import EntityFormView from '@iteria-app-mui/common/src/components/entities/Entity/EntityFormView'
+import EntityFormContainer from '@iteria-app-mui/common/src/components/entities/Entity/EntityFormContainer'
 
 const EntityFormPage: React.FC = () => {
   return (

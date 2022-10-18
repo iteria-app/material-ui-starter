@@ -4,5 +4,5 @@ import { useIntl } from 'react-intl'
 
 export const TimeFormat = ({ value }) => {
   const intl = useIntl()
-  return <Chip label={value ? intl.formatTime(value) : ''} />
+  return <Badge badgeContent={value ? intl.formatTime(value) : ''} />
 }

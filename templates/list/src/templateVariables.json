@@ -1,0 +1,25 @@
+{
+  "enitities": [
+    {
+      "id": "entities",
+      "name": "Entities",
+      "required": true,
+      "minValues": 1
+    }
+  ],
+  "components": [
+    {
+      "name": "Other",
+      "fields": [
+        {
+          "id": "fields",
+          "name": "Fields",
+          "validTypes": ["string", "number", "date", "dateTime", "geometry"],
+          "required": true,
+          "multipleFields": false
+        }
+      ],
+      "props": []
+    }
+  ]
+}
