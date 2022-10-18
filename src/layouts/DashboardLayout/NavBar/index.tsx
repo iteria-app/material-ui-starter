@@ -42,7 +42,7 @@ const NavBar = ({ open, drawerWidth }: NavBarProps): JSX.Element => {
       flexDirection="column"
     >
       <Box display={'flex'} flexDirection={'row'} alignItems={'center'}>
-        <Logo />
+        <Logo style={{marginRight: '10px'}} />
         <Typography variant="h1" sx={{ pt: '3px' }}>
           Lowcode
         </Typography>
