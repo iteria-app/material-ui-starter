@@ -41,11 +41,8 @@ const NavBar = ({ open, drawerWidth }: NavBarProps): JSX.Element => {
       display="flex"
       flexDirection="column"
     >
-      <Box display={'flex'} flexDirection={'row'} alignItems={'center'}>
-        <Logo style={{marginRight: '10px'}} />
-        <Typography variant="h1" sx={{ pt: '3px' }}>
-          Lowcode
-        </Typography>
+      <Box display={'flex'} flexDirection={'row'} justifyContent={'center'}>
+        <Logo />
       </Box>
       <Box>
         <List>
@@ -53,6 +50,7 @@ const NavBar = ({ open, drawerWidth }: NavBarProps): JSX.Element => {
             items={[
               {
                 href: '/app/dashboard',
+                codeHref: '/app/dashboard',
                 icon: Home,
                 label: 'menu.dashboard',
                 title: 'Dashboard',

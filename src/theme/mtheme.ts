@@ -74,7 +74,7 @@ const paletteG = {
   divider: 'rgba(0, 0, 0, 0.12)'
 }
 
-const palette = {
+const paletteB = {
   primary: {
     light: '#c2effe',
     main: colors?.primary ?? '#03c9d7',
@@ -108,6 +108,42 @@ const palette = {
     paper: '#ffffff'
   },
   divider: colors?.divider ?? 'rgba(0, 0, 0, 0.12)'
+}
+
+const palette = {
+  primary: {
+    light: '#ffd058',
+    main: colors?.primary ?? '#f1ad00',
+    dark: '#d79b00',
+    contrastText: '#ffffff',
+  },
+  secondary: {
+    light: '#dcacab',
+    main: colors?.secondary ?? '#cd8987',
+    dark: '#be6663',
+    contrastText: '#ffffff',
+  },
+  error: {
+    main: colors?.error ?? '#E35350',
+  },
+  warning: {
+    main: colors?.warning ?? '#fdac42',
+  },
+  info: {
+    main: colors?.info ?? '#3b6470',
+  },
+  success: {
+    main: colors?.success ?? '#4e7d42',
+  },
+  text: {
+    primary: '#000',
+    secondary: '#333',
+  },
+  background: {
+    default: colors?.background ?? '#fbfbfe',
+    paper: '#ffffff',
+  },
+  divider: colors?.divider ?? 'rgba(0, 0, 0, 0.12)',
 }
 
 const components: Components<Theme> = {
