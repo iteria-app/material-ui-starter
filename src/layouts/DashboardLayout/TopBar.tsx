@@ -7,17 +7,14 @@ import {
   IconButton,
   styled,
   Toolbar,
-  useTheme,
+  useTheme
 } from '@mui/material'
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar'
 import MenuIcon from '@mui/icons-material/Menu'
 import NotificationsIcon from '@mui/icons-material/NotificationsOutlined'
 import InputIcon from '@mui/icons-material/Input'
 import Logo from '../../components/Logo'
-import {
-  LocaleSwitch,
-  getEntityNameFromUrl,
-} from '@iteria-app/component-templates'
+import { LocaleSwitch, UserProfile } from '@iteria-app/component-templates'
 import { locales } from '../../locale'
 
 const drawerWidth = 256
@@ -33,20 +30,20 @@ interface AppBarProps extends MuiAppBarProps {
 }
 
 const AppBar = styled(MuiAppBar, {
-  shouldForwardProp: (prop) => prop !== 'open',
+  shouldForwardProp: (prop) => prop !== 'open'
 })<AppBarProps>(({ theme, open }) => ({
   transition: theme.transitions.create(['margin', 'width'], {
     easing: theme.transitions.easing.sharp,
-    duration: theme.transitions.duration.leavingScreen,
+    duration: theme.transitions.duration.leavingScreen
   }),
   ...(open && {
     width: `calc(100% - ${drawerWidth}px)`,
     marginLeft: `${drawerWidth}px`,
     transition: theme.transitions.create(['margin', 'width'], {
       easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-  }),
+      duration: theme.transitions.duration.enteringScreen
+    })
+  })
 }))
 
 const TopBar = ({ open, onOpen, ...rest }: TopBarProps): JSX.Element => {
@@ -64,6 +61,7 @@ const TopBar = ({ open, onOpen, ...rest }: TopBarProps): JSX.Element => {
         </IconButton>
         <Divider orientation="vertical" sx={{ height: '32px' }} />
         <LocaleSwitch locales={locales} />
+        <UserProfile sourceUrl={window.location.pathname.toString()} />
       </Toolbar>
     </AppBar>
   )
@@ -71,7 +69,7 @@ const TopBar = ({ open, onOpen, ...rest }: TopBarProps): JSX.Element => {
 
 TopBar.propTypes = {
   className: PropTypes.string,
-  onMobileNavOpen: PropTypes.func,
+  onMobileNavOpen: PropTypes.func
 }
 
 export default TopBar

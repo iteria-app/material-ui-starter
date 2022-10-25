@@ -6,7 +6,9 @@ import {
   I18nProvider,
   useLocale,
   DataContext,
-  GraphqlcodegenDataProvider
+  GraphqlcodegenDataProvider,
+  authExchange,
+  useClient
 } from '@iteria-app/component-templates'
 import '../src/mixins/chartjs'
 import { theme } from './theme'
@@ -16,10 +18,11 @@ import * as graphqlgen from './generated/graphql'
 import introspection from './generated/introspect.json'
 import {
   cacheExchange,
+  ClientOptions,
   createClient,
   debugExchange,
   fetchExchange,
-  Provider as UrqlProvider,
+  Provider as UrqlProvider
 } from 'urql'
 
 const graphqlcodegenDataProvider = new GraphqlcodegenDataProvider(
@@ -27,17 +30,37 @@ const graphqlcodegenDataProvider = new GraphqlcodegenDataProvider(
   introspection.__schema as any
 )
 
-const client = createClient({
-  url: import.meta.env.VITE_HASURA_GRAPHQL_ENDPOINT as string,
-  exchanges: [debugExchange, fetchExchange],
-  fetchOptions: {
-    headers: {
-      'x-hasura-admin-secret': import.meta.env.VITE_HASURA_GRAPHQL_SECRET as string
-    }
-  },
-})
+//const client = createClient({
+//  url: import.meta.env.VITE_HASURA_GRAPHQL_ENDPOINT as string,
+//  exchanges: [debugExchange, authExchange(), fetchExchange],
+//  fetchOptions: {
+//    headers: {
+//      'x-hasura-admin-secret': import.meta.env
+//        .VITE_HASURA_GRAPHQL_SECRET as string
+//    }
+//  }
+//})
 
 const App = () => {
+  const clientOptions: ClientOptions = {
+    url: import.meta.env.VITE_HASURA_GRAPHQL_ENDPOINT as string,
+    exchanges: [debugExchange, authExchange(), fetchExchange]
+    //requestPolicy: 'cache-and-network',
+  }
+  const superClient = createClient({
+    ...clientOptions,
+    fetchOptions: {
+      headers: {
+        'x-hasura-admin-secret': import.meta.env
+          .VITE_HASURA_GRAPHQL_SECRET as string
+      }
+    }
+  })
+
+  let client = useClient(clientOptions, createClient)
+
+  if (import.meta.env.VITE_AUTH_MODE === 'admin_secret') client = superClient
+
   const routing = useRoutes(routes)
   const locale = useLocale()
   const messagesObject = messages(locale)
@@ -55,7 +78,7 @@ const App = () => {
 
 App.propTypes = {
   locale: PropTypes.string,
-  messages: PropTypes.object,
+  messages: PropTypes.object
 }
 
 export default App

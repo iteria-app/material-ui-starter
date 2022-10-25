@@ -6,7 +6,13 @@ import NotFoundView from '../src/views/errors/NotFoundView'
 import RegisterView from '../src/views/auth/RegisterView'
 import DashboardView from '../src/views/reports/DashboardView'
 
-import { generatePagesRoutes } from '@iteria-app/component-templates'
+import {
+  generatePagesRoutes,
+  DefaultLoginView,
+  ResetPassword,
+  SignupWithEmail,
+  ErrorBoundary
+} from '@iteria-app/component-templates'
 import * as generatedGraphql from './generated/graphql'
 
 const filebasedRouting = import.meta.globEager('./pages/**/*.tsx')
@@ -25,7 +31,14 @@ const newRoutes = Object.keys(filebasedRouting).map((route) => {
     filebasedRouting[route][0] ??
     filebasedRouting[route]
   path = route.includes(ONE_PAGE) ? path + '/:id/' : path
-  return { path, element: <Container /> }
+  return {
+    path,
+    element: (
+      <ErrorBoundary>
+        <Container />
+      </ErrorBoundary>
+    )
+  }
 })
 
 const routing = generatePagesRoutes(generatedGraphql)
@@ -35,24 +48,25 @@ const routes = [
   {
     path: 'app',
     element: <DashboardLayout />,
-    children: routing,
+    children: routing
   },
   {
     path: 'test',
     element: <DashboardLayout />,
-    children: newRoutes,
+    children: newRoutes
   },
   {
     path: '/',
     element: <DashboardLayout />,
     children: [
-      { path: 'login', element: <LoginView /> },
-      { path: 'register', element: <RegisterView /> },
+      { path: 'login', element: <DefaultLoginView /> },
+      { path: 'resetpassword', element: <ResetPassword /> },
+      { path: 'signup', element: <SignupWithEmail /> },
       { path: '404', element: <NotFoundView /> },
       { path: '/', element: <Navigate to="/app/dashboard" /> },
-      { path: '*', element: <NotFoundView /> },
-    ],
-  },
+      { path: '*', element: <NotFoundView /> }
+    ]
+  }
 ]
 
 export default routes
