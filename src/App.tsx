@@ -30,17 +30,6 @@ const graphqlcodegenDataProvider = new GraphqlcodegenDataProvider(
   introspection.__schema as any
 )
 
-//const client = createClient({
-//  url: import.meta.env.VITE_HASURA_GRAPHQL_ENDPOINT as string,
-//  exchanges: [debugExchange, authExchange(), fetchExchange],
-//  fetchOptions: {
-//    headers: {
-//      'x-hasura-admin-secret': import.meta.env
-//        .VITE_HASURA_GRAPHQL_SECRET as string
-//    }
-//  }
-//})
-
 const App = () => {
   const clientOptions: ClientOptions = {
     url: import.meta.env.VITE_HASURA_GRAPHQL_ENDPOINT as string,
@@ -57,7 +46,7 @@ const App = () => {
     }
   })
 
-  let client = useClient(clientOptions, createClient)
+  let client = createClient(clientOptions)
 
   if (import.meta.env.VITE_AUTH_MODE === 'admin_secret') client = superClient
 
