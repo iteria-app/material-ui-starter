@@ -22,7 +22,7 @@ const Budget: React.FC<any> = ({ className, ...rest }) => {
               <Translate entityName="budget" />
             </Typography>
             <Typography color="textPrimary" variant="h3">
-              $24,000
+              $24,00
             </Typography>
           </Grid>
           <Grid item xs={4}>
