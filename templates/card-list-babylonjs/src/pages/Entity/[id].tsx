@@ -1,10 +1,10 @@
 import React from 'react'
 import EntityBabylonView from '../../components/entities/Entity/EntityBabylonView'
-import EntityBabylonContainer from '../../components/entities/Entity/EntityBabylonContainer'
+import EntityFormContainer from '../../components/entities/Entity/EntityFormContainer'
 
 const EntityFormPage: React.FC = () => {
   return (
-    <EntityBabylonContainer
+    <EntityFormContainer
       View={({ data, onSubmit, onCopy }) => (
         <EntityBabylonView data={data} onSubmit={onSubmit} onCopy={onCopy} />
       )}

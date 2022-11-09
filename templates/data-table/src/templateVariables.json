@@ -9,14 +9,14 @@
   ],
   "components": [
     {
-      "name": "Other",
+      "name": "Data table",
       "fields": [
         {
-          "id": "fields",
-          "name": "Fields",
-          "validTypes": ["string", "number", "date", "dateTime", "geometry"],
-          "required": true,
-          "multipleFields": false
+          "id": "other",
+          "name": "Columns",
+          "validTypes": ["string", "number", "date", "dateTime"],
+          "required": false,
+          "multipleFields": true
         }
       ],
       "props": []

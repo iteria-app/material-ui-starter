@@ -9,12 +9,39 @@
   ],
   "components": [
     {
-      "name": "Other",
+      "name": "Graph",
       "fields": [
         {
-          "id": "fields",
-          "name": "Fields",
-          "validTypes": ["string", "number", "date", "dateTime", "geometry"],
+          "id": "bars",
+          "name": "Y axis",
+          "validTypes": [
+            "numeric",
+            "Int",
+            "bigint",
+            "numeric",
+            "date",
+            "time",
+            "timetz",
+            "timestamp",
+            "timestamptz"
+          ],
+          "required": true,
+          "multipleFields": false
+        },
+        {
+          "id": "series",
+          "name": "X axis",
+          "validTypes": [
+            "numeric",
+            "Int",
+            "bigint",
+            "numeric",
+            "date",
+            "time",
+            "timetz",
+            "timestamp",
+            "timestamptz"
+          ],
           "required": true,
           "multipleFields": false
         }

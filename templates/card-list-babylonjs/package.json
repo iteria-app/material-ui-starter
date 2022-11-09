@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@iteria-app-mui/common": "workspace: *",
+    "@iteria-app-mui/data-table": "workspace: *",
     "@babylonjs/core": "5.21.0",
     "@babylonjs/gui": "5.21.0",
     "@babylonjs/loaders": "5.21.0",
@@ -49,7 +50,7 @@
     "react-perfect-scrollbar": "^1.5.8",
     "react-router": "^6.0.0-beta.0",
     "react-router-dom": "6.0.0-beta.8",
-    "urql": "^2.1.3",
+    "urql": "^3.0.3",
     "uuid": "^8.3.2",
     "yup": "^0.29.3"
   },

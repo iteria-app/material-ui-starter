@@ -9,21 +9,21 @@
   ],
   "components": [
     {
-      "name": "List item",
+      "name": "Card",
       "fields": [
         {
           "id": "name",
-          "name": "Title",
+          "name": "Card Title",
           "validTypes": ["string", "number", "date", "dateTime"],
-          "required": true,
+          "required": false,
           "multipleFields": true
         },
         {
           "id": "thumbnail",
-          "name": "Avatar",
+          "name": "Thumbnail",
           "validTypes": ["string"],
           "required": false,
-          "multipleFields": false
+          "multipleFields": true
         },
         {
           "id": "other",

@@ -2,7 +2,6 @@ import React from 'react'
 import { FormikValues } from 'formik'
 
 import { Engine, Scene } from 'react-babylonjs'
-import * as BABYLON from '@babylonjs/core'
 import { Vector3 } from '@babylonjs/core'
 import EntityBabylonModelDownload from './EntityBabylonModelDownload'
 

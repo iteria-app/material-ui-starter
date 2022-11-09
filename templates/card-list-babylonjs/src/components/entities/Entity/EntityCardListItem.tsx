@@ -12,24 +12,38 @@ import { FormatEntityField } from '@iteria-app-mui/common/src/components/fields/
 import { EntityFragment } from '../../../generated/graphql'
 import MoreVertIcon from '@mui/icons-material/MoreVert'
 import { getCardTitle, getImagePath } from '@iteria-app/component-templates'
+import { useFormikContext } from "formik";
 
 export interface IPropsEntityCardItem {
-  data: EntityFragment // TODO entity: EntityFragment
+  data: EntityFragment
+  relationshipName?: string
+  index?: number
 }
 
-const EntityCardListItem: React.FC<IPropsEntityCardItem> = ({ data }) => {
+const EntityCardListItem: React.FC<IPropsEntityCardItem> = ({
+  data,
+  relationshipName,
+  index,
+}) => {
   const navigate = useNavigate()
-
+  let formikContext
+  if (relationshipName) formikContext = useFormikContext()
+  const setFieldValue = formikContext?.setFieldValue
   const columns = [
-    <Box key={'FIELD'}>
-      {/* TODO <FormatEntityField value={product.name} */}
-      <FormatEntityField value={data?.FIELD} type="string" />
+    <Box
+      key={'FIELD'}
+      sx={{ display: 'flex', justifyContent: 'space-between', marginTop: '5px' }}
+    >
+      <FormatEntityField
+        value={data?.FIELD}
+        type={'string'}
+        relationshipName={relationshipName}
+        index={index}
+        setFieldValue={setFieldValue}
+      />
     </Box>,
   ]
-
-
-
-  // TODO styled component
+  const primary = getCardTitle(data)
   return (
     <Box
       p="5px"
@@ -38,7 +52,7 @@ const EntityCardListItem: React.FC<IPropsEntityCardItem> = ({ data }) => {
       sx={{
         cursor: 'pointer',
       }}
-      onClick={() => navigate(data?.id.toString())}
+      onClick={() => !relationshipName && navigate(data?.id.toString())}
     >
       <Card
         sx={{
@@ -46,7 +60,7 @@ const EntityCardListItem: React.FC<IPropsEntityCardItem> = ({ data }) => {
         }}
       >
         <CardHeader
-          title={getCardTitle(data)}
+          title={primary}
           action={
             <IconButton aria-label="settings">
               <MoreVertIcon />
@@ -57,10 +71,12 @@ const EntityCardListItem: React.FC<IPropsEntityCardItem> = ({ data }) => {
           component="img"
           image={getImagePath(data) ?? '/static/placeholder.png'}
           height="250px"
-          alt={getCardTitle(data)}
+          alt={primary}
           sx={{ minWidth: '200px' }}
         />
-        <CardContent>{columns.slice(1).map((column) => column)}</CardContent>
+        <CardContent>
+          {Object.values(columns).filter((v) => data?.[v?.key] !== primary)}
+        </CardContent>
       </Card>
     </Box>
   )

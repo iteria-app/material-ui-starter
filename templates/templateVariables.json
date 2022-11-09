@@ -12,7 +12,7 @@
       "name": "Other",
       "fields": [
         {
-          "id": "fields",
+          "id": "other",
           "name": "Fields",
           "validTypes": ["string", "number", "date", "dateTime", "geometry"],
           "required": true,

@@ -9,50 +9,32 @@
   ],
   "components": [
     {
-      "name": "graph",
+      "name": "Aggregation",
+      "todo": "object rel",
       "fields": [
         {
-          "id": "y",
-          "name": "y",
-          "validTypes": ["number", "date", "dateTime"],
-          "required": true,
-          "operation": "get"
-        },
-        {
-          "id": "size",
-          "name": "Size",
-          "operation": "get",
-          "validTypes": ["number"],
-          "required": false,
-          "aggregation": true,
-          "aggregationDefault": "sum"
-        },
-        {
-          "id": "color",
-          "name": "Color",
-          "operation": "get",
-          "validTypes": ["number", "string", "date"],
-          "required": false,
-          "aggregation": true,
-          "aggregationDefault": {
-            "number": "sum",
-            "string": "csvDistinct",
-            "date": "csvDistinct"
-          }
-        },
-        {
-          "id": "series",
-          "name": "Series",
-          "validTypes": ["number", "string", "date"],
-          "required": false,
-          "operation": "get"
+          "id": "other",
+          "name": "Min / Max / Sum / Avg.",
+          "validTypes": ["number", "date", "dateTime", "string",  "geometry"],
+          "required": false
         }
       ],
-      "props": []
+      "template": {
+        "name": "dashboard-info-card"
+      },
+      "props": {
+        "cardHeaderSeparator": true
+      }
     },
     {
-      "name": "list",
+      "name": "List",
       "fields": [
+        {
+          "id": "name",
+          "name": "List Item Title",
+          "validTypes": ["string", "number", "date", "dateTime"],
+          "required": false
+        },
         {
           "id": "avatar",
           "name": "Avatar",
@@ -60,30 +42,85 @@
           "required": false
         },
         {
-          "id": "lisItemTitle",
-          "name": "List Item Title",
-          "validTypes": ["string", "number", "date", "dateTime"],
-          "required": false
-        },
-        {
-          "id": "otherFields",
+          "id": "other",
           "name": "Other",
           "validTypes": ["string", "number", "date", "dateTime", "geometry"],
           "required": false
         }
       ],
-      "props": [
-        {
-          "name": "separator",
-          "type": "boolean",
-          "default": true
-        }
-      ]
+      "template": {
+        "name": "dashboard-list"
+      },
+      "props": {
+        "cardHeaderSeparator": true
+      }
     },
     {
-      "name": "card aggregate",
-      "fields": [],
-      "props": []
+      "name": "Table",
+      "fields": [
+        {
+          "id": "columns",
+          "name": "Other",
+          "validTypes": ["string", "number", "date", "dateTime", "geometry"],
+          "required": false
+        }
+      ],
+      "template": {
+        "name": "dashboard-table"
+      },
+      "props": {
+        "cardHeaderSeparator": true
+      }
+    },
+    {
+      "name": "Bar Chart",
+      "fields": [
+        {
+          "id": "bars",
+          "name": "Bars",
+          "validTypes": ["number", "string", "date", "dateTime"],
+          "required": true,
+          "operation": "get"
+        },
+        {
+          "id": "y-axes",
+          "name": "Series",
+          "validTypes": ["number", "string", "date", "dateTime"],
+          "required": true,
+          "operation": "get"
+        }
+      ],
+      "template": {
+        "name": "dashboard-bar-graph"
+      },
+      "props": {
+        "cardHeaderSeparator": true
+      }
+    },
+    {
+      "name": "Pie Chart",
+      "fields": [
+        {
+          "id": "arcs",
+          "name": "Arcs",
+          "validTypes": ["number"],
+          "required": true,
+          "operation": "get"
+        },
+        {
+          "id": "series",
+          "name": "Series",
+          "validTypes": ["number", "string", "date", "dateTime"],
+          "required": false,
+          "operation": "get"
+        }
+      ],
+      "template": {
+        "name": "dashboard-pie-chart"
+      },
+      "props": {
+        "cardHeaderSeparator": true
+      }
     }
   ]
 }
