@@ -1,7 +1,7 @@
 {
-  "primary": "#03c9d7",
-  "secondary": "#b1cbce",
-  "error": "#d32f2f",
+  "primary": "#f1ad00",
+  "secondary": "#cd8987",
+  "error": "#E35350",
   "warning": "#ed6c02",
   "info": "#0288d1",
   "success": "#2e7d32",

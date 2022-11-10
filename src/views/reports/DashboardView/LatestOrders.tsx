@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import moment from 'moment'
 import { v4 as uuid } from 'uuid'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 import {
@@ -17,6 +16,7 @@ import {
   Tooltip,
 } from '@mui/material'
 import { ArrowRight } from '@mui/icons-material'
+import {getDayMonthYearFromDate} from "@iteria-app/component-templates"
 
 const data = [
   {
@@ -114,7 +114,7 @@ export const LatestOrders = () => {
                     {order.customer.name}
                   </TableCell>
                   <TableCell sx={{ padding: '12px!important' }}>
-                    {moment(order.createdAt).format('DD/MM/YYYY')}
+                    {getDayMonthYearFromDate(order.createdAt)}
                   </TableCell>
                   <TableCell sx={{ padding: '12px!important' }}>
                     <Chip color="primary" label={order.status} size="small" />

@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { v4 as uuid } from 'uuid'
-import moment from 'moment'
 import {
   Box,
   Button,
@@ -14,37 +13,40 @@ import {
   ListItemText,
 } from '@mui/material'
 import { MoreVert, ArrowRight } from '@mui/icons-material'
+import {getUpdatedTimeString} from "@iteria-app/component-templates"
+
+const actualDate = new Date()
 
 const data = [
   {
     id: uuid(),
     name: 'Dropbox',
     imageUrl: '/static/images/products/product_1.png',
-    updatedAt: moment().subtract(2, 'hours'),
+    updatedAt: getUpdatedTimeString(new Date().setHours(actualDate.getHours()-2)),
   },
   {
     id: uuid(),
     name: 'Medium Corporation',
     imageUrl: '/static/images/products/product_2.png',
-    updatedAt: moment().subtract(2, 'hours'),
+    updatedAt:getUpdatedTimeString(new Date().setHours(actualDate.getHours()-2)),
   },
   {
     id: uuid(),
     name: 'Slack',
     imageUrl: '/static/images/products/product_3.png',
-    updatedAt: moment().subtract(3, 'hours'),
+    updatedAt: getUpdatedTimeString(new Date().setHours(actualDate.getHours()-3)),
   },
   {
     id: uuid(),
     name: 'Lyft',
     imageUrl: '/static/images/products/product_4.png',
-    updatedAt: moment().subtract(5, 'hours'),
+    updatedAt: getUpdatedTimeString(new Date().setHours(actualDate.getHours()-5)),
   },
   {
     id: uuid(),
     name: 'GitHub',
     imageUrl: '/static/images/products/product_5.png',
-    updatedAt: moment().subtract(9, 'hours'),
+    updatedAt: getUpdatedTimeString(new Date().setHours(actualDate.getHours()-9)),
   },
 ]
 
@@ -71,7 +73,7 @@ export const LatestProducts = () => {
             </ListItemAvatar>
             <ListItemText
               primary={product.name}
-              secondary={`Updated ${product.updatedAt.fromNow()}`}
+              secondary={product.updatedAt}
             />
             <IconButton edge="end" size="small">
               <MoreVert />

@@ -1,10 +1,17 @@
 import React from 'react'
-import { Box, Drawer, Typography, styled, List } from '@mui/material'
+import {
+  Box,
+  Drawer,
+  styled,
+  List,
+  IconButton,
+} from '@mui/material'
 import { Users, Home } from 'react-feather'
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord'
 import { MenuItems, calculateMenuItems } from '@iteria-app/component-templates'
 import * as graphqlGen from '../../../generated/graphql'
 import Logo from '../../../components/Logo'
+import MenuIcon from '@mui/icons-material/Menu'
 
 const PREFIX = 'StyledNavBar'
 const classes = {
@@ -32,9 +39,16 @@ const StyledNavBar = styled(Box)(() => ({
 interface NavBarProps {
   open: boolean
   drawerWidth: number
+  setNavBarOpen: (open: boolean) => void
+  isSmallScreen: boolean
 }
 
-const NavBar = ({ open, drawerWidth }: NavBarProps): JSX.Element => {
+const NavBar = ({
+  open,
+  drawerWidth,
+  setNavBarOpen,
+  isSmallScreen,
+}: NavBarProps): JSX.Element => {
   const content = (
     <StyledNavBar
       height="100%"
@@ -42,11 +56,20 @@ const NavBar = ({ open, drawerWidth }: NavBarProps): JSX.Element => {
       display="flex"
       flexDirection="column"
     >
-      <Box display={'flex'} flexDirection={'row'} alignItems={'center'}>
-        <Logo style={{marginRight: '10px'}} />
-        <Typography variant="h1" sx={{ pt: '3px' }}>
-          Lowcode
-        </Typography>
+      <Box display={'flex'} flexDirection={'row'} justifyContent={'center'}>
+        <Logo />
+        {isSmallScreen && (
+          <IconButton
+            aria-label="open drawer"
+            onClick={() => {
+              setNavBarOpen(!open)
+            }}
+            edge="start"
+            sx={{ marginLeft: 'auto' }}
+          >
+            <MenuIcon />
+          </IconButton>
+        )}
       </Box>
       <Box>
         <List>
@@ -68,6 +91,13 @@ const NavBar = ({ open, drawerWidth }: NavBarProps): JSX.Element => {
               },
               ...calculateMenuItems(graphqlGen, Users, FiberManualRecordIcon),
             ]}
+            onOpen={
+              isSmallScreen
+                ? () => {
+                    setNavBarOpen(!open)
+                  }
+                : undefined
+            }
           />
         </List>
       </Box>
@@ -78,10 +108,9 @@ const NavBar = ({ open, drawerWidth }: NavBarProps): JSX.Element => {
       sx={{
         width: drawerWidth,
         flexShrink: 0,
-        '& .MuiDrawer-paper': {
-          width: drawerWidth,
-          boxSizing: 'border-box',
-        },
+      }}
+      PaperProps={{
+        sx: { width: isSmallScreen ? '100vw' : drawerWidth },
       }}
       variant="persistent"
       anchor="left"
