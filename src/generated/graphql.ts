@@ -156,7 +156,7 @@ export type BusStopDepartures = {
   /** An object relationship */
   bus_stop?: Maybe<BusStops>;
   bus_stop_id?: Maybe<Scalars['uuid']>;
-  bus_stop_platform: Scalars['String'];
+  bus_stop_platform?: Maybe<Scalars['String']>;
   id: Scalars['uuid'];
   line?: Maybe<Scalars['String']>;
   /** An object relationship */
