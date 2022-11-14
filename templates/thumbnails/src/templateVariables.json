@@ -9,10 +9,10 @@
   ],
   "components": [
     {
-      "name": "card",
+      "name": "Card",
       "fields": [
         {
-          "id": "cardTitle",
+          "id": "name",
           "name": "Card Title",
           "validTypes": ["string", "number", "date", "dateTime"],
           "required": false,
@@ -23,14 +23,14 @@
           "name": "Thumbnail",
           "validTypes": ["string"],
           "required": false,
-          "multipleFields": true
+          "multipleFields": false
         },
         {
-          "id": "otherFields",
+          "id": "other",
           "name": "Other",
           "validTypes": ["string", "number", "date", "dateTime"],
           "required": false,
-          "multipleFields": false
+          "multipleFields": true
         }
       ],
       "props": []

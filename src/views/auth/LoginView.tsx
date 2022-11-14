@@ -11,49 +11,52 @@ import {
   TextField,
   Typography,
 } from '@mui/material'
-import { makeStyles } from '@mui/styles'
+import { styled } from '@mui/material'
 import FacebookIcon from '../../icons/Facebook'
 import GoogleIcon from '../../icons/Google'
 import Page from '../../components/Page'
 
-const useStyles = makeStyles((theme: any) => ({
-  root: {
+const PREFIX = 'StyledPage'
+const classes = {
+  root: `${PREFIX}-root`,
+  box: `${PREFIX}-box`,
+}
+const StyledPage = styled(Page)(({ theme }) => ({
+  [`&.${classes.root}`]: {
     backgroundColor: theme.palette.background.dark,
     height: '100%',
     paddingBottom: theme.spacing(3),
-    paddingTop: theme.spacing(3)
-  }
-}));
+    paddingTop: theme.spacing(3),
+  },
+  [`& .${classes.box}`]: {
+    display: 'flex',
+    flexDirection: 'column',
+    height: '100%',
+    justifyContent: 'center',
+  },
+}))
 
 const LoginView = () => {
-  const classes = useStyles();
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   return (
-    <Page className={classes.root} title="Login">
-      <Box
-        display="flex"
-        flexDirection="column"
-        height="100%"
-        justifyContent="center"
-      >
+    <StyledPage className={classes.root} title="Login">
+      <Box className={classes.box}>
         <Container maxWidth="sm">
           <Formik
             initialValues={{
               email: 'demo@devias.io',
-              password: 'Password123'
+              password: 'Password123',
             }}
             validationSchema={Yup.object().shape({
               email: Yup.string()
                 .email('Must be a valid email')
                 .max(255)
                 .required('Email is required'),
-              password: Yup.string()
-                .max(255)
-                .required('Password is required')
+              password: Yup.string().max(255).required('Password is required'),
             })}
             onSubmit={() => {
-              navigate('/app/dashboard', { replace: true });
+              navigate('/app/dashboard', { replace: true })
             }}
           >
             {({
@@ -63,7 +66,7 @@ const LoginView = () => {
               handleSubmit,
               isSubmitting,
               touched,
-              values
+              values,
             }) => (
               <form onSubmit={handleSubmit}>
                 <Box mb={3}>
@@ -161,8 +164,8 @@ const LoginView = () => {
           </Formik>
         </Container>
       </Box>
-    </Page>
-  );
-};
+    </StyledPage>
+  )
+}
 
-export default LoginView;
+export default LoginView

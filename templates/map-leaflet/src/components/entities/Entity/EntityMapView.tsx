@@ -8,7 +8,6 @@ import {
   LayerGroup,
 } from 'react-leaflet'
 import {
-  debounce,
   FilterProps, geoFieldsIntersectFilter,
   getAllGeoFields,
   getGeoFields,
@@ -44,6 +43,12 @@ const EntityListLeaflet: React.FC<EntityListProps> = ({
         const filter = geoFieldsIntersectFilter(bounds, data, geoFields)
         filterProps.onFilter(filter ? { _or: filter } : {})
       },
+      zoomend(event) {
+        localStorage.setItem("mapZoom", event.target.getZoom())
+        const bounds = event.target.getBounds()
+        const filter = geoFieldsIntersectFilter(bounds, data, geoFields)
+        filterProps.onFilter(filter ? { _or: filter } : {})
+      }
     })
     return null
   }
@@ -53,7 +58,7 @@ const EntityListLeaflet: React.FC<EntityListProps> = ({
     <>
       <MapContainer
         center={JSON.parse(localStorage.getItem("mapPosition") ?? "[45.74739, -105]")}
-        zoom={6}
+        zoom={parseInt(localStorage.getItem("mapZoom") ?? "6")}
         scrollWheelZoom={true}
         style={{ height: '90vh' }}
       >

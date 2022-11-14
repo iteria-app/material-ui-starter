@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { Doughnut } from 'react-chartjs-2'
 import {
   Box,
@@ -13,7 +12,7 @@ import {
 import { LaptopMac, Phone, Tablet } from '@mui/icons-material'
 import { theme } from '../../../theme'
 
-const TrafficByDevice: React.FC<any> = ({ className, ...rest }) => {
+export const TrafficByDevice = () => {
   const data = {
     datasets: [
       {
@@ -75,7 +74,7 @@ const TrafficByDevice: React.FC<any> = ({ className, ...rest }) => {
   ]
 
   return (
-    <Card sx={{ height: '100%' }} {...rest}>
+    <Card sx={{ height: '100%' }}>
       <CardHeader title="Traffic by Device" />
       <Divider />
       <CardContent>
@@ -99,9 +98,3 @@ const TrafficByDevice: React.FC<any> = ({ className, ...rest }) => {
     </Card>
   )
 }
-
-TrafficByDevice.propTypes = {
-  className: PropTypes.string,
-}
-
-export default TrafficByDevice

@@ -4,7 +4,6 @@ import DashboardLayout from '../src/layouts/DashboardLayout'
 import LoginView from '../src/views/auth/LoginView'
 import NotFoundView from '../src/views/errors/NotFoundView'
 import RegisterView from '../src/views/auth/RegisterView'
-import DashboardView from '../src/views/reports/DashboardView'
 
 import {
   generatePagesRoutes,
@@ -14,6 +13,8 @@ import {
   ErrorBoundary
 } from '@iteria-app/component-templates'
 import * as generatedGraphql from './generated/graphql'
+import HomePage from './pages/home'
+import DashboardView from './pages/dashboard'
 
 const filebasedRouting = import.meta.globEager('./pages/**/*.tsx')
 const DETAIL_NAME = 'Form'
@@ -43,6 +44,7 @@ const newRoutes = Object.keys(filebasedRouting).map((route) => {
 
 const routing = generatePagesRoutes(generatedGraphql)
 routing.push({ path: 'dashboard', element: <DashboardView /> })
+routing.push({ path: 'home', element: <HomePage /> })
 
 const routes = [
   {

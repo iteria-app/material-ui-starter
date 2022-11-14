@@ -9,14 +9,28 @@
   ],
   "components": [
     {
-      "name": "Other",
+      "name": "List item",
       "fields": [
         {
-          "id": "fields",
-          "name": "Fields",
-          "validTypes": ["string", "number", "date", "dateTime", "geometry"],
+          "id": "name",
+          "name": "Title",
+          "validTypes": ["string", "number", "date", "dateTime"],
           "required": true,
+          "multipleFields": true
+        },
+        {
+          "id": "thumbnail",
+          "name": "Avatar",
+          "validTypes": ["string"],
+          "required": false,
           "multipleFields": false
+        },
+        {
+          "id": "other",
+          "name": "Other",
+          "validTypes": ["string", "number", "date", "dateTime"],
+          "required": false,
+          "multipleFields": true
         }
       ],
       "props": []

@@ -12,12 +12,9 @@ import {
   QueryBoundary,
   showErrorSnackbar,
   showSuccessSnackbar,
-  useLocale,
 } from '@iteria-app/component-templates'
 import { FormikValues } from 'formik'
 import { getUpsertQuery } from '@iteria-app/graphql-lowcode'
-import { IntlProvider } from 'react-intl'
-import { messages } from '../../../locale'
 
 import * as generatedGraphql from '../../../generated/graphql'
 
@@ -35,8 +32,6 @@ const EntityFormContainer: React.FC<EntityFormContainerProps> = ({ View }) => {
   const { id } = useParams()
   const navigate = useNavigate()
 
-  const locale = useLocale()
-  const messagesObject = messages(locale)
 
   const [insertedData, insertMutation] = useInsertEntityMutation()
 
@@ -78,13 +73,7 @@ const EntityFormContainer: React.FC<EntityFormContainerProps> = ({ View }) => {
   return (
     <ErrorBoundary>
       <QueryBoundary queryResponse={data}>
-        <IntlProvider
-          locale={locale}
-          messages={messagesObject}
-          onError={() => console.debug}
-        >
           <View data={data?.data} onSubmit={handleSubmit} onCopy={handleCopy}/>
-        </IntlProvider>
       </QueryBoundary>
     </ErrorBoundary>
   )

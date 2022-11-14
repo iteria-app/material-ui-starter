@@ -7,3 +7,5 @@ dist-ssr
 
 # Generated code
 src/generated/
+
+.idea

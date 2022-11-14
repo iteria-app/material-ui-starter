@@ -9,14 +9,21 @@
   ],
   "components": [
     {
-      "name": "Other",
+      "name": "Map",
       "fields": [
         {
-          "id": "fields",
-          "name": "Fields",
-          "validTypes": ["string", "number", "date", "dateTime", "geometry"],
-          "required": true,
-          "multipleFields": false
+          "id": "geoJson",
+          "name": "GeoJSON",
+          "validTypes": ["geography"],
+          "required": false,
+          "multipleFields": true
+        },
+        {
+          "id": "other",
+          "name": "Other",
+          "validTypes": ["string", "number", "date", "dateTime"],
+          "required": false,
+          "multipleFields": true
         }
       ],
       "props": []

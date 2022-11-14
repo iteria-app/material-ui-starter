@@ -26,6 +26,7 @@ export default ({ command, mode }) => {
         graphQLSecret: env.VITE_HASURA_GRAPHQL_SECRET,
         cwd: process.cwd(),
         injectLowcode: true,
+        injectMode: env.VITE_NETLIFY ? "jamstack" : env.VITE_INJECT_MODE,
         features: {
           tippy: true,
           generator: true,
@@ -35,7 +36,7 @@ export default ({ command, mode }) => {
           graphQLEndpoint: true,
           floatingButton: true,
         },
-        version: "1.6.0",
+        version: "1.7.2",
         whitelistedEnvs: ['VITE_HASURA_GRAPHQL_ENDPOINT', 'VITE_HASURA_GRAPHQL_SECRET', 'VITE_BRANCH', 'VITE_REPOSITORY_URL', 'VITE_SITE_ID', 'VITE_NETLIFY']
       }),
     ],

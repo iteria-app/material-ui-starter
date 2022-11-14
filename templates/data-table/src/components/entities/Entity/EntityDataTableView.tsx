@@ -16,6 +16,7 @@ import {
   useFilter,
   createNewElement,
   getSingularName,
+  getRelationshipField,
 } from '@iteria-app/component-templates'
 import { FormatEntityField } from '@iteria-app-mui/common/src/components/fields/typography/FormatEntityField'
 import introspection from '../../../generated/introspect.json'
@@ -114,12 +115,6 @@ const EntityDataTableView: React.FC<EntityTableProps> = ({
       tableColumnTypes.find((type) => type.graphQl === graphQlType)?.dataGrid ??
       'string'
     )
-  }
-
-  const getRelationshipField = (fieldName: string) => {
-    return fieldName.includes('.')
-      ? fieldName.split('.').slice(1).join('.')
-      : fieldName
   }
 
   const columns = [

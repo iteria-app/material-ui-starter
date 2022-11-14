@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import { Outlet } from 'react-router-dom'
-import { Box, styled, useTheme } from '@mui/material'
+import { Box, styled, useMediaQuery, useTheme } from '@mui/material'
 import NavBar from './NavBar'
 import TopBar from './TopBar'
+import { ErrorBoundary } from '@iteria-app/component-templates'
 
 const drawerWidth = 256
 
@@ -10,12 +11,12 @@ const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })<{
   open?: boolean
 }>(({ theme, open }) => ({
   flexGrow: 1,
-  padding: theme.spacing(3),
+  height: '100vh',
+  padding: '64px 24px 0px 24px',
   transition: theme.transitions.create('margin', {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen,
   }),
-  marginTop: '48px',
   marginLeft: `-${drawerWidth}px`,
   ...(open && {
     transition: theme.transitions.create('margin', {
@@ -28,14 +29,26 @@ const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })<{
 
 const DashboardLayout = (): JSX.Element => {
   const theme = useTheme()
-  const [open, setOpen] = useState(true)
+
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'), {
+    noSsr: true,
+  })
+
+  const [navBarOpen, setNavBarOpen] = useState(!isSmallScreen)
 
   return (
     <Box sx={{ display: 'flex', background: theme.palette.background.default }}>
-      <TopBar open={open} onOpen={() => setOpen(!open)} />
-      <NavBar open={open} drawerWidth={drawerWidth} />
-      <Main open={open}>
-        <Outlet />
+      <TopBar navBarOpen={navBarOpen} setNavBarOpen={setNavBarOpen} />
+      <NavBar
+        open={navBarOpen}
+        drawerWidth={drawerWidth}
+        setNavBarOpen={setNavBarOpen}
+        isSmallScreen={isSmallScreen}
+      />
+      <Main open={navBarOpen}>
+        <ErrorBoundary>
+          <Outlet />
+        </ErrorBoundary>
       </Main>
     </Box>
   )

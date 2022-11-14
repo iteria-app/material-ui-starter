@@ -1,15 +1,12 @@
 import React, { useState } from 'react'
-import moment from 'moment'
 import { v4 as uuid } from 'uuid'
 import PerfectScrollbar from 'react-perfect-scrollbar'
-import PropTypes from 'prop-types'
 import {
   Box,
   Button,
   Card,
   CardHeader,
   Chip,
-  Divider,
   Table,
   TableBody,
   TableCell,
@@ -19,6 +16,7 @@ import {
   Tooltip,
 } from '@mui/material'
 import { ArrowRight } from '@mui/icons-material'
+import {getDayMonthYearFromDate} from "@iteria-app/component-templates"
 
 const data = [
   {
@@ -83,11 +81,11 @@ const data = [
   },
 ]
 
-const LatestOrders: React.FC<any> = ({ className, ...rest }) => {
+export const LatestOrders = () => {
   const [orders] = useState(data)
 
   return (
-    <Card {...rest}>
+    <Card>
       <CardHeader title="Latest Orders" />
       <PerfectScrollbar>
         <Box minWidth={800}>
@@ -109,12 +107,16 @@ const LatestOrders: React.FC<any> = ({ className, ...rest }) => {
             <TableBody>
               {orders.map((order) => (
                 <TableRow hover key={order.id}>
-                  <TableCell sx={{padding: '12px!important'}}>{order.ref}</TableCell>
-                  <TableCell sx={{padding: '12px!important'}}>{order.customer.name}</TableCell>
-                  <TableCell sx={{padding: '12px!important'}}>
-                    {moment(order.createdAt).format('DD/MM/YYYY')}
+                  <TableCell sx={{ padding: '12px!important' }}>
+                    {order.ref}
                   </TableCell>
-                  <TableCell sx={{padding: '12px!important'}}>
+                  <TableCell sx={{ padding: '12px!important' }}>
+                    {order.customer.name}
+                  </TableCell>
+                  <TableCell sx={{ padding: '12px!important' }}>
+                    {getDayMonthYearFromDate(order.createdAt)}
+                  </TableCell>
+                  <TableCell sx={{ padding: '12px!important' }}>
                     <Chip color="primary" label={order.status} size="small" />
                   </TableCell>
                 </TableRow>
@@ -136,9 +138,3 @@ const LatestOrders: React.FC<any> = ({ className, ...rest }) => {
     </Card>
   )
 }
-
-LatestOrders.propTypes = {
-  className: PropTypes.string,
-}
-
-export default LatestOrders
