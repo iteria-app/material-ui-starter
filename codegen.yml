@@ -1,6 +1,6 @@
 overwrite: true
 schema: ${VITE_HASURA_GRAPHQL_ENDPOINT}
-documents: './src/pages/**/*.graphql'
+documents: './src/**/*.graphql'
 generates:
   src/generated/graphql.ts:
     plugins:

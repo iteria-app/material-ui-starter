@@ -26,6 +26,7 @@ export default ({ command, mode }) => {
         graphQLSecret: env.VITE_HASURA_GRAPHQL_SECRET,
         cwd: process.cwd(),
         injectLowcode: true,
+        injectMode: env.VITE_NETLIFY ? "jamstack" : env.VITE_INJECT_MODE,
         features: {
           tippy: true,
           generator: true,
