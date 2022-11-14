@@ -1,30 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {
-  Badge,
-  Box,
-  Divider,
-  IconButton,
-  styled,
-  Toolbar,
-  useTheme,
-} from '@mui/material'
+import { Badge, Box, Divider, IconButton, styled, Toolbar } from '@mui/material'
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar'
 import MenuIcon from '@mui/icons-material/Menu'
 import NotificationsIcon from '@mui/icons-material/NotificationsOutlined'
-import InputIcon from '@mui/icons-material/Input'
-import Logo from '../../components/Logo'
-import {
-  LocaleSwitch,
-  getEntityNameFromUrl,
-} from '@iteria-app/component-templates'
+import { LocaleSwitch, UserProfile } from '@iteria-app/component-templates'
 import { locales } from '../../locale'
 
 const drawerWidth = 256
 
 interface TopBarProps {
-  open: boolean
-  onOpen: () => void
+  navBarOpen: boolean
+  setNavBarOpen: (open: boolean) => void
   rest?: any
 }
 
@@ -49,11 +36,21 @@ const AppBar = styled(MuiAppBar, {
   }),
 }))
 
-const TopBar = ({ open, onOpen, ...rest }: TopBarProps): JSX.Element => {
+const TopBar = ({
+  navBarOpen,
+  setNavBarOpen,
+  ...rest
+}: TopBarProps): JSX.Element => {
   return (
-    <AppBar open={open} {...rest}>
+    <AppBar open={navBarOpen} {...rest}>
       <Toolbar>
-        <IconButton aria-label="open drawer" onClick={onOpen} edge="start">
+        <IconButton
+          aria-label="open drawer"
+          onClick={() => {
+            setNavBarOpen(!navBarOpen)
+          }}
+          edge="start"
+        >
           <MenuIcon />
         </IconButton>
         <Box flexGrow={1} />
@@ -64,6 +61,7 @@ const TopBar = ({ open, onOpen, ...rest }: TopBarProps): JSX.Element => {
         </IconButton>
         <Divider orientation="vertical" sx={{ height: '32px' }} />
         <LocaleSwitch locales={locales} />
+        <UserProfile sourceUrl={window.location.pathname.toString()} />
       </Toolbar>
     </AppBar>
   )

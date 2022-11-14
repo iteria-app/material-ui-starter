@@ -2,6 +2,10 @@ import React from 'react'
 import { InputLabel, TableCell, TableRow } from '@mui/material'
 import { Formik, useFormikContext } from 'formik' // Formik import required for react generator
 import { FormatEntityField } from '@iteria-app-mui/common/src/components/fields/form/FormatEntityField'
+import {
+  getRelationshipField,
+  Translate,
+} from '@iteria-app/component-templates'
 
 interface IProps {
   relationshipName?: string
@@ -30,7 +34,14 @@ const EntityForm: React.FC<IProps> = ({ relationshipName }) => {
       }}
     >
       <TableCell sx={{ width: '50%', padding: '14.5px 14px' }}>
-        <InputLabel>HEADER_NAME</InputLabel>
+        <InputLabel>
+          {' '}
+          <Translate
+            entityName={'Entity'}
+            fieldName={getRelationshipField('FIELD')}
+            defaultMessage={'HEADER_NAME'}
+          />
+        </InputLabel>
       </TableCell>
       <TableCell
         sx={{

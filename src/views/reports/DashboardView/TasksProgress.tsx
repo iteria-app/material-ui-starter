@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import {
   Avatar,
   Box,
@@ -8,15 +7,14 @@ import {
   Grid,
   LinearProgress,
   Typography,
-  colors,
 } from '@mui/material'
 import { InsertChart } from '@mui/icons-material'
 import { Translate } from '@iteria-app/component-templates'
 import { theme } from '../../../theme'
 
-const TasksProgress: React.FC<any> = ({ className, ...rest }) => {
+export const TasksProgress = () => {
   return (
-    <Card sx={{ height: '100%' }} {...rest}>
+    <Card sx={{ height: '100%' }}>
       <CardContent>
         <Grid container spacing={3}>
           <Grid item xs={9}>
@@ -48,9 +46,3 @@ const TasksProgress: React.FC<any> = ({ className, ...rest }) => {
     </Card>
   )
 }
-
-TasksProgress.propTypes = {
-  className: PropTypes.string,
-}
-
-export default TasksProgress

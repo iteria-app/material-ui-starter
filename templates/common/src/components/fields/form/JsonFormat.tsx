@@ -1,23 +1,27 @@
-import React from 'react'
+import React, { ChangeEventHandler, FocusEventHandler } from 'react'
 import { Input } from '@mui/material'
-import { Field as FormikField } from 'formik'
 
-export const JsonFormat = ({ value, relationshipName, index }) => {
-  return (
-    <FormikField
-      name={
-        relationshipName
-          ? index !== undefined
-            ? `${relationshipName}[${index}].${'FIELD'}`
-            : `${relationshipName}.${'FIELD'}`
-          : 'FIELD'
-      }
-    >
-      {({ field }: any) => {
-        return (
-          <Input {...field} fullWidth={true} value={JSON.stringify(field.value) ?? ''}></Input>
-        )
-      }}
-    </FormikField>
-  )
+type JsonFormatProps = {
+  value: string
+  name: string
+  onChange?: ChangeEventHandler<HTMLTextAreaElement | HTMLInputElement>
+  onBlur?: FocusEventHandler<HTMLTextAreaElement | HTMLInputElement>
 }
+
+export const JsonFormat = ({
+  value,
+  name,
+  onChange,
+  onBlur,
+}: JsonFormatProps): JSX.Element => (
+  <Input
+    name={name}
+    onChange={onChange}
+    onBlur={onBlur}
+    onClick={(event) => {
+      event.stopPropagation()
+    }}
+    fullWidth={true}
+    value={JSON.stringify(value) ?? ''}
+  />
+)

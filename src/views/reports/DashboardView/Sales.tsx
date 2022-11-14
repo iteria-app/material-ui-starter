@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { Bar } from 'react-chartjs-2'
 import {
   Box,
@@ -13,7 +12,7 @@ import {
 import { ArrowDropDown, ArrowRight } from '@mui/icons-material'
 import { theme } from '../../../theme'
 
-const Sales: React.FC<any> = ({ className, ...rest }) => {
+export const Sales = () => {
   const data = {
     datasets: [
       {
@@ -86,7 +85,7 @@ const Sales: React.FC<any> = ({ className, ...rest }) => {
   }
 
   return (
-    <Card {...rest}>
+    <Card>
       <CardHeader
         action={
           <Button endIcon={<ArrowDropDown />} size="small" variant="text">
@@ -115,9 +114,3 @@ const Sales: React.FC<any> = ({ className, ...rest }) => {
     </Card>
   )
 }
-
-Sales.propTypes = {
-  className: PropTypes.string,
-}
-
-export default Sales

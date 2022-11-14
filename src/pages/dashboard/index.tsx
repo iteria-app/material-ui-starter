@@ -1,30 +1,32 @@
 import React from 'react'
-import { Container, Grid } from '@mui/material'
-import { makeStyles } from '@mui/styles'
-import Page from '../../../components/Page'
-import Budget from './Budget'
-import LatestOrders from './LatestOrders'
-import LatestProducts from './LatestProducts'
-import Sales from './Sales'
-import TasksProgress from './TasksProgress'
-import TotalCustomers from './TotalCustomers'
-import TotalProfit from './TotalProfit'
-import TrafficByDevice from './TrafficByDevice'
+import { Container, Grid, styled } from '@mui/material'
+import {
+  Budget,
+  TasksProgress,
+  TotalCustomers,
+  TotalProfit,
+  Sales,
+  TrafficByDevice,
+  LatestProducts,
+  LatestOrders,
+} from '../../views/reports/DashboardView'
+import Page from "../../components/Page"
 
-const useStyles = makeStyles((theme: any) => ({
-  root: {
+const PREFIX = 'DashboardView'
+const classes = {
+  root: `${PREFIX}-root`,
+}
+const StyledPage = styled(Page)(({ theme }) => ({
+  [`&.${classes.root}`]: {
     backgroundColor: theme.palette.background.dark,
     minHeight: '100%',
     paddingBottom: theme.spacing(3),
-    paddingTop: theme.spacing(3)
-  }
-}));
-
-const Dashboard = () => {
-  const classes = useStyles();
-
+    paddingTop: theme.spacing(3),
+  },
+}))
+const Dashboard: React.FC = () => {
   return (
-    <Page className={classes.root} title="Dashboard">
+    <StyledPage className={classes.root} title="Dashboard">
       <Container maxWidth={false}>
         <Grid container spacing={3}>
           <Grid item lg={3} sm={6} xl={3} xs={12}>
@@ -53,8 +55,7 @@ const Dashboard = () => {
           </Grid>
         </Grid>
       </Container>
-    </Page>
-  );
-};
-
-export default Dashboard;
+    </StyledPage>
+  )
+}
+export default Dashboard

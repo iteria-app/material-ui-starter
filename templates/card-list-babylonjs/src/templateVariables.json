@@ -1,0 +1,39 @@
+{
+  "enitities": [
+    {
+      "id": "entities",
+      "name": "Entities",
+      "required": true,
+      "minValues": 1
+    }
+  ],
+  "components": [
+    {
+      "name": "Card",
+      "fields": [
+        {
+          "id": "name",
+          "name": "Card Title",
+          "validTypes": ["string", "number", "date", "dateTime"],
+          "required": false,
+          "multipleFields": true
+        },
+        {
+          "id": "thumbnail",
+          "name": "Thumbnail",
+          "validTypes": ["string"],
+          "required": false,
+          "multipleFields": true
+        },
+        {
+          "id": "other",
+          "name": "Other",
+          "validTypes": ["string", "number", "date", "dateTime"],
+          "required": false,
+          "multipleFields": true
+        }
+      ],
+      "props": []
+    }
+  ]
+}

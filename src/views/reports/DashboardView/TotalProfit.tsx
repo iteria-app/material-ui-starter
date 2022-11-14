@@ -1,20 +1,18 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import {
   Avatar,
   Card,
   CardContent,
   Grid,
   Typography,
-  colors,
 } from '@mui/material'
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney'
 import { Translate } from '@iteria-app/component-templates'
 import { theme } from '../../../theme'
 
-const TotalProfit: React.FC<any> = ({ className, ...rest }) => {
+export const TotalProfit = () => {
   return (
-    <Card sx={{ height: '100%' }} {...rest}>
+    <Card sx={{ height: '100%' }}>
       <CardContent>
         <Grid container spacing={3}>
           <Grid item xs={9}>
@@ -39,9 +37,3 @@ const TotalProfit: React.FC<any> = ({ className, ...rest }) => {
     </Card>
   )
 }
-
-TotalProfit.propTypes = {
-  className: PropTypes.string,
-}
-
-export default TotalProfit

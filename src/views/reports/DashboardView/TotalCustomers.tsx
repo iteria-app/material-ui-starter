@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import {
   Avatar,
   Box,
@@ -12,9 +11,9 @@ import {
 import { ArrowUpward, People } from '@mui/icons-material'
 import { Translate } from '@iteria-app/component-templates'
 import { theme } from '../../../theme'
-const TotalCustomers: React.FC<any> = ({ className, ...rest }) => {
+export const TotalCustomers = () => {
   return (
-    <Card sx={{ height: '100%' }} {...rest}>
+    <Card sx={{ height: '100%' }}>
       <CardContent>
         <Grid container spacing={3}>
           <Grid item xs={9}>
@@ -52,7 +51,3 @@ const TotalCustomers: React.FC<any> = ({ className, ...rest }) => {
     </Card>
   )
 }
-TotalCustomers.propTypes = {
-  className: PropTypes.string,
-}
-export default TotalCustomers

@@ -1,5 +1,5 @@
 import React from 'react'
-import { EntityFragment, useEntityQuery} from '../../../generated/graphql'
+import { EntityFragment, useEntityQuery } from '../../../generated/graphql'
 import {
   ErrorBoundary,
   FilterProps,
@@ -22,7 +22,7 @@ const EntityListContainer: React.FC<EntityListContainerProps> = ({ View }) => {
   const [data] = useEntityQuery({
     variables: {
       where: filterProps.filter,
-      limit: filterProps.pageSize,
+      limit: 1000,
       offset: filterProps.offset,
       order_by: filterProps.sort,
     },
@@ -31,7 +31,7 @@ const EntityListContainer: React.FC<EntityListContainerProps> = ({ View }) => {
   return (
     <ErrorBoundary>
       <QueryBoundary queryResponse={data}>
-        <View data={data?.data?.Entity} filterProps={filterProps}/>
+        <View data={data?.data?.Entity} filterProps={filterProps} />
       </QueryBoundary>
     </ErrorBoundary>
   )

@@ -2,7 +2,7 @@ import React from 'react'
 import {
   EntitiesQuery,
   IError,
-  useEntityQuery
+  useEntityQuery,
 } from '../../../generated/graphql'
 import {
   ErrorBoundary,

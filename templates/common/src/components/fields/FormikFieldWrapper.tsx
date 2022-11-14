@@ -1,6 +1,7 @@
 import React from 'react'
 import { Field as FormikField, FieldProps } from 'formik'
 import { FormatEntityField } from '@iteria-app-mui/common/src/components/fields/form/FormatEntityField'
+import { columnCount } from '@iteria-app/component-templates'
 
 type Props = {
   relationshipName: string
@@ -39,7 +40,7 @@ export const FormikFieldWrapper = ({
             onChange={fieldProps.field.onChange}
             onBlur={fieldProps.field.onBlur}
             setFieldValue={setFieldValue}
-            length={fieldProps.field.value?.length}
+            length={columnCount(fieldProps.field.value)}
             type={type}
           />
         )
