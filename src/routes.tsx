@@ -65,7 +65,7 @@ const routes = [
       { path: 'resetpassword', element: <ResetPassword /> },
       { path: 'signup', element: <SignupWithEmail /> },
       { path: '404', element: <NotFoundView /> },
-      { path: '/', element: <Navigate to="/app/dashboard" /> },
+      { path: '/', element: <Navigate to="/app/home" /> },
       { path: '*', element: <NotFoundView /> }
     ]
   }
