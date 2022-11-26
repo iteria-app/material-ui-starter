@@ -6,8 +6,11 @@ import NotFoundView from '../src/views/errors/NotFoundView'
 import RegisterView from '../src/views/auth/RegisterView'
 
 import {
-  ErrorBoundary,
   generatePagesRoutes,
+  DefaultLoginView,
+  ResetPassword,
+  SignupWithEmail,
+  ErrorBoundary
 } from '@iteria-app/component-templates'
 import * as generatedGraphql from './generated/graphql'
 import HomePage from './pages/home'
@@ -35,7 +38,7 @@ const newRoutes = Object.keys(filebasedRouting).map((route) => {
       <ErrorBoundary>
         <Container />
       </ErrorBoundary>
-    ),
+    )
   }
 })
 
@@ -47,24 +50,25 @@ const routes = [
   {
     path: 'app',
     element: <DashboardLayout />,
-    children: routing,
+    children: routing
   },
   {
     path: 'test',
     element: <DashboardLayout />,
-    children: newRoutes,
+    children: newRoutes
   },
   {
     path: '/',
     element: <DashboardLayout />,
     children: [
-      { path: 'login', element: <LoginView /> },
-      { path: 'register', element: <RegisterView /> },
+      { path: 'login', element: <DefaultLoginView /> },
+      { path: 'resetpassword', element: <ResetPassword /> },
+      { path: 'signup', element: <SignupWithEmail /> },
       { path: '404', element: <NotFoundView /> },
       { path: '/', element: <Navigate to="/app/home" /> },
-      { path: '*', element: <NotFoundView /> },
-    ],
-  },
+      { path: '*', element: <NotFoundView /> }
+    ]
+  }
 ]
 
 export default routes

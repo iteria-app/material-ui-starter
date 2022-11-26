@@ -1512,6 +1512,7 @@ packages:
     transitivePeerDependencies:
       - '@types/node'
       - bufferutil
+      - encoding
       - supports-color
       - typescript
       - utf-8-validate
@@ -1643,6 +1644,8 @@ packages:
       graphql: 15.8.0
       sync-fetch: 0.3.1
       tslib: 2.3.1
+    transitivePeerDependencies:
+      - encoding
     dev: true
 
   /@graphql-tools/batch-execute/8.3.1_graphql@15.8.0:
@@ -1714,6 +1717,7 @@ packages:
       sync-fetch: 0.3.1
       tslib: 2.3.1
     transitivePeerDependencies:
+      - encoding
       - supports-color
     dev: true
 
@@ -1828,6 +1832,7 @@ packages:
     transitivePeerDependencies:
       - '@types/node'
       - bufferutil
+      - encoding
       - supports-color
       - utf-8-validate
     dev: true
@@ -1885,6 +1890,7 @@ packages:
     transitivePeerDependencies:
       - '@types/node'
       - bufferutil
+      - encoding
       - utf-8-validate
     dev: true
 
@@ -3377,8 +3383,10 @@ packages:
     dependencies:
       abort-controller: 3.0.0
       form-data: 4.0.0
-      node-fetch: 2.6.6
+      node-fetch: 2.6.7
       undici: 4.12.1
+    transitivePeerDependencies:
+      - encoding
     dev: true
 
   /cross-undici-fetch/0.1.14:
@@ -3387,9 +3395,11 @@ packages:
       abort-controller: 3.0.0
       form-data-encoder: 1.7.1
       formdata-node: 4.3.2
-      node-fetch: 2.6.6
+      node-fetch: 2.6.7
       undici: 4.12.1
       web-streams-polyfill: 3.2.0
+    transitivePeerDependencies:
+      - encoding
     dev: true
 
   /crypto-js/4.1.1:
@@ -3473,7 +3483,7 @@ packages:
     dev: true
 
   /delayed-stream/1.0.0:
-    resolution: {integrity: sha1-3zrhmayt+31ECqrgsp4icrJOxhk=}
+    resolution: {integrity: sha512-ZySD7Nf91aLB0RxL4KGrKHBXl7Eds1DAmEdcoVawXnLD7SDhpNgtuII2aAkg7a7QS41jxPSZ17p4VdGnMHk3MQ==}
     engines: {node: '>=0.4.0'}
 
   /dependency-graph/0.11.0:
@@ -4127,6 +4137,7 @@ packages:
     transitivePeerDependencies:
       - '@types/node'
       - bufferutil
+      - encoding
       - typescript
       - utf-8-validate
     dev: true
@@ -4488,8 +4499,10 @@ packages:
   /isomorphic-fetch/3.0.0:
     resolution: {integrity: sha512-qvUtwJ3j6qwsF3jLxkZ72qCgjMysPzDfeV240JHiGZsANBYd+EEuu35v7dfrJ9Up0Ak07D7GGSkGhCHTqg/5wA==}
     dependencies:
-      node-fetch: 2.6.6
+      node-fetch: 2.6.7
       whatwg-fetch: 3.6.2
+    transitivePeerDependencies:
+      - encoding
     dev: true
 
   /isomorphic-ws/4.0.1_ws@8.4.0:
@@ -5003,12 +5016,16 @@ packages:
     engines: {node: 4.x || >=6.0.0}
     dev: true
 
-  /node-fetch/2.6.6:
-    resolution: {integrity: sha512-Z8/6vRlTUChSdIgMa51jxQ4lrw/Jy5SOW10ObaA47/RElsAN2c5Pn8bTgFGWn/ibwzXTE8qwr1Yzx28vsecXEA==}
+  /node-fetch/2.6.7:
+    resolution: {integrity: sha512-ZjMPFEfVx5j+y2yF35Kzx5sF7kDzxuDj6ziH4FFbOp87zKDZNx8yExJIb05OGF4Nlt9IHFIMBkRl41VdvcNdbQ==}
     engines: {node: 4.x || >=6.0.0}
+    peerDependencies:
+      encoding: ^0.1.0
+    peerDependenciesMeta:
+      encoding:
+        optional: true
     dependencies:
       whatwg-url: 5.0.0
-    dev: true
 
   /node-fetch/2.6.7:
     resolution: {integrity: sha512-ZjMPFEfVx5j+y2yF35Kzx5sF7kDzxuDj6ziH4FFbOp87zKDZNx8yExJIb05OGF4Nlt9IHFIMBkRl41VdvcNdbQ==}
@@ -6044,7 +6061,9 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       buffer: 5.7.1
-      node-fetch: 2.6.6
+      node-fetch: 2.6.7
+    transitivePeerDependencies:
+      - encoding
     dev: true
 
   /synchronous-promise/2.0.15:
@@ -6312,7 +6331,7 @@ packages:
     dev: true
 
   /whatwg-url/5.0.0:
-    resolution: {integrity: sha1-lmRU6HZUYuN2RNNib2dCzotwll0=}
+    resolution: {integrity: sha512-saE57nupxk6v3HY35+jzBwYa0rKSy0XR8JSxZPwgLr7ys0IBzhGviA1/TUGJLmSVqs8pb9AnvICXEuOHLprYTw==}
     dependencies:
       tr46: 0.0.3
       webidl-conversions: 3.0.1
@@ -6410,7 +6429,6 @@ packages:
         optional: true
       utf-8-validate:
         optional: true
-    dev: true
 
   /y18n/4.0.3:
     resolution: {integrity: sha512-JKhqTOwSrqNA1NY5lSztJ1GrBiUodLMmIZuLiDaMRJ+itFd+ABVE8XBjOvIWL+rSqNDC74LCSFmlb/U4UZ4hJQ==}
