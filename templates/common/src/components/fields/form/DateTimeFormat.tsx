@@ -5,8 +5,8 @@ import { DateTimePicker, LocalizationProvider } from '@mui/lab'
 import { saveDateTime } from '@iteria-app/component-templates'
 
 type DateTimeFormatProps = {
-  name: string,
-  value: Date | string | null
+  name: string
+  value?: Date | string | number
   setFieldValue: (field: string, value: any, shouldValidate?: boolean) => void
 }
 

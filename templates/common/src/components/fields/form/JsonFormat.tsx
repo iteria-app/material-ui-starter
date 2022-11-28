@@ -2,8 +2,8 @@ import React, { ChangeEventHandler, FocusEventHandler } from 'react'
 import { Input } from '@mui/material'
 
 type JsonFormatProps = {
-  value: string
   name: string
+  value?: Record<string, any> | any[]
   onChange?: ChangeEventHandler<HTMLTextAreaElement | HTMLInputElement>
   onBlur?: FocusEventHandler<HTMLTextAreaElement | HTMLInputElement>
 }

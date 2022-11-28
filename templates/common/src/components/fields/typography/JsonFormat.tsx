@@ -1,11 +1,14 @@
-import { Typography } from "@mui/material"
+import { Typography } from '@mui/material'
 import React from 'react'
 
-export const JsonFormat = ({ value }: { value?: any }) => {
+export const JsonFormat = ({
+  value,
+}: {
+  value?: Record<string, any> | any[]
+}) => {
   return (
-    <Typography fontSize={'14px'} fontWeight={400}>
+    <Typography>
       {JSON.stringify(value)}
     </Typography>
   )
 }
-

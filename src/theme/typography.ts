@@ -1,4 +1,6 @@
-const typography = {
+import { TypographyOptions } from '@mui/material/styles/createTypography'
+
+const typography: TypographyOptions = {
   h1: {
     fontWeight: 500,
     fontSize: 35,
@@ -23,8 +25,16 @@ const typography = {
     fontWeight: 500,
     fontSize: 14,
   },
+  body1: {
+    fontWeight: 400,
+    fontSize: 14,
+  },
+  body2: {
+    fontWeight: 400,
+    fontSize: 14,
+  },
   allVariants: {
-    FontFace: [
+    fontFamily: [
       'Montserrat',
       'Roboto',
       '"Helvetica Neue"',

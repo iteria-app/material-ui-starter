@@ -5,8 +5,8 @@ import { saveTime } from '@iteria-app/component-templates'
 import AdapterDateFns from '@date-io/date-fns'
 
 type DateTimeFormatProps = {
-  name: string,
-  value: Date | string | null
+  name: string
+  value?: Date | string | number
   setFieldValue: (field: string, value: any, shouldValidate?: boolean) => void
 }
 

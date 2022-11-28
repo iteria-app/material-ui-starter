@@ -13,9 +13,9 @@
       "todo": "object rel",
       "fields": [
         {
-          "id": "other",
+          "id": "aggregation",
           "name": "Min / Max / Sum / Avg.",
-          "validTypes": ["number", "date", "dateTime", "string",  "geometry"],
+          "validTypes": ["number", "date", "dateTime", "string", "geometry"],
           "required": false
         }
       ],
@@ -31,12 +31,12 @@
       "fields": [
         {
           "id": "name",
-          "name": "List Item Title",
+          "name": "Title",
           "validTypes": ["string", "number", "date", "dateTime"],
           "required": false
         },
         {
-          "id": "avatar",
+          "id": "thumbnail",
           "name": "Avatar",
           "validTypes": ["string"],
           "required": false
@@ -59,7 +59,7 @@
       "name": "Table",
       "fields": [
         {
-          "id": "columns",
+          "id": "other",
           "name": "Other",
           "validTypes": ["string", "number", "date", "dateTime", "geometry"],
           "required": false
@@ -76,14 +76,14 @@
       "name": "Bar Chart",
       "fields": [
         {
-          "id": "bars",
+          "id": "x-axis",
           "name": "Bars",
           "validTypes": ["number", "string", "date", "dateTime"],
           "required": true,
           "operation": "get"
         },
         {
-          "id": "y-axes",
+          "id": "y-axis",
           "name": "Series",
           "validTypes": ["number", "string", "date", "dateTime"],
           "required": true,

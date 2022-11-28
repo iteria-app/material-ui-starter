@@ -5146,6 +5146,18 @@ export enum OrderItems_Select_Column {
   UpdatedAt = 'updated_at'
 }
 
+/** select "orderItems_aggregate_bool_exp_bool_and_arguments_columns" columns of table "order_items" */
+export enum OrderItems_Select_Column_OrderItems_Aggregate_Bool_Exp_Bool_And_Arguments_Columns {
+  /** column name */
+  IsDeleted = 'is_deleted'
+}
+
+/** select "orderItems_aggregate_bool_exp_bool_or_arguments_columns" columns of table "order_items" */
+export enum OrderItems_Select_Column_OrderItems_Aggregate_Bool_Exp_Bool_Or_Arguments_Columns {
+  /** column name */
+  IsDeleted = 'is_deleted'
+}
+
 /** input type for updating data in table "order_items" */
 export type OrderItems_Set_Input = {
   created_at?: InputMaybe<Scalars['timestamptz']>;
@@ -5404,6 +5416,7 @@ export type Orders_Bool_Exp = {
   name?: InputMaybe<String_Comparison_Exp>;
   order_date?: InputMaybe<Date_Comparison_Exp>;
   order_items?: InputMaybe<OrderItems_Bool_Exp>;
+  order_items_aggregate?: InputMaybe<OrderItems_Aggregate_Bool_Exp>;
   order_status?: InputMaybe<Status_Types_Enum_Comparison_Exp>;
   shipped_date?: InputMaybe<Date_Comparison_Exp>;
   status_type?: InputMaybe<Status_Types_Bool_Exp>;
@@ -6398,6 +6411,7 @@ export type Product_Availability_Bool_Exp = {
   _or?: InputMaybe<Array<Product_Availability_Bool_Exp>>;
   name?: InputMaybe<String_Comparison_Exp>;
   products?: InputMaybe<Products_Bool_Exp>;
+  products_aggregate?: InputMaybe<Products_Aggregate_Bool_Exp>;
   type?: InputMaybe<String_Comparison_Exp>;
 };
 
@@ -6624,6 +6638,7 @@ export type Products_Bool_Exp = {
   is_deleted?: InputMaybe<Boolean_Comparison_Exp>;
   name?: InputMaybe<String_Comparison_Exp>;
   order_items?: InputMaybe<OrderItems_Bool_Exp>;
+  order_items_aggregate?: InputMaybe<OrderItems_Aggregate_Bool_Exp>;
   price?: InputMaybe<Money_Comparison_Exp>;
   product_availability?: InputMaybe<Product_Availability_Bool_Exp>;
   quantity?: InputMaybe<Int_Comparison_Exp>;
@@ -6771,6 +6786,18 @@ export enum Products_Select_Column {
   ThumbnailImgPath = 'thumbnailImgPath',
   /** column name */
   UpdatedAt = 'updated_at'
+}
+
+/** select "products_aggregate_bool_exp_bool_and_arguments_columns" columns of table "products" */
+export enum Products_Select_Column_Products_Aggregate_Bool_Exp_Bool_And_Arguments_Columns {
+  /** column name */
+  IsDeleted = 'is_deleted'
+}
+
+/** select "products_aggregate_bool_exp_bool_or_arguments_columns" columns of table "products" */
+export enum Products_Select_Column_Products_Aggregate_Bool_Exp_Bool_Or_Arguments_Columns {
+  /** column name */
+  IsDeleted = 'is_deleted'
 }
 
 /** input type for updating data in table "products" */
@@ -7887,7 +7914,7 @@ export type Subscription_Root = {
   busStopDepartureAggregate: BusStopDepartures_Aggregate;
   /** fetch data from the table: "bus_stop_departures" */
   busStopDepartures: Array<BusStopDepartures>;
-  /** fetch data from the table in a streaming manner : "bus_stop_departures" */
+  /** fetch data from the table in a streaming manner: "bus_stop_departures" */
   busStopDeparturesStream: Array<BusStopDepartures>;
   /** fetch data from the table: "bus_stops" */
   busStops: Array<BusStops>;
@@ -7903,7 +7930,7 @@ export type Subscription_Root = {
   customer_types_aggregate: Customer_Types_Aggregate;
   /** fetch data from the table: "customer_types" using primary key columns */
   customer_types_by_pk?: Maybe<Customer_Types>;
-  /** fetch data from the table in a streaming manner : "customer_types" */
+  /** fetch data from the table in a streaming manner: "customer_types" */
   customer_types_stream: Array<Customer_Types>;
   /** An array relationship */
   customers: Array<Customers>;
@@ -7923,7 +7950,7 @@ export type Subscription_Root = {
   desh_products_aggregate: Desh_Products_Aggregate;
   /** fetch data from the table: "desh_products" using primary key columns */
   desh_products_by_pk?: Maybe<Desh_Products>;
-  /** fetch data from the table in a streaming manner : "desh_products" */
+  /** fetch data from the table in a streaming manner: "desh_products" */
   desh_products_stream: Array<Desh_Products>;
   /** An array relationship */
   desh_sales: Array<Desh_Sales>;
@@ -7931,9 +7958,9 @@ export type Subscription_Root = {
   desh_sales_aggregate: Desh_Sales_Aggregate;
   /** fetch data from the table: "desh_sales" using primary key columns */
   desh_sales_by_pk?: Maybe<Desh_Sales>;
-  /** fetch data from the table in a streaming manner : "desh_sales" */
+  /** fetch data from the table in a streaming manner: "desh_sales" */
   desh_sales_stream: Array<Desh_Sales>;
-  /** fetch data from the table in a streaming manner : "desh" */
+  /** fetch data from the table in a streaming manner: "desh" */
   desh_stream: Array<Desh>;
   /** fetch data from the table: "desh_traffic" */
   desh_traffic: Array<Desh_Traffic>;
@@ -7941,7 +7968,7 @@ export type Subscription_Root = {
   desh_traffic_aggregate: Desh_Traffic_Aggregate;
   /** fetch data from the table: "desh_traffic" using primary key columns */
   desh_traffic_by_pk?: Maybe<Desh_Traffic>;
-  /** fetch data from the table in a streaming manner : "desh_traffic" */
+  /** fetch data from the table in a streaming manner: "desh_traffic" */
   desh_traffic_stream: Array<Desh_Traffic>;
   /** fetch data from the table: "enum_test_types" */
   enum_test_types: Array<Enum_Test_Types>;
@@ -7949,7 +7976,7 @@ export type Subscription_Root = {
   enum_test_types_aggregate: Enum_Test_Types_Aggregate;
   /** fetch data from the table: "enum_test_types" using primary key columns */
   enum_test_types_by_pk?: Maybe<Enum_Test_Types>;
-  /** fetch data from the table in a streaming manner : "enum_test_types" */
+  /** fetch data from the table in a streaming manner: "enum_test_types" */
   enum_test_types_stream: Array<Enum_Test_Types>;
   /** fetch data from the table: "events" using primary key columns */
   event?: Maybe<Events>;
@@ -7991,7 +8018,7 @@ export type Subscription_Root = {
   organization_partnership_levels_aggregate: Organization_Partnership_Levels_Aggregate;
   /** fetch data from the table: "organization_partnership_levels" using primary key columns */
   organization_partnership_levels_by_pk?: Maybe<Organization_Partnership_Levels>;
-  /** fetch data from the table in a streaming manner : "organization_partnership_levels" */
+  /** fetch data from the table in a streaming manner: "organization_partnership_levels" */
   organization_partnership_levels_stream: Array<Organization_Partnership_Levels>;
   /** fetch data from the table: "organization_types" */
   organization_types: Array<Organization_Types>;
@@ -7999,7 +8026,7 @@ export type Subscription_Root = {
   organization_types_aggregate: Organization_Types_Aggregate;
   /** fetch data from the table: "organization_types" using primary key columns */
   organization_types_by_pk?: Maybe<Organization_Types>;
-  /** fetch data from the table in a streaming manner : "organization_types" */
+  /** fetch data from the table in a streaming manner: "organization_types" */
   organization_types_stream: Array<Organization_Types>;
   /** An array relationship */
   organizations: Array<Organizations>;
@@ -8015,7 +8042,7 @@ export type Subscription_Root = {
   product_availability_aggregate: Product_Availability_Aggregate;
   /** fetch data from the table: "product_availability" using primary key columns */
   product_availability_by_pk?: Maybe<Product_Availability>;
-  /** fetch data from the table in a streaming manner : "product_availability" */
+  /** fetch data from the table in a streaming manner: "product_availability" */
   product_availability_stream: Array<Product_Availability>;
   /** An array relationship */
   products: Array<Products>;
@@ -8029,7 +8056,7 @@ export type Subscription_Root = {
   status_types_aggregate: Status_Types_Aggregate;
   /** fetch data from the table: "status_types" using primary key columns */
   status_types_by_pk?: Maybe<Status_Types>;
-  /** fetch data from the table in a streaming manner : "status_types" */
+  /** fetch data from the table in a streaming manner: "status_types" */
   status_types_stream: Array<Status_Types>;
   /** fetch data from the table: "test_x" using primary key columns */
   testX?: Maybe<TestX>;
@@ -8061,7 +8088,7 @@ export type Subscription_Root = {
   types_test_aggregate: Types_Test_Aggregate;
   /** fetch data from the table: "types_test" using primary key columns */
   types_test_by_pk?: Maybe<Types_Test>;
-  /** fetch data from the table in a streaming manner : "types_test" */
+  /** fetch data from the table in a streaming manner: "types_test" */
   types_test_stream: Array<Types_Test>;
 };
 

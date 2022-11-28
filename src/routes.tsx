@@ -8,7 +8,7 @@ import RegisterView from '../src/views/auth/RegisterView'
 import {
   generatePagesRoutes,
   DefaultLoginView,
-  ResetPassword,
+  ResetPWView,
   SignupWithEmail,
   ErrorBoundary
 } from '@iteria-app/component-templates'
@@ -62,7 +62,7 @@ const routes = [
     element: <DashboardLayout />,
     children: [
       { path: 'login', element: <DefaultLoginView /> },
-      { path: 'resetpassword', element: <ResetPassword /> },
+      { path: 'resetpassword', element: <ResetPWView /> },
       { path: 'signup', element: <SignupWithEmail /> },
       { path: '404', element: <NotFoundView /> },
       { path: '/', element: <Navigate to="/app/home" /> },

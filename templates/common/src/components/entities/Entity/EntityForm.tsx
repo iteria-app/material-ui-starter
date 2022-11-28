@@ -18,7 +18,7 @@ const EntityForm: React.FC<IProps> = ({ relationshipName }) => {
     <TableRow
       key={'FIELD'}
       sx={{
-        'td, th': {
+        '& td, & th': {
           border: 'none',
           whiteSpace: 'break-spaces',
         },
@@ -45,8 +45,6 @@ const EntityForm: React.FC<IProps> = ({ relationshipName }) => {
       </TableCell>
       <TableCell
         sx={{
-          fontWeight: 400,
-          fontSize: '14px',
           width: '50%',
           textAlign: 'left',
           padding: '8px 16px',

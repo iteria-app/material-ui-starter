@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Box, Container, Typography } from '@mui/material'
 import { styled } from '@mui/material'
 import Page from '../../components/Page'
+import NavBar from '../../layouts/DashboardLayout/NavBar'
+import TopBar from '../../layouts/DashboardLayout/TopBar'
 
 const PREFIX = 'StyledNotFound'
 const classes = {
@@ -32,7 +34,7 @@ const StyledNotFound = styled(Page)(({ theme }) => ({
 
 const NotFoundView = () => (
   <StyledNotFound className={classes.root} title="404">
-    <Box className={classes.box}>
+    <Box className={classes.box} data-test-id="404-not-found-panel">
       <Container maxWidth="md">
         <Typography align="center" color="textPrimary" variant="h1">
           404: The page you are looking for isn’t here

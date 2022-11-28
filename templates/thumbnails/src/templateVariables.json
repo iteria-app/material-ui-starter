@@ -23,7 +23,7 @@
           "name": "Thumbnail",
           "validTypes": ["string"],
           "required": false,
-          "multipleFields": false
+          "multipleFields": true
         },
         {
           "id": "other",

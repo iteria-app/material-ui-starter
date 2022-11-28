@@ -1,0 +1,46 @@
+{
+  "enitities": [
+    {
+      "id": "entities",
+      "name": "Entities",
+      "required": true,
+      "minValues": 1
+    }
+  ],
+  "components": [
+    {
+      "name": "Calendar",
+      "fields": [
+        {
+          "id": "name",
+          "name": "Title",
+          "validTypes": ["string"],
+          "required": false,
+          "multipleFields": false
+        },
+        {
+          "id": "start",
+          "name": "Start",
+          "validTypes": ["date", "dateTime"],
+          "required": true,
+          "multipleFields": false
+        },
+        {
+          "id": "end",
+          "name": "End",
+          "validTypes": ["date", "dateTime"],
+          "required": true,
+          "multipleFields": false
+        },
+        {
+          "id": "description",
+          "name": "Description",
+          "validTypes": ["string"],
+          "required": false,
+          "multipleFields": false
+        }
+      ],
+      "props": []
+    }
+  ]
+}
