@@ -133,13 +133,18 @@ const EntityDataTableView: React.FC<EntityTableProps> = ({
       renderCell: (params: GridCellParams) => {
         const index = params?.api?.getRowIndex(params.row.id)
         return (
-          <FormatEntityField
-            value={params?.row?.FIELD}
-            relationshipName={relationshipName}
-            type={'string'}
-            index={index}
-            setFieldValue={setFieldValue}
-          />
+          <div
+            data-test={`table-row-${'Entity'}`}
+            data-test-id={`table-row-${'Entity'}-${params.row.id}`}
+          >
+            <FormatEntityField
+              value={params?.row?.FIELD}
+              relationshipName={relationshipName}
+              type={'string'}
+              index={index}
+              setFieldValue={setFieldValue}
+            />
+          </div>
         )
       },
       columnType: getColumnGraphQlType('FIELD'),

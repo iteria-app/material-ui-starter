@@ -15,7 +15,7 @@
           "id": "name",
           "name": "Title",
           "validTypes": ["string", "number", "date", "dateTime"],
-          "required": true,
+          "required": false,
           "multipleFields": true
         },
         {
@@ -23,7 +23,7 @@
           "name": "Avatar",
           "validTypes": ["string"],
           "required": false,
-          "multipleFields": false
+          "multipleFields": true
         },
         {
           "id": "other",

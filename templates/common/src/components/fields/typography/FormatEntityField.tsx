@@ -4,6 +4,7 @@ import { DateFormat } from './DateFormat'
 import { DateTimeFormat } from './DateTimeFormat'
 import { TimeFormat } from './TimeFormat'
 import { DefaultFormat } from './DefaultFormat'
+import { StringFormat } from './StringFormat'
 
 type Props = {
   type: string
@@ -19,6 +20,8 @@ type Props = {
 
 export const FormatEntityField = (props: Props) => {
   switch (props?.type?.toLocaleLowerCase()) {
+    case 'string':
+      return <StringFormat {...props} />
     case 'boolean':
       return <BooleanFormat {...props} />
     case 'date':

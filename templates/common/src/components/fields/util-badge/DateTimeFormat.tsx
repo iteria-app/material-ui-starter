@@ -2,7 +2,11 @@ import { Badge } from '@mui/material'
 import React from 'react'
 import { useIntl } from 'react-intl'
 
-export const DateTimeFormat = ({ value }) => {
+export const DateTimeFormat = ({
+  value,
+}: {
+  value?: string | number | Date
+}) => {
   const intl = useIntl()
   return (
     <Badge

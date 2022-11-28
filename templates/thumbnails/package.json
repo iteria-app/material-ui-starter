@@ -1,5 +1,5 @@
 {
-  "name": "@iteria-app-mui/card-list",
+  "name": "@iteria-app-mui/thumbnails",
   "version": "0.0.0",
   "main": "src/main.tsx",
   "scripts": {

@@ -5,8 +5,8 @@ import AdapterDateFns from '@date-io/date-fns'
 import { saveDate } from '@iteria-app/component-templates'
 
 type DateFormatProps = {
-  name: string,
-  value: Date | string | null
+  name: string
+  value?: Date | string | number
   setFieldValue: (field: string, value: any, shouldValidate?: boolean) => void
 }
 

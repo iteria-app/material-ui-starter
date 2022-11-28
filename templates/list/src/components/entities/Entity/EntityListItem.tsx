@@ -53,6 +53,8 @@ const EntityListItem: React.FC<EntityListItem> = ({
       secondaryAction={<Checkbox onClick={(e) => e.stopPropagation()} />}
       disablePadding
       sx={{ background: theme.palette.background.paper, borderRadius: '20px' }}
+      data-test-id={`list-item-${'Entity'}-${data.id}`}
+      data-test={`list-item-${'Entity'}`}
     >
       <ListItemButton
         onClick={() => !relationshipName && navigate(data?.id.toString())}

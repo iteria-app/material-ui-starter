@@ -12,7 +12,7 @@ import { FormatEntityField } from '@iteria-app-mui/common/src/components/fields/
 import { EntityFragment } from '../../../generated/graphql'
 import MoreVertIcon from '@mui/icons-material/MoreVert'
 import { getCardTitle, getImagePath } from '@iteria-app/component-templates'
-import { useFormikContext } from "formik"
+import { useFormikContext } from 'formik'
 
 export interface IPropsEntityCardItem {
   data: EntityFragment
@@ -32,7 +32,11 @@ const EntityCardListItem: React.FC<IPropsEntityCardItem> = ({
   const columns = [
     <Box
       key={'FIELD'}
-      sx={{ display: 'flex', justifyContent: 'space-between', marginTop: '5px' }}
+      sx={{
+        display: 'flex',
+        justifyContent: 'space-between',
+        marginTop: '5px',
+      }}
     >
       <FormatEntityField
         value={data?.FIELD}
@@ -52,6 +56,8 @@ const EntityCardListItem: React.FC<IPropsEntityCardItem> = ({
         cursor: 'pointer',
       }}
       onClick={() => !relationshipName && navigate(data?.id.toString())}
+      data-test-id={`card-list-item-${'Entity'}-${data.id}`}
+      data-test={`card-list-item-${'Entity'}`}
     >
       <Card
         sx={{
@@ -74,7 +80,9 @@ const EntityCardListItem: React.FC<IPropsEntityCardItem> = ({
           sx={{ minWidth: '200px' }}
         />
         <CardContent>
-          {Object.values(columns).filter((v) => data?.[v?.key?.toString().split('.')?.pop()] !== primary)}
+          {Object.values(columns).filter(
+            (v) => data?.[v?.key?.toString().split('.')?.pop()] !== primary
+          )}
         </CardContent>
       </Card>
     </Box>

@@ -2,8 +2,8 @@ import React, { ChangeEventHandler, FocusEventHandler } from 'react'
 import { Input } from '@mui/material'
 
 type DefaultFormatProps = {
-  value: string
   name: string
+  value?: any
   onChange?: ChangeEventHandler<HTMLTextAreaElement | HTMLInputElement>
   onBlur?: FocusEventHandler<HTMLTextAreaElement | HTMLInputElement>
 }
@@ -21,7 +21,7 @@ export const DefaultFormat = ({
     onClick={(event) => {
       event.stopPropagation()
     }}
-    fullWidth={true}
+    fullWidth
     value={value ?? ''}
   />
 )

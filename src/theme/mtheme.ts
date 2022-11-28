@@ -174,6 +174,9 @@ const components: Components<Theme> = {
   MuiOutlinedInput: {
     styleOverrides: {
       input: {
+        ':focus': {
+          borderRadius: 23
+        },
         borderRadius: 23,
         padding: '10px 35px 10px 20px!important',
         background: '#F2F3F4',
@@ -238,7 +241,7 @@ const components: Components<Theme> = {
         whiteSpace: 'nowrap',
         background: 'none',
         border: 'none',
-        padding: '0',
+        padding: '10px 0',
         ':first-of-type': {
           borderTopLeftRadius: '8px',
           borderBottomLeftRadius: '8px',
@@ -253,7 +256,7 @@ const components: Components<Theme> = {
   MuiLinearProgress: {
     styleOverrides: {
       root: {
-        marginTop: '-14px',
+        marginTop: '42px',
         borderRadius: '8px',
       },
     },
@@ -293,6 +296,7 @@ const components: Components<Theme> = {
   MuiListItemButton: {
     styleOverrides: {
       root: {
+        margin: '0',
         padding: '10px 16px',
         borderRadius: '20px',
         ':hover': {
