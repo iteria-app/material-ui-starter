@@ -1,0 +1,10 @@
+fragment product on products {
+  id
+  __typename
+  name
+}
+
+fragment product_signedThumbnailImgPath on GetUrlReturn {
+  url
+  __typename
+}

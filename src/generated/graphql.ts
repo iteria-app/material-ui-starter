@@ -145,6 +145,42 @@ export type Accounts = {
   password: Scalars['String'];
 };
 
+/** aggregated selection of "accounts" */
+export type Accounts_Aggregate = {
+  __typename?: 'accounts_aggregate';
+  aggregate?: Maybe<Accounts_Aggregate_Fields>;
+  nodes: Array<Accounts>;
+};
+
+/** aggregate fields of "accounts" */
+export type Accounts_Aggregate_Fields = {
+  __typename?: 'accounts_aggregate_fields';
+  avg?: Maybe<Accounts_Avg_Fields>;
+  count: Scalars['Int'];
+  max?: Maybe<Accounts_Max_Fields>;
+  min?: Maybe<Accounts_Min_Fields>;
+  stddev?: Maybe<Accounts_Stddev_Fields>;
+  stddev_pop?: Maybe<Accounts_Stddev_Pop_Fields>;
+  stddev_samp?: Maybe<Accounts_Stddev_Samp_Fields>;
+  sum?: Maybe<Accounts_Sum_Fields>;
+  var_pop?: Maybe<Accounts_Var_Pop_Fields>;
+  var_samp?: Maybe<Accounts_Var_Samp_Fields>;
+  variance?: Maybe<Accounts_Variance_Fields>;
+};
+
+
+/** aggregate fields of "accounts" */
+export type Accounts_Aggregate_FieldsCountArgs = {
+  columns?: InputMaybe<Array<Accounts_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']>;
+};
+
+/** aggregate avg on columns */
+export type Accounts_Avg_Fields = {
+  __typename?: 'accounts_avg_fields';
+  id?: Maybe<Scalars['Float']>;
+};
+
 /** Boolean expression to filter rows from the table "accounts". All fields are combined with a logical 'AND'. */
 export type Accounts_Bool_Exp = {
   _and?: InputMaybe<Array<Accounts_Bool_Exp>>;
@@ -171,6 +207,22 @@ export type Accounts_Insert_Input = {
   id?: InputMaybe<Scalars['Int']>;
   name?: InputMaybe<Scalars['String']>;
   password?: InputMaybe<Scalars['String']>;
+};
+
+/** aggregate max on columns */
+export type Accounts_Max_Fields = {
+  __typename?: 'accounts_max_fields';
+  id?: Maybe<Scalars['Int']>;
+  name?: Maybe<Scalars['String']>;
+  password?: Maybe<Scalars['String']>;
+};
+
+/** aggregate min on columns */
+export type Accounts_Min_Fields = {
+  __typename?: 'accounts_min_fields';
+  id?: Maybe<Scalars['Int']>;
+  name?: Maybe<Scalars['String']>;
+  password?: Maybe<Scalars['String']>;
 };
 
 /** response of any mutation on the table "accounts" */
@@ -218,6 +270,24 @@ export type Accounts_Set_Input = {
   password?: InputMaybe<Scalars['String']>;
 };
 
+/** aggregate stddev on columns */
+export type Accounts_Stddev_Fields = {
+  __typename?: 'accounts_stddev_fields';
+  id?: Maybe<Scalars['Float']>;
+};
+
+/** aggregate stddev_pop on columns */
+export type Accounts_Stddev_Pop_Fields = {
+  __typename?: 'accounts_stddev_pop_fields';
+  id?: Maybe<Scalars['Float']>;
+};
+
+/** aggregate stddev_samp on columns */
+export type Accounts_Stddev_Samp_Fields = {
+  __typename?: 'accounts_stddev_samp_fields';
+  id?: Maybe<Scalars['Float']>;
+};
+
 /** Streaming cursor of the table "accounts" */
 export type Accounts_Stream_Cursor_Input = {
   /** Stream column input with initial value */
@@ -231,6 +301,12 @@ export type Accounts_Stream_Cursor_Value_Input = {
   id?: InputMaybe<Scalars['Int']>;
   name?: InputMaybe<Scalars['String']>;
   password?: InputMaybe<Scalars['String']>;
+};
+
+/** aggregate sum on columns */
+export type Accounts_Sum_Fields = {
+  __typename?: 'accounts_sum_fields';
+  id?: Maybe<Scalars['Int']>;
 };
 
 /** update columns of table "accounts" */
@@ -249,6 +325,24 @@ export type Accounts_Updates = {
   /** sets the columns of the filtered rows to the given values */
   _set?: InputMaybe<Accounts_Set_Input>;
   where: Accounts_Bool_Exp;
+};
+
+/** aggregate var_pop on columns */
+export type Accounts_Var_Pop_Fields = {
+  __typename?: 'accounts_var_pop_fields';
+  id?: Maybe<Scalars['Float']>;
+};
+
+/** aggregate var_samp on columns */
+export type Accounts_Var_Samp_Fields = {
+  __typename?: 'accounts_var_samp_fields';
+  id?: Maybe<Scalars['Float']>;
+};
+
+/** aggregate variance on columns */
+export type Accounts_Variance_Fields = {
+  __typename?: 'accounts_variance_fields';
+  id?: Maybe<Scalars['Float']>;
 };
 
 /** Boolean expression to compare columns of type "bigint". All fields are combined with logical 'AND'. */
@@ -278,6 +372,28 @@ export type BusStopDepartures = {
   line_direction_id?: Maybe<Scalars['uuid']>;
   low_entry: Scalars['Boolean'];
   time_departure: Scalars['timetz'];
+};
+
+/** aggregated selection of "bus_stop_departures" */
+export type BusStopDepartures_Aggregate = {
+  __typename?: 'busStopDepartures_aggregate';
+  aggregate?: Maybe<BusStopDepartures_Aggregate_Fields>;
+  nodes: Array<BusStopDepartures>;
+};
+
+/** aggregate fields of "bus_stop_departures" */
+export type BusStopDepartures_Aggregate_Fields = {
+  __typename?: 'busStopDepartures_aggregate_fields';
+  count: Scalars['Int'];
+  max?: Maybe<BusStopDepartures_Max_Fields>;
+  min?: Maybe<BusStopDepartures_Min_Fields>;
+};
+
+
+/** aggregate fields of "bus_stop_departures" */
+export type BusStopDepartures_Aggregate_FieldsCountArgs = {
+  columns?: InputMaybe<Array<BusStopDepartures_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']>;
 };
 
 /** order by aggregate values of table "bus_stop_departures" */
@@ -329,6 +445,17 @@ export type BusStopDepartures_Insert_Input = {
   time_departure?: InputMaybe<Scalars['timetz']>;
 };
 
+/** aggregate max on columns */
+export type BusStopDepartures_Max_Fields = {
+  __typename?: 'busStopDepartures_max_fields';
+  bus_stop_id?: Maybe<Scalars['uuid']>;
+  bus_stop_platform?: Maybe<Scalars['String']>;
+  id?: Maybe<Scalars['uuid']>;
+  line?: Maybe<Scalars['String']>;
+  line_direction_id?: Maybe<Scalars['uuid']>;
+  time_departure?: Maybe<Scalars['timetz']>;
+};
+
 /** order by max() on columns of table "bus_stop_departures" */
 export type BusStopDepartures_Max_Order_By = {
   bus_stop_id?: InputMaybe<Order_By>;
@@ -337,6 +464,17 @@ export type BusStopDepartures_Max_Order_By = {
   line?: InputMaybe<Order_By>;
   line_direction_id?: InputMaybe<Order_By>;
   time_departure?: InputMaybe<Order_By>;
+};
+
+/** aggregate min on columns */
+export type BusStopDepartures_Min_Fields = {
+  __typename?: 'busStopDepartures_min_fields';
+  bus_stop_id?: Maybe<Scalars['uuid']>;
+  bus_stop_platform?: Maybe<Scalars['String']>;
+  id?: Maybe<Scalars['uuid']>;
+  line?: Maybe<Scalars['String']>;
+  line_direction_id?: Maybe<Scalars['uuid']>;
+  time_departure?: Maybe<Scalars['timetz']>;
 };
 
 /** order by min() on columns of table "bus_stop_departures" */
@@ -460,6 +598,8 @@ export type BusStops = {
   __typename?: 'busStops';
   /** An array relationship */
   bus_stop_departures: Array<BusStopDepartures>;
+  /** An aggregate relationship */
+  bus_stop_departures_aggregate: BusStopDepartures_Aggregate;
   city?: Maybe<Scalars['String']>;
   id: Scalars['uuid'];
   lat?: Maybe<Scalars['float8']>;
@@ -481,6 +621,55 @@ export type BusStopsBus_Stop_DeparturesArgs = {
   offset?: InputMaybe<Scalars['Int']>;
   order_by?: InputMaybe<Array<BusStopDepartures_Order_By>>;
   where?: InputMaybe<BusStopDepartures_Bool_Exp>;
+};
+
+
+/** columns and relationships of "bus_stops" */
+export type BusStopsBus_Stop_Departures_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<BusStopDepartures_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  order_by?: InputMaybe<Array<BusStopDepartures_Order_By>>;
+  where?: InputMaybe<BusStopDepartures_Bool_Exp>;
+};
+
+/** aggregated selection of "bus_stops" */
+export type BusStops_Aggregate = {
+  __typename?: 'busStops_aggregate';
+  aggregate?: Maybe<BusStops_Aggregate_Fields>;
+  nodes: Array<BusStops>;
+};
+
+/** aggregate fields of "bus_stops" */
+export type BusStops_Aggregate_Fields = {
+  __typename?: 'busStops_aggregate_fields';
+  avg?: Maybe<BusStops_Avg_Fields>;
+  count: Scalars['Int'];
+  max?: Maybe<BusStops_Max_Fields>;
+  min?: Maybe<BusStops_Min_Fields>;
+  stddev?: Maybe<BusStops_Stddev_Fields>;
+  stddev_pop?: Maybe<BusStops_Stddev_Pop_Fields>;
+  stddev_samp?: Maybe<BusStops_Stddev_Samp_Fields>;
+  sum?: Maybe<BusStops_Sum_Fields>;
+  var_pop?: Maybe<BusStops_Var_Pop_Fields>;
+  var_samp?: Maybe<BusStops_Var_Samp_Fields>;
+  variance?: Maybe<BusStops_Variance_Fields>;
+};
+
+
+/** aggregate fields of "bus_stops" */
+export type BusStops_Aggregate_FieldsCountArgs = {
+  columns?: InputMaybe<Array<BusStops_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']>;
+};
+
+/** aggregate avg on columns */
+export type BusStops_Avg_Fields = {
+  __typename?: 'busStops_avg_fields';
+  lat?: Maybe<Scalars['Float']>;
+  lng?: Maybe<Scalars['Float']>;
+  station_id?: Maybe<Scalars['Float']>;
+  trips_count?: Maybe<Scalars['Float']>;
 };
 
 /** Boolean expression to filter rows from the table "bus_stops". All fields are combined with a logical 'AND'. */
@@ -530,6 +719,34 @@ export type BusStops_Insert_Input = {
   thumbnailImgPath?: InputMaybe<Scalars['String']>;
   trips_count?: InputMaybe<Scalars['Int']>;
   type?: InputMaybe<Scalars['String']>;
+};
+
+/** aggregate max on columns */
+export type BusStops_Max_Fields = {
+  __typename?: 'busStops_max_fields';
+  city?: Maybe<Scalars['String']>;
+  id?: Maybe<Scalars['uuid']>;
+  lat?: Maybe<Scalars['float8']>;
+  lng?: Maybe<Scalars['float8']>;
+  name?: Maybe<Scalars['String']>;
+  station_id?: Maybe<Scalars['Int']>;
+  thumbnailImgPath?: Maybe<Scalars['String']>;
+  trips_count?: Maybe<Scalars['Int']>;
+  type?: Maybe<Scalars['String']>;
+};
+
+/** aggregate min on columns */
+export type BusStops_Min_Fields = {
+  __typename?: 'busStops_min_fields';
+  city?: Maybe<Scalars['String']>;
+  id?: Maybe<Scalars['uuid']>;
+  lat?: Maybe<Scalars['float8']>;
+  lng?: Maybe<Scalars['float8']>;
+  name?: Maybe<Scalars['String']>;
+  station_id?: Maybe<Scalars['Int']>;
+  thumbnailImgPath?: Maybe<Scalars['String']>;
+  trips_count?: Maybe<Scalars['Int']>;
+  type?: Maybe<Scalars['String']>;
 };
 
 /** response of any mutation on the table "bus_stops" */
@@ -613,6 +830,33 @@ export type BusStops_Set_Input = {
   type?: InputMaybe<Scalars['String']>;
 };
 
+/** aggregate stddev on columns */
+export type BusStops_Stddev_Fields = {
+  __typename?: 'busStops_stddev_fields';
+  lat?: Maybe<Scalars['Float']>;
+  lng?: Maybe<Scalars['Float']>;
+  station_id?: Maybe<Scalars['Float']>;
+  trips_count?: Maybe<Scalars['Float']>;
+};
+
+/** aggregate stddev_pop on columns */
+export type BusStops_Stddev_Pop_Fields = {
+  __typename?: 'busStops_stddev_pop_fields';
+  lat?: Maybe<Scalars['Float']>;
+  lng?: Maybe<Scalars['Float']>;
+  station_id?: Maybe<Scalars['Float']>;
+  trips_count?: Maybe<Scalars['Float']>;
+};
+
+/** aggregate stddev_samp on columns */
+export type BusStops_Stddev_Samp_Fields = {
+  __typename?: 'busStops_stddev_samp_fields';
+  lat?: Maybe<Scalars['Float']>;
+  lng?: Maybe<Scalars['Float']>;
+  station_id?: Maybe<Scalars['Float']>;
+  trips_count?: Maybe<Scalars['Float']>;
+};
+
 /** Streaming cursor of the table "busStops" */
 export type BusStops_Stream_Cursor_Input = {
   /** Stream column input with initial value */
@@ -633,6 +877,15 @@ export type BusStops_Stream_Cursor_Value_Input = {
   thumbnailImgPath?: InputMaybe<Scalars['String']>;
   trips_count?: InputMaybe<Scalars['Int']>;
   type?: InputMaybe<Scalars['String']>;
+};
+
+/** aggregate sum on columns */
+export type BusStops_Sum_Fields = {
+  __typename?: 'busStops_sum_fields';
+  lat?: Maybe<Scalars['float8']>;
+  lng?: Maybe<Scalars['float8']>;
+  station_id?: Maybe<Scalars['Int']>;
+  trips_count?: Maybe<Scalars['Int']>;
 };
 
 /** update columns of table "bus_stops" */
@@ -667,6 +920,33 @@ export type BusStops_Updates = {
   where: BusStops_Bool_Exp;
 };
 
+/** aggregate var_pop on columns */
+export type BusStops_Var_Pop_Fields = {
+  __typename?: 'busStops_var_pop_fields';
+  lat?: Maybe<Scalars['Float']>;
+  lng?: Maybe<Scalars['Float']>;
+  station_id?: Maybe<Scalars['Float']>;
+  trips_count?: Maybe<Scalars['Float']>;
+};
+
+/** aggregate var_samp on columns */
+export type BusStops_Var_Samp_Fields = {
+  __typename?: 'busStops_var_samp_fields';
+  lat?: Maybe<Scalars['Float']>;
+  lng?: Maybe<Scalars['Float']>;
+  station_id?: Maybe<Scalars['Float']>;
+  trips_count?: Maybe<Scalars['Float']>;
+};
+
+/** aggregate variance on columns */
+export type BusStops_Variance_Fields = {
+  __typename?: 'busStops_variance_fields';
+  lat?: Maybe<Scalars['Float']>;
+  lng?: Maybe<Scalars['Float']>;
+  station_id?: Maybe<Scalars['Float']>;
+  trips_count?: Maybe<Scalars['Float']>;
+};
+
 /** ordering argument of a cursor */
 export enum Cursor_Ordering {
   /** ascending ordering of the cursor */
@@ -680,6 +960,8 @@ export type Customer_Types = {
   __typename?: 'customer_types';
   /** An array relationship */
   customers: Array<Customers>;
+  /** An aggregate relationship */
+  customers_aggregate: Customers_Aggregate;
   type: Scalars['String'];
 };
 
@@ -693,6 +975,38 @@ export type Customer_TypesCustomersArgs = {
   where?: InputMaybe<Customers_Bool_Exp>;
 };
 
+
+/** Enum table for customer types */
+export type Customer_TypesCustomers_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Customers_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  order_by?: InputMaybe<Array<Customers_Order_By>>;
+  where?: InputMaybe<Customers_Bool_Exp>;
+};
+
+/** aggregated selection of "customer_types" */
+export type Customer_Types_Aggregate = {
+  __typename?: 'customer_types_aggregate';
+  aggregate?: Maybe<Customer_Types_Aggregate_Fields>;
+  nodes: Array<Customer_Types>;
+};
+
+/** aggregate fields of "customer_types" */
+export type Customer_Types_Aggregate_Fields = {
+  __typename?: 'customer_types_aggregate_fields';
+  count: Scalars['Int'];
+  max?: Maybe<Customer_Types_Max_Fields>;
+  min?: Maybe<Customer_Types_Min_Fields>;
+};
+
+
+/** aggregate fields of "customer_types" */
+export type Customer_Types_Aggregate_FieldsCountArgs = {
+  columns?: InputMaybe<Array<Customer_Types_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']>;
+};
+
 /** Boolean expression to filter rows from the table "customer_types". All fields are combined with a logical 'AND'. */
 export type Customer_Types_Bool_Exp = {
   _and?: InputMaybe<Array<Customer_Types_Bool_Exp>>;
@@ -701,6 +1015,12 @@ export type Customer_Types_Bool_Exp = {
   customers?: InputMaybe<Customers_Bool_Exp>;
   type?: InputMaybe<String_Comparison_Exp>;
 };
+
+/** unique or primary key constraints on table "customer_types" */
+export enum Customer_Types_Constraint {
+  /** unique or primary key constraint on columns "type" */
+  CustomerTypesPkey = 'customer_types_pkey'
+}
 
 export enum Customer_Types_Enum {
   Company = 'Company',
@@ -717,10 +1037,56 @@ export type Customer_Types_Enum_Comparison_Exp = {
   _nin?: InputMaybe<Array<Customer_Types_Enum>>;
 };
 
+/** input type for inserting data into table "customer_types" */
+export type Customer_Types_Insert_Input = {
+  customers?: InputMaybe<Customers_Arr_Rel_Insert_Input>;
+  type?: InputMaybe<Scalars['String']>;
+};
+
+/** aggregate max on columns */
+export type Customer_Types_Max_Fields = {
+  __typename?: 'customer_types_max_fields';
+  type?: Maybe<Scalars['String']>;
+};
+
+/** aggregate min on columns */
+export type Customer_Types_Min_Fields = {
+  __typename?: 'customer_types_min_fields';
+  type?: Maybe<Scalars['String']>;
+};
+
+/** response of any mutation on the table "customer_types" */
+export type Customer_Types_Mutation_Response = {
+  __typename?: 'customer_types_mutation_response';
+  /** number of rows affected by the mutation */
+  affected_rows: Scalars['Int'];
+  /** data from the rows affected by the mutation */
+  returning: Array<Customer_Types>;
+};
+
+/** input type for inserting object relation for remote table "customer_types" */
+export type Customer_Types_Obj_Rel_Insert_Input = {
+  data: Customer_Types_Insert_Input;
+  /** upsert condition */
+  on_conflict?: InputMaybe<Customer_Types_On_Conflict>;
+};
+
+/** on_conflict condition type for table "customer_types" */
+export type Customer_Types_On_Conflict = {
+  constraint: Customer_Types_Constraint;
+  update_columns?: Array<Customer_Types_Update_Column>;
+  where?: InputMaybe<Customer_Types_Bool_Exp>;
+};
+
 /** Ordering options when selecting data from "customer_types". */
 export type Customer_Types_Order_By = {
   customers_aggregate?: InputMaybe<Customers_Aggregate_Order_By>;
   type?: InputMaybe<Order_By>;
+};
+
+/** primary key columns input for table: customer_types */
+export type Customer_Types_Pk_Columns_Input = {
+  type: Scalars['String'];
 };
 
 /** select columns of table "customer_types" */
@@ -728,6 +1094,11 @@ export enum Customer_Types_Select_Column {
   /** column name */
   Type = 'type'
 }
+
+/** input type for updating data in table "customer_types" */
+export type Customer_Types_Set_Input = {
+  type?: InputMaybe<Scalars['String']>;
+};
 
 /** Streaming cursor of the table "customer_types" */
 export type Customer_Types_Stream_Cursor_Input = {
@@ -740,6 +1111,18 @@ export type Customer_Types_Stream_Cursor_Input = {
 /** Initial value of the column from where the streaming should start */
 export type Customer_Types_Stream_Cursor_Value_Input = {
   type?: InputMaybe<Scalars['String']>;
+};
+
+/** update columns of table "customer_types" */
+export enum Customer_Types_Update_Column {
+  /** column name */
+  Type = 'type'
+}
+
+export type Customer_Types_Updates = {
+  /** sets the columns of the filtered rows to the given values */
+  _set?: InputMaybe<Customer_Types_Set_Input>;
+  where: Customer_Types_Bool_Exp;
 };
 
 /** List of customers */
@@ -757,6 +1140,8 @@ export type Customers = {
   logoImgPath?: Maybe<Scalars['String']>;
   /** An array relationship */
   orders: Array<Orders>;
+  /** An aggregate relationship */
+  orders_aggregate: Orders_Aggregate;
   /** An object relationship */
   organization?: Maybe<Organizations>;
   organizationId?: Maybe<Scalars['uuid']>;
@@ -775,6 +1160,38 @@ export type CustomersOrdersArgs = {
   offset?: InputMaybe<Scalars['Int']>;
   order_by?: InputMaybe<Array<Orders_Order_By>>;
   where?: InputMaybe<Orders_Bool_Exp>;
+};
+
+
+/** List of customers */
+export type CustomersOrders_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Orders_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  order_by?: InputMaybe<Array<Orders_Order_By>>;
+  where?: InputMaybe<Orders_Bool_Exp>;
+};
+
+/** aggregated selection of "customers" */
+export type Customers_Aggregate = {
+  __typename?: 'customers_aggregate';
+  aggregate?: Maybe<Customers_Aggregate_Fields>;
+  nodes: Array<Customers>;
+};
+
+/** aggregate fields of "customers" */
+export type Customers_Aggregate_Fields = {
+  __typename?: 'customers_aggregate_fields';
+  count: Scalars['Int'];
+  max?: Maybe<Customers_Max_Fields>;
+  min?: Maybe<Customers_Min_Fields>;
+};
+
+
+/** aggregate fields of "customers" */
+export type Customers_Aggregate_FieldsCountArgs = {
+  columns?: InputMaybe<Array<Customers_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']>;
 };
 
 /** order by aggregate values of table "customers" */
@@ -824,6 +1241,7 @@ export enum Customers_Constraint {
 export type Customers_Insert_Input = {
   address?: InputMaybe<Scalars['String']>;
   createdAt?: InputMaybe<Scalars['timestamptz']>;
+  customer_type?: InputMaybe<Customer_Types_Obj_Rel_Insert_Input>;
   email?: InputMaybe<Scalars['String']>;
   firstName?: InputMaybe<Scalars['String']>;
   id?: InputMaybe<Scalars['uuid']>;
@@ -839,6 +1257,21 @@ export type Customers_Insert_Input = {
   vip?: InputMaybe<Scalars['Boolean']>;
 };
 
+/** aggregate max on columns */
+export type Customers_Max_Fields = {
+  __typename?: 'customers_max_fields';
+  address?: Maybe<Scalars['String']>;
+  createdAt?: Maybe<Scalars['timestamptz']>;
+  email?: Maybe<Scalars['String']>;
+  firstName?: Maybe<Scalars['String']>;
+  id?: Maybe<Scalars['uuid']>;
+  lastName?: Maybe<Scalars['String']>;
+  logoImgPath?: Maybe<Scalars['String']>;
+  organizationId?: Maybe<Scalars['uuid']>;
+  phone?: Maybe<Scalars['String']>;
+  updatedAt?: Maybe<Scalars['timestamptz']>;
+};
+
 /** order by max() on columns of table "customers" */
 export type Customers_Max_Order_By = {
   address?: InputMaybe<Order_By>;
@@ -851,6 +1284,21 @@ export type Customers_Max_Order_By = {
   organizationId?: InputMaybe<Order_By>;
   phone?: InputMaybe<Order_By>;
   updatedAt?: InputMaybe<Order_By>;
+};
+
+/** aggregate min on columns */
+export type Customers_Min_Fields = {
+  __typename?: 'customers_min_fields';
+  address?: Maybe<Scalars['String']>;
+  createdAt?: Maybe<Scalars['timestamptz']>;
+  email?: Maybe<Scalars['String']>;
+  firstName?: Maybe<Scalars['String']>;
+  id?: Maybe<Scalars['uuid']>;
+  lastName?: Maybe<Scalars['String']>;
+  logoImgPath?: Maybe<Scalars['String']>;
+  organizationId?: Maybe<Scalars['uuid']>;
+  phone?: Maybe<Scalars['String']>;
+  updatedAt?: Maybe<Scalars['timestamptz']>;
 };
 
 /** order by min() on columns of table "customers" */
@@ -1043,10 +1491,16 @@ export type Desh = {
   created_at: Scalars['timestamptz'];
   /** An array relationship */
   desh_products: Array<Desh_Products>;
+  /** An aggregate relationship */
+  desh_products_aggregate: Desh_Products_Aggregate;
   /** An array relationship */
   desh_sales: Array<Desh_Sales>;
+  /** An aggregate relationship */
+  desh_sales_aggregate: Desh_Sales_Aggregate;
   /** An array relationship */
   desh_traffics: Array<Desh_Traffic>;
+  /** An aggregate relationship */
+  desh_traffics_aggregate: Desh_Traffic_Aggregate;
   id: Scalars['uuid'];
   name: Scalars['String'];
   no_of_customers: Scalars['Int'];
@@ -1067,7 +1521,27 @@ export type DeshDesh_ProductsArgs = {
 
 
 /** for dashboard testing purposes only */
+export type DeshDesh_Products_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Desh_Products_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  order_by?: InputMaybe<Array<Desh_Products_Order_By>>;
+  where?: InputMaybe<Desh_Products_Bool_Exp>;
+};
+
+
+/** for dashboard testing purposes only */
 export type DeshDesh_SalesArgs = {
+  distinct_on?: InputMaybe<Array<Desh_Sales_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  order_by?: InputMaybe<Array<Desh_Sales_Order_By>>;
+  where?: InputMaybe<Desh_Sales_Bool_Exp>;
+};
+
+
+/** for dashboard testing purposes only */
+export type DeshDesh_Sales_AggregateArgs = {
   distinct_on?: InputMaybe<Array<Desh_Sales_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
   offset?: InputMaybe<Scalars['Int']>;
@@ -1083,6 +1557,55 @@ export type DeshDesh_TrafficsArgs = {
   offset?: InputMaybe<Scalars['Int']>;
   order_by?: InputMaybe<Array<Desh_Traffic_Order_By>>;
   where?: InputMaybe<Desh_Traffic_Bool_Exp>;
+};
+
+
+/** for dashboard testing purposes only */
+export type DeshDesh_Traffics_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Desh_Traffic_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  order_by?: InputMaybe<Array<Desh_Traffic_Order_By>>;
+  where?: InputMaybe<Desh_Traffic_Bool_Exp>;
+};
+
+/** aggregated selection of "desh" */
+export type Desh_Aggregate = {
+  __typename?: 'desh_aggregate';
+  aggregate?: Maybe<Desh_Aggregate_Fields>;
+  nodes: Array<Desh>;
+};
+
+/** aggregate fields of "desh" */
+export type Desh_Aggregate_Fields = {
+  __typename?: 'desh_aggregate_fields';
+  avg?: Maybe<Desh_Avg_Fields>;
+  count: Scalars['Int'];
+  max?: Maybe<Desh_Max_Fields>;
+  min?: Maybe<Desh_Min_Fields>;
+  stddev?: Maybe<Desh_Stddev_Fields>;
+  stddev_pop?: Maybe<Desh_Stddev_Pop_Fields>;
+  stddev_samp?: Maybe<Desh_Stddev_Samp_Fields>;
+  sum?: Maybe<Desh_Sum_Fields>;
+  var_pop?: Maybe<Desh_Var_Pop_Fields>;
+  var_samp?: Maybe<Desh_Var_Samp_Fields>;
+  variance?: Maybe<Desh_Variance_Fields>;
+};
+
+
+/** aggregate fields of "desh" */
+export type Desh_Aggregate_FieldsCountArgs = {
+  columns?: InputMaybe<Array<Desh_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']>;
+};
+
+/** aggregate avg on columns */
+export type Desh_Avg_Fields = {
+  __typename?: 'desh_avg_fields';
+  budget?: Maybe<Scalars['Float']>;
+  no_of_customers?: Maybe<Scalars['Float']>;
+  profit?: Maybe<Scalars['Float']>;
+  task_progress?: Maybe<Scalars['Float']>;
 };
 
 /** Boolean expression to filter rows from the table "desh". All fields are combined with a logical 'AND'. */
@@ -1130,6 +1653,32 @@ export type Desh_Insert_Input = {
   profit?: InputMaybe<Scalars['Int']>;
   task_progress?: InputMaybe<Scalars['Int']>;
   updated_at?: InputMaybe<Scalars['timestamptz']>;
+};
+
+/** aggregate max on columns */
+export type Desh_Max_Fields = {
+  __typename?: 'desh_max_fields';
+  budget?: Maybe<Scalars['Int']>;
+  created_at?: Maybe<Scalars['timestamptz']>;
+  id?: Maybe<Scalars['uuid']>;
+  name?: Maybe<Scalars['String']>;
+  no_of_customers?: Maybe<Scalars['Int']>;
+  profit?: Maybe<Scalars['Int']>;
+  task_progress?: Maybe<Scalars['Int']>;
+  updated_at?: Maybe<Scalars['timestamptz']>;
+};
+
+/** aggregate min on columns */
+export type Desh_Min_Fields = {
+  __typename?: 'desh_min_fields';
+  budget?: Maybe<Scalars['Int']>;
+  created_at?: Maybe<Scalars['timestamptz']>;
+  id?: Maybe<Scalars['uuid']>;
+  name?: Maybe<Scalars['String']>;
+  no_of_customers?: Maybe<Scalars['Int']>;
+  profit?: Maybe<Scalars['Int']>;
+  task_progress?: Maybe<Scalars['Int']>;
+  updated_at?: Maybe<Scalars['timestamptz']>;
 };
 
 /** response of any mutation on the table "desh" */
@@ -1188,6 +1737,28 @@ export type Desh_Products = {
   updated_at: Scalars['timestamptz'];
 };
 
+/** aggregated selection of "desh_products" */
+export type Desh_Products_Aggregate = {
+  __typename?: 'desh_products_aggregate';
+  aggregate?: Maybe<Desh_Products_Aggregate_Fields>;
+  nodes: Array<Desh_Products>;
+};
+
+/** aggregate fields of "desh_products" */
+export type Desh_Products_Aggregate_Fields = {
+  __typename?: 'desh_products_aggregate_fields';
+  count: Scalars['Int'];
+  max?: Maybe<Desh_Products_Max_Fields>;
+  min?: Maybe<Desh_Products_Min_Fields>;
+};
+
+
+/** aggregate fields of "desh_products" */
+export type Desh_Products_Aggregate_FieldsCountArgs = {
+  columns?: InputMaybe<Array<Desh_Products_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']>;
+};
+
 /** order by aggregate values of table "desh_products" */
 export type Desh_Products_Aggregate_Order_By = {
   count?: InputMaybe<Order_By>;
@@ -1233,6 +1804,17 @@ export type Desh_Products_Insert_Input = {
   updated_at?: InputMaybe<Scalars['timestamptz']>;
 };
 
+/** aggregate max on columns */
+export type Desh_Products_Max_Fields = {
+  __typename?: 'desh_products_max_fields';
+  created_at?: Maybe<Scalars['timestamptz']>;
+  dash_id?: Maybe<Scalars['uuid']>;
+  id?: Maybe<Scalars['uuid']>;
+  logo_path?: Maybe<Scalars['String']>;
+  name?: Maybe<Scalars['String']>;
+  updated_at?: Maybe<Scalars['timestamptz']>;
+};
+
 /** order by max() on columns of table "desh_products" */
 export type Desh_Products_Max_Order_By = {
   created_at?: InputMaybe<Order_By>;
@@ -1241,6 +1823,17 @@ export type Desh_Products_Max_Order_By = {
   logo_path?: InputMaybe<Order_By>;
   name?: InputMaybe<Order_By>;
   updated_at?: InputMaybe<Order_By>;
+};
+
+/** aggregate min on columns */
+export type Desh_Products_Min_Fields = {
+  __typename?: 'desh_products_min_fields';
+  created_at?: Maybe<Scalars['timestamptz']>;
+  dash_id?: Maybe<Scalars['uuid']>;
+  id?: Maybe<Scalars['uuid']>;
+  logo_path?: Maybe<Scalars['String']>;
+  name?: Maybe<Scalars['String']>;
+  updated_at?: Maybe<Scalars['timestamptz']>;
 };
 
 /** order by min() on columns of table "desh_products" */
@@ -1363,6 +1956,36 @@ export type Desh_Sales = {
   updated_at: Scalars['timestamptz'];
 };
 
+/** aggregated selection of "desh_sales" */
+export type Desh_Sales_Aggregate = {
+  __typename?: 'desh_sales_aggregate';
+  aggregate?: Maybe<Desh_Sales_Aggregate_Fields>;
+  nodes: Array<Desh_Sales>;
+};
+
+/** aggregate fields of "desh_sales" */
+export type Desh_Sales_Aggregate_Fields = {
+  __typename?: 'desh_sales_aggregate_fields';
+  avg?: Maybe<Desh_Sales_Avg_Fields>;
+  count: Scalars['Int'];
+  max?: Maybe<Desh_Sales_Max_Fields>;
+  min?: Maybe<Desh_Sales_Min_Fields>;
+  stddev?: Maybe<Desh_Sales_Stddev_Fields>;
+  stddev_pop?: Maybe<Desh_Sales_Stddev_Pop_Fields>;
+  stddev_samp?: Maybe<Desh_Sales_Stddev_Samp_Fields>;
+  sum?: Maybe<Desh_Sales_Sum_Fields>;
+  var_pop?: Maybe<Desh_Sales_Var_Pop_Fields>;
+  var_samp?: Maybe<Desh_Sales_Var_Samp_Fields>;
+  variance?: Maybe<Desh_Sales_Variance_Fields>;
+};
+
+
+/** aggregate fields of "desh_sales" */
+export type Desh_Sales_Aggregate_FieldsCountArgs = {
+  columns?: InputMaybe<Array<Desh_Sales_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']>;
+};
+
 /** order by aggregate values of table "desh_sales" */
 export type Desh_Sales_Aggregate_Order_By = {
   avg?: InputMaybe<Desh_Sales_Avg_Order_By>;
@@ -1383,6 +2006,12 @@ export type Desh_Sales_Arr_Rel_Insert_Input = {
   data: Array<Desh_Sales_Insert_Input>;
   /** upsert condition */
   on_conflict?: InputMaybe<Desh_Sales_On_Conflict>;
+};
+
+/** aggregate avg on columns */
+export type Desh_Sales_Avg_Fields = {
+  __typename?: 'desh_sales_avg_fields';
+  sales?: Maybe<Scalars['Float']>;
 };
 
 /** order by avg() on columns of table "desh_sales" */
@@ -1426,6 +2055,16 @@ export type Desh_Sales_Insert_Input = {
   updated_at?: InputMaybe<Scalars['timestamptz']>;
 };
 
+/** aggregate max on columns */
+export type Desh_Sales_Max_Fields = {
+  __typename?: 'desh_sales_max_fields';
+  created_at?: Maybe<Scalars['timestamptz']>;
+  dash_id?: Maybe<Scalars['uuid']>;
+  id?: Maybe<Scalars['uuid']>;
+  sales?: Maybe<Scalars['Int']>;
+  updated_at?: Maybe<Scalars['timestamptz']>;
+};
+
 /** order by max() on columns of table "desh_sales" */
 export type Desh_Sales_Max_Order_By = {
   created_at?: InputMaybe<Order_By>;
@@ -1433,6 +2072,16 @@ export type Desh_Sales_Max_Order_By = {
   id?: InputMaybe<Order_By>;
   sales?: InputMaybe<Order_By>;
   updated_at?: InputMaybe<Order_By>;
+};
+
+/** aggregate min on columns */
+export type Desh_Sales_Min_Fields = {
+  __typename?: 'desh_sales_min_fields';
+  created_at?: Maybe<Scalars['timestamptz']>;
+  dash_id?: Maybe<Scalars['uuid']>;
+  id?: Maybe<Scalars['uuid']>;
+  sales?: Maybe<Scalars['Int']>;
+  updated_at?: Maybe<Scalars['timestamptz']>;
 };
 
 /** order by min() on columns of table "desh_sales" */
@@ -1498,14 +2147,32 @@ export type Desh_Sales_Set_Input = {
   updated_at?: InputMaybe<Scalars['timestamptz']>;
 };
 
+/** aggregate stddev on columns */
+export type Desh_Sales_Stddev_Fields = {
+  __typename?: 'desh_sales_stddev_fields';
+  sales?: Maybe<Scalars['Float']>;
+};
+
 /** order by stddev() on columns of table "desh_sales" */
 export type Desh_Sales_Stddev_Order_By = {
   sales?: InputMaybe<Order_By>;
 };
 
+/** aggregate stddev_pop on columns */
+export type Desh_Sales_Stddev_Pop_Fields = {
+  __typename?: 'desh_sales_stddev_pop_fields';
+  sales?: Maybe<Scalars['Float']>;
+};
+
 /** order by stddev_pop() on columns of table "desh_sales" */
 export type Desh_Sales_Stddev_Pop_Order_By = {
   sales?: InputMaybe<Order_By>;
+};
+
+/** aggregate stddev_samp on columns */
+export type Desh_Sales_Stddev_Samp_Fields = {
+  __typename?: 'desh_sales_stddev_samp_fields';
+  sales?: Maybe<Scalars['Float']>;
 };
 
 /** order by stddev_samp() on columns of table "desh_sales" */
@@ -1528,6 +2195,12 @@ export type Desh_Sales_Stream_Cursor_Value_Input = {
   id?: InputMaybe<Scalars['uuid']>;
   sales?: InputMaybe<Scalars['Int']>;
   updated_at?: InputMaybe<Scalars['timestamptz']>;
+};
+
+/** aggregate sum on columns */
+export type Desh_Sales_Sum_Fields = {
+  __typename?: 'desh_sales_sum_fields';
+  sales?: Maybe<Scalars['Int']>;
 };
 
 /** order by sum() on columns of table "desh_sales" */
@@ -1557,14 +2230,32 @@ export type Desh_Sales_Updates = {
   where: Desh_Sales_Bool_Exp;
 };
 
+/** aggregate var_pop on columns */
+export type Desh_Sales_Var_Pop_Fields = {
+  __typename?: 'desh_sales_var_pop_fields';
+  sales?: Maybe<Scalars['Float']>;
+};
+
 /** order by var_pop() on columns of table "desh_sales" */
 export type Desh_Sales_Var_Pop_Order_By = {
   sales?: InputMaybe<Order_By>;
 };
 
+/** aggregate var_samp on columns */
+export type Desh_Sales_Var_Samp_Fields = {
+  __typename?: 'desh_sales_var_samp_fields';
+  sales?: Maybe<Scalars['Float']>;
+};
+
 /** order by var_samp() on columns of table "desh_sales" */
 export type Desh_Sales_Var_Samp_Order_By = {
   sales?: InputMaybe<Order_By>;
+};
+
+/** aggregate variance on columns */
+export type Desh_Sales_Variance_Fields = {
+  __typename?: 'desh_sales_variance_fields';
+  sales?: Maybe<Scalars['Float']>;
 };
 
 /** order by variance() on columns of table "desh_sales" */
@@ -1604,6 +2295,33 @@ export type Desh_Set_Input = {
   updated_at?: InputMaybe<Scalars['timestamptz']>;
 };
 
+/** aggregate stddev on columns */
+export type Desh_Stddev_Fields = {
+  __typename?: 'desh_stddev_fields';
+  budget?: Maybe<Scalars['Float']>;
+  no_of_customers?: Maybe<Scalars['Float']>;
+  profit?: Maybe<Scalars['Float']>;
+  task_progress?: Maybe<Scalars['Float']>;
+};
+
+/** aggregate stddev_pop on columns */
+export type Desh_Stddev_Pop_Fields = {
+  __typename?: 'desh_stddev_pop_fields';
+  budget?: Maybe<Scalars['Float']>;
+  no_of_customers?: Maybe<Scalars['Float']>;
+  profit?: Maybe<Scalars['Float']>;
+  task_progress?: Maybe<Scalars['Float']>;
+};
+
+/** aggregate stddev_samp on columns */
+export type Desh_Stddev_Samp_Fields = {
+  __typename?: 'desh_stddev_samp_fields';
+  budget?: Maybe<Scalars['Float']>;
+  no_of_customers?: Maybe<Scalars['Float']>;
+  profit?: Maybe<Scalars['Float']>;
+  task_progress?: Maybe<Scalars['Float']>;
+};
+
 /** Streaming cursor of the table "desh" */
 export type Desh_Stream_Cursor_Input = {
   /** Stream column input with initial value */
@@ -1624,6 +2342,15 @@ export type Desh_Stream_Cursor_Value_Input = {
   updated_at?: InputMaybe<Scalars['timestamptz']>;
 };
 
+/** aggregate sum on columns */
+export type Desh_Sum_Fields = {
+  __typename?: 'desh_sum_fields';
+  budget?: Maybe<Scalars['Int']>;
+  no_of_customers?: Maybe<Scalars['Int']>;
+  profit?: Maybe<Scalars['Int']>;
+  task_progress?: Maybe<Scalars['Int']>;
+};
+
 /** columns and relationships of "desh_traffic" */
 export type Desh_Traffic = {
   __typename?: 'desh_traffic';
@@ -1635,6 +2362,36 @@ export type Desh_Traffic = {
   device_name: Scalars['String'];
   id: Scalars['uuid'];
   updated_at: Scalars['timestamptz'];
+};
+
+/** aggregated selection of "desh_traffic" */
+export type Desh_Traffic_Aggregate = {
+  __typename?: 'desh_traffic_aggregate';
+  aggregate?: Maybe<Desh_Traffic_Aggregate_Fields>;
+  nodes: Array<Desh_Traffic>;
+};
+
+/** aggregate fields of "desh_traffic" */
+export type Desh_Traffic_Aggregate_Fields = {
+  __typename?: 'desh_traffic_aggregate_fields';
+  avg?: Maybe<Desh_Traffic_Avg_Fields>;
+  count: Scalars['Int'];
+  max?: Maybe<Desh_Traffic_Max_Fields>;
+  min?: Maybe<Desh_Traffic_Min_Fields>;
+  stddev?: Maybe<Desh_Traffic_Stddev_Fields>;
+  stddev_pop?: Maybe<Desh_Traffic_Stddev_Pop_Fields>;
+  stddev_samp?: Maybe<Desh_Traffic_Stddev_Samp_Fields>;
+  sum?: Maybe<Desh_Traffic_Sum_Fields>;
+  var_pop?: Maybe<Desh_Traffic_Var_Pop_Fields>;
+  var_samp?: Maybe<Desh_Traffic_Var_Samp_Fields>;
+  variance?: Maybe<Desh_Traffic_Variance_Fields>;
+};
+
+
+/** aggregate fields of "desh_traffic" */
+export type Desh_Traffic_Aggregate_FieldsCountArgs = {
+  columns?: InputMaybe<Array<Desh_Traffic_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']>;
 };
 
 /** order by aggregate values of table "desh_traffic" */
@@ -1657,6 +2414,12 @@ export type Desh_Traffic_Arr_Rel_Insert_Input = {
   data: Array<Desh_Traffic_Insert_Input>;
   /** upsert condition */
   on_conflict?: InputMaybe<Desh_Traffic_On_Conflict>;
+};
+
+/** aggregate avg on columns */
+export type Desh_Traffic_Avg_Fields = {
+  __typename?: 'desh_traffic_avg_fields';
+  count?: Maybe<Scalars['Float']>;
 };
 
 /** order by avg() on columns of table "desh_traffic" */
@@ -1702,6 +2465,17 @@ export type Desh_Traffic_Insert_Input = {
   updated_at?: InputMaybe<Scalars['timestamptz']>;
 };
 
+/** aggregate max on columns */
+export type Desh_Traffic_Max_Fields = {
+  __typename?: 'desh_traffic_max_fields';
+  count?: Maybe<Scalars['Int']>;
+  created_at?: Maybe<Scalars['timestamptz']>;
+  dash_id?: Maybe<Scalars['uuid']>;
+  device_name?: Maybe<Scalars['String']>;
+  id?: Maybe<Scalars['uuid']>;
+  updated_at?: Maybe<Scalars['timestamptz']>;
+};
+
 /** order by max() on columns of table "desh_traffic" */
 export type Desh_Traffic_Max_Order_By = {
   count?: InputMaybe<Order_By>;
@@ -1710,6 +2484,17 @@ export type Desh_Traffic_Max_Order_By = {
   device_name?: InputMaybe<Order_By>;
   id?: InputMaybe<Order_By>;
   updated_at?: InputMaybe<Order_By>;
+};
+
+/** aggregate min on columns */
+export type Desh_Traffic_Min_Fields = {
+  __typename?: 'desh_traffic_min_fields';
+  count?: Maybe<Scalars['Int']>;
+  created_at?: Maybe<Scalars['timestamptz']>;
+  dash_id?: Maybe<Scalars['uuid']>;
+  device_name?: Maybe<Scalars['String']>;
+  id?: Maybe<Scalars['uuid']>;
+  updated_at?: Maybe<Scalars['timestamptz']>;
 };
 
 /** order by min() on columns of table "desh_traffic" */
@@ -1780,14 +2565,32 @@ export type Desh_Traffic_Set_Input = {
   updated_at?: InputMaybe<Scalars['timestamptz']>;
 };
 
+/** aggregate stddev on columns */
+export type Desh_Traffic_Stddev_Fields = {
+  __typename?: 'desh_traffic_stddev_fields';
+  count?: Maybe<Scalars['Float']>;
+};
+
 /** order by stddev() on columns of table "desh_traffic" */
 export type Desh_Traffic_Stddev_Order_By = {
   count?: InputMaybe<Order_By>;
 };
 
+/** aggregate stddev_pop on columns */
+export type Desh_Traffic_Stddev_Pop_Fields = {
+  __typename?: 'desh_traffic_stddev_pop_fields';
+  count?: Maybe<Scalars['Float']>;
+};
+
 /** order by stddev_pop() on columns of table "desh_traffic" */
 export type Desh_Traffic_Stddev_Pop_Order_By = {
   count?: InputMaybe<Order_By>;
+};
+
+/** aggregate stddev_samp on columns */
+export type Desh_Traffic_Stddev_Samp_Fields = {
+  __typename?: 'desh_traffic_stddev_samp_fields';
+  count?: Maybe<Scalars['Float']>;
 };
 
 /** order by stddev_samp() on columns of table "desh_traffic" */
@@ -1811,6 +2614,12 @@ export type Desh_Traffic_Stream_Cursor_Value_Input = {
   device_name?: InputMaybe<Scalars['String']>;
   id?: InputMaybe<Scalars['uuid']>;
   updated_at?: InputMaybe<Scalars['timestamptz']>;
+};
+
+/** aggregate sum on columns */
+export type Desh_Traffic_Sum_Fields = {
+  __typename?: 'desh_traffic_sum_fields';
+  count?: Maybe<Scalars['Int']>;
 };
 
 /** order by sum() on columns of table "desh_traffic" */
@@ -1842,14 +2651,32 @@ export type Desh_Traffic_Updates = {
   where: Desh_Traffic_Bool_Exp;
 };
 
+/** aggregate var_pop on columns */
+export type Desh_Traffic_Var_Pop_Fields = {
+  __typename?: 'desh_traffic_var_pop_fields';
+  count?: Maybe<Scalars['Float']>;
+};
+
 /** order by var_pop() on columns of table "desh_traffic" */
 export type Desh_Traffic_Var_Pop_Order_By = {
   count?: InputMaybe<Order_By>;
 };
 
+/** aggregate var_samp on columns */
+export type Desh_Traffic_Var_Samp_Fields = {
+  __typename?: 'desh_traffic_var_samp_fields';
+  count?: Maybe<Scalars['Float']>;
+};
+
 /** order by var_samp() on columns of table "desh_traffic" */
 export type Desh_Traffic_Var_Samp_Order_By = {
   count?: InputMaybe<Order_By>;
+};
+
+/** aggregate variance on columns */
+export type Desh_Traffic_Variance_Fields = {
+  __typename?: 'desh_traffic_variance_fields';
+  count?: Maybe<Scalars['Float']>;
 };
 
 /** order by variance() on columns of table "desh_traffic" */
@@ -1885,12 +2712,41 @@ export type Desh_Updates = {
   where: Desh_Bool_Exp;
 };
 
+/** aggregate var_pop on columns */
+export type Desh_Var_Pop_Fields = {
+  __typename?: 'desh_var_pop_fields';
+  budget?: Maybe<Scalars['Float']>;
+  no_of_customers?: Maybe<Scalars['Float']>;
+  profit?: Maybe<Scalars['Float']>;
+  task_progress?: Maybe<Scalars['Float']>;
+};
+
+/** aggregate var_samp on columns */
+export type Desh_Var_Samp_Fields = {
+  __typename?: 'desh_var_samp_fields';
+  budget?: Maybe<Scalars['Float']>;
+  no_of_customers?: Maybe<Scalars['Float']>;
+  profit?: Maybe<Scalars['Float']>;
+  task_progress?: Maybe<Scalars['Float']>;
+};
+
+/** aggregate variance on columns */
+export type Desh_Variance_Fields = {
+  __typename?: 'desh_variance_fields';
+  budget?: Maybe<Scalars['Float']>;
+  no_of_customers?: Maybe<Scalars['Float']>;
+  profit?: Maybe<Scalars['Float']>;
+  task_progress?: Maybe<Scalars['Float']>;
+};
+
 /** columns and relationships of "enum_test_types" */
 export type Enum_Test_Types = {
   __typename?: 'enum_test_types';
   int_enum: Scalars['String'];
   /** An array relationship */
   types_tests: Array<Types_Test>;
+  /** An aggregate relationship */
+  types_tests_aggregate: Types_Test_Aggregate;
 };
 
 
@@ -1903,6 +2759,38 @@ export type Enum_Test_TypesTypes_TestsArgs = {
   where?: InputMaybe<Types_Test_Bool_Exp>;
 };
 
+
+/** columns and relationships of "enum_test_types" */
+export type Enum_Test_TypesTypes_Tests_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Types_Test_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  order_by?: InputMaybe<Array<Types_Test_Order_By>>;
+  where?: InputMaybe<Types_Test_Bool_Exp>;
+};
+
+/** aggregated selection of "enum_test_types" */
+export type Enum_Test_Types_Aggregate = {
+  __typename?: 'enum_test_types_aggregate';
+  aggregate?: Maybe<Enum_Test_Types_Aggregate_Fields>;
+  nodes: Array<Enum_Test_Types>;
+};
+
+/** aggregate fields of "enum_test_types" */
+export type Enum_Test_Types_Aggregate_Fields = {
+  __typename?: 'enum_test_types_aggregate_fields';
+  count: Scalars['Int'];
+  max?: Maybe<Enum_Test_Types_Max_Fields>;
+  min?: Maybe<Enum_Test_Types_Min_Fields>;
+};
+
+
+/** aggregate fields of "enum_test_types" */
+export type Enum_Test_Types_Aggregate_FieldsCountArgs = {
+  columns?: InputMaybe<Array<Enum_Test_Types_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']>;
+};
+
 /** Boolean expression to filter rows from the table "enum_test_types". All fields are combined with a logical 'AND'. */
 export type Enum_Test_Types_Bool_Exp = {
   _and?: InputMaybe<Array<Enum_Test_Types_Bool_Exp>>;
@@ -1912,9 +2800,16 @@ export type Enum_Test_Types_Bool_Exp = {
   types_tests?: InputMaybe<Types_Test_Bool_Exp>;
 };
 
+/** unique or primary key constraints on table "enum_test_types" */
+export enum Enum_Test_Types_Constraint {
+  /** unique or primary key constraint on columns "int_enum" */
+  EnumTestTypesPkey = 'enum_test_types_pkey'
+}
+
 export enum Enum_Test_Types_Enum {
   A0 = 'a0',
   A1 = 'a1',
+  A10 = 'a10',
   A2 = 'a2',
   A3 = 'a3',
   A4 = 'a4',
@@ -1922,8 +2817,7 @@ export enum Enum_Test_Types_Enum {
   A6 = 'a6',
   A7 = 'a7',
   A8 = 'a8',
-  A9 = 'a9',
-  A10 = 'a10'
+  A9 = 'a9'
 }
 
 /** Boolean expression to compare columns of type "enum_test_types_enum". All fields are combined with logical 'AND'. */
@@ -1935,10 +2829,56 @@ export type Enum_Test_Types_Enum_Comparison_Exp = {
   _nin?: InputMaybe<Array<Enum_Test_Types_Enum>>;
 };
 
+/** input type for inserting data into table "enum_test_types" */
+export type Enum_Test_Types_Insert_Input = {
+  int_enum?: InputMaybe<Scalars['String']>;
+  types_tests?: InputMaybe<Types_Test_Arr_Rel_Insert_Input>;
+};
+
+/** aggregate max on columns */
+export type Enum_Test_Types_Max_Fields = {
+  __typename?: 'enum_test_types_max_fields';
+  int_enum?: Maybe<Scalars['String']>;
+};
+
+/** aggregate min on columns */
+export type Enum_Test_Types_Min_Fields = {
+  __typename?: 'enum_test_types_min_fields';
+  int_enum?: Maybe<Scalars['String']>;
+};
+
+/** response of any mutation on the table "enum_test_types" */
+export type Enum_Test_Types_Mutation_Response = {
+  __typename?: 'enum_test_types_mutation_response';
+  /** number of rows affected by the mutation */
+  affected_rows: Scalars['Int'];
+  /** data from the rows affected by the mutation */
+  returning: Array<Enum_Test_Types>;
+};
+
+/** input type for inserting object relation for remote table "enum_test_types" */
+export type Enum_Test_Types_Obj_Rel_Insert_Input = {
+  data: Enum_Test_Types_Insert_Input;
+  /** upsert condition */
+  on_conflict?: InputMaybe<Enum_Test_Types_On_Conflict>;
+};
+
+/** on_conflict condition type for table "enum_test_types" */
+export type Enum_Test_Types_On_Conflict = {
+  constraint: Enum_Test_Types_Constraint;
+  update_columns?: Array<Enum_Test_Types_Update_Column>;
+  where?: InputMaybe<Enum_Test_Types_Bool_Exp>;
+};
+
 /** Ordering options when selecting data from "enum_test_types". */
 export type Enum_Test_Types_Order_By = {
   int_enum?: InputMaybe<Order_By>;
   types_tests_aggregate?: InputMaybe<Types_Test_Aggregate_Order_By>;
+};
+
+/** primary key columns input for table: enum_test_types */
+export type Enum_Test_Types_Pk_Columns_Input = {
+  int_enum: Scalars['String'];
 };
 
 /** select columns of table "enum_test_types" */
@@ -1946,6 +2886,11 @@ export enum Enum_Test_Types_Select_Column {
   /** column name */
   IntEnum = 'int_enum'
 }
+
+/** input type for updating data in table "enum_test_types" */
+export type Enum_Test_Types_Set_Input = {
+  int_enum?: InputMaybe<Scalars['String']>;
+};
 
 /** Streaming cursor of the table "enum_test_types" */
 export type Enum_Test_Types_Stream_Cursor_Input = {
@@ -1960,6 +2905,18 @@ export type Enum_Test_Types_Stream_Cursor_Value_Input = {
   int_enum?: InputMaybe<Scalars['String']>;
 };
 
+/** update columns of table "enum_test_types" */
+export enum Enum_Test_Types_Update_Column {
+  /** column name */
+  IntEnum = 'int_enum'
+}
+
+export type Enum_Test_Types_Updates = {
+  /** sets the columns of the filtered rows to the given values */
+  _set?: InputMaybe<Enum_Test_Types_Set_Input>;
+  where: Enum_Test_Types_Bool_Exp;
+};
+
 /** columns and relationships of "events" */
 export type Events = {
   __typename?: 'events';
@@ -1970,6 +2927,28 @@ export type Events = {
   name: Scalars['String'];
   notification?: Maybe<Scalars['Boolean']>;
   startAt: Scalars['timestamptz'];
+};
+
+/** aggregated selection of "events" */
+export type Events_Aggregate = {
+  __typename?: 'events_aggregate';
+  aggregate?: Maybe<Events_Aggregate_Fields>;
+  nodes: Array<Events>;
+};
+
+/** aggregate fields of "events" */
+export type Events_Aggregate_Fields = {
+  __typename?: 'events_aggregate_fields';
+  count: Scalars['Int'];
+  max?: Maybe<Events_Max_Fields>;
+  min?: Maybe<Events_Min_Fields>;
+};
+
+
+/** aggregate fields of "events" */
+export type Events_Aggregate_FieldsCountArgs = {
+  columns?: InputMaybe<Array<Events_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']>;
 };
 
 /** Boolean expression to filter rows from the table "events". All fields are combined with a logical 'AND'. */
@@ -2001,6 +2980,26 @@ export type Events_Insert_Input = {
   name?: InputMaybe<Scalars['String']>;
   notification?: InputMaybe<Scalars['Boolean']>;
   startAt?: InputMaybe<Scalars['timestamptz']>;
+};
+
+/** aggregate max on columns */
+export type Events_Max_Fields = {
+  __typename?: 'events_max_fields';
+  description?: Maybe<Scalars['String']>;
+  endAt?: Maybe<Scalars['timestamptz']>;
+  id?: Maybe<Scalars['uuid']>;
+  name?: Maybe<Scalars['String']>;
+  startAt?: Maybe<Scalars['timestamptz']>;
+};
+
+/** aggregate min on columns */
+export type Events_Min_Fields = {
+  __typename?: 'events_min_fields';
+  description?: Maybe<Scalars['String']>;
+  endAt?: Maybe<Scalars['timestamptz']>;
+  id?: Maybe<Scalars['uuid']>;
+  name?: Maybe<Scalars['String']>;
+  startAt?: Maybe<Scalars['timestamptz']>;
 };
 
 /** response of any mutation on the table "events" */
@@ -2249,6 +3248,28 @@ export type MapPointsGeoJsonArgs = {
   path?: InputMaybe<Scalars['String']>;
 };
 
+/** aggregated selection of "map_points" */
+export type MapPoints_Aggregate = {
+  __typename?: 'mapPoints_aggregate';
+  aggregate?: Maybe<MapPoints_Aggregate_Fields>;
+  nodes: Array<MapPoints>;
+};
+
+/** aggregate fields of "map_points" */
+export type MapPoints_Aggregate_Fields = {
+  __typename?: 'mapPoints_aggregate_fields';
+  count: Scalars['Int'];
+  max?: Maybe<MapPoints_Max_Fields>;
+  min?: Maybe<MapPoints_Min_Fields>;
+};
+
+
+/** aggregate fields of "map_points" */
+export type MapPoints_Aggregate_FieldsCountArgs = {
+  columns?: InputMaybe<Array<MapPoints_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']>;
+};
+
 /** Boolean expression to filter rows from the table "map_points". All fields are combined with a logical 'AND'. */
 export type MapPoints_Bool_Exp = {
   _and?: InputMaybe<Array<MapPoints_Bool_Exp>>;
@@ -2272,6 +3293,18 @@ export type MapPoints_Insert_Input = {
   id?: InputMaybe<Scalars['uuid']>;
   location?: InputMaybe<Scalars['geography']>;
   position?: InputMaybe<Scalars['geography']>;
+};
+
+/** aggregate max on columns */
+export type MapPoints_Max_Fields = {
+  __typename?: 'mapPoints_max_fields';
+  id?: Maybe<Scalars['uuid']>;
+};
+
+/** aggregate min on columns */
+export type MapPoints_Min_Fields = {
+  __typename?: 'mapPoints_min_fields';
+  id?: Maybe<Scalars['uuid']>;
 };
 
 /** response of any mutation on the table "map_points" */
@@ -2388,8 +3421,16 @@ export type Mutation_Root = {
   deleteCustomer?: Maybe<Customers>;
   /** delete data from the table: "customers" */
   deleteCustomers?: Maybe<Customers_Mutation_Response>;
+  /** delete single row from the table: "events" */
+  deleteEvent?: Maybe<Events>;
+  /** delete data from the table: "events" */
+  deleteEvents?: Maybe<Events_Mutation_Response>;
   /** delete single row from the table: "orders" */
   deleteOrder?: Maybe<Orders>;
+  /** delete single row from the table: "order_items" */
+  deleteOrderItem?: Maybe<OrderItems>;
+  /** delete data from the table: "order_items" */
+  deleteOrderItems?: Maybe<OrderItems_Mutation_Response>;
   /** delete data from the table: "orders" */
   deleteOrders?: Maybe<Orders_Mutation_Response>;
   /** delete single row from the table: "organizations" */
@@ -2400,10 +3441,18 @@ export type Mutation_Root = {
   deleteProduct?: Maybe<Products>;
   /** delete data from the table: "products" */
   deleteProducts?: Maybe<Products_Mutation_Response>;
+  /** delete single row from the table: "test_x" */
+  deleteTestX?: Maybe<TestX>;
+  /** delete data from the table: "test_x" */
+  deleteTestXes?: Maybe<TestX_Mutation_Response>;
   /** delete data from the table: "accounts" */
   delete_accounts?: Maybe<Accounts_Mutation_Response>;
   /** delete single row from the table: "accounts" */
   delete_accounts_by_pk?: Maybe<Accounts>;
+  /** delete data from the table: "customer_types" */
+  delete_customer_types?: Maybe<Customer_Types_Mutation_Response>;
+  /** delete single row from the table: "customer_types" */
+  delete_customer_types_by_pk?: Maybe<Customer_Types>;
   /** delete data from the table: "desh" */
   delete_desh?: Maybe<Desh_Mutation_Response>;
   /** delete single row from the table: "desh" */
@@ -2420,10 +3469,38 @@ export type Mutation_Root = {
   delete_desh_traffic?: Maybe<Desh_Traffic_Mutation_Response>;
   /** delete single row from the table: "desh_traffic" */
   delete_desh_traffic_by_pk?: Maybe<Desh_Traffic>;
+  /** delete data from the table: "enum_test_types" */
+  delete_enum_test_types?: Maybe<Enum_Test_Types_Mutation_Response>;
+  /** delete single row from the table: "enum_test_types" */
+  delete_enum_test_types_by_pk?: Maybe<Enum_Test_Types>;
   /** delete data from the table: "map_points" */
   delete_mapPoints?: Maybe<MapPoints_Mutation_Response>;
   /** delete single row from the table: "map_points" */
   delete_mapPoints_by_pk?: Maybe<MapPoints>;
+  /** delete data from the table: "organization_partnership_levels" */
+  delete_organization_partnership_levels?: Maybe<Organization_Partnership_Levels_Mutation_Response>;
+  /** delete single row from the table: "organization_partnership_levels" */
+  delete_organization_partnership_levels_by_pk?: Maybe<Organization_Partnership_Levels>;
+  /** delete data from the table: "organization_types" */
+  delete_organization_types?: Maybe<Organization_Types_Mutation_Response>;
+  /** delete single row from the table: "organization_types" */
+  delete_organization_types_by_pk?: Maybe<Organization_Types>;
+  /** delete data from the table: "product_availability" */
+  delete_product_availability?: Maybe<Product_Availability_Mutation_Response>;
+  /** delete single row from the table: "product_availability" */
+  delete_product_availability_by_pk?: Maybe<Product_Availability>;
+  /** delete data from the table: "status_types" */
+  delete_status_types?: Maybe<Status_Types_Mutation_Response>;
+  /** delete single row from the table: "status_types" */
+  delete_status_types_by_pk?: Maybe<Status_Types>;
+  /** delete data from the table: "topology.layer" */
+  delete_topology_layer?: Maybe<Topology_Layer_Mutation_Response>;
+  /** delete single row from the table: "topology.layer" */
+  delete_topology_layer_by_pk?: Maybe<Topology_Layer>;
+  /** delete data from the table: "topology.topology" */
+  delete_topology_topology?: Maybe<Topology_Topology_Mutation_Response>;
+  /** delete single row from the table: "topology.topology" */
+  delete_topology_topology_by_pk?: Maybe<Topology_Topology>;
   /** delete data from the table: "types_test" */
   delete_types_test?: Maybe<Types_Test_Mutation_Response>;
   /** delete single row from the table: "types_test" */
@@ -2468,6 +3545,10 @@ export type Mutation_Root = {
   insert_accounts?: Maybe<Accounts_Mutation_Response>;
   /** insert a single row into the table: "accounts" */
   insert_accounts_one?: Maybe<Accounts>;
+  /** insert data into the table: "customer_types" */
+  insert_customer_types?: Maybe<Customer_Types_Mutation_Response>;
+  /** insert a single row into the table: "customer_types" */
+  insert_customer_types_one?: Maybe<Customer_Types>;
   /** insert data into the table: "desh" */
   insert_desh?: Maybe<Desh_Mutation_Response>;
   /** insert a single row into the table: "desh" */
@@ -2484,10 +3565,38 @@ export type Mutation_Root = {
   insert_desh_traffic?: Maybe<Desh_Traffic_Mutation_Response>;
   /** insert a single row into the table: "desh_traffic" */
   insert_desh_traffic_one?: Maybe<Desh_Traffic>;
+  /** insert data into the table: "enum_test_types" */
+  insert_enum_test_types?: Maybe<Enum_Test_Types_Mutation_Response>;
+  /** insert a single row into the table: "enum_test_types" */
+  insert_enum_test_types_one?: Maybe<Enum_Test_Types>;
   /** insert data into the table: "map_points" */
   insert_mapPoints?: Maybe<MapPoints_Mutation_Response>;
   /** insert a single row into the table: "map_points" */
   insert_mapPoints_one?: Maybe<MapPoints>;
+  /** insert data into the table: "organization_partnership_levels" */
+  insert_organization_partnership_levels?: Maybe<Organization_Partnership_Levels_Mutation_Response>;
+  /** insert a single row into the table: "organization_partnership_levels" */
+  insert_organization_partnership_levels_one?: Maybe<Organization_Partnership_Levels>;
+  /** insert data into the table: "organization_types" */
+  insert_organization_types?: Maybe<Organization_Types_Mutation_Response>;
+  /** insert a single row into the table: "organization_types" */
+  insert_organization_types_one?: Maybe<Organization_Types>;
+  /** insert data into the table: "product_availability" */
+  insert_product_availability?: Maybe<Product_Availability_Mutation_Response>;
+  /** insert a single row into the table: "product_availability" */
+  insert_product_availability_one?: Maybe<Product_Availability>;
+  /** insert data into the table: "status_types" */
+  insert_status_types?: Maybe<Status_Types_Mutation_Response>;
+  /** insert a single row into the table: "status_types" */
+  insert_status_types_one?: Maybe<Status_Types>;
+  /** insert data into the table: "topology.layer" */
+  insert_topology_layer?: Maybe<Topology_Layer_Mutation_Response>;
+  /** insert a single row into the table: "topology.layer" */
+  insert_topology_layer_one?: Maybe<Topology_Layer>;
+  /** insert data into the table: "topology.topology" */
+  insert_topology_topology?: Maybe<Topology_Topology_Mutation_Response>;
+  /** insert a single row into the table: "topology.topology" */
+  insert_topology_topology_one?: Maybe<Topology_Topology>;
   /** insert data into the table: "types_test" */
   insert_types_test?: Maybe<Types_Test_Mutation_Response>;
   /** insert a single row into the table: "types_test" */
@@ -2538,6 +3647,12 @@ export type Mutation_Root = {
   update_busStopDepartures_many?: Maybe<Array<Maybe<BusStopDepartures_Mutation_Response>>>;
   /** update multiples rows of table: "bus_stops" */
   update_busStops_many?: Maybe<Array<Maybe<BusStops_Mutation_Response>>>;
+  /** update data of the table: "customer_types" */
+  update_customer_types?: Maybe<Customer_Types_Mutation_Response>;
+  /** update single row of the table: "customer_types" */
+  update_customer_types_by_pk?: Maybe<Customer_Types>;
+  /** update multiples rows of table: "customer_types" */
+  update_customer_types_many?: Maybe<Array<Maybe<Customer_Types_Mutation_Response>>>;
   /** update multiples rows of table: "customers" */
   update_customers_many?: Maybe<Array<Maybe<Customers_Mutation_Response>>>;
   /** update data of the table: "desh" */
@@ -2564,6 +3679,12 @@ export type Mutation_Root = {
   update_desh_traffic_by_pk?: Maybe<Desh_Traffic>;
   /** update multiples rows of table: "desh_traffic" */
   update_desh_traffic_many?: Maybe<Array<Maybe<Desh_Traffic_Mutation_Response>>>;
+  /** update data of the table: "enum_test_types" */
+  update_enum_test_types?: Maybe<Enum_Test_Types_Mutation_Response>;
+  /** update single row of the table: "enum_test_types" */
+  update_enum_test_types_by_pk?: Maybe<Enum_Test_Types>;
+  /** update multiples rows of table: "enum_test_types" */
+  update_enum_test_types_many?: Maybe<Array<Maybe<Enum_Test_Types_Mutation_Response>>>;
   /** update multiples rows of table: "events" */
   update_events_many?: Maybe<Array<Maybe<Events_Mutation_Response>>>;
   /** update data of the table: "map_points" */
@@ -2576,12 +3697,48 @@ export type Mutation_Root = {
   update_orderItems_many?: Maybe<Array<Maybe<OrderItems_Mutation_Response>>>;
   /** update multiples rows of table: "orders" */
   update_orders_many?: Maybe<Array<Maybe<Orders_Mutation_Response>>>;
+  /** update data of the table: "organization_partnership_levels" */
+  update_organization_partnership_levels?: Maybe<Organization_Partnership_Levels_Mutation_Response>;
+  /** update single row of the table: "organization_partnership_levels" */
+  update_organization_partnership_levels_by_pk?: Maybe<Organization_Partnership_Levels>;
+  /** update multiples rows of table: "organization_partnership_levels" */
+  update_organization_partnership_levels_many?: Maybe<Array<Maybe<Organization_Partnership_Levels_Mutation_Response>>>;
+  /** update data of the table: "organization_types" */
+  update_organization_types?: Maybe<Organization_Types_Mutation_Response>;
+  /** update single row of the table: "organization_types" */
+  update_organization_types_by_pk?: Maybe<Organization_Types>;
+  /** update multiples rows of table: "organization_types" */
+  update_organization_types_many?: Maybe<Array<Maybe<Organization_Types_Mutation_Response>>>;
   /** update multiples rows of table: "organizations" */
   update_organizations_many?: Maybe<Array<Maybe<Organizations_Mutation_Response>>>;
+  /** update data of the table: "product_availability" */
+  update_product_availability?: Maybe<Product_Availability_Mutation_Response>;
+  /** update single row of the table: "product_availability" */
+  update_product_availability_by_pk?: Maybe<Product_Availability>;
+  /** update multiples rows of table: "product_availability" */
+  update_product_availability_many?: Maybe<Array<Maybe<Product_Availability_Mutation_Response>>>;
   /** update multiples rows of table: "products" */
   update_products_many?: Maybe<Array<Maybe<Products_Mutation_Response>>>;
+  /** update data of the table: "status_types" */
+  update_status_types?: Maybe<Status_Types_Mutation_Response>;
+  /** update single row of the table: "status_types" */
+  update_status_types_by_pk?: Maybe<Status_Types>;
+  /** update multiples rows of table: "status_types" */
+  update_status_types_many?: Maybe<Array<Maybe<Status_Types_Mutation_Response>>>;
   /** update multiples rows of table: "test_x" */
   update_testX_many?: Maybe<Array<Maybe<TestX_Mutation_Response>>>;
+  /** update data of the table: "topology.layer" */
+  update_topology_layer?: Maybe<Topology_Layer_Mutation_Response>;
+  /** update single row of the table: "topology.layer" */
+  update_topology_layer_by_pk?: Maybe<Topology_Layer>;
+  /** update multiples rows of table: "topology.layer" */
+  update_topology_layer_many?: Maybe<Array<Maybe<Topology_Layer_Mutation_Response>>>;
+  /** update data of the table: "topology.topology" */
+  update_topology_topology?: Maybe<Topology_Topology_Mutation_Response>;
+  /** update single row of the table: "topology.topology" */
+  update_topology_topology_by_pk?: Maybe<Topology_Topology>;
+  /** update multiples rows of table: "topology.topology" */
+  update_topology_topology_many?: Maybe<Array<Maybe<Topology_Topology_Mutation_Response>>>;
   /** update data of the table: "types_test" */
   update_types_test?: Maybe<Types_Test_Mutation_Response>;
   /** update single row of the table: "types_test" */
@@ -2651,8 +3808,32 @@ export type Mutation_RootDeleteCustomersArgs = {
 
 
 /** mutation root */
+export type Mutation_RootDeleteEventArgs = {
+  id: Scalars['uuid'];
+};
+
+
+/** mutation root */
+export type Mutation_RootDeleteEventsArgs = {
+  where: Events_Bool_Exp;
+};
+
+
+/** mutation root */
 export type Mutation_RootDeleteOrderArgs = {
   id: Scalars['uuid'];
+};
+
+
+/** mutation root */
+export type Mutation_RootDeleteOrderItemArgs = {
+  id: Scalars['uuid'];
+};
+
+
+/** mutation root */
+export type Mutation_RootDeleteOrderItemsArgs = {
+  where: OrderItems_Bool_Exp;
 };
 
 
@@ -2687,6 +3868,18 @@ export type Mutation_RootDeleteProductsArgs = {
 
 
 /** mutation root */
+export type Mutation_RootDeleteTestXArgs = {
+  id: Scalars['uuid'];
+};
+
+
+/** mutation root */
+export type Mutation_RootDeleteTestXesArgs = {
+  where: TestX_Bool_Exp;
+};
+
+
+/** mutation root */
 export type Mutation_RootDelete_AccountsArgs = {
   where: Accounts_Bool_Exp;
 };
@@ -2695,6 +3888,18 @@ export type Mutation_RootDelete_AccountsArgs = {
 /** mutation root */
 export type Mutation_RootDelete_Accounts_By_PkArgs = {
   id: Scalars['Int'];
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Customer_TypesArgs = {
+  where: Customer_Types_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Customer_Types_By_PkArgs = {
+  type: Scalars['String'];
 };
 
 
@@ -2747,6 +3952,18 @@ export type Mutation_RootDelete_Desh_Traffic_By_PkArgs = {
 
 
 /** mutation root */
+export type Mutation_RootDelete_Enum_Test_TypesArgs = {
+  where: Enum_Test_Types_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Enum_Test_Types_By_PkArgs = {
+  int_enum: Scalars['String'];
+};
+
+
+/** mutation root */
 export type Mutation_RootDelete_MapPointsArgs = {
   where: MapPoints_Bool_Exp;
 };
@@ -2755,6 +3972,79 @@ export type Mutation_RootDelete_MapPointsArgs = {
 /** mutation root */
 export type Mutation_RootDelete_MapPoints_By_PkArgs = {
   id: Scalars['uuid'];
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Organization_Partnership_LevelsArgs = {
+  where: Organization_Partnership_Levels_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Organization_Partnership_Levels_By_PkArgs = {
+  level: Scalars['String'];
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Organization_TypesArgs = {
+  where: Organization_Types_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Organization_Types_By_PkArgs = {
+  type: Scalars['String'];
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Product_AvailabilityArgs = {
+  where: Product_Availability_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Product_Availability_By_PkArgs = {
+  type: Scalars['String'];
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Status_TypesArgs = {
+  where: Status_Types_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Status_Types_By_PkArgs = {
+  status: Scalars['String'];
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Topology_LayerArgs = {
+  where: Topology_Layer_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Topology_Layer_By_PkArgs = {
+  layer_id: Scalars['Int'];
+  topology_id: Scalars['Int'];
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Topology_TopologyArgs = {
+  where: Topology_Topology_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Topology_Topology_By_PkArgs = {
+  id: Scalars['Int'];
 };
 
 
@@ -2911,6 +4201,20 @@ export type Mutation_RootInsert_Accounts_OneArgs = {
 
 
 /** mutation root */
+export type Mutation_RootInsert_Customer_TypesArgs = {
+  objects: Array<Customer_Types_Insert_Input>;
+  on_conflict?: InputMaybe<Customer_Types_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Customer_Types_OneArgs = {
+  object: Customer_Types_Insert_Input;
+  on_conflict?: InputMaybe<Customer_Types_On_Conflict>;
+};
+
+
+/** mutation root */
 export type Mutation_RootInsert_DeshArgs = {
   objects: Array<Desh_Insert_Input>;
   on_conflict?: InputMaybe<Desh_On_Conflict>;
@@ -2967,6 +4271,20 @@ export type Mutation_RootInsert_Desh_Traffic_OneArgs = {
 
 
 /** mutation root */
+export type Mutation_RootInsert_Enum_Test_TypesArgs = {
+  objects: Array<Enum_Test_Types_Insert_Input>;
+  on_conflict?: InputMaybe<Enum_Test_Types_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Enum_Test_Types_OneArgs = {
+  object: Enum_Test_Types_Insert_Input;
+  on_conflict?: InputMaybe<Enum_Test_Types_On_Conflict>;
+};
+
+
+/** mutation root */
 export type Mutation_RootInsert_MapPointsArgs = {
   objects: Array<MapPoints_Insert_Input>;
   on_conflict?: InputMaybe<MapPoints_On_Conflict>;
@@ -2977,6 +4295,90 @@ export type Mutation_RootInsert_MapPointsArgs = {
 export type Mutation_RootInsert_MapPoints_OneArgs = {
   object: MapPoints_Insert_Input;
   on_conflict?: InputMaybe<MapPoints_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Organization_Partnership_LevelsArgs = {
+  objects: Array<Organization_Partnership_Levels_Insert_Input>;
+  on_conflict?: InputMaybe<Organization_Partnership_Levels_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Organization_Partnership_Levels_OneArgs = {
+  object: Organization_Partnership_Levels_Insert_Input;
+  on_conflict?: InputMaybe<Organization_Partnership_Levels_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Organization_TypesArgs = {
+  objects: Array<Organization_Types_Insert_Input>;
+  on_conflict?: InputMaybe<Organization_Types_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Organization_Types_OneArgs = {
+  object: Organization_Types_Insert_Input;
+  on_conflict?: InputMaybe<Organization_Types_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Product_AvailabilityArgs = {
+  objects: Array<Product_Availability_Insert_Input>;
+  on_conflict?: InputMaybe<Product_Availability_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Product_Availability_OneArgs = {
+  object: Product_Availability_Insert_Input;
+  on_conflict?: InputMaybe<Product_Availability_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Status_TypesArgs = {
+  objects: Array<Status_Types_Insert_Input>;
+  on_conflict?: InputMaybe<Status_Types_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Status_Types_OneArgs = {
+  object: Status_Types_Insert_Input;
+  on_conflict?: InputMaybe<Status_Types_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Topology_LayerArgs = {
+  objects: Array<Topology_Layer_Insert_Input>;
+  on_conflict?: InputMaybe<Topology_Layer_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Topology_Layer_OneArgs = {
+  object: Topology_Layer_Insert_Input;
+  on_conflict?: InputMaybe<Topology_Layer_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Topology_TopologyArgs = {
+  objects: Array<Topology_Topology_Insert_Input>;
+  on_conflict?: InputMaybe<Topology_Topology_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Topology_Topology_OneArgs = {
+  object: Topology_Topology_Insert_Input;
+  on_conflict?: InputMaybe<Topology_Topology_On_Conflict>;
 };
 
 
@@ -3163,6 +4565,26 @@ export type Mutation_RootUpdate_BusStops_ManyArgs = {
 
 
 /** mutation root */
+export type Mutation_RootUpdate_Customer_TypesArgs = {
+  _set?: InputMaybe<Customer_Types_Set_Input>;
+  where: Customer_Types_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Customer_Types_By_PkArgs = {
+  _set?: InputMaybe<Customer_Types_Set_Input>;
+  pk_columns: Customer_Types_Pk_Columns_Input;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Customer_Types_ManyArgs = {
+  updates: Array<Customer_Types_Updates>;
+};
+
+
+/** mutation root */
 export type Mutation_RootUpdate_Customers_ManyArgs = {
   updates: Array<Customers_Updates>;
 };
@@ -3255,6 +4677,26 @@ export type Mutation_RootUpdate_Desh_Traffic_ManyArgs = {
 
 
 /** mutation root */
+export type Mutation_RootUpdate_Enum_Test_TypesArgs = {
+  _set?: InputMaybe<Enum_Test_Types_Set_Input>;
+  where: Enum_Test_Types_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Enum_Test_Types_By_PkArgs = {
+  _set?: InputMaybe<Enum_Test_Types_Set_Input>;
+  pk_columns: Enum_Test_Types_Pk_Columns_Input;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Enum_Test_Types_ManyArgs = {
+  updates: Array<Enum_Test_Types_Updates>;
+};
+
+
+/** mutation root */
 export type Mutation_RootUpdate_Events_ManyArgs = {
   updates: Array<Events_Updates>;
 };
@@ -3293,8 +4735,68 @@ export type Mutation_RootUpdate_Orders_ManyArgs = {
 
 
 /** mutation root */
+export type Mutation_RootUpdate_Organization_Partnership_LevelsArgs = {
+  _set?: InputMaybe<Organization_Partnership_Levels_Set_Input>;
+  where: Organization_Partnership_Levels_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Organization_Partnership_Levels_By_PkArgs = {
+  _set?: InputMaybe<Organization_Partnership_Levels_Set_Input>;
+  pk_columns: Organization_Partnership_Levels_Pk_Columns_Input;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Organization_Partnership_Levels_ManyArgs = {
+  updates: Array<Organization_Partnership_Levels_Updates>;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Organization_TypesArgs = {
+  _set?: InputMaybe<Organization_Types_Set_Input>;
+  where: Organization_Types_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Organization_Types_By_PkArgs = {
+  _set?: InputMaybe<Organization_Types_Set_Input>;
+  pk_columns: Organization_Types_Pk_Columns_Input;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Organization_Types_ManyArgs = {
+  updates: Array<Organization_Types_Updates>;
+};
+
+
+/** mutation root */
 export type Mutation_RootUpdate_Organizations_ManyArgs = {
   updates: Array<Organizations_Updates>;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Product_AvailabilityArgs = {
+  _set?: InputMaybe<Product_Availability_Set_Input>;
+  where: Product_Availability_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Product_Availability_By_PkArgs = {
+  _set?: InputMaybe<Product_Availability_Set_Input>;
+  pk_columns: Product_Availability_Pk_Columns_Input;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Product_Availability_ManyArgs = {
+  updates: Array<Product_Availability_Updates>;
 };
 
 
@@ -3305,8 +4807,72 @@ export type Mutation_RootUpdate_Products_ManyArgs = {
 
 
 /** mutation root */
+export type Mutation_RootUpdate_Status_TypesArgs = {
+  _set?: InputMaybe<Status_Types_Set_Input>;
+  where: Status_Types_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Status_Types_By_PkArgs = {
+  _set?: InputMaybe<Status_Types_Set_Input>;
+  pk_columns: Status_Types_Pk_Columns_Input;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Status_Types_ManyArgs = {
+  updates: Array<Status_Types_Updates>;
+};
+
+
+/** mutation root */
 export type Mutation_RootUpdate_TestX_ManyArgs = {
   updates: Array<TestX_Updates>;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Topology_LayerArgs = {
+  _inc?: InputMaybe<Topology_Layer_Inc_Input>;
+  _set?: InputMaybe<Topology_Layer_Set_Input>;
+  where: Topology_Layer_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Topology_Layer_By_PkArgs = {
+  _inc?: InputMaybe<Topology_Layer_Inc_Input>;
+  _set?: InputMaybe<Topology_Layer_Set_Input>;
+  pk_columns: Topology_Layer_Pk_Columns_Input;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Topology_Layer_ManyArgs = {
+  updates: Array<Topology_Layer_Updates>;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Topology_TopologyArgs = {
+  _inc?: InputMaybe<Topology_Topology_Inc_Input>;
+  _set?: InputMaybe<Topology_Topology_Set_Input>;
+  where: Topology_Topology_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Topology_Topology_By_PkArgs = {
+  _inc?: InputMaybe<Topology_Topology_Inc_Input>;
+  _set?: InputMaybe<Topology_Topology_Set_Input>;
+  pk_columns: Topology_Topology_Pk_Columns_Input;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Topology_Topology_ManyArgs = {
+  updates: Array<Topology_Topology_Updates>;
 };
 
 
@@ -3376,33 +4942,6 @@ export type OrderItems_Aggregate = {
   __typename?: 'orderItems_aggregate';
   aggregate?: Maybe<OrderItems_Aggregate_Fields>;
   nodes: Array<OrderItems>;
-};
-
-export type OrderItems_Aggregate_Bool_Exp = {
-  bool_and?: InputMaybe<OrderItems_Aggregate_Bool_Exp_Bool_And>;
-  bool_or?: InputMaybe<OrderItems_Aggregate_Bool_Exp_Bool_Or>;
-  count?: InputMaybe<OrderItems_Aggregate_Bool_Exp_Count>;
-};
-
-export type OrderItems_Aggregate_Bool_Exp_Bool_And = {
-  arguments: OrderItems_Select_Column_OrderItems_Aggregate_Bool_Exp_Bool_And_Arguments_Columns;
-  distinct?: InputMaybe<Scalars['Boolean']>;
-  filter?: InputMaybe<OrderItems_Bool_Exp>;
-  predicate: Boolean_Comparison_Exp;
-};
-
-export type OrderItems_Aggregate_Bool_Exp_Bool_Or = {
-  arguments: OrderItems_Select_Column_OrderItems_Aggregate_Bool_Exp_Bool_Or_Arguments_Columns;
-  distinct?: InputMaybe<Scalars['Boolean']>;
-  filter?: InputMaybe<OrderItems_Bool_Exp>;
-  predicate: Boolean_Comparison_Exp;
-};
-
-export type OrderItems_Aggregate_Bool_Exp_Count = {
-  arguments?: InputMaybe<Array<OrderItems_Select_Column>>;
-  distinct?: InputMaybe<Scalars['Boolean']>;
-  filter?: InputMaybe<OrderItems_Bool_Exp>;
-  predicate: Int_Comparison_Exp;
 };
 
 /** aggregate fields of "order_items" */
@@ -3828,6 +5367,28 @@ export type OrdersOrder_Items_AggregateArgs = {
   where?: InputMaybe<OrderItems_Bool_Exp>;
 };
 
+/** aggregated selection of "orders" */
+export type Orders_Aggregate = {
+  __typename?: 'orders_aggregate';
+  aggregate?: Maybe<Orders_Aggregate_Fields>;
+  nodes: Array<Orders>;
+};
+
+/** aggregate fields of "orders" */
+export type Orders_Aggregate_Fields = {
+  __typename?: 'orders_aggregate_fields';
+  count: Scalars['Int'];
+  max?: Maybe<Orders_Max_Fields>;
+  min?: Maybe<Orders_Min_Fields>;
+};
+
+
+/** aggregate fields of "orders" */
+export type Orders_Aggregate_FieldsCountArgs = {
+  columns?: InputMaybe<Array<Orders_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']>;
+};
+
 /** order by aggregate values of table "orders" */
 export type Orders_Aggregate_Order_By = {
   count?: InputMaybe<Order_By>;
@@ -3880,7 +5441,20 @@ export type Orders_Insert_Input = {
   order_items?: InputMaybe<OrderItems_Arr_Rel_Insert_Input>;
   order_status?: InputMaybe<Status_Types_Enum>;
   shipped_date?: InputMaybe<Scalars['date']>;
+  status_type?: InputMaybe<Status_Types_Obj_Rel_Insert_Input>;
   updated_at?: InputMaybe<Scalars['timestamptz']>;
+};
+
+/** aggregate max on columns */
+export type Orders_Max_Fields = {
+  __typename?: 'orders_max_fields';
+  created_at?: Maybe<Scalars['timestamptz']>;
+  customer_id?: Maybe<Scalars['uuid']>;
+  id?: Maybe<Scalars['uuid']>;
+  name?: Maybe<Scalars['String']>;
+  order_date?: Maybe<Scalars['date']>;
+  shipped_date?: Maybe<Scalars['date']>;
+  updated_at?: Maybe<Scalars['timestamptz']>;
 };
 
 /** order by max() on columns of table "orders" */
@@ -3892,6 +5466,18 @@ export type Orders_Max_Order_By = {
   order_date?: InputMaybe<Order_By>;
   shipped_date?: InputMaybe<Order_By>;
   updated_at?: InputMaybe<Order_By>;
+};
+
+/** aggregate min on columns */
+export type Orders_Min_Fields = {
+  __typename?: 'orders_min_fields';
+  created_at?: Maybe<Scalars['timestamptz']>;
+  customer_id?: Maybe<Scalars['uuid']>;
+  id?: Maybe<Scalars['uuid']>;
+  name?: Maybe<Scalars['String']>;
+  order_date?: Maybe<Scalars['date']>;
+  shipped_date?: Maybe<Scalars['date']>;
+  updated_at?: Maybe<Scalars['timestamptz']>;
 };
 
 /** order by min() on columns of table "orders" */
@@ -4040,6 +5626,8 @@ export type Organization_Partnership_Levels = {
   name: Scalars['String'];
   /** An array relationship */
   organizations: Array<Organizations>;
+  /** An aggregate relationship */
+  organizations_aggregate: Organizations_Aggregate;
 };
 
 
@@ -4052,6 +5640,38 @@ export type Organization_Partnership_LevelsOrganizationsArgs = {
   where?: InputMaybe<Organizations_Bool_Exp>;
 };
 
+
+/** Enum table for customer partnership levels */
+export type Organization_Partnership_LevelsOrganizations_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Organizations_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  order_by?: InputMaybe<Array<Organizations_Order_By>>;
+  where?: InputMaybe<Organizations_Bool_Exp>;
+};
+
+/** aggregated selection of "organization_partnership_levels" */
+export type Organization_Partnership_Levels_Aggregate = {
+  __typename?: 'organization_partnership_levels_aggregate';
+  aggregate?: Maybe<Organization_Partnership_Levels_Aggregate_Fields>;
+  nodes: Array<Organization_Partnership_Levels>;
+};
+
+/** aggregate fields of "organization_partnership_levels" */
+export type Organization_Partnership_Levels_Aggregate_Fields = {
+  __typename?: 'organization_partnership_levels_aggregate_fields';
+  count: Scalars['Int'];
+  max?: Maybe<Organization_Partnership_Levels_Max_Fields>;
+  min?: Maybe<Organization_Partnership_Levels_Min_Fields>;
+};
+
+
+/** aggregate fields of "organization_partnership_levels" */
+export type Organization_Partnership_Levels_Aggregate_FieldsCountArgs = {
+  columns?: InputMaybe<Array<Organization_Partnership_Levels_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']>;
+};
+
 /** Boolean expression to filter rows from the table "organization_partnership_levels". All fields are combined with a logical 'AND'. */
 export type Organization_Partnership_Levels_Bool_Exp = {
   _and?: InputMaybe<Array<Organization_Partnership_Levels_Bool_Exp>>;
@@ -4062,11 +5682,68 @@ export type Organization_Partnership_Levels_Bool_Exp = {
   organizations?: InputMaybe<Organizations_Bool_Exp>;
 };
 
+/** unique or primary key constraints on table "organization_partnership_levels" */
+export enum Organization_Partnership_Levels_Constraint {
+  /** unique or primary key constraint on columns "name" */
+  OrganizationPartnershipLevelsNameKey = 'organization_partnership_levels_name_key',
+  /** unique or primary key constraint on columns "level" */
+  OrganizationPartnershipLevelsPkey = 'organization_partnership_levels_pkey'
+}
+
+/** input type for inserting data into table "organization_partnership_levels" */
+export type Organization_Partnership_Levels_Insert_Input = {
+  level?: InputMaybe<Scalars['String']>;
+  name?: InputMaybe<Scalars['String']>;
+  organizations?: InputMaybe<Organizations_Arr_Rel_Insert_Input>;
+};
+
+/** aggregate max on columns */
+export type Organization_Partnership_Levels_Max_Fields = {
+  __typename?: 'organization_partnership_levels_max_fields';
+  level?: Maybe<Scalars['String']>;
+  name?: Maybe<Scalars['String']>;
+};
+
+/** aggregate min on columns */
+export type Organization_Partnership_Levels_Min_Fields = {
+  __typename?: 'organization_partnership_levels_min_fields';
+  level?: Maybe<Scalars['String']>;
+  name?: Maybe<Scalars['String']>;
+};
+
+/** response of any mutation on the table "organization_partnership_levels" */
+export type Organization_Partnership_Levels_Mutation_Response = {
+  __typename?: 'organization_partnership_levels_mutation_response';
+  /** number of rows affected by the mutation */
+  affected_rows: Scalars['Int'];
+  /** data from the rows affected by the mutation */
+  returning: Array<Organization_Partnership_Levels>;
+};
+
+/** input type for inserting object relation for remote table "organization_partnership_levels" */
+export type Organization_Partnership_Levels_Obj_Rel_Insert_Input = {
+  data: Organization_Partnership_Levels_Insert_Input;
+  /** upsert condition */
+  on_conflict?: InputMaybe<Organization_Partnership_Levels_On_Conflict>;
+};
+
+/** on_conflict condition type for table "organization_partnership_levels" */
+export type Organization_Partnership_Levels_On_Conflict = {
+  constraint: Organization_Partnership_Levels_Constraint;
+  update_columns?: Array<Organization_Partnership_Levels_Update_Column>;
+  where?: InputMaybe<Organization_Partnership_Levels_Bool_Exp>;
+};
+
 /** Ordering options when selecting data from "organization_partnership_levels". */
 export type Organization_Partnership_Levels_Order_By = {
   level?: InputMaybe<Order_By>;
   name?: InputMaybe<Order_By>;
   organizations_aggregate?: InputMaybe<Organizations_Aggregate_Order_By>;
+};
+
+/** primary key columns input for table: organization_partnership_levels */
+export type Organization_Partnership_Levels_Pk_Columns_Input = {
+  level: Scalars['String'];
 };
 
 /** select columns of table "organization_partnership_levels" */
@@ -4076,6 +5753,12 @@ export enum Organization_Partnership_Levels_Select_Column {
   /** column name */
   Name = 'name'
 }
+
+/** input type for updating data in table "organization_partnership_levels" */
+export type Organization_Partnership_Levels_Set_Input = {
+  level?: InputMaybe<Scalars['String']>;
+  name?: InputMaybe<Scalars['String']>;
+};
 
 /** Streaming cursor of the table "organization_partnership_levels" */
 export type Organization_Partnership_Levels_Stream_Cursor_Input = {
@@ -4091,12 +5774,28 @@ export type Organization_Partnership_Levels_Stream_Cursor_Value_Input = {
   name?: InputMaybe<Scalars['String']>;
 };
 
+/** update columns of table "organization_partnership_levels" */
+export enum Organization_Partnership_Levels_Update_Column {
+  /** column name */
+  Level = 'level',
+  /** column name */
+  Name = 'name'
+}
+
+export type Organization_Partnership_Levels_Updates = {
+  /** sets the columns of the filtered rows to the given values */
+  _set?: InputMaybe<Organization_Partnership_Levels_Set_Input>;
+  where: Organization_Partnership_Levels_Bool_Exp;
+};
+
 /** Enum table for customer types */
 export type Organization_Types = {
   __typename?: 'organization_types';
   name?: Maybe<Scalars['String']>;
   /** An array relationship */
   organizations: Array<Organizations>;
+  /** An aggregate relationship */
+  organizations_aggregate: Organizations_Aggregate;
   type: Scalars['String'];
 };
 
@@ -4110,6 +5809,38 @@ export type Organization_TypesOrganizationsArgs = {
   where?: InputMaybe<Organizations_Bool_Exp>;
 };
 
+
+/** Enum table for customer types */
+export type Organization_TypesOrganizations_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Organizations_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  order_by?: InputMaybe<Array<Organizations_Order_By>>;
+  where?: InputMaybe<Organizations_Bool_Exp>;
+};
+
+/** aggregated selection of "organization_types" */
+export type Organization_Types_Aggregate = {
+  __typename?: 'organization_types_aggregate';
+  aggregate?: Maybe<Organization_Types_Aggregate_Fields>;
+  nodes: Array<Organization_Types>;
+};
+
+/** aggregate fields of "organization_types" */
+export type Organization_Types_Aggregate_Fields = {
+  __typename?: 'organization_types_aggregate_fields';
+  count: Scalars['Int'];
+  max?: Maybe<Organization_Types_Max_Fields>;
+  min?: Maybe<Organization_Types_Min_Fields>;
+};
+
+
+/** aggregate fields of "organization_types" */
+export type Organization_Types_Aggregate_FieldsCountArgs = {
+  columns?: InputMaybe<Array<Organization_Types_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']>;
+};
+
 /** Boolean expression to filter rows from the table "organization_types". All fields are combined with a logical 'AND'. */
 export type Organization_Types_Bool_Exp = {
   _and?: InputMaybe<Array<Organization_Types_Bool_Exp>>;
@@ -4120,11 +5851,68 @@ export type Organization_Types_Bool_Exp = {
   type?: InputMaybe<String_Comparison_Exp>;
 };
 
+/** unique or primary key constraints on table "organization_types" */
+export enum Organization_Types_Constraint {
+  /** unique or primary key constraint on columns "name" */
+  OrganizationTypesNameKey = 'organization_types_name_key',
+  /** unique or primary key constraint on columns "type" */
+  OrganizationTypesPkey = 'organization_types_pkey'
+}
+
+/** input type for inserting data into table "organization_types" */
+export type Organization_Types_Insert_Input = {
+  name?: InputMaybe<Scalars['String']>;
+  organizations?: InputMaybe<Organizations_Arr_Rel_Insert_Input>;
+  type?: InputMaybe<Scalars['String']>;
+};
+
+/** aggregate max on columns */
+export type Organization_Types_Max_Fields = {
+  __typename?: 'organization_types_max_fields';
+  name?: Maybe<Scalars['String']>;
+  type?: Maybe<Scalars['String']>;
+};
+
+/** aggregate min on columns */
+export type Organization_Types_Min_Fields = {
+  __typename?: 'organization_types_min_fields';
+  name?: Maybe<Scalars['String']>;
+  type?: Maybe<Scalars['String']>;
+};
+
+/** response of any mutation on the table "organization_types" */
+export type Organization_Types_Mutation_Response = {
+  __typename?: 'organization_types_mutation_response';
+  /** number of rows affected by the mutation */
+  affected_rows: Scalars['Int'];
+  /** data from the rows affected by the mutation */
+  returning: Array<Organization_Types>;
+};
+
+/** input type for inserting object relation for remote table "organization_types" */
+export type Organization_Types_Obj_Rel_Insert_Input = {
+  data: Organization_Types_Insert_Input;
+  /** upsert condition */
+  on_conflict?: InputMaybe<Organization_Types_On_Conflict>;
+};
+
+/** on_conflict condition type for table "organization_types" */
+export type Organization_Types_On_Conflict = {
+  constraint: Organization_Types_Constraint;
+  update_columns?: Array<Organization_Types_Update_Column>;
+  where?: InputMaybe<Organization_Types_Bool_Exp>;
+};
+
 /** Ordering options when selecting data from "organization_types". */
 export type Organization_Types_Order_By = {
   name?: InputMaybe<Order_By>;
   organizations_aggregate?: InputMaybe<Organizations_Aggregate_Order_By>;
   type?: InputMaybe<Order_By>;
+};
+
+/** primary key columns input for table: organization_types */
+export type Organization_Types_Pk_Columns_Input = {
+  type: Scalars['String'];
 };
 
 /** select columns of table "organization_types" */
@@ -4134,6 +5922,12 @@ export enum Organization_Types_Select_Column {
   /** column name */
   Type = 'type'
 }
+
+/** input type for updating data in table "organization_types" */
+export type Organization_Types_Set_Input = {
+  name?: InputMaybe<Scalars['String']>;
+  type?: InputMaybe<Scalars['String']>;
+};
 
 /** Streaming cursor of the table "organization_types" */
 export type Organization_Types_Stream_Cursor_Input = {
@@ -4149,6 +5943,20 @@ export type Organization_Types_Stream_Cursor_Value_Input = {
   type?: InputMaybe<Scalars['String']>;
 };
 
+/** update columns of table "organization_types" */
+export enum Organization_Types_Update_Column {
+  /** column name */
+  Name = 'name',
+  /** column name */
+  Type = 'type'
+}
+
+export type Organization_Types_Updates = {
+  /** sets the columns of the filtered rows to the given values */
+  _set?: InputMaybe<Organization_Types_Set_Input>;
+  where: Organization_Types_Bool_Exp;
+};
+
 /** List of organizations */
 export type Organizations = {
   __typename?: 'organizations';
@@ -4156,6 +5964,8 @@ export type Organizations = {
   crn?: Maybe<Scalars['numeric']>;
   /** An array relationship */
   customers: Array<Customers>;
+  /** An aggregate relationship */
+  customers_aggregate: Customers_Aggregate;
   id: Scalars['uuid'];
   is_deleted: Scalars['Boolean'];
   name?: Maybe<Scalars['String']>;
@@ -4178,6 +5988,46 @@ export type OrganizationsCustomersArgs = {
   where?: InputMaybe<Customers_Bool_Exp>;
 };
 
+
+/** List of organizations */
+export type OrganizationsCustomers_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Customers_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  order_by?: InputMaybe<Array<Customers_Order_By>>;
+  where?: InputMaybe<Customers_Bool_Exp>;
+};
+
+/** aggregated selection of "organizations" */
+export type Organizations_Aggregate = {
+  __typename?: 'organizations_aggregate';
+  aggregate?: Maybe<Organizations_Aggregate_Fields>;
+  nodes: Array<Organizations>;
+};
+
+/** aggregate fields of "organizations" */
+export type Organizations_Aggregate_Fields = {
+  __typename?: 'organizations_aggregate_fields';
+  avg?: Maybe<Organizations_Avg_Fields>;
+  count: Scalars['Int'];
+  max?: Maybe<Organizations_Max_Fields>;
+  min?: Maybe<Organizations_Min_Fields>;
+  stddev?: Maybe<Organizations_Stddev_Fields>;
+  stddev_pop?: Maybe<Organizations_Stddev_Pop_Fields>;
+  stddev_samp?: Maybe<Organizations_Stddev_Samp_Fields>;
+  sum?: Maybe<Organizations_Sum_Fields>;
+  var_pop?: Maybe<Organizations_Var_Pop_Fields>;
+  var_samp?: Maybe<Organizations_Var_Samp_Fields>;
+  variance?: Maybe<Organizations_Variance_Fields>;
+};
+
+
+/** aggregate fields of "organizations" */
+export type Organizations_Aggregate_FieldsCountArgs = {
+  columns?: InputMaybe<Array<Organizations_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']>;
+};
+
 /** order by aggregate values of table "organizations" */
 export type Organizations_Aggregate_Order_By = {
   avg?: InputMaybe<Organizations_Avg_Order_By>;
@@ -4191,6 +6041,19 @@ export type Organizations_Aggregate_Order_By = {
   var_pop?: InputMaybe<Organizations_Var_Pop_Order_By>;
   var_samp?: InputMaybe<Organizations_Var_Samp_Order_By>;
   variance?: InputMaybe<Organizations_Variance_Order_By>;
+};
+
+/** input type for inserting array relation for remote table "organizations" */
+export type Organizations_Arr_Rel_Insert_Input = {
+  data: Array<Organizations_Insert_Input>;
+  /** upsert condition */
+  on_conflict?: InputMaybe<Organizations_On_Conflict>;
+};
+
+/** aggregate avg on columns */
+export type Organizations_Avg_Fields = {
+  __typename?: 'organizations_avg_fields';
+  crn?: Maybe<Scalars['Float']>;
 };
 
 /** order by avg() on columns of table "organizations" */
@@ -4235,9 +6098,23 @@ export type Organizations_Insert_Input = {
   id?: InputMaybe<Scalars['uuid']>;
   is_deleted?: InputMaybe<Scalars['Boolean']>;
   name?: InputMaybe<Scalars['String']>;
+  organization_partnership_level?: InputMaybe<Organization_Partnership_Levels_Obj_Rel_Insert_Input>;
+  organization_type?: InputMaybe<Organization_Types_Obj_Rel_Insert_Input>;
   pratnership_level?: InputMaybe<Scalars['String']>;
   type?: InputMaybe<Scalars['String']>;
   updated_at?: InputMaybe<Scalars['timestamptz']>;
+};
+
+/** aggregate max on columns */
+export type Organizations_Max_Fields = {
+  __typename?: 'organizations_max_fields';
+  created_at?: Maybe<Scalars['timestamptz']>;
+  crn?: Maybe<Scalars['numeric']>;
+  id?: Maybe<Scalars['uuid']>;
+  name?: Maybe<Scalars['String']>;
+  pratnership_level?: Maybe<Scalars['String']>;
+  type?: Maybe<Scalars['String']>;
+  updated_at?: Maybe<Scalars['timestamptz']>;
 };
 
 /** order by max() on columns of table "organizations" */
@@ -4249,6 +6126,18 @@ export type Organizations_Max_Order_By = {
   pratnership_level?: InputMaybe<Order_By>;
   type?: InputMaybe<Order_By>;
   updated_at?: InputMaybe<Order_By>;
+};
+
+/** aggregate min on columns */
+export type Organizations_Min_Fields = {
+  __typename?: 'organizations_min_fields';
+  created_at?: Maybe<Scalars['timestamptz']>;
+  crn?: Maybe<Scalars['numeric']>;
+  id?: Maybe<Scalars['uuid']>;
+  name?: Maybe<Scalars['String']>;
+  pratnership_level?: Maybe<Scalars['String']>;
+  type?: Maybe<Scalars['String']>;
+  updated_at?: Maybe<Scalars['timestamptz']>;
 };
 
 /** order by min() on columns of table "organizations" */
@@ -4337,14 +6226,32 @@ export type Organizations_Set_Input = {
   updated_at?: InputMaybe<Scalars['timestamptz']>;
 };
 
+/** aggregate stddev on columns */
+export type Organizations_Stddev_Fields = {
+  __typename?: 'organizations_stddev_fields';
+  crn?: Maybe<Scalars['Float']>;
+};
+
 /** order by stddev() on columns of table "organizations" */
 export type Organizations_Stddev_Order_By = {
   crn?: InputMaybe<Order_By>;
 };
 
+/** aggregate stddev_pop on columns */
+export type Organizations_Stddev_Pop_Fields = {
+  __typename?: 'organizations_stddev_pop_fields';
+  crn?: Maybe<Scalars['Float']>;
+};
+
 /** order by stddev_pop() on columns of table "organizations" */
 export type Organizations_Stddev_Pop_Order_By = {
   crn?: InputMaybe<Order_By>;
+};
+
+/** aggregate stddev_samp on columns */
+export type Organizations_Stddev_Samp_Fields = {
+  __typename?: 'organizations_stddev_samp_fields';
+  crn?: Maybe<Scalars['Float']>;
 };
 
 /** order by stddev_samp() on columns of table "organizations" */
@@ -4370,6 +6277,12 @@ export type Organizations_Stream_Cursor_Value_Input = {
   pratnership_level?: InputMaybe<Scalars['String']>;
   type?: InputMaybe<Scalars['String']>;
   updated_at?: InputMaybe<Scalars['timestamptz']>;
+};
+
+/** aggregate sum on columns */
+export type Organizations_Sum_Fields = {
+  __typename?: 'organizations_sum_fields';
+  crn?: Maybe<Scalars['numeric']>;
 };
 
 /** order by sum() on columns of table "organizations" */
@@ -4405,14 +6318,32 @@ export type Organizations_Updates = {
   where: Organizations_Bool_Exp;
 };
 
+/** aggregate var_pop on columns */
+export type Organizations_Var_Pop_Fields = {
+  __typename?: 'organizations_var_pop_fields';
+  crn?: Maybe<Scalars['Float']>;
+};
+
 /** order by var_pop() on columns of table "organizations" */
 export type Organizations_Var_Pop_Order_By = {
   crn?: InputMaybe<Order_By>;
 };
 
+/** aggregate var_samp on columns */
+export type Organizations_Var_Samp_Fields = {
+  __typename?: 'organizations_var_samp_fields';
+  crn?: Maybe<Scalars['Float']>;
+};
+
 /** order by var_samp() on columns of table "organizations" */
 export type Organizations_Var_Samp_Order_By = {
   crn?: InputMaybe<Order_By>;
+};
+
+/** aggregate variance on columns */
+export type Organizations_Variance_Fields = {
+  __typename?: 'organizations_variance_fields';
+  crn?: Maybe<Scalars['Float']>;
 };
 
 /** order by variance() on columns of table "organizations" */
@@ -4451,6 +6382,28 @@ export type Product_AvailabilityProducts_AggregateArgs = {
   where?: InputMaybe<Products_Bool_Exp>;
 };
 
+/** aggregated selection of "product_availability" */
+export type Product_Availability_Aggregate = {
+  __typename?: 'product_availability_aggregate';
+  aggregate?: Maybe<Product_Availability_Aggregate_Fields>;
+  nodes: Array<Product_Availability>;
+};
+
+/** aggregate fields of "product_availability" */
+export type Product_Availability_Aggregate_Fields = {
+  __typename?: 'product_availability_aggregate_fields';
+  count: Scalars['Int'];
+  max?: Maybe<Product_Availability_Max_Fields>;
+  min?: Maybe<Product_Availability_Min_Fields>;
+};
+
+
+/** aggregate fields of "product_availability" */
+export type Product_Availability_Aggregate_FieldsCountArgs = {
+  columns?: InputMaybe<Array<Product_Availability_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']>;
+};
+
 /** Boolean expression to filter rows from the table "product_availability". All fields are combined with a logical 'AND'. */
 export type Product_Availability_Bool_Exp = {
   _and?: InputMaybe<Array<Product_Availability_Bool_Exp>>;
@@ -4462,11 +6415,68 @@ export type Product_Availability_Bool_Exp = {
   type?: InputMaybe<String_Comparison_Exp>;
 };
 
+/** unique or primary key constraints on table "product_availability" */
+export enum Product_Availability_Constraint {
+  /** unique or primary key constraint on columns "name" */
+  ProductAvailabilityNameKey = 'product_availability_name_key',
+  /** unique or primary key constraint on columns "type" */
+  ProductAvailabilityPkey = 'product_availability_pkey'
+}
+
+/** input type for inserting data into table "product_availability" */
+export type Product_Availability_Insert_Input = {
+  name?: InputMaybe<Scalars['String']>;
+  products?: InputMaybe<Products_Arr_Rel_Insert_Input>;
+  type?: InputMaybe<Scalars['String']>;
+};
+
+/** aggregate max on columns */
+export type Product_Availability_Max_Fields = {
+  __typename?: 'product_availability_max_fields';
+  name?: Maybe<Scalars['String']>;
+  type?: Maybe<Scalars['String']>;
+};
+
+/** aggregate min on columns */
+export type Product_Availability_Min_Fields = {
+  __typename?: 'product_availability_min_fields';
+  name?: Maybe<Scalars['String']>;
+  type?: Maybe<Scalars['String']>;
+};
+
+/** response of any mutation on the table "product_availability" */
+export type Product_Availability_Mutation_Response = {
+  __typename?: 'product_availability_mutation_response';
+  /** number of rows affected by the mutation */
+  affected_rows: Scalars['Int'];
+  /** data from the rows affected by the mutation */
+  returning: Array<Product_Availability>;
+};
+
+/** input type for inserting object relation for remote table "product_availability" */
+export type Product_Availability_Obj_Rel_Insert_Input = {
+  data: Product_Availability_Insert_Input;
+  /** upsert condition */
+  on_conflict?: InputMaybe<Product_Availability_On_Conflict>;
+};
+
+/** on_conflict condition type for table "product_availability" */
+export type Product_Availability_On_Conflict = {
+  constraint: Product_Availability_Constraint;
+  update_columns?: Array<Product_Availability_Update_Column>;
+  where?: InputMaybe<Product_Availability_Bool_Exp>;
+};
+
 /** Ordering options when selecting data from "product_availability". */
 export type Product_Availability_Order_By = {
   name?: InputMaybe<Order_By>;
   products_aggregate?: InputMaybe<Products_Aggregate_Order_By>;
   type?: InputMaybe<Order_By>;
+};
+
+/** primary key columns input for table: product_availability */
+export type Product_Availability_Pk_Columns_Input = {
+  type: Scalars['String'];
 };
 
 /** select columns of table "product_availability" */
@@ -4476,6 +6486,12 @@ export enum Product_Availability_Select_Column {
   /** column name */
   Type = 'type'
 }
+
+/** input type for updating data in table "product_availability" */
+export type Product_Availability_Set_Input = {
+  name?: InputMaybe<Scalars['String']>;
+  type?: InputMaybe<Scalars['String']>;
+};
 
 /** Streaming cursor of the table "product_availability" */
 export type Product_Availability_Stream_Cursor_Input = {
@@ -4489,6 +6505,20 @@ export type Product_Availability_Stream_Cursor_Input = {
 export type Product_Availability_Stream_Cursor_Value_Input = {
   name?: InputMaybe<Scalars['String']>;
   type?: InputMaybe<Scalars['String']>;
+};
+
+/** update columns of table "product_availability" */
+export enum Product_Availability_Update_Column {
+  /** column name */
+  Name = 'name',
+  /** column name */
+  Type = 'type'
+}
+
+export type Product_Availability_Updates = {
+  /** sets the columns of the filtered rows to the given values */
+  _set?: InputMaybe<Product_Availability_Set_Input>;
+  where: Product_Availability_Bool_Exp;
 };
 
 /** Types of products */
@@ -4539,33 +6569,6 @@ export type Products_Aggregate = {
   nodes: Array<Products>;
 };
 
-export type Products_Aggregate_Bool_Exp = {
-  bool_and?: InputMaybe<Products_Aggregate_Bool_Exp_Bool_And>;
-  bool_or?: InputMaybe<Products_Aggregate_Bool_Exp_Bool_Or>;
-  count?: InputMaybe<Products_Aggregate_Bool_Exp_Count>;
-};
-
-export type Products_Aggregate_Bool_Exp_Bool_And = {
-  arguments: Products_Select_Column_Products_Aggregate_Bool_Exp_Bool_And_Arguments_Columns;
-  distinct?: InputMaybe<Scalars['Boolean']>;
-  filter?: InputMaybe<Products_Bool_Exp>;
-  predicate: Boolean_Comparison_Exp;
-};
-
-export type Products_Aggregate_Bool_Exp_Bool_Or = {
-  arguments: Products_Select_Column_Products_Aggregate_Bool_Exp_Bool_Or_Arguments_Columns;
-  distinct?: InputMaybe<Scalars['Boolean']>;
-  filter?: InputMaybe<Products_Bool_Exp>;
-  predicate: Boolean_Comparison_Exp;
-};
-
-export type Products_Aggregate_Bool_Exp_Count = {
-  arguments?: InputMaybe<Array<Products_Select_Column>>;
-  distinct?: InputMaybe<Scalars['Boolean']>;
-  filter?: InputMaybe<Products_Bool_Exp>;
-  predicate: Int_Comparison_Exp;
-};
-
 /** aggregate fields of "products" */
 export type Products_Aggregate_Fields = {
   __typename?: 'products_aggregate_fields';
@@ -4602,6 +6605,13 @@ export type Products_Aggregate_Order_By = {
   var_pop?: InputMaybe<Products_Var_Pop_Order_By>;
   var_samp?: InputMaybe<Products_Var_Samp_Order_By>;
   variance?: InputMaybe<Products_Variance_Order_By>;
+};
+
+/** input type for inserting array relation for remote table "products" */
+export type Products_Arr_Rel_Insert_Input = {
+  data: Array<Products_Insert_Input>;
+  /** upsert condition */
+  on_conflict?: InputMaybe<Products_On_Conflict>;
 };
 
 /** aggregate avg on columns */
@@ -4657,6 +6667,7 @@ export type Products_Insert_Input = {
   name?: InputMaybe<Scalars['String']>;
   order_items?: InputMaybe<OrderItems_Arr_Rel_Insert_Input>;
   price?: InputMaybe<Scalars['money']>;
+  product_availability?: InputMaybe<Product_Availability_Obj_Rel_Insert_Input>;
   quantity?: InputMaybe<Scalars['Int']>;
   thumbnailImgPath?: InputMaybe<Scalars['String']>;
   updated_at?: InputMaybe<Scalars['timestamptz']>;
@@ -4948,56 +6959,80 @@ export type Query_Root = {
   __typename?: 'query_root';
   /** fetch data from the table: "accounts" */
   accounts: Array<Accounts>;
+  /** fetch aggregated fields from the table: "accounts" */
+  accounts_aggregate: Accounts_Aggregate;
   /** fetch data from the table: "accounts" using primary key columns */
   accounts_by_pk?: Maybe<Accounts>;
   /** fetch data from the table: "bus_stops" using primary key columns */
   busStop?: Maybe<BusStops>;
   /** fetch data from the table: "bus_stop_departures" using primary key columns */
   busStopDeparture?: Maybe<BusStopDepartures>;
+  /** fetch aggregated fields from the table: "bus_stop_departures" */
+  busStopDepartureAggregate: BusStopDepartures_Aggregate;
   /** fetch data from the table: "bus_stop_departures" */
   busStopDepartures: Array<BusStopDepartures>;
   /** fetch data from the table: "bus_stops" */
   busStops: Array<BusStops>;
+  /** fetch aggregated fields from the table: "bus_stops" */
+  busStopsAggregate: BusStops_Aggregate;
   /** fetch data from the table: "customers" using primary key columns */
   customer?: Maybe<Customers>;
   /** fetch data from the table: "customer_types" */
   customer_types: Array<Customer_Types>;
+  /** fetch aggregated fields from the table: "customer_types" */
+  customer_types_aggregate: Customer_Types_Aggregate;
   /** fetch data from the table: "customer_types" using primary key columns */
   customer_types_by_pk?: Maybe<Customer_Types>;
   /** An array relationship */
   customers: Array<Customers>;
+  /** fetch aggregated fields from the table: "customers" */
+  customersAggregate: Customers_Aggregate;
   /** fetch data from the table: "desh" */
   desh: Array<Desh>;
+  /** fetch aggregated fields from the table: "desh" */
+  desh_aggregate: Desh_Aggregate;
   /** fetch data from the table: "desh" using primary key columns */
   desh_by_pk?: Maybe<Desh>;
   /** An array relationship */
   desh_products: Array<Desh_Products>;
+  /** An aggregate relationship */
+  desh_products_aggregate: Desh_Products_Aggregate;
   /** fetch data from the table: "desh_products" using primary key columns */
   desh_products_by_pk?: Maybe<Desh_Products>;
   /** An array relationship */
   desh_sales: Array<Desh_Sales>;
+  /** An aggregate relationship */
+  desh_sales_aggregate: Desh_Sales_Aggregate;
   /** fetch data from the table: "desh_sales" using primary key columns */
   desh_sales_by_pk?: Maybe<Desh_Sales>;
   /** fetch data from the table: "desh_traffic" */
   desh_traffic: Array<Desh_Traffic>;
+  /** fetch aggregated fields from the table: "desh_traffic" */
+  desh_traffic_aggregate: Desh_Traffic_Aggregate;
   /** fetch data from the table: "desh_traffic" using primary key columns */
   desh_traffic_by_pk?: Maybe<Desh_Traffic>;
   downloadGetUrl?: Maybe<GetUrlReturn>;
   downloadGetUrls?: Maybe<GetUrlsReturn>;
   /** fetch data from the table: "enum_test_types" */
   enum_test_types: Array<Enum_Test_Types>;
+  /** fetch aggregated fields from the table: "enum_test_types" */
+  enum_test_types_aggregate: Enum_Test_Types_Aggregate;
   /** fetch data from the table: "enum_test_types" using primary key columns */
   enum_test_types_by_pk?: Maybe<Enum_Test_Types>;
   /** fetch data from the table: "events" using primary key columns */
   event?: Maybe<Events>;
   /** fetch data from the table: "events" */
   events: Array<Events>;
+  /** fetch aggregated fields from the table: "events" */
+  eventsAggregate: Events_Aggregate;
   file?: Maybe<File>;
   listParts?: Maybe<Part>;
   /** fetch data from the table: "map_points" using primary key columns */
   mapPoint?: Maybe<MapPoints>;
   /** fetch data from the table: "map_points" */
   mapPoints: Array<MapPoints>;
+  /** fetch aggregated fields from the table: "map_points" */
+  mapPointsAggregate: MapPoints_Aggregate;
   /** fetch data from the table: "orders" using primary key columns */
   order?: Maybe<Orders>;
   /** fetch data from the table: "order_items" using primary key columns */
@@ -5008,24 +7043,34 @@ export type Query_Root = {
   orderItemsAggregate: OrderItems_Aggregate;
   /** An array relationship */
   orders: Array<Orders>;
+  /** fetch aggregated fields from the table: "orders" */
+  ordersAggregate: Orders_Aggregate;
   /** fetch data from the table: "organizations" using primary key columns */
   organization?: Maybe<Organizations>;
   /** fetch data from the table: "organization_partnership_levels" */
   organization_partnership_levels: Array<Organization_Partnership_Levels>;
+  /** fetch aggregated fields from the table: "organization_partnership_levels" */
+  organization_partnership_levels_aggregate: Organization_Partnership_Levels_Aggregate;
   /** fetch data from the table: "organization_partnership_levels" using primary key columns */
   organization_partnership_levels_by_pk?: Maybe<Organization_Partnership_Levels>;
   /** fetch data from the table: "organization_types" */
   organization_types: Array<Organization_Types>;
+  /** fetch aggregated fields from the table: "organization_types" */
+  organization_types_aggregate: Organization_Types_Aggregate;
   /** fetch data from the table: "organization_types" using primary key columns */
   organization_types_by_pk?: Maybe<Organization_Types>;
   /** An array relationship */
   organizations: Array<Organizations>;
+  /** fetch aggregated fields from the table: "organizations" */
+  organizationsAggregate: Organizations_Aggregate;
   part?: Maybe<Part>;
   prepareUploadParts?: Maybe<GetUrlReturn>;
   /** fetch data from the table: "products" using primary key columns */
   product?: Maybe<Products>;
   /** fetch data from the table: "product_availability" */
   product_availability: Array<Product_Availability>;
+  /** fetch aggregated fields from the table: "product_availability" */
+  product_availability_aggregate: Product_Availability_Aggregate;
   /** fetch data from the table: "product_availability" using primary key columns */
   product_availability_by_pk?: Maybe<Product_Availability>;
   /** An array relationship */
@@ -5034,20 +7079,47 @@ export type Query_Root = {
   productsAggregate: Products_Aggregate;
   /** fetch data from the table: "status_types" */
   status_types: Array<Status_Types>;
+  /** fetch aggregated fields from the table: "status_types" */
+  status_types_aggregate: Status_Types_Aggregate;
   /** fetch data from the table: "status_types" using primary key columns */
   status_types_by_pk?: Maybe<Status_Types>;
   /** fetch data from the table: "test_x" using primary key columns */
   testX?: Maybe<TestX>;
   /** fetch data from the table: "test_x" */
   testXes: Array<TestX>;
+  /** fetch aggregated fields from the table: "test_x" */
+  testXesAggregate: TestX_Aggregate;
+  /** fetch data from the table: "topology.layer" */
+  topology_layer: Array<Topology_Layer>;
+  /** fetch aggregated fields from the table: "topology.layer" */
+  topology_layer_aggregate: Topology_Layer_Aggregate;
+  /** fetch data from the table: "topology.layer" using primary key columns */
+  topology_layer_by_pk?: Maybe<Topology_Layer>;
+  /** fetch data from the table: "topology.topology" */
+  topology_topology: Array<Topology_Topology>;
+  /** fetch aggregated fields from the table: "topology.topology" */
+  topology_topology_aggregate: Topology_Topology_Aggregate;
+  /** fetch data from the table: "topology.topology" using primary key columns */
+  topology_topology_by_pk?: Maybe<Topology_Topology>;
   /** fetch data from the table: "types_test" */
   types_test: Array<Types_Test>;
+  /** fetch aggregated fields from the table: "types_test" */
+  types_test_aggregate: Types_Test_Aggregate;
   /** fetch data from the table: "types_test" using primary key columns */
   types_test_by_pk?: Maybe<Types_Test>;
 };
 
 
 export type Query_RootAccountsArgs = {
+  distinct_on?: InputMaybe<Array<Accounts_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  order_by?: InputMaybe<Array<Accounts_Order_By>>;
+  where?: InputMaybe<Accounts_Bool_Exp>;
+};
+
+
+export type Query_RootAccounts_AggregateArgs = {
   distinct_on?: InputMaybe<Array<Accounts_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
   offset?: InputMaybe<Scalars['Int']>;
@@ -5071,6 +7143,15 @@ export type Query_RootBusStopDepartureArgs = {
 };
 
 
+export type Query_RootBusStopDepartureAggregateArgs = {
+  distinct_on?: InputMaybe<Array<BusStopDepartures_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  order_by?: InputMaybe<Array<BusStopDepartures_Order_By>>;
+  where?: InputMaybe<BusStopDepartures_Bool_Exp>;
+};
+
+
 export type Query_RootBusStopDeparturesArgs = {
   distinct_on?: InputMaybe<Array<BusStopDepartures_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -5081,6 +7162,15 @@ export type Query_RootBusStopDeparturesArgs = {
 
 
 export type Query_RootBusStopsArgs = {
+  distinct_on?: InputMaybe<Array<BusStops_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  order_by?: InputMaybe<Array<BusStops_Order_By>>;
+  where?: InputMaybe<BusStops_Bool_Exp>;
+};
+
+
+export type Query_RootBusStopsAggregateArgs = {
   distinct_on?: InputMaybe<Array<BusStops_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
   offset?: InputMaybe<Scalars['Int']>;
@@ -5103,6 +7193,15 @@ export type Query_RootCustomer_TypesArgs = {
 };
 
 
+export type Query_RootCustomer_Types_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Customer_Types_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  order_by?: InputMaybe<Array<Customer_Types_Order_By>>;
+  where?: InputMaybe<Customer_Types_Bool_Exp>;
+};
+
+
 export type Query_RootCustomer_Types_By_PkArgs = {
   type: Scalars['String'];
 };
@@ -5117,7 +7216,25 @@ export type Query_RootCustomersArgs = {
 };
 
 
+export type Query_RootCustomersAggregateArgs = {
+  distinct_on?: InputMaybe<Array<Customers_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  order_by?: InputMaybe<Array<Customers_Order_By>>;
+  where?: InputMaybe<Customers_Bool_Exp>;
+};
+
+
 export type Query_RootDeshArgs = {
+  distinct_on?: InputMaybe<Array<Desh_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  order_by?: InputMaybe<Array<Desh_Order_By>>;
+  where?: InputMaybe<Desh_Bool_Exp>;
+};
+
+
+export type Query_RootDesh_AggregateArgs = {
   distinct_on?: InputMaybe<Array<Desh_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
   offset?: InputMaybe<Scalars['Int']>;
@@ -5140,6 +7257,15 @@ export type Query_RootDesh_ProductsArgs = {
 };
 
 
+export type Query_RootDesh_Products_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Desh_Products_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  order_by?: InputMaybe<Array<Desh_Products_Order_By>>;
+  where?: InputMaybe<Desh_Products_Bool_Exp>;
+};
+
+
 export type Query_RootDesh_Products_By_PkArgs = {
   id: Scalars['uuid'];
 };
@@ -5154,12 +7280,30 @@ export type Query_RootDesh_SalesArgs = {
 };
 
 
+export type Query_RootDesh_Sales_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Desh_Sales_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  order_by?: InputMaybe<Array<Desh_Sales_Order_By>>;
+  where?: InputMaybe<Desh_Sales_Bool_Exp>;
+};
+
+
 export type Query_RootDesh_Sales_By_PkArgs = {
   id: Scalars['uuid'];
 };
 
 
 export type Query_RootDesh_TrafficArgs = {
+  distinct_on?: InputMaybe<Array<Desh_Traffic_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  order_by?: InputMaybe<Array<Desh_Traffic_Order_By>>;
+  where?: InputMaybe<Desh_Traffic_Bool_Exp>;
+};
+
+
+export type Query_RootDesh_Traffic_AggregateArgs = {
   distinct_on?: InputMaybe<Array<Desh_Traffic_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
   offset?: InputMaybe<Scalars['Int']>;
@@ -5192,6 +7336,15 @@ export type Query_RootEnum_Test_TypesArgs = {
 };
 
 
+export type Query_RootEnum_Test_Types_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Enum_Test_Types_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  order_by?: InputMaybe<Array<Enum_Test_Types_Order_By>>;
+  where?: InputMaybe<Enum_Test_Types_Bool_Exp>;
+};
+
+
 export type Query_RootEnum_Test_Types_By_PkArgs = {
   int_enum: Scalars['String'];
 };
@@ -5203,6 +7356,15 @@ export type Query_RootEventArgs = {
 
 
 export type Query_RootEventsArgs = {
+  distinct_on?: InputMaybe<Array<Events_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  order_by?: InputMaybe<Array<Events_Order_By>>;
+  where?: InputMaybe<Events_Bool_Exp>;
+};
+
+
+export type Query_RootEventsAggregateArgs = {
   distinct_on?: InputMaybe<Array<Events_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
   offset?: InputMaybe<Scalars['Int']>;
@@ -5223,6 +7385,15 @@ export type Query_RootMapPointArgs = {
 
 
 export type Query_RootMapPointsArgs = {
+  distinct_on?: InputMaybe<Array<MapPoints_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  order_by?: InputMaybe<Array<MapPoints_Order_By>>;
+  where?: InputMaybe<MapPoints_Bool_Exp>;
+};
+
+
+export type Query_RootMapPointsAggregateArgs = {
   distinct_on?: InputMaybe<Array<MapPoints_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
   offset?: InputMaybe<Scalars['Int']>;
@@ -5268,12 +7439,30 @@ export type Query_RootOrdersArgs = {
 };
 
 
+export type Query_RootOrdersAggregateArgs = {
+  distinct_on?: InputMaybe<Array<Orders_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  order_by?: InputMaybe<Array<Orders_Order_By>>;
+  where?: InputMaybe<Orders_Bool_Exp>;
+};
+
+
 export type Query_RootOrganizationArgs = {
   id: Scalars['uuid'];
 };
 
 
 export type Query_RootOrganization_Partnership_LevelsArgs = {
+  distinct_on?: InputMaybe<Array<Organization_Partnership_Levels_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  order_by?: InputMaybe<Array<Organization_Partnership_Levels_Order_By>>;
+  where?: InputMaybe<Organization_Partnership_Levels_Bool_Exp>;
+};
+
+
+export type Query_RootOrganization_Partnership_Levels_AggregateArgs = {
   distinct_on?: InputMaybe<Array<Organization_Partnership_Levels_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
   offset?: InputMaybe<Scalars['Int']>;
@@ -5296,12 +7485,30 @@ export type Query_RootOrganization_TypesArgs = {
 };
 
 
+export type Query_RootOrganization_Types_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Organization_Types_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  order_by?: InputMaybe<Array<Organization_Types_Order_By>>;
+  where?: InputMaybe<Organization_Types_Bool_Exp>;
+};
+
+
 export type Query_RootOrganization_Types_By_PkArgs = {
   type: Scalars['String'];
 };
 
 
 export type Query_RootOrganizationsArgs = {
+  distinct_on?: InputMaybe<Array<Organizations_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  order_by?: InputMaybe<Array<Organizations_Order_By>>;
+  where?: InputMaybe<Organizations_Bool_Exp>;
+};
+
+
+export type Query_RootOrganizationsAggregateArgs = {
   distinct_on?: InputMaybe<Array<Organizations_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
   offset?: InputMaybe<Scalars['Int']>;
@@ -5323,6 +7530,15 @@ export type Query_RootProductArgs = {
 
 
 export type Query_RootProduct_AvailabilityArgs = {
+  distinct_on?: InputMaybe<Array<Product_Availability_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  order_by?: InputMaybe<Array<Product_Availability_Order_By>>;
+  where?: InputMaybe<Product_Availability_Bool_Exp>;
+};
+
+
+export type Query_RootProduct_Availability_AggregateArgs = {
   distinct_on?: InputMaybe<Array<Product_Availability_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
   offset?: InputMaybe<Scalars['Int']>;
@@ -5363,6 +7579,15 @@ export type Query_RootStatus_TypesArgs = {
 };
 
 
+export type Query_RootStatus_Types_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Status_Types_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  order_by?: InputMaybe<Array<Status_Types_Order_By>>;
+  where?: InputMaybe<Status_Types_Bool_Exp>;
+};
+
+
 export type Query_RootStatus_Types_By_PkArgs = {
   status: Scalars['String'];
 };
@@ -5382,7 +7607,72 @@ export type Query_RootTestXesArgs = {
 };
 
 
+export type Query_RootTestXesAggregateArgs = {
+  distinct_on?: InputMaybe<Array<TestX_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  order_by?: InputMaybe<Array<TestX_Order_By>>;
+  where?: InputMaybe<TestX_Bool_Exp>;
+};
+
+
+export type Query_RootTopology_LayerArgs = {
+  distinct_on?: InputMaybe<Array<Topology_Layer_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  order_by?: InputMaybe<Array<Topology_Layer_Order_By>>;
+  where?: InputMaybe<Topology_Layer_Bool_Exp>;
+};
+
+
+export type Query_RootTopology_Layer_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Topology_Layer_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  order_by?: InputMaybe<Array<Topology_Layer_Order_By>>;
+  where?: InputMaybe<Topology_Layer_Bool_Exp>;
+};
+
+
+export type Query_RootTopology_Layer_By_PkArgs = {
+  layer_id: Scalars['Int'];
+  topology_id: Scalars['Int'];
+};
+
+
+export type Query_RootTopology_TopologyArgs = {
+  distinct_on?: InputMaybe<Array<Topology_Topology_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  order_by?: InputMaybe<Array<Topology_Topology_Order_By>>;
+  where?: InputMaybe<Topology_Topology_Bool_Exp>;
+};
+
+
+export type Query_RootTopology_Topology_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Topology_Topology_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  order_by?: InputMaybe<Array<Topology_Topology_Order_By>>;
+  where?: InputMaybe<Topology_Topology_Bool_Exp>;
+};
+
+
+export type Query_RootTopology_Topology_By_PkArgs = {
+  id: Scalars['Int'];
+};
+
+
 export type Query_RootTypes_TestArgs = {
+  distinct_on?: InputMaybe<Array<Types_Test_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  order_by?: InputMaybe<Array<Types_Test_Order_By>>;
+  where?: InputMaybe<Types_Test_Bool_Exp>;
+};
+
+
+export type Query_RootTypes_Test_AggregateArgs = {
   distinct_on?: InputMaybe<Array<Types_Test_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
   offset?: InputMaybe<Scalars['Int']>;
@@ -5411,14 +7701,28 @@ export type Status_Types = {
   __typename?: 'status_types';
   /** An array relationship */
   orders: Array<Orders>;
+  /** An aggregate relationship */
+  orders_aggregate: Orders_Aggregate;
   status: Scalars['String'];
   /** An array relationship */
   types_tests: Array<Types_Test>;
+  /** An aggregate relationship */
+  types_tests_aggregate: Types_Test_Aggregate;
 };
 
 
 /** columns and relationships of "status_types" */
 export type Status_TypesOrdersArgs = {
+  distinct_on?: InputMaybe<Array<Orders_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  order_by?: InputMaybe<Array<Orders_Order_By>>;
+  where?: InputMaybe<Orders_Bool_Exp>;
+};
+
+
+/** columns and relationships of "status_types" */
+export type Status_TypesOrders_AggregateArgs = {
   distinct_on?: InputMaybe<Array<Orders_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
   offset?: InputMaybe<Scalars['Int']>;
@@ -5436,6 +7740,38 @@ export type Status_TypesTypes_TestsArgs = {
   where?: InputMaybe<Types_Test_Bool_Exp>;
 };
 
+
+/** columns and relationships of "status_types" */
+export type Status_TypesTypes_Tests_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Types_Test_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  order_by?: InputMaybe<Array<Types_Test_Order_By>>;
+  where?: InputMaybe<Types_Test_Bool_Exp>;
+};
+
+/** aggregated selection of "status_types" */
+export type Status_Types_Aggregate = {
+  __typename?: 'status_types_aggregate';
+  aggregate?: Maybe<Status_Types_Aggregate_Fields>;
+  nodes: Array<Status_Types>;
+};
+
+/** aggregate fields of "status_types" */
+export type Status_Types_Aggregate_Fields = {
+  __typename?: 'status_types_aggregate_fields';
+  count: Scalars['Int'];
+  max?: Maybe<Status_Types_Max_Fields>;
+  min?: Maybe<Status_Types_Min_Fields>;
+};
+
+
+/** aggregate fields of "status_types" */
+export type Status_Types_Aggregate_FieldsCountArgs = {
+  columns?: InputMaybe<Array<Status_Types_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']>;
+};
+
 /** Boolean expression to filter rows from the table "status_types". All fields are combined with a logical 'AND'. */
 export type Status_Types_Bool_Exp = {
   _and?: InputMaybe<Array<Status_Types_Bool_Exp>>;
@@ -5445,6 +7781,12 @@ export type Status_Types_Bool_Exp = {
   status?: InputMaybe<String_Comparison_Exp>;
   types_tests?: InputMaybe<Types_Test_Bool_Exp>;
 };
+
+/** unique or primary key constraints on table "status_types" */
+export enum Status_Types_Constraint {
+  /** unique or primary key constraint on columns "status" */
+  StatusTypesPkey = 'status_types_pkey'
+}
 
 export enum Status_Types_Enum {
   Cancelled = 'Cancelled',
@@ -5464,6 +7806,48 @@ export type Status_Types_Enum_Comparison_Exp = {
   _nin?: InputMaybe<Array<Status_Types_Enum>>;
 };
 
+/** input type for inserting data into table "status_types" */
+export type Status_Types_Insert_Input = {
+  orders?: InputMaybe<Orders_Arr_Rel_Insert_Input>;
+  status?: InputMaybe<Scalars['String']>;
+  types_tests?: InputMaybe<Types_Test_Arr_Rel_Insert_Input>;
+};
+
+/** aggregate max on columns */
+export type Status_Types_Max_Fields = {
+  __typename?: 'status_types_max_fields';
+  status?: Maybe<Scalars['String']>;
+};
+
+/** aggregate min on columns */
+export type Status_Types_Min_Fields = {
+  __typename?: 'status_types_min_fields';
+  status?: Maybe<Scalars['String']>;
+};
+
+/** response of any mutation on the table "status_types" */
+export type Status_Types_Mutation_Response = {
+  __typename?: 'status_types_mutation_response';
+  /** number of rows affected by the mutation */
+  affected_rows: Scalars['Int'];
+  /** data from the rows affected by the mutation */
+  returning: Array<Status_Types>;
+};
+
+/** input type for inserting object relation for remote table "status_types" */
+export type Status_Types_Obj_Rel_Insert_Input = {
+  data: Status_Types_Insert_Input;
+  /** upsert condition */
+  on_conflict?: InputMaybe<Status_Types_On_Conflict>;
+};
+
+/** on_conflict condition type for table "status_types" */
+export type Status_Types_On_Conflict = {
+  constraint: Status_Types_Constraint;
+  update_columns?: Array<Status_Types_Update_Column>;
+  where?: InputMaybe<Status_Types_Bool_Exp>;
+};
+
 /** Ordering options when selecting data from "status_types". */
 export type Status_Types_Order_By = {
   orders_aggregate?: InputMaybe<Orders_Aggregate_Order_By>;
@@ -5471,11 +7855,21 @@ export type Status_Types_Order_By = {
   types_tests_aggregate?: InputMaybe<Types_Test_Aggregate_Order_By>;
 };
 
+/** primary key columns input for table: status_types */
+export type Status_Types_Pk_Columns_Input = {
+  status: Scalars['String'];
+};
+
 /** select columns of table "status_types" */
 export enum Status_Types_Select_Column {
   /** column name */
   Status = 'status'
 }
+
+/** input type for updating data in table "status_types" */
+export type Status_Types_Set_Input = {
+  status?: InputMaybe<Scalars['String']>;
+};
 
 /** Streaming cursor of the table "status_types" */
 export type Status_Types_Stream_Cursor_Input = {
@@ -5490,50 +7884,78 @@ export type Status_Types_Stream_Cursor_Value_Input = {
   status?: InputMaybe<Scalars['String']>;
 };
 
+/** update columns of table "status_types" */
+export enum Status_Types_Update_Column {
+  /** column name */
+  Status = 'status'
+}
+
+export type Status_Types_Updates = {
+  /** sets the columns of the filtered rows to the given values */
+  _set?: InputMaybe<Status_Types_Set_Input>;
+  where: Status_Types_Bool_Exp;
+};
+
 export type Subscription_Root = {
   __typename?: 'subscription_root';
   /** fetch data from the table: "accounts" */
   accounts: Array<Accounts>;
+  /** fetch aggregated fields from the table: "accounts" */
+  accounts_aggregate: Accounts_Aggregate;
   /** fetch data from the table: "accounts" using primary key columns */
   accounts_by_pk?: Maybe<Accounts>;
-  /** fetch data from the table in a streaming manner: "accounts" */
+  /** fetch data from the table in a streaming manner : "accounts" */
   accounts_stream: Array<Accounts>;
   /** fetch data from the table: "bus_stops" using primary key columns */
   busStop?: Maybe<BusStops>;
   /** fetch data from the table: "bus_stop_departures" using primary key columns */
   busStopDeparture?: Maybe<BusStopDepartures>;
+  /** fetch aggregated fields from the table: "bus_stop_departures" */
+  busStopDepartureAggregate: BusStopDepartures_Aggregate;
   /** fetch data from the table: "bus_stop_departures" */
   busStopDepartures: Array<BusStopDepartures>;
   /** fetch data from the table in a streaming manner: "bus_stop_departures" */
   busStopDeparturesStream: Array<BusStopDepartures>;
   /** fetch data from the table: "bus_stops" */
   busStops: Array<BusStops>;
-  /** fetch data from the table in a streaming manner: "bus_stops" */
+  /** fetch aggregated fields from the table: "bus_stops" */
+  busStopsAggregate: BusStops_Aggregate;
+  /** fetch data from the table in a streaming manner : "bus_stops" */
   busStops_stream: Array<BusStops>;
   /** fetch data from the table: "customers" using primary key columns */
   customer?: Maybe<Customers>;
   /** fetch data from the table: "customer_types" */
   customer_types: Array<Customer_Types>;
+  /** fetch aggregated fields from the table: "customer_types" */
+  customer_types_aggregate: Customer_Types_Aggregate;
   /** fetch data from the table: "customer_types" using primary key columns */
   customer_types_by_pk?: Maybe<Customer_Types>;
   /** fetch data from the table in a streaming manner: "customer_types" */
   customer_types_stream: Array<Customer_Types>;
   /** An array relationship */
   customers: Array<Customers>;
-  /** fetch data from the table in a streaming manner: "customers" */
+  /** fetch aggregated fields from the table: "customers" */
+  customersAggregate: Customers_Aggregate;
+  /** fetch data from the table in a streaming manner : "customers" */
   customers_stream: Array<Customers>;
   /** fetch data from the table: "desh" */
   desh: Array<Desh>;
+  /** fetch aggregated fields from the table: "desh" */
+  desh_aggregate: Desh_Aggregate;
   /** fetch data from the table: "desh" using primary key columns */
   desh_by_pk?: Maybe<Desh>;
   /** An array relationship */
   desh_products: Array<Desh_Products>;
+  /** An aggregate relationship */
+  desh_products_aggregate: Desh_Products_Aggregate;
   /** fetch data from the table: "desh_products" using primary key columns */
   desh_products_by_pk?: Maybe<Desh_Products>;
   /** fetch data from the table in a streaming manner: "desh_products" */
   desh_products_stream: Array<Desh_Products>;
   /** An array relationship */
   desh_sales: Array<Desh_Sales>;
+  /** An aggregate relationship */
+  desh_sales_aggregate: Desh_Sales_Aggregate;
   /** fetch data from the table: "desh_sales" using primary key columns */
   desh_sales_by_pk?: Maybe<Desh_Sales>;
   /** fetch data from the table in a streaming manner: "desh_sales" */
@@ -5542,12 +7964,16 @@ export type Subscription_Root = {
   desh_stream: Array<Desh>;
   /** fetch data from the table: "desh_traffic" */
   desh_traffic: Array<Desh_Traffic>;
+  /** fetch aggregated fields from the table: "desh_traffic" */
+  desh_traffic_aggregate: Desh_Traffic_Aggregate;
   /** fetch data from the table: "desh_traffic" using primary key columns */
   desh_traffic_by_pk?: Maybe<Desh_Traffic>;
   /** fetch data from the table in a streaming manner: "desh_traffic" */
   desh_traffic_stream: Array<Desh_Traffic>;
   /** fetch data from the table: "enum_test_types" */
   enum_test_types: Array<Enum_Test_Types>;
+  /** fetch aggregated fields from the table: "enum_test_types" */
+  enum_test_types_aggregate: Enum_Test_Types_Aggregate;
   /** fetch data from the table: "enum_test_types" using primary key columns */
   enum_test_types_by_pk?: Maybe<Enum_Test_Types>;
   /** fetch data from the table in a streaming manner: "enum_test_types" */
@@ -5556,13 +7982,17 @@ export type Subscription_Root = {
   event?: Maybe<Events>;
   /** fetch data from the table: "events" */
   events: Array<Events>;
-  /** fetch data from the table in a streaming manner: "events" */
+  /** fetch aggregated fields from the table: "events" */
+  eventsAggregate: Events_Aggregate;
+  /** fetch data from the table in a streaming manner : "events" */
   events_stream: Array<Events>;
   /** fetch data from the table: "map_points" using primary key columns */
   mapPoint?: Maybe<MapPoints>;
   /** fetch data from the table: "map_points" */
   mapPoints: Array<MapPoints>;
-  /** fetch data from the table in a streaming manner: "map_points" */
+  /** fetch aggregated fields from the table: "map_points" */
+  mapPointsAggregate: MapPoints_Aggregate;
+  /** fetch data from the table in a streaming manner : "map_points" */
   mapPoints_stream: Array<MapPoints>;
   /** fetch data from the table: "orders" using primary key columns */
   order?: Maybe<Orders>;
@@ -5572,34 +8002,44 @@ export type Subscription_Root = {
   orderItems: Array<OrderItems>;
   /** fetch aggregated fields from the table: "order_items" */
   orderItemsAggregate: OrderItems_Aggregate;
-  /** fetch data from the table in a streaming manner: "order_items" */
+  /** fetch data from the table in a streaming manner : "order_items" */
   orderItemsStream: Array<OrderItems>;
   /** An array relationship */
   orders: Array<Orders>;
-  /** fetch data from the table in a streaming manner: "orders" */
+  /** fetch aggregated fields from the table: "orders" */
+  ordersAggregate: Orders_Aggregate;
+  /** fetch data from the table in a streaming manner : "orders" */
   ordersStream: Array<Orders>;
   /** fetch data from the table: "organizations" using primary key columns */
   organization?: Maybe<Organizations>;
   /** fetch data from the table: "organization_partnership_levels" */
   organization_partnership_levels: Array<Organization_Partnership_Levels>;
+  /** fetch aggregated fields from the table: "organization_partnership_levels" */
+  organization_partnership_levels_aggregate: Organization_Partnership_Levels_Aggregate;
   /** fetch data from the table: "organization_partnership_levels" using primary key columns */
   organization_partnership_levels_by_pk?: Maybe<Organization_Partnership_Levels>;
   /** fetch data from the table in a streaming manner: "organization_partnership_levels" */
   organization_partnership_levels_stream: Array<Organization_Partnership_Levels>;
   /** fetch data from the table: "organization_types" */
   organization_types: Array<Organization_Types>;
+  /** fetch aggregated fields from the table: "organization_types" */
+  organization_types_aggregate: Organization_Types_Aggregate;
   /** fetch data from the table: "organization_types" using primary key columns */
   organization_types_by_pk?: Maybe<Organization_Types>;
   /** fetch data from the table in a streaming manner: "organization_types" */
   organization_types_stream: Array<Organization_Types>;
   /** An array relationship */
   organizations: Array<Organizations>;
-  /** fetch data from the table in a streaming manner: "organizations" */
+  /** fetch aggregated fields from the table: "organizations" */
+  organizationsAggregate: Organizations_Aggregate;
+  /** fetch data from the table in a streaming manner : "organizations" */
   organizationsStream: Array<Organizations>;
   /** fetch data from the table: "products" using primary key columns */
   product?: Maybe<Products>;
   /** fetch data from the table: "product_availability" */
   product_availability: Array<Product_Availability>;
+  /** fetch aggregated fields from the table: "product_availability" */
+  product_availability_aggregate: Product_Availability_Aggregate;
   /** fetch data from the table: "product_availability" using primary key columns */
   product_availability_by_pk?: Maybe<Product_Availability>;
   /** fetch data from the table in a streaming manner: "product_availability" */
@@ -5608,22 +8048,44 @@ export type Subscription_Root = {
   products: Array<Products>;
   /** fetch aggregated fields from the table: "products" */
   productsAggregate: Products_Aggregate;
-  /** fetch data from the table in a streaming manner: "products" */
+  /** fetch data from the table in a streaming manner : "products" */
   productsStream: Array<Products>;
   /** fetch data from the table: "status_types" */
   status_types: Array<Status_Types>;
+  /** fetch aggregated fields from the table: "status_types" */
+  status_types_aggregate: Status_Types_Aggregate;
   /** fetch data from the table: "status_types" using primary key columns */
   status_types_by_pk?: Maybe<Status_Types>;
   /** fetch data from the table in a streaming manner: "status_types" */
   status_types_stream: Array<Status_Types>;
   /** fetch data from the table: "test_x" using primary key columns */
   testX?: Maybe<TestX>;
-  /** fetch data from the table in a streaming manner: "test_x" */
+  /** fetch data from the table in a streaming manner : "test_x" */
   testX_stream: Array<TestX>;
   /** fetch data from the table: "test_x" */
   testXes: Array<TestX>;
+  /** fetch aggregated fields from the table: "test_x" */
+  testXesAggregate: TestX_Aggregate;
+  /** fetch data from the table: "topology.layer" */
+  topology_layer: Array<Topology_Layer>;
+  /** fetch aggregated fields from the table: "topology.layer" */
+  topology_layer_aggregate: Topology_Layer_Aggregate;
+  /** fetch data from the table: "topology.layer" using primary key columns */
+  topology_layer_by_pk?: Maybe<Topology_Layer>;
+  /** fetch data from the table in a streaming manner : "topology.layer" */
+  topology_layer_stream: Array<Topology_Layer>;
+  /** fetch data from the table: "topology.topology" */
+  topology_topology: Array<Topology_Topology>;
+  /** fetch aggregated fields from the table: "topology.topology" */
+  topology_topology_aggregate: Topology_Topology_Aggregate;
+  /** fetch data from the table: "topology.topology" using primary key columns */
+  topology_topology_by_pk?: Maybe<Topology_Topology>;
+  /** fetch data from the table in a streaming manner : "topology.topology" */
+  topology_topology_stream: Array<Topology_Topology>;
   /** fetch data from the table: "types_test" */
   types_test: Array<Types_Test>;
+  /** fetch aggregated fields from the table: "types_test" */
+  types_test_aggregate: Types_Test_Aggregate;
   /** fetch data from the table: "types_test" using primary key columns */
   types_test_by_pk?: Maybe<Types_Test>;
   /** fetch data from the table in a streaming manner: "types_test" */
@@ -5632,6 +8094,15 @@ export type Subscription_Root = {
 
 
 export type Subscription_RootAccountsArgs = {
+  distinct_on?: InputMaybe<Array<Accounts_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  order_by?: InputMaybe<Array<Accounts_Order_By>>;
+  where?: InputMaybe<Accounts_Bool_Exp>;
+};
+
+
+export type Subscription_RootAccounts_AggregateArgs = {
   distinct_on?: InputMaybe<Array<Accounts_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
   offset?: InputMaybe<Scalars['Int']>;
@@ -5662,6 +8133,15 @@ export type Subscription_RootBusStopDepartureArgs = {
 };
 
 
+export type Subscription_RootBusStopDepartureAggregateArgs = {
+  distinct_on?: InputMaybe<Array<BusStopDepartures_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  order_by?: InputMaybe<Array<BusStopDepartures_Order_By>>;
+  where?: InputMaybe<BusStopDepartures_Bool_Exp>;
+};
+
+
 export type Subscription_RootBusStopDeparturesArgs = {
   distinct_on?: InputMaybe<Array<BusStopDepartures_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -5679,6 +8159,15 @@ export type Subscription_RootBusStopDeparturesStreamArgs = {
 
 
 export type Subscription_RootBusStopsArgs = {
+  distinct_on?: InputMaybe<Array<BusStops_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  order_by?: InputMaybe<Array<BusStops_Order_By>>;
+  where?: InputMaybe<BusStops_Bool_Exp>;
+};
+
+
+export type Subscription_RootBusStopsAggregateArgs = {
   distinct_on?: InputMaybe<Array<BusStops_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
   offset?: InputMaybe<Scalars['Int']>;
@@ -5708,6 +8197,15 @@ export type Subscription_RootCustomer_TypesArgs = {
 };
 
 
+export type Subscription_RootCustomer_Types_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Customer_Types_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  order_by?: InputMaybe<Array<Customer_Types_Order_By>>;
+  where?: InputMaybe<Customer_Types_Bool_Exp>;
+};
+
+
 export type Subscription_RootCustomer_Types_By_PkArgs = {
   type: Scalars['String'];
 };
@@ -5721,6 +8219,15 @@ export type Subscription_RootCustomer_Types_StreamArgs = {
 
 
 export type Subscription_RootCustomersArgs = {
+  distinct_on?: InputMaybe<Array<Customers_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  order_by?: InputMaybe<Array<Customers_Order_By>>;
+  where?: InputMaybe<Customers_Bool_Exp>;
+};
+
+
+export type Subscription_RootCustomersAggregateArgs = {
   distinct_on?: InputMaybe<Array<Customers_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
   offset?: InputMaybe<Scalars['Int']>;
@@ -5745,12 +8252,30 @@ export type Subscription_RootDeshArgs = {
 };
 
 
+export type Subscription_RootDesh_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Desh_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  order_by?: InputMaybe<Array<Desh_Order_By>>;
+  where?: InputMaybe<Desh_Bool_Exp>;
+};
+
+
 export type Subscription_RootDesh_By_PkArgs = {
   id: Scalars['uuid'];
 };
 
 
 export type Subscription_RootDesh_ProductsArgs = {
+  distinct_on?: InputMaybe<Array<Desh_Products_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  order_by?: InputMaybe<Array<Desh_Products_Order_By>>;
+  where?: InputMaybe<Desh_Products_Bool_Exp>;
+};
+
+
+export type Subscription_RootDesh_Products_AggregateArgs = {
   distinct_on?: InputMaybe<Array<Desh_Products_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
   offset?: InputMaybe<Scalars['Int']>;
@@ -5772,6 +8297,15 @@ export type Subscription_RootDesh_Products_StreamArgs = {
 
 
 export type Subscription_RootDesh_SalesArgs = {
+  distinct_on?: InputMaybe<Array<Desh_Sales_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  order_by?: InputMaybe<Array<Desh_Sales_Order_By>>;
+  where?: InputMaybe<Desh_Sales_Bool_Exp>;
+};
+
+
+export type Subscription_RootDesh_Sales_AggregateArgs = {
   distinct_on?: InputMaybe<Array<Desh_Sales_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
   offset?: InputMaybe<Scalars['Int']>;
@@ -5808,6 +8342,15 @@ export type Subscription_RootDesh_TrafficArgs = {
 };
 
 
+export type Subscription_RootDesh_Traffic_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Desh_Traffic_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  order_by?: InputMaybe<Array<Desh_Traffic_Order_By>>;
+  where?: InputMaybe<Desh_Traffic_Bool_Exp>;
+};
+
+
 export type Subscription_RootDesh_Traffic_By_PkArgs = {
   id: Scalars['uuid'];
 };
@@ -5821,6 +8364,15 @@ export type Subscription_RootDesh_Traffic_StreamArgs = {
 
 
 export type Subscription_RootEnum_Test_TypesArgs = {
+  distinct_on?: InputMaybe<Array<Enum_Test_Types_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  order_by?: InputMaybe<Array<Enum_Test_Types_Order_By>>;
+  where?: InputMaybe<Enum_Test_Types_Bool_Exp>;
+};
+
+
+export type Subscription_RootEnum_Test_Types_AggregateArgs = {
   distinct_on?: InputMaybe<Array<Enum_Test_Types_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
   offset?: InputMaybe<Scalars['Int']>;
@@ -5855,6 +8407,15 @@ export type Subscription_RootEventsArgs = {
 };
 
 
+export type Subscription_RootEventsAggregateArgs = {
+  distinct_on?: InputMaybe<Array<Events_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  order_by?: InputMaybe<Array<Events_Order_By>>;
+  where?: InputMaybe<Events_Bool_Exp>;
+};
+
+
 export type Subscription_RootEvents_StreamArgs = {
   batch_size: Scalars['Int'];
   cursor: Array<InputMaybe<Events_Stream_Cursor_Input>>;
@@ -5868,6 +8429,15 @@ export type Subscription_RootMapPointArgs = {
 
 
 export type Subscription_RootMapPointsArgs = {
+  distinct_on?: InputMaybe<Array<MapPoints_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  order_by?: InputMaybe<Array<MapPoints_Order_By>>;
+  where?: InputMaybe<MapPoints_Bool_Exp>;
+};
+
+
+export type Subscription_RootMapPointsAggregateArgs = {
   distinct_on?: InputMaybe<Array<MapPoints_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
   offset?: InputMaybe<Scalars['Int']>;
@@ -5927,6 +8497,15 @@ export type Subscription_RootOrdersArgs = {
 };
 
 
+export type Subscription_RootOrdersAggregateArgs = {
+  distinct_on?: InputMaybe<Array<Orders_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  order_by?: InputMaybe<Array<Orders_Order_By>>;
+  where?: InputMaybe<Orders_Bool_Exp>;
+};
+
+
 export type Subscription_RootOrdersStreamArgs = {
   batch_size: Scalars['Int'];
   cursor: Array<InputMaybe<Orders_Stream_Cursor_Input>>;
@@ -5940,6 +8519,15 @@ export type Subscription_RootOrganizationArgs = {
 
 
 export type Subscription_RootOrganization_Partnership_LevelsArgs = {
+  distinct_on?: InputMaybe<Array<Organization_Partnership_Levels_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  order_by?: InputMaybe<Array<Organization_Partnership_Levels_Order_By>>;
+  where?: InputMaybe<Organization_Partnership_Levels_Bool_Exp>;
+};
+
+
+export type Subscription_RootOrganization_Partnership_Levels_AggregateArgs = {
   distinct_on?: InputMaybe<Array<Organization_Partnership_Levels_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
   offset?: InputMaybe<Scalars['Int']>;
@@ -5969,6 +8557,15 @@ export type Subscription_RootOrganization_TypesArgs = {
 };
 
 
+export type Subscription_RootOrganization_Types_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Organization_Types_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  order_by?: InputMaybe<Array<Organization_Types_Order_By>>;
+  where?: InputMaybe<Organization_Types_Bool_Exp>;
+};
+
+
 export type Subscription_RootOrganization_Types_By_PkArgs = {
   type: Scalars['String'];
 };
@@ -5990,6 +8587,15 @@ export type Subscription_RootOrganizationsArgs = {
 };
 
 
+export type Subscription_RootOrganizationsAggregateArgs = {
+  distinct_on?: InputMaybe<Array<Organizations_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  order_by?: InputMaybe<Array<Organizations_Order_By>>;
+  where?: InputMaybe<Organizations_Bool_Exp>;
+};
+
+
 export type Subscription_RootOrganizationsStreamArgs = {
   batch_size: Scalars['Int'];
   cursor: Array<InputMaybe<Organizations_Stream_Cursor_Input>>;
@@ -6003,6 +8609,15 @@ export type Subscription_RootProductArgs = {
 
 
 export type Subscription_RootProduct_AvailabilityArgs = {
+  distinct_on?: InputMaybe<Array<Product_Availability_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  order_by?: InputMaybe<Array<Product_Availability_Order_By>>;
+  where?: InputMaybe<Product_Availability_Bool_Exp>;
+};
+
+
+export type Subscription_RootProduct_Availability_AggregateArgs = {
   distinct_on?: InputMaybe<Array<Product_Availability_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
   offset?: InputMaybe<Scalars['Int']>;
@@ -6057,6 +8672,15 @@ export type Subscription_RootStatus_TypesArgs = {
 };
 
 
+export type Subscription_RootStatus_Types_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Status_Types_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  order_by?: InputMaybe<Array<Status_Types_Order_By>>;
+  where?: InputMaybe<Status_Types_Bool_Exp>;
+};
+
+
 export type Subscription_RootStatus_Types_By_PkArgs = {
   status: Scalars['String'];
 };
@@ -6090,7 +8714,86 @@ export type Subscription_RootTestXesArgs = {
 };
 
 
+export type Subscription_RootTestXesAggregateArgs = {
+  distinct_on?: InputMaybe<Array<TestX_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  order_by?: InputMaybe<Array<TestX_Order_By>>;
+  where?: InputMaybe<TestX_Bool_Exp>;
+};
+
+
+export type Subscription_RootTopology_LayerArgs = {
+  distinct_on?: InputMaybe<Array<Topology_Layer_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  order_by?: InputMaybe<Array<Topology_Layer_Order_By>>;
+  where?: InputMaybe<Topology_Layer_Bool_Exp>;
+};
+
+
+export type Subscription_RootTopology_Layer_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Topology_Layer_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  order_by?: InputMaybe<Array<Topology_Layer_Order_By>>;
+  where?: InputMaybe<Topology_Layer_Bool_Exp>;
+};
+
+
+export type Subscription_RootTopology_Layer_By_PkArgs = {
+  layer_id: Scalars['Int'];
+  topology_id: Scalars['Int'];
+};
+
+
+export type Subscription_RootTopology_Layer_StreamArgs = {
+  batch_size: Scalars['Int'];
+  cursor: Array<InputMaybe<Topology_Layer_Stream_Cursor_Input>>;
+  where?: InputMaybe<Topology_Layer_Bool_Exp>;
+};
+
+
+export type Subscription_RootTopology_TopologyArgs = {
+  distinct_on?: InputMaybe<Array<Topology_Topology_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  order_by?: InputMaybe<Array<Topology_Topology_Order_By>>;
+  where?: InputMaybe<Topology_Topology_Bool_Exp>;
+};
+
+
+export type Subscription_RootTopology_Topology_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Topology_Topology_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  order_by?: InputMaybe<Array<Topology_Topology_Order_By>>;
+  where?: InputMaybe<Topology_Topology_Bool_Exp>;
+};
+
+
+export type Subscription_RootTopology_Topology_By_PkArgs = {
+  id: Scalars['Int'];
+};
+
+
+export type Subscription_RootTopology_Topology_StreamArgs = {
+  batch_size: Scalars['Int'];
+  cursor: Array<InputMaybe<Topology_Topology_Stream_Cursor_Input>>;
+  where?: InputMaybe<Topology_Topology_Bool_Exp>;
+};
+
+
 export type Subscription_RootTypes_TestArgs = {
+  distinct_on?: InputMaybe<Array<Types_Test_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  order_by?: InputMaybe<Array<Types_Test_Order_By>>;
+  where?: InputMaybe<Types_Test_Bool_Exp>;
+};
+
+
+export type Subscription_RootTypes_Test_AggregateArgs = {
   distinct_on?: InputMaybe<Array<Types_Test_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
   offset?: InputMaybe<Scalars['Int']>;
@@ -6120,6 +8823,28 @@ export type TestX = {
   updatedAt: Scalars['timestamptz'];
 };
 
+/** aggregated selection of "test_x" */
+export type TestX_Aggregate = {
+  __typename?: 'testX_aggregate';
+  aggregate?: Maybe<TestX_Aggregate_Fields>;
+  nodes: Array<TestX>;
+};
+
+/** aggregate fields of "test_x" */
+export type TestX_Aggregate_Fields = {
+  __typename?: 'testX_aggregate_fields';
+  count: Scalars['Int'];
+  max?: Maybe<TestX_Max_Fields>;
+  min?: Maybe<TestX_Min_Fields>;
+};
+
+
+/** aggregate fields of "test_x" */
+export type TestX_Aggregate_FieldsCountArgs = {
+  columns?: InputMaybe<Array<TestX_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']>;
+};
+
 /** Boolean expression to filter rows from the table "test_x". All fields are combined with a logical 'AND'. */
 export type TestX_Bool_Exp = {
   _and?: InputMaybe<Array<TestX_Bool_Exp>>;
@@ -6145,6 +8870,24 @@ export type TestX_Insert_Input = {
   isDeleted?: InputMaybe<Scalars['Boolean']>;
   name?: InputMaybe<Scalars['String']>;
   updatedAt?: InputMaybe<Scalars['timestamptz']>;
+};
+
+/** aggregate max on columns */
+export type TestX_Max_Fields = {
+  __typename?: 'testX_max_fields';
+  createdAt?: Maybe<Scalars['timestamptz']>;
+  id?: Maybe<Scalars['uuid']>;
+  name?: Maybe<Scalars['String']>;
+  updatedAt?: Maybe<Scalars['timestamptz']>;
+};
+
+/** aggregate min on columns */
+export type TestX_Min_Fields = {
+  __typename?: 'testX_min_fields';
+  createdAt?: Maybe<Scalars['timestamptz']>;
+  id?: Maybe<Scalars['uuid']>;
+  name?: Maybe<Scalars['String']>;
+  updatedAt?: Maybe<Scalars['timestamptz']>;
 };
 
 /** response of any mutation on the table "test_x" */
@@ -6289,6 +9032,563 @@ export type Timetz_Comparison_Exp = {
   _nin?: InputMaybe<Array<Scalars['timetz']>>;
 };
 
+/** columns and relationships of "topology.layer" */
+export type Topology_Layer = {
+  __typename?: 'topology_layer';
+  child_id?: Maybe<Scalars['Int']>;
+  feature_column: Scalars['String'];
+  feature_type: Scalars['Int'];
+  layer_id: Scalars['Int'];
+  level: Scalars['Int'];
+  schema_name: Scalars['String'];
+  table_name: Scalars['String'];
+  topology_id: Scalars['Int'];
+};
+
+/** aggregated selection of "topology.layer" */
+export type Topology_Layer_Aggregate = {
+  __typename?: 'topology_layer_aggregate';
+  aggregate?: Maybe<Topology_Layer_Aggregate_Fields>;
+  nodes: Array<Topology_Layer>;
+};
+
+/** aggregate fields of "topology.layer" */
+export type Topology_Layer_Aggregate_Fields = {
+  __typename?: 'topology_layer_aggregate_fields';
+  avg?: Maybe<Topology_Layer_Avg_Fields>;
+  count: Scalars['Int'];
+  max?: Maybe<Topology_Layer_Max_Fields>;
+  min?: Maybe<Topology_Layer_Min_Fields>;
+  stddev?: Maybe<Topology_Layer_Stddev_Fields>;
+  stddev_pop?: Maybe<Topology_Layer_Stddev_Pop_Fields>;
+  stddev_samp?: Maybe<Topology_Layer_Stddev_Samp_Fields>;
+  sum?: Maybe<Topology_Layer_Sum_Fields>;
+  var_pop?: Maybe<Topology_Layer_Var_Pop_Fields>;
+  var_samp?: Maybe<Topology_Layer_Var_Samp_Fields>;
+  variance?: Maybe<Topology_Layer_Variance_Fields>;
+};
+
+
+/** aggregate fields of "topology.layer" */
+export type Topology_Layer_Aggregate_FieldsCountArgs = {
+  columns?: InputMaybe<Array<Topology_Layer_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']>;
+};
+
+/** aggregate avg on columns */
+export type Topology_Layer_Avg_Fields = {
+  __typename?: 'topology_layer_avg_fields';
+  child_id?: Maybe<Scalars['Float']>;
+  feature_type?: Maybe<Scalars['Float']>;
+  layer_id?: Maybe<Scalars['Float']>;
+  level?: Maybe<Scalars['Float']>;
+  topology_id?: Maybe<Scalars['Float']>;
+};
+
+/** Boolean expression to filter rows from the table "topology.layer". All fields are combined with a logical 'AND'. */
+export type Topology_Layer_Bool_Exp = {
+  _and?: InputMaybe<Array<Topology_Layer_Bool_Exp>>;
+  _not?: InputMaybe<Topology_Layer_Bool_Exp>;
+  _or?: InputMaybe<Array<Topology_Layer_Bool_Exp>>;
+  child_id?: InputMaybe<Int_Comparison_Exp>;
+  feature_column?: InputMaybe<String_Comparison_Exp>;
+  feature_type?: InputMaybe<Int_Comparison_Exp>;
+  layer_id?: InputMaybe<Int_Comparison_Exp>;
+  level?: InputMaybe<Int_Comparison_Exp>;
+  schema_name?: InputMaybe<String_Comparison_Exp>;
+  table_name?: InputMaybe<String_Comparison_Exp>;
+  topology_id?: InputMaybe<Int_Comparison_Exp>;
+};
+
+/** unique or primary key constraints on table "topology.layer" */
+export enum Topology_Layer_Constraint {
+  /** unique or primary key constraint on columns "layer_id", "topology_id" */
+  LayerPkey = 'layer_pkey',
+  /** unique or primary key constraint on columns "table_name", "feature_column", "schema_name" */
+  LayerSchemaNameTableNameFeatureColumnKey = 'layer_schema_name_table_name_feature_column_key'
+}
+
+/** input type for incrementing numeric columns in table "topology.layer" */
+export type Topology_Layer_Inc_Input = {
+  child_id?: InputMaybe<Scalars['Int']>;
+  feature_type?: InputMaybe<Scalars['Int']>;
+  layer_id?: InputMaybe<Scalars['Int']>;
+  level?: InputMaybe<Scalars['Int']>;
+  topology_id?: InputMaybe<Scalars['Int']>;
+};
+
+/** input type for inserting data into table "topology.layer" */
+export type Topology_Layer_Insert_Input = {
+  child_id?: InputMaybe<Scalars['Int']>;
+  feature_column?: InputMaybe<Scalars['String']>;
+  feature_type?: InputMaybe<Scalars['Int']>;
+  layer_id?: InputMaybe<Scalars['Int']>;
+  level?: InputMaybe<Scalars['Int']>;
+  schema_name?: InputMaybe<Scalars['String']>;
+  table_name?: InputMaybe<Scalars['String']>;
+  topology_id?: InputMaybe<Scalars['Int']>;
+};
+
+/** aggregate max on columns */
+export type Topology_Layer_Max_Fields = {
+  __typename?: 'topology_layer_max_fields';
+  child_id?: Maybe<Scalars['Int']>;
+  feature_column?: Maybe<Scalars['String']>;
+  feature_type?: Maybe<Scalars['Int']>;
+  layer_id?: Maybe<Scalars['Int']>;
+  level?: Maybe<Scalars['Int']>;
+  schema_name?: Maybe<Scalars['String']>;
+  table_name?: Maybe<Scalars['String']>;
+  topology_id?: Maybe<Scalars['Int']>;
+};
+
+/** aggregate min on columns */
+export type Topology_Layer_Min_Fields = {
+  __typename?: 'topology_layer_min_fields';
+  child_id?: Maybe<Scalars['Int']>;
+  feature_column?: Maybe<Scalars['String']>;
+  feature_type?: Maybe<Scalars['Int']>;
+  layer_id?: Maybe<Scalars['Int']>;
+  level?: Maybe<Scalars['Int']>;
+  schema_name?: Maybe<Scalars['String']>;
+  table_name?: Maybe<Scalars['String']>;
+  topology_id?: Maybe<Scalars['Int']>;
+};
+
+/** response of any mutation on the table "topology.layer" */
+export type Topology_Layer_Mutation_Response = {
+  __typename?: 'topology_layer_mutation_response';
+  /** number of rows affected by the mutation */
+  affected_rows: Scalars['Int'];
+  /** data from the rows affected by the mutation */
+  returning: Array<Topology_Layer>;
+};
+
+/** on_conflict condition type for table "topology.layer" */
+export type Topology_Layer_On_Conflict = {
+  constraint: Topology_Layer_Constraint;
+  update_columns?: Array<Topology_Layer_Update_Column>;
+  where?: InputMaybe<Topology_Layer_Bool_Exp>;
+};
+
+/** Ordering options when selecting data from "topology.layer". */
+export type Topology_Layer_Order_By = {
+  child_id?: InputMaybe<Order_By>;
+  feature_column?: InputMaybe<Order_By>;
+  feature_type?: InputMaybe<Order_By>;
+  layer_id?: InputMaybe<Order_By>;
+  level?: InputMaybe<Order_By>;
+  schema_name?: InputMaybe<Order_By>;
+  table_name?: InputMaybe<Order_By>;
+  topology_id?: InputMaybe<Order_By>;
+};
+
+/** primary key columns input for table: topology.layer */
+export type Topology_Layer_Pk_Columns_Input = {
+  layer_id: Scalars['Int'];
+  topology_id: Scalars['Int'];
+};
+
+/** select columns of table "topology.layer" */
+export enum Topology_Layer_Select_Column {
+  /** column name */
+  ChildId = 'child_id',
+  /** column name */
+  FeatureColumn = 'feature_column',
+  /** column name */
+  FeatureType = 'feature_type',
+  /** column name */
+  LayerId = 'layer_id',
+  /** column name */
+  Level = 'level',
+  /** column name */
+  SchemaName = 'schema_name',
+  /** column name */
+  TableName = 'table_name',
+  /** column name */
+  TopologyId = 'topology_id'
+}
+
+/** input type for updating data in table "topology.layer" */
+export type Topology_Layer_Set_Input = {
+  child_id?: InputMaybe<Scalars['Int']>;
+  feature_column?: InputMaybe<Scalars['String']>;
+  feature_type?: InputMaybe<Scalars['Int']>;
+  layer_id?: InputMaybe<Scalars['Int']>;
+  level?: InputMaybe<Scalars['Int']>;
+  schema_name?: InputMaybe<Scalars['String']>;
+  table_name?: InputMaybe<Scalars['String']>;
+  topology_id?: InputMaybe<Scalars['Int']>;
+};
+
+/** aggregate stddev on columns */
+export type Topology_Layer_Stddev_Fields = {
+  __typename?: 'topology_layer_stddev_fields';
+  child_id?: Maybe<Scalars['Float']>;
+  feature_type?: Maybe<Scalars['Float']>;
+  layer_id?: Maybe<Scalars['Float']>;
+  level?: Maybe<Scalars['Float']>;
+  topology_id?: Maybe<Scalars['Float']>;
+};
+
+/** aggregate stddev_pop on columns */
+export type Topology_Layer_Stddev_Pop_Fields = {
+  __typename?: 'topology_layer_stddev_pop_fields';
+  child_id?: Maybe<Scalars['Float']>;
+  feature_type?: Maybe<Scalars['Float']>;
+  layer_id?: Maybe<Scalars['Float']>;
+  level?: Maybe<Scalars['Float']>;
+  topology_id?: Maybe<Scalars['Float']>;
+};
+
+/** aggregate stddev_samp on columns */
+export type Topology_Layer_Stddev_Samp_Fields = {
+  __typename?: 'topology_layer_stddev_samp_fields';
+  child_id?: Maybe<Scalars['Float']>;
+  feature_type?: Maybe<Scalars['Float']>;
+  layer_id?: Maybe<Scalars['Float']>;
+  level?: Maybe<Scalars['Float']>;
+  topology_id?: Maybe<Scalars['Float']>;
+};
+
+/** Streaming cursor of the table "topology_layer" */
+export type Topology_Layer_Stream_Cursor_Input = {
+  /** Stream column input with initial value */
+  initial_value: Topology_Layer_Stream_Cursor_Value_Input;
+  /** cursor ordering */
+  ordering?: InputMaybe<Cursor_Ordering>;
+};
+
+/** Initial value of the column from where the streaming should start */
+export type Topology_Layer_Stream_Cursor_Value_Input = {
+  child_id?: InputMaybe<Scalars['Int']>;
+  feature_column?: InputMaybe<Scalars['String']>;
+  feature_type?: InputMaybe<Scalars['Int']>;
+  layer_id?: InputMaybe<Scalars['Int']>;
+  level?: InputMaybe<Scalars['Int']>;
+  schema_name?: InputMaybe<Scalars['String']>;
+  table_name?: InputMaybe<Scalars['String']>;
+  topology_id?: InputMaybe<Scalars['Int']>;
+};
+
+/** aggregate sum on columns */
+export type Topology_Layer_Sum_Fields = {
+  __typename?: 'topology_layer_sum_fields';
+  child_id?: Maybe<Scalars['Int']>;
+  feature_type?: Maybe<Scalars['Int']>;
+  layer_id?: Maybe<Scalars['Int']>;
+  level?: Maybe<Scalars['Int']>;
+  topology_id?: Maybe<Scalars['Int']>;
+};
+
+/** update columns of table "topology.layer" */
+export enum Topology_Layer_Update_Column {
+  /** column name */
+  ChildId = 'child_id',
+  /** column name */
+  FeatureColumn = 'feature_column',
+  /** column name */
+  FeatureType = 'feature_type',
+  /** column name */
+  LayerId = 'layer_id',
+  /** column name */
+  Level = 'level',
+  /** column name */
+  SchemaName = 'schema_name',
+  /** column name */
+  TableName = 'table_name',
+  /** column name */
+  TopologyId = 'topology_id'
+}
+
+export type Topology_Layer_Updates = {
+  /** increments the numeric columns with given value of the filtered values */
+  _inc?: InputMaybe<Topology_Layer_Inc_Input>;
+  /** sets the columns of the filtered rows to the given values */
+  _set?: InputMaybe<Topology_Layer_Set_Input>;
+  where: Topology_Layer_Bool_Exp;
+};
+
+/** aggregate var_pop on columns */
+export type Topology_Layer_Var_Pop_Fields = {
+  __typename?: 'topology_layer_var_pop_fields';
+  child_id?: Maybe<Scalars['Float']>;
+  feature_type?: Maybe<Scalars['Float']>;
+  layer_id?: Maybe<Scalars['Float']>;
+  level?: Maybe<Scalars['Float']>;
+  topology_id?: Maybe<Scalars['Float']>;
+};
+
+/** aggregate var_samp on columns */
+export type Topology_Layer_Var_Samp_Fields = {
+  __typename?: 'topology_layer_var_samp_fields';
+  child_id?: Maybe<Scalars['Float']>;
+  feature_type?: Maybe<Scalars['Float']>;
+  layer_id?: Maybe<Scalars['Float']>;
+  level?: Maybe<Scalars['Float']>;
+  topology_id?: Maybe<Scalars['Float']>;
+};
+
+/** aggregate variance on columns */
+export type Topology_Layer_Variance_Fields = {
+  __typename?: 'topology_layer_variance_fields';
+  child_id?: Maybe<Scalars['Float']>;
+  feature_type?: Maybe<Scalars['Float']>;
+  layer_id?: Maybe<Scalars['Float']>;
+  level?: Maybe<Scalars['Float']>;
+  topology_id?: Maybe<Scalars['Float']>;
+};
+
+/** columns and relationships of "topology.topology" */
+export type Topology_Topology = {
+  __typename?: 'topology_topology';
+  hasz: Scalars['Boolean'];
+  id: Scalars['Int'];
+  name: Scalars['String'];
+  precision: Scalars['float8'];
+  srid: Scalars['Int'];
+};
+
+/** aggregated selection of "topology.topology" */
+export type Topology_Topology_Aggregate = {
+  __typename?: 'topology_topology_aggregate';
+  aggregate?: Maybe<Topology_Topology_Aggregate_Fields>;
+  nodes: Array<Topology_Topology>;
+};
+
+/** aggregate fields of "topology.topology" */
+export type Topology_Topology_Aggregate_Fields = {
+  __typename?: 'topology_topology_aggregate_fields';
+  avg?: Maybe<Topology_Topology_Avg_Fields>;
+  count: Scalars['Int'];
+  max?: Maybe<Topology_Topology_Max_Fields>;
+  min?: Maybe<Topology_Topology_Min_Fields>;
+  stddev?: Maybe<Topology_Topology_Stddev_Fields>;
+  stddev_pop?: Maybe<Topology_Topology_Stddev_Pop_Fields>;
+  stddev_samp?: Maybe<Topology_Topology_Stddev_Samp_Fields>;
+  sum?: Maybe<Topology_Topology_Sum_Fields>;
+  var_pop?: Maybe<Topology_Topology_Var_Pop_Fields>;
+  var_samp?: Maybe<Topology_Topology_Var_Samp_Fields>;
+  variance?: Maybe<Topology_Topology_Variance_Fields>;
+};
+
+
+/** aggregate fields of "topology.topology" */
+export type Topology_Topology_Aggregate_FieldsCountArgs = {
+  columns?: InputMaybe<Array<Topology_Topology_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']>;
+};
+
+/** aggregate avg on columns */
+export type Topology_Topology_Avg_Fields = {
+  __typename?: 'topology_topology_avg_fields';
+  id?: Maybe<Scalars['Float']>;
+  precision?: Maybe<Scalars['Float']>;
+  srid?: Maybe<Scalars['Float']>;
+};
+
+/** Boolean expression to filter rows from the table "topology.topology". All fields are combined with a logical 'AND'. */
+export type Topology_Topology_Bool_Exp = {
+  _and?: InputMaybe<Array<Topology_Topology_Bool_Exp>>;
+  _not?: InputMaybe<Topology_Topology_Bool_Exp>;
+  _or?: InputMaybe<Array<Topology_Topology_Bool_Exp>>;
+  hasz?: InputMaybe<Boolean_Comparison_Exp>;
+  id?: InputMaybe<Int_Comparison_Exp>;
+  name?: InputMaybe<String_Comparison_Exp>;
+  precision?: InputMaybe<Float8_Comparison_Exp>;
+  srid?: InputMaybe<Int_Comparison_Exp>;
+};
+
+/** unique or primary key constraints on table "topology.topology" */
+export enum Topology_Topology_Constraint {
+  /** unique or primary key constraint on columns "name" */
+  TopologyNameKey = 'topology_name_key',
+  /** unique or primary key constraint on columns "id" */
+  TopologyPkey = 'topology_pkey'
+}
+
+/** input type for incrementing numeric columns in table "topology.topology" */
+export type Topology_Topology_Inc_Input = {
+  id?: InputMaybe<Scalars['Int']>;
+  precision?: InputMaybe<Scalars['float8']>;
+  srid?: InputMaybe<Scalars['Int']>;
+};
+
+/** input type for inserting data into table "topology.topology" */
+export type Topology_Topology_Insert_Input = {
+  hasz?: InputMaybe<Scalars['Boolean']>;
+  id?: InputMaybe<Scalars['Int']>;
+  name?: InputMaybe<Scalars['String']>;
+  precision?: InputMaybe<Scalars['float8']>;
+  srid?: InputMaybe<Scalars['Int']>;
+};
+
+/** aggregate max on columns */
+export type Topology_Topology_Max_Fields = {
+  __typename?: 'topology_topology_max_fields';
+  id?: Maybe<Scalars['Int']>;
+  name?: Maybe<Scalars['String']>;
+  precision?: Maybe<Scalars['float8']>;
+  srid?: Maybe<Scalars['Int']>;
+};
+
+/** aggregate min on columns */
+export type Topology_Topology_Min_Fields = {
+  __typename?: 'topology_topology_min_fields';
+  id?: Maybe<Scalars['Int']>;
+  name?: Maybe<Scalars['String']>;
+  precision?: Maybe<Scalars['float8']>;
+  srid?: Maybe<Scalars['Int']>;
+};
+
+/** response of any mutation on the table "topology.topology" */
+export type Topology_Topology_Mutation_Response = {
+  __typename?: 'topology_topology_mutation_response';
+  /** number of rows affected by the mutation */
+  affected_rows: Scalars['Int'];
+  /** data from the rows affected by the mutation */
+  returning: Array<Topology_Topology>;
+};
+
+/** on_conflict condition type for table "topology.topology" */
+export type Topology_Topology_On_Conflict = {
+  constraint: Topology_Topology_Constraint;
+  update_columns?: Array<Topology_Topology_Update_Column>;
+  where?: InputMaybe<Topology_Topology_Bool_Exp>;
+};
+
+/** Ordering options when selecting data from "topology.topology". */
+export type Topology_Topology_Order_By = {
+  hasz?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  name?: InputMaybe<Order_By>;
+  precision?: InputMaybe<Order_By>;
+  srid?: InputMaybe<Order_By>;
+};
+
+/** primary key columns input for table: topology.topology */
+export type Topology_Topology_Pk_Columns_Input = {
+  id: Scalars['Int'];
+};
+
+/** select columns of table "topology.topology" */
+export enum Topology_Topology_Select_Column {
+  /** column name */
+  Hasz = 'hasz',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  Name = 'name',
+  /** column name */
+  Precision = 'precision',
+  /** column name */
+  Srid = 'srid'
+}
+
+/** input type for updating data in table "topology.topology" */
+export type Topology_Topology_Set_Input = {
+  hasz?: InputMaybe<Scalars['Boolean']>;
+  id?: InputMaybe<Scalars['Int']>;
+  name?: InputMaybe<Scalars['String']>;
+  precision?: InputMaybe<Scalars['float8']>;
+  srid?: InputMaybe<Scalars['Int']>;
+};
+
+/** aggregate stddev on columns */
+export type Topology_Topology_Stddev_Fields = {
+  __typename?: 'topology_topology_stddev_fields';
+  id?: Maybe<Scalars['Float']>;
+  precision?: Maybe<Scalars['Float']>;
+  srid?: Maybe<Scalars['Float']>;
+};
+
+/** aggregate stddev_pop on columns */
+export type Topology_Topology_Stddev_Pop_Fields = {
+  __typename?: 'topology_topology_stddev_pop_fields';
+  id?: Maybe<Scalars['Float']>;
+  precision?: Maybe<Scalars['Float']>;
+  srid?: Maybe<Scalars['Float']>;
+};
+
+/** aggregate stddev_samp on columns */
+export type Topology_Topology_Stddev_Samp_Fields = {
+  __typename?: 'topology_topology_stddev_samp_fields';
+  id?: Maybe<Scalars['Float']>;
+  precision?: Maybe<Scalars['Float']>;
+  srid?: Maybe<Scalars['Float']>;
+};
+
+/** Streaming cursor of the table "topology_topology" */
+export type Topology_Topology_Stream_Cursor_Input = {
+  /** Stream column input with initial value */
+  initial_value: Topology_Topology_Stream_Cursor_Value_Input;
+  /** cursor ordering */
+  ordering?: InputMaybe<Cursor_Ordering>;
+};
+
+/** Initial value of the column from where the streaming should start */
+export type Topology_Topology_Stream_Cursor_Value_Input = {
+  hasz?: InputMaybe<Scalars['Boolean']>;
+  id?: InputMaybe<Scalars['Int']>;
+  name?: InputMaybe<Scalars['String']>;
+  precision?: InputMaybe<Scalars['float8']>;
+  srid?: InputMaybe<Scalars['Int']>;
+};
+
+/** aggregate sum on columns */
+export type Topology_Topology_Sum_Fields = {
+  __typename?: 'topology_topology_sum_fields';
+  id?: Maybe<Scalars['Int']>;
+  precision?: Maybe<Scalars['float8']>;
+  srid?: Maybe<Scalars['Int']>;
+};
+
+/** update columns of table "topology.topology" */
+export enum Topology_Topology_Update_Column {
+  /** column name */
+  Hasz = 'hasz',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  Name = 'name',
+  /** column name */
+  Precision = 'precision',
+  /** column name */
+  Srid = 'srid'
+}
+
+export type Topology_Topology_Updates = {
+  /** increments the numeric columns with given value of the filtered values */
+  _inc?: InputMaybe<Topology_Topology_Inc_Input>;
+  /** sets the columns of the filtered rows to the given values */
+  _set?: InputMaybe<Topology_Topology_Set_Input>;
+  where: Topology_Topology_Bool_Exp;
+};
+
+/** aggregate var_pop on columns */
+export type Topology_Topology_Var_Pop_Fields = {
+  __typename?: 'topology_topology_var_pop_fields';
+  id?: Maybe<Scalars['Float']>;
+  precision?: Maybe<Scalars['Float']>;
+  srid?: Maybe<Scalars['Float']>;
+};
+
+/** aggregate var_samp on columns */
+export type Topology_Topology_Var_Samp_Fields = {
+  __typename?: 'topology_topology_var_samp_fields';
+  id?: Maybe<Scalars['Float']>;
+  precision?: Maybe<Scalars['Float']>;
+  srid?: Maybe<Scalars['Float']>;
+};
+
+/** aggregate variance on columns */
+export type Topology_Topology_Variance_Fields = {
+  __typename?: 'topology_topology_variance_fields';
+  id?: Maybe<Scalars['Float']>;
+  precision?: Maybe<Scalars['Float']>;
+  srid?: Maybe<Scalars['Float']>;
+};
+
 /** columns and relationships of "types_test" */
 export type Types_Test = {
   __typename?: 'types_test';
@@ -6335,6 +9635,36 @@ export type Types_TestJsonb_TestArgs = {
   path?: InputMaybe<Scalars['String']>;
 };
 
+/** aggregated selection of "types_test" */
+export type Types_Test_Aggregate = {
+  __typename?: 'types_test_aggregate';
+  aggregate?: Maybe<Types_Test_Aggregate_Fields>;
+  nodes: Array<Types_Test>;
+};
+
+/** aggregate fields of "types_test" */
+export type Types_Test_Aggregate_Fields = {
+  __typename?: 'types_test_aggregate_fields';
+  avg?: Maybe<Types_Test_Avg_Fields>;
+  count: Scalars['Int'];
+  max?: Maybe<Types_Test_Max_Fields>;
+  min?: Maybe<Types_Test_Min_Fields>;
+  stddev?: Maybe<Types_Test_Stddev_Fields>;
+  stddev_pop?: Maybe<Types_Test_Stddev_Pop_Fields>;
+  stddev_samp?: Maybe<Types_Test_Stddev_Samp_Fields>;
+  sum?: Maybe<Types_Test_Sum_Fields>;
+  var_pop?: Maybe<Types_Test_Var_Pop_Fields>;
+  var_samp?: Maybe<Types_Test_Var_Samp_Fields>;
+  variance?: Maybe<Types_Test_Variance_Fields>;
+};
+
+
+/** aggregate fields of "types_test" */
+export type Types_Test_Aggregate_FieldsCountArgs = {
+  columns?: InputMaybe<Array<Types_Test_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']>;
+};
+
 /** order by aggregate values of table "types_test" */
 export type Types_Test_Aggregate_Order_By = {
   avg?: InputMaybe<Types_Test_Avg_Order_By>;
@@ -6353,6 +9683,21 @@ export type Types_Test_Aggregate_Order_By = {
 /** append existing jsonb value of filtered columns with new jsonb value */
 export type Types_Test_Append_Input = {
   jsonb_test?: InputMaybe<Scalars['jsonb']>;
+};
+
+/** input type for inserting array relation for remote table "types_test" */
+export type Types_Test_Arr_Rel_Insert_Input = {
+  data: Array<Types_Test_Insert_Input>;
+  /** upsert condition */
+  on_conflict?: InputMaybe<Types_Test_On_Conflict>;
+};
+
+/** aggregate avg on columns */
+export type Types_Test_Avg_Fields = {
+  __typename?: 'types_test_avg_fields';
+  big_int_test?: Maybe<Scalars['Float']>;
+  int_test?: Maybe<Scalars['Float']>;
+  numeric_test?: Maybe<Scalars['Float']>;
 };
 
 /** order by avg() on columns of table "types_test" */
@@ -6433,6 +9778,7 @@ export type Types_Test_Insert_Input = {
   email_test?: InputMaybe<Scalars['String']>;
   enum_test?: InputMaybe<Status_Types_Enum>;
   enum_test_2_nonull?: InputMaybe<Enum_Test_Types_Enum>;
+  enum_test_type?: InputMaybe<Enum_Test_Types_Obj_Rel_Insert_Input>;
   file_path?: InputMaybe<Scalars['String']>;
   glbPath?: InputMaybe<Scalars['String']>;
   id?: InputMaybe<Scalars['uuid']>;
@@ -6443,6 +9789,7 @@ export type Types_Test_Insert_Input = {
   jsonb_test?: InputMaybe<Scalars['jsonb']>;
   non_nullable?: InputMaybe<Scalars['String']>;
   numeric_test?: InputMaybe<Scalars['numeric']>;
+  status_type?: InputMaybe<Status_Types_Obj_Rel_Insert_Input>;
   text_test?: InputMaybe<Scalars['String']>;
   time_test?: InputMaybe<Scalars['time']>;
   timestamp_test?: InputMaybe<Scalars['timestamp']>;
@@ -6451,6 +9798,29 @@ export type Types_Test_Insert_Input = {
   updated_at?: InputMaybe<Scalars['timestamptz']>;
   usdzPath?: InputMaybe<Scalars['String']>;
   uuid_test?: InputMaybe<Scalars['uuid']>;
+};
+
+/** aggregate max on columns */
+export type Types_Test_Max_Fields = {
+  __typename?: 'types_test_max_fields';
+  big_int_test?: Maybe<Scalars['bigint']>;
+  created_at?: Maybe<Scalars['timestamptz']>;
+  date_test?: Maybe<Scalars['date']>;
+  email_test?: Maybe<Scalars['String']>;
+  file_path?: Maybe<Scalars['String']>;
+  glbPath?: Maybe<Scalars['String']>;
+  id?: Maybe<Scalars['uuid']>;
+  int_test?: Maybe<Scalars['Int']>;
+  isDeleted?: Maybe<Scalars['String']>;
+  non_nullable?: Maybe<Scalars['String']>;
+  numeric_test?: Maybe<Scalars['numeric']>;
+  text_test?: Maybe<Scalars['String']>;
+  timestamp_test?: Maybe<Scalars['timestamp']>;
+  timestamptz_test?: Maybe<Scalars['timestamptz']>;
+  timetz_test?: Maybe<Scalars['timetz']>;
+  updated_at?: Maybe<Scalars['timestamptz']>;
+  usdzPath?: Maybe<Scalars['String']>;
+  uuid_test?: Maybe<Scalars['uuid']>;
 };
 
 /** order by max() on columns of table "types_test" */
@@ -6473,6 +9843,29 @@ export type Types_Test_Max_Order_By = {
   updated_at?: InputMaybe<Order_By>;
   usdzPath?: InputMaybe<Order_By>;
   uuid_test?: InputMaybe<Order_By>;
+};
+
+/** aggregate min on columns */
+export type Types_Test_Min_Fields = {
+  __typename?: 'types_test_min_fields';
+  big_int_test?: Maybe<Scalars['bigint']>;
+  created_at?: Maybe<Scalars['timestamptz']>;
+  date_test?: Maybe<Scalars['date']>;
+  email_test?: Maybe<Scalars['String']>;
+  file_path?: Maybe<Scalars['String']>;
+  glbPath?: Maybe<Scalars['String']>;
+  id?: Maybe<Scalars['uuid']>;
+  int_test?: Maybe<Scalars['Int']>;
+  isDeleted?: Maybe<Scalars['String']>;
+  non_nullable?: Maybe<Scalars['String']>;
+  numeric_test?: Maybe<Scalars['numeric']>;
+  text_test?: Maybe<Scalars['String']>;
+  timestamp_test?: Maybe<Scalars['timestamp']>;
+  timestamptz_test?: Maybe<Scalars['timestamptz']>;
+  timetz_test?: Maybe<Scalars['timetz']>;
+  updated_at?: Maybe<Scalars['timestamptz']>;
+  usdzPath?: Maybe<Scalars['String']>;
+  uuid_test?: Maybe<Scalars['uuid']>;
 };
 
 /** order by min() on columns of table "types_test" */
@@ -6637,6 +10030,14 @@ export type Types_Test_Set_Input = {
   uuid_test?: InputMaybe<Scalars['uuid']>;
 };
 
+/** aggregate stddev on columns */
+export type Types_Test_Stddev_Fields = {
+  __typename?: 'types_test_stddev_fields';
+  big_int_test?: Maybe<Scalars['Float']>;
+  int_test?: Maybe<Scalars['Float']>;
+  numeric_test?: Maybe<Scalars['Float']>;
+};
+
 /** order by stddev() on columns of table "types_test" */
 export type Types_Test_Stddev_Order_By = {
   big_int_test?: InputMaybe<Order_By>;
@@ -6644,11 +10045,27 @@ export type Types_Test_Stddev_Order_By = {
   numeric_test?: InputMaybe<Order_By>;
 };
 
+/** aggregate stddev_pop on columns */
+export type Types_Test_Stddev_Pop_Fields = {
+  __typename?: 'types_test_stddev_pop_fields';
+  big_int_test?: Maybe<Scalars['Float']>;
+  int_test?: Maybe<Scalars['Float']>;
+  numeric_test?: Maybe<Scalars['Float']>;
+};
+
 /** order by stddev_pop() on columns of table "types_test" */
 export type Types_Test_Stddev_Pop_Order_By = {
   big_int_test?: InputMaybe<Order_By>;
   int_test?: InputMaybe<Order_By>;
   numeric_test?: InputMaybe<Order_By>;
+};
+
+/** aggregate stddev_samp on columns */
+export type Types_Test_Stddev_Samp_Fields = {
+  __typename?: 'types_test_stddev_samp_fields';
+  big_int_test?: Maybe<Scalars['Float']>;
+  int_test?: Maybe<Scalars['Float']>;
+  numeric_test?: Maybe<Scalars['Float']>;
 };
 
 /** order by stddev_samp() on columns of table "types_test" */
@@ -6693,6 +10110,14 @@ export type Types_Test_Stream_Cursor_Value_Input = {
   updated_at?: InputMaybe<Scalars['timestamptz']>;
   usdzPath?: InputMaybe<Scalars['String']>;
   uuid_test?: InputMaybe<Scalars['uuid']>;
+};
+
+/** aggregate sum on columns */
+export type Types_Test_Sum_Fields = {
+  __typename?: 'types_test_sum_fields';
+  big_int_test?: Maybe<Scalars['bigint']>;
+  int_test?: Maybe<Scalars['Int']>;
+  numeric_test?: Maybe<Scalars['numeric']>;
 };
 
 /** order by sum() on columns of table "types_test" */
@@ -6774,6 +10199,14 @@ export type Types_Test_Updates = {
   where: Types_Test_Bool_Exp;
 };
 
+/** aggregate var_pop on columns */
+export type Types_Test_Var_Pop_Fields = {
+  __typename?: 'types_test_var_pop_fields';
+  big_int_test?: Maybe<Scalars['Float']>;
+  int_test?: Maybe<Scalars['Float']>;
+  numeric_test?: Maybe<Scalars['Float']>;
+};
+
 /** order by var_pop() on columns of table "types_test" */
 export type Types_Test_Var_Pop_Order_By = {
   big_int_test?: InputMaybe<Order_By>;
@@ -6781,11 +10214,27 @@ export type Types_Test_Var_Pop_Order_By = {
   numeric_test?: InputMaybe<Order_By>;
 };
 
+/** aggregate var_samp on columns */
+export type Types_Test_Var_Samp_Fields = {
+  __typename?: 'types_test_var_samp_fields';
+  big_int_test?: Maybe<Scalars['Float']>;
+  int_test?: Maybe<Scalars['Float']>;
+  numeric_test?: Maybe<Scalars['Float']>;
+};
+
 /** order by var_samp() on columns of table "types_test" */
 export type Types_Test_Var_Samp_Order_By = {
   big_int_test?: InputMaybe<Order_By>;
   int_test?: InputMaybe<Order_By>;
   numeric_test?: InputMaybe<Order_By>;
+};
+
+/** aggregate variance on columns */
+export type Types_Test_Variance_Fields = {
+  __typename?: 'types_test_variance_fields';
+  big_int_test?: Maybe<Scalars['Float']>;
+  int_test?: Maybe<Scalars['Float']>;
+  numeric_test?: Maybe<Scalars['Float']>;
 };
 
 /** order by variance() on columns of table "types_test" */
@@ -6808,12 +10257,108 @@ export type Uuid_Comparison_Exp = {
   _nin?: InputMaybe<Array<Scalars['uuid']>>;
 };
 
+export type ProductFragment = { __typename: 'products', id: any, name?: string | null | undefined };
+
+export type Product_SignedThumbnailImgPathFragment = { __typename: 'GetUrlReturn', url: string };
+
 export type DummyQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type DummyQuery = { __typename: 'query_root' };
 
+export type ProductQueryVariables = Exact<{
+  id: Scalars['uuid'];
+}>;
 
+
+export type ProductQuery = { __typename?: 'query_root', product?: { __typename: 'products', id: any, name?: string | null | undefined } | null | undefined };
+
+export type ProductsQueryVariables = Exact<{
+  distinct_on?: Maybe<Array<Products_Select_Column> | Products_Select_Column>;
+  limit?: Maybe<Scalars['Int']>;
+  offset?: Maybe<Scalars['Int']>;
+  order_by?: Maybe<Array<Products_Order_By> | Products_Order_By>;
+  where?: Maybe<Products_Bool_Exp>;
+}>;
+
+
+export type ProductsQuery = { __typename?: 'query_root', products: Array<{ __typename: 'products', id: any, name?: string | null | undefined, signedThumbnailImgPath?: { __typename: 'GetUrlReturn', url: string } | null | undefined }> };
+
+export type DeleteProductMutationVariables = Exact<{
+  id: Scalars['uuid'];
+}>;
+
+
+export type DeleteProductMutation = { __typename?: 'mutation_root', deleteProduct?: { __typename: 'products', id: any, name?: string | null | undefined } | null | undefined };
+
+export type DeleteProductsMutationVariables = Exact<{
+  where: Products_Bool_Exp;
+}>;
+
+
+export type DeleteProductsMutation = { __typename?: 'mutation_root', deleteProducts?: { __typename?: 'products_mutation_response', affected_rows: number, returning: Array<{ __typename: 'products', id: any, name?: string | null | undefined }> } | null | undefined };
+
+export type InsertProductMutationVariables = Exact<{
+  products: Products_Insert_Input;
+  on_conflict?: Maybe<Products_On_Conflict>;
+}>;
+
+
+export type InsertProductMutation = { __typename?: 'mutation_root', insertProduct?: { __typename: 'products', id: any, name?: string | null | undefined } | null | undefined };
+
+export type InsertProductsMutationVariables = Exact<{
+  products: Array<Products_Insert_Input> | Products_Insert_Input;
+  on_conflict?: Maybe<Products_On_Conflict>;
+}>;
+
+
+export type InsertProductsMutation = { __typename?: 'mutation_root', insertProducts?: { __typename?: 'products_mutation_response', affected_rows: number, returning: Array<{ __typename: 'products', id: any, name?: string | null | undefined }> } | null | undefined };
+
+export type UpdateProductMutationVariables = Exact<{
+  _inc?: Maybe<Products_Inc_Input>;
+  products?: Maybe<Products_Set_Input>;
+  pk_columns: Products_Pk_Columns_Input;
+}>;
+
+
+export type UpdateProductMutation = { __typename?: 'mutation_root', updateProduct?: { __typename: 'products', id: any, name?: string | null | undefined } | null | undefined };
+
+export type UpdateProductsMutationVariables = Exact<{
+  _inc?: Maybe<Products_Inc_Input>;
+  products?: Maybe<Products_Set_Input>;
+  where: Products_Bool_Exp;
+}>;
+
+
+export type UpdateProductsMutation = { __typename?: 'mutation_root', updateProducts?: { __typename?: 'products_mutation_response', affected_rows: number, returning: Array<{ __typename: 'products', id: any, name?: string | null | undefined }> } | null | undefined };
+
+export type Update_Products_ManyMutationVariables = Exact<{
+  updates: Array<Products_Updates> | Products_Updates;
+}>;
+
+
+export type Update_Products_ManyMutation = { __typename?: 'mutation_root', update_products_many?: Array<{ __typename?: 'products_mutation_response', affected_rows: number, returning: Array<{ __typename: 'products', id: any, name?: string | null | undefined }> } | null | undefined> | null | undefined };
+
+export type ProductCrudFragment = { __typename: 'products', id: any, name?: string | null | undefined };
+
+export const Product_SignedThumbnailImgPathFragmentDoc = gql`
+    fragment product_signedThumbnailImgPath on GetUrlReturn {
+  url
+  __typename
+}
+    `;
+export const ProductFragmentDoc = gql`
+    fragment product on products {
+  id
+  __typename
+  name
+}
+    `;
+export const ProductCrudFragmentDoc = gql`
+    fragment productCrud on products {
+  ...product
+}
+    ${ProductFragmentDoc}`;
 export const DummyDocument = gql`
     query dummy {
   __typename
@@ -6822,4 +10367,127 @@ export const DummyDocument = gql`
 
 export function useDummyQuery(options: Omit<Urql.UseQueryArgs<DummyQueryVariables>, 'query'> = {}) {
   return Urql.useQuery<DummyQuery>({ query: DummyDocument, ...options });
+};
+export const ProductDocument = gql`
+    query product($id: uuid!) {
+  product(id: $id) {
+    ...productCrud
+  }
+}
+    ${ProductCrudFragmentDoc}`;
+
+export function useProductQuery(options: Omit<Urql.UseQueryArgs<ProductQueryVariables>, 'query'> = {}) {
+  return Urql.useQuery<ProductQuery>({ query: ProductDocument, ...options });
+};
+export const ProductsDocument = gql`
+    query products($distinct_on: [products_select_column!], $limit: Int = 20, $offset: Int = 0, $order_by: [products_order_by!] = {updated_at: desc}, $where: products_bool_exp) {
+  products(
+    distinct_on: $distinct_on
+    limit: $limit
+    offset: $offset
+    order_by: $order_by
+    where: $where
+  ) {
+    ...productCrud
+    ...product
+    signedThumbnailImgPath {
+      ...product_signedThumbnailImgPath
+    }
+  }
+}
+    ${ProductCrudFragmentDoc}
+${ProductFragmentDoc}
+${Product_SignedThumbnailImgPathFragmentDoc}`;
+
+export function useProductsQuery(options: Omit<Urql.UseQueryArgs<ProductsQueryVariables>, 'query'> = {}) {
+  return Urql.useQuery<ProductsQuery>({ query: ProductsDocument, ...options });
+};
+export const DeleteProductDocument = gql`
+    mutation deleteProduct($id: uuid!) {
+  deleteProduct(id: $id) {
+    ...productCrud
+  }
+}
+    ${ProductCrudFragmentDoc}`;
+
+export function useDeleteProductMutation() {
+  return Urql.useMutation<DeleteProductMutation, DeleteProductMutationVariables>(DeleteProductDocument);
+};
+export const DeleteProductsDocument = gql`
+    mutation deleteProducts($where: products_bool_exp!) {
+  deleteProducts(where: $where) {
+    returning {
+      ...productCrud
+    }
+    affected_rows
+  }
+}
+    ${ProductCrudFragmentDoc}`;
+
+export function useDeleteProductsMutation() {
+  return Urql.useMutation<DeleteProductsMutation, DeleteProductsMutationVariables>(DeleteProductsDocument);
+};
+export const InsertProductDocument = gql`
+    mutation insertProduct($products: products_insert_input!, $on_conflict: products_on_conflict) {
+  insertProduct(object: $products, on_conflict: $on_conflict) {
+    ...productCrud
+  }
+}
+    ${ProductCrudFragmentDoc}`;
+
+export function useInsertProductMutation() {
+  return Urql.useMutation<InsertProductMutation, InsertProductMutationVariables>(InsertProductDocument);
+};
+export const InsertProductsDocument = gql`
+    mutation insertProducts($products: [products_insert_input!]!, $on_conflict: products_on_conflict) {
+  insertProducts(objects: $products, on_conflict: $on_conflict) {
+    returning {
+      ...productCrud
+    }
+    affected_rows
+  }
+}
+    ${ProductCrudFragmentDoc}`;
+
+export function useInsertProductsMutation() {
+  return Urql.useMutation<InsertProductsMutation, InsertProductsMutationVariables>(InsertProductsDocument);
+};
+export const UpdateProductDocument = gql`
+    mutation updateProduct($_inc: products_inc_input, $products: products_set_input, $pk_columns: products_pk_columns_input!) {
+  updateProduct(_inc: $_inc, _set: $products, pk_columns: $pk_columns) {
+    ...productCrud
+  }
+}
+    ${ProductCrudFragmentDoc}`;
+
+export function useUpdateProductMutation() {
+  return Urql.useMutation<UpdateProductMutation, UpdateProductMutationVariables>(UpdateProductDocument);
+};
+export const UpdateProductsDocument = gql`
+    mutation updateProducts($_inc: products_inc_input, $products: products_set_input, $where: products_bool_exp!) {
+  updateProducts(_inc: $_inc, _set: $products, where: $where) {
+    returning {
+      ...productCrud
+    }
+    affected_rows
+  }
+}
+    ${ProductCrudFragmentDoc}`;
+
+export function useUpdateProductsMutation() {
+  return Urql.useMutation<UpdateProductsMutation, UpdateProductsMutationVariables>(UpdateProductsDocument);
+};
+export const Update_Products_ManyDocument = gql`
+    mutation update_products_many($updates: [products_updates!]!) {
+  update_products_many(updates: $updates) {
+    returning {
+      ...productCrud
+    }
+    affected_rows
+  }
+}
+    ${ProductCrudFragmentDoc}`;
+
+export function useUpdate_Products_ManyMutation() {
+  return Urql.useMutation<Update_Products_ManyMutation, Update_Products_ManyMutationVariables>(Update_Products_ManyDocument);
 };
