@@ -381,6 +381,33 @@ export type BusStopDepartures_Aggregate = {
   nodes: Array<BusStopDepartures>;
 };
 
+export type BusStopDepartures_Aggregate_Bool_Exp = {
+  bool_and?: InputMaybe<BusStopDepartures_Aggregate_Bool_Exp_Bool_And>;
+  bool_or?: InputMaybe<BusStopDepartures_Aggregate_Bool_Exp_Bool_Or>;
+  count?: InputMaybe<BusStopDepartures_Aggregate_Bool_Exp_Count>;
+};
+
+export type BusStopDepartures_Aggregate_Bool_Exp_Bool_And = {
+  arguments: BusStopDepartures_Select_Column_BusStopDepartures_Aggregate_Bool_Exp_Bool_And_Arguments_Columns;
+  distinct?: InputMaybe<Scalars['Boolean']>;
+  filter?: InputMaybe<BusStopDepartures_Bool_Exp>;
+  predicate: Boolean_Comparison_Exp;
+};
+
+export type BusStopDepartures_Aggregate_Bool_Exp_Bool_Or = {
+  arguments: BusStopDepartures_Select_Column_BusStopDepartures_Aggregate_Bool_Exp_Bool_Or_Arguments_Columns;
+  distinct?: InputMaybe<Scalars['Boolean']>;
+  filter?: InputMaybe<BusStopDepartures_Bool_Exp>;
+  predicate: Boolean_Comparison_Exp;
+};
+
+export type BusStopDepartures_Aggregate_Bool_Exp_Count = {
+  arguments?: InputMaybe<Array<BusStopDepartures_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']>;
+  filter?: InputMaybe<BusStopDepartures_Bool_Exp>;
+  predicate: Int_Comparison_Exp;
+};
+
 /** aggregate fields of "bus_stop_departures" */
 export type BusStopDepartures_Aggregate_Fields = {
   __typename?: 'busStopDepartures_aggregate_fields';
@@ -539,6 +566,18 @@ export enum BusStopDepartures_Select_Column {
   TimeDeparture = 'time_departure'
 }
 
+/** select "busStopDepartures_aggregate_bool_exp_bool_and_arguments_columns" columns of table "bus_stop_departures" */
+export enum BusStopDepartures_Select_Column_BusStopDepartures_Aggregate_Bool_Exp_Bool_And_Arguments_Columns {
+  /** column name */
+  LowEntry = 'low_entry'
+}
+
+/** select "busStopDepartures_aggregate_bool_exp_bool_or_arguments_columns" columns of table "bus_stop_departures" */
+export enum BusStopDepartures_Select_Column_BusStopDepartures_Aggregate_Bool_Exp_Bool_Or_Arguments_Columns {
+  /** column name */
+  LowEntry = 'low_entry'
+}
+
 /** input type for updating data in table "bus_stop_departures" */
 export type BusStopDepartures_Set_Input = {
   bus_stop_id?: InputMaybe<Scalars['uuid']>;
@@ -678,6 +717,7 @@ export type BusStops_Bool_Exp = {
   _not?: InputMaybe<BusStops_Bool_Exp>;
   _or?: InputMaybe<Array<BusStops_Bool_Exp>>;
   bus_stop_departures?: InputMaybe<BusStopDepartures_Bool_Exp>;
+  bus_stop_departures_aggregate?: InputMaybe<BusStopDepartures_Aggregate_Bool_Exp>;
   city?: InputMaybe<String_Comparison_Exp>;
   id?: InputMaybe<Uuid_Comparison_Exp>;
   lat?: InputMaybe<Float8_Comparison_Exp>;
@@ -1013,6 +1053,7 @@ export type Customer_Types_Bool_Exp = {
   _not?: InputMaybe<Customer_Types_Bool_Exp>;
   _or?: InputMaybe<Array<Customer_Types_Bool_Exp>>;
   customers?: InputMaybe<Customers_Bool_Exp>;
+  customers_aggregate?: InputMaybe<Customers_Aggregate_Bool_Exp>;
   type?: InputMaybe<String_Comparison_Exp>;
 };
 
@@ -1179,6 +1220,33 @@ export type Customers_Aggregate = {
   nodes: Array<Customers>;
 };
 
+export type Customers_Aggregate_Bool_Exp = {
+  bool_and?: InputMaybe<Customers_Aggregate_Bool_Exp_Bool_And>;
+  bool_or?: InputMaybe<Customers_Aggregate_Bool_Exp_Bool_Or>;
+  count?: InputMaybe<Customers_Aggregate_Bool_Exp_Count>;
+};
+
+export type Customers_Aggregate_Bool_Exp_Bool_And = {
+  arguments: Customers_Select_Column_Customers_Aggregate_Bool_Exp_Bool_And_Arguments_Columns;
+  distinct?: InputMaybe<Scalars['Boolean']>;
+  filter?: InputMaybe<Customers_Bool_Exp>;
+  predicate: Boolean_Comparison_Exp;
+};
+
+export type Customers_Aggregate_Bool_Exp_Bool_Or = {
+  arguments: Customers_Select_Column_Customers_Aggregate_Bool_Exp_Bool_Or_Arguments_Columns;
+  distinct?: InputMaybe<Scalars['Boolean']>;
+  filter?: InputMaybe<Customers_Bool_Exp>;
+  predicate: Boolean_Comparison_Exp;
+};
+
+export type Customers_Aggregate_Bool_Exp_Count = {
+  arguments?: InputMaybe<Array<Customers_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']>;
+  filter?: InputMaybe<Customers_Bool_Exp>;
+  predicate: Int_Comparison_Exp;
+};
+
 /** aggregate fields of "customers" */
 export type Customers_Aggregate_Fields = {
   __typename?: 'customers_aggregate_fields';
@@ -1223,6 +1291,7 @@ export type Customers_Bool_Exp = {
   lastName?: InputMaybe<String_Comparison_Exp>;
   logoImgPath?: InputMaybe<String_Comparison_Exp>;
   orders?: InputMaybe<Orders_Bool_Exp>;
+  orders_aggregate?: InputMaybe<Orders_Aggregate_Bool_Exp>;
   organization?: InputMaybe<Organizations_Bool_Exp>;
   organizationId?: InputMaybe<Uuid_Comparison_Exp>;
   phone?: InputMaybe<String_Comparison_Exp>;
@@ -1389,6 +1458,22 @@ export enum Customers_Select_Column {
   Type = 'type',
   /** column name */
   UpdatedAt = 'updatedAt',
+  /** column name */
+  Vip = 'vip'
+}
+
+/** select "customers_aggregate_bool_exp_bool_and_arguments_columns" columns of table "customers" */
+export enum Customers_Select_Column_Customers_Aggregate_Bool_Exp_Bool_And_Arguments_Columns {
+  /** column name */
+  IsDeleted = 'isDeleted',
+  /** column name */
+  Vip = 'vip'
+}
+
+/** select "customers_aggregate_bool_exp_bool_or_arguments_columns" columns of table "customers" */
+export enum Customers_Select_Column_Customers_Aggregate_Bool_Exp_Bool_Or_Arguments_Columns {
+  /** column name */
+  IsDeleted = 'isDeleted',
   /** column name */
   Vip = 'vip'
 }
@@ -1616,8 +1701,11 @@ export type Desh_Bool_Exp = {
   budget?: InputMaybe<Int_Comparison_Exp>;
   created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
   desh_products?: InputMaybe<Desh_Products_Bool_Exp>;
+  desh_products_aggregate?: InputMaybe<Desh_Products_Aggregate_Bool_Exp>;
   desh_sales?: InputMaybe<Desh_Sales_Bool_Exp>;
+  desh_sales_aggregate?: InputMaybe<Desh_Sales_Aggregate_Bool_Exp>;
   desh_traffics?: InputMaybe<Desh_Traffic_Bool_Exp>;
+  desh_traffics_aggregate?: InputMaybe<Desh_Traffic_Aggregate_Bool_Exp>;
   id?: InputMaybe<Uuid_Comparison_Exp>;
   name?: InputMaybe<String_Comparison_Exp>;
   no_of_customers?: InputMaybe<Int_Comparison_Exp>;
@@ -1742,6 +1830,17 @@ export type Desh_Products_Aggregate = {
   __typename?: 'desh_products_aggregate';
   aggregate?: Maybe<Desh_Products_Aggregate_Fields>;
   nodes: Array<Desh_Products>;
+};
+
+export type Desh_Products_Aggregate_Bool_Exp = {
+  count?: InputMaybe<Desh_Products_Aggregate_Bool_Exp_Count>;
+};
+
+export type Desh_Products_Aggregate_Bool_Exp_Count = {
+  arguments?: InputMaybe<Array<Desh_Products_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']>;
+  filter?: InputMaybe<Desh_Products_Bool_Exp>;
+  predicate: Int_Comparison_Exp;
 };
 
 /** aggregate fields of "desh_products" */
@@ -1961,6 +2060,17 @@ export type Desh_Sales_Aggregate = {
   __typename?: 'desh_sales_aggregate';
   aggregate?: Maybe<Desh_Sales_Aggregate_Fields>;
   nodes: Array<Desh_Sales>;
+};
+
+export type Desh_Sales_Aggregate_Bool_Exp = {
+  count?: InputMaybe<Desh_Sales_Aggregate_Bool_Exp_Count>;
+};
+
+export type Desh_Sales_Aggregate_Bool_Exp_Count = {
+  arguments?: InputMaybe<Array<Desh_Sales_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']>;
+  filter?: InputMaybe<Desh_Sales_Bool_Exp>;
+  predicate: Int_Comparison_Exp;
 };
 
 /** aggregate fields of "desh_sales" */
@@ -2369,6 +2479,17 @@ export type Desh_Traffic_Aggregate = {
   __typename?: 'desh_traffic_aggregate';
   aggregate?: Maybe<Desh_Traffic_Aggregate_Fields>;
   nodes: Array<Desh_Traffic>;
+};
+
+export type Desh_Traffic_Aggregate_Bool_Exp = {
+  count?: InputMaybe<Desh_Traffic_Aggregate_Bool_Exp_Count>;
+};
+
+export type Desh_Traffic_Aggregate_Bool_Exp_Count = {
+  arguments?: InputMaybe<Array<Desh_Traffic_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']>;
+  filter?: InputMaybe<Desh_Traffic_Bool_Exp>;
+  predicate: Int_Comparison_Exp;
 };
 
 /** aggregate fields of "desh_traffic" */
@@ -2798,6 +2919,7 @@ export type Enum_Test_Types_Bool_Exp = {
   _or?: InputMaybe<Array<Enum_Test_Types_Bool_Exp>>;
   int_enum?: InputMaybe<String_Comparison_Exp>;
   types_tests?: InputMaybe<Types_Test_Bool_Exp>;
+  types_tests_aggregate?: InputMaybe<Types_Test_Aggregate_Bool_Exp>;
 };
 
 /** unique or primary key constraints on table "enum_test_types" */
@@ -4944,6 +5066,33 @@ export type OrderItems_Aggregate = {
   nodes: Array<OrderItems>;
 };
 
+export type OrderItems_Aggregate_Bool_Exp = {
+  bool_and?: InputMaybe<OrderItems_Aggregate_Bool_Exp_Bool_And>;
+  bool_or?: InputMaybe<OrderItems_Aggregate_Bool_Exp_Bool_Or>;
+  count?: InputMaybe<OrderItems_Aggregate_Bool_Exp_Count>;
+};
+
+export type OrderItems_Aggregate_Bool_Exp_Bool_And = {
+  arguments: OrderItems_Select_Column_OrderItems_Aggregate_Bool_Exp_Bool_And_Arguments_Columns;
+  distinct?: InputMaybe<Scalars['Boolean']>;
+  filter?: InputMaybe<OrderItems_Bool_Exp>;
+  predicate: Boolean_Comparison_Exp;
+};
+
+export type OrderItems_Aggregate_Bool_Exp_Bool_Or = {
+  arguments: OrderItems_Select_Column_OrderItems_Aggregate_Bool_Exp_Bool_Or_Arguments_Columns;
+  distinct?: InputMaybe<Scalars['Boolean']>;
+  filter?: InputMaybe<OrderItems_Bool_Exp>;
+  predicate: Boolean_Comparison_Exp;
+};
+
+export type OrderItems_Aggregate_Bool_Exp_Count = {
+  arguments?: InputMaybe<Array<OrderItems_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']>;
+  filter?: InputMaybe<OrderItems_Bool_Exp>;
+  predicate: Int_Comparison_Exp;
+};
+
 /** aggregate fields of "order_items" */
 export type OrderItems_Aggregate_Fields = {
   __typename?: 'orderItems_aggregate_fields';
@@ -5334,7 +5483,6 @@ export type Orders = {
   customer_id?: Maybe<Scalars['uuid']>;
   id: Scalars['uuid'];
   is_deleted: Scalars['Boolean'];
-  name?: Maybe<Scalars['String']>;
   order_date?: Maybe<Scalars['date']>;
   /** An array relationship */
   order_items: Array<OrderItems>;
@@ -5344,6 +5492,7 @@ export type Orders = {
   shipped_date?: Maybe<Scalars['date']>;
   /** An object relationship */
   status_type?: Maybe<Status_Types>;
+  title?: Maybe<Scalars['String']>;
   updated_at: Scalars['timestamptz'];
 };
 
@@ -5372,6 +5521,33 @@ export type Orders_Aggregate = {
   __typename?: 'orders_aggregate';
   aggregate?: Maybe<Orders_Aggregate_Fields>;
   nodes: Array<Orders>;
+};
+
+export type Orders_Aggregate_Bool_Exp = {
+  bool_and?: InputMaybe<Orders_Aggregate_Bool_Exp_Bool_And>;
+  bool_or?: InputMaybe<Orders_Aggregate_Bool_Exp_Bool_Or>;
+  count?: InputMaybe<Orders_Aggregate_Bool_Exp_Count>;
+};
+
+export type Orders_Aggregate_Bool_Exp_Bool_And = {
+  arguments: Orders_Select_Column_Orders_Aggregate_Bool_Exp_Bool_And_Arguments_Columns;
+  distinct?: InputMaybe<Scalars['Boolean']>;
+  filter?: InputMaybe<Orders_Bool_Exp>;
+  predicate: Boolean_Comparison_Exp;
+};
+
+export type Orders_Aggregate_Bool_Exp_Bool_Or = {
+  arguments: Orders_Select_Column_Orders_Aggregate_Bool_Exp_Bool_Or_Arguments_Columns;
+  distinct?: InputMaybe<Scalars['Boolean']>;
+  filter?: InputMaybe<Orders_Bool_Exp>;
+  predicate: Boolean_Comparison_Exp;
+};
+
+export type Orders_Aggregate_Bool_Exp_Count = {
+  arguments?: InputMaybe<Array<Orders_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']>;
+  filter?: InputMaybe<Orders_Bool_Exp>;
+  predicate: Int_Comparison_Exp;
 };
 
 /** aggregate fields of "orders" */
@@ -5413,13 +5589,13 @@ export type Orders_Bool_Exp = {
   customer_id?: InputMaybe<Uuid_Comparison_Exp>;
   id?: InputMaybe<Uuid_Comparison_Exp>;
   is_deleted?: InputMaybe<Boolean_Comparison_Exp>;
-  name?: InputMaybe<String_Comparison_Exp>;
   order_date?: InputMaybe<Date_Comparison_Exp>;
   order_items?: InputMaybe<OrderItems_Bool_Exp>;
   order_items_aggregate?: InputMaybe<OrderItems_Aggregate_Bool_Exp>;
   order_status?: InputMaybe<Status_Types_Enum_Comparison_Exp>;
   shipped_date?: InputMaybe<Date_Comparison_Exp>;
   status_type?: InputMaybe<Status_Types_Bool_Exp>;
+  title?: InputMaybe<String_Comparison_Exp>;
   updated_at?: InputMaybe<Timestamptz_Comparison_Exp>;
 };
 
@@ -5436,12 +5612,12 @@ export type Orders_Insert_Input = {
   customer_id?: InputMaybe<Scalars['uuid']>;
   id?: InputMaybe<Scalars['uuid']>;
   is_deleted?: InputMaybe<Scalars['Boolean']>;
-  name?: InputMaybe<Scalars['String']>;
   order_date?: InputMaybe<Scalars['date']>;
   order_items?: InputMaybe<OrderItems_Arr_Rel_Insert_Input>;
   order_status?: InputMaybe<Status_Types_Enum>;
   shipped_date?: InputMaybe<Scalars['date']>;
   status_type?: InputMaybe<Status_Types_Obj_Rel_Insert_Input>;
+  title?: InputMaybe<Scalars['String']>;
   updated_at?: InputMaybe<Scalars['timestamptz']>;
 };
 
@@ -5451,9 +5627,9 @@ export type Orders_Max_Fields = {
   created_at?: Maybe<Scalars['timestamptz']>;
   customer_id?: Maybe<Scalars['uuid']>;
   id?: Maybe<Scalars['uuid']>;
-  name?: Maybe<Scalars['String']>;
   order_date?: Maybe<Scalars['date']>;
   shipped_date?: Maybe<Scalars['date']>;
+  title?: Maybe<Scalars['String']>;
   updated_at?: Maybe<Scalars['timestamptz']>;
 };
 
@@ -5462,9 +5638,9 @@ export type Orders_Max_Order_By = {
   created_at?: InputMaybe<Order_By>;
   customer_id?: InputMaybe<Order_By>;
   id?: InputMaybe<Order_By>;
-  name?: InputMaybe<Order_By>;
   order_date?: InputMaybe<Order_By>;
   shipped_date?: InputMaybe<Order_By>;
+  title?: InputMaybe<Order_By>;
   updated_at?: InputMaybe<Order_By>;
 };
 
@@ -5474,9 +5650,9 @@ export type Orders_Min_Fields = {
   created_at?: Maybe<Scalars['timestamptz']>;
   customer_id?: Maybe<Scalars['uuid']>;
   id?: Maybe<Scalars['uuid']>;
-  name?: Maybe<Scalars['String']>;
   order_date?: Maybe<Scalars['date']>;
   shipped_date?: Maybe<Scalars['date']>;
+  title?: Maybe<Scalars['String']>;
   updated_at?: Maybe<Scalars['timestamptz']>;
 };
 
@@ -5485,9 +5661,9 @@ export type Orders_Min_Order_By = {
   created_at?: InputMaybe<Order_By>;
   customer_id?: InputMaybe<Order_By>;
   id?: InputMaybe<Order_By>;
-  name?: InputMaybe<Order_By>;
   order_date?: InputMaybe<Order_By>;
   shipped_date?: InputMaybe<Order_By>;
+  title?: InputMaybe<Order_By>;
   updated_at?: InputMaybe<Order_By>;
 };
 
@@ -5521,12 +5697,12 @@ export type Orders_Order_By = {
   customer_id?: InputMaybe<Order_By>;
   id?: InputMaybe<Order_By>;
   is_deleted?: InputMaybe<Order_By>;
-  name?: InputMaybe<Order_By>;
   order_date?: InputMaybe<Order_By>;
   order_items_aggregate?: InputMaybe<OrderItems_Aggregate_Order_By>;
   order_status?: InputMaybe<Order_By>;
   shipped_date?: InputMaybe<Order_By>;
   status_type?: InputMaybe<Status_Types_Order_By>;
+  title?: InputMaybe<Order_By>;
   updated_at?: InputMaybe<Order_By>;
 };
 
@@ -5546,15 +5722,27 @@ export enum Orders_Select_Column {
   /** column name */
   IsDeleted = 'is_deleted',
   /** column name */
-  Name = 'name',
-  /** column name */
   OrderDate = 'order_date',
   /** column name */
   OrderStatus = 'order_status',
   /** column name */
   ShippedDate = 'shipped_date',
   /** column name */
+  Title = 'title',
+  /** column name */
   UpdatedAt = 'updated_at'
+}
+
+/** select "orders_aggregate_bool_exp_bool_and_arguments_columns" columns of table "orders" */
+export enum Orders_Select_Column_Orders_Aggregate_Bool_Exp_Bool_And_Arguments_Columns {
+  /** column name */
+  IsDeleted = 'is_deleted'
+}
+
+/** select "orders_aggregate_bool_exp_bool_or_arguments_columns" columns of table "orders" */
+export enum Orders_Select_Column_Orders_Aggregate_Bool_Exp_Bool_Or_Arguments_Columns {
+  /** column name */
+  IsDeleted = 'is_deleted'
 }
 
 /** input type for updating data in table "orders" */
@@ -5563,10 +5751,10 @@ export type Orders_Set_Input = {
   customer_id?: InputMaybe<Scalars['uuid']>;
   id?: InputMaybe<Scalars['uuid']>;
   is_deleted?: InputMaybe<Scalars['Boolean']>;
-  name?: InputMaybe<Scalars['String']>;
   order_date?: InputMaybe<Scalars['date']>;
   order_status?: InputMaybe<Status_Types_Enum>;
   shipped_date?: InputMaybe<Scalars['date']>;
+  title?: InputMaybe<Scalars['String']>;
   updated_at?: InputMaybe<Scalars['timestamptz']>;
 };
 
@@ -5584,10 +5772,10 @@ export type Orders_Stream_Cursor_Value_Input = {
   customer_id?: InputMaybe<Scalars['uuid']>;
   id?: InputMaybe<Scalars['uuid']>;
   is_deleted?: InputMaybe<Scalars['Boolean']>;
-  name?: InputMaybe<Scalars['String']>;
   order_date?: InputMaybe<Scalars['date']>;
   order_status?: InputMaybe<Status_Types_Enum>;
   shipped_date?: InputMaybe<Scalars['date']>;
+  title?: InputMaybe<Scalars['String']>;
   updated_at?: InputMaybe<Scalars['timestamptz']>;
 };
 
@@ -5602,13 +5790,13 @@ export enum Orders_Update_Column {
   /** column name */
   IsDeleted = 'is_deleted',
   /** column name */
-  Name = 'name',
-  /** column name */
   OrderDate = 'order_date',
   /** column name */
   OrderStatus = 'order_status',
   /** column name */
   ShippedDate = 'shipped_date',
+  /** column name */
+  Title = 'title',
   /** column name */
   UpdatedAt = 'updated_at'
 }
@@ -5680,6 +5868,7 @@ export type Organization_Partnership_Levels_Bool_Exp = {
   level?: InputMaybe<String_Comparison_Exp>;
   name?: InputMaybe<String_Comparison_Exp>;
   organizations?: InputMaybe<Organizations_Bool_Exp>;
+  organizations_aggregate?: InputMaybe<Organizations_Aggregate_Bool_Exp>;
 };
 
 /** unique or primary key constraints on table "organization_partnership_levels" */
@@ -5848,6 +6037,7 @@ export type Organization_Types_Bool_Exp = {
   _or?: InputMaybe<Array<Organization_Types_Bool_Exp>>;
   name?: InputMaybe<String_Comparison_Exp>;
   organizations?: InputMaybe<Organizations_Bool_Exp>;
+  organizations_aggregate?: InputMaybe<Organizations_Aggregate_Bool_Exp>;
   type?: InputMaybe<String_Comparison_Exp>;
 };
 
@@ -6005,6 +6195,33 @@ export type Organizations_Aggregate = {
   nodes: Array<Organizations>;
 };
 
+export type Organizations_Aggregate_Bool_Exp = {
+  bool_and?: InputMaybe<Organizations_Aggregate_Bool_Exp_Bool_And>;
+  bool_or?: InputMaybe<Organizations_Aggregate_Bool_Exp_Bool_Or>;
+  count?: InputMaybe<Organizations_Aggregate_Bool_Exp_Count>;
+};
+
+export type Organizations_Aggregate_Bool_Exp_Bool_And = {
+  arguments: Organizations_Select_Column_Organizations_Aggregate_Bool_Exp_Bool_And_Arguments_Columns;
+  distinct?: InputMaybe<Scalars['Boolean']>;
+  filter?: InputMaybe<Organizations_Bool_Exp>;
+  predicate: Boolean_Comparison_Exp;
+};
+
+export type Organizations_Aggregate_Bool_Exp_Bool_Or = {
+  arguments: Organizations_Select_Column_Organizations_Aggregate_Bool_Exp_Bool_Or_Arguments_Columns;
+  distinct?: InputMaybe<Scalars['Boolean']>;
+  filter?: InputMaybe<Organizations_Bool_Exp>;
+  predicate: Boolean_Comparison_Exp;
+};
+
+export type Organizations_Aggregate_Bool_Exp_Count = {
+  arguments?: InputMaybe<Array<Organizations_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']>;
+  filter?: InputMaybe<Organizations_Bool_Exp>;
+  predicate: Int_Comparison_Exp;
+};
+
 /** aggregate fields of "organizations" */
 export type Organizations_Aggregate_Fields = {
   __typename?: 'organizations_aggregate_fields';
@@ -6069,6 +6286,7 @@ export type Organizations_Bool_Exp = {
   created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
   crn?: InputMaybe<Numeric_Comparison_Exp>;
   customers?: InputMaybe<Customers_Bool_Exp>;
+  customers_aggregate?: InputMaybe<Customers_Aggregate_Bool_Exp>;
   id?: InputMaybe<Uuid_Comparison_Exp>;
   is_deleted?: InputMaybe<Boolean_Comparison_Exp>;
   name?: InputMaybe<String_Comparison_Exp>;
@@ -6212,6 +6430,18 @@ export enum Organizations_Select_Column {
   Type = 'type',
   /** column name */
   UpdatedAt = 'updated_at'
+}
+
+/** select "organizations_aggregate_bool_exp_bool_and_arguments_columns" columns of table "organizations" */
+export enum Organizations_Select_Column_Organizations_Aggregate_Bool_Exp_Bool_And_Arguments_Columns {
+  /** column name */
+  IsDeleted = 'is_deleted'
+}
+
+/** select "organizations_aggregate_bool_exp_bool_or_arguments_columns" columns of table "organizations" */
+export enum Organizations_Select_Column_Organizations_Aggregate_Bool_Exp_Bool_Or_Arguments_Columns {
+  /** column name */
+  IsDeleted = 'is_deleted'
 }
 
 /** input type for updating data in table "organizations" */
@@ -6567,6 +6797,33 @@ export type Products_Aggregate = {
   __typename?: 'products_aggregate';
   aggregate?: Maybe<Products_Aggregate_Fields>;
   nodes: Array<Products>;
+};
+
+export type Products_Aggregate_Bool_Exp = {
+  bool_and?: InputMaybe<Products_Aggregate_Bool_Exp_Bool_And>;
+  bool_or?: InputMaybe<Products_Aggregate_Bool_Exp_Bool_Or>;
+  count?: InputMaybe<Products_Aggregate_Bool_Exp_Count>;
+};
+
+export type Products_Aggregate_Bool_Exp_Bool_And = {
+  arguments: Products_Select_Column_Products_Aggregate_Bool_Exp_Bool_And_Arguments_Columns;
+  distinct?: InputMaybe<Scalars['Boolean']>;
+  filter?: InputMaybe<Products_Bool_Exp>;
+  predicate: Boolean_Comparison_Exp;
+};
+
+export type Products_Aggregate_Bool_Exp_Bool_Or = {
+  arguments: Products_Select_Column_Products_Aggregate_Bool_Exp_Bool_Or_Arguments_Columns;
+  distinct?: InputMaybe<Scalars['Boolean']>;
+  filter?: InputMaybe<Products_Bool_Exp>;
+  predicate: Boolean_Comparison_Exp;
+};
+
+export type Products_Aggregate_Bool_Exp_Count = {
+  arguments?: InputMaybe<Array<Products_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']>;
+  filter?: InputMaybe<Products_Bool_Exp>;
+  predicate: Int_Comparison_Exp;
 };
 
 /** aggregate fields of "products" */
@@ -7778,8 +8035,10 @@ export type Status_Types_Bool_Exp = {
   _not?: InputMaybe<Status_Types_Bool_Exp>;
   _or?: InputMaybe<Array<Status_Types_Bool_Exp>>;
   orders?: InputMaybe<Orders_Bool_Exp>;
+  orders_aggregate?: InputMaybe<Orders_Aggregate_Bool_Exp>;
   status?: InputMaybe<String_Comparison_Exp>;
   types_tests?: InputMaybe<Types_Test_Bool_Exp>;
+  types_tests_aggregate?: InputMaybe<Types_Test_Aggregate_Bool_Exp>;
 };
 
 /** unique or primary key constraints on table "status_types" */
@@ -7904,7 +8163,7 @@ export type Subscription_Root = {
   accounts_aggregate: Accounts_Aggregate;
   /** fetch data from the table: "accounts" using primary key columns */
   accounts_by_pk?: Maybe<Accounts>;
-  /** fetch data from the table in a streaming manner : "accounts" */
+  /** fetch data from the table in a streaming manner: "accounts" */
   accounts_stream: Array<Accounts>;
   /** fetch data from the table: "bus_stops" using primary key columns */
   busStop?: Maybe<BusStops>;
@@ -7920,7 +8179,7 @@ export type Subscription_Root = {
   busStops: Array<BusStops>;
   /** fetch aggregated fields from the table: "bus_stops" */
   busStopsAggregate: BusStops_Aggregate;
-  /** fetch data from the table in a streaming manner : "bus_stops" */
+  /** fetch data from the table in a streaming manner: "bus_stops" */
   busStops_stream: Array<BusStops>;
   /** fetch data from the table: "customers" using primary key columns */
   customer?: Maybe<Customers>;
@@ -7936,7 +8195,7 @@ export type Subscription_Root = {
   customers: Array<Customers>;
   /** fetch aggregated fields from the table: "customers" */
   customersAggregate: Customers_Aggregate;
-  /** fetch data from the table in a streaming manner : "customers" */
+  /** fetch data from the table in a streaming manner: "customers" */
   customers_stream: Array<Customers>;
   /** fetch data from the table: "desh" */
   desh: Array<Desh>;
@@ -7984,7 +8243,7 @@ export type Subscription_Root = {
   events: Array<Events>;
   /** fetch aggregated fields from the table: "events" */
   eventsAggregate: Events_Aggregate;
-  /** fetch data from the table in a streaming manner : "events" */
+  /** fetch data from the table in a streaming manner: "events" */
   events_stream: Array<Events>;
   /** fetch data from the table: "map_points" using primary key columns */
   mapPoint?: Maybe<MapPoints>;
@@ -7992,7 +8251,7 @@ export type Subscription_Root = {
   mapPoints: Array<MapPoints>;
   /** fetch aggregated fields from the table: "map_points" */
   mapPointsAggregate: MapPoints_Aggregate;
-  /** fetch data from the table in a streaming manner : "map_points" */
+  /** fetch data from the table in a streaming manner: "map_points" */
   mapPoints_stream: Array<MapPoints>;
   /** fetch data from the table: "orders" using primary key columns */
   order?: Maybe<Orders>;
@@ -8002,13 +8261,13 @@ export type Subscription_Root = {
   orderItems: Array<OrderItems>;
   /** fetch aggregated fields from the table: "order_items" */
   orderItemsAggregate: OrderItems_Aggregate;
-  /** fetch data from the table in a streaming manner : "order_items" */
+  /** fetch data from the table in a streaming manner: "order_items" */
   orderItemsStream: Array<OrderItems>;
   /** An array relationship */
   orders: Array<Orders>;
   /** fetch aggregated fields from the table: "orders" */
   ordersAggregate: Orders_Aggregate;
-  /** fetch data from the table in a streaming manner : "orders" */
+  /** fetch data from the table in a streaming manner: "orders" */
   ordersStream: Array<Orders>;
   /** fetch data from the table: "organizations" using primary key columns */
   organization?: Maybe<Organizations>;
@@ -8032,7 +8291,7 @@ export type Subscription_Root = {
   organizations: Array<Organizations>;
   /** fetch aggregated fields from the table: "organizations" */
   organizationsAggregate: Organizations_Aggregate;
-  /** fetch data from the table in a streaming manner : "organizations" */
+  /** fetch data from the table in a streaming manner: "organizations" */
   organizationsStream: Array<Organizations>;
   /** fetch data from the table: "products" using primary key columns */
   product?: Maybe<Products>;
@@ -8048,7 +8307,7 @@ export type Subscription_Root = {
   products: Array<Products>;
   /** fetch aggregated fields from the table: "products" */
   productsAggregate: Products_Aggregate;
-  /** fetch data from the table in a streaming manner : "products" */
+  /** fetch data from the table in a streaming manner: "products" */
   productsStream: Array<Products>;
   /** fetch data from the table: "status_types" */
   status_types: Array<Status_Types>;
@@ -8060,7 +8319,7 @@ export type Subscription_Root = {
   status_types_stream: Array<Status_Types>;
   /** fetch data from the table: "test_x" using primary key columns */
   testX?: Maybe<TestX>;
-  /** fetch data from the table in a streaming manner : "test_x" */
+  /** fetch data from the table in a streaming manner: "test_x" */
   testX_stream: Array<TestX>;
   /** fetch data from the table: "test_x" */
   testXes: Array<TestX>;
@@ -8072,7 +8331,7 @@ export type Subscription_Root = {
   topology_layer_aggregate: Topology_Layer_Aggregate;
   /** fetch data from the table: "topology.layer" using primary key columns */
   topology_layer_by_pk?: Maybe<Topology_Layer>;
-  /** fetch data from the table in a streaming manner : "topology.layer" */
+  /** fetch data from the table in a streaming manner: "topology.layer" */
   topology_layer_stream: Array<Topology_Layer>;
   /** fetch data from the table: "topology.topology" */
   topology_topology: Array<Topology_Topology>;
@@ -8080,7 +8339,7 @@ export type Subscription_Root = {
   topology_topology_aggregate: Topology_Topology_Aggregate;
   /** fetch data from the table: "topology.topology" using primary key columns */
   topology_topology_by_pk?: Maybe<Topology_Topology>;
-  /** fetch data from the table in a streaming manner : "topology.topology" */
+  /** fetch data from the table in a streaming manner: "topology.topology" */
   topology_topology_stream: Array<Topology_Topology>;
   /** fetch data from the table: "types_test" */
   types_test: Array<Types_Test>;
@@ -9642,6 +9901,33 @@ export type Types_Test_Aggregate = {
   nodes: Array<Types_Test>;
 };
 
+export type Types_Test_Aggregate_Bool_Exp = {
+  bool_and?: InputMaybe<Types_Test_Aggregate_Bool_Exp_Bool_And>;
+  bool_or?: InputMaybe<Types_Test_Aggregate_Bool_Exp_Bool_Or>;
+  count?: InputMaybe<Types_Test_Aggregate_Bool_Exp_Count>;
+};
+
+export type Types_Test_Aggregate_Bool_Exp_Bool_And = {
+  arguments: Types_Test_Select_Column_Types_Test_Aggregate_Bool_Exp_Bool_And_Arguments_Columns;
+  distinct?: InputMaybe<Scalars['Boolean']>;
+  filter?: InputMaybe<Types_Test_Bool_Exp>;
+  predicate: Boolean_Comparison_Exp;
+};
+
+export type Types_Test_Aggregate_Bool_Exp_Bool_Or = {
+  arguments: Types_Test_Select_Column_Types_Test_Aggregate_Bool_Exp_Bool_Or_Arguments_Columns;
+  distinct?: InputMaybe<Scalars['Boolean']>;
+  filter?: InputMaybe<Types_Test_Bool_Exp>;
+  predicate: Boolean_Comparison_Exp;
+};
+
+export type Types_Test_Aggregate_Bool_Exp_Count = {
+  arguments?: InputMaybe<Array<Types_Test_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']>;
+  filter?: InputMaybe<Types_Test_Bool_Exp>;
+  predicate: Int_Comparison_Exp;
+};
+
 /** aggregate fields of "types_test" */
 export type Types_Test_Aggregate_Fields = {
   __typename?: 'types_test_aggregate_fields';
@@ -10001,6 +10287,18 @@ export enum Types_Test_Select_Column {
   UuidTest = 'uuid_test'
 }
 
+/** select "types_test_aggregate_bool_exp_bool_and_arguments_columns" columns of table "types_test" */
+export enum Types_Test_Select_Column_Types_Test_Aggregate_Bool_Exp_Bool_And_Arguments_Columns {
+  /** column name */
+  CheckboxTest = 'checkbox_test'
+}
+
+/** select "types_test_aggregate_bool_exp_bool_or_arguments_columns" columns of table "types_test" */
+export enum Types_Test_Select_Column_Types_Test_Aggregate_Bool_Exp_Bool_Or_Arguments_Columns {
+  /** column name */
+  CheckboxTest = 'checkbox_test'
+}
+
 /** input type for updating data in table "types_test" */
 export type Types_Test_Set_Input = {
   big_int_test?: InputMaybe<Scalars['bigint']>;
@@ -10257,96 +10555,200 @@ export type Uuid_Comparison_Exp = {
   _nin?: InputMaybe<Array<Scalars['uuid']>>;
 };
 
-export type ProductFragment = { __typename: 'products', id: any, name?: string | null | undefined };
-
-export type Product_SignedThumbnailImgPathFragment = { __typename: 'GetUrlReturn', url: string };
-
 export type DummyQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type DummyQuery = { __typename: 'query_root' };
 
-export type ProductQueryVariables = Exact<{
+export type CustomerQueryVariables = Exact<{
   id: Scalars['uuid'];
 }>;
 
 
-export type ProductQuery = { __typename?: 'query_root', product?: { __typename: 'products', id: any, name?: string | null | undefined } | null | undefined };
+export type CustomerQuery = { __typename?: 'query_root', customer?: { __typename: 'customers', id: any, firstName?: string | null | undefined, lastName?: string | null | undefined, phone?: string | null | undefined, vip?: boolean | null | undefined } | null | undefined };
 
-export type ProductsQueryVariables = Exact<{
-  distinct_on?: Maybe<Array<Products_Select_Column> | Products_Select_Column>;
+export type CustomersQueryVariables = Exact<{
+  distinct_on?: Maybe<Array<Customers_Select_Column> | Customers_Select_Column>;
   limit?: Maybe<Scalars['Int']>;
   offset?: Maybe<Scalars['Int']>;
-  order_by?: Maybe<Array<Products_Order_By> | Products_Order_By>;
-  where?: Maybe<Products_Bool_Exp>;
+  order_by?: Maybe<Array<Customers_Order_By> | Customers_Order_By>;
+  where?: Maybe<Customers_Bool_Exp>;
 }>;
 
 
-export type ProductsQuery = { __typename?: 'query_root', products: Array<{ __typename: 'products', id: any, name?: string | null | undefined, signedThumbnailImgPath?: { __typename: 'GetUrlReturn', url: string } | null | undefined }> };
+export type CustomersQuery = { __typename?: 'query_root', customers: Array<{ __typename: 'customers', id: any, firstName?: string | null | undefined, lastName?: string | null | undefined, phone?: string | null | undefined, vip?: boolean | null | undefined }> };
 
-export type DeleteProductMutationVariables = Exact<{
+export type DeleteCustomerMutationVariables = Exact<{
   id: Scalars['uuid'];
 }>;
 
 
-export type DeleteProductMutation = { __typename?: 'mutation_root', deleteProduct?: { __typename: 'products', id: any, name?: string | null | undefined } | null | undefined };
+export type DeleteCustomerMutation = { __typename?: 'mutation_root', deleteCustomer?: { __typename: 'customers', id: any, firstName?: string | null | undefined, lastName?: string | null | undefined, phone?: string | null | undefined, vip?: boolean | null | undefined } | null | undefined };
 
-export type DeleteProductsMutationVariables = Exact<{
-  where: Products_Bool_Exp;
+export type DeleteCustomersMutationVariables = Exact<{
+  where: Customers_Bool_Exp;
 }>;
 
 
-export type DeleteProductsMutation = { __typename?: 'mutation_root', deleteProducts?: { __typename?: 'products_mutation_response', affected_rows: number, returning: Array<{ __typename: 'products', id: any, name?: string | null | undefined }> } | null | undefined };
+export type DeleteCustomersMutation = { __typename?: 'mutation_root', deleteCustomers?: { __typename?: 'customers_mutation_response', affected_rows: number, returning: Array<{ __typename: 'customers', id: any, firstName?: string | null | undefined, lastName?: string | null | undefined, phone?: string | null | undefined, vip?: boolean | null | undefined }> } | null | undefined };
 
-export type InsertProductMutationVariables = Exact<{
-  products: Products_Insert_Input;
-  on_conflict?: Maybe<Products_On_Conflict>;
+export type InsertCustomerMutationVariables = Exact<{
+  customers: Customers_Insert_Input;
+  on_conflict?: Maybe<Customers_On_Conflict>;
 }>;
 
 
-export type InsertProductMutation = { __typename?: 'mutation_root', insertProduct?: { __typename: 'products', id: any, name?: string | null | undefined } | null | undefined };
+export type InsertCustomerMutation = { __typename?: 'mutation_root', insertCustomer?: { __typename: 'customers', id: any, firstName?: string | null | undefined, lastName?: string | null | undefined, phone?: string | null | undefined, vip?: boolean | null | undefined } | null | undefined };
 
-export type InsertProductsMutationVariables = Exact<{
-  products: Array<Products_Insert_Input> | Products_Insert_Input;
-  on_conflict?: Maybe<Products_On_Conflict>;
+export type InsertCustomersMutationVariables = Exact<{
+  customers: Array<Customers_Insert_Input> | Customers_Insert_Input;
+  on_conflict?: Maybe<Customers_On_Conflict>;
 }>;
 
 
-export type InsertProductsMutation = { __typename?: 'mutation_root', insertProducts?: { __typename?: 'products_mutation_response', affected_rows: number, returning: Array<{ __typename: 'products', id: any, name?: string | null | undefined }> } | null | undefined };
+export type InsertCustomersMutation = { __typename?: 'mutation_root', insertCustomers?: { __typename?: 'customers_mutation_response', affected_rows: number, returning: Array<{ __typename: 'customers', id: any, firstName?: string | null | undefined, lastName?: string | null | undefined, phone?: string | null | undefined, vip?: boolean | null | undefined }> } | null | undefined };
 
-export type UpdateProductMutationVariables = Exact<{
-  _inc?: Maybe<Products_Inc_Input>;
-  products?: Maybe<Products_Set_Input>;
-  pk_columns: Products_Pk_Columns_Input;
+export type UpdateCustomerMutationVariables = Exact<{
+  customers?: Maybe<Customers_Set_Input>;
+  pk_columns: Customers_Pk_Columns_Input;
 }>;
 
 
-export type UpdateProductMutation = { __typename?: 'mutation_root', updateProduct?: { __typename: 'products', id: any, name?: string | null | undefined } | null | undefined };
+export type UpdateCustomerMutation = { __typename?: 'mutation_root', updateCustomer?: { __typename: 'customers', id: any, firstName?: string | null | undefined, lastName?: string | null | undefined, phone?: string | null | undefined, vip?: boolean | null | undefined } | null | undefined };
 
-export type UpdateProductsMutationVariables = Exact<{
-  _inc?: Maybe<Products_Inc_Input>;
-  products?: Maybe<Products_Set_Input>;
-  where: Products_Bool_Exp;
+export type UpdateCustomersMutationVariables = Exact<{
+  customers?: Maybe<Customers_Set_Input>;
+  where: Customers_Bool_Exp;
 }>;
 
 
-export type UpdateProductsMutation = { __typename?: 'mutation_root', updateProducts?: { __typename?: 'products_mutation_response', affected_rows: number, returning: Array<{ __typename: 'products', id: any, name?: string | null | undefined }> } | null | undefined };
+export type UpdateCustomersMutation = { __typename?: 'mutation_root', updateCustomers?: { __typename?: 'customers_mutation_response', affected_rows: number, returning: Array<{ __typename: 'customers', id: any, firstName?: string | null | undefined, lastName?: string | null | undefined, phone?: string | null | undefined, vip?: boolean | null | undefined }> } | null | undefined };
 
-export type Update_Products_ManyMutationVariables = Exact<{
-  updates: Array<Products_Updates> | Products_Updates;
+export type Update_Customers_ManyMutationVariables = Exact<{
+  updates: Array<Customers_Updates> | Customers_Updates;
 }>;
 
 
-export type Update_Products_ManyMutation = { __typename?: 'mutation_root', update_products_many?: Array<{ __typename?: 'products_mutation_response', affected_rows: number, returning: Array<{ __typename: 'products', id: any, name?: string | null | undefined }> } | null | undefined> | null | undefined };
+export type Update_Customers_ManyMutation = { __typename?: 'mutation_root', update_customers_many?: Array<{ __typename?: 'customers_mutation_response', affected_rows: number, returning: Array<{ __typename: 'customers', id: any, firstName?: string | null | undefined, lastName?: string | null | undefined, phone?: string | null | undefined, vip?: boolean | null | undefined }> } | null | undefined> | null | undefined };
 
-export type ProductCrudFragment = { __typename: 'products', id: any, name?: string | null | undefined };
+export type CustomerCrudFragment = { __typename: 'customers', id: any, firstName?: string | null | undefined, lastName?: string | null | undefined, phone?: string | null | undefined, vip?: boolean | null | undefined };
 
-export const Product_SignedThumbnailImgPathFragmentDoc = gql`
-    fragment product_signedThumbnailImgPath on GetUrlReturn {
-  url
+export type OrderQueryVariables = Exact<{
+  id: Scalars['uuid'];
+}>;
+
+
+export type OrderQuery = { __typename?: 'query_root', order?: { __typename: 'orders', id: any, title?: string | null | undefined, order_date?: any | null | undefined, shipped_date?: any | null | undefined, customer?: { __typename: 'customers', firstName?: string | null | undefined, id: any, lastName?: string | null | undefined } | null | undefined } | null | undefined };
+
+export type OrdersQueryVariables = Exact<{
+  distinct_on?: Maybe<Array<Orders_Select_Column> | Orders_Select_Column>;
+  limit?: Maybe<Scalars['Int']>;
+  offset?: Maybe<Scalars['Int']>;
+  order_by?: Maybe<Array<Orders_Order_By> | Orders_Order_By>;
+  where?: Maybe<Orders_Bool_Exp>;
+}>;
+
+
+export type OrdersQuery = { __typename?: 'query_root', orders: Array<{ __typename: 'orders', id: any, title?: string | null | undefined, order_date?: any | null | undefined, shipped_date?: any | null | undefined, order_items: Array<{ __typename: 'orderItems', quantity?: number | null | undefined, id: any, price?: any | null | undefined, product?: { __typename: 'products', name?: string | null | undefined, id: any } | null | undefined }> }> };
+
+export type DeleteOrderMutationVariables = Exact<{
+  id: Scalars['uuid'];
+}>;
+
+
+export type DeleteOrderMutation = { __typename?: 'mutation_root', deleteOrder?: { __typename: 'orders', id: any, title?: string | null | undefined, order_date?: any | null | undefined, shipped_date?: any | null | undefined } | null | undefined };
+
+export type DeleteOrdersMutationVariables = Exact<{
+  where: Orders_Bool_Exp;
+}>;
+
+
+export type DeleteOrdersMutation = { __typename?: 'mutation_root', deleteOrders?: { __typename?: 'orders_mutation_response', affected_rows: number, returning: Array<{ __typename: 'orders', id: any, title?: string | null | undefined, order_date?: any | null | undefined, shipped_date?: any | null | undefined }> } | null | undefined };
+
+export type InsertOrderMutationVariables = Exact<{
+  orders: Orders_Insert_Input;
+  on_conflict?: Maybe<Orders_On_Conflict>;
+}>;
+
+
+export type InsertOrderMutation = { __typename?: 'mutation_root', insertOrder?: { __typename: 'orders', id: any, title?: string | null | undefined, order_date?: any | null | undefined, shipped_date?: any | null | undefined } | null | undefined };
+
+export type InsertOrdersMutationVariables = Exact<{
+  orders: Array<Orders_Insert_Input> | Orders_Insert_Input;
+  on_conflict?: Maybe<Orders_On_Conflict>;
+}>;
+
+
+export type InsertOrdersMutation = { __typename?: 'mutation_root', insertOrders?: { __typename?: 'orders_mutation_response', affected_rows: number, returning: Array<{ __typename: 'orders', id: any, title?: string | null | undefined, order_date?: any | null | undefined, shipped_date?: any | null | undefined }> } | null | undefined };
+
+export type UpdateOrderMutationVariables = Exact<{
+  orders?: Maybe<Orders_Set_Input>;
+  pk_columns: Orders_Pk_Columns_Input;
+}>;
+
+
+export type UpdateOrderMutation = { __typename?: 'mutation_root', updateOrder?: { __typename: 'orders', id: any, title?: string | null | undefined, order_date?: any | null | undefined, shipped_date?: any | null | undefined } | null | undefined };
+
+export type UpdateOrdersMutationVariables = Exact<{
+  orders?: Maybe<Orders_Set_Input>;
+  where: Orders_Bool_Exp;
+}>;
+
+
+export type UpdateOrdersMutation = { __typename?: 'mutation_root', updateOrders?: { __typename?: 'orders_mutation_response', affected_rows: number, returning: Array<{ __typename: 'orders', id: any, title?: string | null | undefined, order_date?: any | null | undefined, shipped_date?: any | null | undefined }> } | null | undefined };
+
+export type Update_Orders_ManyMutationVariables = Exact<{
+  updates: Array<Orders_Updates> | Orders_Updates;
+}>;
+
+
+export type Update_Orders_ManyMutation = { __typename?: 'mutation_root', update_orders_many?: Array<{ __typename?: 'orders_mutation_response', affected_rows: number, returning: Array<{ __typename: 'orders', id: any, title?: string | null | undefined, order_date?: any | null | undefined, shipped_date?: any | null | undefined }> } | null | undefined> | null | undefined };
+
+export type OrderCrudFragment = { __typename: 'orders', id: any, title?: string | null | undefined, order_date?: any | null | undefined, shipped_date?: any | null | undefined };
+
+export type ProductFragment = { __typename: 'products', id: any, name?: string | null | undefined };
+
+export type Product_SignedThumbnailImgPathFragment = { __typename: 'GetUrlReturn', url: string };
+
+export type OrderFragment = { __typename: 'orders', id: any, title?: string | null | undefined, order_date?: any | null | undefined, shipped_date?: any | null | undefined };
+
+export type Order_CustomerFragment = { __typename: 'customers', firstName?: string | null | undefined, id: any, lastName?: string | null | undefined };
+
+export type Order_Order_Items_ProductFragment = { __typename: 'products', name?: string | null | undefined, id: any };
+
+export type Order_Order_ItemsFragment = { __typename: 'orderItems', quantity?: number | null | undefined, id: any, price?: any | null | undefined };
+
+export type CustomerFragment = { __typename: 'customers', id: any, firstName?: string | null | undefined, lastName?: string | null | undefined, phone?: string | null | undefined, vip?: boolean | null | undefined };
+
+export const CustomerFragmentDoc = gql`
+    fragment customer on customers {
+  id
   __typename
+  firstName
+  lastName
+  phone
+  vip
 }
     `;
+export const CustomerCrudFragmentDoc = gql`
+    fragment customerCrud on customers {
+  ...customer
+}
+    ${CustomerFragmentDoc}`;
+export const OrderFragmentDoc = gql`
+    fragment order on orders {
+  id
+  __typename
+  title
+  order_date
+  shipped_date
+}
+    `;
+export const OrderCrudFragmentDoc = gql`
+    fragment orderCrud on orders {
+  ...order
+}
+    ${OrderFragmentDoc}`;
 export const ProductFragmentDoc = gql`
     fragment product on products {
   id
@@ -10354,11 +10756,35 @@ export const ProductFragmentDoc = gql`
   name
 }
     `;
-export const ProductCrudFragmentDoc = gql`
-    fragment productCrud on products {
-  ...product
+export const Product_SignedThumbnailImgPathFragmentDoc = gql`
+    fragment product_signedThumbnailImgPath on GetUrlReturn {
+  url
+  __typename
 }
-    ${ProductFragmentDoc}`;
+    `;
+export const Order_CustomerFragmentDoc = gql`
+    fragment order_customer on customers {
+  firstName
+  id
+  __typename
+  lastName
+}
+    `;
+export const Order_Order_Items_ProductFragmentDoc = gql`
+    fragment order_order_items_product on products {
+  name
+  id
+  __typename
+}
+    `;
+export const Order_Order_ItemsFragmentDoc = gql`
+    fragment order_order_items on orderItems {
+  quantity
+  id
+  __typename
+  price
+}
+    `;
 export const DummyDocument = gql`
     query dummy {
   __typename
@@ -10368,126 +10794,258 @@ export const DummyDocument = gql`
 export function useDummyQuery(options: Omit<Urql.UseQueryArgs<DummyQueryVariables>, 'query'> = {}) {
   return Urql.useQuery<DummyQuery>({ query: DummyDocument, ...options });
 };
-export const ProductDocument = gql`
-    query product($id: uuid!) {
-  product(id: $id) {
-    ...productCrud
+export const CustomerDocument = gql`
+    query customer($id: uuid!) {
+  customer(id: $id) {
+    ...customerCrud
   }
 }
-    ${ProductCrudFragmentDoc}`;
+    ${CustomerCrudFragmentDoc}`;
 
-export function useProductQuery(options: Omit<Urql.UseQueryArgs<ProductQueryVariables>, 'query'> = {}) {
-  return Urql.useQuery<ProductQuery>({ query: ProductDocument, ...options });
+export function useCustomerQuery(options: Omit<Urql.UseQueryArgs<CustomerQueryVariables>, 'query'> = {}) {
+  return Urql.useQuery<CustomerQuery>({ query: CustomerDocument, ...options });
 };
-export const ProductsDocument = gql`
-    query products($distinct_on: [products_select_column!], $limit: Int = 20, $offset: Int = 0, $order_by: [products_order_by!] = {updated_at: desc}, $where: products_bool_exp) {
-  products(
+export const CustomersDocument = gql`
+    query customers($distinct_on: [customers_select_column!], $limit: Int = 20, $offset: Int = 0, $order_by: [customers_order_by!] = {updatedAt: desc}, $where: customers_bool_exp) {
+  customers(
     distinct_on: $distinct_on
     limit: $limit
     offset: $offset
     order_by: $order_by
     where: $where
   ) {
-    ...productCrud
-    ...product
-    signedThumbnailImgPath {
-      ...product_signedThumbnailImgPath
-    }
+    ...customerCrud
+    ...customer
+    ...customer
+    ...customer
+    ...customer
   }
 }
-    ${ProductCrudFragmentDoc}
-${ProductFragmentDoc}
-${Product_SignedThumbnailImgPathFragmentDoc}`;
+    ${CustomerCrudFragmentDoc}
+${CustomerFragmentDoc}`;
 
-export function useProductsQuery(options: Omit<Urql.UseQueryArgs<ProductsQueryVariables>, 'query'> = {}) {
-  return Urql.useQuery<ProductsQuery>({ query: ProductsDocument, ...options });
+export function useCustomersQuery(options: Omit<Urql.UseQueryArgs<CustomersQueryVariables>, 'query'> = {}) {
+  return Urql.useQuery<CustomersQuery>({ query: CustomersDocument, ...options });
 };
-export const DeleteProductDocument = gql`
-    mutation deleteProduct($id: uuid!) {
-  deleteProduct(id: $id) {
-    ...productCrud
+export const DeleteCustomerDocument = gql`
+    mutation deleteCustomer($id: uuid!) {
+  deleteCustomer(id: $id) {
+    ...customerCrud
   }
 }
-    ${ProductCrudFragmentDoc}`;
+    ${CustomerCrudFragmentDoc}`;
 
-export function useDeleteProductMutation() {
-  return Urql.useMutation<DeleteProductMutation, DeleteProductMutationVariables>(DeleteProductDocument);
+export function useDeleteCustomerMutation() {
+  return Urql.useMutation<DeleteCustomerMutation, DeleteCustomerMutationVariables>(DeleteCustomerDocument);
 };
-export const DeleteProductsDocument = gql`
-    mutation deleteProducts($where: products_bool_exp!) {
-  deleteProducts(where: $where) {
+export const DeleteCustomersDocument = gql`
+    mutation deleteCustomers($where: customers_bool_exp!) {
+  deleteCustomers(where: $where) {
     returning {
-      ...productCrud
+      ...customerCrud
     }
     affected_rows
   }
 }
-    ${ProductCrudFragmentDoc}`;
+    ${CustomerCrudFragmentDoc}`;
 
-export function useDeleteProductsMutation() {
-  return Urql.useMutation<DeleteProductsMutation, DeleteProductsMutationVariables>(DeleteProductsDocument);
+export function useDeleteCustomersMutation() {
+  return Urql.useMutation<DeleteCustomersMutation, DeleteCustomersMutationVariables>(DeleteCustomersDocument);
 };
-export const InsertProductDocument = gql`
-    mutation insertProduct($products: products_insert_input!, $on_conflict: products_on_conflict) {
-  insertProduct(object: $products, on_conflict: $on_conflict) {
-    ...productCrud
+export const InsertCustomerDocument = gql`
+    mutation insertCustomer($customers: customers_insert_input!, $on_conflict: customers_on_conflict) {
+  insertCustomer(object: $customers, on_conflict: $on_conflict) {
+    ...customerCrud
   }
 }
-    ${ProductCrudFragmentDoc}`;
+    ${CustomerCrudFragmentDoc}`;
 
-export function useInsertProductMutation() {
-  return Urql.useMutation<InsertProductMutation, InsertProductMutationVariables>(InsertProductDocument);
+export function useInsertCustomerMutation() {
+  return Urql.useMutation<InsertCustomerMutation, InsertCustomerMutationVariables>(InsertCustomerDocument);
 };
-export const InsertProductsDocument = gql`
-    mutation insertProducts($products: [products_insert_input!]!, $on_conflict: products_on_conflict) {
-  insertProducts(objects: $products, on_conflict: $on_conflict) {
+export const InsertCustomersDocument = gql`
+    mutation insertCustomers($customers: [customers_insert_input!]!, $on_conflict: customers_on_conflict) {
+  insertCustomers(objects: $customers, on_conflict: $on_conflict) {
     returning {
-      ...productCrud
+      ...customerCrud
     }
     affected_rows
   }
 }
-    ${ProductCrudFragmentDoc}`;
+    ${CustomerCrudFragmentDoc}`;
 
-export function useInsertProductsMutation() {
-  return Urql.useMutation<InsertProductsMutation, InsertProductsMutationVariables>(InsertProductsDocument);
+export function useInsertCustomersMutation() {
+  return Urql.useMutation<InsertCustomersMutation, InsertCustomersMutationVariables>(InsertCustomersDocument);
 };
-export const UpdateProductDocument = gql`
-    mutation updateProduct($_inc: products_inc_input, $products: products_set_input, $pk_columns: products_pk_columns_input!) {
-  updateProduct(_inc: $_inc, _set: $products, pk_columns: $pk_columns) {
-    ...productCrud
+export const UpdateCustomerDocument = gql`
+    mutation updateCustomer($customers: customers_set_input, $pk_columns: customers_pk_columns_input!) {
+  updateCustomer(_set: $customers, pk_columns: $pk_columns) {
+    ...customerCrud
   }
 }
-    ${ProductCrudFragmentDoc}`;
+    ${CustomerCrudFragmentDoc}`;
 
-export function useUpdateProductMutation() {
-  return Urql.useMutation<UpdateProductMutation, UpdateProductMutationVariables>(UpdateProductDocument);
+export function useUpdateCustomerMutation() {
+  return Urql.useMutation<UpdateCustomerMutation, UpdateCustomerMutationVariables>(UpdateCustomerDocument);
 };
-export const UpdateProductsDocument = gql`
-    mutation updateProducts($_inc: products_inc_input, $products: products_set_input, $where: products_bool_exp!) {
-  updateProducts(_inc: $_inc, _set: $products, where: $where) {
+export const UpdateCustomersDocument = gql`
+    mutation updateCustomers($customers: customers_set_input, $where: customers_bool_exp!) {
+  updateCustomers(_set: $customers, where: $where) {
     returning {
-      ...productCrud
+      ...customerCrud
     }
     affected_rows
   }
 }
-    ${ProductCrudFragmentDoc}`;
+    ${CustomerCrudFragmentDoc}`;
 
-export function useUpdateProductsMutation() {
-  return Urql.useMutation<UpdateProductsMutation, UpdateProductsMutationVariables>(UpdateProductsDocument);
+export function useUpdateCustomersMutation() {
+  return Urql.useMutation<UpdateCustomersMutation, UpdateCustomersMutationVariables>(UpdateCustomersDocument);
 };
-export const Update_Products_ManyDocument = gql`
-    mutation update_products_many($updates: [products_updates!]!) {
-  update_products_many(updates: $updates) {
+export const Update_Customers_ManyDocument = gql`
+    mutation update_customers_many($updates: [customers_updates!]!) {
+  update_customers_many(updates: $updates) {
     returning {
-      ...productCrud
+      ...customerCrud
     }
     affected_rows
   }
 }
-    ${ProductCrudFragmentDoc}`;
+    ${CustomerCrudFragmentDoc}`;
 
-export function useUpdate_Products_ManyMutation() {
-  return Urql.useMutation<Update_Products_ManyMutation, Update_Products_ManyMutationVariables>(Update_Products_ManyDocument);
+export function useUpdate_Customers_ManyMutation() {
+  return Urql.useMutation<Update_Customers_ManyMutation, Update_Customers_ManyMutationVariables>(Update_Customers_ManyDocument);
+};
+export const OrderDocument = gql`
+    query order($id: uuid!) {
+  order(id: $id) {
+    ...orderCrud
+    customer {
+      ...order_customer
+    }
+  }
+}
+    ${OrderCrudFragmentDoc}
+${Order_CustomerFragmentDoc}`;
+
+export function useOrderQuery(options: Omit<Urql.UseQueryArgs<OrderQueryVariables>, 'query'> = {}) {
+  return Urql.useQuery<OrderQuery>({ query: OrderDocument, ...options });
+};
+export const OrdersDocument = gql`
+    query orders($distinct_on: [orders_select_column!], $limit: Int = 20, $offset: Int = 0, $order_by: [orders_order_by!] = {updated_at: desc}, $where: orders_bool_exp) {
+  orders(
+    distinct_on: $distinct_on
+    limit: $limit
+    offset: $offset
+    order_by: $order_by
+    where: $where
+  ) {
+    ...orderCrud
+    ...order
+    ...order
+    ...order
+    order_items(order_by: {created_at: asc}) {
+      product {
+        ...order_order_items_product
+      }
+      ...order_order_items
+    }
+  }
+}
+    ${OrderCrudFragmentDoc}
+${OrderFragmentDoc}
+${Order_Order_Items_ProductFragmentDoc}
+${Order_Order_ItemsFragmentDoc}`;
+
+export function useOrdersQuery(options: Omit<Urql.UseQueryArgs<OrdersQueryVariables>, 'query'> = {}) {
+  return Urql.useQuery<OrdersQuery>({ query: OrdersDocument, ...options });
+};
+export const DeleteOrderDocument = gql`
+    mutation deleteOrder($id: uuid!) {
+  deleteOrder(id: $id) {
+    ...orderCrud
+  }
+}
+    ${OrderCrudFragmentDoc}`;
+
+export function useDeleteOrderMutation() {
+  return Urql.useMutation<DeleteOrderMutation, DeleteOrderMutationVariables>(DeleteOrderDocument);
+};
+export const DeleteOrdersDocument = gql`
+    mutation deleteOrders($where: orders_bool_exp!) {
+  deleteOrders(where: $where) {
+    returning {
+      ...orderCrud
+    }
+    affected_rows
+  }
+}
+    ${OrderCrudFragmentDoc}`;
+
+export function useDeleteOrdersMutation() {
+  return Urql.useMutation<DeleteOrdersMutation, DeleteOrdersMutationVariables>(DeleteOrdersDocument);
+};
+export const InsertOrderDocument = gql`
+    mutation insertOrder($orders: orders_insert_input!, $on_conflict: orders_on_conflict) {
+  insertOrder(object: $orders, on_conflict: $on_conflict) {
+    ...orderCrud
+  }
+}
+    ${OrderCrudFragmentDoc}`;
+
+export function useInsertOrderMutation() {
+  return Urql.useMutation<InsertOrderMutation, InsertOrderMutationVariables>(InsertOrderDocument);
+};
+export const InsertOrdersDocument = gql`
+    mutation insertOrders($orders: [orders_insert_input!]!, $on_conflict: orders_on_conflict) {
+  insertOrders(objects: $orders, on_conflict: $on_conflict) {
+    returning {
+      ...orderCrud
+    }
+    affected_rows
+  }
+}
+    ${OrderCrudFragmentDoc}`;
+
+export function useInsertOrdersMutation() {
+  return Urql.useMutation<InsertOrdersMutation, InsertOrdersMutationVariables>(InsertOrdersDocument);
+};
+export const UpdateOrderDocument = gql`
+    mutation updateOrder($orders: orders_set_input, $pk_columns: orders_pk_columns_input!) {
+  updateOrder(_set: $orders, pk_columns: $pk_columns) {
+    ...orderCrud
+  }
+}
+    ${OrderCrudFragmentDoc}`;
+
+export function useUpdateOrderMutation() {
+  return Urql.useMutation<UpdateOrderMutation, UpdateOrderMutationVariables>(UpdateOrderDocument);
+};
+export const UpdateOrdersDocument = gql`
+    mutation updateOrders($orders: orders_set_input, $where: orders_bool_exp!) {
+  updateOrders(_set: $orders, where: $where) {
+    returning {
+      ...orderCrud
+    }
+    affected_rows
+  }
+}
+    ${OrderCrudFragmentDoc}`;
+
+export function useUpdateOrdersMutation() {
+  return Urql.useMutation<UpdateOrdersMutation, UpdateOrdersMutationVariables>(UpdateOrdersDocument);
+};
+export const Update_Orders_ManyDocument = gql`
+    mutation update_orders_many($updates: [orders_updates!]!) {
+  update_orders_many(updates: $updates) {
+    returning {
+      ...orderCrud
+    }
+    affected_rows
+  }
+}
+    ${OrderCrudFragmentDoc}`;
+
+export function useUpdate_Orders_ManyMutation() {
+  return Urql.useMutation<Update_Orders_ManyMutation, Update_Orders_ManyMutationVariables>(Update_Orders_ManyDocument);
 };

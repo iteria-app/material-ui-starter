@@ -1,0 +1,79 @@
+query customer($id: uuid!) {
+  customer(id: $id) {
+    ...customerCrud
+  }
+}
+
+query customers($distinct_on: [customers_select_column!], $limit: Int = 20, $offset: Int = 0, $order_by: [customers_order_by!] = {updatedAt: desc}, $where: customers_bool_exp) {
+  customers(
+    distinct_on: $distinct_on
+    limit: $limit
+    offset: $offset
+    order_by: $order_by
+    where: $where
+  ) {
+    ...customerCrud
+    ...customer
+    ...customer
+    ...customer
+    ...customer
+  }
+}
+
+mutation deleteCustomer($id: uuid!) {
+  deleteCustomer(id: $id) {
+    ...customerCrud
+  }
+}
+
+mutation deleteCustomers($where: customers_bool_exp!) {
+  deleteCustomers(where: $where) {
+    returning {
+      ...customerCrud
+    }
+    affected_rows
+  }
+}
+
+mutation insertCustomer($customers: customers_insert_input!, $on_conflict: customers_on_conflict) {
+  insertCustomer(object: $customers, on_conflict: $on_conflict) {
+    ...customerCrud
+  }
+}
+
+mutation insertCustomers($customers: [customers_insert_input!]!, $on_conflict: customers_on_conflict) {
+  insertCustomers(objects: $customers, on_conflict: $on_conflict) {
+    returning {
+      ...customerCrud
+    }
+    affected_rows
+  }
+}
+
+mutation updateCustomer($customers: customers_set_input, $pk_columns: customers_pk_columns_input!) {
+  updateCustomer(_set: $customers, pk_columns: $pk_columns) {
+    ...customerCrud
+  }
+}
+
+mutation updateCustomers($customers: customers_set_input, $where: customers_bool_exp!) {
+  updateCustomers(_set: $customers, where: $where) {
+    returning {
+      ...customerCrud
+    }
+    affected_rows
+  }
+}
+
+mutation update_customers_many($updates: [customers_updates!]!) {
+  update_customers_many(updates: $updates) {
+    returning {
+      ...customerCrud
+    }
+    affected_rows
+  }
+}
+
+fragment customerCrud on customers {
+  ...customer
+}

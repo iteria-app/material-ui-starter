@@ -1,0 +1,27 @@
+fragment order on orders {
+  id
+  __typename
+  title
+  order_date
+  shipped_date
+}
+
+fragment order_customer on customers {
+  firstName
+  id
+  __typename
+  lastName
+}
+
+fragment order_order_items_product on products {
+  name
+  id
+  __typename
+}
+
+fragment order_order_items on orderItems {
+  quantity
+  id
+  __typename
+  price
+}

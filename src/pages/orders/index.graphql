@@ -1,0 +1,87 @@
+query order($id: uuid!) {
+  order(id: $id) {
+    ...orderCrud
+    customer {
+      ...order_customer
+    }
+  }
+}
+
+query orders($distinct_on: [orders_select_column!], $limit: Int = 20, $offset: Int = 0, $order_by: [orders_order_by!] = {updated_at: desc}, $where: orders_bool_exp) {
+  orders(
+    distinct_on: $distinct_on
+    limit: $limit
+    offset: $offset
+    order_by: $order_by
+    where: $where
+  ) {
+    ...orderCrud
+    ...order
+    ...order
+    ...order
+    order_items(order_by: {created_at: asc}) {
+      product {
+        ...order_order_items_product
+      }
+      ...order_order_items
+    }
+  }
+}
+
+mutation deleteOrder($id: uuid!) {
+  deleteOrder(id: $id) {
+    ...orderCrud
+  }
+}
+
+mutation deleteOrders($where: orders_bool_exp!) {
+  deleteOrders(where: $where) {
+    returning {
+      ...orderCrud
+    }
+    affected_rows
+  }
+}
+
+mutation insertOrder($orders: orders_insert_input!, $on_conflict: orders_on_conflict) {
+  insertOrder(object: $orders, on_conflict: $on_conflict) {
+    ...orderCrud
+  }
+}
+
+mutation insertOrders($orders: [orders_insert_input!]!, $on_conflict: orders_on_conflict) {
+  insertOrders(objects: $orders, on_conflict: $on_conflict) {
+    returning {
+      ...orderCrud
+    }
+    affected_rows
+  }
+}
+
+mutation updateOrder($orders: orders_set_input, $pk_columns: orders_pk_columns_input!) {
+  updateOrder(_set: $orders, pk_columns: $pk_columns) {
+    ...orderCrud
+  }
+}
+
+mutation updateOrders($orders: orders_set_input, $where: orders_bool_exp!) {
+  updateOrders(_set: $orders, where: $where) {
+    returning {
+      ...orderCrud
+    }
+    affected_rows
+  }
+}
+
+mutation update_orders_many($updates: [orders_updates!]!) {
+  update_orders_many(updates: $updates) {
+    returning {
+      ...orderCrud
+    }
+    affected_rows
+  }
+}
+
+fragment orderCrud on orders {
+  ...order
+}
