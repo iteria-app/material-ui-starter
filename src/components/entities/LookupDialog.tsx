@@ -15,7 +15,7 @@ interface Props {
   children: React.ReactNode
   Container: any
   View: any
-  onClickRow?: (products: any) => void
+  onClickRow?: (customers: any) => void
   title?: string
 }
 export const LookupDialog: React.FC<Props> = ({

@@ -1,45 +1,38 @@
 import React from 'react'
-import { Formik, FormikValues, Field as FormikField, FieldProps } from 'formik'
-import CustomerDataTableView from './../customer/CustomerDataTableView'
-import CustomerDataTableContainer from './../customer/CustomerDataTableContainer'
-import CustomerForm from '../../entities/customer/CustomerForm'
-import OrderItemsDataTableView from '../order_items/OrderItemsDataTableView'
-import OrdersDataTableView from './OrdersDataTableView'
-import OrdersDataTableContainer from './OrdersDataTableContainer'
+import { Formik, FormikValues } from 'formik'
+import CustomersDataTableView from './CustomersDataTableView'
+import CustomersDataTableContainer from './CustomersDataTableContainer'
 import { FormCard } from '../FormCard'
 import { LookupDialog } from '../LookupDialog'
-import OrdersForm from '../../entities/orders/OrdersForm'
+import CustomersForm from '../../entities/customers/CustomersForm'
 import { useNavigate } from 'react-router-dom'
 import { Box, Button, CardActions, CardContent, Grid } from '@mui/material'
 import { ArrowBack, FileCopy, Save, Search } from '@mui/icons-material'
-import {
-  createEmptyObject,
-  Translate,
-  columnCount,
-} from '@iteria-app/component-templates'
+import { createEmptyObject, Translate } from '@iteria-app/component-templates'
 import { LoadingButton } from '@mui/lab'
 import * as generatedGraphql from '../../../generated/graphql'
 import introspection from '../../../generated/introspect.json'
 let saveLoading = false
 let copyLoading = false
 interface Props {
-  data?: generatedGraphql.OrdersQuery
+  data?: generatedGraphql.CustomersQuery
   onSubmit: (values: FormikValues) => void
   onCopy?: (values: any) => void
   saveButtonDisabled?: boolean
 }
-const OrdersFormView: React.FC<Props> = ({
+const CustomersFormView: React.FC<Props> = ({
   data,
   onSubmit,
   onCopy,
   saveButtonDisabled,
 }) => {
   data =
-    data?.order ?? createEmptyObject('orders', generatedGraphql, introspection)
+    data?.customer ??
+    createEmptyObject('customers', generatedGraphql, introspection)
   const navigate = useNavigate()
   return (
     <div style={{ marginLeft: 25, marginRight: 25 }}>
-      <Button onClick={() => navigate('/test/orders/')}>
+      <Button onClick={() => navigate('/test/customers/')}>
         <ArrowBack />
         <Translate entityName="Back" />
       </Button>
@@ -56,12 +49,12 @@ const OrdersFormView: React.FC<Props> = ({
               return (
                 <form onSubmit={formikProps.handleSubmit}>
                   <Grid container spacing={3}>
-                    <FormCard title={undefined ?? 'orders'}>
-                      <OrdersForm relationshipName={undefined} />
+                    <FormCard title={undefined ?? 'customers'}>
+                      <CustomersForm relationshipName={undefined} />
                       {undefined && (
                         <LookupDialog
-                          Container={OrdersDataTableContainer}
-                          View={OrdersDataTableView}
+                          Container={CustomersDataTableContainer}
+                          View={CustomersDataTableView}
                           onClickRow={(row) => {
                             setFieldValue(undefined, row, false)
                           }}
@@ -82,53 +75,6 @@ const OrdersFormView: React.FC<Props> = ({
                         </LookupDialog>
                       )}
                     </FormCard>
-                    <FormikField name="customer">
-                      {(fieldProps: FieldProps) => {
-                        return (
-                          <FormCard title={'customer'}>
-                            <CustomerForm relationshipName="customer" />
-                            {'customer' && (
-                              <LookupDialog
-                                Container={CustomerDataTableContainer}
-                                View={CustomerDataTableView}
-                                onClickRow={(row) => {
-                                  setFieldValue('customer', row, false)
-                                }}
-                                title="customer"
-                              >
-                                <Button
-                                  color="secondary"
-                                  variant="contained"
-                                  startIcon={<Search />}
-                                  style={{ margin: '16px' }}
-                                >
-                                  <Translate
-                                    entityName="customer"
-                                    fieldName="lookup"
-                                    defaultMessage="Lookup customer"
-                                  />
-                                </Button>
-                              </LookupDialog>
-                            )}
-                          </FormCard>
-                        )
-                      }}
-                    </FormikField>
-                    <FormikField name="order_items">
-                      {(fieldProps: FieldProps) => {
-                        return (
-                          <FormCard
-                            title="order_items"
-                            length={columnCount(fieldProps.field.value)}
-                          >
-                            <OrderItemsDataTableView
-                              data={fieldProps.field.value}
-                              relationshipName="order_items"
-                            />
-                          </FormCard>
-                        )
-                      }}
-                    </FormikField>
                   </Grid>
                   <CardActions>
                     <LoadingButton
@@ -182,4 +128,4 @@ const OrdersFormView: React.FC<Props> = ({
     </div>
   )
 }
-export default OrdersFormView
+export default CustomersFormView

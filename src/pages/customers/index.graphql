@@ -4,7 +4,7 @@ query customer($id: uuid!) {
   }
 }
 
-query customers($distinct_on: [customers_select_column!],$limit: Int = 20,$offset: Int = 0,$order_by: [customers_order_by!] = {updatedAt: desc},$where: customers_bool_exp) {
+query customers($distinct_on: [customers_select_column!], $limit: Int = 20, $offset: Int = 0, $order_by: [customers_order_by!] = {updatedAt: desc}, $where: customers_bool_exp) {
   customers(
     distinct_on: $distinct_on
     limit: $limit
@@ -13,6 +13,9 @@ query customers($distinct_on: [customers_select_column!],$limit: Int = 20,$offse
     where: $where
   ) {
     ...customerCrud
+    ...customer
+    ...customer
+    ...customer
   }
 }
 
@@ -31,13 +34,13 @@ mutation deleteCustomers($where: customers_bool_exp!) {
   }
 }
 
-mutation insertCustomer($customers: customers_insert_input!,$on_conflict: customers_on_conflict) {
+mutation insertCustomer($customers: customers_insert_input!, $on_conflict: customers_on_conflict) {
   insertCustomer(object: $customers, on_conflict: $on_conflict) {
     ...customerCrud
   }
 }
 
-mutation insertCustomers($customers: [customers_insert_input!]!,$on_conflict: customers_on_conflict) {
+mutation insertCustomers($customers: [customers_insert_input!]!, $on_conflict: customers_on_conflict) {
   insertCustomers(objects: $customers, on_conflict: $on_conflict) {
     returning {
       ...customerCrud
@@ -46,13 +49,13 @@ mutation insertCustomers($customers: [customers_insert_input!]!,$on_conflict: cu
   }
 }
 
-mutation updateCustomer($customers: customers_set_input,$pk_columns: customers_pk_columns_input!) {
+mutation updateCustomer($customers: customers_set_input, $pk_columns: customers_pk_columns_input!) {
   updateCustomer(_set: $customers, pk_columns: $pk_columns) {
     ...customerCrud
   }
 }
 
-mutation updateCustomers($customers: customers_set_input,$where: customers_bool_exp!) {
+mutation updateCustomers($customers: customers_set_input, $where: customers_bool_exp!) {
   updateCustomers(_set: $customers, where: $where) {
     returning {
       ...customerCrud
