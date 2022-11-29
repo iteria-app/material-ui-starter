@@ -1,0 +1,82 @@
+query product($id: uuid!) {
+  product(id: $id) {
+    ...productCrud
+  }
+}
+
+query products($distinct_on: [products_select_column!], $limit: Int = 20, $offset: Int = 0, $order_by: [products_order_by!] = {updated_at: desc}, $where: products_bool_exp) {
+  products(
+    distinct_on: $distinct_on
+    limit: $limit
+    offset: $offset
+    order_by: $order_by
+    where: $where
+  ) {
+    ...productCrud
+    ...product
+    signedThumbnailImgPath {
+      ...product_signedThumbnailImgPath
+    }
+    ...product
+    ...product
+    ...product
+  }
+}
+
+mutation deleteProduct($id: uuid!) {
+  deleteProduct(id: $id) {
+    ...productCrud
+  }
+}
+
+mutation deleteProducts($where: products_bool_exp!) {
+  deleteProducts(where: $where) {
+    returning {
+      ...productCrud
+    }
+    affected_rows
+  }
+}
+
+mutation insertProduct($products: products_insert_input!, $on_conflict: products_on_conflict) {
+  insertProduct(object: $products, on_conflict: $on_conflict) {
+    ...productCrud
+  }
+}
+
+mutation insertProducts($products: [products_insert_input!]!, $on_conflict: products_on_conflict) {
+  insertProducts(objects: $products, on_conflict: $on_conflict) {
+    returning {
+      ...productCrud
+    }
+    affected_rows
+  }
+}
+
+mutation updateProduct($_inc: products_inc_input, $products: products_set_input, $pk_columns: products_pk_columns_input!) {
+  updateProduct(_inc: $_inc, _set: $products, pk_columns: $pk_columns) {
+    ...productCrud
+  }
+}
+
+mutation updateProducts($_inc: products_inc_input, $products: products_set_input, $where: products_bool_exp!) {
+  updateProducts(_inc: $_inc, _set: $products, where: $where) {
+    returning {
+      ...productCrud
+    }
+    affected_rows
+  }
+}
+
+mutation update_products_many($updates: [products_updates!]!) {
+  update_products_many(updates: $updates) {
+    returning {
+      ...productCrud
+    }
+    affected_rows
+  }
+}
+
+fragment productCrud on products {
+  ...product
+}

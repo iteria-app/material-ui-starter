@@ -10560,78 +10560,80 @@ export type DummyQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type DummyQuery = { __typename: 'query_root' };
 
-export type CustomerQueryVariables = Exact<{
+export type ProductQueryVariables = Exact<{
   id: Scalars['uuid'];
 }>;
 
 
-export type CustomerQuery = { __typename?: 'query_root', customer?: { __typename: 'customers', id: any, firstName?: string | null | undefined, lastName?: string | null | undefined, phone?: string | null | undefined, vip?: boolean | null | undefined } | null | undefined };
+export type ProductQuery = { __typename?: 'query_root', product?: { __typename: 'products', id: any, name?: string | null | undefined, availability?: string | null | undefined, price?: any | null | undefined, quantity: number } | null | undefined };
 
-export type CustomersQueryVariables = Exact<{
-  distinct_on?: Maybe<Array<Customers_Select_Column> | Customers_Select_Column>;
+export type ProductsQueryVariables = Exact<{
+  distinct_on?: Maybe<Array<Products_Select_Column> | Products_Select_Column>;
   limit?: Maybe<Scalars['Int']>;
   offset?: Maybe<Scalars['Int']>;
-  order_by?: Maybe<Array<Customers_Order_By> | Customers_Order_By>;
-  where?: Maybe<Customers_Bool_Exp>;
+  order_by?: Maybe<Array<Products_Order_By> | Products_Order_By>;
+  where?: Maybe<Products_Bool_Exp>;
 }>;
 
 
-export type CustomersQuery = { __typename?: 'query_root', customers: Array<{ __typename: 'customers', id: any, firstName?: string | null | undefined, lastName?: string | null | undefined, phone?: string | null | undefined, vip?: boolean | null | undefined }> };
+export type ProductsQuery = { __typename?: 'query_root', products: Array<{ __typename: 'products', id: any, name?: string | null | undefined, availability?: string | null | undefined, price?: any | null | undefined, quantity: number, signedThumbnailImgPath?: { __typename: 'GetUrlReturn', url: string } | null | undefined }> };
 
-export type DeleteCustomerMutationVariables = Exact<{
+export type DeleteProductMutationVariables = Exact<{
   id: Scalars['uuid'];
 }>;
 
 
-export type DeleteCustomerMutation = { __typename?: 'mutation_root', deleteCustomer?: { __typename: 'customers', id: any, firstName?: string | null | undefined, lastName?: string | null | undefined, phone?: string | null | undefined, vip?: boolean | null | undefined } | null | undefined };
+export type DeleteProductMutation = { __typename?: 'mutation_root', deleteProduct?: { __typename: 'products', id: any, name?: string | null | undefined, availability?: string | null | undefined, price?: any | null | undefined, quantity: number } | null | undefined };
 
-export type DeleteCustomersMutationVariables = Exact<{
-  where: Customers_Bool_Exp;
+export type DeleteProductsMutationVariables = Exact<{
+  where: Products_Bool_Exp;
 }>;
 
 
-export type DeleteCustomersMutation = { __typename?: 'mutation_root', deleteCustomers?: { __typename?: 'customers_mutation_response', affected_rows: number, returning: Array<{ __typename: 'customers', id: any, firstName?: string | null | undefined, lastName?: string | null | undefined, phone?: string | null | undefined, vip?: boolean | null | undefined }> } | null | undefined };
+export type DeleteProductsMutation = { __typename?: 'mutation_root', deleteProducts?: { __typename?: 'products_mutation_response', affected_rows: number, returning: Array<{ __typename: 'products', id: any, name?: string | null | undefined, availability?: string | null | undefined, price?: any | null | undefined, quantity: number }> } | null | undefined };
 
-export type InsertCustomerMutationVariables = Exact<{
-  customers: Customers_Insert_Input;
-  on_conflict?: Maybe<Customers_On_Conflict>;
+export type InsertProductMutationVariables = Exact<{
+  products: Products_Insert_Input;
+  on_conflict?: Maybe<Products_On_Conflict>;
 }>;
 
 
-export type InsertCustomerMutation = { __typename?: 'mutation_root', insertCustomer?: { __typename: 'customers', id: any, firstName?: string | null | undefined, lastName?: string | null | undefined, phone?: string | null | undefined, vip?: boolean | null | undefined } | null | undefined };
+export type InsertProductMutation = { __typename?: 'mutation_root', insertProduct?: { __typename: 'products', id: any, name?: string | null | undefined, availability?: string | null | undefined, price?: any | null | undefined, quantity: number } | null | undefined };
 
-export type InsertCustomersMutationVariables = Exact<{
-  customers: Array<Customers_Insert_Input> | Customers_Insert_Input;
-  on_conflict?: Maybe<Customers_On_Conflict>;
+export type InsertProductsMutationVariables = Exact<{
+  products: Array<Products_Insert_Input> | Products_Insert_Input;
+  on_conflict?: Maybe<Products_On_Conflict>;
 }>;
 
 
-export type InsertCustomersMutation = { __typename?: 'mutation_root', insertCustomers?: { __typename?: 'customers_mutation_response', affected_rows: number, returning: Array<{ __typename: 'customers', id: any, firstName?: string | null | undefined, lastName?: string | null | undefined, phone?: string | null | undefined, vip?: boolean | null | undefined }> } | null | undefined };
+export type InsertProductsMutation = { __typename?: 'mutation_root', insertProducts?: { __typename?: 'products_mutation_response', affected_rows: number, returning: Array<{ __typename: 'products', id: any, name?: string | null | undefined, availability?: string | null | undefined, price?: any | null | undefined, quantity: number }> } | null | undefined };
 
-export type UpdateCustomerMutationVariables = Exact<{
-  customers?: Maybe<Customers_Set_Input>;
-  pk_columns: Customers_Pk_Columns_Input;
+export type UpdateProductMutationVariables = Exact<{
+  _inc?: Maybe<Products_Inc_Input>;
+  products?: Maybe<Products_Set_Input>;
+  pk_columns: Products_Pk_Columns_Input;
 }>;
 
 
-export type UpdateCustomerMutation = { __typename?: 'mutation_root', updateCustomer?: { __typename: 'customers', id: any, firstName?: string | null | undefined, lastName?: string | null | undefined, phone?: string | null | undefined, vip?: boolean | null | undefined } | null | undefined };
+export type UpdateProductMutation = { __typename?: 'mutation_root', updateProduct?: { __typename: 'products', id: any, name?: string | null | undefined, availability?: string | null | undefined, price?: any | null | undefined, quantity: number } | null | undefined };
 
-export type UpdateCustomersMutationVariables = Exact<{
-  customers?: Maybe<Customers_Set_Input>;
-  where: Customers_Bool_Exp;
+export type UpdateProductsMutationVariables = Exact<{
+  _inc?: Maybe<Products_Inc_Input>;
+  products?: Maybe<Products_Set_Input>;
+  where: Products_Bool_Exp;
 }>;
 
 
-export type UpdateCustomersMutation = { __typename?: 'mutation_root', updateCustomers?: { __typename?: 'customers_mutation_response', affected_rows: number, returning: Array<{ __typename: 'customers', id: any, firstName?: string | null | undefined, lastName?: string | null | undefined, phone?: string | null | undefined, vip?: boolean | null | undefined }> } | null | undefined };
+export type UpdateProductsMutation = { __typename?: 'mutation_root', updateProducts?: { __typename?: 'products_mutation_response', affected_rows: number, returning: Array<{ __typename: 'products', id: any, name?: string | null | undefined, availability?: string | null | undefined, price?: any | null | undefined, quantity: number }> } | null | undefined };
 
-export type Update_Customers_ManyMutationVariables = Exact<{
-  updates: Array<Customers_Updates> | Customers_Updates;
+export type Update_Products_ManyMutationVariables = Exact<{
+  updates: Array<Products_Updates> | Products_Updates;
 }>;
 
 
-export type Update_Customers_ManyMutation = { __typename?: 'mutation_root', update_customers_many?: Array<{ __typename?: 'customers_mutation_response', affected_rows: number, returning: Array<{ __typename: 'customers', id: any, firstName?: string | null | undefined, lastName?: string | null | undefined, phone?: string | null | undefined, vip?: boolean | null | undefined }> } | null | undefined> | null | undefined };
+export type Update_Products_ManyMutation = { __typename?: 'mutation_root', update_products_many?: Array<{ __typename?: 'products_mutation_response', affected_rows: number, returning: Array<{ __typename: 'products', id: any, name?: string | null | undefined, availability?: string | null | undefined, price?: any | null | undefined, quantity: number }> } | null | undefined> | null | undefined };
 
-export type CustomerCrudFragment = { __typename: 'customers', id: any, firstName?: string | null | undefined, lastName?: string | null | undefined, phone?: string | null | undefined, vip?: boolean | null | undefined };
+export type ProductCrudFragment = { __typename: 'products', id: any, name?: string | null | undefined, availability?: string | null | undefined, price?: any | null | undefined, quantity: number };
 
 export type OrderQueryVariables = Exact<{
   id: Scalars['uuid'];
@@ -10706,9 +10708,80 @@ export type Update_Orders_ManyMutation = { __typename?: 'mutation_root', update_
 
 export type OrderCrudFragment = { __typename: 'orders', id: any, title?: string | null | undefined, order_date?: any | null | undefined, shipped_date?: any | null | undefined };
 
-export type ProductFragment = { __typename: 'products', id: any, name?: string | null | undefined };
+export type CustomerQueryVariables = Exact<{
+  id: Scalars['uuid'];
+}>;
 
-export type Product_SignedThumbnailImgPathFragment = { __typename: 'GetUrlReturn', url: string };
+
+export type CustomerQuery = { __typename?: 'query_root', customer?: { __typename: 'customers', id: any, firstName?: string | null | undefined, lastName?: string | null | undefined, phone?: string | null | undefined, vip?: boolean | null | undefined } | null | undefined };
+
+export type CustomersQueryVariables = Exact<{
+  distinct_on?: Maybe<Array<Customers_Select_Column> | Customers_Select_Column>;
+  limit?: Maybe<Scalars['Int']>;
+  offset?: Maybe<Scalars['Int']>;
+  order_by?: Maybe<Array<Customers_Order_By> | Customers_Order_By>;
+  where?: Maybe<Customers_Bool_Exp>;
+}>;
+
+
+export type CustomersQuery = { __typename?: 'query_root', customers: Array<{ __typename: 'customers', id: any, firstName?: string | null | undefined, lastName?: string | null | undefined, phone?: string | null | undefined, vip?: boolean | null | undefined }> };
+
+export type DeleteCustomerMutationVariables = Exact<{
+  id: Scalars['uuid'];
+}>;
+
+
+export type DeleteCustomerMutation = { __typename?: 'mutation_root', deleteCustomer?: { __typename: 'customers', id: any, firstName?: string | null | undefined, lastName?: string | null | undefined, phone?: string | null | undefined, vip?: boolean | null | undefined } | null | undefined };
+
+export type DeleteCustomersMutationVariables = Exact<{
+  where: Customers_Bool_Exp;
+}>;
+
+
+export type DeleteCustomersMutation = { __typename?: 'mutation_root', deleteCustomers?: { __typename?: 'customers_mutation_response', affected_rows: number, returning: Array<{ __typename: 'customers', id: any, firstName?: string | null | undefined, lastName?: string | null | undefined, phone?: string | null | undefined, vip?: boolean | null | undefined }> } | null | undefined };
+
+export type InsertCustomerMutationVariables = Exact<{
+  customers: Customers_Insert_Input;
+  on_conflict?: Maybe<Customers_On_Conflict>;
+}>;
+
+
+export type InsertCustomerMutation = { __typename?: 'mutation_root', insertCustomer?: { __typename: 'customers', id: any, firstName?: string | null | undefined, lastName?: string | null | undefined, phone?: string | null | undefined, vip?: boolean | null | undefined } | null | undefined };
+
+export type InsertCustomersMutationVariables = Exact<{
+  customers: Array<Customers_Insert_Input> | Customers_Insert_Input;
+  on_conflict?: Maybe<Customers_On_Conflict>;
+}>;
+
+
+export type InsertCustomersMutation = { __typename?: 'mutation_root', insertCustomers?: { __typename?: 'customers_mutation_response', affected_rows: number, returning: Array<{ __typename: 'customers', id: any, firstName?: string | null | undefined, lastName?: string | null | undefined, phone?: string | null | undefined, vip?: boolean | null | undefined }> } | null | undefined };
+
+export type UpdateCustomerMutationVariables = Exact<{
+  customers?: Maybe<Customers_Set_Input>;
+  pk_columns: Customers_Pk_Columns_Input;
+}>;
+
+
+export type UpdateCustomerMutation = { __typename?: 'mutation_root', updateCustomer?: { __typename: 'customers', id: any, firstName?: string | null | undefined, lastName?: string | null | undefined, phone?: string | null | undefined, vip?: boolean | null | undefined } | null | undefined };
+
+export type UpdateCustomersMutationVariables = Exact<{
+  customers?: Maybe<Customers_Set_Input>;
+  where: Customers_Bool_Exp;
+}>;
+
+
+export type UpdateCustomersMutation = { __typename?: 'mutation_root', updateCustomers?: { __typename?: 'customers_mutation_response', affected_rows: number, returning: Array<{ __typename: 'customers', id: any, firstName?: string | null | undefined, lastName?: string | null | undefined, phone?: string | null | undefined, vip?: boolean | null | undefined }> } | null | undefined };
+
+export type Update_Customers_ManyMutationVariables = Exact<{
+  updates: Array<Customers_Updates> | Customers_Updates;
+}>;
+
+
+export type Update_Customers_ManyMutation = { __typename?: 'mutation_root', update_customers_many?: Array<{ __typename?: 'customers_mutation_response', affected_rows: number, returning: Array<{ __typename: 'customers', id: any, firstName?: string | null | undefined, lastName?: string | null | undefined, phone?: string | null | undefined, vip?: boolean | null | undefined }> } | null | undefined> | null | undefined };
+
+export type CustomerCrudFragment = { __typename: 'customers', id: any, firstName?: string | null | undefined, lastName?: string | null | undefined, phone?: string | null | undefined, vip?: boolean | null | undefined };
+
+export type CustomerFragment = { __typename: 'customers', id: any, firstName?: string | null | undefined, lastName?: string | null | undefined, phone?: string | null | undefined, vip?: boolean | null | undefined };
 
 export type OrderFragment = { __typename: 'orders', id: any, title?: string | null | undefined, order_date?: any | null | undefined, shipped_date?: any | null | undefined };
 
@@ -10718,8 +10791,39 @@ export type Order_Order_Items_ProductFragment = { __typename: 'products', name?:
 
 export type Order_Order_ItemsFragment = { __typename: 'orderItems', quantity?: number | null | undefined, id: any, price?: any | null | undefined };
 
-export type CustomerFragment = { __typename: 'customers', id: any, firstName?: string | null | undefined, lastName?: string | null | undefined, phone?: string | null | undefined, vip?: boolean | null | undefined };
+export type ProductFragment = { __typename: 'products', id: any, name?: string | null | undefined, availability?: string | null | undefined, price?: any | null | undefined, quantity: number };
 
+export type Product_SignedThumbnailImgPathFragment = { __typename: 'GetUrlReturn', url: string };
+
+export const ProductFragmentDoc = gql`
+    fragment product on products {
+  id
+  __typename
+  name
+  availability
+  price
+  quantity
+}
+    `;
+export const ProductCrudFragmentDoc = gql`
+    fragment productCrud on products {
+  ...product
+}
+    ${ProductFragmentDoc}`;
+export const OrderFragmentDoc = gql`
+    fragment order on orders {
+  id
+  __typename
+  title
+  order_date
+  shipped_date
+}
+    `;
+export const OrderCrudFragmentDoc = gql`
+    fragment orderCrud on orders {
+  ...order
+}
+    ${OrderFragmentDoc}`;
 export const CustomerFragmentDoc = gql`
     fragment customer on customers {
   id
@@ -10735,33 +10839,6 @@ export const CustomerCrudFragmentDoc = gql`
   ...customer
 }
     ${CustomerFragmentDoc}`;
-export const OrderFragmentDoc = gql`
-    fragment order on orders {
-  id
-  __typename
-  title
-  order_date
-  shipped_date
-}
-    `;
-export const OrderCrudFragmentDoc = gql`
-    fragment orderCrud on orders {
-  ...order
-}
-    ${OrderFragmentDoc}`;
-export const ProductFragmentDoc = gql`
-    fragment product on products {
-  id
-  __typename
-  name
-}
-    `;
-export const Product_SignedThumbnailImgPathFragmentDoc = gql`
-    fragment product_signedThumbnailImgPath on GetUrlReturn {
-  url
-  __typename
-}
-    `;
 export const Order_CustomerFragmentDoc = gql`
     fragment order_customer on customers {
   firstName
@@ -10785,6 +10862,12 @@ export const Order_Order_ItemsFragmentDoc = gql`
   price
 }
     `;
+export const Product_SignedThumbnailImgPathFragmentDoc = gql`
+    fragment product_signedThumbnailImgPath on GetUrlReturn {
+  url
+  __typename
+}
+    `;
 export const DummyDocument = gql`
     query dummy {
   __typename
@@ -10794,127 +10877,131 @@ export const DummyDocument = gql`
 export function useDummyQuery(options: Omit<Urql.UseQueryArgs<DummyQueryVariables>, 'query'> = {}) {
   return Urql.useQuery<DummyQuery>({ query: DummyDocument, ...options });
 };
-export const CustomerDocument = gql`
-    query customer($id: uuid!) {
-  customer(id: $id) {
-    ...customerCrud
+export const ProductDocument = gql`
+    query product($id: uuid!) {
+  product(id: $id) {
+    ...productCrud
   }
 }
-    ${CustomerCrudFragmentDoc}`;
+    ${ProductCrudFragmentDoc}`;
 
-export function useCustomerQuery(options: Omit<Urql.UseQueryArgs<CustomerQueryVariables>, 'query'> = {}) {
-  return Urql.useQuery<CustomerQuery>({ query: CustomerDocument, ...options });
+export function useProductQuery(options: Omit<Urql.UseQueryArgs<ProductQueryVariables>, 'query'> = {}) {
+  return Urql.useQuery<ProductQuery>({ query: ProductDocument, ...options });
 };
-export const CustomersDocument = gql`
-    query customers($distinct_on: [customers_select_column!], $limit: Int = 20, $offset: Int = 0, $order_by: [customers_order_by!] = {updatedAt: desc}, $where: customers_bool_exp) {
-  customers(
+export const ProductsDocument = gql`
+    query products($distinct_on: [products_select_column!], $limit: Int = 20, $offset: Int = 0, $order_by: [products_order_by!] = {updated_at: desc}, $where: products_bool_exp) {
+  products(
     distinct_on: $distinct_on
     limit: $limit
     offset: $offset
     order_by: $order_by
     where: $where
   ) {
-    ...customerCrud
-    ...customer
-    ...customer
-    ...customer
-    ...customer
+    ...productCrud
+    ...product
+    signedThumbnailImgPath {
+      ...product_signedThumbnailImgPath
+    }
+    ...product
+    ...product
+    ...product
   }
 }
-    ${CustomerCrudFragmentDoc}
-${CustomerFragmentDoc}`;
+    ${ProductCrudFragmentDoc}
+${ProductFragmentDoc}
+${Product_SignedThumbnailImgPathFragmentDoc}`;
 
-export function useCustomersQuery(options: Omit<Urql.UseQueryArgs<CustomersQueryVariables>, 'query'> = {}) {
-  return Urql.useQuery<CustomersQuery>({ query: CustomersDocument, ...options });
+export function useProductsQuery(options: Omit<Urql.UseQueryArgs<ProductsQueryVariables>, 'query'> = {}) {
+  return Urql.useQuery<ProductsQuery>({ query: ProductsDocument, ...options });
 };
-export const DeleteCustomerDocument = gql`
-    mutation deleteCustomer($id: uuid!) {
-  deleteCustomer(id: $id) {
-    ...customerCrud
+export const DeleteProductDocument = gql`
+    mutation deleteProduct($id: uuid!) {
+  deleteProduct(id: $id) {
+    ...productCrud
   }
 }
-    ${CustomerCrudFragmentDoc}`;
+    ${ProductCrudFragmentDoc}`;
 
-export function useDeleteCustomerMutation() {
-  return Urql.useMutation<DeleteCustomerMutation, DeleteCustomerMutationVariables>(DeleteCustomerDocument);
+export function useDeleteProductMutation() {
+  return Urql.useMutation<DeleteProductMutation, DeleteProductMutationVariables>(DeleteProductDocument);
 };
-export const DeleteCustomersDocument = gql`
-    mutation deleteCustomers($where: customers_bool_exp!) {
-  deleteCustomers(where: $where) {
+export const DeleteProductsDocument = gql`
+    mutation deleteProducts($where: products_bool_exp!) {
+  deleteProducts(where: $where) {
     returning {
-      ...customerCrud
+      ...productCrud
     }
     affected_rows
   }
 }
-    ${CustomerCrudFragmentDoc}`;
+    ${ProductCrudFragmentDoc}`;
 
-export function useDeleteCustomersMutation() {
-  return Urql.useMutation<DeleteCustomersMutation, DeleteCustomersMutationVariables>(DeleteCustomersDocument);
+export function useDeleteProductsMutation() {
+  return Urql.useMutation<DeleteProductsMutation, DeleteProductsMutationVariables>(DeleteProductsDocument);
 };
-export const InsertCustomerDocument = gql`
-    mutation insertCustomer($customers: customers_insert_input!, $on_conflict: customers_on_conflict) {
-  insertCustomer(object: $customers, on_conflict: $on_conflict) {
-    ...customerCrud
+export const InsertProductDocument = gql`
+    mutation insertProduct($products: products_insert_input!, $on_conflict: products_on_conflict) {
+  insertProduct(object: $products, on_conflict: $on_conflict) {
+    ...productCrud
   }
 }
-    ${CustomerCrudFragmentDoc}`;
+    ${ProductCrudFragmentDoc}`;
 
-export function useInsertCustomerMutation() {
-  return Urql.useMutation<InsertCustomerMutation, InsertCustomerMutationVariables>(InsertCustomerDocument);
+export function useInsertProductMutation() {
+  return Urql.useMutation<InsertProductMutation, InsertProductMutationVariables>(InsertProductDocument);
 };
-export const InsertCustomersDocument = gql`
-    mutation insertCustomers($customers: [customers_insert_input!]!, $on_conflict: customers_on_conflict) {
-  insertCustomers(objects: $customers, on_conflict: $on_conflict) {
+export const InsertProductsDocument = gql`
+    mutation insertProducts($products: [products_insert_input!]!, $on_conflict: products_on_conflict) {
+  insertProducts(objects: $products, on_conflict: $on_conflict) {
     returning {
-      ...customerCrud
+      ...productCrud
     }
     affected_rows
   }
 }
-    ${CustomerCrudFragmentDoc}`;
+    ${ProductCrudFragmentDoc}`;
 
-export function useInsertCustomersMutation() {
-  return Urql.useMutation<InsertCustomersMutation, InsertCustomersMutationVariables>(InsertCustomersDocument);
+export function useInsertProductsMutation() {
+  return Urql.useMutation<InsertProductsMutation, InsertProductsMutationVariables>(InsertProductsDocument);
 };
-export const UpdateCustomerDocument = gql`
-    mutation updateCustomer($customers: customers_set_input, $pk_columns: customers_pk_columns_input!) {
-  updateCustomer(_set: $customers, pk_columns: $pk_columns) {
-    ...customerCrud
+export const UpdateProductDocument = gql`
+    mutation updateProduct($_inc: products_inc_input, $products: products_set_input, $pk_columns: products_pk_columns_input!) {
+  updateProduct(_inc: $_inc, _set: $products, pk_columns: $pk_columns) {
+    ...productCrud
   }
 }
-    ${CustomerCrudFragmentDoc}`;
+    ${ProductCrudFragmentDoc}`;
 
-export function useUpdateCustomerMutation() {
-  return Urql.useMutation<UpdateCustomerMutation, UpdateCustomerMutationVariables>(UpdateCustomerDocument);
+export function useUpdateProductMutation() {
+  return Urql.useMutation<UpdateProductMutation, UpdateProductMutationVariables>(UpdateProductDocument);
 };
-export const UpdateCustomersDocument = gql`
-    mutation updateCustomers($customers: customers_set_input, $where: customers_bool_exp!) {
-  updateCustomers(_set: $customers, where: $where) {
+export const UpdateProductsDocument = gql`
+    mutation updateProducts($_inc: products_inc_input, $products: products_set_input, $where: products_bool_exp!) {
+  updateProducts(_inc: $_inc, _set: $products, where: $where) {
     returning {
-      ...customerCrud
+      ...productCrud
     }
     affected_rows
   }
 }
-    ${CustomerCrudFragmentDoc}`;
+    ${ProductCrudFragmentDoc}`;
 
-export function useUpdateCustomersMutation() {
-  return Urql.useMutation<UpdateCustomersMutation, UpdateCustomersMutationVariables>(UpdateCustomersDocument);
+export function useUpdateProductsMutation() {
+  return Urql.useMutation<UpdateProductsMutation, UpdateProductsMutationVariables>(UpdateProductsDocument);
 };
-export const Update_Customers_ManyDocument = gql`
-    mutation update_customers_many($updates: [customers_updates!]!) {
-  update_customers_many(updates: $updates) {
+export const Update_Products_ManyDocument = gql`
+    mutation update_products_many($updates: [products_updates!]!) {
+  update_products_many(updates: $updates) {
     returning {
-      ...customerCrud
+      ...productCrud
     }
     affected_rows
   }
 }
-    ${CustomerCrudFragmentDoc}`;
+    ${ProductCrudFragmentDoc}`;
 
-export function useUpdate_Customers_ManyMutation() {
-  return Urql.useMutation<Update_Customers_ManyMutation, Update_Customers_ManyMutationVariables>(Update_Customers_ManyDocument);
+export function useUpdate_Products_ManyMutation() {
+  return Urql.useMutation<Update_Products_ManyMutation, Update_Products_ManyMutationVariables>(Update_Products_ManyDocument);
 };
 export const OrderDocument = gql`
     query order($id: uuid!) {
@@ -11048,4 +11135,126 @@ export const Update_Orders_ManyDocument = gql`
 
 export function useUpdate_Orders_ManyMutation() {
   return Urql.useMutation<Update_Orders_ManyMutation, Update_Orders_ManyMutationVariables>(Update_Orders_ManyDocument);
+};
+export const CustomerDocument = gql`
+    query customer($id: uuid!) {
+  customer(id: $id) {
+    ...customerCrud
+  }
+}
+    ${CustomerCrudFragmentDoc}`;
+
+export function useCustomerQuery(options: Omit<Urql.UseQueryArgs<CustomerQueryVariables>, 'query'> = {}) {
+  return Urql.useQuery<CustomerQuery>({ query: CustomerDocument, ...options });
+};
+export const CustomersDocument = gql`
+    query customers($distinct_on: [customers_select_column!], $limit: Int = 20, $offset: Int = 0, $order_by: [customers_order_by!] = {updatedAt: desc}, $where: customers_bool_exp) {
+  customers(
+    distinct_on: $distinct_on
+    limit: $limit
+    offset: $offset
+    order_by: $order_by
+    where: $where
+  ) {
+    ...customerCrud
+    ...customer
+    ...customer
+    ...customer
+    ...customer
+  }
+}
+    ${CustomerCrudFragmentDoc}
+${CustomerFragmentDoc}`;
+
+export function useCustomersQuery(options: Omit<Urql.UseQueryArgs<CustomersQueryVariables>, 'query'> = {}) {
+  return Urql.useQuery<CustomersQuery>({ query: CustomersDocument, ...options });
+};
+export const DeleteCustomerDocument = gql`
+    mutation deleteCustomer($id: uuid!) {
+  deleteCustomer(id: $id) {
+    ...customerCrud
+  }
+}
+    ${CustomerCrudFragmentDoc}`;
+
+export function useDeleteCustomerMutation() {
+  return Urql.useMutation<DeleteCustomerMutation, DeleteCustomerMutationVariables>(DeleteCustomerDocument);
+};
+export const DeleteCustomersDocument = gql`
+    mutation deleteCustomers($where: customers_bool_exp!) {
+  deleteCustomers(where: $where) {
+    returning {
+      ...customerCrud
+    }
+    affected_rows
+  }
+}
+    ${CustomerCrudFragmentDoc}`;
+
+export function useDeleteCustomersMutation() {
+  return Urql.useMutation<DeleteCustomersMutation, DeleteCustomersMutationVariables>(DeleteCustomersDocument);
+};
+export const InsertCustomerDocument = gql`
+    mutation insertCustomer($customers: customers_insert_input!, $on_conflict: customers_on_conflict) {
+  insertCustomer(object: $customers, on_conflict: $on_conflict) {
+    ...customerCrud
+  }
+}
+    ${CustomerCrudFragmentDoc}`;
+
+export function useInsertCustomerMutation() {
+  return Urql.useMutation<InsertCustomerMutation, InsertCustomerMutationVariables>(InsertCustomerDocument);
+};
+export const InsertCustomersDocument = gql`
+    mutation insertCustomers($customers: [customers_insert_input!]!, $on_conflict: customers_on_conflict) {
+  insertCustomers(objects: $customers, on_conflict: $on_conflict) {
+    returning {
+      ...customerCrud
+    }
+    affected_rows
+  }
+}
+    ${CustomerCrudFragmentDoc}`;
+
+export function useInsertCustomersMutation() {
+  return Urql.useMutation<InsertCustomersMutation, InsertCustomersMutationVariables>(InsertCustomersDocument);
+};
+export const UpdateCustomerDocument = gql`
+    mutation updateCustomer($customers: customers_set_input, $pk_columns: customers_pk_columns_input!) {
+  updateCustomer(_set: $customers, pk_columns: $pk_columns) {
+    ...customerCrud
+  }
+}
+    ${CustomerCrudFragmentDoc}`;
+
+export function useUpdateCustomerMutation() {
+  return Urql.useMutation<UpdateCustomerMutation, UpdateCustomerMutationVariables>(UpdateCustomerDocument);
+};
+export const UpdateCustomersDocument = gql`
+    mutation updateCustomers($customers: customers_set_input, $where: customers_bool_exp!) {
+  updateCustomers(_set: $customers, where: $where) {
+    returning {
+      ...customerCrud
+    }
+    affected_rows
+  }
+}
+    ${CustomerCrudFragmentDoc}`;
+
+export function useUpdateCustomersMutation() {
+  return Urql.useMutation<UpdateCustomersMutation, UpdateCustomersMutationVariables>(UpdateCustomersDocument);
+};
+export const Update_Customers_ManyDocument = gql`
+    mutation update_customers_many($updates: [customers_updates!]!) {
+  update_customers_many(updates: $updates) {
+    returning {
+      ...customerCrud
+    }
+    affected_rows
+  }
+}
+    ${CustomerCrudFragmentDoc}`;
+
+export function useUpdate_Customers_ManyMutation() {
+  return Urql.useMutation<Update_Customers_ManyMutation, Update_Customers_ManyMutationVariables>(Update_Customers_ManyDocument);
 };
