@@ -1,16 +1,19 @@
-import en from './compiled-lang/en.json'
-import sk from './compiled-lang/sk.json'
+const localeDirectory = import.meta.globEager('./compiled-lang/*.json')
 
-const localeDirectory = {
-  './compiled-lang/en.json': {
-    default: en
-  },
-  './compiled-lang/sk.json': {
-    default: sk
-  }
-}
+// vite globEager and jamstack globEager is different, vite globEager has values hidden under default
+// that is why we need to create new object without default when default is present
+const localeDirectoryKeys = Object.keys(localeDirectory)
+const hasDefault = localeDirectoryKeys.some(
+  (meta) => localeDirectory[meta]?.default
+)
 
-const gatherLocales = Object.keys(localeDirectory).reduce(
+const transformedLocales = hasDefault
+  ? Object.fromEntries(
+      Object.keys(localeDirectory).map((k) => [k, localeDirectory[k].default])
+    )
+  : localeDirectory
+
+const gatherLocales = Object.keys(transformedLocales).reduce(
   (gatherLocales, file) => {
     const locale = file.substring(
       file.lastIndexOf('/') + 1,
@@ -21,18 +24,17 @@ const gatherLocales = Object.keys(localeDirectory).reduce(
   },
   {}
 )
-
 export const locales = {
-  ...gatherLocales
+  ...gatherLocales,
 }
 
 export const messages = (locale) => {
-  const path = Object.keys(localeDirectory).find((element) =>
+  const path = Object.keys(transformedLocales).find((element) =>
     element.endsWith(locale.split('-')[0] + '.json')
   )
-  const defaultPath = Object.keys(localeDirectory).find((element) =>
+  const defaultPath = Object.keys(transformedLocales).find((element) =>
     element.endsWith('en.json')
   )
 
-  return localeDirectory[path]?.default ?? localeDirectory[defaultPath]?.default
+  return transformedLocales[path] ?? transformedLocales[defaultPath]
 }

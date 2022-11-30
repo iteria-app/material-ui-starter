@@ -1,7 +1,7 @@
 import React, { ChangeEventHandler, FocusEventHandler } from 'react'
 import { Input } from '@mui/material'
 
-type DefaultFormatProps = {
+type StringFormatProps = {
   name: string
   value?: string
   onChange?: ChangeEventHandler<HTMLTextAreaElement | HTMLInputElement>
@@ -13,7 +13,7 @@ export const StringFormat = ({
   name,
   onChange,
   onBlur,
-}: DefaultFormatProps): JSX.Element => (
+}: StringFormatProps): JSX.Element => (
   <Input
     name={name}
     onChange={onChange}
