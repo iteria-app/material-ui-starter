@@ -1,0 +1,39 @@
+{
+  "enitities": [
+    {
+      "id": "entities",
+      "name": "Entities",
+      "required": true,
+      "minValues": 1
+    }
+  ],
+  "components": [
+    {
+      "name": "Accordion",
+      "fields": [
+        {
+          "id": "name",
+          "name": "Title",
+          "validTypes": ["string", "number", "date", "dateTime"],
+          "required": false,
+          "multipleFields": false
+        },
+        {
+          "id": "thumbnail",
+          "name": "Avatar",
+          "validTypes": ["string"],
+          "required": false,
+          "multipleFields": false
+        },
+        {
+          "id": "other",
+          "name": "Other",
+          "validTypes": ["string", "number", "date", "dateTime"],
+          "required": true,
+          "multipleFields": true
+        }
+      ],
+      "props": []
+    }
+  ]
+}

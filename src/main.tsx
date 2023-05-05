@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter as Router } from 'react-router-dom'
 import './index.css'
+import { locales } from './locale'
 
 import App from './App'
 import {
@@ -30,20 +31,21 @@ const config = {
   //clientSecret: keycloakClientSecret,
   //adminSecret: keycloakAdminSecret,
 }
+const defaultLocale = import.meta.env.VITE_DEFAULT_LOCALE as string
 
 const authProvider = initializeProvider(config)
 
 ReactDOM.render(
   <ErrorBoundary>
-    <Router>
-      <LocaleContextProvider>
+    <LocaleContextProvider defaultLocale={defaultLocale} locales={locales}>
+      <Router>
         <ThemeContextProvider>
           <AuthContextProvider auth={authProvider}>
             <App />
           </AuthContextProvider>
         </ThemeContextProvider>
-      </LocaleContextProvider>
-    </Router>
+      </Router>
+    </LocaleContextProvider>
   </ErrorBoundary>,
   document.getElementById('root')
 )

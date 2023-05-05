@@ -8,7 +8,8 @@ import {
   LayerGroup,
 } from 'react-leaflet'
 import {
-  FilterProps, geoFieldsIntersectFilter,
+  FilterProps,
+  geoFieldsIntersectFilter,
   getAllGeoFields,
   getGeoFields,
 } from '@iteria-app/component-templates'
@@ -38,17 +39,20 @@ const EntityListLeaflet: React.FC<EntityListProps> = ({
         filterProps.onFilter(filter ? { _or: filter } : {})
       },
       moveend(event) {
-        localStorage.setItem("mapPosition", JSON.stringify(event.target.getCenter()))
+        localStorage.setItem(
+          'mapPosition',
+          JSON.stringify(event.target.getCenter())
+        )
         const bounds = event.target.getBounds()
         const filter = geoFieldsIntersectFilter(bounds, data, geoFields)
         filterProps.onFilter(filter ? { _or: filter } : {})
       },
       zoomend(event) {
-        localStorage.setItem("mapZoom", event.target.getZoom())
+        localStorage.setItem('mapZoom', event.target.getZoom())
         const bounds = event.target.getBounds()
         const filter = geoFieldsIntersectFilter(bounds, data, geoFields)
         filterProps.onFilter(filter ? { _or: filter } : {})
-      }
+      },
     })
     return null
   }
@@ -57,8 +61,10 @@ const EntityListLeaflet: React.FC<EntityListProps> = ({
   return (
     <>
       <MapContainer
-        center={JSON.parse(localStorage.getItem("mapPosition") ?? "[45.74739, -105]")}
-        zoom={parseInt(localStorage.getItem("mapZoom") ?? "6")}
+        center={JSON.parse(
+          localStorage.getItem('mapPosition') ?? '[48.150135, 17.11962]'
+        )}
+        zoom={parseInt(localStorage.getItem('mapZoom') ?? '8')}
         scrollWheelZoom={true}
         style={{ height: '90vh' }}
       >
@@ -85,7 +91,7 @@ const EntityListLeaflet: React.FC<EntityListProps> = ({
                             key={e?.id}
                             data={e?.data}
                             onEachFeature={(_, layer) => {
-                              layer.on({ click: () => navigate(e?.id) })
+                              layer.on({ click: () => navigate('../' + e?.id) })
                             }}
                           />
                         )

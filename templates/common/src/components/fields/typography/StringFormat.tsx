@@ -4,7 +4,7 @@ import React from 'react'
 export const StringFormat = ({ value }: { value?: string }) => {
   return (
     <Typography>
-      {value}
+      {value ?? ''}
     </Typography>
   )
 }

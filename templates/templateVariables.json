@@ -9,14 +9,14 @@
   ],
   "components": [
     {
-      "name": "Other",
+      "name": "Form",
       "fields": [
         {
           "id": "other",
           "name": "Fields",
           "validTypes": ["string", "number", "date", "dateTime", "geometry"],
           "required": true,
-          "multipleFields": false
+          "multipleFields": true
         }
       ],
       "props": []

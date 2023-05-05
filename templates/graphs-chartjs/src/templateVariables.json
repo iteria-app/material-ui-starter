@@ -12,23 +12,6 @@
       "name": "Graph",
       "fields": [
         {
-          "id": "y-axis",
-          "name": "Y axis",
-          "validTypes": [
-            "numeric",
-            "Int",
-            "bigint",
-            "numeric",
-            "date",
-            "time",
-            "timetz",
-            "timestamp",
-            "timestamptz"
-          ],
-          "required": true,
-          "multipleFields": false
-        },
-        {
           "id": "x-axis",
           "name": "X axis",
           "validTypes": [
@@ -44,6 +27,23 @@
           ],
           "required": true,
           "multipleFields": false
+        },
+        {
+          "id": "y-axis",
+          "name": "Y axis",
+          "validTypes": [
+            "numeric",
+            "Int",
+            "bigint",
+            "numeric",
+            "date",
+            "time",
+            "timetz",
+            "timestamp",
+            "timestamptz"
+          ],
+          "required": true,
+          "multipleFields": true
         }
       ],
       "props": []

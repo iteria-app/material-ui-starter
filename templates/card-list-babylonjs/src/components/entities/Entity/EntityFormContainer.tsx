@@ -38,7 +38,7 @@ const EntityFormContainer: React.FC<EntityFormContainerProps> = ({ View }) => {
   let data
   if (!(id === 'create')) {
     [data] = useEntityByIdQuery({
-      variables: { id },
+      variables: { EntityId: id },
     })
   }
 

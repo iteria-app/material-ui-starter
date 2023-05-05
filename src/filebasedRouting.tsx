@@ -21,7 +21,7 @@ const routes = Object.keys(ROUTES).map((route) => {
 export const FilebasedRoutes = () => {
   const App = preserved?.['_app'] || Fragment
   const NotFound = preserved?.['404'] || Fragment
-  console.log(App, 'APP')
+  // console.log(App, 'APP')
 
   return (
     <App>

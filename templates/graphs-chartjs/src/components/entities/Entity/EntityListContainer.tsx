@@ -3,6 +3,7 @@ import { useEntityQuery } from '../../../generated/graphql'
 import {
   ErrorBoundary,
   QueryBoundary,
+  getRowId,
   useFilter,
   useLocale,
 } from '@iteria-app/component-templates'
@@ -42,7 +43,7 @@ const EntityListContainer: React.FC<EntityListContainerProps> = ({ View }) => {
             error={data?.error}
             loading={data?.fetching}
             onClickRow={(row) => {
-              navigate(row.id.toString())
+              navigate('../' + getRowId(row)?.toString())
             }}
             {...filterProps}
           />

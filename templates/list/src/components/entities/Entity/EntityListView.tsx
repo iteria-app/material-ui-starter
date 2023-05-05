@@ -1,20 +1,21 @@
 import React from 'react'
-import { Grid } from '@mui/material'
 import EntityListItem from './EntityListItem'
 import { EntityFragment } from '../../../generated/graphql'
+import { ViewGridTemplate } from '@iteria-app/component-templates'
 
 export interface EntityListProps {
   data?: EntityFragment[]
   relationshipName?: string
+  rootName?: string
 }
 
-const EntityListView: React.FC<EntityListProps> = ({ data, relationshipName }) => {
+const EntityListView: React.FC<EntityListProps> = ({
+  data,
+  relationshipName,
+  rootName,
+}) => {
   return (
-    <Grid
-      container
-      width={'100%'}
-      sx={{ overflow: 'hidden', marginTop: '20px' }}
-    >
+    <ViewGridTemplate>
       {data?.map((entity, index) => (
         <>
           <EntityListItem
@@ -22,10 +23,11 @@ const EntityListView: React.FC<EntityListProps> = ({ data, relationshipName }) =
             key={entity.id}
             relationshipName={relationshipName}
             index={index}
+            rootName={rootName}
           />
         </>
       ))}
-    </Grid>
+    </ViewGridTemplate>
   )
 }
 

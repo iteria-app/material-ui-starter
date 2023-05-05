@@ -1,0 +1,26 @@
+{
+  "enitities": [
+    {
+      "id": "entities",
+      "name": "Entities",
+      "required": true,
+      "minValues": 1
+    }
+  ],
+  "components": [
+    {
+      "name": "Form",
+      "fields": [
+        {
+          "id": "other",
+          "name": "Fields",
+          "validTypes": ["string", "number", "date", "dateTime"],
+          "required": true,
+          "multipleFields": true
+        }
+      ],
+      "props": []
+    }
+  ],
+  "generatePagePreviewUrl": "https://deploy-preview-1362--iteria-lowcode-monorepo.netlify.app/test/customers/d46a3e4c-e036-495c-b364-c4696aca6d0b"
+}

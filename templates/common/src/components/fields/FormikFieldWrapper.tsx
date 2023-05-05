@@ -1,50 +1,48 @@
 import React from 'react'
-import { Field as FormikField, FieldProps } from 'formik'
+import { FieldProps, useFormikContext } from 'formik'
 import { FormatEntityField } from '@iteria-app-mui/common/src/components/fields/form/FormatEntityField'
+import { FormField } from '@iteria-app-mui/common/src/components/entities/FormField'
 import { columnCount } from '@iteria-app/component-templates'
 
-type Props = {
+interface Props {
   relationshipName: string
-  index: unknown
+  rootName: string
+  index: number
   type: string
   setFieldValue?: (field: string, value: any, shouldValidate?: boolean) => void
+  onTabsChanged?: (event: Event) => void
 }
 
 export const FormikFieldWrapper = ({
   relationshipName,
+  rootName,
   index,
   type,
-  setFieldValue,
-}: Props): JSX.Element => {
+  onTabsChanged,
+}: Props) => {
+  const formikProps = useFormikContext()
   return (
-    <FormikField
-      name={
-        relationshipName
-          ? index !== undefined
-            ? `${relationshipName}[${index}].${'FIELD'}`
-            : `${relationshipName}.${'FIELD'}`
-          : 'FIELD'
-      }
+    <FormField
+      fieldName={'FIELD'}
+      rootName={rootName}
+      relationshipName={relationshipName}
+      index={index}
     >
       {(fieldProps: FieldProps) => {
         return (
           <FormatEntityField
-            name={
-              relationshipName
-                ? index !== undefined
-                  ? `${relationshipName}[${index}].${'FIELD'}`
-                  : `${relationshipName}.${'FIELD'}`
-                : 'FIELD'
-            }
+            name={fieldProps.field.name}
             value={fieldProps.field.value}
             onChange={fieldProps.field.onChange}
             onBlur={fieldProps.field.onBlur}
-            setFieldValue={setFieldValue}
+            onTabsChanged={onTabsChanged}
+            setFieldValue={formikProps?.setFieldValue}
             length={columnCount(fieldProps.field.value)}
+            rootName={rootName}
             type={type}
           />
         )
       }}
-    </FormikField>
+    </FormField>
   )
 }

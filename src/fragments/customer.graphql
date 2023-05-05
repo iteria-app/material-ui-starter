@@ -1,8 +1,0 @@
-fragment customer on customers {
-  id
-  __typename
-  firstName
-  lastName
-  phone
-  vip
-}

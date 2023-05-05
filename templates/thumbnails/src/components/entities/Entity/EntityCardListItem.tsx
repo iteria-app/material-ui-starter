@@ -1,5 +1,6 @@
 import React from 'react'
 import {
+  Avatar,
   Box,
   Card,
   CardContent,
@@ -11,18 +12,27 @@ import { useNavigate } from 'react-router-dom'
 import { FormatEntityField } from '@iteria-app-mui/common/src/components/fields/typography/FormatEntityField'
 import { EntityFragment } from '../../../generated/graphql'
 import MoreVertIcon from '@mui/icons-material/MoreVert'
-import { getCardTitle, getImagePath } from '@iteria-app/component-templates'
+import {
+  getName,
+  getTitle,
+  getImagePath,
+  stringAvatar,
+  CardListColumnWrapper,
+  getRowId,
+} from '@iteria-app/component-templates'
 import { useFormikContext } from 'formik'
 
 export interface IPropsEntityCardItem {
   data: EntityFragment
   relationshipName?: string
+  rootName?: string
   index?: number
 }
 
 const EntityCardListItem: React.FC<IPropsEntityCardItem> = ({
   data,
   relationshipName,
+  rootName,
   index,
 }) => {
   const navigate = useNavigate()
@@ -30,23 +40,16 @@ const EntityCardListItem: React.FC<IPropsEntityCardItem> = ({
   if (relationshipName) formikContext = useFormikContext()
   const setFieldValue = formikContext?.setFieldValue
   const columns = [
-    <Box
-      key={'FIELD'}
-      sx={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        marginTop: '5px',
-      }}
-    >
+    <CardListColumnWrapper key={'FIELD'}>
       <FormatEntityField
         value={data?.FIELD}
         type={'string'}
         relationshipName={relationshipName}
+        rootName={rootName}
         index={index}
       />
-    </Box>,
+    </CardListColumnWrapper>,
   ]
-  const primary = getCardTitle(data)
   return (
     <Box
       p="5px"
@@ -55,8 +58,8 @@ const EntityCardListItem: React.FC<IPropsEntityCardItem> = ({
       sx={{
         cursor: 'pointer',
       }}
-      onClick={() => !relationshipName && navigate(data?.id.toString())}
-      data-test-id={`card-list-item-${'Entity'}-${data.id}`}
+      onClick={() => !relationshipName && navigate('../' + getRowId(data)?.toString())}
+      data-test-id={`card-list-item-${'Entity'}-${getRowId(data)}`}
       data-test={`card-list-item-${'Entity'}`}
     >
       <Card
@@ -65,7 +68,12 @@ const EntityCardListItem: React.FC<IPropsEntityCardItem> = ({
         }}
       >
         <CardHeader
-          title={primary}
+          title={
+            <Box sx={{ fontWeight: 'regular', fontStyle: 'normal' }}>
+              {getTitle(data)}
+            </Box>
+          }
+          avatar={<Avatar {...stringAvatar(getName(data))} />}
           action={
             <IconButton aria-label="settings">
               <MoreVertIcon />
@@ -76,14 +84,10 @@ const EntityCardListItem: React.FC<IPropsEntityCardItem> = ({
           component="img"
           image={getImagePath(data) ?? '/static/placeholder.png'}
           height="250px"
-          alt={primary}
+          alt={getTitle(data)}
           sx={{ minWidth: '200px' }}
         />
-        <CardContent>
-          {Object.values(columns).filter(
-            (v) => data?.[v?.key?.toString().split('.')?.pop()] !== primary
-          )}
-        </CardContent>
+        <CardContent>{columns}</CardContent>
       </Card>
     </Box>
   )

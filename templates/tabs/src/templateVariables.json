@@ -1,0 +1,25 @@
+{
+  "enitities": [
+    {
+      "id": "entities",
+      "name": "Entities",
+      "required": true,
+      "minValues": 1
+    }
+  ],
+  "components": [
+    {
+      "name": "Tabs",
+      "fields": [
+        {
+          "id": "name",
+          "name": "Title",
+          "validTypes": ["string", "number", "date", "dateTime"],
+          "required": true,
+          "multipleFields": true
+        }
+      ],
+      "props": []
+    }
+  ]
+}

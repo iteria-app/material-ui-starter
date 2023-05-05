@@ -44,8 +44,8 @@ const EntityListContainer: React.FC<IEnitityListContainerProps> = ({
     },
   })
 
-  if (data?.fetching && LoadingView) {
-    (
+  if (data?.fetching && LoadingView)
+    return (
       <ErrorBoundary>
         <QueryBoundary queryResponse={data}>
           <LoadingView
@@ -57,7 +57,6 @@ const EntityListContainer: React.FC<IEnitityListContainerProps> = ({
         </QueryBoundary>
       </ErrorBoundary>
     )
-  }
 
   return (
     <ErrorBoundary>

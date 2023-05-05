@@ -1,44 +1,31 @@
 import React from 'react'
-import { Button } from '@mui/material'
-import { Search } from '@mui/icons-material'
-import EntityForm from '../../entities/Entity/EntityForm'
-import { LookupDialog } from '@iteria-app-mui/common/src/components/entities/LookupDialog'
+import EntityForm from '@iteria-app-mui/common/src/components/entities/Entity/EntityForm'
+import { EntityLookupDialogWrapperForForm } from '@iteria-app-mui/common/src/components/entities/EntityLookupDialogWrapperForForm'
 import { FormCard } from '@iteria-app-mui/common/src/components/entities/FormCard'
-import EntityDataTableContainer from '@iteria-app-mui/data-table/src/components/entities/Entity/EntityDataTableContainer'
-import EntityDataTableView from '@iteria-app-mui/data-table/src/components/entities/Entity/EntityDataTableView'
-import { Translate } from '@iteria-app/component-templates'
+import { AccordionCard } from '@iteria-app-mui/common/src/components/entities/AccordionCard'
 
 type ObjectFormatProps = {
+  rootName: string
   setFieldValue: (field: string, value: any, shouldValidate?: boolean) => void
+  value?: any
 }
 
 export const ObjectFormat = ({
+  rootName,
   setFieldValue,
+  value,
 }: ObjectFormatProps): JSX.Element => (
   <FormCard title={'FIELD' ?? 'Entity'}>
-    <EntityForm relationshipName={'FIELD'} />
-    {'FIELD' && (
-      <LookupDialog
-        Container={EntityDataTableContainer}
-        View={EntityDataTableView}
-        onClickRow={(row) => {
-          setFieldValue('FIELD', row, false)
-        }}
-        title={'FIELD'}
-      >
-        <Button
-          color="secondary"
-          variant="contained"
-          startIcon={<Search />}
-          style={{ margin: '16px' }}
-        >
-          <Translate
-            entityName={'FIELD'}
-            fieldName={'lookup'}
-            defaultMessage={`Lookup ${'FIELD'}`}
-          />
-        </Button>
-      </LookupDialog>
+    <EntityForm
+      rootName={rootName ?? 'ROOT_NAME'}
+      relationshipName={'FIELD'}
+      value={value}
+    />
+    {'FIELD' && setFieldValue && (
+      <EntityLookupDialogWrapperForForm
+        setFieldValue={setFieldValue}
+        replacedValue={`${'ROOT_NAME'}.${'FIELD'}`}
+      />
     )}
   </FormCard>
 )

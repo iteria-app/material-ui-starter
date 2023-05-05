@@ -13,17 +13,17 @@ const transformedLocales = hasDefault
     )
   : localeDirectory
 
-const gatherLocales = Object.keys(transformedLocales).reduce(
-  (gatherLocales, file) => {
-    const locale = file.substring(
-      file.lastIndexOf('/') + 1,
-      file.indexOf('.json')
-    )
+const gatherLocales: { [k: string]: string } = Object.keys(
+  transformedLocales
+).reduce((gatherLocales, file) => {
+  const locale = file.substring(
+    file.lastIndexOf('/') + 1,
+    file.indexOf('.json')
+  )
 
-    return { ...gatherLocales, [locale.toUpperCase()]: locale }
-  },
-  {}
-)
+  return { ...gatherLocales, [locale.toUpperCase()]: locale }
+}, {})
+
 export const locales = {
   ...gatherLocales,
 }

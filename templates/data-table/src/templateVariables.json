@@ -15,11 +15,12 @@
           "id": "other",
           "name": "Columns",
           "validTypes": ["string", "number", "date", "dateTime"],
-          "required": false,
+          "required": true,
           "multipleFields": true
         }
       ],
       "props": []
     }
-  ]
+  ],
+  "generatePagePreviewUrl": "https://deploy-preview-1362--iteria-lowcode-monorepo.netlify.app/test/customers"
 }

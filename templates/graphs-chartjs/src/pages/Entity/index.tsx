@@ -1,20 +1,14 @@
 import React from 'react'
-import EntityCardBarGraph from '../../components/entities/Entity/EntityBarGraphView'
-import EntityListContainer from '../../components/entities/Entity/EntityListContainer'
+import { Outlet } from 'react-router-dom'
+import EntityTabsList from '@iteria-app-mui/common/src/components/entities/Entity/EntityTabsList'
 
-const EntityFormPage: React.FC = () => {
+const EntityManyPage: React.FC = () => {
   return (
-    <EntityListContainer
-      View={({ data, filterProps }) => (
-        <EntityCardBarGraph
-          data={data?.data}
-          loading={data?.loading}
-          error={data?.error}
-          {...filterProps}
-        />
-      )}
-    />
+    <>
+      <EntityTabsList />
+      <Outlet />
+    </>
   )
 }
 
-export default EntityFormPage
+export default EntityManyPage

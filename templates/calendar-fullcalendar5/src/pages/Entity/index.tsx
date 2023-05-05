@@ -1,17 +1,23 @@
 import React from 'react'
-import EntityFullcalendar from '../../components/entities/Entity/EntityFullcalendar'
-import EntityListContainer from '@iteria-app-mui/common/src/components/entities/Entity/EntityListContainer'
+import EntityTabsList from '@iteria-app-mui/common/src/components/entities/Entity/EntityTabsList'
+import { Outlet } from 'react-router-dom'
+import { WrapperForContentBesidesDrawer } from '@iteria-app/component-templates'
+import { Box } from '@mui/material'
 
 const EntityManyPage: React.FC = () => {
   return (
-    <EntityListContainer
-      View={({ data, filterProps }) => (
-        <EntityFullcalendar
-          data={data}
-          filterProps={filterProps}
-        />
-      )}
-    />
+    <>
+      <Box
+        sx={{
+          display: 'flex',
+        }}
+      >
+        <WrapperForContentBesidesDrawer open>
+          <EntityTabsList />
+          <Outlet />
+        </WrapperForContentBesidesDrawer>
+      </Box>
+    </>
   )
 }
 

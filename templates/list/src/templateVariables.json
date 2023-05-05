@@ -16,24 +16,25 @@
           "name": "Title",
           "validTypes": ["string", "number", "date", "dateTime"],
           "required": false,
-          "multipleFields": true
+          "multipleFields": false
         },
         {
           "id": "thumbnail",
           "name": "Avatar",
           "validTypes": ["string"],
           "required": false,
-          "multipleFields": true
+          "multipleFields": false
         },
         {
           "id": "other",
           "name": "Other",
           "validTypes": ["string", "number", "date", "dateTime"],
-          "required": false,
+          "required": true,
           "multipleFields": true
         }
       ],
       "props": []
     }
-  ]
+  ],
+  "generatePagePreviewUrl": "https://deploy-preview-1362--iteria-lowcode-monorepo.netlify.app/test/orders"
 }

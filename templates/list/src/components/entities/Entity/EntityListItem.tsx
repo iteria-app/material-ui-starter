@@ -15,6 +15,8 @@ import { FormatEntityField } from '@iteria-app-mui/common/src/components/fields/
 import {
   getImagePath,
   getName,
+  getRowId,
+  getTitle,
   stringAvatar,
 } from '@iteria-app/component-templates'
 import { EntityFragment } from '../../../generated/graphql'
@@ -23,12 +25,14 @@ import { useFormikContext } from 'formik'
 interface EntityListItem {
   data: EntityFragment
   relationshipName?: string
+  rootName?: string
   index?: number
 }
 
 const EntityListItem: React.FC<EntityListItem> = ({
   data,
   relationshipName,
+  rootName,
   index,
 }) => {
   const theme = useTheme()
@@ -45,6 +49,7 @@ const EntityListItem: React.FC<EntityListItem> = ({
         relationshipName={relationshipName}
         setFieldValue={setFieldValue}
         index={index}
+        rootName={rootName}
       />
     </>,
   ]
@@ -53,17 +58,19 @@ const EntityListItem: React.FC<EntityListItem> = ({
       secondaryAction={<Checkbox onClick={(e) => e.stopPropagation()} />}
       disablePadding
       sx={{ background: theme.palette.background.paper, borderRadius: '20px' }}
-      data-test-id={`list-item-${'Entity'}-${data.id}`}
+      data-test-id={`list-item-${'Entity'}-${getRowId(data)}`}
       data-test={`list-item-${'Entity'}`}
     >
       <ListItemButton
-        onClick={() => !relationshipName && navigate(data?.id.toString())}
+        onClick={() =>
+          !relationshipName && navigate('../' + getRowId(data)?.toString())
+        }
       >
         <ListItemAvatar>
           <Avatar src={getImagePath(data)} {...stringAvatar(getName(data))} />
         </ListItemAvatar>
         <ListItemText
-          primary={columns[0]}
+          primary={getTitle(data)}
           secondary={
             <Grid
               container
@@ -74,7 +81,7 @@ const EntityListItem: React.FC<EntityListItem> = ({
                 },
               }}
             >
-              {columns.slice(1).map((item) => (
+              {columns.map((item) => (
                 <>
                   {item}
                   <Typography className={'dotSeparator'}> ● </Typography>

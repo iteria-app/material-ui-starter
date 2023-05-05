@@ -1,14 +1,13 @@
 import React from 'react'
-import EntityFormView from '@iteria-app-mui/common/src/components/entities/Entity/EntityFormView'
-import EntityFormContainer from '@iteria-app-mui/common/src/components/entities/Entity/EntityFormContainer'
+import EntityTabs from '@iteria-app-mui/common/src/components/entities/Entity/EntityTabs'
+import { Outlet } from 'react-router-dom'
 
 const EntityFormPage: React.FC = () => {
   return (
-    <EntityFormContainer
-      View={({ data, onSubmit, onCopy }) => (
-        <EntityFormView data={data} onSubmit={onSubmit} onCopy={onCopy} />
-      )}
-    />
+    <>
+      <EntityTabs isDetail={true} />
+      <Outlet />
+    </>
   )
 }
 

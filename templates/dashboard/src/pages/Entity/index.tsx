@@ -1,15 +1,14 @@
 import React from 'react'
-import EntityDashboardView from '../../components/entities/Entity/EntityDashboardView'
-import EntityDashboardContainer from '../../components/entities/Entity/EntityDashboardContainer'
+import { Outlet } from 'react-router-dom'
+import EntityTabsList from '@iteria-app-mui/common/src/components/entities/Entity/EntityTabsList'
 
-const DashboardPage: React.FC = () => {
+const EntityManyPage: React.FC = () => {
   return (
-    <EntityDashboardContainer
-      View={({ data }) => (
-        <EntityDashboardView data={data} />
-      )}
-    />
+    <>
+      <EntityTabsList />
+      <Outlet />
+    </>
   )
 }
 
-export default DashboardPage
+export default EntityManyPage
