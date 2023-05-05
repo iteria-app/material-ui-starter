@@ -1,0 +1,32 @@
+{
+  "enitities": [
+    {
+      "id": "entities",
+      "name": "Entities",
+      "required": true,
+      "minValues": 1
+    }
+  ],
+  "components": [
+    {
+      "name": "Form-alt",
+      "fields": [
+        {
+          "id": "name",
+          "name": "Title",
+          "validTypes": ["string", "number", "date", "dateTime"],
+          "required": true,
+          "multipleFields": false
+        },
+        {
+          "id": "other",
+          "name": "Value",
+          "validTypes": ["string", "number", "date", "dateTime", "geometry"],
+          "required": true,
+          "multipleFields": false
+        }
+      ],
+      "props": []
+    }
+  ]
+}

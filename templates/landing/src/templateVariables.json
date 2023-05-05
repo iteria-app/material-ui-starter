@@ -21,5 +21,6 @@
       ],
       "props": []
     }
-  ]
+  ],
+  "generatePagePreviewUrl": "https://deploy-preview-1362--iteria-lowcode-monorepo.netlify.app/app/home"
 }

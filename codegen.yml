@@ -1,5 +1,8 @@
 overwrite: true
-schema: ${VITE_HASURA_GRAPHQL_ENDPOINT}
+schema:
+  - ${VITE_HASURA_GRAPHQL_ENDPOINT}:
+      headers:
+        X-HASURA-ADMIN-SECRET: ${VITE_HASURA_GRAPHQL_SECRET}
 documents: './src/**/*.graphql'
 generates:
   src/generated/graphql.ts:

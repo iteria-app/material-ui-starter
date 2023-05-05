@@ -11,7 +11,7 @@ import { useNavigate } from 'react-router-dom'
 import { FormatEntityField } from '@iteria-app-mui/common/src/components/fields/typography/FormatEntityField'
 import { EntityFragment } from '../../../generated/graphql'
 import MoreVertIcon from '@mui/icons-material/MoreVert'
-import { getCardTitle, getImagePath } from '@iteria-app/component-templates'
+import { getTitle, getImagePath, getRowId } from '@iteria-app/component-templates'
 import { useFormikContext } from "formik";
 
 export interface IPropsEntityCardItem {
@@ -43,7 +43,7 @@ const EntityCardListItem: React.FC<IPropsEntityCardItem> = ({
       />
     </Box>,
   ]
-  const primary = getCardTitle(data)
+  const primary = getTitle(data)
   return (
     <Box
       p="5px"
@@ -52,7 +52,7 @@ const EntityCardListItem: React.FC<IPropsEntityCardItem> = ({
       sx={{
         cursor: 'pointer',
       }}
-      onClick={() => !relationshipName && navigate(data?.id.toString())}
+      onClick={() => !relationshipName && navigate(getRowId(data)?.toString())}
     >
       <Card
         sx={{

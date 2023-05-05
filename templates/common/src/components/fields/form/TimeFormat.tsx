@@ -8,18 +8,21 @@ type DateTimeFormatProps = {
   name: string
   value?: Date | string | number
   setFieldValue: (field: string, value: any, shouldValidate?: boolean) => void
+  label?: string
 }
 
 export const TimeFormat = ({
   name,
   value,
   setFieldValue,
+  label,
 }: DateTimeFormatProps): JSX.Element => {
   return (
     <LocalizationProvider dateAdapter={AdapterDateFns}>
       <TimePicker
         ampm={false}
         value={value}
+        label={label}
         onChange={(value: Date | null) => {
           setFieldValue(name, saveTime(value), false)
         }}

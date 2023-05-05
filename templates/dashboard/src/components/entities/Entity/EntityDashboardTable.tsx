@@ -1,5 +1,5 @@
 import React from 'react'
-import { Translate } from '@iteria-app/component-templates'
+import { Translate, getRowId } from '@iteria-app/component-templates'
 import { useFormikContext } from 'formik'
 import { DataGrid, GridCellParams } from '@mui/x-data-grid'
 import { FormatEntityField } from '@iteria-app-mui/common'
@@ -89,6 +89,7 @@ const EntityDashboardTable = ({ data }: {data: any[]}) => {
           autoHeight={true}
           sortingMode="server"
           filterMode="server"
+          getRowId={getRowId}
           components={{
             LoadingOverlay: LinearProgress,
           }}

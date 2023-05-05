@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import '@fullcalendar/react/dist/vdom' //this needs to be imported before fullcalendar
 import FullCalendar, { EventInput } from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
@@ -20,20 +20,17 @@ export interface EntityFullcalendarProps {
   relationshipName?: string
 }
 
-interface DateState {
-  start: Date
-  end: Date
-}
-
 const EntityFullcalendar: React.FC<EntityFullcalendarProps> = ({
   data,
   filterProps,
   relationshipName,
 }) => {
   const navigate = useNavigate()
+  const initialDate = localStorage.getItem('calendarDateStart')
   return (
     <FullCalendar
       plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
+      initialDate={initialDate ? Date.parse(initialDate) : Date.now()}
       initialView="timeGridWeek"
       headerToolbar={{
         left: 'prev,next today',
@@ -42,7 +39,8 @@ const EntityFullcalendar: React.FC<EntityFullcalendarProps> = ({
       }}
       weekends={true}
       datesSet={({ start, end, timeZone }) => {
-        console.log('fetch events', { start, end, timeZone })
+        localStorage.setItem('calendarDateStart', start.toString())
+        // console.log('fetch events', { start, end, timeZone })
         const filter = {
           startAt: { _lte: end },
           endAt: { _gte: start },

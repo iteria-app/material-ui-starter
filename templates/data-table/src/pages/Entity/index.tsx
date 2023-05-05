@@ -1,23 +1,26 @@
 import React from 'react'
-import EntityDataTableContainer from '../../components/entities/Entity/EntityDataTableContainer'
-import EntityDataTableView from '../../components/entities/Entity/EntityDataTableView'
+import EntityTabsList from '@iteria-app-mui/common/src/components/entities/Entity/EntityTabsList'
+import { Outlet } from 'react-router-dom'
+import { WrapperForContentBesidesDrawer } from '@iteria-app/component-templates'
+import { Box } from '@mui/material'
 
 const EntityManyPage: React.FC = () => {
   return (
-    <EntityDataTableContainer
-      View={({ data, error, loading, onClickRow, filterProps }) => {
-        return (
-          <EntityDataTableView
-            data={data}
-            filterProps={filterProps}
-            onClickRow={onClickRow}
-            loading={loading}
-            error={error}
-          />
-        )
-      }}
-    />
+    <>
+      <Box
+        sx={{
+          display: 'flex',
+        }}
+      >
+        <WrapperForContentBesidesDrawer open>
+          <EntityTabsList />
+          <Outlet />
+        </WrapperForContentBesidesDrawer>
+      </Box>
+    </>
   )
 }
 
 export default EntityManyPage
+
+export const INDEX_ROUTE = 'data-table'

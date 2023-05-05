@@ -11,6 +11,7 @@ type Props = {
   value?: string
   index?: number
   relationshipName?: string
+  rootName?: string
   setFieldValue?: (
     field: string,
     value: any,

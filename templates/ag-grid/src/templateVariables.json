@@ -1,0 +1,25 @@
+{
+  "enitities": [
+    {
+      "id": "entities",
+      "name": "Entities",
+      "required": true,
+      "minValues": 1
+    }
+  ],
+  "components": [
+    {
+      "name": "ag grid",
+      "fields": [
+        {
+          "id": "other",
+          "name": "Columns",
+          "validTypes": ["string", "number", "date", "dateTime"],
+          "required": true,
+          "multipleFields": true
+        }
+      ],
+      "props": []
+    }
+  ]
+}

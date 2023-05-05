@@ -1,66 +1,47 @@
 import React from 'react'
-import { InputLabel, TableCell, TableRow } from '@mui/material'
+// import { InputLabel, TableCell } from '@mui/material'
 import { Formik, useFormikContext } from 'formik' // Formik import required for react generator
+import { FormikFieldWrapper } from '@iteria-app-mui/common/src/components/fields/FormikFieldWrapper' // FormikFieldWrapper import required for react generator
 import { FormatEntityField } from '@iteria-app-mui/common/src/components/fields/form/FormatEntityField'
 import {
-  getRelationshipField,
-  Translate,
+  FormatFieldCellWrapper,
+  TableRow,
+  TranslateTableCellWrapper,
 } from '@iteria-app/component-templates'
 
 interface IProps {
+  rootName?: string
   relationshipName?: string
   index?: number
+  value?: any
 }
 
-const EntityForm: React.FC<IProps> = ({ relationshipName }) => {
-  const { setFieldValue } = useFormikContext()
+const EntityForm: React.FC<IProps> = ({
+  rootName,
+  relationshipName,
+  index,
+  value,
+}) => {
   const columns = [
-    <TableRow
-      key={'FIELD'}
-      sx={{
-        '& td, & th': {
-          border: 'none',
-          whiteSpace: 'break-spaces',
-        },
-        '& .MuiTableCell-root:first-of-type': {
-          borderTopLeftRadius: '8px',
-          borderBottomLeftRadius: '8px',
-        },
-
-        '& .MuiTableCell-root:last-child': {
-          borderTopRightRadius: '8px',
-          borderBottomRightRadius: '8px',
-        },
-      }}
-    >
-      <TableCell sx={{ width: '50%', padding: '14.5px 14px' }}>
-        <InputLabel>
-          {' '}
-          <Translate
-            entityName={'Entity'}
-            fieldName={getRelationshipField('FIELD')}
-            defaultMessage={'HEADER_NAME'}
-          />
-        </InputLabel>
-      </TableCell>
-      <TableCell
-        sx={{
-          width: '50%',
-          textAlign: 'left',
-          padding: '8px 16px',
-        }}
-      >
+    <TableRow key={'FIELD'}>
+      <TranslateTableCellWrapper
+        headerName={'HEADER_NAME'}
+        entityName={'Entity'}
+        fieldToReplace={'FIELD'}
+      />
+      <FormatFieldCellWrapper>
         <FormatEntityField
           type={'string'}
-          setFieldValue={setFieldValue}
+          rootName={rootName}
           relationshipName={relationshipName}
-          index={undefined}
+          index={index}
+          value={value?.FIELD}
         />
-      </TableCell>
+      </FormatFieldCellWrapper>
     </TableRow>,
   ]
 
-  return <>{columns.map((field) => field)}</>
+  return <>{columns}</>
 }
 
 export default EntityForm

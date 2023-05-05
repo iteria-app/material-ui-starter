@@ -5,7 +5,7 @@ import NavBar from './NavBar'
 import TopBar from './TopBar'
 import { ErrorBoundary } from '@iteria-app/component-templates'
 
-const drawerWidth = 256
+const drawerWidth = 0
 
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })<{
   open?: boolean
@@ -34,17 +34,17 @@ const DashboardLayout = (): JSX.Element => {
     noSsr: true,
   })
 
-  const [navBarOpen, setNavBarOpen] = useState(!isSmallScreen)
+  const [navBarOpen, setNavBarOpen] = useState(false)
 
   return (
     <Box sx={{ display: 'flex', background: theme.palette.background.default }}>
       <TopBar navBarOpen={navBarOpen} setNavBarOpen={setNavBarOpen} />
-      <NavBar
-        open={navBarOpen}
-        drawerWidth={drawerWidth}
-        setNavBarOpen={setNavBarOpen}
-        isSmallScreen={isSmallScreen}
-      />
+      {/*<NavBar*/}
+      {/*  open={navBarOpen}*/}
+      {/*  drawerWidth={drawerWidth}*/}
+      {/*  setNavBarOpen={setNavBarOpen}*/}
+      {/*  isSmallScreen={isSmallScreen}*/}
+      {/*/>*/}
       <Main open={navBarOpen}>
         <ErrorBoundary>
           <Outlet />

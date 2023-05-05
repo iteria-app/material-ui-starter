@@ -13,7 +13,7 @@ import {
 } from '@mui/material'
 import { ArrowRight, MoreVert } from '@mui/icons-material'
 import {
-  getCardTitle,
+  getTitle,
   getImagePath,
   getUpdatedTimeString,
 } from '@iteria-app/component-templates'
@@ -40,7 +40,7 @@ const EntityDashboardList = ({ data }: { data: any[] }) => {
                 />
               </ListItemAvatar>
               <ListItemText
-                primary={getCardTitle(item) ?? item[Object.keys(item)?.[1]]}
+                primary={getTitle(item) ?? item[Object.keys(item)?.[1]]}
                 secondary={getUpdatedTimeString(item.updated_at ?? item.updatedAt)}
               />
               <IconButton edge="end" size="small">

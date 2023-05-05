@@ -1,17 +1,10 @@
 import React from 'react'
-import {
-  Box,
-  Drawer,
-  styled,
-  List,
-  IconButton,
-} from '@mui/material'
+import { Box, Drawer, styled, List, IconButton } from '@mui/material'
 import { Users, Home } from 'react-feather'
-import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord'
 import { MenuItems, calculateMenuItems } from '@iteria-app/component-templates'
-import * as graphqlGen from '../../../generated/graphql'
 import Logo from '../../../components/Logo'
 import MenuIcon from '@mui/icons-material/Menu'
+import { newRoutes } from '../../../routes'
 
 const PREFIX = 'StyledNavBar'
 const classes = {
@@ -74,23 +67,7 @@ const NavBar = ({
       <Box>
         <List>
           <MenuItems
-            items={[
-              {
-                href: '/app/home',
-                codeHref: '/app/home',
-                icon: Home,
-                label: 'menu.home',
-                title: 'Home',
-              },
-              {
-                href: '/app/dashboard',
-                codeHref: '/app/dashboard',
-                icon: Home,
-                label: 'menu.dashboard',
-                title: 'Dashboard',
-              },
-              ...calculateMenuItems(graphqlGen, Users, FiberManualRecordIcon),
-            ]}
+            items={calculateMenuItems(Users, newRoutes)}
             onOpen={
               isSmallScreen
                 ? () => {

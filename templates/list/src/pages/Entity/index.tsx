@@ -1,16 +1,23 @@
 import React from 'react'
-import EntityListView from '../../components/entities/Entity/EntityListView'
-import EntityListContainer from '../../components/entities/Entity/EntityListContainer'
+import { Outlet } from 'react-router-dom'
+import { Box } from '@mui/material'
+import { WrapperForContentBesidesDrawer } from '@iteria-app/component-templates'
+import EntityTabsList from '@iteria-app-mui/common/src/components/entities/Entity/EntityTabsList'
 
 const EntityManyPage: React.FC = () => {
   return (
-    <EntityListContainer
-      View={({ data }) => (
-        <EntityListView
-          data={data}
-        />
-      )}
-    />
+    <>
+      <Box
+        sx={{
+          display: 'flex',
+        }}
+      >
+        <WrapperForContentBesidesDrawer open>
+          <EntityTabsList />
+          <Outlet />
+        </WrapperForContentBesidesDrawer>
+      </Box>
+    </>
   )
 }
 

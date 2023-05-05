@@ -11,7 +11,7 @@ import {
 } from '@mui/material'
 import { Bar } from 'react-chartjs-2'
 import { ArrowDropDown } from '@mui/icons-material'
-import { Translate, theme, getChartData } from '@iteria-app/component-templates'
+import { Translate, theme, getChartData, getChartColor } from '@iteria-app/component-templates'
 
 export const themeColors = theme?.palette
   ? Object.values(theme.palette)?.filter((color: any) => color?.main)
@@ -77,7 +77,7 @@ export interface EntityBarGraphProps {
   relationshipName?: string
 }
 
-const EntityBarGraph: React.FC<EntityBarGraphProps> = ({
+const EntityBarGraphView: React.FC<EntityBarGraphProps> = ({
   data,
 }) => {
   const graphData = getChartData(data, themeColors)
@@ -106,4 +106,4 @@ const EntityBarGraph: React.FC<EntityBarGraphProps> = ({
   )
 }
 
-export default EntityBarGraph
+export default EntityBarGraphView

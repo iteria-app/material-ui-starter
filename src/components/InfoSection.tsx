@@ -5,11 +5,13 @@ import React from 'react'
 type LandingButtonProps = {
   onClick: () => void
   text: string
+  dataTestId: string
 }
 
 export const LandingButton = ({
   onClick,
   text,
+  dataTestId,
 }: LandingButtonProps): JSX.Element => {
   return (
     <Button
@@ -17,6 +19,7 @@ export const LandingButton = ({
       color="primary"
       variant="contained"
       onClick={onClick}
+      data-test-id={dataTestId}
     >
       <Typography>
         <Translate entityName={text} />
